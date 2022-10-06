@@ -5,7 +5,6 @@ import { store } from "./store";
 
 import "/src/index.css";
 
-
 const app = createApp(App);
 
 app.use(router);
