@@ -2,7 +2,15 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx,vue}"],
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        header: "2.2rem",
+        body: "calc(100vh - 2.2rem)",
+      },
+      margin: {
+        body: "2.2rem",
+      },
+    },
   },
   plugins: [],
 };
