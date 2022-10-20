@@ -1,7 +1,7 @@
 <script setup>
 import Menu from "../navigation/Menu.vue";
-import { useGeneralStore } from "@/stores";
-const store = useGeneralStore();
+import { useGeneral } from "@/stores";
+const store = useGeneral();
 </script>
 
 <template>
@@ -15,7 +15,7 @@ const store = useGeneralStore();
   >
     <div
       v-if="store.activeMenu"
-      class="fixed left-0 top-0 h-body mt-body p-5 text-white translate overflow-scroll z-40 w-menu"
+      class="fixed left-0 top-0 h-body mt-body p-5 text-white translate overflow-scroll z-50 w-menu"
     >
       <Menu :place="$route.name == 'home' ? 'home' : 'chapter'" />
     </div>

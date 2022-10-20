@@ -1,6 +1,6 @@
 <script setup>
-import { useGeneralStore } from "@/stores";
-const store = useGeneralStore();
+import { useGeneral } from "@/stores";
+const store = useGeneral();
 </script>
 
 <template>
@@ -14,7 +14,7 @@ const store = useGeneralStore();
   >
     <div
       v-show="store.activeSidebar"
-      class="fixed right-0 top-0 w-1/3 h-body mt-body p-5 bg-black text-white translate"
+      class="fixed z-50 right-0 top-0 w-1/3 h-body mt-body p-5 bg-black text-white translate"
     >
       <!-- Inhalt -->
       <div class="flex flex-col">

@@ -1,8 +1,8 @@
 <script setup>
-import { useGeneralStore } from "@/stores";
+import { useGeneral } from "@/stores";
 import { storeToRefs } from "pinia";
 import { computed, ref, watch } from "vue";
-const store = useGeneralStore();
+const store = useGeneral();
 
 const { activeMenu } = storeToRefs(store);
 
@@ -23,7 +23,7 @@ const props = defineProps({
   <button
     @click="store.toggle('active' + props.target)"
     :class="pos == 'left' ? 'left-2' : 'right-2'"
-    class="fixed z-40 bottom-2 px-3 py-1 float-right m-2 bg-black text-white border-2 rounded-full hover:bg-red-600"
+    class="fixed z-50 bottom-2 px-3 py-1 float-right m-2 bg-black text-white border-2 rounded-full hover:bg-red-600"
   >
     <template v-if="store['active' + target]">H</template>
     <template v-else>{{
