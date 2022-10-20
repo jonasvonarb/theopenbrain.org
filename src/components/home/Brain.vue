@@ -6,6 +6,7 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import Stats from "three/examples/jsm/libs/stats.module";
+
 export default {
   data() {
     return {
@@ -26,8 +27,18 @@ export default {
       mouseDown: false,
       mouseX: 0,
       mouseY: 0,
+      changeX: null,
+      counter: 0,
     };
   },
+
+  watch: {
+    changeX(newX, oldX) {
+      this.counter++;
+      this.updateLine();
+    },
+  },
+
   mounted() {
     /* Scene */
     const scene = new THREE.Scene();
@@ -160,7 +171,14 @@ export default {
     }, 10);
 
     /* Render */
+    var that = this;
     function animate() {
+      var els = document.getElementsByClassName("menus");
+      if (els.length > 0) {
+        var value = els[els.length - 1].getBoundingClientRect().x;
+        that.changeX = value;
+      }
+
       requestAnimationFrame(animate);
       renderer.render(scene, camera);
       stats.update();
@@ -174,6 +192,25 @@ export default {
       const camera = this.camera;
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
+      this.updateLine();
+      this.renderer.setSize(window.innerWidth, window.innerHeight);
+    },
+    visibleWidthAtZDepth(depth, camera) {
+      const height = this.visibleHeightAtZDepth(depth, camera);
+      return height * camera.aspect;
+    },
+    visibleHeightAtZDepth(depth, camera) {
+      // compensate for cameras not positioned at z=0
+      const cameraOffset = camera.position.z;
+      if (depth < cameraOffset) depth -= cameraOffset;
+      else depth += cameraOffset;
+      // vertical fov in radians
+      const vFOV = (camera.fov * Math.PI) / 180;
+      // Math.abs to ensure the result is always positive
+      return 2 * Math.tan(vFOV / 2) * Math.abs(depth);
+    },
+    updateLine() {
+      const camera = this.camera;
       this.width3d = this.visibleWidthAtZDepth(0, camera) / 2;
       this.height3d = this.visibleHeightAtZDepth(0, camera) / 2;
       this.pixelHeight =
@@ -198,28 +235,6 @@ export default {
         });
       }
 
-      console.log(
-        this.menus[0].x,
-        this.width3d - this.p2d[0].px * this.pixelWidth
-      );
-      this.updateLine();
-      this.renderer.setSize(window.innerWidth, window.innerHeight);
-    },
-    visibleWidthAtZDepth(depth, camera) {
-      const height = this.visibleHeightAtZDepth(depth, camera);
-      return height * camera.aspect;
-    },
-    visibleHeightAtZDepth(depth, camera) {
-      // compensate for cameras not positioned at z=0
-      const cameraOffset = camera.position.z;
-      if (depth < cameraOffset) depth -= cameraOffset;
-      else depth += cameraOffset;
-      // vertical fov in radians
-      const vFOV = (camera.fov * Math.PI) / 180;
-      // Math.abs to ensure the result is always positive
-      return 2 * Math.tan(vFOV / 2) * Math.abs(depth);
-    },
-    updateLine() {
       if (this.lineGeometrys) {
         for (var i = 0; i < this.lineGeometrys.length; i++) {
           var e;
@@ -309,4 +324,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>

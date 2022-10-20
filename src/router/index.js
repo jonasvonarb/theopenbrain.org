@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/LandingView.vue";
+import { useGeneralStore } from "@/stores";
+import HomeView from "@/views/LandingView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,6 +31,11 @@ const router = createRouter({
       component: () => import("../views/GlossaryView.vue"),
     },
   ],
+});
+router.beforeEach((to, from) => {
+  const store = useGeneralStore();
+
+  store.unSetMenu();
 });
 
 export default router;
