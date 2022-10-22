@@ -6,13 +6,6 @@ const store = useGeneral();
 
 const { activeMenu } = storeToRefs(store);
 
-console.log(activeMenu.value);
-
-watch(
-  () => activeMenu.value,
-  (n) => console.log(n, " value changed")
-);
-
 const props = defineProps({
   target: String,
   pos: String,
