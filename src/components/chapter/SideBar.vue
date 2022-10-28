@@ -45,11 +45,6 @@ export default {
   mounted() {
     this.getData();
   },
-  // watch: {
-  //   data(newData, OldData) {
-  //     console.log("watcher", newData, OldData);
-  //   },
-  // },
   methods: {
     onBeforeEnter(ev) {
       var el = ev;

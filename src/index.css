@@ -7,6 +7,13 @@ body {
   font-size: 62.5%;
 }
 
+img {
+  max-width: unset;
+}
+
+.pin-spacer {
+}
+
 .stats {
   bottom: 0;
   top: unset !important;
@@ -84,21 +91,40 @@ blockquote {
   color: white;
   padding: 0.25rem 0.7rem 0.3rem 0.7rem;
   border-radius: 9999px;
-
 }
 
-.punkt {
+.punkt,
+.punktComment {
   position: absolute;
   top: -20px;
   left: 3rem;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.8rem;
+  height: 1.8rem;
   border-radius: 50%;
   background-color: black;
+  pointer-events: all;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  padding: 0px;
+  text-align: center;
+  transition: none;
+}
+
+.punktComment {
+  top: 0px;
+  background-color: lightgreen;
+  border: 1px solid black;
+  display: none;
+  /* border-radius: 0; */
+}
+
+mark {
+  background-color: lightgreen;
+  border-radius: 5px;
 }
 
 .hoverActive {
-  background-color: salmon;
+  background-color: lightsalmon;
   color: black;
   cursor: default;
 }
