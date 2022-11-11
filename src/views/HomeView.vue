@@ -5,7 +5,6 @@ import Menu from "../components/navigation/Menu.vue";
 
 <template>
   <main class="font-mono text-white bg-black">
-    <!-- <Menu :place="$route.name == 'home' ? 'home' : 'chapter'" /> -->
     <!-- <Brain /> -->
   </main>
 </template>
@@ -18,8 +17,7 @@ export default {
       database: null,
     };
   },
-  mounted() {
-  },
+  mounted() {},
   methods: {},
 };
 </script>

@@ -1,7 +1,7 @@
 <script setup>
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, defineProps } from "vue";
 import { useGeneral } from "@/stores";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -10,10 +10,14 @@ const trigger = ref(null);
 const image = ref(null);
 const store = useGeneral();
 
+const props = defineProps({
+  title: String,
+});
+
 onMounted(() => {
   ScrollTrigger.create({
     trigger: trigger.value,
-    start: "top top",
+    start: "+=" + 0 + "px",
     end: "+=" + window.innerHeight / 2 + "px",
     pin: trigger.value,
     srub: 0,
@@ -23,13 +27,18 @@ onMounted(() => {
         store.imgActive = true;
         gsap.to(image.value, {
           opacity: 1,
-          background: "black",
+          // padding: 0,
+          transform: "translateX(-45vw)",
+          width: window.innerWidth,
         });
       } else {
         store.imgActive = false;
         gsap.to(image.value, {
-          opacity: 0.2,
-          background: "white",
+          // paddingTop: "200px",
+          // opacity: 0.2,
+          transform: "translateX(-17.5vw)",
+
+          width: window.innerWidth * 0.45,
         });
       }
     },
@@ -42,16 +51,30 @@ onMounted(() => {
   <div class="pb-12">
     <div
       ref="trigger"
-      class="relative w-full h-screen mt-12 left-0 top-0 overflow-x-visible"
+      class="relative w-full h-[100vh] text-black mt-12 left-0 top-0 overflow-x-visible"
     >
+      <p
+        v-if="store.imgActive == false"
+        class="fixed flex w-screen p-0 justify-center -translate-x-[50vw] z-60"
+      >
+        {{ title }}
+      </p>
       <div
         ref="image"
-        class="fixed z-50 flex items-center w-full h-screen p-12 translate-x-[-45vw] opacity-0.2 float-right overflow-hidden"
+        class="fixed z-60 w-[45vw] -translate-x-[17.5vw] h-[100vh] opacity-0.2 overflow-visible"
       >
-        <img class="w-screen" src="/assets/images/obama.gif" />
+        <div
+          class="flex h-full justify-start items-center content-center flex-wrap"
+        >
+          <img class="w-full" src="/assets/images/obama.gif" />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.z-60 {
+  z-index: 60;
+}
+</style>

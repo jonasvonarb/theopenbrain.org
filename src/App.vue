@@ -6,9 +6,8 @@ import Menu from "./components/navigation/Menu.vue";
 
 <template>
   <div class="text-base">
-    <Menu />
-    <!-- <Header v-if="$route.name != 'landing'" class="bg" /> -->
     <RouterView class="w-full mt-body z-0" />
+    <Menu />
   </div>
 </template>
 

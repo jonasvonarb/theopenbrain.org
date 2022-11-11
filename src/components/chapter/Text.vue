@@ -1,8 +1,6 @@
 <script setup>
 import { computed } from "@vue/reactivity";
-import Markdown from "vue3-markdown-it";
 import { useText, useGeneral } from "@/stores";
-import { useAnimation } from "@/stores/animation";
 import { useCom } from "@/stores/comments";
 
 import { onMounted } from "vue";
@@ -15,34 +13,8 @@ import Points from "@/components/UI/Points.vue";
 const store = useGeneral();
 
 const textStore = useText();
-const animationStore = useAnimation();
 const commentStore = useCom();
-const options = { breaks: true, html: true };
 const text = textStore.text;
-
-onMounted(() => {
-  let options = {
-    root: null,
-    rootMargin: -(window.innerHeight / 2) + "px",
-    threshold: 0,
-  };
-
-  let callback = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      console.log(entry.target.innerText);
-    });
-  };
-
-  let observer = new IntersectionObserver(callback, options);
-  let subChapters = document.querySelectorAll(".subChapter");
-
-  for (let subChapter of subChapters) {
-    observer.observe(subChapter);
-  }
-});
-
-// const refSource = ref(0);
 
 const source = computed(() => {
   let _textStore = textStore.text;
@@ -99,8 +71,7 @@ onMounted(() => {
               {{ section.title }}
             </h2>
             <template v-for="paragraph in section['paragraphs']">
-              <!-- <BreakImages v-if="paragraph?.type == 'break'" /> -->
-              <BreakImages v-if="paragraph?.type == 'tesbhasdb'" />
+              <BreakImages v-if="paragraph?.type == 'break'" :title="paragraph.text" />
               <p v-else v-html="paragraph.text" :id="paragraph.id" />
             </template>
           </section>
