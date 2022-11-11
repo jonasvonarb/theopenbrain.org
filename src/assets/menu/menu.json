@@ -1,31 +1,4 @@
 {
-  "Part1": {
-    "index": 1,
-    "title": "Introduction",
-    "parts": []
-  },
-  "Part2": {
-    "index": 2,
-    "title": "Synapsis Transition",
-    "image": "../images/iamge2",
-    "parts": []
-  },
-
-  "Part4": {
-    "index": 4,
-    "title": "Movement",
-    "parts": []
-  },
-  "Part5": {
-    "index": 5,
-    "title": "Memory and language",
-    "parts": []
-  },
-  "Part6": {
-    "index": 6,
-    "title": "Diseases of the Nervous System",
-    "parts": []
-  },
   "Part7": {
     "index": 1,
     "title": "Introduction",
@@ -44,7 +17,7 @@
       "Story of the eye",
       "Organization and cell types in the retina",
       "Photoreceptors and phototransduction",
-      "Horizontal cells modulate signals between photoreceptors and bipolar cells",
+      "Horizontal cells modulate signaling between photoreceptors and bipolar cells",
       "Bipolar cells diversify photoreceptor generated light responses",
       "Amacrine and ganglion cells – retinal circuits, computations and output",
       "Retinal development",

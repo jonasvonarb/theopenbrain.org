@@ -5,13 +5,11 @@
 html,
 body {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 img {
   max-width: unset;
-}
-
-.pin-spacer {
 }
 
 .stats {
@@ -28,6 +26,14 @@ input {
   color: black;
 }
 
+section {
+  min-height: 100vh;
+}
+
+section p:first-of-type {
+  padding-top: 3rem;
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 *::-webkit-scrollbar {
   display: none;
@@ -36,6 +42,7 @@ input {
 /* Hide scrollbar for IE, Edge and Firefox */
 * {
   -ms-overflow-style: none;
+  overscroll-behavior-x: none;
   /* IE and Edge */
   scrollbar-width: none;
   /* Firefox */
@@ -46,8 +53,17 @@ h1 {
 }
 
 h2 {
+  margin: 0 3rem;
+  width: calc(100vw - 6rem);
+  transform: translateX(-45vw);
   font-size: 2.5rem;
-  padding-bottom: 3rem;
+  padding-left: 45vw;
+  top: 0rem;
+  position: sticky;
+  z-index: 100;
+  color: black;
+  background-color: white;
+  border-bottom: solid black 1px;
 }
 
 h3 {
@@ -57,7 +73,6 @@ h3 {
 p,
 blockquote,
 button {
-  font-size: 1.6rem;
   padding-bottom: 3.2rem;
 }
 
@@ -69,7 +84,7 @@ blockquote {
 .text h3,
 .text p,
 .text blockquote {
-  padding-left: 15vw;
+  padding-left: 10vw;
 }
 
 .text h2 {
@@ -79,7 +94,7 @@ blockquote {
 
 .titleNumber {
   flex-shrink: 0;
-  width: 15vw;
+  width: 10vw;
   height: 3rem;
   padding-top: 1rem;
   padding-left: 3rem !important;
@@ -112,19 +127,23 @@ blockquote {
 
 .punktComment {
   top: 0px;
-  background-color: lightgreen;
+  background-color: #fca5a5;
   border: 1px solid black;
   display: none;
   /* border-radius: 0; */
 }
 
 mark {
-  background-color: lightgreen;
+  color: black;
+  padding: 0.2rem;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: #fca5a5;
   border-radius: 5px;
 }
 
 .hoverActive {
-  background-color: lightsalmon;
+  background-color: #34d399;
   color: black;
   cursor: default;
 }

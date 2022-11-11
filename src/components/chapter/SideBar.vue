@@ -1,6 +1,8 @@
 <script setup>
-import { useGeneral } from "@/stores";
+import { useGeneral, useText } from "@/stores";
+import ActionButton from "../../components/UI/ActionButton.vue";
 const store = useGeneral();
+const storeText = useText();
 </script>
 
 <template>
@@ -17,7 +19,7 @@ const store = useGeneral();
       class="fixed z-50 right-0 top-0 w-1/3 h-body mt-body p-5 bg-black text-white translate"
     >
       <!-- Inhalt -->
-      <div class="flex flex-col">
+      <!-- <div class="flex flex-col">
         <button>theopenbrain.org</button>
         <br />
         <label for="name">Name:</label>
@@ -25,7 +27,7 @@ const store = useGeneral();
         <label for="mail">Mail:</label>
         <input type="email" id="mail" name="mail" />
         <button @click="setData()">submit</button>
-      </div>
+      </div> -->
     </div>
   </transition>
 </template>

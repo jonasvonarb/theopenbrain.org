@@ -3,11 +3,18 @@ import jsonText from "@/assets/text/text.json";
 import { saveAs } from "file-saver";
 import { useAnimation } from "./animation";
 import { useCom } from "./comments";
+import { useRouter } from "vue-router";
 
 export { useAnimation, useCom };
 
 export const useGeneral = defineStore("main", {
-  state: () => ({ activeMenu: false, activeSidebar: false, count: 0 }),
+  state: () => ({
+    activeMenu: false,
+    activeSidebar: false,
+    activeImportMenu: false,
+    count: 0,
+    imgActive: false,
+  }),
   getters: {
     getactiveMenu: (state) => state.activeMenu,
     doubleCount: (state) => state.count * 2,
@@ -19,6 +26,9 @@ export const useGeneral = defineStore("main", {
     unSetMenu() {
       this.activeMenu = false;
     },
+    toggleImport() {
+      this.activeImportMenu = !this.activeImportMenu;
+    },
     toggle(_target) {
       this[_target] = !this[_target];
     },
@@ -27,7 +37,7 @@ export const useGeneral = defineStore("main", {
 
 export const useText = defineStore("text", {
   state: () => ({
-    text: localStorage.text ? JSON.parse(localStorage.sections) : jsonText,
+    text: localStorage.sections ? JSON.parse(localStorage.sections) : jsonText,
     source: jsonText,
     selectionIds: localStorage.selection
       ? JSON.parse(localStorage.selection)
@@ -37,19 +47,38 @@ export const useText = defineStore("text", {
 
   getters: {},
   actions: {
-    // saveLocalstorage() {
-    //   let data = this.selectionText["selected"];
-    //   console.log(data);
-    //   var blob = new Blob(
-    //     [
-    //       data,
-    //     ],
-    //     {
-    //       type: "text/json;charset=utf-8",
-    //     }
-    //   );
-    //   saveAs(blob, "static.txt");
-    // },
+    saveLocalstorage() {
+      let data = {
+        selection: JSON.parse(localStorage.selection),
+        sections: JSON.parse(localStorage.sections),
+        comments: JSON.parse(localStorage.comments),
+      };
+      var blob = new Blob([JSON.stringify(data)], {
+        type: "text/json;charset=utf-8",
+      });
+      var currentdate = new Date();
+      var date =
+        currentdate.getFullYear() +
+        "" +
+        currentdate.getMonth() +
+        "" +
+        currentdate.getDate();
+      let time =
+        ("0" + currentdate.getHours()).slice(-2) +
+        "" +
+        ("0" + currentdate.getMinutes()).slice(-2) +
+        "" +
+        ("0" + currentdate.getSeconds()).slice(-2);
+
+      saveAs(blob, date + "_" + time + "_theOpenBrainOrg_markedText.json");
+    },
+    importLocalstorage(newCont) {
+      const _newCont = JSON.parse(newCont);
+      localStorage.setItem("selection", JSON.stringify(_newCont.selection));
+      localStorage.setItem("sections", JSON.stringify(_newCont.sections));
+      localStorage.setItem("comments", JSON.stringify(_newCont.comments));
+      this.router.go();
+    },
     clearTextMarking() {
       localStorage.setItem("sections", JSON.stringify(this.source));
       localStorage.setItem("comments", JSON.stringify({}));

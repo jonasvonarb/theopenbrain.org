@@ -34,6 +34,12 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: "auto",
+      };
+    }
     if (savedPosition) {
       return savedPosition;
     } else {
@@ -43,7 +49,10 @@ const router = createRouter({
 });
 router.beforeEach((to, from) => {
   const store = useGeneral();
-  store.unSetMenu();
+  if (to.name == "home") {
+    store.activeMenu = true;
+  }
+  // store.unSetMenu();
 });
 
 export default router;

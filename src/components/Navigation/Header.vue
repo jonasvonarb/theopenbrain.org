@@ -1,9 +1,7 @@
 <script setup></script>
 <template>
   <div>
-    <nav
-      class="fixed w-screen h-header bg-slate-500 flex flex-row gap-20 p-1 top-0 left-0 z-50"
-    >
+    <nav class="fixed p-1 top-0 left-0 z-50 flex flex-col">
       <RouterLink to="/home">Home</RouterLink>
       <RouterLink to="/chapter">Chapter</RouterLink>
       <RouterLink to="/glossary">Glossary</RouterLink>
