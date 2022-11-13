@@ -572,7 +572,7 @@
           "text": "Treatment strategies for retinal-based vision loss",
           "paragraphs": [
             {
-              "subSubSections": [
+              "subSubSection": [
                 {
                   "id": "82941df1-39ea-4414-97c1-1360adcb6c6b",
                   "text": "Gene therapy is a therapeutic approach in which a mutated gene is replaced with the correct copy. Diseases caused by single gene mutation, in which the mutation does not lead to cell death or other deleterious effects, are the central target of gene therapy approaches. To date, the standard protocol is to package the proper version of the gene of interest into an adeno-associated virus, and inject the virus into or nearby the affected tissue of interest. For instance, the first ever gene therapy approved for use in humans was Luxturna, targeted towards treating a form of Leber’s congenital amaurosis, by providing the correct version of the gene<em>RPE65</em>."
