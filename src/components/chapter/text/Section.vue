@@ -3,10 +3,14 @@
   <section :id="section.id" class="overflow-y-visible">
     <!-- section titel -->
     <h2
+      class="p-5 border border-black bg-white rounded-full absolute -translate-x-[7.5rem] -translate-y-[1.25rem] w-20 h-20 flex justify-center"
+    >
+      {{ index + 1 }}
+    </h2>
+    <h2
       :class="store.imgActive ? 'opacity-0' : ''"
       class="T durattion-500 z-40 subChapter"
     >
-      <span class="w-[10vw] pl-5 shrink-0">{{ index + 1 }}</span>
       {{ section.title }}
     </h2>
     <template v-for="paragraph in section['paragraphs']">
@@ -18,7 +22,7 @@
           :id="paragraph.id"
           v-if="!paragraph.subsection"
         />
-        <SubSection v-else :paragraph="paragraph" />
+        <SubSection v-else :paragraph="paragraph" :index="index + 1" />
       </template>
       <!-- section Break -->
       <BreakImages v-else :title="paragraph.text" />

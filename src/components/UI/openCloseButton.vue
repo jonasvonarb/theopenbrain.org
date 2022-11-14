@@ -13,8 +13,6 @@ const props = defineProps({
 <template>
   <button @click="store.toggle('active' + props.target)">
     {{ text }}
-    <!-- <template v-if="store['active' + target]">Close</template>
-    <template v-else>M</template> -->
   </button>
 </template>
 

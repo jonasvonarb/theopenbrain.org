@@ -19,9 +19,14 @@ const routes = [
     component: () => import("../views/AboutView.vue"),
   },
   {
-    path: "/chapter",
+    path: "/chapter/:chapter?",
     name: "chapter",
     component: () => import("../views/ChapterView.vue"),
+  },
+  {
+    path: "/chapter/chaptertocome/:chapter?",
+    name: "chapternotfound",
+    component: () => import("../views/ChapterNotFoundView.vue"),
   },
   {
     path: "/glossary",
@@ -35,10 +40,17 @@ const router = createRouter({
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
-      return {
-        el: to.hash,
-        behavior: "auto",
-      };
+      if (from.name) {
+        return {
+          el: to.hash,
+          behavior: "smooth",
+        };
+      } else {
+        return {
+          el: to.hash,
+          behavior: "auto",
+        };
+      }
     }
     if (savedPosition) {
       return savedPosition;

@@ -1,7 +1,7 @@
 <script setup>
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { ref, onMounted, defineProps } from "vue";
+import { ref, onMounted, defineProps, nextTick } from "vue";
 import { useGeneral } from "@/stores";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -15,58 +15,53 @@ const props = defineProps({
 });
 
 onMounted(() => {
-  ScrollTrigger.create({
-    trigger: trigger.value,
-    start: "+=" + 0 + "px",
-    end: "+=" + window.innerHeight / 2 + "px",
-    pin: trigger.value,
-    srub: 0,
-    markers: false,
-    onToggle: (self) => {
-      if (self.isActive) {
-        store.imgActive = true;
-        gsap.to(image.value, {
-          opacity: 1,
-          // padding: 0,
-          transform: "translateX(-45vw)",
-          width: window.innerWidth,
-        });
-      } else {
-        store.imgActive = false;
-        gsap.to(image.value, {
-          // paddingTop: "200px",
-          // opacity: 0.2,
-          transform: "translateX(-17.5vw)",
-
-          width: window.innerWidth * 0.45,
-        });
-      }
-    },
-    onUpdate: (self) => {},
-  });
+  // setTimeout(() => {
+  //   ScrollTrigger.create({
+  //     trigger: trigger.value,
+  //     start: "top",
+  //     srub: 0,
+  //     markers: true,
+  //     onToggle: (self) => {
+  //       if (self.isActive) {
+  //         store.imgActive = true;
+  //         gsap.to(image.value, {
+  //           // transform: "translateX(-50vw)",
+  //           width: window.innerWidth,
+  //         });
+  //       } else {
+  //         store.imgActive = false;
+  //         gsap.to(image.value, {
+  //           // transform: "translateX(-50%)",
+  //           width: window.innerWidth * 0.5,
+  //         });
+  //       }
+  //     },
+  //     onUpdate: (self) => {},
+  //   });
+  // }, 0);
 });
 </script>
 
 <template>
-  <div class="pb-12">
+  <div>
     <div
       ref="trigger"
-      class="relative w-full h-[100vh] text-black mt-12 left-0 top-0 overflow-x-visible"
+      class="relative w-full h-[80vh] text-black overflow-x-visible my-96"
     >
       <p
         v-if="store.imgActive == false"
-        class="fixed flex w-screen p-0 justify-center -translate-x-[50vw] z-60"
+        class="w-full justify-center z-60 text-center -translate-x-1/2 bg-white p-2 -ml-20"
       >
         {{ title }}
       </p>
       <div
         ref="image"
-        class="fixed z-60 w-[45vw] -translate-x-[17.5vw] h-[100vh] opacity-0.2 overflow-visible"
+        class="z-60 w-screen h-full opacity-0.2 -translate-x-1/2 -ml-20 overflow-visible bg-black"
       >
         <div
-          class="flex h-full justify-start items-center content-center flex-wrap"
+          class="flex h-full w-full justify-center items-center content-center flex-wrap"
         >
-          <img class="w-full" src="/assets/images/obama.gif" />
+          <img class="w-[50vw]" loading="lazy" src="/assets/images/obama.gif" />
         </div>
       </div>
     </div>
