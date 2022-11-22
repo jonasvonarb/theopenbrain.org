@@ -1,6 +1,6 @@
 <script setup>
-import { useGeneralStore } from "@/stores";
-const store = useGeneralStore();
+import { useGeneral } from "@/stores";
+const store = useGeneral();
 </script>
 
 <template>

@@ -2,20 +2,24 @@
 import SideBar from "../components/chapter/SideBar.vue";
 import MenuBar from "../components/chapter/MenuBar.vue";
 import OpenCloseButton from "../components/UI/openCloseButton.vue";
+import Text from "../components/chapter/Text.vue";
+import Illustration from "../components/chapter/Illus/Illustration.vue";
 
-import { useGeneralStore } from "@/stores";
+import { useGeneral } from "@/stores";
 
-const store = useGeneralStore();
+const store = useGeneral();
 const { getactiveMenu } = store;
 </script>
 
 <template>
   <div>
-    {{ store }}
     <MenuBar />
     <SideBar />
     <OpenCloseButton :target="'Menu'" pos="left" />
     <OpenCloseButton :target="'Sidebar'" pos="right" />
+    <!-- text -->
+    <Illustration />
+    <Text />
   </div>
 </template>
 

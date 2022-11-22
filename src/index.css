@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  font-size: 62.5%;
+}
+
 .stats {
   bottom: 0;
   top: unset !important;
@@ -23,6 +28,77 @@ input {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 * {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p,
+blockquote,
+button {
+  font-size: 1.6rem;
+  padding-bottom: 3.2rem;
+}
+
+blockquote {
+  padding: 5rem;
+}
+
+.text h1,
+.text h3,
+.text p,
+.text blockquote {
+  padding-left: 15vw;
+}
+
+.text h2 {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.titleNumber {
+  flex-shrink: 0;
+  width: 15vw;
+  height: 3rem;
+  padding-top: 1rem;
+  padding-left: 3rem !important;
+}
+
+/* punkte Text */
+.animationMarker {
+  background-color: black;
+  color: white;
+  padding: 0.25rem 0.7rem 0.3rem 0.7rem;
+  border-radius: 9999px;
+
+}
+
+.punkt {
+  position: absolute;
+  top: -20px;
+  left: 3rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.hoverActive {
+  background-color: salmon;
+  color: black;
+  cursor: default;
 }
