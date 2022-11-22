@@ -1,7 +1,10 @@
 import { defineStore } from "pinia";
-import text from "@/assets/text/textHTML.md?raw";
+import jsonText from "@/assets/text/text.json";
 import { saveAs } from "file-saver";
-import { sectionAdder } from "../helper/sections";
+import { useAnimation } from "./animation";
+import { useCom } from "./comments";
+
+export { useAnimation, useCom };
 
 export const useGeneral = defineStore("main", {
   state: () => ({ activeMenu: false, activeSidebar: false, count: 0 }),
@@ -24,104 +27,156 @@ export const useGeneral = defineStore("main", {
 
 export const useText = defineStore("text", {
   state: () => ({
-    text: localStorage.text ? localStorage.text : text,
-    source: text,
-    selectionText: { selected: [] },
+    text: localStorage.text ? JSON.parse(localStorage.sections) : jsonText,
+    source: jsonText,
+    selectionIds: localStorage.selection
+      ? JSON.parse(localStorage.selection)
+      : [],
+    currentId: null,
   }),
+
   getters: {},
   actions: {
-    saveLocalstorage() {
-      let data = this.selectionText["selected"];
-      console.log(data);
-
-      var blob = new Blob(
-        [
-          // localStorage.text,
-          data,
-        ],
-        {
-          type: "text/json;charset=utf-8",
-        }
-      );
-      saveAs(blob, "static.txt");
-    },
+    // saveLocalstorage() {
+    //   let data = this.selectionText["selected"];
+    //   console.log(data);
+    //   var blob = new Blob(
+    //     [
+    //       data,
+    //     ],
+    //     {
+    //       type: "text/json;charset=utf-8",
+    //     }
+    //   );
+    //   saveAs(blob, "static.txt");
+    // },
     clearTextMarking() {
-      localStorage.removeItem("text");
-      this.updateText(this.source);
+      localStorage.setItem("sections", JSON.stringify(this.source));
+      localStorage.setItem("comments", JSON.stringify({}));
+      var localSource = localStorage.getItem("sections");
+      this.updateText("sections", JSON.parse(localSource).sections);
+      localStorage.removeItem("selection");
+      this.selectionIds = [];
     },
-    updateText(textNew) {
-      this.text = textNew;
-      localStorage.setItem("text", textNew);
+    updateText(part, textNew) {
+      if (part != "*") {
+        this.text[part] = textNew;
+        let _newLoaclText = JSON.stringify(this.text);
+        localStorage.setItem("sections", _newLoaclText);
+      } else {
+        this.text = textNew;
+      }
+    },
+    removeSelection(target) {
+      const parent = target.parentElement;
+      const id = parent.id;
+      const markId = target.id;
+      const sectionId = target.parentNode.closest("SECTION").id;
+
+      let newString = remove(parent.innerHTML, target.outerHTML, markId);
+
+      let entries = this.updateSectionsObj(
+        this.text.sections,
+        newString,
+        id,
+        sectionId
+      );
+
+      function remove(init, str, id) {
+        let classList = target.classList;
+        let newStr = str
+          .replace('<mark id="' + id + '" class="' + classList + '">', "")
+          .replace("</mark>", "");
+        var result = init.replace(str, newStr);
+        return result;
+      }
+
+      let punkt = document.getElementById("punkt-" + markId);
+      this.updateText("text", entries);
+      //update selctions in store
+      var _newSelection = this.selectionIds.filter((i) => {
+        return i != markId.replace("highlight-", "");
+      });
+      this.selectionIds = _newSelection;
+
+      localStorage.setItem("selection", JSON.stringify(_newSelection));
     },
     addSelection(selection) {
-      console.log("test");
       const _selectionString = selection.toString();
       const minLength = 10;
-      if (_selectionString.length <= minLength) return;
       const id = selection.baseNode.parentNode.id;
-      const storedSelection = this.selectionText.selected;
 
-      if (!storedSelection[id]) {
-        storedSelection[id] = {
-          id: id,
-          selection: [_selectionString],
-        };
-      } else {
-        storedSelection[id].selection.push(_selectionString);
-      }
+      if (
+        _selectionString.length <= minLength ||
+        selection.anchorNode != selection.extentNode ||
+        id.includes("highlight")
+      )
+        return;
 
-      let target = selection.anchorNode.parentElement.outerHTML,
-        _Array = storedSelection[id].selection;
-
-      let _target = target;
+      const sectionId = selection.baseNode.parentNode.closest("SECTION").id;
       let newString;
+      let storedSelection = {
+        id: id,
+        selection: _selectionString,
+      };
 
-      for (var i = 0; i < _Array.length; i++) {
-        let positionMark = _target.indexOf(_Array[i]);
-        let lengthMark = _Array[i].length;
-        newString = add(target, _Array[i], positionMark, lengthMark);
-      }
+      let target = selection.anchorNode.parentElement.innerHTML,
+        _selection = storedSelection.selection,
+        _target = target,
+        positionMark = _target.indexOf(_selection),
+        lengthMark = _selection.length;
+
+      newString = add(_target, _selection, positionMark, lengthMark);
 
       function add(init, str, index, length) {
         var result =
           init.slice(0, index) +
-          "<mark>" +
+          "<mark id=highlight-" +
+          id +
+          "-" +
+          index +
+          " class=markerComment>" +
           str +
           "</mark>" +
-          init.slice(index + str.length, init.length);
-
+          init.slice(index + length, init.length);
         return result;
       }
-
-      let posNewParagrahp = this.text.indexOf(id);
-      let oldString = this.text.substr(
-        posNewParagrahp - 7,
-        newString.length - 13
+      let entries = this.updateSectionsObj(
+        this.text.sections,
+        newString,
+        id,
+        sectionId
       );
-      this.selectionText["selected"] = JSON.parse(
-        JSON.stringify(storedSelection)
-      );
+      const animationStore = useAnimation();
 
-      const newText = this.text.replace(oldString, newString);
-
-      this.updateText(newText);
+      const commentStore = useCom();
+      var _baseId = id.replace("highlight-", "");
+      this.updateText("text", entries);
+      this.selectionIds.push(_baseId + "-" + positionMark);
+      localStorage.setItem("selection", JSON.stringify(this.selectionIds));
     },
-  },
-});
+    updateSectionsObj(sections, newString, id, sectionId) {
+      let entries = Object.entries(sections);
 
-export const useAnimation = defineStore("animation", {
-  state: () => ({ hoverActive: null }),
-  getters: {},
-  actions: {
-    enterHoverPunkt(id) {
-      this.hoverActive = id;
-      document.getElementById(id).classList.add("hoverActive");
-      document.getElementById("punkt-" + id).classList.add("hoverActive");
-    },
-    leaveHoverPunkt(id) {
-      this.hoverActive = null;
-      document.getElementById(id).classList.remove("hoverActive");
-      document.getElementById("punkt-" + id).classList.remove("hoverActive");
+      //check sections
+      for (var i = 0; i < entries.length; i++) {
+        let section = entries[i][1];
+        let _sectionId = section.id;
+        if (sectionId == _sectionId) {
+          //check paragraphs
+          let subEntries = Object.entries(section.paragraphs);
+          for (var i = 0; i < subEntries.length; i++) {
+            let paragraph = subEntries[i][1];
+            let _paragraphId = paragraph.id;
+            if (id == _paragraphId) {
+              paragraph.text = newString;
+            } else if (id == _paragraphId) {
+            }
+          }
+        } else if (id == _sectionId) {
+        }
+      }
+      return entries;
     },
   },
 });

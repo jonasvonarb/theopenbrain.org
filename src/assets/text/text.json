@@ -1,17 +1,15 @@
 {
-  "intor": [
+  "intro": [
     {
       "id": "638ccd51-c31a-4f74-b3a5-ab50f9f5dd6f",
       "title": "The retina",
       "paragraphs": [
         {
           "id": "cc5d036e-4376-406e-889c-acdc2bdfc61c",
-          "type": "paragraph",
           "text": "Seeing starts in our eyes. Is this because something from the outside world is passing into our eyes, or because something is leaving our eyes and interacting with the outside world. Alcmeon (Greece, 5th century BC), thought of the eye as a lantern, emitting an internally generated fire that was required for seeing. Plato and others would refine this theory to incorporate both an internally generated visual fire that leaves the eye, as well as spirits emanating from objects in the world, with these two energies interacting before returning to the eye to enable vision. As an outcome of this idea, Plato argued that we dream during sleep when the internal fire collides with our closed eyelids and bounces back into our body."
         },
         {
           "id": "3d6acf13-1a03-4921-b9dc-804044e9c26e",
-          "type": "paragraph",
           "text": "Based on such classical ideas, the extramission theory of vision would remain popular for over a thousand years, and only start to show cracks during the ‘Islamic Golden Age’ when people like ibn Sina and al Razi would describe how external light could alter pupil size or otherwise cause visual disturbances, arguing in favour of a pure intromission theory. Still, it would take many more years until the retina was identified as the neural tissue in the eye, and even more time to understand how it converts light into an electro-chemical signal, processes incoming visual scenes, and relays this information to the rest of the brain. In this chapter, we set out to tell the story of the eye and retina."
         }
       ]
@@ -19,28 +17,15 @@
   ],
   "sections": [
     {
-      "id": "",
-      "title": "",
-      "paragraphs": [
-        {
-          "id": "",
-          "type": "paragraph",
-          "text": ""
-        }
-      ]
-    },
-    {
       "id": "e1ecf632-cc1d-4cd1-a034-fe2af2e77c03",
       "title": "Story of the eye",
       "paragraphs": [
         {
           "id": "5ea404ac-2fcb-4102-89e9-febe1ecc71a0",
-          "type": "paragraph",
           "text": "It is believed that the ancient Greeks were the first to dissect animal eyes, with Alcmeon being considered one of the first to perform dissections for the purpose of studying anatomy. Based on gross anatomy, the Hippocratic school split the eye into 3 layers (or tunics): sclera, uvea and retina. Since then, a much clearer picture has emerged. The eye is a spherical structure. The front of the eye contains the cornea, a clear crystalline material that enables passage of light into the eye. The back of the eye is made up of several layers, the outermost being a white fibrous layer called the sclera. Moving inwards from the sclera comes the choroid, a layer important for vascularization, the retina pigment epithelium, a layer important for its complex interactions with photoreceptors, and the retina. Aside from these <span id='animation-1-structures' class='animationMarker'>structures</span>, there is also a lens near the front half of the eye, whose shape can be adjusted by the ciliary muscles to change the focus of the eye. There are also two fluid filled chambers, the anterior and posterior chambers, that contain aqueous and vitreous humour, respectively. These fluids maintain pressure in the eye and circulate important nutrients and changes to the production and exchange of these fluids can lead to changes in intraocular pressure which are associated with ocular health issues, such as glaucoma."
         },
         {
           "id": "3b21964b-d33f-4292-ad5f-642fe66e49bd",
-          "type": "paragraph",
           "text": "Light enters the eye at the cornea. The cornea has a higher refractive index with respect to air, and this causes the direction of incoming light to be altered. The cornea provides more refractive power to the eye than the lens, and this can be seen if you open your eyes under water, as water and the cornea have similar refractive indices. Importantly, the curvature of the cornea is stronger in its center compared its periphery, which helps it act like a corrected spherical lens to ensure incoming light rays are brought to a common focus. Light then passes through the aqueous humor, and some photons make their way through the pinhole in the center of the iris – the pupil. Pigment in the iris gives us our ‘eye color’. Light then passes through the lens, which has a graded index to help focus rays entering various parts of the lens onto the same location of the retina. Additionally, to appropriately focus the incoming light onto the retina, the thickness of the lens can be adjusted depending on the distance between the eye and the object being viewed. This thickening/thinning of the lens is called accommodation and is controlled by the ciliary muscles. Accommodation generally occurs in tandem with vergence eye movements, which are correlated movements between the eyes that ensure focus is properly obtained. Finally, the incoming image is projected through the vitreous humour and onto the retina, the light sensing tissue that lines the back of the eye."
         },
         {
@@ -50,7 +35,6 @@
         },
         {
           "id": "a94004c6-a34a-4f26-8ca5-aee1e9f3780b",
-          "type": "paragraph",
           "text": "Alas, despite our body’s best laid plans, due to a variety of developmental and age-related issues, our eyes often improperly focus images on the retina, resulting in impaired vision. Two common issues result from the image being focused either in front of (myopia) or behind (hyperopia) the retina. Myopia, also commonly referred to as nearsightedness, results in images that are far away from the viewer appearing blurry. In contrast, hyperopia, commonly referred to as farsightedness, results in images that are nearby being blurry. Another common refractive issue is astigmatism, which results in uneven focus of the incoming image on the retina, due to irregular curvature of the cornea or lens abnormalities. Finally, as we age, the lens becomes less elastic and the ciliary muscles become less effective at accommodating different focal planes, leading to presbyopia, which tends to focus images behind the retina. In general, most types of refractive errors can be addressed with corrective lenses."
         },
         {
@@ -66,7 +50,6 @@
       "paragraphs": [
         {
           "id": "31b39c96-aa87-49df-b458-32ccfcb72b9d",
-          "type": "paragraph",
           "text": "The retina is often described anatomically in two orthogonal manners: in cross-section (referred to as “vertically”) and across its planar surface (referred to as “laterally”). Here we outline both schemata, before providing a detailed overview of the cell types and synaptic connectivity layout in the retina."
         },
         {
@@ -77,7 +60,7 @@
               "paragraphs": [
                 {
                   "id": "8998fdf5-42b8-4732-b84c-724e2872e146",
-                  "type": "paragraph",
+
                   "text": "The retina is comprised of 5 neuronal classes (photoreceptors, horizontal cells, bipolar cells amacrine cells, and ganglion cells), as well as various glial and vascular cells. Cell bodies of neurons in the vertebrate retina are grouped into three distinct layers, separated by two synaptic layers. Light passes through the entire retina before being focused to the deepest (i.e. closest to the back of the eye) layer of the retina, where specialized photon detectors called photoreceptors reside. These neurons transduce absorbed photons into electric signals. Photoreceptors extend nerve terminals into a synaptic layer called the outer plexiform layer, where they synapse with cells called bipolar cells and horizontal cells. The bipolar and horizontal cell bodies, along with those of amacrine cells, are contained within the inner nuclear layer. Bipolar cells relay signals from photoreceptors to the inner plexiform layer where they synapse with amacrine and retinal ganglion cells. These latter neurons are the sole output of the retina and reside in a ganglion cell layer which abuts the vitreous humour. Axons from the ganglion cells get bundled together into the optic nerve, which ‘dives’ back through the entire retina before leaving the eye, resulting in a blind-spot in each eye’s field of view."
                 },
                 {
@@ -87,7 +70,7 @@
                 },
                 {
                   "id": "fa9732d3-1ee5-44a7-ba03-775434766b4b",
-                  "type": "paragraph",
+
                   "text": "The retina’s job is to convert photons into ethologically relevant elements of the visual scene. It does this by connecting photoreceptors to multiple retinal circuits, each extracting specific element of the visual scene, before sending these processed signals to the brain for further processing. Accordingly, the route taken by the visual signal from photoreceptor to ganglion cell varies depending on the ‘type’ of retinal ganglion cell being considered, as will be discussed below in detail. In brief, a retinal ganglion cell receives input from one or several photoreceptors, mostly located above its dendritic tree, with these photoreceptor signals being relayed via bipolar cells. Signal transmission from photoreceptors to bipolar cells is modulated by horizontal cells, whereas signal transmission from bipolar cells to ganglion cells is modulated by amacrine cells. In turn, ganglion cells project their axons to various higher brain regions, where these visual signals underlie a variety of functions."
                 },
                 {
@@ -103,12 +86,12 @@
               "paragraphs": [
                 {
                   "id": "0c4a9d17-c64f-4d58-9c43-18a802766034",
-                  "type": "paragraph",
+
                   "text": "The retina’s vertically organization wires photoreceptors to ganglion cells through a mesh of bipolar, horizontal and amacrine cells. The field of view of each neuron grows at each level of the vertical hierarchy and culminates in ganglion cells which each ‘see’ a piece of the visual world equal to the patch of photoreceptors to which its amacrine and bipolar cells are connected. This visible path of the world is determined by the size of a ganglion cell’s dendritic tree and is called its ‘receptive field’. Extracting visual information from all parts of the visual field requires that each microcircuit be replicated laterally over the entire retinal surface. Such patterns of laterally tiled circuits (and their component cells) are referred to as mosaics."
                 },
                 {
                   "id": "ae7743e4-146a-4747-8df3-d4f95887a930",
-                  "type": "paragraph",
+
                   "text": "The concept of mosaics was formulated by RW Rodieck, who posited that neurons of the same type – spaced evenly apart – would form points of a hexagon along the lateral surface of the retina. The distance between adjacent somata of the same cell type, termed the exclusion zone, is usually dictated by the extent of a cell’s dendritic field. Mosaics arise during development when dendrites from the two adjacent neurons of the same type repel one another. The repulsion only happens between neurons of the same type. The consequence of this arrangement are two-fold: First, the nearest neighbors of a given retinal neuron will belong to different types of cells (except for photoreceptors which have very small receptive fields); Second, the dendrites of same-type neighbours will overlap minimally, meaning a cell type effectively tiles the retina (and visual field) with minimal redundancy. While mosaics are a general principle in lateral organization of the retina, this does not mean that spacing between neurons is fixed across the entire retina. For instance, in humans and many other primate retinae, dendritic fields get increasingly larger from central to peripheral visual field, meaning that the spacing between cells in each mosaic become larger. Additionally, in at least some vertebrate species, certain retinal cell types are more numerous in different portions of the retina, corresponding to specific ethological needs of the animal to put distinct feature detectors in certain parts of the visual field."
                 }
               ]
@@ -119,7 +102,7 @@
               "paragraphs": [
                 {
                   "id": "8ef9f650-c325-4b70-b507-fe62b0ed5a67",
-                  "type": "paragraph",
+
                   "text": "Each retinal cell class (i.e. photoreceptors, horizontal cells, bipolar cells, amacrine cells, ganglion cells) is comprised of various cell types (i.e. specific cell types). In general, cell types serve unique functional roles within a given neuron class. Evidence for this division of cell classes into subtypes was evident from the earliest anatomical studies on the retina: for instance, drawings by the anatomist Max Schultz of photoreceptors showed cells with two distinct morphologies - rods and cones. Below, we quickly introduce the different retinal classes, and each of these will be discussed in greater detail later in the chapter."
                 },
                 {

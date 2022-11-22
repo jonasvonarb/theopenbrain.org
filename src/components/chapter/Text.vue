@@ -2,25 +2,26 @@
 import { computed } from "@vue/reactivity";
 import Markdown from "vue3-markdown-it";
 import { useText } from "@/stores";
-import { useAnimation } from "@/stores";
+import { useAnimation } from "@/stores/animation";
+import { useCom } from "@/stores/comments";
 
 import { onMounted } from "vue";
 
-import { marker, pointAdder } from "@/helper/marking";
-import { sectionAdder } from "@/helper/sections";
+import { marker, pointAdderAnimation } from "@/helper/marking";
+import BreakImages from "./text/BreakImages.vue";
+import Comment from "./text/Comment.vue";
+import Points from "@/components/UI/Points.vue";
 
 const textStore = useText();
+const animationStore = useAnimation();
+const commentStore = useCom();
 const options = { breaks: true, html: true };
+const text = textStore.text;
+
+// const refSource = ref(0);
 
 const source = computed(() => {
   let _textStore = textStore.text;
-  _textStore = textStore.text.replaceAll("<h1", "<main id ='text'><h1");
-  _textStore = _textStore.replaceAll("</div>", "</main></div>");
-  if (_textStore.includes("<section ")) return _textStore;
-  console.log("added sections");
-  _textStore = _textStore.replaceAll("<h2", "<section><h2");
-  _textStore = _textStore.replaceAll("<section><h2", "</section><section><h2");
-
   return _textStore;
 });
 
@@ -28,13 +29,9 @@ onMounted(() => {
   let wait = setInterval(() => {
     const text = document.getElementById("text");
     const container = document.getElementById("container");
-
     if (text) {
       clearInterval(wait);
-      console.log(container);
-      sectionAdder(text, { wait });
-      pointAdder();
-      textStore.updateText(document.getElementById("text").innerHTML);
+      pointAdderAnimation();
       marker(source, container);
     }
   }, 1);
@@ -43,16 +40,36 @@ onMounted(() => {
 
 <template>
   <div>
-    <Markdown
-      id="container"
-      class="text w-[55vw] overflow-x-scroll absolute top-6 right-0 pr-24 z-10"
-      :source="source"
-      v-bind="options"
-    />
-    <div
-      id="containerPunkt"
-      class="w-[55vw] absolute top-6 right-0 pr-24 z-10"
-    ></div>
+    <div id="container">
+      <main
+        id="text"
+        class="text w-[55vw] overflow-y-visible overflow-x-visible absolute top-6 right-0 pr-24 z-30"
+      >
+        <section
+          v-for="(section, index) in text['sections']"
+          :id="section.id"
+          class="overflow-y-visible"
+        >
+          <h2>
+            <span class="w-[15vw] pl-5 shrink-0">{{
+              "Chapter " + (index + 1)
+            }}</span>
+            {{ section.title }}
+          </h2>
+          <template v-for="paragraph in section['paragraphs']">
+            <p
+              v-if="paragraph?.type != 'break'"
+              v-html="paragraph.text"
+              :id="paragraph.id"
+            />
+            <BreakImages v-else />
+          </template>
+        </section>
+      </main>
+    </div>
+    <Points />
+
+    <Comment v-if="commentStore.activeCom" />
   </div>
 </template>
 
