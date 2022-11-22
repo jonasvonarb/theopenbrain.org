@@ -2,11 +2,17 @@
   <!-- subsection -->
   <div
     class="sub"
-    v-for="subsections in paragraph.subsection"
+    v-for="(subsections, subIndex) in paragraph.subsection"
     :id="subsections.id"
   >
     <!-- subsection title -->
-    <h3 class="subT">{{ subsections.title }}</h3>
+
+    <h3 class="subT">
+      <span class="absolute w-20 -left-0">{{
+        index + "." + (subIndex + 1)
+      }}</span>
+      {{ subsections.title }}
+    </h3>
     <!-- subsection paragraph -->
     <template v-for="subParagraph in subsections.paragraphs">
       <template v-if="subParagraph?.type != 'break'">
@@ -30,6 +36,7 @@ import BreakImages from "./BreakImages.vue";
 
 const props = defineProps({
   paragraph: Object,
+  index: Number,
 });
 </script>
 

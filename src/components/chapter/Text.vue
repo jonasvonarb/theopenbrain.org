@@ -25,7 +25,6 @@ onMounted(() => {
   let wait = setInterval(() => {
     const text = document.getElementById("text");
     const container = document.getElementById("container");
-    console.log(source.value.sections);
     if (text) {
       clearInterval(wait);
       pointAdderAnimation();
@@ -36,24 +35,21 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="container" class="w-screen h-screen">
-    <Points />
-    <Comment v-if="commentStore.activeCom" />
+  <div id="container" class="w-screen h-screen bg-white">
     <main
       id="text"
-      class="text w-[55vw] overflow-y-visible overflow-x-visible absolute top-12 right-0 pr-24 z-30"
+      class="text w-1/2 overflow-y-visible overflow-x-visible absolute top-0 right-0 z-30 border-l border-black tracking-wide"
     >
       <!-- intro -->
       <section
         v-for="(section, index) in text['intro']"
         :id="section.id"
-        class="overflow-y-visible"
+        class="overflow-y-visible m-20"
       >
         <h1
           :class="store.imgActive ? 'opacity-0' : ''"
-          class="durattion-500 z-40 text-black opacity-100"
+          class="z-40 text-black opacity-100"
         >
-          <span class="w-[10vw] pl-5 shrink-0"></span>
           {{ section.title }}
         </h1>
         <p v-for="paragraph in section.paragraphs" :id="paragraph.id">
@@ -64,11 +60,13 @@ onMounted(() => {
       <div
         v-for="(section, index) in text['sections']"
         :id="'the-eye-and-retina-' + (index + 1)"
-        class=""
+        class="m-20 mt-0 pt-20"
       >
         <Section :section="section" :index="index" />
       </div>
     </main>
+    <Points />
+    <Comment v-if="commentStore.activeCom" />
   </div>
 </template>
 

@@ -6,7 +6,11 @@ import Menu from "./components/navigation/Menu.vue";
 
 <template>
   <div class="text-base">
-    <RouterView class="w-full mt-body z-0" />
+    <RouterView class="w-full mt-body z-0" v-slot="{ Component }">
+      <transition name="fade">
+        <component :is="Component" />
+      </transition>
+    </RouterView>
     <Menu />
   </div>
 </template>

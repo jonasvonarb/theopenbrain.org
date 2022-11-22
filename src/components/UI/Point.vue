@@ -30,14 +30,15 @@ onMounted(() => {
 
 const setPosition = (id) => {
   let wait = setInterval(() => {
-    const element = document.getElementById(id);
-    if (!element) return;
-    clearInterval(wait);
-    var y = element.getBoundingClientRect().y;
-
-    pos.value = window.scrollY + y + "px";
-    point.value.style.top = pos.value;
-    point.value.style.display = "block";
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (!element) return;
+      var y = element.getBoundingClientRect().y;
+      pos.value = window.scrollY + y + "px";
+      point.value.style.top = pos.value;
+      point.value.style.display = "block";
+      clearInterval(wait);
+    }, 100);
   }, 1);
 };
 </script>
