@@ -2,9 +2,10 @@
 
 <template>
   <main
-    class="p-5 font-mono text-white bg-gradient-to-tr from-orange-600 to-slate-500"
+    class="p-20 font-mono text-white bg-gradient-to-tr from-orange-600 to-slate-500 w-screen h-screen"
   >
-    Home
+    This Will be the home of TheOpenBrain.org <br />
+    / We hope we will see you soon with some updates!
   </main>
 </template>
 

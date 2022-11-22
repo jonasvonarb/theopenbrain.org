@@ -5,11 +5,9 @@ import Header from "./components/Navigation/Header.vue";
 
 <template>
   <div>
-    <!-- <Header /> -->
-    <RouterView />
+    <Header v-if="$route.name != 'landing'" />
+    <RouterView class="fixed h-body w-full mt-body" />
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
