@@ -17,12 +17,12 @@ const store = useGeneral();
     :class="
       store.activeMenu
         ? route.name != 'home'
-          ? 'w-[35vw] bg-slate-800 text-white overflow-y-scroll overflow-x-hidden'
+          ? 'w-[35vw] bg-black text-white overflow-y-scroll overflow-x-hidden'
           : 'w-screen text-black overflow-x-scroll overflow-y-hidden'
-        : 'w-[20px] bg-slate-800 text-white justify-center'
+        : 'w-[20px] bg-black text-white justify-center'
     "
   >
-    <div v-if="store.activeMenu" class="fixed flex gap-5 px-12 pt-2 z-50">
+    <div v-if="store.activeMenu" class="fixed flex gap-5 px-12 pt-2 z-40">
       <RouterLink to="/home">Home</RouterLink>
       <RouterLink to="/chapter">Chapter</RouterLink>
     </div>
@@ -53,7 +53,7 @@ const store = useGeneral();
     <OpenCloseButton
       :text="'O'"
       :target="'Menu'"
-      class="fixed hover:bg-slate-500 h-full w-[20px] flex justify-center items-center left-0 top-0 duration-500 overflow-hidden"
+      class="fixed hover:bg-black h-full w-[20px] flex justify-center items-center left-0 top-0 duration-500 overflow-hidden"
       :class="!store.activeMenu ? '-left-[0]' : '-left-[20px]'"
     />
     <OpenCloseButton

@@ -15,10 +15,6 @@ const { getactiveMenu } = store;
 
 <template>
   <div>
-    <!-- <MenuBar /> -->
-    <!-- <SideBar /> -->
-
-    <!-- <OpenCloseButton :target="'Sidebar'" pos="right" /> -->
     <div
       class="fixed z-50 bottom-2 flex justify-end w-full"
       :class="store.imgActive ? 'opacity-0' : ''"
@@ -29,7 +25,7 @@ const { getactiveMenu } = store;
     </div>
     <ExportField />
     <!-- text -->
-    <Illustration />
+    <!-- <Illustration /> -->
     <Text />
   </div>
 </template>
