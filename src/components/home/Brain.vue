@@ -65,7 +65,7 @@ export default {
     document.body.appendChild(stats.dom).classList.add("stats");
 
     /* Light */
-    const light = new THREE.AmbientLight(16777215, 0.2);
+    const light = new THREE.AmbientLight(16777215, 1);
     light.castShadow = true;
     scene.add(light);
     const pointLight1 = new THREE.PointLight(16069427, 5, 500);

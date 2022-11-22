@@ -2,13 +2,35 @@
   "Part7": {
     "index": 1,
     "title": "Introduction",
-    "parts": []
+    "parts": [
+      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+      "Aliquam tincidunt mauris eu risus.",
+      "Vestibulum auctor dapibus neque.",
+      "Nunc dignissim risus id metus.",
+      "Cras ornare tristique elit.",
+      "Vivamus vestibulum ntulla nec ante.",
+      "Praesent placerat risus quis eros.",
+      "Fusce pellentesque suscipit nibh.",
+      "Integer vitae libero ac risus egestas placerat.",
+      "Vestibulum commodo felis quis tortor.",
+      "Ut aliquam sollicitudin leo.",
+      "Cras iaculis ultricies nulla.",
+      "Donec quis dui at dolor tempor interdum."
+    ]
   },
   "Part8": {
     "index": 2,
     "title": "Synapsis Transition",
     "image": "../images/iamge2",
-    "parts": []
+    "parts": [
+      "Praesent placerat risus quis eros.",
+      "Fusce pellentesque suscipit nibh.",
+      "Integer vitae libero ac risus egestas placerat.",
+      "Vestibulum commodo felis quis tortor.",
+      "Ut aliquam sollicitudin leo.",
+      "Cras iaculis ultricies nulla.",
+      "Donec quis dui at dolor tempor interdum."
+    ]
   },
   "Part9": {
     "index": 3,
@@ -29,16 +51,38 @@
   "Part10": {
     "index": 4,
     "title": "Movement",
-    "parts": []
+    "parts": [
+      "Cras ornare tristique elit.",
+      "Vivamus vestibulum ntulla nec ante.",
+      "Praesent placerat risus quis eros.",
+      "Fusce pellentesque suscipit nibh."
+    ]
   },
   "Part11": {
     "index": 5,
     "title": "Memory and language",
-    "parts": []
+    "parts": [
+      "Cras ornare tristique elit.",
+      "Vivamus vestibulum ntulla nec ante.",
+      "Praesent placerat risus quis eros.",
+      "Fusce pellentesque suscipit nibh.",
+      "Integer vitae libero ac risus egestas placerat.",
+      "Vestibulum commodo felis quis tortor.",
+      "Ut aliquam sollicitudin leo.",
+      "Cras iaculis ultricies nulla."
+    ]
   },
   "Part12": {
     "index": 6,
     "title": "Diseases of the Nervous System",
-    "parts": []
+    "parts": [
+      "Aliquam tincidunt mauris eu risus.",
+      "Vestibulum auctor dapibus neque.",
+      "Nunc dignissim risus id metus.",
+      "Cras ornare tristique elit.",
+      "Vivamus vestibulum ntulla nec ante.",
+      "Praesent placerat risus quis eros.",
+      "Fusce pellentesque suscipit nibh."
+    ]
   }
 }

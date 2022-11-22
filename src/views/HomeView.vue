@@ -4,8 +4,8 @@ import Menu from "../components/navigation/Menu.vue";
 </script>
 
 <template>
-  <main class="font-mono text-white bg-black">
-    <!-- <Brain /> -->
+  <main class="font-mono text-black bg-gray-700">
+    <Brain class="" />
   </main>
 </template>
 

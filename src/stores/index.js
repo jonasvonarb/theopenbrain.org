@@ -10,6 +10,7 @@ export { useAnimation, useCom };
 export const useGeneral = defineStore("main", {
   state: () => ({
     activeMenu: false,
+    activeMenuIndex: null,
     activeSidebar: false,
     activeImportMenu: false,
     count: 0,
@@ -28,6 +29,13 @@ export const useGeneral = defineStore("main", {
     },
     toggleImport() {
       this.activeImportMenu = !this.activeImportMenu;
+    },
+    changeMenuIndex(index) {
+      if (this.activeMenuIndex == index) {
+        this.activeMenuIndex = null;
+      } else {
+        this.activeMenuIndex = index;
+      }
     },
     toggle(_target) {
       this[_target] = !this[_target];
