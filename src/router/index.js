@@ -40,7 +40,7 @@ const router = createRouter({
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
-      if (from.name) {
+      if (from.name == to.name) {
         return {
           el: to.hash,
           behavior: "smooth",
@@ -60,6 +60,7 @@ const router = createRouter({
   },
 });
 router.beforeEach((to, from) => {
+  console.log(document.getElementById("sceneBrain"));
   const store = useGeneral();
   if (to.name == "home") {
     store.activeMenu = true;

@@ -3,15 +3,63 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "DMMono";
-  src: url("assets/fonts/DM_Mono/DMMono-Light.ttf") format("truetype");
-  /* Safari, Android, iOS */
+  font-family: "DM Mono";
+  src: url("assets/fonts/DM_Mono_Web/DMMono-Italic.woff2") format("woff2"),
+    url("assets/fonts/DM_Mono_Web/DMMono-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Mono";
+  src: url("assets/fonts/DM_Mono_Web/DMMono-MediumItalic.woff2") format("woff2"),
+    url("assets/fonts/DM_Mono_Web/DMMono-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Mono";
+  src: url("assets/fonts/DM_Mono_Web/DMMono-LightItalic.woff2") format("woff2"),
+    url("assets/fonts/DM_Mono_Web/DMMono-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Mono";
+  src: url("assets/fonts/DM_Mono_Web/DMMono-Regular.woff2") format("woff2"),
+    url("assets/fonts/DM_Mono_Web/DMMono-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Mono";
+  src: url("assets/fonts/DM_Mono_Web/DMMono-Light.woff2") format("woff2"),
+    url("assets/fonts/DM_Mono_Web/DMMono-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Mono";
+  src: url("assets/fonts/DM_Mono_Web/DMMono-Medium.woff2") format("woff2"),
+    url("assets/fonts/DM_Mono_Web/DMMono-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 html,
 body {
   font-size: 62.5%;
-  font-family: "DMMono";
+  font-family: "DM Mono";
 }
 
 img {
@@ -154,5 +202,25 @@ mark {
 
 .fade-enter-from,
 .fade-leave-to {
-  opacity: 0;
+  opacity: 1;
+}
+
+.outLeft-leave-active,
+.outLeft-enter-active {
+  transition: opacity 0.7s ease;
+}
+
+.outLeft-enter-from,
+.outLeft-leave-to {
+  transform: translateX(-100vw)
+}
+
+.outLeft-leave-active,
+.outLeft-enter-active {
+  transition: opacity 0.7s ease;
+}
+
+.outLeft-enter-from,
+.outLeft-leave-to {
+  transform: translateX(-100vw)
 }

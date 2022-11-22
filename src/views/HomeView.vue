@@ -5,21 +5,8 @@ import Menu from "../components/navigation/Menu.vue";
 
 <template>
   <main class="font-mono text-black bg-gray-700">
-    <Brain class="" />
+    <!-- <Brain class="" /> -->
   </main>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      data: null,
-      database: null,
-    };
-  },
-  mounted() {},
-  methods: {},
-};
-</script>
 
 <style scoped></style>

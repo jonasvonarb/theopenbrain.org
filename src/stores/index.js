@@ -15,6 +15,9 @@ export const useGeneral = defineStore("main", {
     activeImportMenu: false,
     count: 0,
     imgActive: false,
+    currentSubChapter: null,
+    progress: 0,
+    isScrolling: false,
   }),
   getters: {
     getactiveMenu: (state) => state.activeMenu,
