@@ -3,7 +3,7 @@
   <section :id="section.id" class="overflow-y-visible">
     <!-- section titel -->
     <h2
-      class="p-5 border border-black bg-white rounded-full absolute -translate-x-[7.5rem] -translate-y-[1.25rem] w-20 h-20 flex justify-center"
+      class="p-5 border border-black bg-white rounded-full absolute -translate-x-[10.5rem] -translate-y-[1.25rem] w-20 h-20 flex justify-center"
     >
       {{ index + 1 }}
     </h2>

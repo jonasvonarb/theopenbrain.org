@@ -1,5 +1,5 @@
 <template>
-  <div ref="renderScreen" class="fixed top-0 left-0 w-full h-full"></div>
+  <div ref="renderScreen" if="sceneBrain" class="fixed top-0 left-0 w-full h-full"></div>
 </template>
 
 <script>
@@ -39,6 +39,9 @@ export default {
     },
   },
 
+  beforeUnmount() {
+    window.removeEventListener("resize", this.onWindowResize);
+  },
   mounted() {
     /* Scene */
     const scene = new THREE.Scene();
@@ -61,8 +64,8 @@ export default {
     this.$refs.renderScreen.appendChild(canvas);
 
     /* Stats */
-    const stats = Stats();
-    document.body.appendChild(stats.dom).classList.add("stats");
+    // const stats = Stats();
+    // document.body.appendChild(stats.dom).classList.add("stats");
 
     /* Light */
     const light = new THREE.AmbientLight(16777215, 1);
@@ -181,7 +184,7 @@ export default {
 
       requestAnimationFrame(animate);
       renderer.render(scene, camera);
-      stats.update();
+      // stats.update();
     }
     animate();
     window.addEventListener("resize", this.onWindowResize);

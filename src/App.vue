@@ -1,15 +1,19 @@
 <script setup>
 import { RouterView } from "vue-router";
-import Header from "@/components/navigation/Header.vue";
 import Menu from "./components/navigation/Menu.vue";
+import { useGeneral } from "@/stores";
+
+import { Transition } from "vue";
+
+const store = useGeneral();
 </script>
 
 <template>
   <div class="text-base">
     <RouterView class="w-full mt-body z-0" v-slot="{ Component }">
-      <transition name="fade">
-        <component :is="Component" />
-      </transition>
+      <!-- <Transition name="fade"> -->
+      <component :is="Component" />
+      <!-- </Transition> -->
     </RouterView>
     <Menu />
   </div>

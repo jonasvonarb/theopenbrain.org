@@ -13,18 +13,29 @@ const { getactiveMenu } = store;
 </script>
 
 <template>
-  <div
-    class="fixed z-50 bottom-2 flex justify-end w-full"
-    :class="store.imgActive ? 'opacity-0' : ''"
-  >
-    <ActionButton :text="'Clear'" @action="storeText.clearTextMarking()" />
-    <ActionButton :text="'Export'" @action="storeText.saveLocalstorage()" />
-    <ActionButton :text="'Import'" @action="store.toggleImport()" />
+  <div>
+    <div
+      :class="
+        store.isScrolling
+          ? 'backdrop-blur-[40px]	opacity-100	'
+          : 'backdrop-blur-[0] duration-500 opacity-0'
+      "
+      class="pointer-events-none bg-gray-900/20 fixed w-[200vw] h-[200vh] -top-[0] -left-[0] z-[35]"
+    ></div>
+    <!-- text -->
+    <Illustration />
+    <Text />
+
+    <div
+      class="fixed z-40 bottom-2 flex justify-end w-full"
+      :class="store.imgActive ? 'opacity-0' : ''"
+    >
+      <ActionButton :text="'Clear'" @action="storeText.clearTextMarking()" />
+      <ActionButton :text="'Export'" @action="storeText.saveLocalstorage()" />
+      <ActionButton :text="'Import'" @action="store.toggleImport()" />
+    </div>
+    <ExportField />
   </div>
-  <ExportField />
-  <!-- text -->
-  <Illustration />
-  <Text />
 </template>
 
 <script>

@@ -7,7 +7,8 @@ import { useGeneral } from "@/stores";
 gsap.registerPlugin(ScrollTrigger);
 
 const trigger = ref(null);
-const image = ref(null);
+const video = ref(null);
+const videoPlayState = ref(false);
 const store = useGeneral();
 
 const props = defineProps({
@@ -15,30 +16,54 @@ const props = defineProps({
 });
 
 onMounted(() => {
-  // setTimeout(() => {
-  //   ScrollTrigger.create({
-  //     trigger: trigger.value,
-  //     start: "top",
-  //     srub: 0,
-  //     markers: true,
-  //     onToggle: (self) => {
-  //       if (self.isActive) {
-  //         store.imgActive = true;
-  //         gsap.to(image.value, {
-  //           // transform: "translateX(-50vw)",
-  //           width: window.innerWidth,
-  //         });
-  //       } else {
-  //         store.imgActive = false;
-  //         gsap.to(image.value, {
-  //           // transform: "translateX(-50%)",
-  //           width: window.innerWidth * 0.5,
-  //         });
-  //       }
-  //     },
-  //     onUpdate: (self) => {},
-  //   });
-  // }, 0);
+  var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
+  let optionsLazy = {
+    rootMargin: "0px",
+    threshold: 0.0001,
+  };
+
+  if ("IntersectionObserver" in window) {
+    var lazyVideoObserver = new IntersectionObserver(function (
+      entries,
+      observer
+    ) {
+      entries.forEach(function (video) {
+        if (video.isIntersecting) {
+          for (var source in video.target.children) {
+            var videoSource = video.target.children[source];
+            if (
+              typeof videoSource.tagName === "string" &&
+              videoSource.tagName === "SOURCE"
+            ) {
+              videoSource.src = videoSource.dataset.src;
+            }
+          }
+
+          video.target.load();
+          video.target.classList.remove("lazy");
+          lazyVideoObserver.unobserve(video.target);
+        }
+      });
+    },
+    optionsLazy);
+
+    lazyVideos.forEach(function (lazyVideo) {
+      lazyVideoObserver.observe(lazyVideo);
+    });
+  }
+
+  let options = {
+    rootMargin: "0%",
+    threshold: 0.8,
+  };
+  let callback = (entries, observer) => {
+    entries.forEach((entry) => {
+      videoPlayState.value = entry.isIntersecting;
+    });
+  };
+
+  let observer = new IntersectionObserver(callback, options);
+  observer.observe(video.value);
 });
 </script>
 
@@ -46,22 +71,49 @@ onMounted(() => {
   <div>
     <div
       ref="trigger"
-      class="relative w-full h-[80vh] text-black overflow-x-visible my-96"
+      class="relative w-screen -translate-x-1/2 -ml-32 h-[250vh] text-black overflow-x-visible my-96 py-[20vh]"
     >
-      <p
-        v-if="store.imgActive == false"
-        class="w-full justify-center z-60 text-center -translate-x-1/2 bg-white p-2 -ml-20"
-      >
-        {{ title }}
-      </p>
       <div
-        ref="image"
-        class="z-60 w-screen h-full opacity-0.2 -translate-x-1/2 -ml-20 overflow-visible bg-black"
+        class="h-screen w-full sticky top-0"
+        :class="videoPlayState ? 'text-white' : 'text-black'"
       >
         <div
-          class="flex h-full w-full justify-center items-center content-center flex-wrap"
+          ref="video"
+          class="text-white top-0 z-60 w-screen h-full opacity-0.2 bg-gray-700"
         >
-          <img class="w-[50vw]" loading="lazy" src="/assets/images/obama.gif" />
+          <div
+            class="absolute z-50 top-0 flex h-screen justify-center bg-gray-700 items-center content-center flex-wrap duration-500"
+            :class="videoPlayState ? 'w-full ' : 'w-1/2'"
+          >
+            <video
+              poster="/assets/images/2_weich.png"
+              class="w-2/3 lazy"
+              autoplay
+              muted
+              controls
+              loop
+            >
+              <source
+                data-src="assets/video/file_example_MP4_1920_18MG.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p
+            v-if="store.imgActive == false"
+            class="absolute z-40 top-0 h-full justify-center z-60 duration-500 pointer-events-none"
+            :class="videoPlayState ? 'w-full left-0 ' : 'w-1/2 left-1/2 '"
+          >
+            <span
+              class="text-center block m-auto duration-500"
+              :class="
+                videoPlayState ? ' w-1/2 text-white' : 'w-full text-white'
+              "
+            >
+              {{ title }}
+            </span>
+          </p>
         </div>
       </div>
     </div>

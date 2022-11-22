@@ -7,8 +7,8 @@
   >
     <!-- subsection title -->
 
-    <h3 class="subT">
-      <span class="absolute w-20 -left-0">{{
+    <h3 class="subT pt-20 -mb-8">
+      <span class="absolute pl-5 w-20 -left-0">{{
         index + "." + (subIndex + 1)
       }}</span>
       {{ subsections.title }}
