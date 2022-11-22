@@ -1,10 +1,12 @@
-<script setup></script>
+<script setup>
+import Brain from "../components/home/Brain.vue";
+import Menu from "../components/home/Menu.vue";
+</script>
 
 <template>
-  <main
-    class="p-5 font-mono text-white bg-gradient-to-tr from-orange-600 to-slate-500"
-  >
-    Home
+  <main class="font-mono text-white bg-black">
+    <Menu />
+    <Brain />
   </main>
 </template>
 

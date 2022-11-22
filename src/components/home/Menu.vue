@@ -1,15 +1,17 @@
 <template>
-    <div>
-
-    </div>
+  <div>
+    <p class="menus inline">test</p>
+    <br />
+    <p class="menus inline">test</p>
+    <br />
+    <p class="menus inline">test</p>
+    <br />
+    <p class="menus inline">test</p>
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+export default {};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
