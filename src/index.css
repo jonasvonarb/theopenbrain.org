@@ -73,7 +73,7 @@ h3 {
 p,
 blockquote,
 button {
-  padding-bottom: 3.2rem;
+  /* padding-bottom: 3.2rem; */
 }
 
 blockquote {
@@ -84,7 +84,7 @@ blockquote {
 .text h3,
 .text p,
 .text blockquote {
-  padding-left: 10vw;
+  /* padding-left: 10vw; */
 }
 
 .text h2 {

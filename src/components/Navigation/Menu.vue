@@ -1,10 +1,8 @@
 <script setup>
 import menu from "/src/assets/menu/menu.json";
 import OpenCloseButton from "@/components/UI/OpenCloseButton.vue";
-
 import { useRoute } from "vue-router";
 import { useGeneral } from "@/stores";
-import { ref } from "vue";
 const route = useRoute();
 const store = useGeneral();
 </script>
@@ -12,28 +10,29 @@ const store = useGeneral();
 <template>
   <div
     v-if="route.name"
-    id="info"
     class="fixed flex w-screen overflow-x-scroll overflow-y-hidden top-0 left-0 z-40 h-screen text-base duration-500"
     :class="
       store.activeMenu
         ? route.name != 'home'
           ? 'w-[35vw] bg-black text-white overflow-y-scroll overflow-x-hidden'
-          : 'w-screen text-black overflow-x-scroll overflow-y-hidden'
+          : 'w-screen text-black bg-transparent overflow-x-scroll overflow-y-hidden'
         : 'w-[20px] bg-black text-white justify-center'
     "
   >
+    <!-- menu links -->
     <div v-if="store.activeMenu" class="fixed flex gap-5 px-12 pt-2 z-40">
       <RouterLink to="/home">Home</RouterLink>
       <RouterLink to="/chapter">Chapter</RouterLink>
     </div>
+    <!-- chapter structur -->
     <ul
       v-show="store.activeMenu"
       :class="route.name != 'home' ? 'flex-col ' : 'flex-row'"
-      class="flex relative pt-20 pb-52 w-[35vw]"
+      class="flex relative pt-20 pb-52 w-[35vw] overflow-visible"
     >
       <li
         v-for="(chapter, index) in menu"
-        class="w-full px-12 shrink-0"
+        class="w-[35vw] px-12 shrink-0"
         :class="route.name != 'home' ? '' : 'border-l-2'"
       >
         <a href="#"> {{ menu[index].index + ". " + menu[index].title }}</a>
@@ -50,6 +49,7 @@ const store = useGeneral();
         </ul>
       </li>
     </ul>
+    <!-- menu open/close -->
     <OpenCloseButton
       :text="'O'"
       :target="'Menu'"
@@ -72,15 +72,5 @@ const store = useGeneral();
 
 p {
   padding-bottom: 0;
-}
-.row {
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-.col {
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 </style>
