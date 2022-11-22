@@ -4,7 +4,7 @@
     @mouseenter="animationStore.enterHoverPoint(id)"
     @mouseleave="animationStore.leaveHoverPoint(id)"
     @click="commentStore.openCommentSection(id)"
-    class="punktComment"
+    class="punktComment z-50"
     :id="'point-' + id"
   >
     C

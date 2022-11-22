@@ -1,18 +1,31 @@
 <template>
   <div
-    class="fixed top-0 left-0 h-1/2 w-[40vw] bg-gray-700 z-50 p-4 pb-0 mt-12 ml-5 text-white rounded-lg"
+    class="fixed flex gap-5 justify-center items-center top-0 left-0 h-full w-full bg-black/80 z-50 p-6 pb-10 mt-0 ml-0 text-white"
   >
-    <p class="pb-2">Enter your comment here for:</p>
-    <p @click="storeCom.closeCommentSection()" class="absolute top-4 right-5">
-      X
-    </p>
-    <form class="h-[90%] w-full text-black">
-      <textarea
-        ref="comment"
-        :value="commentinStore"
-        @keypress="storeCom.updateCom(comment.value)"
-      />
-    </form>
+    <div class="bg-blue h-1/2 w-[40vw] pt-2 p-5 bg-white text-black rounded-lg">
+      <p class="pb-2">This is the Text you marked:</p>
+
+      <p>
+        <mark>{{ markierung }}</mark>
+      </p>
+    </div>
+    <div class="h-1/2 w-[40vw] pt-2 p-5 bg-red-300 rounded-lg">
+      <p class="pb-2 h-12">Enter your comment here:</p>
+      <p
+        @click="storeCom.closeCommentSection()"
+        class="absolute top-8 right-12"
+      >
+        X
+      </p>
+      <form class="w-full text-black">
+        <textarea
+          class="bg-white"
+          ref="comment"
+          :value="commentInStore"
+          @keypress="storeCom.updateCom(comment.value)"
+        />
+      </form>
+    </div>
   </div>
 </template>
 
@@ -28,8 +41,12 @@ const storeCom = useCom();
 
 export default {
   computed: {
-    commentinStore() {
+    commentInStore() {
       return storeCom.getCom();
+    },
+    markierung() {
+      return document.getElementById("highlight-" + storeCom.activeCom)
+        .innerText;
     },
   },
 };
@@ -46,6 +63,5 @@ textarea {
   font-size: 16px;
   resize: none;
   --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 </style>
