@@ -2,86 +2,40 @@
   "Part1": {
     "index": 1,
     "title": "Introduction",
-    "parts": [
-      "Story of the eye",
-      "Organization and cell types in the retina",
-      "Photoreceptors and phototransduction",
-      "Horizontal cells modulate signals between photoreceptors and bipolar cells"
-    ]
+    "parts": []
   },
   "Part2": {
     "index": 2,
     "title": "Synapsis Transition",
     "image": "../images/iamge2",
-    "parts": [
-      "Bipolar cells diversify photoreceptor generated light responses",
-      "Amacrine and ganglion cells – retinal circuits, computations and output"
-    ]
+    "parts": []
   },
-  "Part3": {
-    "index": 3,
-    "title": "The eye and retina",
-    "parts": [
-      "Story of the eye",
-      "Organization and cell types in the retina",
-      "Photoreceptors and phototransduction",
-      "Horizontal cells modulate signals between photoreceptors and bipolar cells",
-      "Bipolar cells diversify photoreceptor generated light responses",
-      "Amacrine and ganglion cells – retinal circuits, computations and output",
-      "Retinal development",
-      "Retina vision in the ‘real world’",
-      "Diseases, disorders and treatments",
-      "Remaining areas of ignorance"
-    ]
-  },
+
   "Part4": {
     "index": 4,
     "title": "Movement",
-    "parts": [
-      "Organization and cell types in the retina",
-      "Photoreceptors and phototransduction",
-      "Retinal development",
-      "Remaining areas of ignorance"
-    ]
+    "parts": []
   },
   "Part5": {
     "index": 5,
     "title": "Memory and language",
-    "parts": [
-      "Story of the eye",
-      "Photoreceptors and phototransduction",
-      "Retinal development",
-      "Diseases, disorders and treatments"
-    ]
+    "parts": []
   },
   "Part6": {
     "index": 6,
     "title": "Diseases of the Nervous System",
-    "parts": [
-      "Story of the eye",
-      "Photoreceptors and phototransduction",
-      "Bipolar cells diversify photoreceptor generated light responses",
-      "Retina vision in the ‘real world’"
-    ]
+    "parts": []
   },
   "Part7": {
     "index": 1,
     "title": "Introduction",
-    "parts": [
-      "Story of the eye",
-      "Organization and cell types in the retina",
-      "Photoreceptors and phototransduction",
-      "Horizontal cells modulate signals between photoreceptors and bipolar cells"
-    ]
+    "parts": []
   },
   "Part8": {
     "index": 2,
     "title": "Synapsis Transition",
     "image": "../images/iamge2",
-    "parts": [
-      "Bipolar cells diversify photoreceptor generated light responses",
-      "Amacrine and ganglion cells – retinal circuits, computations and output"
-    ]
+    "parts": []
   },
   "Part9": {
     "index": 3,
@@ -102,31 +56,16 @@
   "Part10": {
     "index": 4,
     "title": "Movement",
-    "parts": [
-      "Organization and cell types in the retina",
-      "Photoreceptors and phototransduction",
-      "Retinal development",
-      "Remaining areas of ignorance"
-    ]
+    "parts": []
   },
   "Part11": {
     "index": 5,
     "title": "Memory and language",
-    "parts": [
-      "Story of the eye",
-      "Photoreceptors and phototransduction",
-      "Retinal development",
-      "Diseases, disorders and treatments"
-    ]
+    "parts": []
   },
   "Part12": {
     "index": 6,
     "title": "Diseases of the Nervous System",
-    "parts": [
-      "Story of the eye",
-      "Photoreceptors and phototransduction",
-      "Bipolar cells diversify photoreceptor generated light responses",
-      "Retina vision in the ‘real world’"
-    ]
+    "parts": []
   }
 }
