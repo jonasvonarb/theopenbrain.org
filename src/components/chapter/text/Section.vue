@@ -2,11 +2,14 @@
   <!-- section -->
   <section :id="section.id" class="overflow-y-visible">
     <!-- section titel -->
-    <h2
-      class="p-5 border border-black bg-white rounded-full absolute -translate-x-[10.5rem] -translate-y-[1.25rem] w-20 h-20 flex justify-center"
-    >
-      {{ index + 1 }}
-    </h2>
+    <div class="top-0 pt-10">
+      <h2
+        class="p-5 border border-black bg-white rounded-full absolute -translate-x-[10.5rem] -translate-y-[1.25rem] w-20 h-20 flex justify-center"
+      >
+        {{ index + 1 }}
+      </h2>
+    </div>
+
     <h2
       :class="store.imgActive ? 'opacity-0' : ''"
       class="T durattion-500 z-40 subChapter"
@@ -17,7 +20,7 @@
       <template v-if="paragraph?.type != 'break'">
         <!-- section paragraph -->
         <p
-          class="P"
+          class="P pb-12"
           v-html="paragraph.text"
           :id="paragraph.id"
           v-if="!paragraph.subsection"

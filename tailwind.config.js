@@ -4,9 +4,10 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        base: ["1.8rem", "2.6rem"],
+        base: ["1.7rem", "2.5rem"],
         l: ["2.3rem", "3rem"],
         xl: ["3.5rem", "3.2rem"],
+        bigest: ["22rem", "22rem"],
       },
       height: {
         header: "2.2rem",
@@ -17,6 +18,13 @@ module.exports = {
       },
       margin: {
         body: "2.2rem",
+      },
+      colors: {
+        violett: "#9747FF",
+        mark1: "#0DD310",
+        mark2: "#E91B0B",
+        mark3: "#1017E2",
+        mark4: "#FDE73F",
       },
     },
   },

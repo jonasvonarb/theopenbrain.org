@@ -3,13 +3,13 @@ import { useGeneral } from "@/stores";
 import HomeView from "@/views/LandingView.vue";
 
 const routes = [
+  // {
+  //   path: "/",
+  //   name: "landing",
+  //   component: HomeView,
+  // },
   {
     path: "/",
-    name: "landing",
-    component: HomeView,
-  },
-  {
-    path: "/home",
     name: "home",
     component: () => import("../views/HomeView.vue"),
   },
@@ -60,12 +60,16 @@ const router = createRouter({
   },
 });
 router.beforeEach((to, from) => {
-  console.log(document.getElementById("sceneBrain"));
   const store = useGeneral();
-  if (to.name == "home") {
+
+  if (to.name == "home" && from.name == "chapter") {
+    // router.replace({ hash: "#" });
+
     store.activeMenu = true;
   }
-  // store.unSetMenu();
+  if (to.hash) {
+    store.startIsActive = false;
+  }
 });
 
 export default router;

@@ -71,18 +71,18 @@ onMounted(() => {
   <div>
     <div
       ref="trigger"
-      class="relative w-screen -translate-x-1/2 -ml-32 h-[250vh] text-black overflow-x-visible my-96 py-[20vh]"
+      class="w-screen h-[250vh] -translate-x-1/2 -ml-32 text-black my-96 py-[5vh]"
     >
       <div
-        class="h-screen w-full sticky top-0"
+        class="sticky h-screen w-full top-0"
         :class="videoPlayState ? 'text-white' : 'text-black'"
       >
         <div
           ref="video"
-          class="text-white top-0 z-60 w-screen h-full opacity-0.2 bg-gray-700"
+          class="text-white top-0 z-60 w-screen h-full opacity-0.2 bg-gray-900"
         >
           <div
-            class="absolute z-50 top-0 flex h-screen justify-center bg-gray-700 items-center content-center flex-wrap duration-500"
+            class="absolute z-50 top-0 flex h-screen justify-center bg-gray-900 items-center content-center flex-wrap duration-500"
             :class="videoPlayState ? 'w-full ' : 'w-1/2'"
           >
             <video

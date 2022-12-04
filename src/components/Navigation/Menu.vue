@@ -1,18 +1,24 @@
 <script setup>
 import menu from "/src/assets/menu/menu.json";
 import OpenCloseButton from "@/components/UI/OpenCloseButton.vue";
+import OpenCloseButtonLink from "@/components/UI/OpenCloseButtonLink.vue";
 import { useRoute } from "vue-router";
 import { useGeneral } from "@/stores";
-import gsap from "gsap";
+import { toSlug } from "@/helper/general.js";
 const store = useGeneral();
 const route = useRoute();
 
+const toStart = () => {
+  store.startIsActive = true;
+};
+
 const closeMenu = () => {
   store.activeMenu = false;
+
   store.isScrolling = true;
   setTimeout(() => {
-      store.isScrolling = false;
-
+    store.isScrolling = false;
+    console.log("finished scrollling");
   }, 700);
 };
 </script>
@@ -20,37 +26,39 @@ const closeMenu = () => {
 <template>
   <div
     v-if="route.name && route.name != 'landing'"
-    class="fixed bg-white flex top-0 left-0 z-40 h-screen text-base duration-700 border-r border-black snap-x"
-    :class="
+    class="fixed scrollbar pointer-events-none flex top-0 left-0 z-50 h-screen text-base duration-700 border-r border-black snap-x proper"
+    :class="[
       store.activeMenu
         ? route.name != 'home'
-          ? 'w-[35vw] text-black  overflow-y-scroll overflow-x-hidden'
-          : 'w-screen text-black overflow-x-scroll overflow-y-hidden'
-        : 'w-8 text-black overflow-x-scroll overflow-y-hidden'
-    "
+          ? 'w-[35vw]  overflow-y-scroll overflow-x-hidden bg-white'
+          : 'w-screen  overflow-x-scroll overflow-y-hidden'
+        : 'w-0  overflow-x-scroll overflow-y-hidden bg-white',
+    ]"
   >
-    <!-- menu links -->
-    <div class="fixed flex z-40 pl-8 ml-5">
-      <RouterLink to="/home">Home</RouterLink>
-    </div>
     <!-- chapter structur -->
     <ul
-      class="flex absolute mt-20 mb-52 flex-row overflow-visible duration-700 shrink-1"
-      :class="route.name != 'home' ? '-left-[70vw]' : '-left-[0]'"
+      class="flex pointer-events-auto flex-row bg-white/60 absolute h-full top-0 mb-52 duration-700 shrink-1"
+      :class="
+        route.name != 'home'
+          ? '-left-[70vw] w-[35vw] overflow-visible bg-white'
+          : '-left-[0] w-full overflow-scroll '
+      "
     >
       <li
         v-for="(chapter, index) in menu"
-        class="w-[35vw] snap-start shrink-0 h-full"
+        class="w-[35vw] shrink-0 py-12"
         :class="[route.name != 'home' ? '' : '']"
       >
         <ul
           :class="
             index == 'Part9' ? 'pointer-events-auto' : 'pointer-events-none'
           "
-          class="pl-0 px-12 w-full h-full overflow-hidden text-black duration-700"
+          class="pl-0 px-12 w-full overflow-hidden duration-700"
         >
-          <h2 class="pl-8 ml-5">
-            {{ menu[index].title }}
+          <h2 @click="toStart()" class="pl-8 ml-5 py-4">
+            <RouterLink to="/chapter/">
+              {{ menu[index].title }}
+            </RouterLink>
           </h2>
           <RouterLink
             class="flex"
@@ -58,14 +66,15 @@ const closeMenu = () => {
               name: 'chapter',
               hash: '#the-eye-and-retina-intro',
             }"
+            @click="closeMenu()"
           >
-            <div class="w-8 px-3.5 mt-5 mr-5 bg-white">
+            <div class="w-8 px-3.5 mt-5 mr-5">
               <div
                 v-if="route.name == 'chapter'"
                 class="h-full w-full bg-red-600"
               ></div>
             </div>
-            <li class="w-full border-b pt-4 border-black hover:bg-gray-100">
+            <li class="w-full border-b py-4 border-black hover:bg-gray-100">
               0 Intro
             </li>
           </RouterLink>
@@ -75,16 +84,15 @@ const closeMenu = () => {
             class="flex"
             :to="{
               name: 'chapter',
-              hash: '#the-eye-and-retina-' + (index2 + 1),
+              hash: '#' + toSlug(part),
             }"
           >
-            <div class="w-8 px-3.5 mr-5 bg-white">
+            <div class="w-8 px-3.5 mr-5">
               <div
                 v-if="route.name == 'chapter'"
                 class="h-full w-full"
                 :style="
-                  store.currentSubChapter ==
-                  'the-eye-and-retina-' + (index2 + 1)
+                  store.currentSubChapter == toSlug(part)
                     ? 'height: ' + 100 * store.progress + '%'
                     : ''
                 "
@@ -95,7 +103,7 @@ const closeMenu = () => {
                 "
               ></div>
             </div>
-            <li class="w-full border-b pt-4 border-black hover:bg-gray-100">
+            <li class="w-full border-b py-4 border-black hover:bg-gray-100">
               {{ index2 + 1 + " " + part }}
             </li>
           </RouterLink>
@@ -107,14 +115,20 @@ const closeMenu = () => {
     <OpenCloseButton
       :text="'+'"
       :target="'Menu'"
-      class="fixed hover:bg-red-600 h-full w-8 flex justify-center items-top left-0 top-0 duration-700 overflow-hidden"
-      :class="!store.activeMenu ? '-left-[0]' : '-left-8'"
+      class="fixed border-r border-black bg-white pointer-events-auto z-[60] hover:bg-red-600 h-full w-8 flex justify-center items-top left-0 top-0 duration-700 overflow-hidden"
+      :class="!store.activeMenu && route.name != 'home' ? 'left-8' : '-left-8'"
     />
     <OpenCloseButton
-      v-if="route.name != 'home' && store.activeMenu"
+      v-if="store.activeMenu"
       :text="'-'"
       :target="'Menu'"
-      class="fixed flex justify-center items-center right-[65vw] pr-5 top-2 duration-700 overflow-hidden"
+      class="fixed pointer-events-auto z-[60] flex justify-center items-center right-[65vw] pr-5 top-2 duration-700 overflow-hidden"
+    />
+    <OpenCloseButtonLink
+      :text="'H'"
+      :target="''"
+      class="fixed border-r border-black bg-white pointer-events-auto z-[60] hover:bg-red-600 h-full w-8 flex justify-center items-top left-0 top-0 duration-700 overflow-hidden"
+      :class="route.name && route.name != 'home' ? 'left-0' : '-left-8'"
     />
   </div>
 </template>
@@ -125,5 +139,17 @@ const closeMenu = () => {
 }
 p {
   padding-bottom: 0;
+}
+
+.proper {
+  transition-property: heigh width;
+}
+.scrollbar::-webkit-scrollbar {
+  display: unset !important;
+}
+.scrollbar {
+  -ms-overflow-style: unset !important;
+  overscroll-behavior: unset !important;
+  scrollbar-width: unset !important;
 }
 </style>

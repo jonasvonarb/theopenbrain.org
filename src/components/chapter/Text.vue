@@ -1,22 +1,24 @@
 <script setup>
 import { computed } from "@vue/reactivity";
-import { ref } from "vue";
+import { onMounted, onBeforeUnmount, ref } from "vue";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { toSlug } from "@/helper/general";
 
 import { useText, useGeneral } from "@/stores";
 import { useCom } from "@/stores/comments";
-
-import { onMounted } from "vue";
 
 import { marker, pointAdderAnimation } from "@/helper/marking";
 import Section from "./text/Section.vue";
 import Comment from "./text/Comment.vue";
 import Points from "@/components/UI/Points.vue";
+import { useRoute, useRouter } from "vue-router";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const store = useGeneral();
+const route = useRoute();
+const router = useRouter();
 
 const textStore = useText();
 const commentStore = useCom();
@@ -40,6 +42,7 @@ onMounted(() => {
       setTimeout(() => {
         for (let trigger of document.querySelectorAll(".trigger")) {
           ScrollTrigger.create({
+            id: "scrollTriggerText",
             trigger: trigger,
             start: "top top",
             end: "bottom top",
@@ -61,50 +64,101 @@ onMounted(() => {
             },
           });
         }
+        ScrollTrigger.create({
+          id: "scrollTriggerAll",
+          trigger: "#scroller",
+          start: "+=200 +=50",
+          end: "bottom top",
+          srub: 0,
+          markers: false,
+          onToggle: (self) => {
+            if (!self.isActive) {
+              store.isTop = true;
+            } else {
+              store.isTop = false;
+            }
+          },
+          onUpdate: (self) => {
+            if (store.activeMenu) {
+              store.activeMenu = false;
+            }
+          },
+        });
       }, 100);
     }
   }, 1);
+});
+onBeforeUnmount(() => {
+  ScrollTrigger.getById("scrollTriggerText").kill();
+  ScrollTrigger.getById("scrollTriggerAll").kill();
 });
 </script>
 
 <template>
   <div
     id="container"
-    class="z-40 overflow-y-scroll overflow-x-hidden w-screen h-screen"
+    class="z-40 w-screen top-0 left-0 pointer-events-true"
+    :class="store.startIsActive ? 'fixed' : 'absolute'"
   >
-    <main
-      id="text"
-      class="text w-1/2 overflow-y-visible overflow-x-visible absolute top-0 right-0 z-30 border-l border-black tracking-wide pb-[60vh]"
-    >
-      <!-- intro -->
-      <section
-        v-for="(section, index) in text['intro']"
-        :id="section.id"
-        class="overflow-y-visible m-32 pr-20"
-      >
-        <h1
-          :class="store.imgActive ? 'opacity-0' : ''"
-          :id="'the-eye-and-retina-intro'"
-          class="z-40 text-black opacity-100"
+    <div id="scroller">
+      <div class="fixed top-3 w-full flex justify-end pr-3">
+        <button
+          class="pointer-events-auto text-xl text-white bg-black rounded-full w-16 h-16"
+          v-if="store.isTop"
+          @click="store.startIsActive = !store.startIsActive"
         >
-          {{ section.title }}
-        </h1>
-        <p v-for="paragraph in section.paragraphs" :id="paragraph.id">
-          {{ paragraph.text }}
-        </p>
-      </section>
-      <!-- text -->
-      <div
-        ref="triggers"
-        v-for="(section, index) in text['sections']"
-        :id="'the-eye-and-retina-' + (index + 1)"
-        class="m-32 mt-0 pr-20 trigger"
-      >
-        <Section :section="section" :index="index" />
+          &#x2191;
+        </button>
+        <RouterLink
+          v-else
+          class="pointer-events-auto text-xl text-white bg-black rounded-full w-16 h-16 flex justify-center items-center"
+          :to="{
+            name: 'chapter',
+            hash: '#the-eye-and-retina-intro',
+          }"
+        >
+          T
+        </RouterLink>
       </div>
-    </main>
-    <Points />
-    <Comment v-if="commentStore.activeCom" />
+      <main
+        id="text"
+        class="text w-1/2 text-left ml-[50vw] z-30 border-l border-black tracking-wide pb-[60vh] p-32 pr-15 max-w-[800px] duration-500"
+        :class="!store.startIsActive ? 'mt-0' : 'mt-[100vh]'"
+      >
+        <!-- intro -->
+        <section
+          v-for="(section, index) in text['intro']"
+          :id="section.id"
+          class="overflow-y-visible"
+        >
+          <h1
+            :class="store.imgActive ? 'opacity-0' : ''"
+            :id="'the-eye-and-retina-intro'"
+            class="z-40 text-black opacity-100"
+          >
+            {{ section.title }}
+          </h1>
+          <p
+            class="P"
+            v-for="paragraph in section.paragraphs"
+            :id="paragraph.id"
+          >
+            {{ paragraph.text }}
+          </p>
+        </section>
+        <!-- text -->
+        <div
+          ref="triggers"
+          v-for="(section, index) in text['sections']"
+          :id="toSlug(section.title)"
+          class="mt-0 trigger"
+        >
+          <Section :section="section" :index="index" />
+        </div>
+      </main>
+      <Points />
+      <Comment v-if="commentStore.activeCom" />
+    </div>
   </div>
 </template>
 

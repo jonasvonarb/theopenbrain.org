@@ -3,13 +3,16 @@ import jsonText from "@/assets/text/text.json";
 import { saveAs } from "file-saver";
 import { useAnimation } from "./animation";
 import { useCom } from "./comments";
-import { useRouter } from "vue-router";
+import { useRouter, useRoute } from "vue-router";
 
 export { useAnimation, useCom };
 
 export const useGeneral = defineStore("main", {
   state: () => ({
     activeMenu: false,
+    isTop: true,
+    startIsActive: true,
+    autoScrolling: false,
     activeMenuIndex: null,
     activeSidebar: false,
     activeImportMenu: false,

@@ -10,13 +10,33 @@ const store = useGeneral();
 
 <template>
   <div class="text-base">
-    <RouterView class="w-full mt-body z-0" v-slot="{ Component }">
-      <!-- <Transition name="fade"> -->
-      <component :is="Component" />
-      <!-- </Transition> -->
+    <RouterView class="w-full z-0" v-slot="{ Component }">
+      <transition name="routeT">
+        <component :is="Component" />
+      </transition>
     </RouterView>
     <Menu />
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.noPointer {
+  pointer-events: none !important;
+}
+
+.routeT-leave-active,
+.routeT-enter-active {
+  /* transition: opacity -webkit-filter 4s; */
+  transition: opacity 0.5s;
+}
+
+.routeT-enter-active {
+  transition-delay: 0.5s;
+}
+
+.routeT-enter-from,
+.routeT-leave-to {
+  opacity: 0;
+  filter: blur(10px);
+}
+</style>

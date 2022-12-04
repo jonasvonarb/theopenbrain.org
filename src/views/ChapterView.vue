@@ -2,6 +2,8 @@
 import Text from "../components/chapter/Text.vue";
 import ExportField from "../components/chapter/ExportField.vue";
 import Illustration from "../components/chapter/Illus/Illustration.vue";
+import EyeStart from "@/components/chapter/text/EyeStart.vue";
+
 import { onBeforeRouteUpdate, useRoute, useRouter } from "vue-router";
 
 import { useGeneral, useText } from "@/stores";
@@ -17,12 +19,13 @@ const { getactiveMenu } = store;
     <div
       :class="
         store.isScrolling
-          ? 'backdrop-blur-[40px]	opacity-100	'
-          : 'backdrop-blur-[0] duration-500 opacity-0'
+          ? 'backdrop-blur-[40px] grayscale	opacity-100	'
+          : 'backdrop-blur-[0] graysclae-0 duration-500 opacity-0'
       "
-      class="pointer-events-none bg-gray-900/20 fixed w-[200vw] h-[200vh] -top-[0] -left-[0] z-[35]"
+      class="pointer-events-none bg-gray-900/20 fixed w-[200vw] h-[200vh] -top-[0] -left-[0] z-[50]"
     ></div>
     <!-- text -->
+    <EyeStart />
     <Illustration />
     <Text />
 
