@@ -13,6 +13,8 @@ import Section from "./text/Section.vue";
 import Comment from "./text/Comment.vue";
 import Points from "@/components/UI/Points.vue";
 import { useRoute, useRouter } from "vue-router";
+import FurtherReading from "./text/FurtherReading.vue";
+import FootNotes from "./text/FootNotes.vue";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -155,6 +157,8 @@ onBeforeUnmount(() => {
         >
           <Section :section="section" :index="index" />
         </div>
+        <FurtherReading :content="text['furtherReading']" />
+        <FootNotes :content="text['footNotes']" />
       </main>
       <Points />
       <Comment v-if="commentStore.activeCom" />

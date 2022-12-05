@@ -71,7 +71,7 @@ onMounted(() => {
   <div>
     <div
       ref="trigger"
-      class="w-screen h-[250vh] -translate-x-1/2 -ml-32 text-black my-96 py-[5vh]"
+      class="w-screen h-[180vh] -translate-x-1/2 -ml-32 text-black my-96 py-[5vh]"
     >
       <div
         class="sticky h-screen w-full top-0"
@@ -82,8 +82,7 @@ onMounted(() => {
           class="text-white top-0 z-60 w-screen h-full opacity-0.2 bg-gray-900"
         >
           <div
-            class="absolute z-50 top-0 flex h-screen justify-center bg-gray-900 items-center content-center flex-wrap duration-500"
-            :class="videoPlayState ? 'w-full ' : 'w-1/2'"
+            class="w-full absolute z-50 top-0 flex h-screen justify-center bg-gray-900 items-center content-center flex-wrap duration-500"
           >
             <video
               poster="/assets/images/2_weich.png"
@@ -102,14 +101,10 @@ onMounted(() => {
           </div>
           <p
             v-if="store.imgActive == false"
-            class="absolute z-40 top-0 h-full justify-center z-60 duration-500 pointer-events-none"
-            :class="videoPlayState ? 'w-full left-0 ' : 'w-1/2 left-1/2 '"
+            class="absolute z-40 top-0 h-full justify-left z-60 duration-500 pointer-events-none w-full left-0"
           >
             <span
-              class="text-center block m-auto duration-500"
-              :class="
-                videoPlayState ? ' w-1/2 text-white' : 'w-full text-white'
-              "
+              class="text-center block m-auto duration-500 w-1/2 text-white"
             >
               {{ title }}
             </span>

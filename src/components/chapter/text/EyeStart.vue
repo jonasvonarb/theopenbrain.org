@@ -2,7 +2,6 @@
 import { useRoute } from "vue-router";
 import { useGeneral } from "@/stores";
 import {toSlug} from "@/helper/general";
-
 import menu from "/src/assets/menu/menu.json";
 const route = useRoute();
 const store = useGeneral();
@@ -10,7 +9,7 @@ const store = useGeneral();
 <template>
   <div
     id="titleAnimation"
-    class="absolute top-0 w-screen z-[55] bg-yellow-300 pointer-events-none overflow-hidden duration-500"
+    class="absolute top-0 w-screen z-[50] bg-yellow-300 pointer-events-none overflow-hidden duration-500"
     :class="!store.startIsActive ? 'h-0' : 'h-screen'"
   >
     <!-- :class="store.isScrolling ? ' z-[20]	' : ' duration-500 z-[55]'" -->
@@ -29,7 +28,7 @@ const store = useGeneral();
     </div>
 
     <!-- chapter structur -->
-    <ul
+    <!-- <ul
       class="flex absolute top-0 left-0 w-[35vw] h-full pt-20 mb-52 flex-row duration-700 shrink-1 bg-white/90 pointer-events-auto"
     >
       <li class="w-[35vw] shrink-0 h-full">
@@ -64,7 +63,7 @@ const store = useGeneral();
           </RouterLink>
         </ul>
       </li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 

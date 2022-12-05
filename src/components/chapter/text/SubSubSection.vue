@@ -1,29 +1,56 @@
 <template>
-  <div class="subSub" v-for="subSubParagraphs in subParagraph.subSubSection">
-    <template v-if="!subSubParagraphs.paragraphs">
-      <p class="subSubT">{{ subSubParagraphs.title }}</p>
-      <p
-        class="subSubP"
-        v-html="subSubParagraphs.text"
-        :id="subSubParagraphs.id"
-      />
+  <div
+    class="subSub"
+    v-for="(subSubSection, index) in subParagraph.subSubSection"
+  >
+    <template v-if="!subSubSection.paragraphs">
+      <template v-if="subSubSection.type != 'break'">
+        <p class="subSubT">
+          {{
+            chapterIndex +
+            "." +
+            (subIndex + 1) +
+            "." +
+            (index + 1) +
+            " " +
+            subSubSection.title
+          }}
+        </p>
+        <p class="subSubP" v-html="subSubSection.text" :id="subSubSection.id" />
+      </template>
+      <BreakImages v-else :title="subSubSection.text" />
     </template>
     <template v-else>
-      <p class="subSubT">{{ subSubParagraphs.title }}</p>
-      <template v-for="subSubParagraph in subSubParagraphs.paragraphs">
+      <p class="subSubParT">
+        {{
+          chapterIndex +
+          "." +
+          (subIndex + 1) +
+          "." +
+          (index + 1) +
+          " " +
+          subSubSection.title
+        }}
+      </p>
+      <template v-for="subSubParagraph in subSubSection.paragraphs">
         <p
-          class="subSubP"
+          v-if="subSubParagraph.type != 'break'"
+          class="subSubParP"
           v-html="subSubParagraph.text"
           :id="subSubParagraph.id"
         />
+        <BreakImages v-else :title="subSubParagraph.text" />
       </template>
     </template>
   </div>
 </template>
 
 <script setup>
+import BreakImages from "./BreakImages.vue";
 const prosp = defineProps({
   subParagraph: Object,
+  chapterIndex: Number,
+  subIndex: Number,
 });
 </script>
 

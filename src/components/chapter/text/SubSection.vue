@@ -1,20 +1,21 @@
 <template>
-  <!-- subsection -->
+  <!-- subSection -->
+
   <div
     class="sub"
-    v-for="(subsections, subIndex) in paragraph.subsection"
-    :id="subsections.id"
+    v-for="(subSections, subIndex) in paragraph.subSection"
+    :id="subSections.id"
   >
-    <!-- subsection title -->
+    <!-- subSection title -->
 
     <h3 class="subT pt-20 -mb-8">
       <span class="absolute pl-5 w-20 left-1/2">{{
         index + "." + (subIndex + 1)
       }}</span>
-      {{ subsections.title }}
+      {{ subSections.title }}
     </h3>
-    <!-- subsection paragraph -->
-    <template v-for="subParagraph in subsections.paragraphs">
+    <!-- subSection paragraph -->
+    <template v-for="subParagraph in subSections.paragraphs">
       <template v-if="subParagraph?.type != 'break'">
         <p
           class="subP"
@@ -22,7 +23,12 @@
           v-html="subParagraph.text"
           :id="subParagraph.id"
         />
-        <SubSubSection v-else :subParagraph="subParagraph" />
+        <SubSubSection
+          :chapterIndex="index"
+          :subIndex="subIndex"
+          v-else
+          :subParagraph="subParagraph"
+        />
       </template>
       <!-- subSection Break -->
       <BreakImages v-else :title="subParagraph.text" />

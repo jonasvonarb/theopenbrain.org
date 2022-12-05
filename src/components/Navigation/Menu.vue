@@ -35,20 +35,29 @@ const closeMenu = () => {
         : 'w-0  overflow-x-scroll overflow-y-hidden bg-white',
     ]"
   >
+    <div
+      class="absolute top-0 left-0 z-50 p-12 font-bold text-xl text-black uppercase w-screen overflow-hidden"
+      v-if="route.name == 'home'"
+    >
+      The Open Brain . Org
+    </div>
     <!-- chapter structur -->
     <ul
-      class="flex pointer-events-auto flex-row bg-white/60 absolute h-full top-0 mb-52 duration-700 shrink-1"
+      class="pt-24 flex pointer-events-auto flex-row bg-white/60 absolute h-full top-0 mb-52 duration-700 shrink-1"
       :class="
         route.name != 'home'
-          ? '-left-[70vw] w-[35vw] overflow-visible bg-white'
+          ? '-left-[105vw] w-[35vw] overflow-visible bg-white'
           : '-left-[0] w-full overflow-scroll '
       "
     >
-      <li
-        v-for="(chapter, index) in menu"
-        class="w-[35vw] shrink-0 py-12"
-        :class="[route.name != 'home' ? '' : '']"
-      >
+      <li class="w-[35vw] shrink-0 py-12 px-12">
+        <h2 @click="toStart()" class="py-4">Welcome to the openbrain.org</h2>
+        <p class="py-4">
+          This codu be an Introduction to the book, maybe a short text I dont
+          Know? Stuard could maybe proved somthing like that?
+        </p>
+      </li>
+      <li v-for="(chapter, index) in menu" class="w-[35vw] shrink-0 py-12">
         <ul
           :class="
             index == 'Part9' ? 'pointer-events-auto' : 'pointer-events-none'
@@ -143,13 +152,5 @@ p {
 
 .proper {
   transition-property: heigh width;
-}
-.scrollbar::-webkit-scrollbar {
-  display: unset !important;
-}
-.scrollbar {
-  -ms-overflow-style: unset !important;
-  overscroll-behavior: unset !important;
-  scrollbar-width: unset !important;
 }
 </style>

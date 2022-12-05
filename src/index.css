@@ -96,13 +96,12 @@ section p:first-of-type {
 }
 
 *::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
 }
 
 * {
-  -ms-overflow-style: none;
-  overscroll-behavior-x: none;
-  scrollbar-width: none;
+  /* -ms-overflow-style: none; */
+  /* scrollbar-width: none; */
   overscroll-behavior: none;
   box-sizing: border-box;
 }
@@ -126,7 +125,8 @@ blockquote {
 }
 .P,
 .subP,
-.subSubP {
+.subSubP,
+.subSubSubP {
   padding-bottom: 3rem;
 }
 
@@ -239,4 +239,3 @@ mark {
 .outLeft-leave-to {
   transform: translateX(-100vw);
 }
-

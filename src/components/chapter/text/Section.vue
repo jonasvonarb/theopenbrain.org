@@ -23,7 +23,7 @@
           class="P pb-12"
           v-html="paragraph.text"
           :id="paragraph.id"
-          v-if="!paragraph.subsection"
+          v-if="!paragraph.subSection"
         />
         <SubSection v-else :paragraph="paragraph" :index="index + 1" />
       </template>
