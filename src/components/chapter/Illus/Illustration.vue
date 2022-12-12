@@ -23,6 +23,9 @@ onMounted(() => {
       loop: false,
       autoplay: false,
       path: "/assets/animations/" + animationJson.id + ".json",
+      rendererSettings: {
+        progressiveLoad: true, // Boolean, only svg renderer, loads dom elements when needed. Might speed up initialization for large number of elements.
+      },
     });
 
     animations.value[animationJson.id.toLowerCase()].setSubframe(true);
@@ -34,7 +37,7 @@ onMounted(() => {
     ScrollTrigger.create({
       id: "scrollTriggerAnimation",
       trigger: trigger,
-      start: "top " + window.innerHeight * 0.7,
+      start: "top " + window.innerHeight * 0.4,
       end: "bottom " + window.innerHeight / 4,
       srub: 0,
       markers: false,
@@ -103,7 +106,19 @@ const setState = (index, state) => {
 };
 
 const replay = () => {
-  animations.value[activeAnimation.value].goToAndPlay(0, true);
+  const info = animationJSON.animations.find((x) => {
+    return x.id.toLowerCase() == activeAnimation.value;
+  });
+  console.log(info, animationJSON, activeAnimation.value);
+  if (!info.loopSection) {
+    animations.value[activeAnimation.value].goToAndPlay(0, true);
+  } else {
+    console.log(info.loopSection);
+    animations.value[activeAnimation.value].playSegments(
+      info.loopSection,
+      true
+    );
+  }
 };
 
 onBeforeUnmount(() => {
@@ -128,14 +143,14 @@ onBeforeUnmount(() => {
               <span>{{ animation.title }}</span>
               <span
                 v-if="animation.loop"
-                class="hover:underline cursor-pointer"
+                class="hover:underline"
                 @click="replay()"
                 >replay</span
               >
               <div v-if="animation.states">
                 <p
                   @click="setState(index, state)"
-                  class="hover:underline cursor-pointer duration-300"
+                  class="hover:underline duration-300"
                   v-for="(state, index) in animation.states"
                   :class="
                     activeState.state == index

@@ -13,7 +13,7 @@
       <p class="pb-2 h-12">Enter your comment here:</p>
       <p
         @click="storeCom.closeCommentSection()"
-        class="absolute cursor-pointer top-6 right-12 h-16 w-16 bg-white text-black text-xl rounded-full flex justify-center items-center"
+        class="absolute top-6 right-12 h-16 w-16 bg-white text-black text-xl rounded-full flex justify-center items-center"
       >
         X
       </p>

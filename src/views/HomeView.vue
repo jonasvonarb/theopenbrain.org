@@ -16,7 +16,7 @@
           <div class="text-white text-xl mt-12">
             <span
               @click="enter()"
-              class="bg-violett border-2 border-white rounded-full hover:bg-white text-white hover:text-black cursor-pointer px-6"
+              class="bg-violett border-2 border-white rounded-full hover:bg-white text-white hover:text-black px-6"
             >
               Enter &#x2192;
             </span>

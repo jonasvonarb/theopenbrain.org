@@ -17,7 +17,7 @@
         subSections.animationAnchor ? 'pt-[100vh] animationScrollAnchor' : ''
       "
     >
-      <span class="absolute pl-5 w-20 left-1/2">{{
+      <span class="absolute flex justify-center w-32 left-full">{{
         index + "." + (subIndex + 1)
       }}</span>
       {{ subSections.title }}

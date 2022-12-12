@@ -1,7 +1,7 @@
 <template>
   <div
     id="containerPunkt"
-    class="w-20 absolute top-6 left-1/2 z-30 pointer-events-none"
+    class="w-20 absolute top-[-100vh] left-[50vw] z-30 pointer-events-none"
   >
     <Point v-for="element in compStorage" :key="element" :id="element" />
   </div>

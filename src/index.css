@@ -1,68 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("/src/ibm-plex.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "DM Mono";
-  src: url("assets/fonts/DM_Mono_Web/DMMono-Italic.woff2") format("woff2"),
-    url("assets/fonts/DM_Mono_Web/DMMono-Italic.woff") format("woff");
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "DM Mono";
-  src: url("assets/fonts/DM_Mono_Web/DMMono-MediumItalic.woff2") format("woff2"),
-    url("assets/fonts/DM_Mono_Web/DMMono-MediumItalic.woff") format("woff");
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "DM Mono";
-  src: url("assets/fonts/DM_Mono_Web/DMMono-LightItalic.woff2") format("woff2"),
-    url("assets/fonts/DM_Mono_Web/DMMono-LightItalic.woff") format("woff");
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "DM Mono";
-  src: url("assets/fonts/DM_Mono_Web/DMMono-Regular.woff2") format("woff2"),
-    url("assets/fonts/DM_Mono_Web/DMMono-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "DM Mono";
-  src: url("assets/fonts/DM_Mono_Web/DMMono-Light.woff2") format("woff2"),
-    url("assets/fonts/DM_Mono_Web/DMMono-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "DM Mono";
-  src: url("assets/fonts/DM_Mono_Web/DMMono-Medium.woff2") format("woff2"),
-    url("assets/fonts/DM_Mono_Web/DMMono-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
 html,
 body {
   font-size: 62.5%;
-  font-family: "DM Mono";
-  font-family: "Space Mono", monospace;
+  font-family: "IBM Plex Mono";
   hyphens: auto;
+  cursor: url(assets/icons/cursor.png) 20 10, pointer;
 }
 
 /* *{background: #000;} */
@@ -137,8 +84,7 @@ blockquote {
 .subSubP,
 .subSubSubP,
 .subSubParP {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
+  font-family: "IBM Plex Sans";
   letter-spacing: 0.05rem;
   padding-bottom: 3rem;
 }
@@ -157,6 +103,7 @@ blockquote {
   color: #0dd310;
   /* padding: 0.1rem 0.3rem 0.3rem 0.7rem; */
   /* border-radius: 9999px; */
+
 }
 
 .animationTrigger.active {
@@ -184,6 +131,8 @@ blockquote {
   padding: 0px;
   text-align: center;
   transition: none;
+  cursor: url(assets/icons/cursor_active.png) 20 10, pointer;
+
 }
 
 .punktComment {
@@ -205,7 +154,7 @@ mark {
 .hoverActive {
   background-color: #0dd310;
   color: white;
-  cursor: default;
+  /* cursor: default; */
 }
 
 /* we will explain what these classes do next! */

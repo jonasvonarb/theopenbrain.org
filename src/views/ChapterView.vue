@@ -28,9 +28,9 @@ const { getactiveMenu } = store;
       class="pointer-events-none bg-gray-900/20 fixed w-[200vw] h-[200vh] -top-[0] -left-[0] z-[50]"
     ></div>
     <!-- text -->
+    <Illustration />
     <EyeStart />
     <Text />
-    <Illustration />
     <Comment v-if="commentStore.activeCom" />
 
     <div

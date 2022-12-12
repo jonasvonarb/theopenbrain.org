@@ -99,16 +99,16 @@ onBeforeUnmount(() => {
 <template>
   <div
     id="container"
-    class="z-40 w-screen top-0 left-0 pointer-events-none"
-    :class="store.startIsActive ? 'fixed' : 'absolute'"
+    class="absolute top-[100vh] z-40 w-[50vw] pointer-events-none"
   >
+    <!-- :class="store.startIsActive ? 'fixed' : 'absolute'" -->
     <div id="scroller" class="pointer-events-none w-full">
       <div class="fixed pointer-events-auto top-6 right-12 flex justify-end">
         <button
           class="pointer-events-auto text-xl text-white bg-black rounded-full w-16 h-16"
           v-if="store.isTop"
-          @click="store.startIsActive = !store.startIsActive"
         >
+          <!-- @click="store.startIsActive = !store.startIsActive" -->
           &#x2191;
         </button>
         <RouterLink
@@ -124,9 +124,10 @@ onBeforeUnmount(() => {
       </div>
       <main
         id="text"
-        class="text pointer-events-auto w-full text-left ml-[50vw] z-30 border-l bg-white border-black tracking-wide pb-[60vh] p-32 pr-15 max-w-[800px] duration-500"
-        :class="!store.startIsActive ? 'mt-0' : 'mt-[100vh]'"
+        class="text pointer-events-auto w-full text-left pt-[20vh] ml-[50vw] z-30 border-l bg-white border-black tracking-wide pb-[60vh] p-32 pr-15 max-w-[800px] duration-500"
       >
+        <!-- :class="!store.startIsActive ? 'mt-0' : 'mt-[100vh]'" -->
+
         <!-- intro -->
         <section
           v-for="(section, index) in text['intro']"

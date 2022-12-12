@@ -62,9 +62,9 @@ const router = createRouter({
 router.beforeEach((to, from) => {
   const store = useGeneral();
 
-  if (to.hash === from.hash) {
-    router.replace({ hash: "#" });
-  }
+  // if (to.hash === from.hash) {
+  //   router.replace({ hash: "#" });
+  // }
 
   if (to.name == "home" && from.name == "chapter") {
     // router.replace({ hash: "#" });

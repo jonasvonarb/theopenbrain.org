@@ -82,7 +82,7 @@ const setState = (index, activeState) => {
             @click="
               activeState.state != index ? setState(index, activeState) : ''
             "
-            class="hover:underline cursor-pointer"
+            class="hover:underline"
             v-for="(state, index) in thisAnimation.states"
             :class="
               activeState.state == index
@@ -99,7 +99,7 @@ const setState = (index, activeState) => {
             @click="
               activeState.toggle != index ? toggleState(index, activeState) : ''
             "
-            class="hover:underline cursor-pointer"
+            class="hover:underline"
             v-for="(toggle, index) in thisAnimation.toggle"
             :class="
               activeState.toggle == index

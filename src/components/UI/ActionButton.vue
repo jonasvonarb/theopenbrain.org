@@ -1,6 +1,6 @@
 <template>
   <button
-    @click="this.$emit('action')"
+    @click="$emit('action')"
     class="px-3 py-1 m-2 bg-black text-white border-2 rounded-full hover:bg-red-600"
   >
     {{ text }}

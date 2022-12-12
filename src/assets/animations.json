@@ -4,13 +4,15 @@
       "id": "animationDragon",
       "title": "",
       "fullscreen": false,
-      "loop": true
+      "loop": true,
+      "loopSection": [82, 287]
     },
     {
       "id": "animationAccommodationVergence",
       "title": "Accommodation & Vergence",
       "fullscreen": false,
-      "loop": true
+      "loop": true,
+      "loopSection": null
     },
     {
       "id": "animationImpairedVision",
