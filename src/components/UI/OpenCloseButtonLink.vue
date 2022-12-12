@@ -3,8 +3,6 @@ import { useGeneral } from "@/stores";
 const store = useGeneral();
 const setMenu = () => {
   store.menuActive = true;
-
-  console.log(store.menuActive);
 };
 
 const props = defineProps({

@@ -18,7 +18,6 @@ const closeMenu = () => {
   store.isScrolling = true;
   setTimeout(() => {
     store.isScrolling = false;
-    console.log("finished scrollling");
   }, 700);
 };
 </script>

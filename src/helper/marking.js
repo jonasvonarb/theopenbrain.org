@@ -18,7 +18,6 @@ const marker = (text, container) => {
           let selection = document.getSelection();
           let base = selection.baseNode.parentElement;
           let extend = selection.extentNode.parentElement;
-
           if (base != extend) {
             alert("it is onyl supported to mark inside a paragraph");
           } else {
@@ -31,6 +30,7 @@ const marker = (text, container) => {
 
 const pointAdderAnimation = () => {
   let trigger = document.getElementById("animation-1-structures");
+  if (!trigger) return;
   trigger.addEventListener("mouseenter", () => {
     animationStore.enterHoverPunkt("animation-1-structures");
   });

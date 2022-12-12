@@ -19,7 +19,10 @@ export const useCom = defineStore("comments", {
     getCom() {
       return this.comments[this.activeCom];
     },
-    updateCom(input) {
+    allCom() {
+      return this.comments;
+    },
+    updateCom(input, event) {
       this.comments[this.activeCom] = input;
       localStorage.setItem("comments", JSON.stringify(this.comments));
     },

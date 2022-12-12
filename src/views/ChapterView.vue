@@ -6,11 +6,14 @@ import EyeStart from "@/components/chapter/text/EyeStart.vue";
 
 import { onBeforeRouteUpdate, useRoute, useRouter } from "vue-router";
 
-import { useGeneral, useText } from "@/stores";
+import { useGeneral, useText, useCom } from "@/stores";
 import ActionButton from "../components/UI/ActionButton.vue";
+import Comment from "../components/chapter/text/Comment.vue";
 
 const store = useGeneral();
 const storeText = useText();
+const commentStore = useCom();
+
 const { getactiveMenu } = store;
 </script>
 
@@ -26,8 +29,9 @@ const { getactiveMenu } = store;
     ></div>
     <!-- text -->
     <EyeStart />
-    <Illustration />
     <Text />
+    <Illustration />
+    <Comment v-if="commentStore.activeCom" />
 
     <div
       class="fixed z-40 bottom-2 flex justify-end w-full"
@@ -42,7 +46,7 @@ const { getactiveMenu } = store;
 </template>
 
 <script>
-export default {};
+export default { components: { Comment } };
 </script>
 
 <style scoped></style>

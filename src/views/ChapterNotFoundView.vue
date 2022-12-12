@@ -17,9 +17,7 @@ chapterName.value =
   route.params.chapter.replaceAll("-", " ")[0].toUpperCase() +
   route.params.chapter.replaceAll("-", " ").substring(1);
 
-onUpdated(() => {
-  console.log(route);
-});
+onUpdated(() => {});
 </script>
 
 <style scoped></style>

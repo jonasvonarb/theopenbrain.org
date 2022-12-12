@@ -6,7 +6,7 @@
       <a
         class="underline"
         v-for="link in paragraph.links"
-        href="link.url"
+        :href="link.url"
         target="_blank"
         >{{ link.text }}</a
       >

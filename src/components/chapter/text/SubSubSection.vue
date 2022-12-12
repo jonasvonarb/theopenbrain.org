@@ -4,7 +4,7 @@
     v-for="(subSubSection, index) in subParagraph.subSubSection"
   >
     <template v-if="!subSubSection.paragraphs">
-      <template v-if="subSubSection.type != 'break'">
+      <template v-if="subSubSection.type != 'breakVideo'">
         <p class="subSubT">
           {{
             chapterIndex +
@@ -18,7 +18,14 @@
         </p>
         <p class="subSubP" v-html="subSubSection.text" :id="subSubSection.id" />
       </template>
-      <BreakImages v-else :title="subSubSection.text" />
+      <BreakImages
+        v-else-if="subSubSection.type === 'breakVideo'"
+        :title="subSubSection.text"
+      />
+      <BreakSection
+        v-else-if="paragraph.type === 'breakSection'"
+        :content="paragraph"
+      />
     </template>
     <template v-else>
       <p class="subSubParT">
@@ -34,12 +41,19 @@
       </p>
       <template v-for="subSubParagraph in subSubSection.paragraphs">
         <p
-          v-if="subSubParagraph.type != 'break'"
+          v-if="subSubParagraph.type != 'breakVideo'"
           class="subSubParP"
           v-html="subSubParagraph.text"
           :id="subSubParagraph.id"
         />
-        <BreakImages v-else :title="subSubParagraph.text" />
+        <BreakImages
+          v-else-if="subSubSection.type === 'breakVideo'"
+          :title="subSubParagraph.text"
+        />
+        <BreakSection
+          v-else-if="paragraph.type === 'breakSection'"
+          :content="paragraph"
+        />
       </template>
     </template>
   </div>
@@ -47,6 +61,7 @@
 
 <script setup>
 import BreakImages from "./BreakImages.vue";
+import BreakSection from "./BreakSection.vue";
 const prosp = defineProps({
   subParagraph: Object,
   chapterIndex: Number,

@@ -18,7 +18,7 @@ const store = useGeneral();
       class="absolute top-0 left-0 w-full h-screen"
       src="/assets/images/6eee34a5c5d835360c6ffa36c5f49efa.jpeg"
     />
-    <div class="absolute bottom-3 w-full flex justify-end pr-3">
+    <div class="absolute bottom-6 right-12 w-full flex justify-end pr-3">
       <button
         class="pointer-events-auto text-xl text-white bg-black rounded-full w-16 h-16"
         @click="store.startIsActive = !store.startIsActive"

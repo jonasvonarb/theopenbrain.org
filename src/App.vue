@@ -3,9 +3,10 @@ import { RouterView } from "vue-router";
 import Menu from "./components/navigation/Menu.vue";
 import { useGeneral } from "@/stores";
 
-import { Transition } from "vue";
+import { onMounted, Transition } from "vue";
 
 const store = useGeneral();
+
 </script>
 
 <template>

@@ -3,6 +3,9 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx,vue}"],
   theme: {
     extend: {
+      blur: {
+        xs: "2px",
+      },
       fontSize: {
         base: ["1.7rem", "2.5rem"],
         l: ["2.3rem", "3rem"],

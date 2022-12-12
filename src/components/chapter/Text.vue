@@ -99,11 +99,11 @@ onBeforeUnmount(() => {
 <template>
   <div
     id="container"
-    class="z-40 w-screen top-0 left-0 pointer-events-true"
+    class="z-40 w-screen top-0 left-0 pointer-events-none"
     :class="store.startIsActive ? 'fixed' : 'absolute'"
   >
-    <div id="scroller">
-      <div class="fixed top-3 w-full flex justify-end pr-3">
+    <div id="scroller" class="pointer-events-none w-full">
+      <div class="fixed pointer-events-auto top-6 right-12 flex justify-end">
         <button
           class="pointer-events-auto text-xl text-white bg-black rounded-full w-16 h-16"
           v-if="store.isTop"
@@ -124,7 +124,7 @@ onBeforeUnmount(() => {
       </div>
       <main
         id="text"
-        class="text w-1/2 text-left ml-[50vw] z-30 border-l border-black tracking-wide pb-[60vh] p-32 pr-15 max-w-[800px] duration-500"
+        class="text pointer-events-auto w-full text-left ml-[50vw] z-30 border-l bg-white border-black tracking-wide pb-[60vh] p-32 pr-15 max-w-[800px] duration-500"
         :class="!store.startIsActive ? 'mt-0' : 'mt-[100vh]'"
       >
         <!-- intro -->
@@ -140,13 +140,18 @@ onBeforeUnmount(() => {
           >
             {{ section.title }}
           </h1>
-          <p
-            class="P"
-            v-for="paragraph in section.paragraphs"
-            :id="paragraph.id"
+          <span
+            class="animationTrigger mb-52 block"
+            id="triggerAnimationDragon"
           >
-            {{ paragraph.text }}
-          </p>
+            <p
+              class="P last:pb-52"
+              v-for="paragraph in section.paragraphs"
+              :id="paragraph.id"
+            >
+              {{ paragraph.text }}
+            </p>
+          </span>
         </section>
         <!-- text -->
         <div
@@ -161,7 +166,6 @@ onBeforeUnmount(() => {
         <FootNotes :content="text['footNotes']" />
       </main>
       <Points />
-      <Comment v-if="commentStore.activeCom" />
     </div>
   </div>
 </template>

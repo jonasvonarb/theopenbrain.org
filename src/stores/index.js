@@ -37,7 +37,7 @@ export const useGeneral = defineStore("main", {
       this.activeImportMenu = !this.activeImportMenu;
     },
     changeMenuIndex(index) {
-      if (this.activeMenuIndex == index) {
+      if (this.activeMenuIndex === index) {
         this.activeMenuIndex = null;
       } else {
         this.activeMenuIndex = index;
@@ -184,15 +184,14 @@ export const useText = defineStore("text", {
           init.slice(index + length, init.length);
         return result;
       }
+
       let entries = this.updateSectionsObj(
         this.text.sections,
         newString,
         id,
         sectionId
       );
-      const animationStore = useAnimation();
 
-      const commentStore = useCom();
       var _baseId = id.replace("highlight-", "");
       this.updateText("text", entries);
       this.selectionIds.push(_baseId + "-" + positionMark);
@@ -205,18 +204,46 @@ export const useText = defineStore("text", {
       for (var i = 0; i < entries.length; i++) {
         let section = entries[i][1];
         let _sectionId = section.id;
-        if (sectionId == _sectionId) {
+        if (sectionId === _sectionId) {
           //check paragraphs
           let subEntries = Object.entries(section.paragraphs);
-          for (var i = 0; i < subEntries.length; i++) {
-            let paragraph = subEntries[i][1];
+          for (let subEntrie of subEntries) {
+            let paragraph = subEntrie[1];
             let _paragraphId = paragraph.id;
-            if (id == _paragraphId) {
+
+            if (id === _paragraphId) {
               paragraph.text = newString;
-            } else if (id == _paragraphId) {
+            } else {
+              if (subEntrie[1].subSection) {
+                let subSection = subEntrie[1].subSection;
+                for (let i in Object.values(subSection)) {
+                  let subSetcion = subSection[i];
+                  if (id === subSetcion.id) {
+                    paragraph.text = newString;
+                  } else {
+                    let subSectionParagraphs = subSetcion.paragraphs;
+                    for (let i in Object.values(subSectionParagraphs)) {
+                      let subParagraph = subSectionParagraphs[i];
+                      if (id === subParagraph.id) {
+                        subParagraph.text = newString;
+                      } else {
+                        if (subParagraph.subSubSection) {
+                          for (let i in Object.values(
+                            subParagraph.subSubSection
+                          )) {
+                            if (id === subParagraph.subSubSection[i].id) {
+                              subParagraph.subSubSection[i].text = newString;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
-        } else if (id == _sectionId) {
+        } else if (id === _sectionId) {
         }
       }
       return entries;

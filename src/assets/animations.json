@@ -1,0 +1,51 @@
+{
+  "animations": [
+    {
+      "id": "animationDragon",
+      "title": "",
+      "fullscreen": false,
+      "loop": true
+    },
+    {
+      "id": "animationAccommodationVergence",
+      "title": "Accommodation & Vergence",
+      "fullscreen": false,
+      "loop": true
+    },
+    {
+      "id": "animationImpairedVision",
+      "title": "Impaired vision",
+      "fullscreen": true,
+      "states": ["normal eye", "myopia", "hyperopia", "astigmatism"],
+      "toggle": ["normal", "corrected"]
+    },
+    {
+      "id": "animationZwei",
+      "title": "Cross-sectional anatomy",
+      "fullscreen": false
+    },
+    {
+      "id": "animationDrei",
+      "title": "Cross-sectional anatomy",
+      "fullscreen": false
+    },
+    {
+      "id": "animationLateralOrganization",
+      "title": " Lateral organization",
+      "fullscreen": false,
+      "scroll": true
+    },
+    {
+      "id": "animationRetinalCellTypes",
+      "title": "Retinal Cell Types",
+      "fullscreen": false,
+      "states": [
+        "photoreceptors",
+        "horizontal cells",
+        "bipolar cells",
+        "amacrine cells",
+        "ganglion cells"
+      ]
+    }
+  ]
+}

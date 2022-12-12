@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -63,7 +62,10 @@ body {
   font-size: 62.5%;
   font-family: "DM Mono";
   font-family: "Space Mono", monospace;
+  hyphens: auto;
 }
+
+/* *{background: #000;} */
 
 html:focus-within {
   scroll-behavior: smooth;
@@ -96,12 +98,12 @@ section p:first-of-type {
 }
 
 *::-webkit-scrollbar {
-  /* display: none; */
+  display: none;
 }
 
 * {
-  /* -ms-overflow-style: none; */
-  /* scrollbar-width: none; */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   overscroll-behavior: none;
   box-sizing: border-box;
 }
@@ -123,10 +125,21 @@ h3 {
 blockquote {
   padding: 5rem;
 }
+.T,
+.subT,
+.subSubT,
+.subSubSubT,
+.subSubParT {
+  padding-bottom: 1.5rem;
+}
 .P,
 .subP,
 .subSubP,
-.subSubSubP {
+.subSubSubP,
+.subSubParP {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
   padding-bottom: 3rem;
 }
 
@@ -146,25 +159,28 @@ blockquote {
   /* border-radius: 9999px; */
 }
 
-.animationTrigger {
-  background-color: #1017e211;
-}
 .animationTrigger.active {
-  background-color: #1017e2;
-  color: white;
+  color: black;
+  font-weight: 600;
+  /* padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  border-radius: 0.8rem;
+  background: #000;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone; */
 }
 
 .punkt,
 .punktComment {
   position: absolute;
-  left: -0.9rem;
-  width: 1.8rem;
-  height: 1.8rem;
+  left: -1.1rem;
+  width: 2.2rem;
+  height: 2.2rem;
   border-radius: 50%;
   background-color: black;
   pointer-events: all;
-  font-size: 1.2rem;
-  line-height: 1.6rem;
+  font-size: 1.3rem;
+  line-height: 1.9rem;
   padding: 0px;
   text-align: center;
   transition: none;
@@ -172,25 +188,23 @@ blockquote {
 
 .punktComment {
   top: 0px;
-  background-color: #0dd310;
-  border: 1px solid black;
+  background-color: #8b5cf6;
+  border: 1px solid white;
   display: none;
-  /* border-radius: 0; */
 }
 
 mark {
-  color: black;
+  color: #8b5cf6;
   padding: 0.2rem;
   padding-left: 0;
   padding-right: 0;
-  color: #1017e2;
   background-color: transparent;
   border-radius: 5px;
 }
 
 .hoverActive {
-  background-color: #e91b0b;
-  color: black;
+  background-color: #0dd310;
+  color: white;
   cursor: default;
 }
 
@@ -210,14 +224,16 @@ mark {
   opacity: 0;
 }
 
-.fade-leave-active,
-.fade-enter-active {
-  transition: opacity 0.7s ease;
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s ease;
+  width: 50vw;
 }
 
 .fade-enter-from,
 .fade-leave-to {
-  opacity: 1;
+  opacity: 0;
+  filter: blur(10px);
 }
 
 .outLeft-leave-active,

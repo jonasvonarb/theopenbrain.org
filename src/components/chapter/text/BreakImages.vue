@@ -71,18 +71,18 @@ onMounted(() => {
   <div>
     <div
       ref="trigger"
-      class="w-screen h-[180vh] -translate-x-1/2 -ml-32 text-black my-96 py-[5vh]"
+      class="w-screen h-[180vh] -translate-x-1/2 -ml-32 text-white my-[50vh]"
     >
       <div
-        class="sticky h-screen w-full top-0"
+        class="sticky flex top-0 left-0 h-screen w-full p-32"
         :class="videoPlayState ? 'text-white' : 'text-black'"
       >
         <div
           ref="video"
-          class="text-white top-0 z-60 w-screen h-full opacity-0.2 bg-gray-900"
+          class="border w-full text-violet-500 p-16 bg-white border-violet-500"
         >
           <div
-            class="w-full absolute z-50 top-0 flex h-screen justify-center bg-gray-900 items-center content-center flex-wrap duration-500"
+            class="w-full absolute z-50 top-0 left-0 flex h-screen justify-center items-center content-center flex-wrap duration-500"
           >
             <video
               poster="/assets/images/2_weich.png"
@@ -99,13 +99,8 @@ onMounted(() => {
               Your browser does not support the video tag.
             </video>
           </div>
-          <p
-            v-if="store.imgActive == false"
-            class="absolute z-40 top-0 h-full justify-left z-60 duration-500 pointer-events-none w-full left-0"
-          >
-            <span
-              class="text-center block m-auto duration-500 w-1/2 text-white"
-            >
+          <p class="justify-left pointer-events-none w-full">
+            <span class="block duration-500 w-full">
               {{ title }}
             </span>
           </p>

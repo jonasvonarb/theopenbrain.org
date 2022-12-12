@@ -17,26 +17,44 @@
       {{ section.title }}
     </h2>
     <template v-for="paragraph in section['paragraphs']">
-      <template v-if="paragraph?.type != 'break'">
+      <template
+        v-if="
+          paragraph?.type != 'breakVideo' && paragraph.type != 'breakSection'
+        "
+      >
         <!-- section paragraph -->
         <p
-          class="P pb-12"
+          class="P"
           v-html="paragraph.text"
           :id="paragraph.id"
           v-if="!paragraph.subSection"
         />
+
         <SubSection v-else :paragraph="paragraph" :index="index + 1" />
+        <fullScreenIllustration
+          v-if="paragraph.animationFull"
+          :paragraph="paragraph"
+        />
       </template>
       <!-- section Break -->
-      <BreakImages v-else :title="paragraph.text" />
+      <BreakImages
+        v-else-if="paragraph.type === 'breakVideo'"
+        :title="paragraph.text"
+      />
+      <BreakSection
+        v-else-if="paragraph.type === 'breakSection'"
+        :content="paragraph"
+      />
     </template>
   </section>
 </template>
 
 <script setup>
 import BreakImages from "./BreakImages.vue";
+import fullScreenIllustration from "@/components/chapter/Illus/fullScreenIllustration.vue";
 import SubSection from "./SubSection.vue";
 import { useGeneral } from "@/stores";
+import BreakSection from "./BreakSection.vue";
 const store = useGeneral();
 
 const props = defineProps({

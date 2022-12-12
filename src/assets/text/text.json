@@ -26,24 +26,26 @@
             "name": " eye-anatomy"
           },
           "id": "5ea404ac-2fcb-4102-89e9-febe1ecc71a0",
-          "text": "It is believed that the ancient Greeks were the first to dissect animal eyes, with Alcmeon being considered one of the first to perform dissections for the purpose of studying anatomy. Based on gross anatomy, the Hippocratic school split the eye into 3 layers (or tunics): sclera, uvea and retina. Since then, a much clearer picture has emerged. The eye is a spherical structure. The front of the eye contains the cornea, a clear crystalline material that enables passage of light into the eye. The back of the eye is made up of several layers, the outermost being a white fibrous layer called the sclera. Moving inwards from the sclera comes the choroid, a layer important for vascularization, the retina pigment epithelium, a layer important for its complex interactions with photoreceptors, and the retina. Aside from these <span id='animation-1-structures' class='animationMarker'>structures</span>, there is also a lens near the front half of the eye, whose shape can be adjusted by the ciliary muscles to change the focus of the eye. There are also two fluid filled chambers, the anterior and posterior chambers, that contain aqueous and vitreous humour, respectively. These fluids maintain pressure in the eye and circulate important nutrients and changes to the production and exchange of these fluids can lead to changes in intraocular pressure which are associated with ocular health issues, such as glaucoma."
+          "text": "It is believed that the ancient Greeks were the first to dissect animal eyes, with Alcmeon being considered one of the first to perform dissections for the purpose of studying anatomy. Based on gross anatomy, the Hippocratic school split the eye into 3 layers (or tunics): sclera, uvea and retina. Since then, a much clearer picture has emerged. The eye is a spherical structure. The front of the eye contains the cornea, a clear crystalline material that enables passage of light into the eye. The back of the eye is made up of several layers, the outermost being a white fibrous layer called the sclera. Moving inwards from the sclera comes the choroid, a layer important for vascularization, the retina pigment epithelium, a layer important for its complex interactions with photoreceptors, and the retina. Aside from these structures, there is also a lens near the front half of the eye, whose shape can be adjusted by the ciliary muscles to change the focus of the eye. There are also two fluid filled chambers, the anterior and posterior chambers, that contain aqueous and vitreous humour, respectively. These fluids maintain pressure in the eye and circulate important nutrients and changes to the production and exchange of these fluids can lead to changes in intraocular pressure which are associated with ocular health issues, such as glaucoma."
         },
         {
           "id": "3b21964b-d33f-4292-ad5f-642fe66e49bd",
-          "text": "Light enters the eye at the cornea. The cornea has a higher refractive index with respect to air, and this causes the direction of incoming light to be altered. The cornea provides more refractive power to the eye than the lens, and this can be seen if you open your eyes under water, as water and the cornea have similar refractive indices. Importantly, the curvature of the cornea is stronger in its center compared its periphery, which helps it act like a corrected spherical lens to ensure incoming light rays are brought to a common focus. Light then passes through the aqueous humor, and some photons make their way through the pinhole in the center of the iris – the pupil. Pigment in the iris gives us our ‘eye color’. Light then passes through the lens, which has a graded index to help focus rays entering various parts of the lens onto the same location of the retina. Additionally, to appropriately focus the incoming light onto the retina, the thickness of the lens can be adjusted depending on the distance between the eye and the object being viewed. <span class='animationTrigger' id='animation-vergence-and-accommodation '>This thickening/thinning of the lens is called accommodation and is controlled by the ciliary muscles. <span id='' class='animationMarker'>Accommodation</span> generally occurs in tandem with <span id='' class='animationMarker'>vergence</span> eye movements, which are correlated movements between the eyes that ensure focus is properly obtained. Finally, the incoming image is projected through the vitreous humour and onto the retina, the light sensing tissue that lines the back of the eye.</span>"
+          "text": "Light enters the eye at the cornea. The cornea has a higher refractive index with respect to air, and this causes the direction of incoming light to be altered. The cornea provides more refractive power to the eye than the lens, and this can be seen if you open your eyes under water, as water and the cornea have similar refractive indices. Importantly, the curvature of the cornea is stronger in its center compared its periphery, which helps it act like a corrected spherical lens to ensure incoming light rays are brought to a common focus. Light then passes through the aqueous humor, and some photons make their way through the pinhole in the center of the iris – the pupil. Pigment in the iris gives us our ‘eye color’. Light then passes through the lens, which has a graded index to help focus rays entering various parts of the lens onto the same location of the retina. Additionally, to appropriately focus the incoming light onto the retina, the thickness of the lens can be adjusted depending on the distance between the eye and the object being viewed. <span class='animationTrigger' id='triggerAnimationAccommodationVergence'>This thickening/thinning of the lens is called accommodation and is controlled by the ciliary muscles. <span id='' class='animationMarker'>Accommodation</span> generally occurs in tandem with <span id='' class='animationMarker'>vergence</span> eye movements, which are correlated movements between the eyes that ensure focus is properly obtained. Finally, the incoming image is projected through the vitreous humour and onto the retina, the light sensing tissue that lines the back of the eye.</span>"
         },
         {
           "id": "4dd86835-8048-466b-a872-acf5259ed4bc",
-          "type": "break",
-          "text": "Break section: Pathway for the pupillary light reflex"
+          "type": "breakSection",
+          "title": "Break section: Pathway for the pupillary light reflex"
         },
         {
           "id": "a94004c6-a34a-4f26-8ca5-aee1e9f3780b",
-          "text": "Alas, despite our body’s best laid plans, due to a variety of developmental and age-related issues, our eyes often improperly focus images on the retina, resulting in impaired vision. Two common issues result from the image being focused either in front of (myopia) or behind (hyperopia) the retina. Myopia, also commonly referred to as nearsightedness, results in images that are far away from the viewer appearing blurry. In contrast, hyperopia, commonly referred to as farsightedness, results in images that are nearby being blurry. Another common refractive issue is astigmatism, which results in uneven focus of the incoming image on the retina, due to irregular curvature of the cornea or lens abnormalities. Finally, as we age, the lens becomes less elastic and the ciliary muscles become less effective at accommodating different focal planes, leading to presbyopia, which tends to focus images behind the retina. In general, most types of refractive errors can be addressed with corrective lenses."
+          "animationFull": true,
+          "animationId": "animationImpairedVision",
+          "text": "<span class='animationAnchor' id='anchorAnimationImpairedVision'>Alas, despite our body’s best laid plans, due to a variety of developmental and age-related issues, our eyes often improperly focus images on the retina, resulting in impaired vision. Two common issues result from the image being focused either in front of (myopia) or behind (hyperopia) the retina. Myopia, also commonly referred to as nearsightedness, results in images that are far away from the viewer appearing blurry. In contrast, hyperopia, commonly referred to as farsightedness, results in images that are nearby being blurry. Another common refractive issue is astigmatism, which results in uneven focus of the incoming image on the retina, due to irregular curvature of the cornea or lens abnormalities. Finally, as we age, the lens becomes less elastic and the ciliary muscles become less effective at accommodating different focal planes, leading to presbyopia, which tends to focus images behind the retina. In general, most types of refractive errors can be addressed with corrective lenses.</span>"
         },
         {
           "id": "f76eea26-c064-41c5-9347-889a65266271",
-          "type": "break",
+          "type": "breakVideo",
           "text": "Break section: Video – Maureen Neitz discussing possible causes and cures for myopia – 2 mins"
         }
       ]
@@ -65,21 +67,26 @@
                 {
                   "id": "8998fdf5-42b8-4732-b84c-724e2872e146",
 
-                  "text": "The retina is comprised of 5 neuronal classes (photoreceptors, horizontal cells, bipolar cells amacrine cells, and ganglion cells), as well as various glial and vascular cells. Cell bodies of neurons in the vertebrate retina are grouped into three distinct layers, separated by two synaptic layers. Light passes through the entire retina before being focused to the deepest (i.e. closest to the back of the eye) layer of the retina, where specialized photon detectors called photoreceptors reside. These neurons transduce absorbed photons into electric signals. Photoreceptors extend nerve terminals into a synaptic layer called the outer plexiform layer, where they synapse with cells called bipolar cells and horizontal cells. The bipolar and horizontal cell bodies, along with those of amacrine cells, are contained within the inner nuclear layer. Bipolar cells relay signals from photoreceptors to the inner plexiform layer where they synapse with amacrine and retinal ganglion cells. These latter neurons are the sole output of the retina and reside in a ganglion cell layer which abuts the vitreous humour. Axons from the ganglion cells get bundled together into the optic nerve, which ‘dives’ back through the entire retina before leaving the eye, resulting in a blind-spot in each eye’s field of view."
+                  "text": "<span class='animationTrigger' id='triggerAnimationZwei'>The retina is comprised of 5 neuronal classes (photoreceptors, horizontal cells, bipolar cells amacrine cells, and ganglion cells), as well as various glial and vascular cells. Cell bodies of neurons in the vertebrate retina are grouped into three distinct layers, separated by two synaptic layers. Light passes through the entire retina before being focused to the deepest (i.e. closest to the back of the eye) layer of the retina, where specialized photon detectors called photoreceptors reside. These neurons transduce absorbed photons into electric signals. Photoreceptors extend nerve terminals into a synaptic layer called the outer plexiform layer, where they synapse with cells called bipolar cells and horizontal cells. The bipolar and horizontal cell bodies, along with those of amacrine cells, are contained within the inner nuclear layer. Bipolar cells relay signals from photoreceptors to the inner plexiform layer where they synapse with amacrine and retinal ganglion cells. These latter neurons are the sole output of the retina and reside in a ganglion cell layer which abuts the vitreous humour. Axons from the ganglion cells get bundled together into the optic nerve, which ‘dives’ back through the entire retina before leaving the eye, resulting in a blind-spot in each eye’s field of view.</span>"
                 },
                 {
                   "id": "847986f1-7a1c-4a47-963e-ba427ea0109f",
-                  "type": "break",
-                  "text": "Break section: Blind-spot - brief history and interactive test"
+                  "type": "breakSection",
+                  "steps": [
+                    "stare at cross",
+                    "now move finger towards dot while staring at the cross",
+                    "lorem ipsum "
+                  ],
+                  "title": "Blind-spot"
                 },
                 {
                   "id": "fa9732d3-1ee5-44a7-ba03-775434766b4b",
 
-                  "text": "The retina’s job is to convert photons into ethologically relevant elements of the visual scene. It does this by connecting photoreceptors to multiple retinal circuits, each extracting specific element of the visual scene, before sending these processed signals to the brain for further processing. Accordingly, the route taken by the visual signal from photoreceptor to ganglion cell varies depending on the ‘type’ of retinal ganglion cell being considered, as will be discussed below in detail. In brief, a retinal ganglion cell receives input from one or several photoreceptors, mostly located above its dendritic tree, with these photoreceptor signals being relayed via bipolar cells. Signal transmission from photoreceptors to bipolar cells is modulated by horizontal cells, whereas signal transmission from bipolar cells to ganglion cells is modulated by amacrine cells. In turn, ganglion cells project their axons to various higher brain regions, where these visual signals underlie a variety of functions."
+                  "text": "<span class='animationTrigger' id='triggerAnimationDrei'>The retina’s job is to convert photons into ethologically relevant elements of the visual scene. It does this by connecting photoreceptors to multiple retinal circuits, each extracting specific element of the visual scene, before sending these processed signals to the brain for further processing. Accordingly, the route taken by the visual signal from photoreceptor to ganglion cell varies depending on the ‘type’ of retinal ganglion cell being considered, as will be discussed below in detail. In brief, a retinal ganglion cell receives input from one or several photoreceptors, mostly located above its dendritic tree, with these photoreceptor signals being relayed via bipolar cells. Signal transmission from photoreceptors to bipolar cells is modulated by horizontal cells, whereas signal transmission from bipolar cells to ganglion cells is modulated by amacrine cells. In turn, ganglion cells project their axons to various higher brain regions, where these visual signals underlie a variety of functions.</span>"
                 },
                 {
                   "id": "d12c4b7a-f896-4e03-92bb-74d30bd22135",
-                  "type": "break",
+                  "type": "breakVideo",
                   "text": "Break section: Video – Tom Baden discussing ‘Is our retina really upside down?” – 2 mins"
                 }
               ]
@@ -87,10 +94,14 @@
             {
               "id": "36d8a296-06ba-4dff-9491-a077f989c3a8",
               "title": "Lateral organization",
+              "animationAnchor": true,
+              "animation": {
+                "title": "lateral organization",
+                "id": "LateralOrganization"
+              },
               "paragraphs": [
                 {
                   "id": "0c4a9d17-c64f-4d58-9c43-18a802766034",
-
                   "text": "The retina’s vertically organization wires photoreceptors to ganglion cells through a mesh of bipolar, horizontal and amacrine cells. The field of view of each neuron grows at each level of the vertical hierarchy and culminates in ganglion cells which each ‘see’ a piece of the visual world equal to the patch of photoreceptors to which its amacrine and bipolar cells are connected. This visible path of the world is determined by the size of a ganglion cell’s dendritic tree and is called its ‘receptive field’. Extracting visual information from all parts of the visual field requires that each microcircuit be replicated laterally over the entire retinal surface. Such patterns of laterally tiled circuits (and their component cells) are referred to as mosaics."
                 },
                 {
@@ -103,6 +114,10 @@
             {
               "id": "9aa3d5b7-8096-4cca-91a3-7059898764e9",
               "title": "Retinal cell types",
+              "animation": {
+                "title": "Retinal cell types",
+                "id": "animationRetinalCellTypes"
+              },
               "paragraphs": [
                 {
                   "id": "8ef9f650-c325-4b70-b507-fe62b0ed5a67",
@@ -145,7 +160,7 @@
                 },
                 {
                   "id": "d81b706a-49f2-4198-ba07-8a5d819030ac",
-                  "type": "break",
+                  "type": "breakVideo",
                   "text": "Break section – Retinal cell types – Video of Dowling and Werblin talking about recording a diversity of responses from all retinal cell types."
                 }
               ]
@@ -300,7 +315,7 @@
           "text": "ON bipolar cells ‘invert’ the photoreceptor signal. Unlike OFF bipolar cells, which possess ionotropic glutamate receptors in their dendrites, ON bipolar cell dendrites express a metabotropic glutamate receptor – mGluR6. When bound to glutamate, these receptors activate an intracellular G protein pathway, leading to the closure of a non-selective cation channel – TRPM1. Thus, when photoreceptors are releasing high levels of glutamate in the dark, glutamate binding to mGluR6 leads to the closure of TRPM1 channels, resulting in a steady hyperpolarization of ON bipolar cells. Increments in light intensity lower glutamate levels in the synaptic cleft, which releases the inhibition of TRPM1 by mGluR6, driving an inward current and depolarization of ON bipolar cells. As such, ON bipolar cells are described as being able to ‘invert’ the photoreceptor light response (i.e. when a photoreceptor hyperpolarizes, an ON bipolar cell depolarizes). Mutations within the G protein pathway in ON bipolar cells can result in congenital stationary night blindness, since, as discussed below, rod signals pass through a rod bipolar cell which is a type of ON bipolar cell. ON bipolar cells make synapses in the lower half of the inner plexiform layer, closer to the ganglion cell layer."
         },
         {
-          "type": "break",
+          "type": "breakVideo",
           "id": "ffdbd2c2-e887-4aba-b7e0-86abdbd943a8",
           "text": "Break section: Video of Helga Kolb discussing the discovery of ON and OFF retinal channels."
         },
@@ -328,8 +343,8 @@
         },
         {
           "id": "e896d06f-f436-4fad-96d7-c19b8a810f58",
-          "type": "break",
-          "text": "Break section – Parallel stacked channels: Video of Botond discussing how various ganglion cell types arise via parallel processing in ‘stacked’ channels. Include his ‘famous’ Mona Lisa channels thing."
+          "type": "breakVideo",
+          "text": "Parallel stacked channels: Video of Botond discussing how various ganglion cell types arise via parallel processing in ‘stacked’ channels. Include his ‘famous’ Mona Lisa channels thing."
         },
         {
           "subSection": [
@@ -344,7 +359,7 @@
                 {
                   "id": "4029c834-7779-4340-b528-41d5cc0b6d09",
                   "text": "Break section – Video EJ chichilnisky - Population codes in the retina. Start with simple retina model (LN), and build to Chichilnisky full population recording, and end with decoding (eg. his recent eLife paper)",
-                  "type": "break"
+                  "type": "breakVideo"
                 },
                 {
                   "id": "8b56dce0-47b3-4513-a455-8b92d5b380be",
@@ -384,7 +399,7 @@
                 },
                 {
                   "id": "c2f5bc17-e87f-45d3-92e6-ebdc1e4dcc0b",
-                  "type": "break",
+                  "type": "breakVideo",
                   "text": "Break section: Video - Markus Meister talking about what the frog’s eye tells the frogs brain, and then telling the story about OMS cells."
                 },
                 {
@@ -483,7 +498,7 @@
                 },
                 {
                   "id": "4ba8917b-7a0f-436e-9209-0129e3615c75",
-                  "type": "break",
+                  "type": "breakVideo",
                   "text": "Break section: Video – Get Josh to talk about these phenomena."
                 }
               ]
@@ -498,7 +513,7 @@
                 },
                 {
                   "id": "dd1f1f8b-6a01-47c7-9a40-ef02016038ee",
-                  "type": "break",
+                  "type": "breakVideo",
                   "text": "Break section: Video – Rachel Wong describing discovery of retinal waves."
                 }
               ]
@@ -576,7 +591,7 @@
                 },
                 {
                   "id": "c3dae8c1-25e2-4353-aefc-5c8b8ab80cf2",
-                  "type": "break",
+                  "type": "breakVideo",
                   "text": "Break section: Interactive widget. Select a movie clip, and the click on which disease to mimic."
                 }
               ]
@@ -607,7 +622,7 @@
                 },
                 {
                   "id": "86c7a49b-c96b-43d4-9556-4cce4488ec37",
-                  "type": "break",
+                  "type": "breakVideo",
                   "text": "Break section: I could get Valerie Wallace to talk about cell therapy."
                 }
               ]
