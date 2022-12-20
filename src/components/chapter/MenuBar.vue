@@ -1,17 +1,17 @@
 <script setup>
-import Menu from "../navigation/Menu.vue";
+import Menu from "../Navigation/MenuHome.vue";
 import { useGeneral } from "@/stores";
 const store = useGeneral();
 </script>
 
 <template>
   <transition
+    name="leftLeave"
+    :css="false"
     @before-enter="onBeforeEnter"
     @enter="enter"
     @before-leave="onBeforeLeave"
     @leave="leave"
-    name="leftLeave"
-    :css="false"
   >
     <div
       v-if="store.activeMenu"

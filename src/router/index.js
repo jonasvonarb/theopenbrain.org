@@ -16,6 +16,7 @@ const routes = [
   {
     path: "/about",
     name: "about",
+    meta: { transition: "aboutTo" },
     component: () => import("../views/AboutView.vue"),
   },
   {
@@ -41,26 +42,37 @@ const router = createRouter({
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
       if (from.name == to.name) {
+        console.log("smooth");
         return {
           el: to.hash,
           behavior: "smooth",
         };
       } else {
+        console.log("auto");
         return {
           el: to.hash,
           behavior: "auto",
         };
       }
-    }
-    if (savedPosition) {
-      return savedPosition;
     } else {
-      return { top: 0 };
+      if (savedPosition) {
+        return savedPosition;
+      } else {
+        return { top: 0 };
+      }
     }
   },
 });
 router.beforeEach((to, from) => {
   const store = useGeneral();
+
+  if (from.name === "about") {
+    to.meta = { transitionName: "aboutLeave" };
+  }
+
+  if (to.name === "about") {
+    to.meta = { transitionName: "aboutTo" };
+  }
 
   // if (to.hash === from.hash) {
   //   router.replace({ hash: "#" });

@@ -24,10 +24,10 @@
       >
         <!-- section paragraph -->
         <p
+          v-if="!paragraph.subSection"
+          :id="paragraph.id"
           class="P"
           v-html="paragraph.text"
-          :id="paragraph.id"
-          v-if="!paragraph.subSection"
         />
 
         <SubSection v-else :paragraph="paragraph" :index="index + 1" />

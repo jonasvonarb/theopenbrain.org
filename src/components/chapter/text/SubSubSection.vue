@@ -1,61 +1,59 @@
 <template>
   <div
-    class="subSub"
-    v-for="(subSubSection, index) in subParagraph.subSubSection"
+    class="pt-6"
+    :id="subParagraph.animation ? 'trigger' + subParagraph.animation?.id : ''"
+    :class="subParagraph.animation ? 'animationTrigger' : ''"
   >
-    <template v-if="!subSubSection.paragraphs">
-      <template v-if="subSubSection.type != 'breakVideo'">
-        <p class="subSubT">
-          {{
-            chapterIndex +
-            "." +
-            (subIndex + 1) +
-            "." +
-            (index + 1) +
-            " " +
-            subSubSection.title
-          }}
-        </p>
-        <p class="subSubP" v-html="subSubSection.text" :id="subSubSection.id" />
-      </template>
-      <BreakImages
-        v-else-if="subSubSection.type === 'breakVideo'"
-        :title="subSubSection.text"
-      />
-      <BreakSection
-        v-else-if="paragraph.type === 'breakSection'"
-        :content="paragraph"
-      />
-    </template>
-    <template v-else>
-      <p class="subSubParT">
-        {{
-          chapterIndex +
-          "." +
-          (subIndex + 1) +
-          "." +
-          (index + 1) +
-          " " +
-          subSubSection.title
-        }}
-      </p>
-      <template v-for="subSubParagraph in subSubSection.paragraphs">
-        <p
-          v-if="subSubParagraph.type != 'breakVideo'"
-          class="subSubParP"
-          v-html="subSubParagraph.text"
-          :id="subSubParagraph.id"
-        />
+    <div
+      v-for="(subSubSection, index) in subParagraph.subSubSection"
+      :key="subSubSection.title"
+      class="subSub"
+    >
+      <template v-if="!subSubSection.paragraphs">
+        <div v-if="subSubSection.type != 'breakVideo'">
+          <span class="subSubT p-0 inline">
+            {{ subSubSection.title + " " }}
+          </span>
+          <p
+            :id="subSubSection.id"
+            class="subSubP pt-0"
+            v-html="subSubSection.text"
+          />
+        </div>
         <BreakImages
           v-else-if="subSubSection.type === 'breakVideo'"
-          :title="subSubParagraph.text"
+          :title="subSubSection.text"
         />
         <BreakSection
           v-else-if="paragraph.type === 'breakSection'"
           :content="paragraph"
         />
       </template>
-    </template>
+      <p class v-else>
+        <span class="subSubParT">
+          {{ subSubSection.title + " " }}
+        </span>
+        <template v-for="subSubParagraph in subSubSection.paragraphs">
+          <p
+            v-if="subSubParagraph.type != 'breakVideo'"
+            :id="subSubParagraph.id"
+            :key="subSubParagraph.title"
+            class="subSubParP"
+            v-html="subSubParagraph.text"
+          />
+          <BreakImages
+            v-else-if="subSubSection.type === 'breakVideo'"
+            :key="subSubParagraph.text"
+            :title="subSubParagraph.text"
+          />
+          <BreakSection
+            v-else-if="paragraph.type === 'breakSection'"
+            :key="subSubParagraph"
+            :content="paragraph"
+          />
+        </template>
+      </p>
+    </div>
   </div>
 </template>
 

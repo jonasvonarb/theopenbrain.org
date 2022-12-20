@@ -7,16 +7,16 @@ const storeText = useText();
 
 <template>
   <transition
+    name="leftLeave"
+    :css="false"
     @before-enter="onBeforeEnter"
     @enter="enter"
     @before-leave="onBeforeLeave"
     @leave="leave"
-    name="leftLeave"
-    :css="false"
   >
     <div
       v-show="store.activeSidebar"
-      class="fixed z-50 right-0 top-0 w-1/3 h-body mt-body p-5 bg-black text-white translate"
+      class="fixed z-50 right-0 top-0 w-1/3 h-body mt-body p-5 text-white translate"
     >
       <!-- Inhalt -->
       <!-- <div class="flex flex-col">

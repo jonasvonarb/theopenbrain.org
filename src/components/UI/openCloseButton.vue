@@ -1,6 +1,5 @@
 <script setup>
 import { useGeneral } from "@/stores";
-import { storeToRefs } from "pinia";
 const store = useGeneral();
 
 const props = defineProps({
@@ -8,10 +7,11 @@ const props = defineProps({
   pos: String,
   text: String,
 });
+
 </script>
 
 <template>
-  <button @click="store.toggle('active' + props.target)">
+  <button @click="store.toggle('active' + target)">
     {{ text }}
   </button>
 </template>

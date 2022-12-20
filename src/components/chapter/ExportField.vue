@@ -1,9 +1,9 @@
 <template>
   <div
     v-show="store.activeImportMenu"
-    @click="handleClick()"
     id="backgImport"
     class="fixed flex gap-5 justify-center items-center top-0 left-0 h-full w-full bg-black/80 z-50 p-6 pb-10 mt-0 ml-0 text-white"
+    @click="handleClick()"
   >
     <div class="bg-blue h-1/2 w-[40vw] pt-2 p-5 bg-white text-black rounded-lg">
       <p>

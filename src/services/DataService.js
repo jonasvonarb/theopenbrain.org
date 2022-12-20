@@ -4,7 +4,6 @@ import { getDatabase, ref, set, onValue } from "firebase/database";
 const db = getDatabase();
 
 class DataService {
- 
   writeUserData(userId, name, email, imageUrl) {
     set(ref(db, "users/" + userId), {
       username: name,

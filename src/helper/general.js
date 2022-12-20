@@ -1,3 +1,5 @@
+import { useGeneral } from "../stores";
+
 const toSlug = (str) => {
   str = str.toLowerCase();
 
@@ -14,4 +16,48 @@ const toSlug = (str) => {
     .replace(/-+/g, "-"); // collapse dashes
   return str;
 };
-export { toSlug };
+
+const addH = (event) => {
+  const store = useGeneral();
+  if (!store.animationActive) return;
+  let paths = document.getElementsByClassName(event.target.id + "Highlight");
+  let text = event.target;
+
+  if (paths.length === 0) {
+    paths = document.getElementsByClassName(
+      event.target.closest(".highlighterIllu").classList[0]
+    );
+    text = document.getElementById(
+      event.target
+        .closest(".highlighterIllu")
+        .classList[0].replace("Highlight", "")
+    );
+  }
+  for (const path of paths) {
+    path.children[0].children[0].classList.add("highlightIllu");
+    text.classList.add("highlightText");
+  }
+};
+const removeH = (event) => {
+  const store = useGeneral();
+  if (!store.animationActive) return;
+  let paths = document.getElementsByClassName(event.target.id + "Highlight");
+  let text = event.target;
+
+  if (paths.length === 0) {
+    paths = document.getElementsByClassName(
+      event.target.closest(".highlighterIllu").classList[0]
+    );
+    text = document.getElementById(
+      event.target
+        .closest(".highlighterIllu")
+        .classList[0].replace("Highlight", "")
+    );
+  }
+  for (const path of paths) {
+    path.children[0].children[0].classList.remove("highlightIllu");
+    text.classList.remove("highlightText");
+  }
+};
+
+export { toSlug, addH, removeH };

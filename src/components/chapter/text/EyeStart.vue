@@ -3,18 +3,15 @@ import { useRoute } from "vue-router";
 import { useGeneral } from "@/stores";
 import lottie from "lottie-web";
 import { onMounted, ref, watch } from "vue";
-import { useMouse, useMousePressed } from "@vueuse/core";
+import { useMouse } from "@vueuse/core";
 
-const { x, y } = useMouse();
+const { x } = useMouse();
 
-const { pressed } = useMousePressed();
-
-const route = useRoute();
 const store = useGeneral();
 const animation = ref(null);
 
-watch(x, (x, prevX) => {
-  console.log(pressed.value);
+watch(x, (x) => {
+  if (!animation.value) return;
   const map = (value, x1, y1, x2, y2) =>
     ((value - x1) * (y2 - x2)) / (y1 - x1) + x2;
   animation.value.goToAndStop(
@@ -25,33 +22,37 @@ watch(x, (x, prevX) => {
 
 onMounted(() => {
   let svgContainer = document.getElementById("animationStart");
-  animation.value = lottie.loadAnimation({
-    id: "intro",
-    speed: 3,
-    wrapper: svgContainer,
-    animType: "svg",
-    loop: true,
-    autoplay: false,
-    rendererSettings: {
-      progressiveLoad: false,
-      preserveAspectRatio: "xMidYMax slice",
-    },
-    path: "/assets/animations/background-test-1.json",
-  });
+  setTimeout(() => {
+    animation.value = lottie.loadAnimation({
+      id: "intro",
+      speed: 3,
+      wrapper: svgContainer,
+      animType: "svg",
+      loop: true,
+      autoplay: false,
+      rendererSettings: {
+        progressiveLoad: false,
+        preserveAspectRatio: "xMidYMax slice",
+      },
+      path: "/assets/animations/background-test-1.json",
+    });
+  }, 700);
 });
 </script>
 <template>
   <div
     id="titleAnimation"
-    class="absolute w-screen h-screen z-[50] bg-black overflow-hidden duration-500 flex justify-start items-center"
+    :class="store.activeMenu ? 'w-[65vw]' : 'w-screen'"
+    class="bgImage bg-dark absolute right-0 h-screen z-[50] overflow-hidden duration-500 flex justify-start items-center"
   >
-    <!-- :class="!store.startIsActive ? 'h-0' : 'h-screen'" -->
-    <div class="w-screen flex justify-center" id="animationStart" />
-    <div class="absolute bottom-6 right-12 w-full flex justify-end pr-3">
+    <div
+      id="animationStart"
+      class="w-screen h-screen flex flex-wrap justify-center items-center"
+    />
+    <div class="absolute bottom-12 right-0 w-full flex justify-center pr-3">
       <button
         class="pointer-events-auto text-xl text-white bg-black rounded-full w-16 h-16"
       >
-        <!--         @click="store.startIsActive = !store.startIsActive" -->
         &#x2193;
       </button>
     </div>
@@ -60,7 +61,13 @@ onMounted(() => {
 
 <style>
 #animationStart > svg {
-  width: unset !important;
-  height: 100vh !important;
+  height: 100vh;
+}
+
+.bgImage {
+  background-image: url("/assets/images/placeholderEye.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 </style>

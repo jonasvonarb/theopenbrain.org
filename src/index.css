@@ -9,7 +9,8 @@ body {
   font-size: 62.5%;
   font-family: "IBM Plex Mono";
   hyphens: auto;
-  cursor: url(assets/icons/cursor.png) 20 10, pointer;
+  background: #f3f4f6;
+  /* background: #9747ff; */
 }
 
 /* *{background: #000;} */
@@ -44,6 +45,10 @@ section p:first-of-type {
   padding-top: 3rem;
 }
 
+section p.breakSectionTitle {
+  padding-top: 0px;
+}
+
 *::-webkit-scrollbar {
   display: none;
 }
@@ -74,9 +79,7 @@ blockquote {
 }
 .T,
 .subT,
-.subSubT,
-.subSubSubT,
-.subSubParT {
+.subSubT {
   padding-bottom: 1.5rem;
 }
 .P,
@@ -89,6 +92,11 @@ blockquote {
   padding-bottom: 3rem;
 }
 
+.subSubP,
+.subSubParP {
+  padding-top: 1.5rem !important;
+}
+
 .titleNumber {
   flex-shrink: 0;
   width: 10vw;
@@ -98,23 +106,34 @@ blockquote {
 }
 
 /* punkte Text */
-.animationMarker {
+.active > .animationMarker {
   background-color: transparent;
-  color: #0dd310;
-  /* padding: 0.1rem 0.3rem 0.3rem 0.7rem; */
+  border: solid black;
+  /* padding: 0 0.5rem 0 0.5rem; */
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
   /* border-radius: 9999px; */
+}
 
+.highlightIllu {
+  stroke: #7794f8;
+  fill: #7794f8;
+  fill-opacity: 1;
+}
+
+.active > .highlightText {
+  background: #7794f8;
+  color: white;
 }
 
 .animationTrigger.active {
+  color: #7794f8;
+  font-style: italic;
+}
+
+.animationTrigger.active.noHighlight {
   color: black;
-  font-weight: 600;
-  /* padding-left: 0.8rem;
-  padding-right: 0.8rem;
-  border-radius: 0.8rem;
-  background: #000;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone; */
+  font-style: normal;
 }
 
 .punkt,
@@ -131,19 +150,17 @@ blockquote {
   padding: 0px;
   text-align: center;
   transition: none;
-  cursor: url(assets/icons/cursor_active.png) 20 10, pointer;
-
 }
 
 .punktComment {
   top: 0px;
-  background-color: #8b5cf6;
+  background-color: #7794f8;
   border: 1px solid white;
   display: none;
 }
 
 mark {
-  color: #8b5cf6;
+  color: #7794f8;
   padding: 0.2rem;
   padding-left: 0;
   padding-right: 0;
@@ -152,9 +169,10 @@ mark {
 }
 
 .hoverActive {
-  background-color: #0dd310;
-  color: white;
-  /* cursor: default; */
+  color: #7794f8;
+  text-decoration: underline;
+  text-underline-offset: 0.4rem;
+  cursor: pointer;
 }
 
 /* we will explain what these classes do next! */
@@ -184,6 +202,22 @@ mark {
   opacity: 0;
   filter: blur(10px);
 }
+/* 
+.menuTo-enter-active,
+.menuTo-leave-active {
+  transition: all 1s ease;
+  transition-delay: 0;
+}
+
+.menuTo-enter-from,
+.menuTo-leave-to {
+  transform: translate(-35vw);
+}
+
+.menuTo-enter-to,
+.menuTo-leave-from {
+  transform: translate(0);
+} */
 
 .outLeft-leave-active,
 .outLeft-enter-active {
@@ -203,4 +237,25 @@ mark {
 .outLeft-enter-from,
 .outLeft-leave-to {
   transform: translateX(-100vw);
+}
+
+.hoverImg {
+  color: #7794f8;
+  cursor: pointer;
+}
+
+sup {
+  color: black;
+  padding-left: 3px;
+  padding-right: 3px;
+  cursor: pointer;
+}
+sup:hover {
+  background: #7794f8;
+  color: white;
+}
+
+.resize-animation-stopper * {
+  animation: none !important;
+  transition: none !important;
 }

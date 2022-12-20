@@ -4,8 +4,8 @@
     <div v-for="paragraph in content.paragraphs">
       <h3 class="pb-2">{{ paragraph.title }}</h3>
       <a
-        class="underline"
         v-for="link in paragraph.links"
+        class="underline"
         :href="link.url"
         target="_blank"
         >{{ link.text }}</a

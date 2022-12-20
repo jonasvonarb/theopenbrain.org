@@ -1,14 +1,8 @@
 <script setup>
 import lottie from "lottie-web";
-import { onBeforeUnmount, onMounted, ref } from "vue";
+import { onMounted, ref } from "vue";
 
-import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-
-import animations from "/src/assets/animations.json";
-gsap.registerPlugin(ScrollTrigger);
-
-const activeAnimation = ref(null);
+import animations from "@/assets/animations.json";
 
 const props = defineProps({
   paragraph: Object,
@@ -42,9 +36,8 @@ onMounted(() => {
 });
 
 const toggleState = (index, activeState) => {
-  console.log(activeState.state);
-  const posStart = 36 + 23 + 72 * (activeState.state - 1);
-  const posEnd = 36 + 23 + 72 * (activeState.state - 1) + 12;
+  const posStart = 36 + 23 + 74 * (activeState.state - 1) - 5;
+  const posEnd = 36 + 23 + 74 * (activeState.state - 1) + 15;
   if (index === 1) {
     animation.value.playSegments([posStart, posEnd], true);
     activeState.toggle = index;
@@ -52,6 +45,7 @@ const toggleState = (index, activeState) => {
     animation.value.playSegments([posEnd, posStart], true);
     activeState.toggle = index;
   }
+  console.log(posStart, posEnd);
 };
 const setState = (index, activeState) => {
   if (!totalFrames.value) {
@@ -60,7 +54,6 @@ const setState = (index, activeState) => {
   animation.value.playSegments([1, totalFrames.value], true);
   if (index != 0) {
     const posAfter = 36 + 23 + 72 * (index - 1) + activeState.toggle * 12;
-    console.log(posAfter, index);
     activeState.state = index;
     animation.value.goToAndStop(posAfter, true);
   } else {
@@ -73,47 +66,48 @@ const setState = (index, activeState) => {
 
 <template>
   <div
-    class="h-[150vh] w-screen bg-violet-500 text-white -translate-x-1/2 -ml-32 my-[5vh]"
+    class="h-[150vh] w-screen bg-violet text-white -translate-x-1/2 -ml-32 my-6"
   >
-    <div class="sticky w-full h-screen p-32 top-0">
+    <div class="sticky w-full h-screen px-44 top-0">
       <div class="absolute z-50 flex flex-col justify-between pr-48">
-        <div class="w-52 grow">
-          <p
-            @click="
-              activeState.state != index ? setState(index, activeState) : ''
-            "
-            class="hover:underline"
+        <div class="w-52 pt-32 grow">
+          <button
             v-for="(state, index) in thisAnimation.states"
+            :key="state"
+            class="hover:underline"
             :class="
               activeState.state == index
                 ? 'italic font-bold'
                 : 'blur-xs opacity-30'
             "
+            @click="
+              activeState.state != index ? setState(index, activeState) : ''
+            "
           >
             {{ state }}
-          </p>
+          </button>
         </div>
         <div class="w-52 grow text-right">
-          <p
-            v-if="activeState.state != 0"
-            @click="
-              activeState.toggle != index ? toggleState(index, activeState) : ''
-            "
-            class="hover:underline"
+          <button
             v-for="(toggle, index) in thisAnimation.toggle"
+            :key="toggle"
+            class="hover:underline"
             :class="
               activeState.toggle == index
                 ? 'italic font-bold'
                 : 'blur-xs opacity-30'
             "
+            @click="
+              activeState.toggle != index ? toggleState(index, activeState) : ''
+            "
           >
-            {{ toggle }}
-          </p>
+            <template v-if="activeState.state != 0"> {{ toggle }}</template>
+          </button>
         </div>
       </div>
       <div
-        class="w-full h-full flex flex-col justify-center items-center"
         :id="'container' + paragraph.animationId"
+        class="w-full h-full flex flex-col justify-center items-center"
       ></div>
     </div>
   </div>

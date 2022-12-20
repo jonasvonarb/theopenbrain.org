@@ -37,14 +37,55 @@
     "title": "The eye and retina",
     "parts": [
       "Story of the eye",
-      "Organization and cell types in the retina",
-      "Photoreceptors and phototransduction",
+      {
+        "title": "Organization and cell types in the retina",
+        "parts": [
+          "Cross-sectional anatomy",
+          "Lateral organization",
+          "Retinal cell types",
+          "Synaptic architecture"
+        ]
+      },
+      {
+        "title": "Photoreceptors and phototransduction",
+        "parts": ["Phototransduction"]
+      },
       "Horizontal cells modulate signaling between photoreceptors and bipolar cells",
       "Bipolar cells diversify photoreceptor generated light responses",
-      "Amacrine and ganglion cells – retinal circuits, computations and output",
-      "Retinal vision in the ‘real world’",
-      "Retinal development",
-      "Diseases, disorders and treatments",
+      {
+        "title": "Amacrine and ganglion cells – retinal circuits, computations and output",
+        "parts": [
+          "Circuit computations",
+          "Rod vs. cone signals take different paths to get to ganglion cells",
+          "Intrinsically photosensitive retinal ganglion cells",
+          "Retinal output"
+        ]
+      },
+      {
+        "title": "Retinal vision in the real world",
+        "parts": [
+          "Eye movements move the visual image projected onto the retina",
+          "Light adaptation allows the retina to function across a wide range of light intensities"
+        ]
+      },
+      {
+        "title": "Retinal development",
+        "parts": [
+          "Each retinal class is born at specific times and wiring is genetically defined",
+          "Spontaneous waves of activity pattern the neonatal retina and influence wiring in the brain"
+        ]
+      },
+      {
+        "title": "Diseases, disorders and treatments",
+        "parts": [
+          "Cataracts",
+          "Glaucoma",
+          "Diabetic retinopathy",
+          "Age-related macular degeneration",
+          "Retinitis pigmentosa",
+          "Treatment strategies for retinal-based vision loss"
+        ]
+      },
       "Looking forward",
       "Further reading"
     ]

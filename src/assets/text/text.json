@@ -7,11 +7,11 @@
       "paragraphs": [
         {
           "id": "cc5d036e-4376-406e-889c-acdc2bdfc61c",
-          "text": "Seeing starts in our eyes. Is this because something from the outside world is passing into our eyes, or because something is leaving our eyes and interacting with the outside world. Alcmeon (Greece, 5th century BC), thought of the eye as a lantern, emitting an internally generated fire that was required for seeing. Plato and others would refine this theory to incorporate both an internally generated visual fire that leaves the eye, as well as spirits emanating from objects in the world, with these two energies interacting before returning to the eye to enable vision. As an outcome of this idea, Plato argued that we dream during sleep when the internal fire collides with our closed eyelids and bounces back into our body."
+          "text": "Seeing starts in our eyes. Is this because something from the outside world is passing into our eyes, or because something is leaving our eyes and interacting with the outside world. <span id='alcmeon' class='hoverImg'>Alcmeon</span> (Greece, 5th century BC), thought of the eye as a lantern, emitting an internally generated fire that was required for seeing. Plato and others would refine this theory to incorporate both an internally generated visual fire that leaves the eye, as well as spirits emanating from objects in the world, with these two energies interacting before returning to the eye to enable vision. As an outcome of this idea, Plato argued that we dream during sleep when the internal fire collides with our closed eyelids and bounces back into our body."
         },
         {
           "id": "3d6acf13-1a03-4921-b9dc-804044e9c26e",
-          "text": "Based on such classical ideas, the extramission theory of vision would remain popular for over a thousand years, and only start to show cracks during the ‘Islamic Golden Age’ when people like ibn Sina and al Razi would describe how external light could alter pupil size or otherwise cause visual disturbances, arguing in favour of a pure intromission theory. Still, it would take many more years until the retina was identified as the neural tissue in the eye, and even more time to understand how it converts light into an electro-chemical signal, processes incoming visual scenes, and relays this information to the rest of the brain. In this chapter, we set out to tell the story of the eye and retina."
+          "text": "Based on such classical ideas, the extramission theory of vision would remain popular for over a thousand years, and only start to show cracks during the <span id='islamicGoldenAge' class='hoverImg'> ‘Islamic Golden Age’ </span> when people like ibn Sina and al Razi would describe how external light could alter pupil size or otherwise cause visual disturbances, arguing in favour of a pure intromission theory. Still, it would take many more years until the retina was identified as the neural tissue in the eye, and even more time to understand how it converts light into an electro-chemical signal, processes incoming visual scenes, and relays this information to the rest of the brain. In this chapter, we set out to tell the story of the eye and retina."
         }
       ]
     }
@@ -26,16 +26,16 @@
             "name": " eye-anatomy"
           },
           "id": "5ea404ac-2fcb-4102-89e9-febe1ecc71a0",
-          "text": "It is believed that the ancient Greeks were the first to dissect animal eyes, with Alcmeon being considered one of the first to perform dissections for the purpose of studying anatomy. Based on gross anatomy, the Hippocratic school split the eye into 3 layers (or tunics): sclera, uvea and retina. Since then, a much clearer picture has emerged. The eye is a spherical structure. The front of the eye contains the cornea, a clear crystalline material that enables passage of light into the eye. The back of the eye is made up of several layers, the outermost being a white fibrous layer called the sclera. Moving inwards from the sclera comes the choroid, a layer important for vascularization, the retina pigment epithelium, a layer important for its complex interactions with photoreceptors, and the retina. Aside from these structures, there is also a lens near the front half of the eye, whose shape can be adjusted by the ciliary muscles to change the focus of the eye. There are also two fluid filled chambers, the anterior and posterior chambers, that contain aqueous and vitreous humour, respectively. These fluids maintain pressure in the eye and circulate important nutrients and changes to the production and exchange of these fluids can lead to changes in intraocular pressure which are associated with ocular health issues, such as glaucoma."
+          "text": "It is believed that the ancient Greeks were the first to dissect animal eyes, with <span id='alcmeon' class='hoverImg'>Alcmeon</span> being considered one of the first to perform dissections for the purpose of studying anatomy. Based on gross anatomy, the Hippocratic school split the eye into 3 layers (or tunics): sclera, uvea and retina. Since then, a much clearer picture has emerged. The eye is a spherical structure. The front of the eye contains the cornea, a clear crystalline material that enables passage of light into the eye. The back of the eye is made up of several layers, the outermost being a white fibrous layer called the sclera. Moving inwards from the sclera comes the choroid, a layer important for vascularization, the retina pigment epithelium, a layer important for its complex interactions with photoreceptors, and the retina. Aside from these structures, there is also a lens near the front half of the eye, whose shape can be adjusted by the ciliary muscles to change the focus of the eye. There are also two fluid filled chambers, the anterior and posterior chambers, that contain aqueous and vitreous humour, respectively. These fluids maintain pressure in the eye and circulate important nutrients and changes to the production and exchange of these fluids can lead to changes in intraocular pressure which are associated with ocular health issues, such as glaucoma."
         },
         {
           "id": "3b21964b-d33f-4292-ad5f-642fe66e49bd",
-          "text": "Light enters the eye at the cornea. The cornea has a higher refractive index with respect to air, and this causes the direction of incoming light to be altered. The cornea provides more refractive power to the eye than the lens, and this can be seen if you open your eyes under water, as water and the cornea have similar refractive indices. Importantly, the curvature of the cornea is stronger in its center compared its periphery, which helps it act like a corrected spherical lens to ensure incoming light rays are brought to a common focus. Light then passes through the aqueous humor, and some photons make their way through the pinhole in the center of the iris – the pupil. Pigment in the iris gives us our ‘eye color’. Light then passes through the lens, which has a graded index to help focus rays entering various parts of the lens onto the same location of the retina. Additionally, to appropriately focus the incoming light onto the retina, the thickness of the lens can be adjusted depending on the distance between the eye and the object being viewed. <span class='animationTrigger' id='triggerAnimationAccommodationVergence'>This thickening/thinning of the lens is called accommodation and is controlled by the ciliary muscles. <span id='' class='animationMarker'>Accommodation</span> generally occurs in tandem with <span id='' class='animationMarker'>vergence</span> eye movements, which are correlated movements between the eyes that ensure focus is properly obtained. Finally, the incoming image is projected through the vitreous humour and onto the retina, the light sensing tissue that lines the back of the eye.</span>"
+          "text": "Light enters the eye at the cornea. The cornea has a higher refractive index with respect to air, and this causes the direction of incoming light to be altered. The cornea provides more refractive power to the eye than the lens, and this can be seen if you open your eyes under water, as water and the cornea have similar refractive indices. Importantly, the curvature of the cornea is stronger in its center compared its periphery, which helps it act like a corrected spherical lens to ensure incoming light rays are brought to a common focus. Light then passes through the aqueous humor, and some photons make their way through the pinhole in the center of the iris – the pupil. <sup>1</sup> Pigment in the iris gives us our ‘eye color’. Light then passes through the lens, which has a graded index to help focus rays entering various parts of the lens onto the same location of the retina. Additionally, to appropriately focus the incoming light onto the retina, the thickness of the lens can be adjusted depending on the distance between the eye and the object being viewed. <span class='animationTrigger' id='triggerAnimationAccommodationVergence'>This thickening/thinning of the lens is called accommodation and is controlled by the ciliary muscles. <span id='accommodation' class='animationMarker'>Accommodation</span> generally occurs in tandem with <span id='vergence' class='animationMarker'>vergence</span> eye movements, which are correlated movements between the eyes that ensure focus is properly obtained. Finally, the incoming image is projected through the vitreous humour and onto the retina, the light sensing tissue that lines the back of the eye.</span>"
         },
         {
           "id": "4dd86835-8048-466b-a872-acf5259ed4bc",
           "type": "breakSection",
-          "title": "Break section: Pathway for the pupillary light reflex"
+          "title": "Pathway for the pupillary light reflex"
         },
         {
           "id": "a94004c6-a34a-4f26-8ca5-aee1e9f3780b",
@@ -67,7 +67,7 @@
                 {
                   "id": "8998fdf5-42b8-4732-b84c-724e2872e146",
 
-                  "text": "<span class='animationTrigger' id='triggerAnimationZwei'>The retina is comprised of 5 neuronal classes (photoreceptors, horizontal cells, bipolar cells amacrine cells, and ganglion cells), as well as various glial and vascular cells. Cell bodies of neurons in the vertebrate retina are grouped into three distinct layers, separated by two synaptic layers. Light passes through the entire retina before being focused to the deepest (i.e. closest to the back of the eye) layer of the retina, where specialized photon detectors called photoreceptors reside. These neurons transduce absorbed photons into electric signals. Photoreceptors extend nerve terminals into a synaptic layer called the outer plexiform layer, where they synapse with cells called bipolar cells and horizontal cells. The bipolar and horizontal cell bodies, along with those of amacrine cells, are contained within the inner nuclear layer. Bipolar cells relay signals from photoreceptors to the inner plexiform layer where they synapse with amacrine and retinal ganglion cells. These latter neurons are the sole output of the retina and reside in a ganglion cell layer which abuts the vitreous humour. Axons from the ganglion cells get bundled together into the optic nerve, which ‘dives’ back through the entire retina before leaving the eye, resulting in a blind-spot in each eye’s field of view.</span>"
+                  "text": "<span class='animationTrigger' id='triggerAnimationZwei'>The retina is comprised of 5 neuronal classes (photoreceptors, horizontal cells, bipolar cells amacrine cells, and ganglion cells), as well as various glial and vascular cells. Cell bodies of neurons in the vertebrate retina are grouped into three distinct layers, separated by two synaptic layers. Light passes through the entire retina before being focused to the deepest (i.e. closest to the back of the eye) layer of the retina, where specialized photon detectors called photoreceptors reside. <sup>2</sup> These neurons transduce absorbed photons into electric signals. Photoreceptors extend nerve terminals into a synaptic layer called the outer plexiform layer, where they synapse with cells called bipolar cells and horizontal cells. The bipolar and horizontal cell bodies, along with those of amacrine cells, are contained within the inner nuclear layer. Bipolar cells relay signals from photoreceptors to the inner plexiform layer where they synapse with amacrine and retinal ganglion cells. These latter neurons are the sole output of the retina and reside in a ganglion cell layer which abuts the vitreous humour. Axons from the ganglion cells get bundled together into the optic nerve, which ‘dives’ back through the entire retina before leaving the eye, resulting in a blind-spot in each eye’s field of view.</span>"
                 },
                 {
                   "id": "847986f1-7a1c-4a47-963e-ba427ea0109f",
@@ -114,10 +114,6 @@
             {
               "id": "9aa3d5b7-8096-4cca-91a3-7059898764e9",
               "title": "Retinal cell types",
-              "animation": {
-                "title": "Retinal cell types",
-                "id": "animationRetinalCellTypes"
-              },
               "paragraphs": [
                 {
                   "id": "8ef9f650-c325-4b70-b507-fe62b0ed5a67",
@@ -126,34 +122,38 @@
                 },
                 {
                   "id": "705b0854-4c55-4a0a-ab8e-ce313dad3f96",
-                  "type": "break",
+                  "type": "breakText",
                   "text": "Break section: Single cell sequencing (include animation) - The brain is composed of many distinct cell types. Developments in single cell genetic sequencing have allowed scientists to genetically classify cell types, leading to an increasingly complete atlas of various brain areas in host of species including mice, fish, chickens, primates, and humans. Such complex, high-dimensional data, is often plotted using a dimensionality reducing methods to visually describe how similar given cell types are to one another and how different they are from each other."
                 },
                 {
+                  "animation": {
+                    "title": "Retinal cell types",
+                    "id": "animationRetinalCellTypes"
+                  },
                   "subSubSection": [
                     {
                       "id": "0ccacfad-16a4-4c0c-bf01-ee5f1579b255",
-                      "title": "Photoreceptors",
+                      "title": "Photoreceptors:",
                       "text": "By the late 17th century, it had become clear there were 2 types of photoreceptors, rods and cones, and that each was differentially localized in the retina and served different functions. Anatomical work from Max Schultze indicated that cones were mostly near the center of the human retina, whereas rods dominated in the periphery. Behavioral work from Hermann Aubert showed that visual acuity and color discrimination both decreased from the center to the periphery of the visual field. Photoreceptors are vitally important cells, as they detect light and convert it into an electrical signal."
                     },
                     {
                       "id": "77e87661-813f-40ec-b461-026b816a5ffc",
-                      "title": "Bipolar Cells",
+                      "title": "Bipolar Cells:",
                       "text": "Bipolar somata occupy the middle region of the inner nuclear layer and are named for their characteristic anatomy: elongated cells with dendrites in the outer plexiform layer, where they collect signals from photoreceptors at glutamatergic synapses, and axons in the inner plexiform layer, where they relay signals to amacrine and ganglion cells."
                     },
                     {
                       "id": "bef49e56-3dc0-45ac-910d-346824708e86",
-                      "title": "Horizontal cells",
+                      "title": "Horizontal cells:",
                       "text": "The signals passing between photoreceptors and bipolar cells are modulated by feedback signals (to photoreceptors), and possibly feedforward signals (to bipolar cells), from horizontal cells. Horizontal cells were the first retinal neurons whose light responses were measured with intracellular recording – by Gunner Svaetichin in the 1950s – but many details about how exactly they contribute to retinal processing remain unresolved. One clear role they play is to provide center-surround inhibition to photoreceptors (as discussed below in more detail), which is a critical computation that gets implemented over and over again at synapses throughout the early visual system."
                     },
                     {
                       "id": "beb4b5fe-204b-4159-83bd-88cb6134527e",
-                      "title": "Amacrine Cells",
+                      "title": "Amacrine Cells:",
                       "text": "The most diverse set of cells in the retina are amacrine cells. These are, with a few exceptions, inhibitory interneurons which collect input from bipolar cells and inhibit bipolar, ganglion and other amacrine cells. In some vertebrate species, amacrine cells comprise more than 50 different cell types, each exhibiting a unique morphology, physiology, and gene expression profile. Some amacrine cells exhibit distinct dendrites and an axon, whereas others have processes which act as both pre and postsynaptic elements. Attempts to generalize are difficult in the face of this diversity, however a few general trends have been observed: First, almost all amacrine cells are inhibitory neurons releasing either GABA or Glycine onto their targets; Second, glycinergic amacrine cells tend to have narrow receptive fields, whereas GABAergic ones tend to extend their processes across larger areas of the retina; Third, many amacrine cells release an additional neurotransmitter, which in some cases can be excitatory, but are more commonly neuromodulators such as peptides or catecholamines."
                     },
                     {
                       "id": "f5e26c64-7929-4b1d-90d8-24f75a7b2a05",
-                      "title": "Retinal Ganglion Cells",
+                      "title": "Retinal Ganglion Cells:",
                       "text": "Ganglion cells are the only retinal neurons that send axons out of the eye to the rest of the brain. In addition, with a few exceptions (some amacrine cells, and possibly some bipolar cells), they are the only retinal neurons that fire action potentials. They generate these signals in response to the combination of excitatory and inhibitory inputs they receive from bipolar and amacrine cells, respectively. As discussed in detail below, there are several types of retinal ganglion cells, and each appears specialized to detect specific aspects of the visual scene, such as colors, edges and movement"
                     }
                   ]
@@ -176,7 +176,7 @@
                 {
                   "subSubSection": [
                     {
-                      "title": "Chemical synapses.",
+                      "title": "Chemical synapses:",
                       "paragraphs": [
                         {
                           "id": "753af943-88d5-4965-a92a-91bf17f700e8",
@@ -189,7 +189,7 @@
                       ]
                     },
                     {
-                      "title": "Electrical synapses",
+                      "title": "Electrical synapses:",
                       "paragraphs": [
                         {
                           "id": "fe61fcb2-e74b-4555-ba3b-814c41f4ee8f",
@@ -233,12 +233,12 @@
                       "paragraphs": [
                         {
                           "id": "f04d2e7c-ba30-4d5e-9b73-4cb403939cef",
-                          "title": "Rhodopsin",
+                          "title": "Rhodopsin: ",
                           "text": "In the mid-1870s, Franz Boll identified a substance in the frog retina that bleached when exposed to light – it became known as “visual purple” or rhodopsin, and is the light sensing protein in rod photoreceptors. Retinal is synthesized from vitamin A, and even going back to ancient Egypt, the Ebers medical papyrus from 1520 BC recommended treating night blindness with liver (which happens to be high in vitamin A; though the ancient Egyptians recommended topically applying liquid from the liver directly to the eye). The bleaching that Boll had observed was the result of retinal undergoing a photoisomerization from 11-cis retinal to all-trans retinal. The isomerization results in a conformational change in rhodopsin that initiates a signal transduction cascade. Subtle amino-acid variations in the structure of the opsin change the way 11-cis retinal is ‘held’ within the rhodopsin molecule, and alters the energy, and therefore photon wavelength, required for a photoisomerzation event. This is a core difference between opsins that detect blue, green and red, green photons (such as those in cones). In all cone opsins, the conversion is remarkably efficient – two-thirds of absorbed photons result in a photoisomerization. By comparison, this quantum efficiency is only 1/10 for photographic film."
                         },
                         {
                           "id": "d973785a-d6f8-4e4e-8d85-afb2612bef15",
-                          "title": "Phototransduction",
+                          "title": "Phototransduction: ",
                           "text": "In the dark, the photoreceptor outer segment has a high concentration of the small molecule cGMP (cyclic guanosine monophosphate). These small molecules bind to and activate cGMP-gated cationic channels, resulting in Na+ and Ca2+ inflow in the outer segment, which balance an ongoing net efflux of K+ ions, resulting in a relatively depolarized resting membrane potential (Vm) of ~-30mV in darkness. Rhodopsin is a G protein-coupled receptor. Following activation, via photon absorption, rhodopsin becomes enzymatically activated, leading to activation of its G-protein transducin. Transducin is composed of α, β, and γ subunits, and upon activation, releases its βγ subunit, which in turn activate phosphodiesterase (PDE). PDE in turn hydrolyzes cGMP molecules. The resulting decrease in intracellular [cGMP] in the outer segment leads to the closure of cGMP-gated cation channels. Since the efflux of K+ ions continues, closing cGMP-gated channels results in membrane hyperpolarization, leading to a decrease in glutamate release. This light-evoked hyperpolarization is called a photovoltage, and its amplitude and duration depend on the luminance, size and duration of the flash of light. Furthermore, if it is generally considered that a neuron depolarizes when it is activated, it can therefore be thought that light ‘turns off’ photoreceptors. Finally, an activated rhodopsin molecule needs to be de-activated, otherwise the phototransduction cascade would continue endlessly. Photransduction is terminated when an activated rhodopsin is phosphorylated by a membrane bound enzyme called rhodopsin kinase. The addition of a phosphate to rhodopsin leads to its binding by a protein called arrestin, which ejects the rhodopsin kinase, and quenches rhodopsin’s ability to activate transducin by breaking the bond between all-trans retinal and opsin."
                         },
                         {
@@ -248,7 +248,7 @@
                         },
                         {
                           "id": "8272bd45-d74e-4e59-8a7f-525ae789c81b",
-                          "title": "Signal and noise",
+                          "title": "Signal and noise: ",
                           "text": "cGMP-channels are abundant in photoreceptors. Each can drive a very small current, about 3fA. This single channel current is extremely small (most channels pass currents about three orders of magnitude greater). Why not use a larger single channel current for signaling photon absorption? If we consider signal and noise, it becomes clear why small currents are better in this situation. Channel opening is subject to thermodynamic noise. As a consequence, cGMP-channels in photoreceptors are frequently flickering between open and closed states. If the single channel current was very large, these flickering events could lead to large variations in the membrane potential, which could incorrectly be interpreted by the organism as photons that were detected. Thus, the retina’s strategy divides ‘thermal noise’ across many channels, each with very small currents. The noise of different channels is independent, and thus is averaged out. In contrast, the signal (i.e. the detection of photons produced by a flash of light) is synchronized across channels, and is averaged in."
                         },
                         {
@@ -258,11 +258,11 @@
                         },
                         {
                           "id": "4bfe20d5-2abf-437b-9596-8464784efaae",
-                          "title": "The Visual Cycle –",
+                          "title": "The Visual Cycle: ",
                           "text": "When rhodopsin absorbs a photon, its light-catching 11-cis retinal chromophore is isomerized into all-trans retinal. This latter form cannot be used for photon absorption and vertebrate retinae undertake a complex series of steps to convert all-trans retinal back to photo-activatable 11-cis retinal. Following binding of arrestin, the bond between all-trans retinal and the opsin is broken. The released all-trans aldehyde is quickly converted to all-trans retinol by membrane bound retinal dehydrogenase, which is in turn bound by an all-trans retinol binding protein. From here, a transport protein called intraretinal binding protein takes all-trans retinol on an inter-cellular journey into an adjacent retinal pigment epithelial cell. Pigment epithelial cells line the inner surface of the sclera and extend processes that intercalate with photoreceptor outer segments. These cells contain a pair of enzymes – retinyl-ester isomerase which converts all-trans retinol to 11-cis retinol, and 11-cis retinol dehydrogenase which uses ATP to convert 11-cis retinol back into 11-cis retinal. The regenerated 11-cis retinal is highly insoluble and is quickly bound by an 11-cis retinal binding protein which encapsulates the molecule, which makes the return trip out of retina pigment epithelium and back into the photoreceptor outer segment, where it is released and binds anew with an opsin."
                         },
                         {
-                          "title": "Light sensitivity and temporal differences between rods and cones. -",
+                          "title": "Light sensitivity and temporal differences between rods and cones. ",
                           "paragraphs": [
                             {
                               "id": "e4605b3c-fd9c-40a1-bece-22802a657563",
@@ -368,7 +368,7 @@
                 {
                   "subSubSection": [
                     {
-                      "title": "Color-opponency",
+                      "title": "Color-opponency: ",
                       "id": "014b53f8-7421-44ab-af4e-e8bb6c3323c4",
                       "text": "A basic building block of color vision is color opponency. In ganglion cells, color opponency can be considered a specific implementation of the center-surround computation described above. First described in horizontal cells of fish by Gunner Svaetichin, color opponency means that a cell receives competing responses generated by visual stimuli of different wavelengths. The best-described form of color opponency in ganglion cells involves cells whose center is excited by red light and surround is inhibited by green light, and vice versa, and is referred to as red-green colour opponency. Such colour opponent responses arise from a similar center-surround circuit mechanism as described above, except involving specific connections from red and green cones. In the primate retina, red-green color opponency is a common feature of midget ganglion cells, and can come in all possible combinations. Another well-described form of color opponency in the primate retina is blue-yellow color opponency, which is a common feature of a small bistratified ganglion cell type. Signals from these color opponent ganglion cell types make their way to color-coding region in the brain, which eventually lead to color perception."
                     },
@@ -378,7 +378,7 @@
                       "text": "Break section – color blindness. Start with Dalton. Move to Monet. Describe most common (red/green in males), sentences about genetic nature, and show example test images."
                     },
                     {
-                      "title": "Direction-selectivity",
+                      "title": "Direction-selectivity: ",
                       "paragraphs": [
                         {
                           "id": "11106e45-1688-41a5-9164-d266f8699b6c",
@@ -598,7 +598,7 @@
             },
             {
               "id": "8c1bf700-b8ac-4a70-9435-1cd8318a1fae",
-              "title": "Treatment strategies for retinal-based vision loss",
+              "title": "Treatment strategies for retinal-based vision loss. ",
               "paragraphs": [
                 {
                   "subSubSection": [
@@ -673,10 +673,12 @@
   "footNotes": {
     "id": "6b8bbb4a-88d9-44fd-9c5d-1ff35ea91c0c",
     "title": "Footnotes",
-    "paragraphs": [
+    "notes": [
       {
-        "id": "de56f6ef-0993-4b25-9ff6-3018e016108d",
-        "text": ""
+        "text": "Virginia Woolf, “Modern Fiction,” in Selected Essays, ed. David Bradshaw (Oxford: Oxford University Press, 2008), 11."
+      },
+      {
+        "text": "Mary Shelley, Frankenstein; or, the Modern Prometheus, ed. M.K. Joseph (Oxford: Oxford University Press, 1998), 91."
       }
     ]
   }

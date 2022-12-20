@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div ref="renderScreen" if="sceneBrain" class="fixed top-0 left-0 w-full h-full"></div>
 </template>
 
@@ -327,4 +327,4 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped></style> -->

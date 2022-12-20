@@ -1,9 +1,7 @@
 <script setup>
-import { useGeneral } from "@/stores";
-const store = useGeneral();
-const setMenu = () => {
-  store.menuActive = true;
-};
+import { useRoute, useRouter } from "vue-router";
+const route = useRoute();
+const router = useRouter();
 
 const props = defineProps({
   target: String,
@@ -15,7 +13,13 @@ const props = defineProps({
 <template>
   <!-- menu links -->
   <div>
-    <RouterLink :to="'/' + target">{{ text }}</RouterLink>
+    <RouterLink
+      class="w-full text-center"
+      v-if="route.name !== target"
+      :to="'/' + target"
+      >{{ text }}</RouterLink
+    >
+    <div v-else @click="router.go(-1)">{{ text }}</div>
   </div>
 </template>
 

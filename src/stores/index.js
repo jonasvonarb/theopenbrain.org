@@ -3,13 +3,15 @@ import jsonText from "@/assets/text/text.json";
 import { saveAs } from "file-saver";
 import { useAnimation } from "./animation";
 import { useCom } from "./comments";
-import { useRouter, useRoute } from "vue-router";
 
 export { useAnimation, useCom };
 
 export const useGeneral = defineStore("main", {
   state: () => ({
     activeMenu: false,
+    activeAbout: false,
+    superScriptActive: false,
+    animationActive: false,
     isTop: true,
     startIsActive: true,
     autoScrolling: false,
@@ -243,7 +245,6 @@ export const useText = defineStore("text", {
               }
             }
           }
-        } else if (id === _sectionId) {
         }
       }
       return entries;

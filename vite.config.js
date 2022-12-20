@@ -40,7 +40,7 @@ export default ({ mode }) => {
     ],
     resolve: {
       alias: {
-        "@": fileURLToPath(new URL("./src", import.meta.url)),
+        "@": path.resolve(__dirname, "src/"),
         ...(process.env.NODE_ENV === "development"
           ? {
               // "@azt": path.resolve(__dirname,"../MODULES/azt"),

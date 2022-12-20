@@ -1,5 +1,5 @@
 <template>
-  <main class="bg-violett fixed top-0 left-0 w-screen h-screen">
+  <main class="fixed top-0 left-0 w-screen h-screen">
     <div
       class="fixed top-0 left-0 w-full h-full flex justify-center items-center"
     >
@@ -15,15 +15,19 @@
           Brain
           <div class="text-white text-xl mt-12">
             <span
+              class="bg-violet border-2 border-white rounded-full hover:bg-white text-white hover:text-black px-6 cursor-pointer"
               @click="enter()"
-              class="bg-violett border-2 border-white rounded-full hover:bg-white text-white hover:text-black px-6"
             >
               Enter &#x2192;
             </span>
           </div>
         </div>
       </div>
-      <div class="video-background mix-blend-overlay pointer-events-none">
+
+      <div
+        :class="store.activeMenu ? 'w-[65vw]' : 'w-full'"
+        class="video-background w-full absolute mix-blend-overlay pointer-events-none duration-500 right-0"
+      >
         <iframe
           class="pointer-event-none"
           src="https://player.vimeo.com/video/594238871?background=1&controls=0"
@@ -38,6 +42,7 @@
 
 <script setup>
 import { useGeneral } from "@/stores/index";
+
 const store = useGeneral();
 
 const enter = () => {
@@ -47,9 +52,7 @@ const enter = () => {
 
 <style scoped>
 .video-background {
-  position: relative;
   overflow: hidden;
-  width: 100vw;
   height: 100vh;
   background-image: url("/assets/images/1287468234rqwifhucsaud.png");
   background-size: cover;
@@ -61,7 +64,6 @@ const enter = () => {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100vw;
   height: 100vh;
   transform: translate(-50%, -50%);
 }
@@ -73,6 +75,7 @@ const enter = () => {
   .video-background iframe {
     /* height = 100 * (9 / 16) = 56.25 */
     height: 56.25vw;
+    width: 100vw;
   }
 }
 @media (max-aspect-ratio: 16/9) {

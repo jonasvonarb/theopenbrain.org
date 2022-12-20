@@ -9,18 +9,18 @@
         <mark>{{ markierung }}</mark>
       </p>
     </div>
-    <div class="h-1/2 flex flex-col w-[40vw] pt-2 p-5 bg-violet-500 rounded-lg">
+    <div class="h-1/2 flex flex-col w-[40vw] pt-2 p-5 bg-violet rounded-lg">
       <p class="pb-2 h-12">Enter your comment here:</p>
       <p
-        @click="storeCom.closeCommentSection()"
         class="absolute top-6 right-12 h-16 w-16 bg-white text-black text-xl rounded-full flex justify-center items-center"
+        @click="storeCom.closeCommentSection()"
       >
         X
       </p>
       <form class="w-full h-full text-black">
         <textarea
-          class="bg-white"
           ref="comment"
+          class="bg-white"
           :value="commentInStore"
           @input="(event) => storeCom.updateCom(comment.value, event)"
         />

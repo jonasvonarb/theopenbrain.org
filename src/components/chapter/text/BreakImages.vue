@@ -23,10 +23,7 @@ onMounted(() => {
   };
 
   if ("IntersectionObserver" in window) {
-    var lazyVideoObserver = new IntersectionObserver(function (
-      entries,
-      observer
-    ) {
+    var lazyVideoObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (video) {
         if (video.isIntersecting) {
           for (var source in video.target.children) {
@@ -44,8 +41,7 @@ onMounted(() => {
           lazyVideoObserver.unobserve(video.target);
         }
       });
-    },
-    optionsLazy);
+    }, optionsLazy);
 
     lazyVideos.forEach(function (lazyVideo) {
       lazyVideoObserver.observe(lazyVideo);
@@ -56,7 +52,7 @@ onMounted(() => {
     rootMargin: "0%",
     threshold: 0.8,
   };
-  let callback = (entries, observer) => {
+  let callback = (entries) => {
     entries.forEach((entry) => {
       videoPlayState.value = entry.isIntersecting;
     });
@@ -79,14 +75,14 @@ onMounted(() => {
       >
         <div
           ref="video"
-          class="border w-full text-violet-500 p-16 bg-white border-violet-500"
+          class="border w-full text-violet p-6 bg-white border-violet"
         >
           <div
-            class="w-full absolute z-50 top-0 left-0 flex h-screen justify-center items-center content-center flex-wrap duration-500"
+            class="w-full absolute p-56 z-50 top-0 left-0 flex h-screen justify-center items-center content-center flex-wrap duration-500"
           >
             <video
               poster="/assets/images/2_weich.png"
-              class="w-2/3 lazy"
+              class="h-full max-w-[95%] lazy"
               autoplay
               muted
               controls
@@ -99,7 +95,7 @@ onMounted(() => {
               Your browser does not support the video tag.
             </video>
           </div>
-          <p class="justify-left pointer-events-none w-full">
+          <p class="justify-left pointer-events-none w-full breakSectionTitle">
             <span class="block duration-500 w-full">
               {{ title }}
             </span>
