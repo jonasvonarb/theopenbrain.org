@@ -15,92 +15,74 @@ const props = defineProps({
   title: String,
 });
 
-onMounted(() => {
-  var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
-  let optionsLazy = {
-    rootMargin: "0px",
-    threshold: 0.0001,
-  };
+// onMounted(() => {
+//   var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
+//   let optionsLazy = {
+//     rootMargin: "0px",
+//     threshold: 0.0001,
+//   };
 
-  if ("IntersectionObserver" in window) {
-    var lazyVideoObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (video) {
-        if (video.isIntersecting) {
-          for (var source in video.target.children) {
-            var videoSource = video.target.children[source];
-            if (
-              typeof videoSource.tagName === "string" &&
-              videoSource.tagName === "SOURCE"
-            ) {
-              videoSource.src = videoSource.dataset.src;
-            }
-          }
+//   if ("IntersectionObserver" in window) {
+//     var lazyVideoObserver = new IntersectionObserver(function (entries) {
+//       entries.forEach(function (video) {
+//         if (video.isIntersecting) {
+//           for (var source in video.target.children) {
+//             var videoSource = video.target.children[source];
+//             if (
+//               typeof videoSource.tagName === "string" &&
+//               videoSource.tagName === "SOURCE"
+//             ) {
+//               videoSource.src = videoSource.dataset.src;
+//             }
+//           }
 
-          video.target.load();
-          video.target.classList.remove("lazy");
-          lazyVideoObserver.unobserve(video.target);
-        }
-      });
-    }, optionsLazy);
+//           video.target.load();
+//           video.target.classList.remove("lazy");
+//           lazyVideoObserver.unobserve(video.target);
+//         }
+//       });
+//     }, optionsLazy);
 
-    lazyVideos.forEach(function (lazyVideo) {
-      lazyVideoObserver.observe(lazyVideo);
-    });
-  }
+//     lazyVideos.forEach(function (lazyVideo) {
+//       lazyVideoObserver.observe(lazyVideo);
+//     });
+//   }
 
-  let options = {
-    rootMargin: "0%",
-    threshold: 0.8,
-  };
-  let callback = (entries) => {
-    entries.forEach((entry) => {
-      videoPlayState.value = entry.isIntersecting;
-    });
-  };
+//   let options = {
+//     rootMargin: "0%",
+//     threshold: 0.8,
+//   };
+//   let callback = (entries) => {
+//     entries.forEach((entry) => {
+//       videoPlayState.value = entry.isIntersecting;
+//     });
+//   };
 
-  let observer = new IntersectionObserver(callback, options);
-  observer.observe(video.value);
-});
+//   let observer = new IntersectionObserver(callback, options);
+//   observer.observe(video.value);
+// });
 </script>
 
 <template>
   <div>
     <div
-      ref="trigger"
-      class="w-screen h-[180vh] -translate-x-1/2 -ml-32 text-white my-[50vh]"
+      class="w-screen h-[50vh] flex justify-center items-center -translate-x-1/2 -ml-28 p-52 my-24 text-small"
     >
       <div
-        class="sticky flex top-0 left-0 h-screen w-full p-32"
-        :class="videoPlayState ? 'text-white' : 'text-black'"
+        class="w-full h-full flex flex-col justify-center items-center bg-light border border-dark"
       >
-        <div
-          ref="video"
-          class="border w-full text-violet p-6 bg-white border-violet"
+        <span
+          class="text-white text-base block duration-500 w-1/2 max-w-[780px] text-center pb-6"
         >
-          <div
-            class="w-full absolute p-56 z-50 top-0 left-0 flex h-screen justify-center items-center content-center flex-wrap duration-500"
-          >
-            <video
-              poster="/assets/images/2_weich.png"
-              class="h-full max-w-[95%] lazy"
-              autoplay
-              muted
-              controls
-              loop
-            >
-              <source
-                data-src="assets/video/file_example_MP4_1920_18MG.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <p class="justify-left pointer-events-none w-full breakSectionTitle">
-            <span class="block duration-500 w-full">
-              {{ title }}
-            </span>
-          </p>
-        </div>
+          {{ title }}
+        </span>
+        <button
+          class="px-6 py-1 bg-white text-black border border-black rounded-xl hover:bg-light hover:text-white hover:border-black"
+        >
+          <RouterLink to="chapter/break/file_example_MP4_1920_18MG">
+            Break-Video
+          </RouterLink>
+        </button>
       </div>
     </div>
   </div>

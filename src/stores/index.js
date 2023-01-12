@@ -23,6 +23,8 @@ export const useGeneral = defineStore("main", {
     currentSubChapter: null,
     progress: 0,
     isScrolling: false,
+    isNextBack: false,
+    prevRoute: undefined,
   }),
   getters: {
     getactiveMenu: (state) => state.activeMenu,

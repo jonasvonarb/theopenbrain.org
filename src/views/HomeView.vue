@@ -46,6 +46,7 @@ import { useGeneral } from "@/stores/index";
 const store = useGeneral();
 
 const enter = () => {
+  store.isNextBack = false;
   store.activeMenu = !store.activeMenu;
 };
 </script>

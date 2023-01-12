@@ -2,13 +2,20 @@
 import menu from "@/assets/menu/menu.json";
 import OpenCloseButton from "@/components/UI/OpenCloseButton.vue";
 import OpenCloseButtonLink from "@/components/UI/OpenCloseButtonLink.vue";
-import { useRoute } from "vue-router";
+import { onBeforeRouteUpdate, useRoute, useRouter } from "vue-router";
 import { useGeneral } from "@/stores";
-import { toSlug } from "@/helper/general.js";
+import { watch } from "vue";
 const store = useGeneral();
 const route = useRoute();
+const router = useRouter();
 
 const toStart = () => {
+  console.log(store.prevRoute);
+  // if (!store.prevRoute) {
+  router.push({ path: "/chapter" });
+  // } else {
+  //   router.go(-1);
+  // }
   store.startIsActive = true;
   setTimeout(() => {
     store.activeMenu = false;
@@ -50,10 +57,10 @@ const closeMenu = () => {
         <template v-for="(chapter, index) in menu" :key="chapter">
           <RouterLink
             @click="toStart()"
-            v-if="index === 'Part9'"
+            v-if="index === 'Part2' && store.isNextBack"
             class="w-full py-6 px-12 text-l cursor-pointer list-item"
             :class="
-              index !== 'Part9'
+              index !== 'Part2'
                 ? 'hover:bg-black/50 hover:text-white'
                 : 'hover:bg-black hover:text-white'
             "
@@ -61,10 +68,22 @@ const closeMenu = () => {
           >
             {{ menu[index].title }}
           </RouterLink>
+          <div
+            @click="toStart()"
+            v-else-if="index === 'Part2'"
+            class="w-full py-6 px-12 text-l cursor-pointer list-item"
+            :class="
+              index !== 'Part2'
+                ? 'hover:bg-black/50 hover:text-white'
+                : 'hover:bg-black hover:text-white'
+            "
+          >
+            {{ menu[index].title }}
+          </div>
           <li
             class="w-full shrink-0 py-6 px-12 text-l cursor-pointer"
             :class="
-              index !== 'Part9'
+              index !== 'Part2'
                 ? 'hover:bg-black/50 hover:text-white'
                 : 'hover:bg-black hover:text-white'
             "
@@ -83,14 +102,10 @@ const closeMenu = () => {
       class="fixed pointer-events-auto z-[60] flex justify-center items-center right-[65vw] pr-5 top-2 duration-500 overflow-hidden"
     />
     <OpenCloseButtonLink
-      :text="'H'"
+      :text="'+'"
       :target="''"
       class="fixed border-r pt-6 border-black bg-dark text-white pointer-events-auto z-[60] hover:bg-lightDark h-full w-8 flex justify-center items-top left-0 top-0 duration-500 overflow-hidden"
-      :class="
-        route.name && route.name != 'home' && route.name != 'about'
-          ? 'left-0'
-          : '-left-8'
-      "
+      :class="route.name && route.name === 'chapter' ? 'left-0' : '-left-8'"
     />
   </div>
 </template>

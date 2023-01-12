@@ -7,22 +7,32 @@ const props = defineProps({
 <template>
   <div
     ref="trigger"
-    class="w-screen h-[180vh] -translate-x-1/2 -ml-32 text-white my-[50vh]"
+    class="w-screen h-[180vh] -translate-x-1/2 -ml-40 text-white my-[10vh] text-small"
   >
-    <div class="sticky flex top-0 h-screen w-full p-32">
-      <div class="border w-full text-violet p-6 bg-white border-violet">
-        <template v-if="content.title === 'Blind-spot'">
-          {{ content.title }}
+    <div class="sticky flex top-0 h-screen w-full pl-52 py-32">
+      <div class="border w-full text-black p-6 bg-white border-dark">
+        <div
+          class="max-w-[800px] flex flex-col justify-between h-full"
+          v-if="content.title === 'Blind-spot'"
+        >
+          <p v-html="content.text"></p>
+
           <ol class="list-decimal list-inside">
-            <li v-for="step in content.steps" :key="step">{{ step }}</li>
+            <li
+              v-for="step in content.steps"
+              class="pb-6 last:pb-0"
+              :key="step"
+            >
+              {{ step }}
+            </li>
           </ol>
           <div
-            class="absolute top-0 left-0 p-56 flex justify-around items-center w-full h-full"
+            class="absolute top-0 left-0 p-56 flex justify-around items-center w-full h-full pointer-events-none"
           >
             <img class="w-32 h-32" src="/assets/icons/BlindSpotCross.svg" />
             <img class="w-32 h-32" src="/assets/icons/BlindSpotDot.svg" />
           </div>
-        </template>
+        </div>
         <template
           v-else-if="content.title === 'Pathway for the pupillary light reflex'"
         >

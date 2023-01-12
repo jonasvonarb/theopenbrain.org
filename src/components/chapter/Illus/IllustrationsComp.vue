@@ -81,9 +81,20 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div
-    class="fixed top-0 left-0 h-screen w-1/2 z-30 pointer-events-none bg-gray-100"
-  >
+  <div class="fixed top-0 left-0 h-screen w-1/2 z-30 pointer-events-none">
+    <transition name="fade">
+      <video
+        autoplay
+        muted
+        loop
+        class="absolute top-0 left-0 h-screen w-full object-fill"
+        id="myVideo"
+        v-if="!activeAnimation"
+      >
+        <source src="/assets/video/bgCell.mp4" type="video/mp4" />
+        Your browser does not support HTML5 video.
+      </video>
+    </transition>
     <template v-for="animation in animationJSON.animations" :key="animation">
       <template v-if="!animation.fullscreen && !animation.scroll">
         <transition name="fade">
@@ -91,6 +102,7 @@ onBeforeUnmount(() => {
             v-if="activeAnimation === animation.id.toLowerCase()"
             :animation="animation"
             :active-animation="activeAnimation"
+            class="bg-white"
           />
         </transition>
       </template>
@@ -102,6 +114,7 @@ onBeforeUnmount(() => {
             :animation="animation"
             :progress="progress"
             :active-animation="activeAnimation"
+            class="bg-white"
           />
         </transition>
       </template>

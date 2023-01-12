@@ -2,6 +2,8 @@
 import lottie from "lottie-web";
 import { onMounted, ref } from "vue";
 
+import FullScreenIllustrationMultiple from "@/components/chapter/Illus/FullScreenIllustrationMultiple.vue";
+
 import animations from "@/assets/animations.json";
 
 const props = defineProps({
@@ -16,7 +18,9 @@ const thisAnimation = ref(
 );
 
 const activeState = ref({
-  state: 0,
+  state: !thisAnimation.value?.multiple
+    ? 0
+    : Object.keys(thisAnimation.value.states)[0],
   toggle: 0,
 });
 
@@ -66,9 +70,9 @@ const setState = (index, activeState) => {
 
 <template>
   <div
-    class="h-[150vh] w-screen bg-violet text-white -translate-x-1/2 -ml-32 my-6"
+    class="h-[150vh] w-screen bg-light text-white -translate-x-1/2 -ml-28 my-72"
   >
-    <div class="sticky w-full h-screen px-44 top-0">
+    <div class="sticky w-full h-screen px-56 top-0">
       <div class="absolute z-50 flex flex-col justify-between pr-48">
         <div class="w-52 pt-32 grow">
           <button
@@ -106,9 +110,25 @@ const setState = (index, activeState) => {
         </div>
       </div>
       <div
+        v-if="!thisAnimation?.multiple"
         :id="'container' + paragraph.animationId"
         class="w-full h-full flex flex-col justify-center items-center"
       ></div>
+      <div
+        v-else
+        class="w-full h-screen flex flex-col justify-center items-center p-56"
+      >
+        <template
+          v-for="(state, index) in Object.keys(thisAnimation.states)"
+          :key="state"
+        >
+          <FullScreenIllustrationMultiple
+            v-if="activeState.state === state"
+            :state="state"
+            :animation="thisAnimation"
+          />
+        </template>
+      </div>
     </div>
   </div>
 </template>

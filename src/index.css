@@ -42,7 +42,7 @@ section {
 }
 
 section p:first-of-type {
-  padding-top: 3rem;
+  /* padding-top: 3rem; */
 }
 
 section p.breakSectionTitle {
@@ -63,15 +63,17 @@ section p.breakSectionTitle {
 h1 {
   font-size: 5rem;
   line-height: 5rem;
+  text-transform: uppercase;
 }
 
 h2 {
-  font-size: 2.5rem;
-  line-height: 2.5rem;
+  font-size: 4.8rem;
+  line-height: 5.8rem;
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 3rem;
+  line-height: 3.8rem;
 }
 
 blockquote {
@@ -89,7 +91,7 @@ blockquote {
 .subSubParP {
   font-family: "IBM Plex Sans";
   letter-spacing: 0.05rem;
-  padding-bottom: 3rem;
+  padding-bottom: 1rem;
 }
 
 .subSubP,
@@ -115,20 +117,25 @@ blockquote {
   /* border-radius: 9999px; */
 }
 
-.highlightIllu {
-  stroke: #7794f8;
-  fill: #7794f8;
+.highlighterIlluFill > * > .highlightIllu {
+  fill: #b5b5b5;
+  stroke: #b5b5b5;
   fill-opacity: 1;
+}
+.highlighterIlluBorder > * > .highlightIllu {
+  stroke: #b5b5b5;
+  stroke-width: 3;
 }
 
 .active > .highlightText {
-  background: #7794f8;
+  background: #b5b5b5;
   color: white;
 }
 
+.animationTrigger.active,
 .animationTrigger.active {
-  color: #7794f8;
-  font-style: italic;
+  color: #353535;
+  /* font-style: italic; */
 }
 
 .animationTrigger.active.noHighlight {
@@ -154,22 +161,24 @@ blockquote {
 
 .punktComment {
   top: 0px;
-  background-color: #7794f8;
+  background-color: #b5b5b5;
   border: 1px solid white;
   display: none;
 }
 
 mark {
-  color: #7794f8;
-  padding: 0.2rem;
+  /* background-color: rgb(230, 230, 230); */
+  text-decoration: line-through 1.3rem #b5b5b533;
+  /* text-decoration-thickness: 10px; */
+  /* padding: 0.2rem; */
   padding-left: 0;
   padding-right: 0;
   background-color: transparent;
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 
 .hoverActive {
-  color: #7794f8;
+  color: #b5b5b5;
   text-decoration: underline;
   text-underline-offset: 0.4rem;
   cursor: pointer;
@@ -240,18 +249,22 @@ mark {
 }
 
 .hoverImg {
-  color: #7794f8;
+  color: #b5b5b5;
   cursor: pointer;
 }
 
 sup {
-  color: black;
-  padding-left: 3px;
-  padding-right: 3px;
+  letter-spacing: 0;
+  font-size: 55%;
+  line-height: 2.1;
+  /* color: black; */
+  vertical-align: top;
+  padding-left: 2px;
+  padding-right: 1px;
   cursor: pointer;
 }
 sup:hover {
-  background: #7794f8;
+  background: #b5b5b5;
   color: white;
 }
 

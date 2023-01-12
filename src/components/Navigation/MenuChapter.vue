@@ -40,10 +40,10 @@ const closeMenu = () => {
     <Transition name="menuTo">
       <ul
         v-if="route.name && store.activeMenu"
-        class="bg-white/60 absolute top-0 mb-52 duration-500 shrink-1"
+        class="bg-white/60 absolute top-0 mb-52 duration-500 shrink-1 pb-24"
       >
         <template v-for="(chapter, index) in menu">
-          <li :key="chapter" v-if="index === 'Part9'" class="w-[35vw] shrink-0">
+          <li :key="chapter" v-if="index === 'Part2'" class="w-[35vw] shrink-0">
             <ol class="w-full list-decimal p-12 overflow-hidden duration-500">
               <h2 class="pb-6" @click="toStart()">
                 <RouterLink to="/chapter/">
@@ -84,7 +84,7 @@ const closeMenu = () => {
                     <span
                       :class="
                         toSlug(part) === store.currentSubChapter
-                          ? 'text-violet'
+                          ? 'text-light'
                           : ''
                       "
                       >{{ part }}</span
@@ -105,7 +105,7 @@ const closeMenu = () => {
                       <span
                         :class="
                           toSlug(part.title) === store.currentSubChapter
-                            ? 'text-violet'
+                            ? 'text-light'
                             : ''
                         "
                         >{{ part.title }}</span
@@ -119,7 +119,7 @@ const closeMenu = () => {
                         hash: '#' + toSlug(subPart),
                       }"
                       @click="closeMenu()"
-                      class="block lining-nums pl-6 p-2 hover:bg-gray-100"
+                      class="block lining-nums pl-12 p-2 hover:bg-gray-100"
                       v-for="subPart in part.parts"
                       :key="subPart"
                     >
@@ -128,6 +128,20 @@ const closeMenu = () => {
                   </ol>
                 </div>
               </template>
+              <RouterLink
+                class="flex pl-8"
+                :to="{
+                  name: 'chapter',
+                  hash: '#footnotes',
+                }"
+                @click="closeMenu()"
+              >
+                <div
+                  class="w-full py-4 border-b border-black hover:bg-gray-100"
+                >
+                  Footnotes
+                </div>
+              </RouterLink>
             </ol>
           </li>
         </template>
@@ -139,9 +153,7 @@ const closeMenu = () => {
       :target="'Menu'"
       class="fixed border-r border-black bg-dark pt-6 text-white pointer-events-auto z-[60] hover:bg-lightDark h-full w-8 flex justify-center items-top left-0 top-0 duration-500 overflow-hidden"
       :class="
-        !store.activeMenu && route.name != 'home' && route.name != 'about'
-          ? 'left-8'
-          : '-left-8'
+        !store.activeMenu && route.name === 'chapter' ? 'left-8' : '-left-8'
       "
     />
     <OpenCloseButton
@@ -157,8 +169,9 @@ const closeMenu = () => {
 .listItem {
   display: block;
 }
-li.sub::before {
-  content: "– ";
+li.sub {
+  list-style: lower-alpha;
+  /* content: "– "; */
 }
 
 p {

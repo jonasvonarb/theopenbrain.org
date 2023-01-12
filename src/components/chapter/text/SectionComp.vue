@@ -2,9 +2,9 @@
   <!-- section -->
   <section :id="section.id" class="overflow-y-visible">
     <!-- section titel -->
-    <div class="top-0 pt-10">
+    <div class="top-0 pt-56">
       <h2
-        class="p-5 border border-black bg-white rounded-full absolute -translate-x-[10.5rem] -translate-y-[1.25rem] w-20 h-20 flex justify-center"
+        class="border border-black bg-white rounded-full absolute -translate-x-[10.5rem] -translate-y-[0.8rem] w-28 h-28 flex items-center justify-center"
       >
         {{ index + 1 }}
       </h2>
@@ -23,38 +23,57 @@
         "
       >
         <!-- section paragraph -->
+        <InlineImages
+          :paragraph="paragraph"
+          :key="'images' + paragraph.id"
+          v-if="paragraph.img"
+        />
         <p
           v-if="!paragraph.subSection"
+          :key="paragraph.id"
           :id="paragraph.id"
           class="P"
           v-html="paragraph.text"
         />
-
-        <SubSection v-else :paragraph="paragraph" :index="index + 1" />
-        <fullScreenIllustration
+        <SubSection
+          v-else
+          :key="paragraph"
+          :paragraph="paragraph"
+          :index="index + 1"
+        />
+        <FullScreenIllustration
+          :key="paragraph.id"
           v-if="paragraph.animationFull"
           :paragraph="paragraph"
         />
       </template>
       <!-- section Break -->
       <BreakImages
+        :key="'breakVideo ' + paragraph.id"
         v-else-if="paragraph.type === 'breakVideo'"
         :title="paragraph.text"
       />
       <BreakSection
+        :key="'breakSection' + paragraph.id"
         v-else-if="paragraph.type === 'breakSection'"
         :content="paragraph"
       />
     </template>
+    <FullScreenIllustration
+      :key="section.id"
+      v-if="section.animationFull"
+      :paragraph="section"
+    />
   </section>
 </template>
 
 <script setup>
 import BreakImages from "./BreakImages.vue";
-import fullScreenIllustration from "@/components/chapter/Illus/fullScreenIllustration.vue";
+import FullScreenIllustration from "@/components/chapter/Illus/FullScreenIllustration.vue";
 import SubSection from "./SubSection.vue";
 import { useGeneral } from "@/stores";
 import BreakSection from "./BreakSection.vue";
+import InlineImages from "./InlineImages.vue";
 const store = useGeneral();
 
 const props = defineProps({
@@ -63,4 +82,8 @@ const props = defineProps({
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.imageW {
+  width: calc(50vw - 4rem);
+}
+</style>

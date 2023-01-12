@@ -1,11 +1,10 @@
 <template>
   <!-- subSection -->
-
   <div
     v-for="(subSections, subIndex) in paragraph.subSection"
     :key="subSections.id"
     :id="subSections.id"
-    class="sub"
+    class="sub pt-6"
   >
     <!-- subSection title -->
 
@@ -13,16 +12,11 @@
       :id="
         subSections.animationAnchor ? 'anchor' + subSections.animation.id : ''
       "
-      class="subT pt-20 -mb-8"
+      class="subT"
       :class="
         subSections.animationAnchor ? 'pt-[100vh] animationScrollAnchor' : ''
       "
     >
-      <span
-        :id="toSlug(subSections.title)"
-        class="absolute flex justify-center w-32 left-full"
-        >{{ index + "." + (subIndex + 1) }}</span
-      >
       {{ subSections.title }}
     </h3>
     <!-- subSection paragraph -->
@@ -38,6 +32,12 @@
             subParagraph?.type != 'breakSection'
           "
         >
+          <InlineImages
+            :paragraph="subParagraph"
+            :key="'images' + subParagraph.id"
+            v-if="subParagraph.img"
+          />
+
           <p
             v-if="!subParagraph.subSubSection && !subParagraph.type"
             :id="subParagraph.id"
@@ -53,7 +53,7 @@
             :sub-paragraph="subParagraph"
           />
           <div
-            class="h-[180vh] bg-violet text-white -mx-32 px-32"
+            class="h-[180vh] bg-dark text-white -mx-32 px-32"
             :key="subParagraph"
             v-else-if="subParagraph.type === 'breakText'"
           >
@@ -81,6 +81,11 @@
             subParagraph?.type != 'breakSection'
           "
         >
+          <InlineImages
+            :paragraph="subParagraph"
+            :key="'images' + subParagraph.id"
+            v-if="subParagraph.img"
+          />
           <p
             v-if="!subParagraph.subSubSection && !subParagraph.type"
             :id="subParagraph.id"
@@ -96,7 +101,7 @@
             :sub-paragraph="subParagraph"
           />
           <div
-            class="h-[100vh] bg-violet text-white -mx-32 px-32 mb-12"
+            class="h-[100vh] bg-dark text-white -ml-28 pl-20 -mr-32 pr-32 mb-12"
             :key="subParagraph"
             v-else-if="subParagraph.type === 'breakText'"
           >
@@ -124,6 +129,7 @@ import BreakImages from "./BreakImages.vue";
 import BreakSection from "./BreakSection.vue";
 
 import { toSlug } from "@/helper/general.js";
+import InlineImages from "./InlineImages.vue";
 
 const props = defineProps({
   paragraph: Object,
@@ -131,4 +137,4 @@ const props = defineProps({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>

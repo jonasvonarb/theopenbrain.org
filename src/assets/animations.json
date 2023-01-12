@@ -23,12 +23,12 @@
     },
     {
       "id": "animationZwei",
-      "title": "Cross-sectional anatomy",
+      "title": "Animation Zwei",
       "fullscreen": false
     },
     {
       "id": "animationDrei",
-      "title": "Cross-sectional anatomy",
+      "title": "Animation Drei",
       "fullscreen": false
     },
     {
@@ -48,6 +48,16 @@
         "amacrine cells",
         "ganglion cells"
       ]
+    },
+    {
+      "id": "animationEyeMovements",
+      "title": "Eye Movements",
+      "fullscreen": true,
+      "multiple": true,
+      "states": {
+        "age": "Give the ages of the people",
+        "free": "Just look at the picture"
+      }
     }
   ]
 }

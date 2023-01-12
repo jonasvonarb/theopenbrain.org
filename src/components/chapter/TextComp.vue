@@ -99,7 +99,7 @@ onBeforeUnmount(() => {
 <template>
   <div
     id="container"
-    class="absolute top-[100vh] z-40 w-[50vw] pointer-events-none"
+    class="absolute top-start z-40 w-[50vw] pointer-events-none"
   >
     <!-- :class="store.startIsActive ? 'fixed' : 'absolute'" -->
     <HoverImg />
@@ -109,19 +109,19 @@ onBeforeUnmount(() => {
       ></div>
       <main
         id="text"
-        class="text pointer-events-auto w-full text-left pt-[20vh] ml-[50vw] z-30 border-l bg-white border-black tracking-wide pb-[60vh] p-32 duration-500"
+        class="text pointer-events-auto w-full text-left pt-[20vh] ml-[50vw] z-30 border-l bg-white border-black tracking-wide pb-[60vh] pl-28 pr-32 duration-500"
       >
         <!-- intro -->
         <section
-          v-for="(section, index) in text['intro']"
+          v-for="section in text['intro']"
           :key="section.id"
           :id="section.id"
-          class="overflow-y-visible max-w-[800px]"
+          class="overflow-y-visible max-w-[780px]"
         >
           <h1
             :id="'the-eye-and-retina-intro'"
             :class="store.imgActive ? 'opacity-0' : ''"
-            class="z-40 text-black opacity-100"
+            class="z-40 pb-6 text-black opacity-100"
           >
             {{ section.title }}
           </h1>
@@ -144,7 +144,7 @@ onBeforeUnmount(() => {
           :id="toSlug(section.title)"
           :key="toSlug(section.title)"
           ref="triggers"
-          class="mt-0 trigger max-w-[800px]"
+          class="trigger max-w-[780px]"
         >
           <Section :section="section" :index="index" />
         </div>
@@ -156,4 +156,8 @@ onBeforeUnmount(() => {
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.top-start {
+  top: calc(100vh);
+}
+</style>

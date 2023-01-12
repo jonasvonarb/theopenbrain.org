@@ -25,6 +25,11 @@ const routes = [
     component: () => import("../views/ChapterView.vue"),
   },
   {
+    path: "/chapter/break/:video?",
+    name: "break",
+    component: () => import("../views/BreakView.vue"),
+  },
+  {
     path: "/chapter/chaptertocome/:chapter?",
     name: "chapternotfound",
     component: () => import("../views/ChapterNotFoundView.vue"),
@@ -65,6 +70,7 @@ const router = createRouter({
 });
 router.beforeEach((to, from) => {
   const store = useGeneral();
+  store.prevRoute = from.name;
 
   if (from.name === "about") {
     to.meta = { transitionName: "aboutLeave" };

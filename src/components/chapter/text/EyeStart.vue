@@ -1,5 +1,4 @@
 <script setup>
-import { useRoute } from "vue-router";
 import { useGeneral } from "@/stores";
 import lottie from "lottie-web";
 import { onMounted, ref, watch } from "vue";
@@ -20,6 +19,10 @@ watch(x, (x) => {
   );
 });
 
+const scrollToPos = () => {
+  console.log(document.body);
+  document.getElementById("container").scrollIntoView({ behavior: "smooth" });
+};
 onMounted(() => {
   let svgContainer = document.getElementById("animationStart");
   setTimeout(() => {
@@ -34,7 +37,7 @@ onMounted(() => {
         progressiveLoad: false,
         preserveAspectRatio: "xMidYMax slice",
       },
-      path: "/assets/animations/background-test-1.json",
+      path: "/assets/animations/animationStart.json",
     });
   }, 700);
 });
@@ -43,27 +46,32 @@ onMounted(() => {
   <div
     id="titleAnimation"
     :class="store.activeMenu ? 'w-[65vw]' : 'w-screen'"
-    class="bgImage bg-dark absolute right-0 h-screen z-[50] overflow-hidden duration-500 flex justify-start items-center"
+    class="bgImage bg-dark absolute right-0 h-screen z-[50] duration-500 flex justify-start items-start"
   >
     <div
       id="animationStart"
-      class="w-screen h-screen flex flex-wrap justify-center items-center"
+      class="w-screen h-start flex flex-wrap justify-center items-center overflow-hidden"
     />
-    <div class="absolute bottom-12 right-0 w-full flex justify-center pr-3">
-      <button
-        class="pointer-events-auto text-xl text-white bg-black rounded-full w-16 h-16"
+    <div
+      @click="scrollToPos()"
+      class="absolute bottom-2 left-0 w-full flex justify-center text-center"
+    >
+      <div
+        class="pointer-events-auto text-xl text-white rounded-full w-16 h-16"
       >
         &#x2193;
-      </button>
+      </div>
     </div>
   </div>
 </template>
 
 <style>
 #animationStart > svg {
-  height: 100vh;
+  height: calc(100vh - 5rem);
 }
-
+.h-start {
+  height: calc(100vh);
+}
 .bgImage {
   background-image: url("/assets/images/placeholderEye.png");
   background-repeat: no-repeat;

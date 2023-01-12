@@ -9,7 +9,7 @@
   >
     <div
       v-if="getComments?.includes(id)"
-      class="rounded-full bg-violet z-40 w-4 h-4 absolute -right-1 -top-1"
+      class="rounded-full bg-dark z-40 w-4 h-4 absolute -right-1 -top-1"
     />
     C
   </div>

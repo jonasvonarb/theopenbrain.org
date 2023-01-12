@@ -1,7 +1,7 @@
 {
-  "Part7": {
-    "index": 1,
-    "title": "Introduction",
+  "Part1": {
+    "index": 0,
+    "title": "The History of Neuroscience",
     "parts": [
       "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
       "Aliquam tincidunt mauris eu risus.",
@@ -18,23 +18,9 @@
       "Donec quis dui at dolor tempor interdum."
     ]
   },
-  "Part8": {
+  "Part2": {
     "index": 2,
-    "title": "Synapsis Transition",
-    "image": "../images/iamge2",
-    "parts": [
-      "Praesent placerat risus quis eros.",
-      "Fusce pellentesque suscipit nibh.",
-      "Integer vitae libero ac risus egestas placerat.",
-      "Vestibulum commodo felis quis tortor.",
-      "Ut aliquam sollicitudin leo.",
-      "Cras iaculis ultricies nulla.",
-      "Donec quis dui at dolor tempor interdum."
-    ]
-  },
-  "Part9": {
-    "index": 3,
-    "title": "The eye and retina",
+    "title": "The Retina",
     "parts": [
       "Story of the eye",
       {
@@ -90,9 +76,9 @@
       "Further reading"
     ]
   },
-  "Part10": {
-    "index": 4,
-    "title": "Movement",
+  "Part3": {
+    "index": 3,
+    "title": " The Visual System",
     "parts": [
       "Cras ornare tristique elit.",
       "Vivamus vestibulum ntulla nec ante.",
@@ -100,9 +86,9 @@
       "Fusce pellentesque suscipit nibh."
     ]
   },
-  "Part11": {
-    "index": 5,
-    "title": "Memory and language",
+  "Part4": {
+    "index": 4,
+    "title": " The Auditory System",
     "parts": [
       "Cras ornare tristique elit.",
       "Vivamus vestibulum ntulla nec ante.",
@@ -114,9 +100,9 @@
       "Cras iaculis ultricies nulla."
     ]
   },
-  "Part12": {
-    "index": 6,
-    "title": "Diseases of the Nervous System",
+  "Part5": {
+    "index": 5,
+    "title": "The Motor System",
     "parts": [
       "Aliquam tincidunt mauris eu risus.",
       "Vestibulum auctor dapibus neque.",

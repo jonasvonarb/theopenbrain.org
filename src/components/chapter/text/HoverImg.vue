@@ -2,12 +2,12 @@
   <div
     v-if="activeHover"
     ref="img"
-    class="fixed z-[70] bg-black p-4 text-white w-1/2 max-w-[600px] flex gap-4"
+    class="fixed w-[400px] z-[70] bg-black p-4 text-white flex flex-col gap-4"
   >
-    <div class="w-1/3 max-w-[200px]">
+    <div class="w-full">
       <img class="w-full" :src="'/assets/hoverImges/' + activeHover + '.jpg'" />
     </div>
-    <p class="w-2/3 max-w-[400px] -mt-[3px] text-small">
+    <p class="w-full max-w-[400px] -mt-[3px] text-small">
       {{ infos.images.find((x) => x.title === activeHover).text }}
     </p>
   </div>
@@ -22,9 +22,14 @@ const { x, y } = useMouse();
 const img = ref(null);
 watch(x, (x, prevX) => {
   if (!img.value) return;
-  const offset = window.innerWidth / 2 >= 600 ? 600 : window.innerWidth / 2;
-  img.value.style.top = y.value - window.scrollY + "px";
-  img.value.style.left = x - offset + "px";
+  const hImg = img.value.getBoundingClientRect().height;
+  const offsetX = window.innerWidth / 2 >= 400 ? 400 : window.innerWidth / 2;
+  const offsetY =
+    y.value - window.scrollY + hImg <= window.innerHeight
+      ? 0
+      : y.value - window.scrollY + hImg - window.innerHeight + 20;
+  img.value.style.top = y.value - window.scrollY - offsetY + "px";
+  img.value.style.left = x - offsetX + "px";
 });
 const activeHover = ref(null);
 onMounted(() => {

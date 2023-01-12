@@ -32,7 +32,7 @@ const commentStore = useCom();
     <Comment v-if="commentStore.activeCom" />
 
     <div
-      class="fixed z-40 bottom-6 right-6 flex gap-2 justify-end w-full"
+      class="fixed z-40 bottom-4 right-6 flex gap-2 justify-end w-full"
       :class="store.imgActive ? 'opacity-0' : ''"
     >
       <ActionButton :text="'Clear'" @action="storeText.clearTextMarking()" />
