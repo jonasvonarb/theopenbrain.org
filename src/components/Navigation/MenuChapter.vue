@@ -14,6 +14,15 @@ const toStart = () => {
   }, 0);
 };
 
+const scrollToMenu = (menu) => {
+  const link = document.querySelector("#" + menu);
+  link.scrollIntoView({
+    behavior: "smooth",
+    alignToTop: "false",
+    block: "start",
+  });
+};
+
 const closeMenu = () => {
   store.activeMenu = false;
 
@@ -50,57 +59,46 @@ const closeMenu = () => {
                   {{ menu[index].title }}
                 </RouterLink>
               </h2>
-              <RouterLink
+              <div
                 class="flex pl-8"
-                :to="{
-                  name: 'chapter',
-                  hash: '#the-eye-and-retina-intro',
-                }"
-                @click="closeMenu()"
+                @click="scrollToMenu('the-eye-and-retina-intro'), closeMenu()"
               >
                 <div
-                  class="w-full py-4 border-b border-black hover:bg-gray-100"
+                  class="w-full py-4 border-b border-transparent hover:bg-gray-100"
                 >
                   Intro
                 </div>
-              </RouterLink>
+              </div>
               <template
                 v-for="(part, index2) in chapter.parts"
                 :key="part.title"
               >
-                <RouterLink
+                <div
                   v-if="!part.title"
                   class="flex pl-8"
-                  :to="{
-                    name: 'chapter',
-                    hash: '#' + toSlug(part),
-                  }"
-                  @click="closeMenu()"
+                  @click="scrollToMenu(toSlug(part)), closeMenu()"
                 >
                   <li
                     v-if="!part?.parts"
-                    class="w-full border-b py-4 border-black hover:bg-gray-100"
+                    class="w-full border-b py-4 border-transparent hover:bg-gray-100"
                   >
                     <span
                       :class="
                         toSlug(part) === store.currentSubChapter
-                          ? 'text-light'
+                          ? 'blur-xs'
                           : ''
                       "
                       >{{ part }}</span
                     >
                   </li>
-                </RouterLink>
-                <div class="pl-8" v-else>
-                  <RouterLink
-                    :to="{
-                      name: 'chapter',
-                      hash: '#' + toSlug(part.title),
-                    }"
-                    @click="closeMenu()"
+                </div>
+                <template v-else>
+                  <div
+                    class="flex pl-8"
+                    @click="scrollToMenu(toSlug(part.title)), closeMenu()"
                   >
                     <li
-                      class="w-full border-b py-4 border-black hover:bg-gray-100"
+                      class="w-full border-b py-4 border-transparent hover:bg-gray-100"
                     >
                       <span
                         :class="
@@ -111,56 +109,48 @@ const closeMenu = () => {
                         >{{ part.title }}</span
                       >
                     </li>
-                  </RouterLink>
+                  </div>
                   <ol class="list-">
-                    <RouterLink
-                      :to="{
-                        name: 'chapter',
-                        hash: '#' + toSlug(subPart),
-                      }"
-                      @click="closeMenu()"
-                      class="block lining-nums pl-12 p-2 hover:bg-gray-100"
+                    <div
+                      class="block font-IBM lining-nums pl-24 p-2 hover:bg-gray-100"
+                      @click="scrollToMenu(toSlug(subPart)), closeMenu()"
                       v-for="subPart in part.parts"
                       :key="subPart"
                     >
                       <li class="sub">{{ subPart }}</li>
-                    </RouterLink>
+                    </div>
                   </ol>
-                </div>
+                </template>
               </template>
-              <RouterLink
+              <div
                 class="flex pl-8"
-                :to="{
-                  name: 'chapter',
-                  hash: '#footnotes',
-                }"
-                @click="closeMenu()"
+                @click="scrollToMenu('footnotes'), closeMenu()"
               >
                 <div
-                  class="w-full py-4 border-b border-black hover:bg-gray-100"
+                  class="w-full py-4 border-b border-transparent hover:bg-gray-100"
                 >
                   Footnotes
                 </div>
-              </RouterLink>
+              </div>
             </ol>
           </li>
         </template>
+        <OpenCloseButton
+          v-if="store.activeMenu"
+          :text="'close'"
+          :target="'Menu'"
+          class="absolute pointer-events-auto pt-2 pr-4 z-[60] flex justify-center items-center right-0 top-2 duration-500 overflow-hidden"
+        />
       </ul>
     </Transition>
     <!-- menu open/close chapter -->
     <OpenCloseButton
-      :text="'+'"
+      :text="'open'"
       :target="'Menu'"
-      class="fixed border-r border-black bg-dark pt-6 text-white pointer-events-auto z-[60] hover:bg-lightDark h-full w-8 flex justify-center items-top left-0 top-0 duration-500 overflow-hidden"
+      class="fixed border-r border-transparent bg-dark pt-2 text-white pointer-events-auto z-[60] hover:bg-lightDark h-full w-8 flex justify-center items-top left-0 top-0 duration-500 overflow-hidden"
       :class="
         !store.activeMenu && route.name === 'chapter' ? 'left-8' : '-left-8'
       "
-    />
-    <OpenCloseButton
-      v-if="store.activeMenu"
-      :text="'X'"
-      :target="'Menu'"
-      class="fixed pointer-events-auto pt-6 z-[60] flex justify-center items-center right-[65vw] pr-5 top-2 duration-500 overflow-hidden"
     />
   </div>
 </template>

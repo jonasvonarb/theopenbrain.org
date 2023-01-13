@@ -7,7 +7,7 @@
     class="sub pt-6"
   >
     <!-- subSection title -->
-
+    <span :id="subSections?.title ? toSlug(subSections?.title) : ''" />
     <h3
       :id="
         subSections.animationAnchor ? 'anchor' + subSections.animation.id : ''
@@ -64,7 +64,8 @@
         <BreakImages
           v-else-if="subParagraph?.type === 'breakVideo'"
           :key="subParagraph.id"
-          :title="subParagraph.text"
+          :title="paragraph.title"
+          :text="paragraph.text"
         />
         <BreakSection
           v-else-if="subParagraph.type === 'breakSection'"
@@ -112,7 +113,8 @@
         <BreakImages
           v-else-if="subParagraph?.type === 'breakVideo'"
           :key="subParagraph.title"
-          :title="subParagraph.text"
+          :title="subParagraph.title"
+          :text="subParagraph.text"
         />
         <BreakSection
           v-else-if="subParagraph.type === 'breakSection'"

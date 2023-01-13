@@ -1,5 +1,7 @@
 <script setup>
 import { useGeneral } from "@/stores";
+import BiDashCircleFill from "../../icons/BiDashCircleFill.vue";
+import EpCirclePlusFilled from "../../icons/EpCirclePlusFilled.vue";
 const store = useGeneral();
 
 const props = defineProps({
@@ -8,16 +10,14 @@ const props = defineProps({
   text: String,
 });
 
+console.log(props.text);
 </script>
 
 <template>
-  <button @click="store.toggle('active' + target)">
-    {{ text }}
+  <button class="" @click="store.toggle('active' + target)">
+    <EpCirclePlusFilled class="w-6 h-6" v-if="text === 'open'" />
+    <BiDashCircleFill class="w-6 h-6" v-else />
   </button>
 </template>
-
-<script>
-export default {};
-</script>
 
 <style scoped></style>

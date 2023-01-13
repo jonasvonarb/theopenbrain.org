@@ -34,7 +34,7 @@ const addH = (event) => {
     );
   }
   for (const path of paths) {
-    path.children[0].children[0].classList.add("highlightIllu");
+    path.classList.add("highlightIllu");
     text.classList.add("highlightText");
   }
 };
@@ -55,7 +55,7 @@ const removeH = (event) => {
     );
   }
   for (const path of paths) {
-    path.children[0].children[0].classList.remove("highlightIllu");
+    path.classList.remove("highlightIllu");
     text.classList.remove("highlightText");
   }
 };

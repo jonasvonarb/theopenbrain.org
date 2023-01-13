@@ -1,6 +1,7 @@
 <script setup>
 import { useRoute, useRouter } from "vue-router";
 import { useGeneral } from "@/stores";
+import BiArrowLeftCircle from "@/icons/BiArrowLeftCircle.vue";
 
 const route = useRoute();
 const router = useRouter();
@@ -32,9 +33,9 @@ const store = useGeneral();
     <button
       v-else-if="route.name === 'about'"
       @click="router.go(-1)"
-      class="px-6 text-xl bg-white border border-black text-black hover:border-white hover:bg-light hover:text-white rounded-xl"
+      class="p-2 px-6 bg-white border border-black text-black hover:border-white hover:bg-light hover:text-white rounded-xl"
     >
-      &#x2190;
+      <BiArrowLeftCircle class="text-[25px]" />
     </button>
   </div>
 </template>

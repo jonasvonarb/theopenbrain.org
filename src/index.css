@@ -52,7 +52,14 @@ section p.breakSectionTitle {
 *::-webkit-scrollbar {
   display: none;
 }
-
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
 * {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -76,6 +83,11 @@ h3 {
   line-height: 3.8rem;
 }
 
+h4 {
+  font-size: 2rem;
+  line-height: 2.3rem;
+}
+
 blockquote {
   padding: 5rem;
 }
@@ -84,6 +96,7 @@ blockquote {
 .subSubT {
   padding-bottom: 1.5rem;
 }
+.font-IBM,
 .P,
 .subP,
 .subSubP,
@@ -108,7 +121,10 @@ blockquote {
 }
 
 /* punkte Text */
-.active > .animationMarker {
+.active > .animationMarker,
+.active > * > .animationMarker,
+.active > * > * > .animationMarker,
+.active > * > * > * > .animationMarker {
   background-color: transparent;
   border: solid black;
   /* padding: 0 0.5rem 0 0.5rem; */
@@ -117,18 +133,30 @@ blockquote {
   /* border-radius: 9999px; */
 }
 
-.highlighterIlluFill > * > .highlightIllu {
-  fill: #b5b5b5;
-  stroke: #b5b5b5;
-  fill-opacity: 1;
-}
-.highlighterIlluBorder > * > .highlightIllu {
-  stroke: #b5b5b5;
-  stroke-width: 3;
+.animationMarkerClick.active {
+  border: solid black;
+  background: #9747ff;
+  color: white;
+  padding: 0.2rem 0.4rem;
+  stroke: #9747ff;
 }
 
-.active > .highlightText {
-  background: #b5b5b5;
+.highlighterIlluFill.highlightIllu > * > * {
+  fill: #9747ff;
+  stroke: #9747ff;
+  fill-opacity: 1;
+}
+.highlighterIlluBorder.highlightIllu > * > * {
+  stroke: #9747ff;
+  stroke-width: 5;
+  stroke-opacity: 1;
+}
+
+.active > .highlightText,
+.active > * > .highlightText,
+.active > * > * > .highlightText,
+.active > * > * > * > .highlightText {
+  background: #9747ff;
   color: white;
 }
 
@@ -161,14 +189,14 @@ blockquote {
 
 .punktComment {
   top: 0px;
-  background-color: #b5b5b5;
+  background-color: #9747ff;
   border: 1px solid white;
   display: none;
 }
 
 mark {
   /* background-color: rgb(230, 230, 230); */
-  text-decoration: line-through 1.3rem #b5b5b533;
+  text-decoration: line-through 1.3rem #9747ff33;
   /* text-decoration-thickness: 10px; */
   /* padding: 0.2rem; */
   padding-left: 0;
@@ -178,7 +206,7 @@ mark {
 }
 
 .hoverActive {
-  color: #b5b5b5;
+  color: #9747ff;
   text-decoration: underline;
   text-underline-offset: 0.4rem;
   cursor: pointer;
@@ -249,7 +277,7 @@ mark {
 }
 
 .hoverImg {
-  color: #b5b5b5;
+  color: #9747ff;
   cursor: pointer;
 }
 
@@ -264,7 +292,7 @@ sup {
   cursor: pointer;
 }
 sup:hover {
-  background: #b5b5b5;
+  background: #9747ff;
   color: white;
 }
 

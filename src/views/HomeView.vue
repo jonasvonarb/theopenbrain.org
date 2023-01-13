@@ -4,26 +4,20 @@
       class="fixed top-0 left-0 w-full h-full flex justify-center items-center"
     >
       <div
+        v-show="!store.activeMenu"
         class="fixed h-full w-full flex justify-center items-center text-bigest font-bold"
       >
-        <div
-          v-show="!store.activeMenu"
-          class="color uppercase text-center duration-500"
-        >
+        <div class="color uppercase text-center duration-500">
           The <br />
           Open<br />
           Brain
-          <div class="text-white text-xl mt-12">
-            <span
-              class="bg-violet border-2 border-white rounded-full hover:bg-white text-white hover:text-black px-6 cursor-pointer"
-              @click="enter()"
-            >
-              Enter &#x2192;
-            </span>
-          </div>
+        </div>
+        <div
+          class="text-white hover:text-violet text-center text-xl mt-12 fixed bottom-12 cursor-pointer"
+        >
+          <BiArrowRightCircleFill @click="enter()" />
         </div>
       </div>
-
       <div
         :class="store.activeMenu ? 'w-[65vw]' : 'w-full'"
         class="video-background w-full absolute mix-blend-overlay pointer-events-none duration-500 right-0"
@@ -34,7 +28,7 @@
           frameborder="0"
           allow="autoplay; fullscreen"
           allowfullscreen
-        ></iframe>
+        />
       </div>
     </div>
   </main>
@@ -42,6 +36,7 @@
 
 <script setup>
 import { useGeneral } from "@/stores/index";
+import BiArrowRightCircleFill from "@/icons/BiArrowRightCircleFill.vue";
 
 const store = useGeneral();
 

@@ -21,7 +21,7 @@ const activeState = ref({
   state: !thisAnimation.value?.multiple
     ? 0
     : Object.keys(thisAnimation.value.states)[0],
-  toggle: 0,
+  toggle: false,
 });
 
 onMounted(() => {
@@ -42,16 +42,15 @@ onMounted(() => {
 const toggleState = (index, activeState) => {
   const posStart = 36 + 23 + 74 * (activeState.state - 1) - 5;
   const posEnd = 36 + 23 + 74 * (activeState.state - 1) + 15;
-  if (index === 1) {
+  if (!activeState.toggle) {
     animation.value.playSegments([posStart, posEnd], true);
-    activeState.toggle = index;
+    activeState.toggle = !activeState.toggle;
   } else {
     animation.value.playSegments([posEnd, posStart], true);
-    activeState.toggle = index;
+    activeState.toggle = !activeState.toggle;
   }
-  console.log(posStart, posEnd);
 };
-const setState = (index, activeState) => {
+const setState = (index, activeState, setter) => {
   if (!totalFrames.value) {
     totalFrames.value = animation.value.totalFrames;
   }
@@ -70,42 +69,56 @@ const setState = (index, activeState) => {
 
 <template>
   <div
-    class="h-[150vh] w-screen bg-light text-white -translate-x-1/2 -ml-28 my-72"
+    class="h-[150vh] w-screen bg-light text-black -translate-x-1/2 -ml-28 my-72"
   >
-    <div class="sticky w-full h-screen px-56 top-0">
-      <div class="absolute z-50 flex flex-col justify-between pr-48">
-        <div class="w-52 pt-32 grow">
+    <div class="sticky w-full h-screen px-32 py-16 top-0">
+      <div class="absolute z-50 flex flex-col justify-between">
+        <div
+          v-for="(state, index) in thisAnimation.states"
+          :key="state"
+          class="flex justify-between flex-wrap mb-4 text-left p-4 pr-12 py-1"
+        >
           <button
-            v-for="(state, index) in thisAnimation.states"
-            :key="state"
-            class="hover:underline"
-            :class="
-              activeState.state == index
-                ? 'italic font-bold'
-                : 'blur-xs opacity-30'
-            "
+            class="text-left p-4 pr-12 py-1 duration-200 border border-black w-80"
+            :class="[
+              (activeState.toggle === false && activeState.state === index) ||
+              (activeState.state === index && index === 0)
+                ? 'bg-white pointer-events-none blur-xs'
+                : ' bg-dark text-white hover:opacity-40 hover:blur-xs',
+              activeState.state === index ? '' : 'opacity-70 ',
+            ]"
             @click="
-              activeState.state != index ? setState(index, activeState) : ''
+              activeState.state !== index
+                ? activeState.toggle === true
+                  ? (toggleState(index, activeState),
+                    setState(index, activeState))
+                  : setState(index, activeState)
+                : toggleState(index, activeState)
             "
           >
             {{ state }}
           </button>
-        </div>
-        <div class="w-52 grow text-right">
           <button
-            v-for="(toggle, index) in thisAnimation.toggle"
-            :key="toggle"
-            class="hover:underline"
-            :class="
-              activeState.toggle == index
-                ? 'italic font-bold'
-                : 'blur-xs opacity-30'
-            "
+            v-if="index !== 0 && !thisAnimation?.multiple"
+            class="text-left p-4 pr-12 py-1 duration-200 border border-black flex-1"
+            :class="[
+              activeState.toggle === true && activeState.state === index
+                ? 'bg-white pointer-events-none blur-xs'
+                : 'bg-dark text-white hover:opacity-40 hover:blur-xs',
+              activeState.state === index
+                ? 'font-bold'
+                : 'opacity-70 hover:opacity-100 ',
+            ]"
             @click="
-              activeState.toggle != index ? toggleState(index, activeState) : ''
+              activeState.state !== index
+                ? activeState.toggle !== true //shoulb be !==
+                  ? (toggleState(index, activeState),
+                    setState(index, activeState, 'toggle'))
+                  : setState(index, activeState, 'toggle')
+                : toggleState(index, activeState, 'toggle')
             "
           >
-            <template v-if="activeState.state != 0"> {{ toggle }}</template>
+            {{ thisAnimation.toggle }}
           </button>
         </div>
       </div>

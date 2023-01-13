@@ -7,13 +7,9 @@ const router = useRouter();
 
 <template>
   <div class="about bg-white w-screen h-screen overflow-hidden flex">
-    <h1 class="fixed top-6 left-0 w-screen text-center flex justify-start px-7">
-      <!-- <div
-        class="bg-white top-2 rounded-xl border border-black ml-8 px-2 py-3 font-bold"
-      >
-        The Project
-      </div> -->
-    </h1>
+    <h1
+      class="fixed top-6 left-0 w-screen text-center flex justify-start px-7"
+    ></h1>
     <h1
       class="fixed top-6 left-1/2 w-screen text-center flex justify-start px-7"
     >

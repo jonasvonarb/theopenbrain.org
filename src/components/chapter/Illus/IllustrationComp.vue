@@ -1,15 +1,12 @@
 <template>
   <div
-    class="px-24 w-full flex flex-col justify-center h-[100%] pointer-events-auto"
+    class="pr-24 pl-32 flex flex-row justify-center items-center h-[100%] pointer-events-auto"
   >
     <div
-      class="px-24 pl-32 z-50 fixed flex w-[50vw] justify-between top-6 left-0"
+      class="px-24 pl-32 z-50 fixed flex flex-col w-[50vw] justify-between top-6 left-0"
       :class="animation.multiple ? 'items-center' : 'items-start'"
     >
-      <span>{{ animation.title }}</span>
-      <span v-if="animation.loop" class="hover:underline" @click="replay()"
-        >replay</span
-      >
+      <span class="pb-12">{{ animation.title }}</span>
       <div
         v-if="animation.multiple"
         class="fixed top-0 left-0 w-[50vw] h-screen px-24 pl-32 flex flex-col justify-center items-start"
@@ -49,33 +46,39 @@
             ? animation.states
             : Object.keys(animation.states)"
           :key="state"
-          class="hover:underline duration-300 text-small"
+          class="hover:opacity-50 duration-300 text-small cursor-pointer pb-4"
           :class="
-            activeState.state == index
-              ? 'italic font-bold'
-              : 'blur-xs opacity-30'
+            activeState.state == index ? ' blur-xs pointer-events-none' : ''
           "
-          @click="setState(index, state)"
+          @click="setState(index, activeState.state)"
         >
           {{ state }}
         </p>
       </div>
     </div>
-    <div
-      v-if="!animation.multiple"
-      :id="animation.id"
-      class="w-full h-full px-24 pl-32 max-h-[600px]"
-    />
+    <div class="flex flex-row">
+      <div
+        v-if="!animation.multiple"
+        :id="animation.id"
+        class="w-full max-w-[800px]"
+      />
+      <BiArrowRepeat
+        class="w-10 h-10 ml-4 mt-4 hover:text-violet cursor-pointer"
+        v-if="animation.loop"
+        @click="replay()"
+      />
+    </div>
   </div>
 </template>
 
 <script setup>
 import IllustarionMultiple from "@/components/chapter/Illus/IllustarionMultiple.vue";
 import { ref, onMounted } from "vue";
-import { addH, removeH } from "@/helper/general";
+import { addH, removeH, toSlug } from "@/helper/general";
 
 import lottie from "lottie-web";
 import animationJSON from "@/assets/animations.json";
+import BiArrowRepeat from "@/icons/BiArrowRepeat.vue";
 
 const props = defineProps({
   animation: Object,
@@ -87,10 +90,11 @@ const activeState = ref({
   state: 0,
 });
 
+const info = animationJSON.animations.find((x) => {
+  return x.id == props.animation.id;
+});
+
 const replay = () => {
-  const info = animationJSON.animations.find((x) => {
-    return x.id == props.animation.id;
-  });
   if (!info.loopSection) {
     animationLottie.goToAndPlay(0, true);
   } else {
@@ -98,12 +102,30 @@ const replay = () => {
   }
 };
 
-const setState = (index, state) => {
-  console.log(index);
+const setState = (index, indexBefore) => {
+  if (info.clickTriggered) {
+    let clickTriggers = document.getElementsByClassName("animationMarkerClick");
+    let trigger = Array.prototype.slice.call(clickTriggers).find((x) => {
+      return x.id === toSlug(props.animation.states[index]);
+    });
+    let triggerBefore = Array.prototype.slice.call(clickTriggers).find((x) => {
+      return x.id === toSlug(props.animation.states[indexBefore]);
+    });
+    trigger.classList.add("active");
+    trigger.scrollIntoView({
+      behavior: "smooth",
+      alignToTop: "false",
+      block: "center",
+    });
+    triggerBefore.classList.remove("active");
+  }
+
   if (!props.animation.multiple) {
-    const totalFrames = animationLottie.totalFrames / 5;
-    const pos = (totalFrames.value / 3) * index;
-    const posAfter = (totalFrames.value / 3) * (index + 1);
+    animationLottie.setSpeed(6);
+    let totalFrames = animationLottie.animationData.op;
+    const pos = (totalFrames / 6) * (indexBefore + 1);
+    animationLottie.playSegments([1, totalFrames], true);
+    const posAfter = (totalFrames / 6) * (index + 1);
     activeState.value.state = index;
     animationLottie.playSegments([pos, posAfter], true);
   } else {
@@ -112,6 +134,14 @@ const setState = (index, state) => {
 };
 
 onMounted(() => {
+  if (info.clickTriggered) {
+    let clickTriggers = document.getElementsByClassName("animationMarkerClick");
+    let trigger = Array.prototype.slice.call(clickTriggers).find((x) => {
+      return x.id === toSlug(props.animation.states[0]);
+    });
+    trigger.classList.add("active");
+  }
+
   let svgContainer = document.getElementById(props.animation.id);
   if (!svgContainer) return;
   animationLottie = lottie.loadAnimation({
@@ -131,8 +161,12 @@ onMounted(() => {
     }
   });
   animationLottie.setSubframe(true);
-  animationLottie.setSpeed(1);
-  animationLottie.play();
+
+  if (!info.states) {
+    animationLottie.play();
+  } else {
+    animationLottie.goToAndStop(24, true);
+  }
 });
 </script>
 

@@ -1,7 +1,28 @@
 <script setup>
+import gsap from "gsap";
+import { ref, onMounted } from "vue";
+import { toSlug } from "@/helper/general.js";
+import EpCirclePlus from "../../../icons/EpCirclePlus.vue";
+
 const props = defineProps({
   content: Object,
 });
+const infoIsOpen = ref(false);
+const openInfo = () => {
+  const el = document.getElementById("info-" + toSlug(props.content.title));
+  infoIsOpen.value = !infoIsOpen.value;
+  if (infoIsOpen.value) {
+    gsap.to(el, {
+      duration: 0.3,
+      height: "auto",
+    });
+  } else {
+    gsap.to(el, {
+      duration: 0.3,
+      height: 0,
+    });
+  }
+};
 </script>
 
 <template>
@@ -12,20 +33,32 @@ const props = defineProps({
     <div class="sticky flex top-0 h-screen w-full pl-52 py-32">
       <div class="border w-full text-black p-6 bg-white border-dark">
         <div
-          class="max-w-[800px] flex flex-col justify-between h-full"
-          v-if="content.title === 'Blind-spot'"
+          class="flex flex-col justify-strat h-full"
+          v-if="content.title === 'Blind Spot'"
         >
-          <p v-html="content.text"></p>
-
-          <ol class="list-decimal list-inside">
-            <li
-              v-for="step in content.steps"
-              class="pb-6 last:pb-0"
-              :key="step"
+          <h4 class="pb-6">{{ content.title }}</h4>
+          <div class="flex gap-6">
+            <EpCirclePlus
+              class="w-8 h-8 hover:opacity-70 cursor-pointer"
+              @click="openInfo()"
+            />
+            <div
+              :id="'info-' + toSlug(content.title)"
+              class="flex justify-start w-full h-0 overflow-hidden gap-32"
             >
-              {{ step }}
-            </li>
-          </ol>
+              <p class="w-1/2 max-w-[600px]" v-html="content.text"></p>
+              <ol class="w-1/2 max-w-[600px] list-decimal list-outside">
+                <li
+                  v-for="step in content.steps"
+                  class="pb-6 last:pb-0"
+                  :key="step"
+                >
+                  {{ step }}
+                </li>
+              </ol>
+            </div>
+          </div>
+
           <div
             class="absolute top-0 left-0 p-56 flex justify-around items-center w-full h-full pointer-events-none"
           >
@@ -36,7 +69,7 @@ const props = defineProps({
         <template
           v-else-if="content.title === 'Pathway for the pupillary light reflex'"
         >
-          {{ content.title }}
+          <h4 class="pb-6">{{ content.title }}</h4>
 
           <div
             class="w-full absolute p-56 z-50 top-0 left-0 flex h-full justify-center items-center content-center flex-wrap duration-500"

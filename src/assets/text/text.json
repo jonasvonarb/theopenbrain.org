@@ -46,7 +46,8 @@
         {
           "id": "f76eea26-c064-41c5-9347-889a65266271",
           "type": "breakVideo",
-          "text": "Maureen Neitz discussing possible causes and cures for myopia – 2 mins"
+          "title": "Maureen Neitz",
+          "text": "discussing possible causes and cures for myopia – 2 mins"
         }
       ]
     },
@@ -76,13 +77,14 @@
                     "Put your monitor an arm’s length away. Close your left eye and fix your right eye’s gaze on the ‘R’. Extend your right hand and block the ‘R’ with the tip of your index fingers. Slowly move your hand directly rightwards, and when it gets about halfway across the screen your fingertip should disappear.",
                     "Close your left eye and fix your right eye’s gaze on the ‘R’. Move closer and farther away from the screen until the ‘L’ disappears. Repeat with your left eye while fixating on the ‘L’ and the ‘R’ should disappeared."
                   ],
-                  "title": "Blind-spot",
-                  "text": "<strong>BLIND SPOT:</strong> Due to the optic nerve, each retina has a small region without photoreceptors, resulting in a blind spot in each eye’s visual field. In each eye’s visual field, the blind spot is located roughly 10° temporally (away from the nose) and has a size of approximately 6°8. The blind spot was first discovered in the 17th century by French physicist and priest Edme Marriott<sup data-sup='9'>9</sup>. We tend not to notice our blind spots in part because our brain in so good at ‘filling in’ missing visual information. To find your own blind spot, try one of these two methods:"
+                  "title": "Blind Spot",
+                  "text": "Due to the optic nerve, each retina has a small region without photoreceptors, resulting in a blind spot in each eye’s visual field. In each eye’s visual field, the blind spot is located roughly 10° temporally (away from the nose) and has a size of approximately 6°8. The blind spot was first discovered in the 17th century by French physicist and priest Edme Marriott<sup data-sup='9'>9</sup>. We tend not to notice our blind spots in part because our brain in so good at ‘filling in’ missing visual information. To find your own blind spot, try one of these two methods:"
                 },
                 {
                   "id": "d12c4b7a-f896-4e03-92bb-74d30bd22135",
                   "type": "breakVideo",
-                  "text": "Tom Baden discussing ‘Is our retina really upside down?” – 2 mins"
+                  "title": "Tom Baden",
+                  "text": "discussing ‘Is our retina really upside down?” – 2 mins"
                 }
               ]
             },
@@ -122,31 +124,32 @@
                   "subSubSection": [
                     {
                       "id": "0ccacfad-16a4-4c0c-bf01-ee5f1579b255",
-                      "text": "<strong>Photoreceptors:</strong> Photoreceptors are vital to retinal function, as they detect light and convert it into an electrical signal<sup data-sup='28'>28,</sup><sup data-sup='29'>29</sup>. By the late 17th century, it had become clear there were 2 types of photoreceptors, rods and cones, and that each was differentially localized in the retina and served different functions. Anatomical work from Max Schultze indicated that cones were mostly near the center of the human retina, whereas rods dominated in the periphery<sup data-sup='1'>1</sup>. Behavioral work from Hermann Aubert showed that visual acuity and color discrimination both decreased from the center to the periphery of the visual field<sup data-sup='1'>1</sup>"
+                      "text": "<span id='photoreceptors' class='animationMarkerClick'><strong>Photoreceptors:</strong></span> Photoreceptors are vital to retinal function, as they detect light and convert it into an electrical signal<sup data-sup='28'>28,</sup><sup data-sup='29'>29</sup>. By the late 17th century, it had become clear there were 2 types of photoreceptors, rods and cones, and that each was differentially localized in the retina and served different functions. Anatomical work from Max Schultze indicated that cones were mostly near the center of the human retina, whereas rods dominated in the periphery<sup data-sup='1'>1</sup>. Behavioral work from Hermann Aubert showed that visual acuity and color discrimination both decreased from the center to the periphery of the visual field<sup data-sup='1'>1</sup>"
                     },
                     {
                       "id": "77e87661-813f-40ec-b461-026b816a5ffc",
-                      "text": "<strong>Bipolar Cells:</strong> Bipolar cell somata occupy the middle region of the inner nuclear layer and are named for their characteristic anatomy: elongated cells with dendrites in the outer plexiform layer where they collect glutamatergic signals from photoreceptors, and axons in the inner plexiform layer where they relay photoreceptor signals to amacrine and ganglion cells<sup data-sup='6'>6,</sup><sup data-sup='10'>10,</sup><sup data-sup='29'>29</sup>."
+                      "text": "<span id='bipolar-cells' class='animationMarkerClick'><strong>Bipolar Cells:</strong></span> Bipolar cell somata occupy the middle region of the inner nuclear layer and are named for their characteristic anatomy: elongated cells with dendrites in the outer plexiform layer where they collect glutamatergic signals from photoreceptors, and axons in the inner plexiform layer where they relay photoreceptor signals to amacrine and ganglion cells<sup data-sup='6'>6,</sup><sup data-sup='10'>10,</sup><sup data-sup='29'>29</sup>."
                     },
                     {
                       "id": "bef49e56-3dc0-45ac-910d-346824708e86",
-                      "text": "<strong>Horizontal cells:</strong> Horizontal cells modulate signals passing between photoreceptors and bipolar cells via feedback to photoreceptors (and possibly feedforward signals to bipolar cells). While these were the first retinal neurons whose light responses were measured with intracellular recording – by Gunner Svaetichin in the 1950s – many details about how they contribute to retinal processing remain unresolved."
+                      "text": "<span id='horizontal-cells' class='animationMarkerClick'><strong>Horizontal cells:</strong></span> Horizontal cells modulate signals passing between photoreceptors and bipolar cells via feedback to photoreceptors (and possibly feedforward signals to bipolar cells). While these were the first retinal neurons whose light responses were measured with intracellular recording – by Gunner Svaetichin in the 1950s – many details about how they contribute to retinal processing remain unresolved."
                     },
                     {
                       "id": "beb4b5fe-204b-4159-83bd-88cb6134527e",
                       "img": "GABAergic",
-                      "text": "<strong>Amacrine Cells:</strong> The most diverse set of cells in the retina are amacrine cells<sup data-sup='17'>17,</sup><sup data-sup='21'>21</sup>. These are, with a few exceptions, inhibitory interneurons which collect input from bipolar cells and in turn inhibit bipolar, ganglion and other amacrine cells. In some vertebrate species, amacrine cells comprise more than 50 different cell types, each exhibiting a unique anatomy, physiology, and gene expression profile sup5. Some amacrine cells exhibit distinct both dendrites and an axon, however many have processes which act as both axon and dendrite. Attempts to generalize are difficult in the face of this diversity, however some trends have been observed: First, almost all amacrine cells are inhibitory neurons releasing either GABA or glycine onto their targets; Second, glycinergic amacrine cells tend to have narrow dendritic trees, and thus small receptive fields, whereas GABAergic cells tend to have broader dendritic trees and thus larger receptive fields<sup data-sup='30'>30</sup>; Third, many amacrine cells release an additional neurotransmitter, which can be excitatory, but is more commonly a neuromodulator such as a peptide or catecholamine<sup data-sup='5'>5,</sup><sup data-sup='6'>6</sup>."
+                      "text": "<span id='amacrine-cells' class='animationMarkerClick'><strong>Amacrine Cells:</strong></span> The most diverse set of cells in the retina are amacrine cells<sup data-sup='17'>17,</sup><sup data-sup='21'>21</sup>. These are, with a few exceptions, inhibitory interneurons which collect input from bipolar cells and in turn inhibit bipolar, ganglion and other amacrine cells. In some vertebrate species, amacrine cells comprise more than 50 different cell types, each exhibiting a unique anatomy, physiology, and gene expression profile <sup data-sup='5'>5</sup>. Some amacrine cells exhibit distinct both dendrites and an axon, however many have processes which act as both axon and dendrite. Attempts to generalize are difficult in the face of this diversity, however some trends have been observed: First, almost all amacrine cells are inhibitory neurons releasing either GABA or glycine onto their targets; Second, glycinergic amacrine cells tend to have narrow dendritic trees, and thus small receptive fields, whereas GABAergic cells tend to have broader dendritic trees and thus larger receptive fields<sup data-sup='30'>30</sup>; Third, many amacrine cells release an additional neurotransmitter, which can be excitatory, but is more commonly a neuromodulator such as a peptide or catecholamine<sup data-sup='5'>5,</sup><sup data-sup='6'>6</sup>."
                     },
                     {
                       "id": "f5e26c64-7929-4b1d-90d8-24f75a7b2a05",
-                      "text": "<strong>Retinal Ganglion Cells:</strong> Ganglion cells are the only retinal neurons that send axons out of the eye to the rest of the brain. In addition, with a few exceptions – some amacrine cells, and possibly some bipolar cells – they are the only retinal neurons that fire action potentials. They generate these signals in response to the combination of excitatory and inhibitory inputs they receive from bipolar and amacrine cells, respectively. As discussed in detail below, there are several types of retinal ganglion cells<sup data-sup='5'>5,</sup><sup data-sup='17'>17</sup>, and each is specialized to detect specific aspects of the visual scene, such as colors, edges and movement."
+                      "text": "<span id='ganglion-cells' class='animationMarkerClick'><strong>Retinal Ganglion Cells:</strong></span> Ganglion cells are the only retinal neurons that send axons out of the eye to the rest of the brain. In addition, with a few exceptions – some amacrine cells, and possibly some bipolar cells – they are the only retinal neurons that fire action potentials. They generate these signals in response to the combination of excitatory and inhibitory inputs they receive from bipolar and amacrine cells, respectively. As discussed in detail below, there are several types of retinal ganglion cells<sup data-sup='5'>5,</sup><sup data-sup='17'>17</sup>, and each is specialized to detect specific aspects of the visual scene, such as colors, edges and movement."
                     }
                   ]
                 },
                 {
                   "id": "d81b706a-49f2-4198-ba07-8a5d819030ac",
                   "type": "breakVideo",
-                  "text": "Retinal cell types – Video of Dowling and Werblin talking about recording a diversity of responses from all retinal cell types."
+                  "title": "Retinal cell types",
+                  "text": "Video of Dowling and Werblin talking about recording a diversity of responses from all retinal cell types."
                 }
               ]
             },
@@ -240,7 +243,8 @@
                         {
                           "id": "gtsw9b72-5sa00-4473-8b76-67bsfasfase4",
                           "type": "breakVideo",
-                          "text": "Video of Dennis Baylor talking about visual threshold and single photon detection."
+                          "title": "Dennis Baylor",
+                          "text": "talking about visual threshold and single photon detection."
                         },
                         {
                           "id": "4bfe20d5-2abf-437b-9596-8464784efaae",
@@ -397,7 +401,7 @@
               ]
             },
             {
-              "title": " Intrinsically photosensitive retinal ganglion cells",
+              "title": "Intrinsically photosensitive retinal ganglion cells",
               "id": "dee32143-223a-4d92-8b01-08cd9ed0da1d",
               "paragraphs": [
                 {

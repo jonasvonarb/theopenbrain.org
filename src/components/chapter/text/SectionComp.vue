@@ -51,7 +51,8 @@
       <BreakImages
         :key="'breakVideo ' + paragraph.id"
         v-else-if="paragraph.type === 'breakVideo'"
-        :title="paragraph.text"
+        :title="paragraph.title"
+        :text="paragraph.text"
       />
       <BreakSection
         :key="'breakSection' + paragraph.id"

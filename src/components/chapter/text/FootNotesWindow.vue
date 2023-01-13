@@ -5,8 +5,8 @@
     "
     class="fixed overflow-x-scroll z-40 bottom-0 w-full left-0 h-1/3 p-24 pt-6 bg-white border-t border-black duration-500"
   >
-    <button @click="toggle()" class="fixed z-50 top-6 right-12 cursor-pointer">
-      X
+    <button @click="toggle()" class="fixed z-50 top-4 right-4 cursor-pointer">
+      <BiDashCircleFill class="cursor-pointer" />
     </button>
     <ol class="pt-6 pr-16 pb-32 w-full bg-white">
       <li
@@ -25,6 +25,7 @@
 <script setup>
 import { useText, useGeneral } from "@/stores";
 import { onMounted, ref, onBeforeUnmount } from "vue";
+import BiDashCircleFill from "@/icons/BiDashCircleFill.vue";
 const textStore = useText();
 const text = textStore.text;
 const store = useGeneral();
@@ -33,7 +34,6 @@ const activeSup = ref([]);
 
 const toggle = (event) => {
   if (!store.superScriptActive) {
-    console.log(event.target.dataset.sup.split(" "));
     activeSup.value = event.target.dataset.sup.split(" ");
     store.superScriptActive = true;
   } else {

@@ -19,7 +19,7 @@
       "title": "Impaired vision",
       "fullscreen": true,
       "states": ["normal eye", "myopia", "hyperopia", "astigmatism"],
-      "toggle": ["normal", "corrected"]
+      "toggle": "corrected"
     },
     {
       "id": "animationZwei",
@@ -41,6 +41,7 @@
       "id": "animationRetinalCellTypes",
       "title": "Retinal Cell Types",
       "fullscreen": false,
+      "clickTriggered": true,
       "states": [
         "photoreceptors",
         "horizontal cells",

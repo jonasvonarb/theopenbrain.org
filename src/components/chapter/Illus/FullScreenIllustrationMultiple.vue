@@ -9,7 +9,6 @@ const props = defineProps({
   animation: Object,
   state: String,
 });
-console.log(props.animation);
 let animationLottie;
 
 onMounted(() => {

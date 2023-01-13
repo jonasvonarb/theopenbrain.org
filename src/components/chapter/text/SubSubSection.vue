@@ -25,7 +25,8 @@
         </div>
         <BreakImages
           v-else-if="subSubSection.type === 'breakVideo'"
-          :title="subSubSection.text"
+          :title="subSubParagraph.title"
+          :text="subSubParagraph.text"
         />
         <BreakSection
           v-else-if="subSubSection.type === 'breakSection'"
@@ -57,7 +58,8 @@
           <BreakImages
             v-else-if="subSubSection?.type === 'breakVideo'"
             :key="subSubParagraph.text"
-            :title="subSubParagraph.text"
+            :title="subSubParagraph.title"
+            :text="subSubParagraph.text"
           />
           <BreakSection
             v-else-if="subSubParagraph?.type === 'breakSection'"

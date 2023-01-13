@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       blur: {
-        xs: "2px",
+        xs: "1px",
       },
       fontSize: {
         small: ["1.4rem", "1.9rem"],

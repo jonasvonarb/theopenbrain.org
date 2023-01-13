@@ -3,6 +3,7 @@ import { useGeneral } from "@/stores";
 import lottie from "lottie-web";
 import { onMounted, ref, watch } from "vue";
 import { useMouse } from "@vueuse/core";
+import BiArrowDownCircleFill from "../../../icons/BiArrowDownCircleFill.vue";
 
 const { x } = useMouse();
 
@@ -20,7 +21,6 @@ watch(x, (x) => {
 });
 
 const scrollToPos = () => {
-  console.log(document.body);
   document.getElementById("container").scrollIntoView({ behavior: "smooth" });
 };
 onMounted(() => {
@@ -54,12 +54,12 @@ onMounted(() => {
     />
     <div
       @click="scrollToPos()"
-      class="absolute bottom-2 left-0 w-full flex justify-center text-center"
+      class="absolute bottom-12 left-0 w-full flex justify-center items-center text-center"
     >
       <div
-        class="pointer-events-auto text-xl text-white rounded-full w-16 h-16"
+        class="pointer-events-auto text-xl text-black rounded-full w-16 h-16"
       >
-        &#x2193;
+        <BiArrowDownCircleFill class="rounded-full" />
       </div>
     </div>
   </div>

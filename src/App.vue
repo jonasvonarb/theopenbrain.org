@@ -25,7 +25,6 @@ const onResize = (event) => {
 watchDebounced(
   resize,
   () => {
-    console.log("changed!");
     document.body.classList.remove("resize-animation-stopper");
   },
   { debounce: 1000 }

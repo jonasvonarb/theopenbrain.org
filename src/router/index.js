@@ -1,17 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { useGeneral } from "@/stores";
-import HomeView from "@/views/LandingView.vue";
+import HomeView from "@/views/HomeView.vue";
 
 const routes = [
-  // {
-  //   path: "/",
-  //   name: "landing",
-  //   component: HomeView,
-  // },
   {
     path: "/",
     name: "home",
-    component: () => import("../views/HomeView.vue"),
+    component: HomeView,
   },
   {
     path: "/about",
@@ -45,52 +40,30 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    if (to.hash) {
-      if (from.name == to.name) {
-        console.log("smooth");
-        return {
-          el: to.hash,
-          behavior: "smooth",
-        };
-      } else {
-        console.log("auto");
-        return {
-          el: to.hash,
-          behavior: "auto",
-        };
-      }
+    const store = useGeneral();
+    console.log(savedPosition || store.savedPosition);
+    if (savedPosition || store.savedPosition) {
+      return savedPosition || store.savedPosition;
     } else {
-      if (savedPosition) {
-        return savedPosition;
-      } else {
-        return { top: 0 };
-      }
+      return { top: 0 };
     }
   },
 });
 router.beforeEach((to, from) => {
   const store = useGeneral();
-  store.prevRoute = from.name;
+  if (from.name === "chapter") {
+    let scrollOffset = { top: window.scrollY };
+    store.savedPosition = scrollOffset;
+  }
 
   if (from.name === "about") {
     to.meta = { transitionName: "aboutLeave" };
   }
-
   if (to.name === "about") {
     to.meta = { transitionName: "aboutTo" };
   }
-
-  // if (to.hash === from.hash) {
-  //   router.replace({ hash: "#" });
-  // }
-
   if (to.name == "home" && from.name == "chapter") {
-    // router.replace({ hash: "#" });
-
     store.activeMenu = true;
-  }
-  if (to.hash) {
-    store.startIsActive = false;
   }
 });
 
