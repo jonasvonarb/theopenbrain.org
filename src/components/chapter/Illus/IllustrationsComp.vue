@@ -81,17 +81,23 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="fixed top-0 left-0 h-screen w-1/2 z-30 pointer-events-none">
+  <div
+    class="fixed top-0 left-0 h-screen w-1/2 z-30 pointer-events-none font-mono"
+  >
     <transition name="fade">
       <video
         autoplay
         muted
         loop
-        class="absolute top-0 left-0 h-screen w-full object-fill"
+        class="absolute top-0 left-0 h-screen w-full object-cover"
         id="myVideo"
         v-if="!activeAnimation"
       >
-        <source src="/assets/video/bgCell.mp4" type="video/mp4" />
+        <source
+          src="/assets/video/bgCell.mp4"
+          type="video/mp4"
+          playbackspeed="0.1"
+        />
         Your browser does not support HTML5 video.
       </video>
     </transition>

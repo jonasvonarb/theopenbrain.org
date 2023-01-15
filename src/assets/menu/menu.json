@@ -20,9 +20,11 @@
   },
   "Part2": {
     "index": 2,
-    "title": "The Retina",
+    "title": "THE EYE AND RETINA",
     "parts": [
-      "Story of the eye",
+      {
+        "title": "Story of the eye"
+      },
       {
         "title": "Organization and cell types in the retina",
         "parts": [
@@ -36,8 +38,12 @@
         "title": "Photoreceptors and phototransduction",
         "parts": ["Phototransduction"]
       },
-      "Horizontal cells modulate signaling between photoreceptors and bipolar cells",
-      "Bipolar cells diversify photoreceptor generated light responses",
+      {
+        "title": "Horizontal cells modulate signaling between photoreceptors and bipolar cells"
+      },
+      {
+        "title": "Bipolar cells diversify photoreceptor generated light responses"
+      },
       {
         "title": "Amacrine and ganglion cells – retinal circuits, computations and output",
         "parts": [
@@ -71,8 +77,8 @@
           "Retinitis pigmentosa"
         ]
       },
-      "Looking forward",
-      "Further reading"
+      { "title": "Looking forward" },
+      { "title": "Further reading" }
     ]
   },
   "Part3": {

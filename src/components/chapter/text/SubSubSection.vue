@@ -32,16 +32,11 @@
           v-else-if="subSubSection.type === 'breakSection'"
           :content="subSubSection"
         />
-        <div
-          class="bg-dark text-white -mx-28"
+        <BreakText
           :key="subSubSection"
+          :paragraph="subSubSection"
           v-else-if="subSubSection.type === 'breakText'"
-        >
-          <p
-            class="pt-6 pb-32 pl-20 sticky top-0 max-w-[800px]"
-            v-html="subSubSection.text"
-          />
-        </div>
+        />
       </template>
       <p class v-else>
         <template v-for="subSubParagraph in subSubSection.paragraphs">
@@ -66,13 +61,11 @@
             :key="subSubParagraph"
             :content="subSubParagraph"
           />
-          <div
-            class="h-[180vh] bg-dark text-white -mx-32 px-32"
+          <BreakText
             :key="subSubParagraph.type"
+            :paragraph="subSubParagraph"
             v-else-if="subSubParagraph.type === 'breakText'"
-          >
-            <p class="pt-6 pb-32 sticky top-0" v-html="subSubParagraph.text" />
-          </div>
+          />
         </template>
       </p>
     </div>
@@ -82,6 +75,7 @@
 <script setup>
 import BreakImages from "./BreakImages.vue";
 import BreakSection from "./BreakSection.vue";
+import BreakText from "./BreakText.vue";
 import InlineImages from "./InlineImages.vue";
 const prosp = defineProps({
   subParagraph: Object,

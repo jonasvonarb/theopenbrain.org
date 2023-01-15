@@ -46,7 +46,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="text-base cursor-default">
+  <div class="text-base cursor-default font-sans">
     <RouterView v-slot="{ Component }" class="z-0">
       <transition :name="route.meta?.transitionName || 'routeT'">
         <component :is="Component" />

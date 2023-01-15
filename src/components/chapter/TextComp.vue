@@ -99,14 +99,11 @@ onBeforeUnmount(() => {
 <template>
   <div
     id="container"
-    class="absolute top-start z-40 w-[50vw] pointer-events-none"
+    class="absolute top-start z-40 w-[50vw] pointer-events-none font-sans"
   >
     <!-- :class="store.startIsActive ? 'fixed' : 'absolute'" -->
     <HoverImg />
     <div id="scroller" class="pointer-events-none w-full">
-      <div
-        class="fixed pointer-events-auto top-6 right-12 flex justify-end"
-      ></div>
       <main
         id="text"
         class="text pointer-events-auto w-full text-left pt-[20vh] ml-[50vw] z-30 border-l bg-white border-black tracking-wide pb-[60vh] pl-28 pr-32 duration-500"
@@ -121,19 +118,19 @@ onBeforeUnmount(() => {
           <h1
             :id="'the-eye-and-retina-intro'"
             :class="store.imgActive ? 'opacity-0' : ''"
-            class="z-40 pb-6 text-black opacity-100"
+            class="z-40 text-black opacity-100"
           >
             {{ section.title }}
           </h1>
           <span
             id="triggerAnimationDragon"
-            class="animationTrigger mb-52 block noHighlight"
+            class="animationTrigger block noHighlight"
           >
             <p
               v-for="paragraph in section.paragraphs"
               :id="paragraph.id"
               :key="paragraph.id"
-              class="P last:pb-52"
+              class="P"
               v-html="paragraph.text"
             />
           </span>

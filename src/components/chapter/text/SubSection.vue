@@ -4,7 +4,7 @@
     v-for="(subSections, subIndex) in paragraph.subSection"
     :key="subSections.id"
     :id="subSections.id"
-    class="sub pt-6"
+    class="sub"
   >
     <!-- subSection title -->
     <span :id="subSections?.title ? toSlug(subSections?.title) : ''" />
@@ -52,13 +52,11 @@
             :sub-index="subIndex"
             :sub-paragraph="subParagraph"
           />
-          <div
-            class="h-[180vh] bg-dark text-white -mx-32 px-32"
+          <BreakText
             :key="subParagraph"
+            :paragraph="subParagraph"
             v-else-if="subParagraph.type === 'breakText'"
-          >
-            <p class="pt-6 pb-32 sticky top-0" v-html="subParagraph.text" />
-          </div>
+          />
         </template>
         <!-- subSection Break -->
         <BreakImages
@@ -101,13 +99,11 @@
             :sub-index="subIndex"
             :sub-paragraph="subParagraph"
           />
-          <div
-            class="h-[100vh] bg-dark text-white -ml-28 pl-20 -mr-32 pr-32 mb-12"
+          <BreakText
             :key="subParagraph"
+            :paragraph="subParagraph"
             v-else-if="subParagraph.type === 'breakText'"
-          >
-            <p class="pt-6 pb-16 top-0" v-html="subParagraph.text" />
-          </div>
+          />
         </template>
         <!-- subSection Break -->
         <BreakImages
@@ -129,6 +125,7 @@
 import SubSubSection from "./SubSubSection.vue";
 import BreakImages from "./BreakImages.vue";
 import BreakSection from "./BreakSection.vue";
+import BreakText from "./BreakText.vue";
 
 import { toSlug } from "@/helper/general.js";
 import InlineImages from "./InlineImages.vue";

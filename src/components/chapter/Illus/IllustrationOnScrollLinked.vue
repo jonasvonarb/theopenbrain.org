@@ -1,7 +1,7 @@
 <template>
   <div class="px-24 w-full flex flex-col h-full pointer-events-auto">
     <div class="px-24 z-50 fixed flex w-[50vw] justify-between top-6 left-0">
-      <span>{{ animation.title }}</span>
+      <!-- <span>{{ animation.title }}</span> -->
       <span v-if="animation.loop" class="hover:underline" @click="replay()"
         >replay</span
       >
@@ -73,7 +73,7 @@ watch(
 );
 
 const setState = (index, state) => {
-  const totalFrames = animationLottie.totalFrames / 5;
+  const totalFrames = animationLottie.totalFrames;
   const pos = (totalFrames.value / 3) * index;
   const posAfter = (totalFrames.value / 3) * (index + 1);
   activeState.value.state = index;

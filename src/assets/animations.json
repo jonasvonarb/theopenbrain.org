@@ -18,8 +18,8 @@
       "id": "animationImpairedVision",
       "title": "Impaired vision",
       "fullscreen": true,
-      "states": ["normal eye", "myopia", "hyperopia", "astigmatism"],
-      "toggle": "corrected"
+      "states": ["Normal Eye", "Myopia", "Hyperopia", "Astigmatism"],
+      "toggle": "Corrected"
     },
     {
       "id": "animationZwei",
@@ -43,11 +43,11 @@
       "fullscreen": false,
       "clickTriggered": true,
       "states": [
-        "photoreceptors",
-        "horizontal cells",
-        "bipolar cells",
-        "amacrine cells",
-        "ganglion cells"
+        "Photoreceptors",
+        "Horizontal Cells",
+        "Bipolar Cells",
+        "Amacrine Cells",
+        "Ganglion Cells"
       ]
     },
     {

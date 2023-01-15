@@ -6,7 +6,7 @@
       class="px-24 pl-32 z-50 fixed flex flex-col w-[50vw] justify-between top-6 left-0"
       :class="animation.multiple ? 'items-center' : 'items-start'"
     >
-      <span class="pb-12">{{ animation.title }}</span>
+      <!-- <span class="pb-12">{{ animation.title }}</span> -->
       <div
         v-if="animation.multiple"
         class="fixed top-0 left-0 w-[50vw] h-screen px-24 pl-32 flex flex-col justify-center items-start"
@@ -46,9 +46,9 @@
             ? animation.states
             : Object.keys(animation.states)"
           :key="state"
-          class="hover:opacity-50 duration-300 text-small cursor-pointer pb-4"
+          class="hover:opacity-50 text-small cursor-pointer pb-2 hover:blur-xs"
           :class="
-            activeState.state == index ? ' blur-xs pointer-events-none' : ''
+            activeState.state == index ? 'font-bold pointer-events-none' : ''
           "
           @click="setState(index, activeState.state)"
         >
@@ -62,7 +62,12 @@
         :id="animation.id"
         class="w-full max-w-[800px]"
       />
-      <BiArrowRepeat
+      <BiPauseCircleFill
+        class="w-10 h-10 ml-4 mt-4 hover:text-violet cursor-pointer"
+        v-if="animation.loop"
+        @click="replay()"
+      />
+      <BiPlayCircleFill
         class="w-10 h-10 ml-4 mt-4 hover:text-violet cursor-pointer"
         v-if="animation.loop"
         @click="replay()"
@@ -78,7 +83,8 @@ import { addH, removeH, toSlug } from "@/helper/general";
 
 import lottie from "lottie-web";
 import animationJSON from "@/assets/animations.json";
-import BiArrowRepeat from "@/icons/BiArrowRepeat.vue";
+import BiPlayCircleFill from "@/icons/BiPlayCircleFill.vue";
+import BiPauseCircleFill from "@/icons/BiPauseCircleFill.vue";
 
 const props = defineProps({
   animation: Object,
@@ -95,30 +101,31 @@ const info = animationJSON.animations.find((x) => {
 });
 
 const replay = () => {
-  if (!info.loopSection) {
-    animationLottie.goToAndPlay(0, true);
-  } else {
-    animationLottie.playSegments(info.loopSection, true);
-  }
+  animationLottie.pause();
+  // if (!info.loopSection) {
+  //   animationLottie.goToAndPlay(0, true);
+  // } else {
+  //   animationLottie.playSegments(info.loopSection, true);
+  // }
 };
 
 const setState = (index, indexBefore) => {
-  if (info.clickTriggered) {
-    let clickTriggers = document.getElementsByClassName("animationMarkerClick");
-    let trigger = Array.prototype.slice.call(clickTriggers).find((x) => {
-      return x.id === toSlug(props.animation.states[index]);
-    });
-    let triggerBefore = Array.prototype.slice.call(clickTriggers).find((x) => {
-      return x.id === toSlug(props.animation.states[indexBefore]);
-    });
-    trigger.classList.add("active");
-    trigger.scrollIntoView({
-      behavior: "smooth",
-      alignToTop: "false",
-      block: "center",
-    });
-    triggerBefore.classList.remove("active");
-  }
+  // if (info.clickTriggered) {
+  //   let clickTriggers = document.getElementsByClassName("animationMarkerClick");
+  //   let trigger = Array.prototype.slice.call(clickTriggers).find((x) => {
+  //     return x.id === toSlug(props.animation.states[index]);
+  //   });
+  //   let triggerBefore = Array.prototype.slice.call(clickTriggers).find((x) => {
+  //     return x.id === toSlug(props.animation.states[indexBefore]);
+  //   });
+  //   trigger.classList.add("active");
+  //   trigger.scrollIntoView({
+  //     behavior: "smooth",
+  //     alignToTop: "false",
+  //     block: "center",
+  //   });
+  //   triggerBefore.classList.remove("active");
+  // }
 
   if (!props.animation.multiple) {
     animationLottie.setSpeed(6);
@@ -134,13 +141,13 @@ const setState = (index, indexBefore) => {
 };
 
 onMounted(() => {
-  if (info.clickTriggered) {
-    let clickTriggers = document.getElementsByClassName("animationMarkerClick");
-    let trigger = Array.prototype.slice.call(clickTriggers).find((x) => {
-      return x.id === toSlug(props.animation.states[0]);
-    });
-    trigger.classList.add("active");
-  }
+  // if (info.clickTriggered) {
+  //   let clickTriggers = document.getElementsByClassName("animationMarkerClick");
+  //   let trigger = Array.prototype.slice.call(clickTriggers).find((x) => {
+  //     return x.id === toSlug(props.animation.states[0]);
+  //   });
+  //   trigger.classList.add("active");
+  // }
 
   let svgContainer = document.getElementById(props.animation.id);
   if (!svgContainer) return;

@@ -1,6 +1,6 @@
 <template>
   <button
-    class="px-6 py-1 bg-white text-black border border-black rounded-xl hover:bg-light hover:text-white hover:border-black"
+    class="px-6 py-1 text-baseMono bg-lighter text-dark font-mono hover:blur-xs"
     @click="$emit('action')"
   >
     {{ text }}

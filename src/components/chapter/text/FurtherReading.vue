@@ -32,9 +32,6 @@ const props = defineProps({
 </script>
 
 <style scoped>
-.font {
-  font-family: "IBM Plex Sans";
-}
 a:hover {
   text-decoration: underline;
 }

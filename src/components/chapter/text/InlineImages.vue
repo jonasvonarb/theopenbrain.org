@@ -1,16 +1,24 @@
 <template>
-  <div
+  <figure
     :key="paragraph.id + 'img'"
     v-if="paragraph?.img"
     :class="!inlineImageActive ? 'w-60 h-60' : 'imageW  h-[50vh] '"
-    class="no-select absolute right-0 duration-200 border-y border-l border-black flex justify-center items-center bg-white overflow-hidden"
+    class="no-select z-[60] absolute right-0 duration-200 border -mr-[1px] border-black flex flex-col justify-center items-center bg-white overflow-hidden"
   >
     <img
-      @click="!inlineImageActiv ? openImage() : ''"
+      @click="!inlineImageActive ? openImage() : ''"
       class="w-full h-full object-contain"
       :class="!inlineImageActive ? 'opacity-40' : ''"
       :src="'/assets/images/' + paragraph.img + '.png'"
     />
+    <figcaption
+      v-if="inlineImageActive"
+      class="imgDesription px-5 py-2 font-mono text-small w-full"
+    >
+      <span class="max-w-[600px] block">
+        <strong>Info:</strong> {{ paragraph?.imgCap }}
+      </span>
+    </figcaption>
     <div
       @click="toggleImage()"
       class="opacity-100 absolute bg-white hover:bg-violet hover:text-white rounded-full top-0 right-0 m-6 flex justify-center items-center"
@@ -18,7 +26,7 @@
       <BiArrowDownLeftCircle v-if="!inlineImageActive" class="" />
       <BiArrowUpRightCircle v-else class="" />
     </div>
-  </div>
+  </figure>
 </template>
 
 <script setup>
@@ -46,6 +54,6 @@ const closeImage = () => {
 
 <style scoped>
 .imageW {
-  width: calc(50vw - 4rem);
+  width: calc(50vw - 4rem + 2px);
 }
 </style>

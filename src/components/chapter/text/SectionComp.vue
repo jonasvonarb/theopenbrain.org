@@ -2,14 +2,11 @@
   <!-- section -->
   <section :id="section.id" class="overflow-y-visible">
     <!-- section titel -->
-    <div class="top-0 pt-56">
-      <h2
-        class="border border-black bg-white rounded-full absolute -translate-x-[10.5rem] -translate-y-[0.8rem] w-28 h-28 flex items-center justify-center"
-      >
-        {{ index + 1 }}
-      </h2>
-    </div>
-
+    <h2
+      class="TN border border-black bg-white rounded-full absolute -translate-x-[10.5rem] -translate-y-[0.8rem] w-28 h-28 flex items-center justify-center"
+    >
+      {{ index + 1 }}
+    </h2>
     <h2
       :class="store.imgActive ? 'opacity-0' : ''"
       class="T durattion-500 z-40 subChapter"

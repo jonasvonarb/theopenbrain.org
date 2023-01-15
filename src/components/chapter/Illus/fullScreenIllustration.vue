@@ -69,23 +69,24 @@ const setState = (index, activeState, setter) => {
 
 <template>
   <div
-    class="h-[150vh] w-screen bg-light text-black -translate-x-1/2 -ml-28 my-72"
+    class="h-[150vh] w-screen bg-light text-left -translate-x-1/2 -ml-28 my-72 text-small font-mono"
   >
     <div class="sticky w-full h-screen px-32 py-16 top-0">
       <div class="absolute z-50 flex flex-col justify-between">
         <div
           v-for="(state, index) in thisAnimation.states"
           :key="state"
-          class="flex justify-between flex-wrap mb-4 text-left p-4 pr-12 py-1"
+          class="flex justify-between flex-wrap mb-4 p-4 pr-12 py-1"
         >
           <button
-            class="text-left p-4 pr-12 py-1 duration-200 border border-black w-80"
+            class="p-4 pr-12 py-1 text-left duration-200 border w-64 bg-lighter text-dark"
             :class="[
               (activeState.toggle === false && activeState.state === index) ||
               (activeState.state === index && index === 0)
-                ? 'bg-white pointer-events-none blur-xs'
-                : ' bg-dark text-white hover:opacity-40 hover:blur-xs',
-              activeState.state === index ? '' : 'opacity-70 ',
+                ? 'opacity-100 pointer-events-none'
+                : activeState.state !== index
+                ? 'opacity-30 hover:blur-xs '
+                : 'opacity-60 hover:blur-xs',
             ]"
             @click="
               activeState.state !== index
@@ -100,14 +101,14 @@ const setState = (index, activeState, setter) => {
           </button>
           <button
             v-if="index !== 0 && !thisAnimation?.multiple"
-            class="text-left p-4 pr-12 py-1 duration-200 border border-black flex-1"
+            class="p-4 pr-12 py-1 text-left duration-200 flex-1 bg-black text-light"
             :class="[
               activeState.toggle === true && activeState.state === index
-                ? 'bg-white pointer-events-none blur-xs'
-                : 'bg-dark text-white hover:opacity-40 hover:blur-xs',
-              activeState.state === index
-                ? 'font-bold'
-                : 'opacity-70 hover:opacity-100 ',
+                ? 'opacity-100 pointer-events-none'
+                : activeState.state !== index
+                ? 'opacity-20 hover:blur-xs '
+                : 'opacity-40 hover:blur-xs',
+              ,
             ]"
             @click="
               activeState.state !== index

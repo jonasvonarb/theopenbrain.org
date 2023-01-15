@@ -36,7 +36,7 @@ const closeMenu = () => {
 <template>
   <div
     v-if="route.name"
-    class="fixed h-screen overflow-y-scroll overflow-x-hidden bg-white scrollbar top-0 left-0 z-50 text-base duration-500 border-r border-black snap-x"
+    class="fixed h-screen overflow-y-scroll overflow-x-hidden bg-white scrollbar top-0 left-0 z-50 text-baseMono font-mono duration-500 border-r border-black snap-x"
     :class="[
       store.activeMenu
         ? route.name === 'chapter'
@@ -53,83 +53,71 @@ const closeMenu = () => {
       >
         <template v-for="(chapter, index) in menu">
           <li :key="chapter" v-if="index === 'Part2'" class="w-[35vw] shrink-0">
-            <ol class="w-full list-decimal p-12 overflow-hidden duration-500">
-              <h2 class="pb-6" @click="toStart()">
-                <RouterLink to="/chapter/">
-                  {{ menu[index].title }}
-                </RouterLink>
-              </h2>
-              <div
-                class="flex pl-8"
-                @click="scrollToMenu('the-eye-and-retina-intro'), closeMenu()"
-              >
+            <ol class="w-full list-decimal py-12 overflow-hidden duration-500">
+              <div class="pb-6 pl-12 pr-24">
+                <h3 class="-translate-x-0" @click="toStart()">
+                  <span class="pl-8 pr-12">3</span>
+                  <RouterLink to="/chapter/">
+                    {{ menu[index].title }}
+                  </RouterLink>
+                </h3>
+              </div>
+              <div class="pb-6 pl-32 pr-12 border-t border-black font-medium">
                 <div
-                  class="w-full py-4 border-b border-transparent hover:bg-gray-100"
+                  class="flex pl-8"
+                  @click="scrollToMenu('the-eye-and-retina-intro'), closeMenu()"
                 >
-                  Intro
+                  <div class="w-full">Intro</div>
                 </div>
               </div>
-              <template
+              <div
+                class="pb-6 pl-32 pr-12 border-t border-black"
                 v-for="(part, index2) in chapter.parts"
                 :key="part.title"
               >
                 <div
-                  v-if="!part.title"
-                  class="flex pl-8"
-                  @click="scrollToMenu(toSlug(part)), closeMenu()"
+                  class="flex"
+                  @click="scrollToMenu(toSlug(part.title)), closeMenu()"
                 >
-                  <li
-                    v-if="!part?.parts"
-                    class="w-full border-b py-4 border-transparent hover:bg-gray-100"
-                  >
+                  <li class="w-full pb-3 pl-8 hover:blur-xs font-medium">
                     <span
+                      class=""
                       :class="
-                        toSlug(part) === store.currentSubChapter
-                          ? 'blur-xs'
+                        toSlug(part.title) === store.currentSubChapter
+                          ? 'bg-lighter'
                           : ''
                       "
-                      >{{ part }}</span
+                      >{{ part.title }}</span
                     >
                   </li>
                 </div>
-                <template v-else>
+                <ol>
                   <div
-                    class="flex pl-8"
-                    @click="scrollToMenu(toSlug(part.title)), closeMenu()"
+                    class="block pl-8 pb-3 hover:blur-xs"
+                    @click="scrollToMenu(toSlug(subPart)), closeMenu()"
+                    v-for="subPart in part.parts"
+                    :key="subPart"
                   >
-                    <li
-                      class="w-full border-b py-4 border-transparent hover:bg-gray-100"
-                    >
-                      <span
-                        :class="
-                          toSlug(part.title) === store.currentSubChapter
-                            ? 'text-light'
-                            : ''
-                        "
-                        >{{ part.title }}</span
-                      >
-                    </li>
+                    <li class="sub">{{ subPart }}</li>
                   </div>
-                  <ol class="list-">
-                    <div
-                      class="block font-IBM lining-nums pl-24 p-2 hover:bg-gray-100"
-                      @click="scrollToMenu(toSlug(subPart)), closeMenu()"
-                      v-for="subPart in part.parts"
-                      :key="subPart"
-                    >
-                      <li class="sub">{{ subPart }}</li>
-                    </div>
-                  </ol>
-                </template>
-              </template>
-              <div
-                class="flex pl-8"
-                @click="scrollToMenu('footnotes'), closeMenu()"
-              >
+                </ol>
+              </div>
+              <div class="pb-6 pl-32 pr-12 border-t border-black">
                 <div
-                  class="w-full py-4 border-b border-transparent hover:bg-gray-100"
+                  class="flex"
+                  @click="scrollToMenu('footnotes'), closeMenu()"
                 >
-                  Footnotes
+                  <div class="w-full pb-3 pl-8 hover:blur-xs font-medium">
+                    <span
+                      class=""
+                      :class="
+                        'Footnotes' === store.currentSubChapter
+                          ? 'bg-light'
+                          : ''
+                      "
+                      >Footnotes</span
+                    >
+                  </div>
                 </div>
               </div>
             </ol>
@@ -158,10 +146,6 @@ const closeMenu = () => {
 <style scoped>
 .listItem {
   display: block;
-}
-li.sub {
-  list-style: lower-alpha;
-  /* content: "– "; */
 }
 
 p {
