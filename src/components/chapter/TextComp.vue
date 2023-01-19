@@ -106,7 +106,7 @@ onBeforeUnmount(() => {
     <div id="scroller" class="pointer-events-none w-full">
       <main
         id="text"
-        class="text pointer-events-auto w-full text-left pt-[20vh] ml-[50vw] z-30 border-l bg-white border-black tracking-wide pb-[60vh] pl-28 pr-32 duration-500"
+        class="text pointer-events-auto w-full text-left pt-[20vh] ml-[50vw] z-30 border-l bg-white border-black tracking-wide pb-[60vh] pl-20 pr-24 duration-500"
       >
         <!-- intro -->
         <section

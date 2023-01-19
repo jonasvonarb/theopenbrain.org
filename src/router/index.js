@@ -41,7 +41,6 @@ const router = createRouter({
   routes,
   scrollBehavior(to, from, savedPosition) {
     const store = useGeneral();
-    console.log(savedPosition || store.savedPosition);
     if (savedPosition || store.savedPosition) {
       return savedPosition || store.savedPosition;
     } else {

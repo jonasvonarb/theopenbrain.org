@@ -5,6 +5,7 @@ import { onMounted, ref } from "vue";
 import FullScreenIllustrationMultiple from "@/components/chapter/Illus/FullScreenIllustrationMultiple.vue";
 
 import animations from "@/assets/animations.json";
+import FullScreenIllustrationLoop from "./FullScreenIllustrationLoop.vue";
 
 const props = defineProps({
   paragraph: Object,
@@ -69,10 +70,14 @@ const setState = (index, activeState, setter) => {
 
 <template>
   <div
-    class="h-[150vh] w-screen bg-light text-left -translate-x-1/2 -ml-28 my-72 text-small font-mono"
+    class="h-[150vh] w-screen bg-lighter text-left -translate-x-1/2 -ml-20 my-72 text-small font-mono"
+    :class="!thisAnimation?.loop ? 'bg-light' : 'bg-lighter'"
   >
-    <div class="sticky w-full h-screen px-32 py-16 top-0">
-      <div class="absolute z-50 flex flex-col justify-between">
+    <div class="sticky w-full h-screen px-24 py-16 top-0">
+      <div
+        class="absolute z-50 flex flex-col justify-between"
+        v-if="!thisAnimation?.loop && thisAnimation?.states"
+      >
         <div
           v-for="(state, index) in thisAnimation.states"
           :key="state"
@@ -124,12 +129,18 @@ const setState = (index, activeState, setter) => {
         </div>
       </div>
       <div
-        v-if="!thisAnimation?.multiple"
+        v-if="!thisAnimation?.multiple && !thisAnimation?.loop"
         :id="'container' + paragraph.animationId"
         class="w-full h-full flex flex-col justify-center items-center"
       ></div>
       <div
-        v-else
+        v-if="!thisAnimation?.multiple && thisAnimation?.loop"
+        class="w-full h-full"
+      >
+        <FullScreenIllustrationLoop :animation="thisAnimation" />
+      </div>
+      <div
+        v-else-if="thisAnimation?.states"
         class="w-full h-screen flex flex-col justify-center items-center p-56"
       >
         <template
@@ -137,7 +148,7 @@ const setState = (index, activeState, setter) => {
           :key="state"
         >
           <FullScreenIllustrationMultiple
-            v-if="activeState.state === state"
+            v-if="activeState?.state === state"
             :state="state"
             :animation="thisAnimation"
           />

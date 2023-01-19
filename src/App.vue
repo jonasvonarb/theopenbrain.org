@@ -47,7 +47,13 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="text-base cursor-default font-sans">
-    <RouterView v-slot="{ Component }" class="z-0">
+    <RouterView
+      v-slot="{ Component }"
+      class="z-0 duration-300"
+      :class="
+        store.activeAbout ? ' blur-md grayscale-0 pointer-events-none' : ''
+      "
+    >
       <transition :name="route.meta?.transitionName || 'routeT'">
         <component :is="Component" />
       </transition>

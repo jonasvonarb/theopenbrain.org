@@ -3,7 +3,7 @@
   <section :id="section.id" class="overflow-y-visible">
     <!-- section titel -->
     <h2
-      class="TN border border-black bg-white rounded-full absolute -translate-x-[10.5rem] -translate-y-[0.8rem] w-28 h-28 flex items-center justify-center"
+      class="TN border border-black bg-white rounded-full absolute -translate-x-[8.65rem] -translate-y-[0.8rem] w-28 h-28 flex items-center justify-center"
     >
       {{ index + 1 }}
     </h2>
@@ -13,50 +13,70 @@
     >
       {{ section.title }}
     </h2>
-    <template v-for="paragraph in section['paragraphs']">
-      <template
-        v-if="
-          paragraph?.type != 'breakVideo' && paragraph.type != 'breakSection'
-        "
-      >
-        <!-- section paragraph -->
-        <InlineImages
-          :paragraph="paragraph"
-          :key="'images' + paragraph.id"
-          v-if="paragraph.img"
+    <span
+      :id="
+        section?.animation?.name
+          ? 'triggerAnimation' + section?.animation?.name
+          : ''
+      "
+      :class="
+        section?.animation?.name ? 'animationTrigger block noHighlight' : ''
+      "
+    >
+      <template v-for="paragraph in section['paragraphs']" :key="paragraph.id">
+        <span
+          :id="
+            paragraph?.animation &&
+            'triggerAnimation' + paragraph?.animation?.name
+          "
+          :class="
+            paragraph?.animation?.name
+              ? 'animationTrigger block noHighlight'
+              : ''
+          "
+          v-if="
+            paragraph?.type != 'breakVideo' && paragraph.type != 'breakSection'
+          "
+        >
+          <!-- section paragraph -->
+          <InlineImages
+            :paragraph="paragraph"
+            :key="'images' + paragraph.id"
+            v-if="paragraph.img"
+          />
+          <p
+            v-if="!paragraph.subSection"
+            :key="paragraph.id"
+            :id="paragraph.id"
+            class="P"
+            v-html="paragraph.text"
+          />
+          <SubSection
+            v-else
+            :key="paragraph"
+            :paragraph="paragraph"
+            :index="index + 1"
+          />
+          <FullScreenIllustration
+            :key="paragraph.id"
+            v-if="paragraph.animationFull"
+            :paragraph="paragraph"
+          />
+        </span>
+        <!-- section Break -->
+        <BreakImages
+          :key="'breakVideo ' + paragraph.id"
+          v-else-if="paragraph.type === 'breakVideo'"
+          :title="paragraph.title"
+          :text="paragraph.text"
         />
-        <p
-          v-if="!paragraph.subSection"
-          :key="paragraph.id"
-          :id="paragraph.id"
-          class="P"
-          v-html="paragraph.text"
-        />
-        <SubSection
-          v-else
-          :key="paragraph"
-          :paragraph="paragraph"
-          :index="index + 1"
-        />
-        <FullScreenIllustration
-          :key="paragraph.id"
-          v-if="paragraph.animationFull"
-          :paragraph="paragraph"
+        <BreakSection
+          :key="'breakSection' + paragraph.id"
+          v-else-if="paragraph.type === 'breakSection'"
+          :content="paragraph"
         />
       </template>
-      <!-- section Break -->
-      <BreakImages
-        :key="'breakVideo ' + paragraph.id"
-        v-else-if="paragraph.type === 'breakVideo'"
-        :title="paragraph.title"
-        :text="paragraph.text"
-      />
-      <BreakSection
-        :key="'breakSection' + paragraph.id"
-        v-else-if="paragraph.type === 'breakSection'"
-        :content="paragraph"
-      />
-    </template>
+    </span>
     <FullScreenIllustration
       :key="section.id"
       v-if="section.animationFull"

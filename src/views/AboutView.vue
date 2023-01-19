@@ -20,9 +20,9 @@ const router = useRouter();
       </div>
     </h1>
     <div class="w-full h-full text-left flex justify-center">
-      <div class="w-1/2 h-full p-20 pr-32 pt-44 overflow-scroll P"></div>
+      <div class="w-1/2 h-full p-20 pr-24 pt-44 overflow-scroll P"></div>
       <div
-        class="w-1/2 h-full p-20 pr-32 pt-44 border-l border-black overflow-scroll P"
+        class="w-1/2 h-full p-20 pr-24 pt-44 border-l border-black overflow-scroll P"
       >
         <div class="max-w-[600px]">
           <h2>The Project</h2>

@@ -37,10 +37,15 @@ module.exports = {
         xs: "1px",
       },
       fontSize: {
+        smaller: [
+          "1.1rem",
+          { lineHeight: "2.25rem", letterSpacing: "-0.01rem" },
+        ],
         small: [
           "1.45rem",
           { lineHeight: "2.25rem", letterSpacing: "-0.01rem" },
         ],
+        medium: ["1.6rem", { lineHeight: "2.8rem" }],
         baseMono: ["1.8rem", "2.8rem"],
         base: ["2rem", "3.1rem"],
         h3: ["3.0rem", "3.8rem"],
@@ -62,7 +67,7 @@ module.exports = {
         light: "#B5B5B5",
         dark: "#353535",
         darker: "#202020",
-        violet: "#7794F8",
+        violet: "#FF00FF",
         lightDark: "#6A6A6A",
         mark1: "#0DD310",
         mark2: "#E91B0B",

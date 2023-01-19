@@ -1,21 +1,19 @@
 <template>
   <div
-    :class="
-      store.superScriptActive ? 'translate-y-0' : 'translate-y-[33.33333vh]'
-    "
-    class="fixed overflow-x-scroll z-40 bottom-0 w-full left-0 h-1/3 p-24 pt-6 bg-white border-t border-black duration-500"
+    :class="store.superScriptActive ? 'translate-y-0' : 'translate-y-[100vh]'"
+    class="fixed max-h-[95vh] overflow-x-scroll z-40 bottom-0 w-full left-0 p-24 pt-6 bg-white border-t border-black duration-500 font-mono text-small"
   >
     <button @click="toggle()" class="fixed z-50 top-4 right-4 cursor-pointer">
       <BiDashCircleFill class="cursor-pointer" />
     </button>
-    <ol class="pt-6 pr-16 pb-32 w-full bg-white">
+    <ol class="pt-6 pr-16 w-full bg-white">
       <li
         v-for="(note, index) in text['footNotes'].notes"
         :key="note.number"
         v-show="activeSup.includes((index + 1).toString())"
         class="flex gap-12 pb-2 justify-start"
       >
-        <p class="text-right">{{ index + 1 }}</p>
+        <p class="w-16 text-right">{{ index + 1 }}</p>
         <p class="max-w-[780px]">{{ note.text }}</p>
       </li>
     </ol>
@@ -24,7 +22,7 @@
 
 <script setup>
 import { useText, useGeneral } from "@/stores";
-import { onMounted, ref, onBeforeUnmount } from "vue";
+import { onMounted, watch, ref, onBeforeUnmount } from "vue";
 import BiDashCircleFill from "@/icons/BiDashCircleFill.vue";
 const textStore = useText();
 const text = textStore.text;

@@ -24,8 +24,8 @@ onMounted(() => {
       ScrollTrigger.create({
         id: "scrollTriggerAnimation",
         trigger: trigger,
-        start: "top " + (window.innerHeight / 3) * 2,
-        end: "bottom " + window.innerHeight / 3,
+        start: "top " + window.innerHeight / 2,
+        end: "bottom " + window.innerHeight / 2,
         srub: 0,
         markers: false,
         onToggle: (self) => {

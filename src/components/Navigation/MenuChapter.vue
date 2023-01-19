@@ -62,7 +62,7 @@ const closeMenu = () => {
                   </RouterLink>
                 </h3>
               </div>
-              <div class="pb-6 pl-32 pr-12 border-t border-black font-medium">
+              <div class="pb-6 pl-24 pr-12 border-t border-black font-medium">
                 <div
                   class="flex pl-8"
                   @click="scrollToMenu('the-eye-and-retina-intro'), closeMenu()"
@@ -71,7 +71,7 @@ const closeMenu = () => {
                 </div>
               </div>
               <div
-                class="pb-6 pl-32 pr-12 border-t border-black"
+                class="pb-6 pl-24 pr-12 border-t border-black"
                 v-for="(part, index2) in chapter.parts"
                 :key="part.title"
               >
@@ -102,7 +102,7 @@ const closeMenu = () => {
                   </div>
                 </ol>
               </div>
-              <div class="pb-6 pl-32 pr-12 border-t border-black">
+              <div class="pb-6 pl-24 pr-12 border-t border-black">
                 <div
                   class="flex"
                   @click="scrollToMenu('footnotes'), closeMenu()"

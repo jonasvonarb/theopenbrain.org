@@ -25,6 +25,7 @@ export const useGeneral = defineStore("main", {
     isScrolling: false,
     isNextBack: false,
     savedPosition: undefined,
+    changedText: 0,
   }),
   getters: {
     getactiveMenu: (state) => state.activeMenu,
@@ -99,11 +100,12 @@ export const useText = defineStore("text", {
     },
     clearTextMarking() {
       localStorage.setItem("sections", JSON.stringify(this.source));
-      localStorage.setItem("comments", JSON.stringify({}));
+      localStorage.removeItem("comments");
       var localSource = localStorage.getItem("sections");
       this.updateText("sections", JSON.parse(localSource).sections);
       localStorage.removeItem("selection");
       this.selectionIds = [];
+      this.changedText++;
     },
     updateText(part, textNew) {
       if (part != "*") {
