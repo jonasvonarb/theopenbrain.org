@@ -2,7 +2,7 @@
 import gsap from "gsap";
 import { ref } from "vue";
 import { toSlug } from "@/helper/general.js";
-import EpCirclePlus from "../../../icons/EpCirclePlus.vue";
+import PlusIcon from "@/icons/custom/PlusIcon.vue";
 
 const props = defineProps({
   content: Object,
@@ -38,9 +38,9 @@ const openInfo = () => {
         >
           <h4 class="">{{ content.title }}</h4>
           <div class="flex gap-6 z-50 pt-20">
-            <EpCirclePlus
+            <PlusIcon
               :class="!infoIsOpen ? '' : 'rotate-45'"
-              class="w-8 h-8 hover:opacity-70 cursor-pointer duration-300"
+              class="icon iconInvert duration-300"
               @click="openInfo()"
             />
             <div

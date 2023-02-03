@@ -2,12 +2,12 @@
   <div class="relative">
     <div
       v-if="helpIsActive"
-      class="fixed w-[33vw] bottom-14 z-30 right-5 ml-5 mb-5 p-6 text-black border border-lighter text-medium bg-white cursor-pointer duration-300 pointer-events-none"
+      class="fixed w-[33vw] bottom-14 z-30 right-5 ml-5 mb-5 p-6 text-black border border-black text-medium bg-white cursor-pointer duration-300 pointer-events-none"
     >
       <span v-html="help" />
     </div>
     <button
-      class="px-2 uppercase py-0 text-medium bg-lighter text-black border border-white font-mono hover:blur-xs z-50"
+      class="uppercase text-medium bg-white text-black border border-black font-mono z-50 px-3 rounded-full hover:bg-violet hover:text-white hover:border-violet"
       @click="$emit('action')"
       @mouseenter="helpIsActive = true"
       @mouseleave="helpIsActive = false"

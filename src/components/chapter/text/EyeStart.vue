@@ -4,7 +4,7 @@ import lottie from "lottie-web";
 import { onMounted, ref } from "vue";
 import { watchDebounced, useMouse } from "@vueuse/core";
 
-import BiArrowDownCircle from "../../../icons/BiArrowDownCircle.vue";
+import DownArrow from "@/icons/custom/DownArrow.vue";
 
 const { x } = useMouse();
 
@@ -76,9 +76,7 @@ const scrollToPos = () => {
       @click="scrollToPos()"
       class="absolute bottom-8 left-0 w-full flex justify-center items-center text-center"
     >
-      <BiArrowDownCircle
-        class="pointer-events-auto text-xl text-dark rounded-full w-10 h-10 cursor-pointer hover:text-white"
-      />
+      <DownArrow class="pointer-events-auto icon iconMed" />
     </div>
   </div>
 </template>

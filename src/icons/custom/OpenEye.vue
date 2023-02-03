@@ -1,45 +1,22 @@
 <template>
   <svg
-    id="Layer_1"
-    data-name="Layer 1"
-    class="icon"
+    id="extra_illus."
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 21.89 21.18"
+    width="21"
+    height="21"
+    viewBox="0 0 21 21"
   >
-    <circle class="cls-3" cx="10.97" cy="10.64" r="10" />
-    <circle class="cls-1" cx="10.97" cy="10.64" r="4.6" />
-    <circle class="cls-2" cx="10.97" cy="10.64" r="2.2" />
+    <path
+      style="fill: #777"
+      d="m10.5,1c5.24,0,9.5,4.26,9.5,9.5s-4.26,9.5-9.5,9.5S1,15.74,1,10.5,5.26,1,10.5,1M10.5,0C4.7,0,0,4.7,0,10.5s4.7,10.5,10.5,10.5,10.5-4.7,10.5-10.5S16.3,0,10.5,0h0Z"
+    />
+    <path
+      d="m10.5,4.93c-3.08,0-5.57,2.5-5.57,5.57s2.5,5.57,5.57,5.57,5.57-2.5,5.57-5.57-2.5-5.57-5.57-5.57Zm0,8.24c-1.47,0-2.67-1.2-2.67-2.67s1.19-2.67,2.67-2.67,2.67,1.2,2.67,2.67-1.19,2.67-2.67,2.67Z"
+    />
   </svg>
 </template>
 <script>
 export default {
-  name: "closedEye",
+  name: "OpenEye",
 };
 </script>
-
-<style scoped>
-:root {
-  --violet: rgb(151, 71, 255);
-}
-.icon:hover > .cls-2 {
-  fill: var(--violet);
-  stroke: var(--violet);
-}
-.icon:hover > .cls-1 {
-  fill: white;
-}
-
-.cls-1 {
-  fill: #333;
-}
-
-.cls-1,
-.cls-2 {
-  stroke: #fff;
-  stroke-miterlimit: 10;
-}
-
-.cls-2 {
-  fill: none;
-}
-</style>

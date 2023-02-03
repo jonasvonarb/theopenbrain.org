@@ -1,17 +1,17 @@
 <template>
   <div
-    class="absolute flex flex-col justify-start gap-20 w-44 py-6 pb-8 px-6 items-center border border-black bottom-20 left-24 opacity-70"
+    class="absolute flex flex-row justify-start gap-9 h-32 py-2 px-4 items-center border border-dark/50 bottom-20 left-16"
   >
     <div
       v-for="icon in legend"
       :key="icon"
-      class="h-20 text-smaller text-center"
+      class="text-smaller flex flex-col items-center justify-center opacity-60 text-center"
     >
       <img
-        class="w-full h-12 my-1"
+        class="w-full h-10 my-1"
         :src="'/assets/icons/' + iconPraefix + '/' + toSlug(icon) + '.svg'"
       />
-      <p>{{ icon }}</p>
+      <p class="h-8">{{ icon !== "special" ? icon : "" }}</p>
     </div>
   </div>
 </template>

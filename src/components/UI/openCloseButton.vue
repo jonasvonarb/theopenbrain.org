@@ -1,7 +1,7 @@
 <script setup>
 import { useGeneral } from "@/stores";
-import TeenyiconsEyeClosedOutline from "../../icons/TeenyiconsEyeClosedOutline.vue";
-import TeenyiconsEyeOutline from "../../icons/TeenyiconsEyeOutline.vue";
+import OpenEye from "@/icons/custom/OpenEye.vue";
+import ClosedEye from "@/icons/custom/ClosedEye.vue";
 const store = useGeneral();
 
 const props = defineProps({
@@ -12,10 +12,26 @@ const props = defineProps({
 </script>
 
 <template>
-  <button class="" @click="store.toggle('active' + target)">
-    <TeenyiconsEyeOutline class="w-6 h-6" v-if="text === 'open'" />
-    <TeenyiconsEyeClosedOutline class="w-6 h-6" v-else />
+  <button class="buttonEye" @click="store.toggle('active' + target)">
+    <OpenEye class="eye" v-if="text === 'open'" />
+    <ClosedEye class="eye small" v-else />
   </button>
 </template>
 
-<style scoped></style>
+<style scoped>
+:root {
+  --violet: rgb(151, 71, 255);
+}
+.eye {
+  fill: #888;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.small {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+.buttonEye:hover .eye {
+  fill: var(--violet);
+}
+</style>

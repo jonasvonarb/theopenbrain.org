@@ -1,7 +1,8 @@
 <script setup>
 import { useRoute, useRouter } from "vue-router";
 import { useGeneral } from "@/stores";
-import BiArrowLeftCircle from "@/icons/BiArrowLeftCircle.vue";
+import IIcon from "@/icons/custom/IIcon.vue";
+import OpenArrowIcon from "@/icons/custom/OpenArrowIcon.vue";
 
 const route = useRoute();
 const store = useGeneral();
@@ -27,20 +28,20 @@ const openAbout = () => {
         : 'left-16'
     "
   >
-    <!-- menu open/close -->
-    <div
+    <IIcon
       v-if="!store.activeAbout"
       @click="openAbout()"
-      class="h-11 w-11 -m-0.5 text-center flex justify-center items-center text-medium text-white bg-black hover:blur-xs z-[49] cursor-pointer duration-300"
-    >
-      i
-    </div>
+      class="icon iconInvert"
+    />
+
     <!-- <BiExclamationCircleFill " /> -->
-    <BiArrowLeftCircle
-      class="h-10 w-10 text-white hover:blur-xs z-[60] cursor-pointer"
+    <OpenArrowIcon
+      class="icon iconInvert z-[60]"
       v-else
       @click="store.activeAbout = false"
     />
+    <!-- menu open/close -->
+
     <div
       class="fixed h-screen bg-violet text-white overflow-y-scroll overflow-x-hidden scrollbar top-0 left-0 text-medium duration-300 border-r border-black snap-x"
       :class="[store.activeAbout ? 'w-[50vw] ml-0' : 'w-[0]']"
@@ -64,7 +65,7 @@ const openAbout = () => {
             <p>
               theopenbrain.org is licensed under a reative
               <a
-                class="hover:blur-xs"
+                class="hover:underline"
                 href="http://creativecommons.org/licenses/by/4.0/"
                 target="_blank"
               >
@@ -82,21 +83,21 @@ const openAbout = () => {
             <p>
               theopenbrain.org is funded by the
               <a
-                class="hover:blur-xs"
+                class="hover:underline"
                 href="https://www.mcgill.ca/neuro/open-science/tanenbaum-open-science-institute-tosi"
                 target="_blank"
                 >Tanenbaum Open Science Institute
               </a>
               which is based at the
               <a
-                class="hover:blur-xs"
+                class="hover:underline"
                 href="https://www.mcgill.ca/neuro/"
                 target="_blank"
                 >Montreal Neurological Institute
               </a>
               which is part of
               <a
-                class="hover:blur-xs"
+                class="hover:underline"
                 href="http://www.mcgill.ca/"
                 target="_blank"
                 >McGill University </a
@@ -117,7 +118,7 @@ const openAbout = () => {
               <p>
                 Editor:
                 <a
-                  class="hover:blur-xs"
+                  class="hover:underline"
                   href="http://www.trenholmlab.com/"
                   target="_blank"
                 >
@@ -127,7 +128,7 @@ const openAbout = () => {
               <p>
                 Designed and developed by
                 <a
-                  class="hover:blur-xs"
+                  class="hover:underline"
                   href="https://malpeso.info/"
                   target="_blank"
                 >
@@ -138,7 +139,7 @@ const openAbout = () => {
               <p>
                 Creative Direction & Illustration:
                 <a
-                  class="hover:blur-xs"
+                  class="hover:underline"
                   href="https://malpeso.info/"
                   target="_blank"
                 >
@@ -148,7 +149,7 @@ const openAbout = () => {
               <p>
                 Code & Web design:
                 <a
-                  class="hover:blur-xs"
+                  class="hover:underline"
                   href="http://www.jonasvonarb.ch/"
                   target="_blank"
                 >
@@ -158,7 +159,7 @@ const openAbout = () => {
               <p>
                 Animation & 3D:
                 <a
-                  class="hover:blur-xs"
+                  class="hover:underline"
                   href="https://timorick.ch/"
                   target="_blank"
                 >

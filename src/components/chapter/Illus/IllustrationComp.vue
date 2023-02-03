@@ -63,7 +63,7 @@
             "
             @click="setBlockState(index, activeState.state)"
           >
-            <BiPlayCircleFill />
+            <PlayIcon class="icon" />
             {{ state }}
           </p>
         </template>
@@ -71,7 +71,7 @@
     </div>
     <div
       class="flex flex-row min-w-full"
-      :class="animation.legend ? '-mr-20 ml-20' : ''"
+      :class="animation.legend ? 'pb-0' : ''"
     >
       <div
         v-if="!animation.multiple && !animation.flip && !animation.switch"
@@ -94,16 +94,12 @@
       />
     </div>
     <div class="absolute top-12 right-8 z-40">
-      <BiPauseCircleFill
-        class="w-10 h-10 ml-2 hover:text-violet cursor-pointer text-light"
+      <PauseIcon
+        class="icon"
         v-if="animation.loop && !isPaused"
         @click="playPause()"
       />
-      <BiPlayCircleFill
-        class="w-10 h-10 ml-2 hover:text-violet cursor-pointer text-light"
-        v-else-if="animation.loop"
-        @click="playPause()"
-      />
+      <PlayIcon class="icon" v-else-if="animation.loop" @click="playPause()" />
     </div>
   </div>
 </template>
@@ -115,8 +111,8 @@ import { addH, removeH, toSlug, toCamelCase } from "@/helper/general";
 
 import lottie from "lottie-web";
 import animationJSON from "@/assets/json_backend/animations.json";
-import BiPlayCircleFill from "@/icons/BiPlayCircleFill.vue";
-import BiPauseCircleFill from "@/icons/BiPauseCircleFill.vue";
+import PlayIcon from "@/icons/custom/PlayIcon.vue";
+import PauseIcon from "@/icons/custom/PauseIcon.vue";
 import IllustrationFlip from "./IllustrationFlip.vue";
 import IllustrationSwitch from "./IllustrationSwitch.vue";
 import StateElement from "@/components/UI/StateElement.vue";

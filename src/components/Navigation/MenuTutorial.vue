@@ -11,21 +11,20 @@
       aperiam eligendi reiciendis voluptatibus dignissimos distinctio, fuga nam
       hic!
     </div>
-    <div
+    <FIcon
       @click="openAbout()"
-      class="h-11 w-11 -m-0.5 text-center flex justify-center items-center text-medium text-white bg-black hover:blur-xs z-[49] cursor-pointer duration-300"
+      class="-m-0.5 z-[49] icon iconInvert duration-300"
       :class="store.activeAbout ? 'left-1/2 ml-4' : 'left-24'"
       @mouseenter="helpIsActive = true"
       @mouseleave="helpIsActive = false"
-    >
-      ?
-    </div>
+    />
   </div>
 </template>
 
 <script setup>
 import { useGeneral } from "@/stores";
 import { ref } from "vue";
+import FIcon from "@/icons/custom/FIcon.vue";
 const store = useGeneral();
 const helpIsActive = ref(false);
 </script>

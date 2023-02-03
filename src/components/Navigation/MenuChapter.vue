@@ -120,7 +120,7 @@ const closeMenu = () => {
           v-if="store.activeMenu"
           :text="'close'"
           :target="'Menu'"
-          class="fixed bg-darker pb-6 text-white pointer-events-auto z-[60] hover:opacity-90 h-full w-12 flex justify-center items-end left-0 top-0 duration-300 overflow-hidden"
+          class="fixed bg-darker pb-4 text-white pointer-events-auto z-[60] hover:opacity-90 h-full w-14 flex justify-center items-center left-0 top-0 duration-300 overflow-hidden"
         />
       </ul>
     </Transition>
@@ -128,7 +128,7 @@ const closeMenu = () => {
     <OpenCloseButton
       :text="'open'"
       :target="'Menu'"
-      class="fixed bg-darker pb-6 text-white pointer-events-auto z-[60] h-full w-12 flex justify-center items-end left-0 top-0 duration-300 overflow-hidden"
+      class="fixed bg-darker pb-4 text-white pointer-events-auto z-[60] h-full w-14 flex justify-center items-center left-0 top-0 duration-300 overflow-hidden"
       :class="
         !store.activeMenu && route.name === 'chapter'
           ? 'left-0 opacity-100 '

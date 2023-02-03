@@ -155,6 +155,7 @@ h4 {
   padding: 0.2rem 0.4rem;
   stroke: var(--violet);
 }
+
 .highlighterIlluFill > g > path,
 .highlighterIlluStroke > g > path,
 .highlighterIlluFill > path,
@@ -275,7 +276,14 @@ mark.comment {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.1s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50vw;
+  transition: opacity 0.4s ease;
+}
+.fade-enter-active {
+  transition-delay: 0.2s;
 }
 
 .fade-enter-from,
@@ -283,22 +291,6 @@ mark.comment {
   opacity: 0;
   filter: blur(2px);
 }
-/* 
-.menuTo-enter-active,
-.menuTo-leave-active {
-  transition: all 1s ease;
-  transition-delay: 0;
-}
-
-.menuTo-enter-from,
-.menuTo-leave-to {
-  transform: translate(-35vw);
-}
-
-.menuTo-enter-to,
-.menuTo-leave-from {
-  transform: translate(0);
-} */
 
 .outLeft-leave-active,
 .outLeft-enter-active {
@@ -371,4 +363,41 @@ sup:hover {
   position: fixed;
   left: calc(50vw - 1rem);
   top: 50vh;
+}
+
+.icon {
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+  border: #222 solid 1px;
+  background-color: white;
+  fill: black;
+  border-radius: 9999%;
+}
+
+.icon:hover,
+.icon:hover * {
+  border-color: var(--violet);
+  background-color: var(--violet);
+  fill: white;
+  stroke: transparent;
+}
+
+.iconBig {
+  height: 4rem;
+  width: 4rem;
+}
+
+.iconMed {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.iconInvert {
+  background-color: #222;
+  fill: white;
+}
+
+.iconInvert:hover {
+  border-color: white;
 }

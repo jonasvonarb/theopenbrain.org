@@ -1,46 +1,18 @@
 <template>
   <svg
-    id="Layer_1"
-    data-name="Layer 1"
-    class="icon"
+    id="extra_illus."
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 21.89 21.18"
+    width="21"
+    height="21"
+    viewBox="0 0 21 21"
   >
-    <path class="cls-2" d="m20.61,3.08c0,5.52-4.48,10-10,10S.61,8.61.61,3.08" />
-    <line class="cls-1" x1=".36" y1="14.13" x2="3.81" y2="10.48" />
-    <line class="cls-1" x1="17.97" y1="9.94" x2="21.53" y2="13.48" />
-    <line class="cls-1" x1="11.12" y1="18.1" x2="11.12" y2="13.08" />
+    <path
+      d="m20.25,13.77l.71-.71-3.4-3.4c1.98-1.86,3.22-4.49,3.22-7.41h-1c0,5.05-4.11,9.17-9.16,9.17S1.45,7.31,1.45,2.26H.45c0,2.86,1.19,5.45,3.1,7.3L.05,13.07l.71.71,3.55-3.56c1.58,1.26,3.55,2.05,5.69,2.18v4.65h1v-4.64c2.17-.08,4.17-.85,5.79-2.09l3.46,3.46Z"
+    />
   </svg>
 </template>
 <script>
 export default {
-  name: "closedEye",
+  name: "ClosedEye",
 };
 </script>
-
-<style scoped>
-:root {
-  --violet: rgb(151, 71, 255);
-}
-.icon:hover > .cls-2 {
-  fill: var(--violet);
-  stroke: var(--violet);
-}
-.icon:hover > .cls-1 {
-  fill: white;
-}
-
-.cls-1 {
-  fill: #333;
-}
-
-.cls-1,
-.cls-2 {
-  stroke: #fff;
-  stroke-miterlimit: 10;
-}
-
-.cls-2 {
-  fill: none;
-}
-</style>

@@ -55,7 +55,7 @@ onBeforeUnmount(() => {
       v-slot="{ Component }"
       class="z-0 duration-300"
       :class="
-        store.activeAbout || store.activeMenu
+        store.activeAboutl || store.activeMenu
           ? ' blur-md grayscale-0 pointer-events-none'
           : ''
       "

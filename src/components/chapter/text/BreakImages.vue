@@ -1,5 +1,5 @@
 <script setup>
-import BiPlayCircleFill from "@/icons/BiPlayCircleFill.vue";
+import PlayIcon from "@/icons/custom/PlayIcon.vue";
 
 defineProps({
   title: String,
@@ -21,9 +21,7 @@ defineProps({
           src="/assets/hoverImges/alcmeon.jpg"
         />
       </div>
-      <BiPlayCircleFill
-        class="absolute -left-8 -top-8 bg-black rounded-full border border-black text-white w-16 h-16"
-      />
+      <PlayIcon class="absolute -left-8 -top-8 icon iconBig" />
 
       <div
         class="w-full h-full flex flex-col justify-center items-start mt-[-0.2rem] text-small"

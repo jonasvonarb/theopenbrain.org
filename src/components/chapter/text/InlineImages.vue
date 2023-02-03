@@ -30,18 +30,16 @@
       @click="toggleImage()"
       class="opacity-100 absolute bg-white rounded-full top-0 right-0 -m-4 flex justify-center items-center"
     >
-      <OpenArrow v-if="!inlineImageActive" class="h-8 w-8 icon" />
-      <CloseArrow v-else class="h-8 w-8" />
+      <OpenArrowIcon v-if="!inlineImageActive" class="icon" />
+      <CloseArrowIcon v-else class="icon" />
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import CloseArrow from "@/icons/custom/closeArrow.vue";
-import OpenArrow from "@/icons/custom/openArrow.vue";
-
-import BiArrowUpRightCircle from "@/icons/BiArrowUpRightCircle.vue";
+import CloseArrowIcon from "@/icons/custom/CloseArrowIcon.vue";
+import OpenArrowIcon from "@/icons/custom/OpenArrowIcon.vue";
 
 defineProps({
   paragraph: Object,
@@ -56,25 +54,10 @@ const toggleImage = () => {
 const openImage = () => {
   inlineImageActive.value = true;
 };
-const closeImage = () => {
-  inlineImageActive.value = false;
-};
 </script>
 
 <style scoped>
 .imageW {
   width: calc(50vw - 3rem + 4px);
 }
-
-svg.icon:hover > .circle {
-  opacity: 0.5;
-  fill: red;
-}
-
-/* .imageContainerH {
-  height: calc((50vw - 3rem) / 14.3 * 9.7);
-}
-.imageH {
-  height: calc((50vw - 3rem) / 14.3 * 9.7);
-} */
 </style>

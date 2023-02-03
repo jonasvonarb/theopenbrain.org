@@ -20,10 +20,10 @@ const commentStore = useCom();
     <div
       :class="
         store.isScrolling
-          ? 'backdrop-blur-[0px] grayscale	opacity-100	'
+          ? 'backdrop-blur-[0] grayscale	opacity-100'
           : 'backdrop-blur-[0] graysclae-0 duration-300 opacity-0'
       "
-      class="pointer-events-none bg-gray-900/0 fixed w-[100vw] h-[200vh] -top-[0] -left-[0] z-[50]"
+      class="pointer-events-none bg-gray-900/20 fixed w-[200vw] h-[200vh] -top-[0] -left-[0] z-[50] duration-Fix"
     ></div>
     <!-- text -->
     <Illustration />
@@ -67,4 +67,9 @@ const helpImport =
   "Here you can import a previously exported json-file. This will <strong>delete all</strong> your personal markings and comments currently in your local storage.";
 </script>
 
-<style scoped></style>
+<style scoped>
+.duration-Fix {
+  transition: all 0s !important;
+  transition-delay: 0;
+}
+</style>

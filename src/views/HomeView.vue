@@ -38,6 +38,7 @@
 import { useGeneral } from "@/stores/index";
 import BiArrowRightCircleFill from "@/icons/BiArrowRightCircleFill.vue";
 
+
 const store = useGeneral();
 
 const enter = () => {
