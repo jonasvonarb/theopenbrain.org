@@ -7,12 +7,9 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
-  },
-  {
-    path: "/about",
-    name: "about",
-    meta: { transition: "aboutTo" },
-    component: () => import("../views/AboutView.vue"),
+    redirect: () => {
+      return { path: "/chapter" };
+    },
   },
   {
     path: "/chapter/:chapter?",
@@ -23,16 +20,6 @@ const routes = [
     path: "/chapter/break/:video?",
     name: "break",
     component: () => import("../views/BreakView.vue"),
-  },
-  {
-    path: "/chapter/chaptertocome/:chapter?",
-    name: "chapternotfound",
-    component: () => import("../views/ChapterNotFoundView.vue"),
-  },
-  {
-    path: "/glossary",
-    name: "glossary",
-    component: () => import("../views/GlossaryView.vue"),
   },
 ];
 

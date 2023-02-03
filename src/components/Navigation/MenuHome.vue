@@ -1,5 +1,5 @@
 <script setup>
-import menu from "@/assets/menu/menu.json";
+import menu from "@/assets/json_backend/menu.json";
 import OpenCloseButton from "@/components/UI/OpenCloseButton.vue";
 import OpenCloseButtonLink from "@/components/UI/OpenCloseButtonLink.vue";
 import { onBeforeRouteUpdate, useRoute, useRouter } from "vue-router";
@@ -20,7 +20,7 @@ const toStart = () => {
 <template>
   <div
     v-if="route.name && route.name != 'landing'"
-    class="fixed overflow-y-scroll overflow-x-hidden bg-white scrollbar pointer-events-none top-0 left-0 z-[60] h-screen text-base duration-500 border-r border-black snap-x"
+    class="fixed overflow-y-scroll overflow-x-hidden bg-white scrollbar pointer-events-none top-0 left-0 z-[60] h-screen text-base duration-300 border-r border-black snap-x"
     :class="[
       store.activeMenu
         ? route.name != 'home'
@@ -36,7 +36,7 @@ const toStart = () => {
         class="no-select pl-24 pt-24 pointer-events-auto list-decimal list-inside w-[35vw] text-xl text-black uppercase overflow-visible"
       >
         <div class="shrink-0 pb-6">
-          <h1 class="font-bold">The Open Brain</h1>
+          <h1 class="font-semibold">The Open Brain</h1>
         </div>
         <template v-for="(chapter, index) in menu" :key="chapter">
           <RouterLink
@@ -58,7 +58,7 @@ const toStart = () => {
           v-if="store.activeMenu && route.name === 'home'"
           :text="'close'"
           :target="'Menu'"
-          class="absolute pointer-events-auto pt-2 pr-4 z-[60] flex justify-center items-center right-0 top-2 duration-500 overflow-hidden"
+          class="absolute pointer-events-auto pt-2 pr-4 z-[60] flex justify-center items-center right-0 top-2 duration-300 overflow-hidden"
         />
       </ol>
     </Transition>
@@ -66,7 +66,7 @@ const toStart = () => {
     <OpenCloseButtonLink
       :text="'open'"
       :target="''"
-      class="fixed border-r border-black bg-dark pt-2 text-white pointer-events-auto z-[60] hover:bg-lightDark h-full w-8 flex justify-center items-top left-0 top-0 duration-500 overflow-hidden"
+      class="fixed border-r border-black bg-dark pt-2 text-white pointer-events-auto z-[60] hover:bg-lightDark h-full w-8 flex justify-center items-top left-0 top-0 duration-300 overflow-hidden"
       :class="route.name && route.name === 'chapter' ? 'left-0' : '-left-8'"
     />
   </div>

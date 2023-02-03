@@ -16,9 +16,9 @@ const marker = (text, container) => {
       }),
         container.addEventListener("click", (e) => {
           let selection = document.getSelection();
-          let base = selection.baseNode.parentElement;
-          let extend = selection.extentNode.parentElement;
-          if (base != extend) {
+          let base = selection?.anchorNode?.parentElement;
+          let extend = selection?.focusNode?.parentElement;
+          if (base !== extend) {
             alert("it is onyl supported to mark inside a paragraph");
           } else {
             textStore.addSelection(selection);

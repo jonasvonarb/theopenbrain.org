@@ -7,11 +7,15 @@
     class="sub"
   >
     <span
-      :id="'triggerAnimation' + subSections?.animation?.name"
+      :id="
+        subSections?.animation?.name &&
+        'triggerAnimation' + subSections?.animation?.name
+      "
       :class="
         subSections?.animation?.name ? 'animationTrigger block noHighlight' : ''
       "
     >
+      <div v-if="subSections?.animation" class="marker-start" />
       <!-- subSection title -->
       <span :id="subSections?.title ? toSlug(subSections?.title) : ''" />
       <h3
@@ -39,12 +43,32 @@
         v-for="subParagraph in subSections.paragraphs"
         :key="subParagraph.id"
       >
+        <div v-if="subParagraph?.animation" class="marker-start" />
+
         <template
           v-if="
             subParagraph?.type != 'breakVideo' &&
             subParagraph?.type != 'breakSection'
           "
         >
+          <div
+            v-if="subParagraph?.animation?.transition"
+            class="marker-start"
+          />
+          <div
+            v-if="subParagraph?.animation?.transition"
+            :id="
+              subParagraph?.animation &&
+              'triggerAnimation' + subParagraph?.animation?.name + 'Transition'
+            "
+            :class="
+              subParagraph?.animation?.name + 'Transition'
+                ? 'animationTrigger animationScrollAnchor block noHighlight'
+                : ''
+            "
+            class="transition left-0 w-full h-[50vh] bg-green-"
+          />
+          <div v-if="subParagraph?.animation?.transition" class="marker-end" />
           <InlineImages
             :paragraph="subParagraph"
             :key="'images' + subParagraph.id"
@@ -75,6 +99,8 @@
             v-else-if="subParagraph.type === 'breakText'"
           /> -->
         </template>
+        <div v-if="subParagraph?.animation" class="marker-end" />
+
         <!-- subSection Break -->
         <BreakImages
           v-else-if="subParagraph?.type === 'breakVideo'"
@@ -94,6 +120,7 @@
         :paragraph="subSections"
       />
     </span>
+    <div v-if="subSections?.animation" class="marker-end" />
   </div>
 </template>
 

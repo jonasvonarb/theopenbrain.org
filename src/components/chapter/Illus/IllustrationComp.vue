@@ -1,12 +1,12 @@
 <template>
   <div
-    class="pr-24 pl-24 flex flex-row justify-center items-center h-[100%] pointer-events-auto"
+    class="pr-12 pl-32 flex flex-row justify-center items-center h-[100%] pointer-events-auto"
   >
     <div
-      class="px-24 pl-24 z-50 fixed flex flex-col w-[50vw] justify-between top-6 left-0"
+      class="px-20 pt-10 z-30 fixed flex flex-col w-[50vw] justify-between top-0 left-0"
       :class="animation.multiple ? 'items-center' : 'items-start'"
     >
-      <span class="pb-12">{{ animation.title }}</span>
+      <span class="pb-0 text-baseMono">{{ animation.title }}</span>
       <div
         v-if="animation.multiple"
         class="fixed top-0 left-0 w-[50vw] h-screen px-24 pl-24 flex flex-col justify-center items-start"
@@ -24,14 +24,14 @@
         </template>
         <div v-if="animation.states">
           <p
-            v-for="(state, index) in !animation.multiple
+            v-for="(state, index) of !animation.multiple
               ? animation.states
               : Object.keys(animation.states)"
             :key="state"
             class="hover:underline duration-300 text-small"
             :class="
               activeState.state == index
-                ? 'italic font-bold'
+                ? 'italic font-semibold'
                 : 'blur-xs opacity-30'
             "
             @click="setState(index, state)"
@@ -40,21 +40,16 @@
           </p>
         </div>
       </div>
-      <div v-if="animation.states && !animation.multiple">
+
+      <div
+        v-if="animation.switches || (animation.states && !animation.multiple)"
+      >
         <template v-if="!info.blockStates">
-          <p
-            v-for="(state, index) in !animation.multiple
-              ? animation.states
-              : Object.keys(animation.states)"
-            :key="state"
-            class="hover:opacity-50 text-small cursor-pointer pb-2 hover:blur-xs"
-            :class="
-              activeState.state == index ? 'font-bold pointer-events-none' : ''
-            "
-            @click="setState(index, activeState.state)"
-          >
-            {{ state }}
-          </p>
+          <StateElement
+            :states="!info.multiple ? info.states : Object.keys(info.states)"
+            :activeState="activeState.state"
+            @onClick="setState"
+          />
         </template>
         <template v-else>
           <p
@@ -62,8 +57,10 @@
               ? animation.states
               : Object.keys(animation.states)"
             :key="state"
-            class="hover:opacity-50 text-smaller cursor-pointer pb-2 mb-4 hover:blur-xs border-black border p-4 flex flex-col justify-center items-center"
-            :class="activeState[index] ? 'font-bold bg-violet text-white' : ''"
+            class="hover:opacity-50 select-none text-smaller cursor-pointer pb-2 mb-4 border-black border p-4 flex flex-col justify-center items-center"
+            :class="
+              activeState[index] ? 'font-semibold bg-violet text-white' : ''
+            "
             @click="setBlockState(index, activeState.state)"
           >
             <BiPlayCircleFill />
@@ -72,16 +69,39 @@
         </template>
       </div>
     </div>
-    <div class="flex flex-row min-w-full">
-      <div v-if="!animation.multiple" :id="animation.id" class="w-full" />
+    <div
+      class="flex flex-row min-w-full"
+      :class="animation.legend ? '-mr-20 ml-20' : ''"
+    >
+      <div
+        v-if="!animation.multiple && !animation.flip && !animation.switch"
+        :id="animation.id"
+        class="w-full"
+      />
+      <IllustrationFlip
+        v-else-if="!animation.multiple && animation.flip"
+        :video="toSlug(animation.video)"
+      />
+      <IllustrationSwitch
+        v-if="!animation.multiple && !animation.flip && animation.switch"
+        :info="info"
+        :isPaused="isPaused"
+      />
+      <LegendElement
+        v-if="animation.legend"
+        :legend="animation.legend"
+        iconPraefix="retinalCircuits"
+      />
+    </div>
+    <div class="absolute top-12 right-8 z-40">
       <BiPauseCircleFill
-        class="w-10 h-10 ml-4 mt-4 hover:text-violet cursor-pointer text-light"
-        v-if="animation.loop && !isPaused && animation.playPause"
+        class="w-10 h-10 ml-2 hover:text-violet cursor-pointer text-light"
+        v-if="animation.loop && !isPaused"
         @click="playPause()"
       />
       <BiPlayCircleFill
-        class="w-10 h-10 ml-4 mt-4 hover:text-violet cursor-pointer text-light"
-        v-else-if="animation.playPause"
+        class="w-10 h-10 ml-2 hover:text-violet cursor-pointer text-light"
+        v-else-if="animation.loop"
         @click="playPause()"
       />
     </div>
@@ -91,12 +111,16 @@
 <script setup>
 import IllustarionMultiple from "@/components/chapter/Illus/IllustarionMultiple.vue";
 import { ref, onMounted, watch } from "vue";
-import { addH, removeH, toSlug } from "@/helper/general";
+import { addH, removeH, toSlug, toCamelCase } from "@/helper/general";
 
 import lottie from "lottie-web";
-import animationJSON from "@/assets/animations.json";
+import animationJSON from "@/assets/json_backend/animations.json";
 import BiPlayCircleFill from "@/icons/BiPlayCircleFill.vue";
 import BiPauseCircleFill from "@/icons/BiPauseCircleFill.vue";
+import IllustrationFlip from "./IllustrationFlip.vue";
+import IllustrationSwitch from "./IllustrationSwitch.vue";
+import StateElement from "@/components/UI/StateElement.vue";
+import LegendElement from "@/components/UI/LegendElement.vue";
 
 const props = defineProps({
   animation: Object,
@@ -110,40 +134,65 @@ const info = animationJSON.animations.find((x) => {
 
 const activeState = !info.blockStates
   ? ref({
-      state: 0,
+      state: undefined,
     })
   : ref([]);
 
 if (info.blockStates) {
-  info.states.forEach((x) => {
-    activeState.value.push(false);
+  info.states.forEach(() => {
+    activeState.value.push(true);
   });
 }
 
 const playPause = () => {
-  if (animationLottie.isPaused) {
+  if (isPaused.value) {
+    isPaused.value = false;
+    if (!animationLottie) return;
     animationLottie.playSegments(
       info.loopSection || [0, animationLottie.totalFrames],
       false
     );
-    isPaused.value = false;
   } else {
-    animationLottie.pause();
     isPaused.value = true;
+    if (!animationLottie) return;
+    animationLottie.pause();
   }
 };
 
-const setState = (index, indexBefore) => {
-  if (!props.animation.multiple) {
-    animationLottie.setSpeed(6);
-    let totalFrames = animationLottie.animationData.op;
-    const pos = (totalFrames / 6) * (indexBefore + 1);
-    animationLottie.playSegments([1, totalFrames], true);
-    const posAfter = (totalFrames / 6) * (index + 1);
-    activeState.value.state = index;
-    animationLottie.playSegments([pos, posAfter], true);
+const setState = (event) => {
+  let index = event.index;
+  let indexBefore = event.activeState;
+  if (!info.highlight) {
+    if (!props.animation.multiple) {
+      animationLottie.setSpeed(6);
+      let totalFrames = animationLottie.animationData.op;
+      const pos = (totalFrames / 6) * (indexBefore + 1);
+      animationLottie.playSegments([1, totalFrames], true);
+      const posAfter = (totalFrames / 6) * (index + 1);
+      activeState.value.state = index;
+      if (info.smooth) {
+        animationLottie.playSegments([pos, posAfter], true);
+      } else {
+        animationLottie.goToAndStop(posAfter, true);
+      }
+    } else {
+      activeState.value.state = index;
+    }
   } else {
-    activeState.value.state = index;
+    let state = toCamelCase(info.states[index]);
+    console.log(state);
+    let els = document.getElementsByClassName(state + "Highlight");
+    for (let el of els) {
+      console.log(el);
+      el.classList.add("highlightIllu");
+      activeState.value.state = index;
+    }
+    if (indexBefore === undefined) return;
+    let lastState = toCamelCase(info.states[indexBefore]);
+    let lastEls = document.getElementsByClassName(lastState + "Highlight");
+    for (let lastEl of lastEls) {
+      lastEl.classList.remove("highlightIllu");
+    }
   }
 };
 
@@ -162,6 +211,7 @@ const setBlockState = (index) => {
 };
 
 onMounted(() => {
+  if (info.switch) return;
   let svgContainer = document.getElementById(props.animation.id);
   if (!svgContainer) return;
   animationLottie = lottie.loadAnimation({
@@ -169,8 +219,8 @@ onMounted(() => {
     speed: 1,
     wrapper: svgContainer,
     animType: "svg",
-    loop: info.blockStates ? true : false,
-    autoplay: info.blockStates ? true : false,
+    loop: false,
+    autoplay: true,
     path: "/assets/animations/" + props.animation.id + ".json",
   });
   animationLottie.addEventListener("DOMLoaded", () => {
@@ -181,6 +231,7 @@ onMounted(() => {
     }
   });
   animationLottie.setSubframe(true);
+  animationLottie.play();
   if (info.loop) {
     animationLottie.addEventListener("complete", () => {
       animationLottie.playSegments(
@@ -189,11 +240,16 @@ onMounted(() => {
       );
     });
   }
-
-  if (!info.states) {
-    animationLottie.play();
+  if (!info.hasTransition) {
+    if (!info.states) {
+      animationLottie.play();
+    } else {
+      animationLottie.goToAndStop(24, true);
+    }
   } else {
-    animationLottie.goToAndStop(24, true);
+    setTimeout(() => {
+      animationLottie.play();
+    }, 500);
   }
 });
 </script>
@@ -210,5 +266,10 @@ onMounted(() => {
 }
 .highlighterIlluDisplay.active {
   opacity: 1;
+}
+
+.highlighterIlluDisplay.highlightIllu {
+  opacity: 1;
+  display: block;
 }
 </style>

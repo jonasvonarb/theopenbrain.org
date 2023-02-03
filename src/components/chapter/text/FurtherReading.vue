@@ -1,6 +1,6 @@
 <template>
   <div id="further-reading" class="py-12 h-[50vh]">
-    <h4 class="font-bold">{{ content.title }}</h4>
+    <h4 class="font-semibold">{{ content.title }}</h4>
     <p class="font">
       For additional details on retinal anatomy, physiology, connectivity and
       function, please visit the online vision textbook

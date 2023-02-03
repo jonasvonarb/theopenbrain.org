@@ -2,10 +2,8 @@
 import { useRoute, useRouter } from "vue-router";
 import { useGeneral } from "@/stores";
 import BiArrowLeftCircle from "@/icons/BiArrowLeftCircle.vue";
-import BiInfoCircleFill from "../../icons/BiInfoCircleFill.vue";
 
 const route = useRoute();
-const router = useRouter();
 const store = useGeneral();
 
 const openAbout = () => {
@@ -16,33 +14,38 @@ const openAbout = () => {
 
 <template>
   <div
-    class="fixed flex bottom-4 z-[60] text-base duration-500"
+    class="fixed flex bottom-4 z-[60] text-base duration-300"
     :class="
       route.name === 'about' || store.activeAbout
-        ? 'left-6'
+        ? 'left-4'
         : route.name === 'home'
         ? store.activeMenu
           ? 'left-6'
           : 'left-6'
-        : 'left-20'
+        : store.activeMenu
+        ? 'left-1/2 ml-4'
+        : 'left-16'
     "
   >
     <!-- menu open/close -->
-    <BiInfoCircleFill
+    <div
       v-if="!store.activeAbout"
       @click="openAbout()"
-      class="h-10 w-10 text-dark hover:blur-xs z-[60]"
-    />
+      class="h-11 w-11 -m-0.5 text-center flex justify-center items-center text-medium text-white bg-black hover:blur-xs z-[49] cursor-pointer duration-300"
+    >
+      i
+    </div>
+    <!-- <BiExclamationCircleFill " /> -->
     <BiArrowLeftCircle
-      class="h-10 w-10 text-dark hover:blur-xs z-[60]"
+      class="h-10 w-10 text-white hover:blur-xs z-[60] cursor-pointer"
       v-else
       @click="store.activeAbout = false"
     />
     <div
-      class="fixed h-screen overflow-y-scroll overflow-x-hidden bg-white scrollbar top-0 left-0 text-medium duration-500 border-r border-black snap-x"
-      :class="[store.activeAbout ? 'w-[50vw] bg-white ml-0' : 'w-[0] bg-white']"
+      class="fixed h-screen bg-violet text-white overflow-y-scroll overflow-x-hidden scrollbar top-0 left-0 text-medium duration-300 border-r border-black snap-x"
+      :class="[store.activeAbout ? 'w-[50vw] ml-0' : 'w-[0]']"
     >
-      <div class="px-24 pt-12 pb-56 w-[50vw]">
+      <div class="px-24 pt-12 pb-56 w-[50vw] max-w-[780px]">
         <div class="font-sans">
           <h2>About</h2>
           <section class="pb-56">

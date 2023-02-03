@@ -16,7 +16,7 @@
 <script setup>
 import { onMounted, ref, watch } from "vue";
 import { useMouse } from "@vueuse/core";
-import infos from "@/assets/infosImages.json";
+import infos from "@/assets/json_backend/infosImages.json";
 
 const { x, y } = useMouse();
 const img = ref(null);

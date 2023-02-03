@@ -1,0 +1,318 @@
+{
+  "animations": [
+    {
+      "id": "animationDragon",
+      "title": "",
+      "fullscreen": false,
+      "loop": true,
+      "loopSection": [82, 287]
+    },
+    {
+      "id": "animationEyeStructurTransition",
+      "title": "Eye Structure",
+      "isTransition": true,
+      "noBleed": true
+    },
+    {
+      "id": "animationEyeStructur",
+      "title": "Eye structure",
+      "fullscreen": false,
+      "clickTriggered": true,
+      "highlight": true,
+      "states": [
+        "lens",
+        "iris",
+        "cornea",
+        "choroid",
+        "sclera",
+        "aqueuous humour",
+        "ciliary muscle",
+        "retina",
+        "vetreous humor",
+        "optic nerve"
+      ]
+    },
+    {
+      "id": "animationAccommodationVergence",
+      "title": "Accommodation & Vergence",
+      "fullscreen": false,
+      "loop": true,
+      "loopSection": null
+    },
+    {
+      "id": "animationPupillaryLightreflex",
+      "title": "Pathway for the pupillary light reflex",
+      "fullscreen": true,
+      "loop": true,
+      "states": [
+        "Light hits rhodopsin and causes retinal to  change conformation",
+        "shuttles out",
+        "interphotoreceptor binding protein (IRBP) shuttles its cargo into pigment epithelium",
+        "enters RPE",
+        "ll-trans retinol is converted to an aldehyde and then back into 11-cis-retinal",
+        "11 cis retinal is shuttled back to the photoreceptor (via IRBP) for another round"
+      ],
+      "statesHighlight": [
+        "Prenectal nucleus",
+        "Eddinger-West..",
+        "Oculomotor nerve",
+        "Ciliary ganglion",
+        "Iris muscle"
+      ]
+    },
+    {
+      "id": "animationImpairedVision",
+      "title": "Impaired vision",
+      "fullscreen": true,
+      "states": ["Normal Eye", "Myopia", "Hyperopia", "Astigmatism"],
+      "toggle": "Corrected"
+    },
+    {
+      "id": "animationLatteralOrganization",
+      "title": "Latteral Organization",
+      "fullscreen": true,
+      "split": true,
+      "multiple": false
+    },
+    {
+      "id": "animationPhototransduction",
+      "title": "Phototransduction",
+      "fullscreen": true,
+      "loop": true,
+      "states": [
+        "Shine a light into eye.",
+        "A flash of light, and a photon activates rhodopsin.",
+        "Retinal changes conformation",
+        "Activated rhodopsin in turn activates transducin",
+        "The alpha subunit of transducin activates phosphodiesterase (PDE)",
+        "PDE degrades cGMP into GMP, leading to a decrease in intracellular [cGMP]",
+        "GMP-gated ion channels close",
+        "The rod membrane hyperpolarizes"
+      ],
+      "statesHighlight": [
+        "Rhodopsin",
+        "Retinal",
+        "Transducin",
+        "Phosphodiesterase (PDE)",
+        "cGMP",
+        "GMP",
+        "α",
+        "γ",
+        "β",
+        "GTP"
+      ]
+    },
+    {
+      "id": "animationTheVisualCycle",
+      "title": "The visual cycle",
+      "fullscreen": true,
+      "loop": true,
+      "states": [
+        "Light hits rhodopsin and causes retinal to  change conformation",
+        "shuttles out",
+        "interphotoreceptor binding protein (IRBP) shuttles its cargo into pigment epithelium",
+        "enters RPE",
+        "ll-trans retinol is converted to an aldehyde and then back into 11-cis-retinal",
+        "11 cis retinal is shuttled back to the photoreceptor (via IRBP) for another round"
+      ],
+      "statesHighlight": [
+        "Prenectal nucleus",
+        "Eddinger-West..",
+        "Oculomotor nerve",
+        "Ciliary ganglion",
+        "Iris muscle"
+      ]
+    },
+    {
+      "id": "animationSynapticArchitecture",
+      "title": "Synaptic Architecture",
+      "fullscreen": false,
+      "clickTriggered": true,
+      "blockStates": true,
+      "hasTransition": true,
+      "states": ["Inhibition", "Excitatation", "Gap Junction"]
+    },
+    {
+      "id": "animationPhotoreceptors",
+      "title": "Photoreceptors",
+      "fullscreen": false,
+      "clickTriggered": true,
+      "hasTransition": true,
+      "highlight": true,
+      "states": [
+        "disks",
+        "opsins",
+        "outer segment",
+        "inner segment",
+        "mitocondria",
+        "nucleus"
+      ]
+    },
+    {
+      "id": "animationLateralOrganization",
+      "title": "Lateral organization",
+      "fullscreen": true,
+      "scroll": true,
+      "split": true
+    },
+    {
+      "id": "animationRetinalCellTypesTransition",
+      "title": "Retinal Cell Types",
+      "isTransition": true
+    },
+    {
+      "id": "animationRetinalCellTypes",
+      "title": "Retinal Cell Types",
+      "fullscreen": false,
+      "clickTriggered": true,
+      "highlight": true,
+      "states": [
+        "Photoreceptors",
+        "Horizontal Cells",
+        "Bipolar Cells",
+        "Amacrine Cells",
+        "Ganglion Cells",
+        "Inner nuclear layer",
+        "Inner plexiform layer",
+        "Outer nuclear layer",
+        "Outer plexiform layer",
+        "Ganglion cell layer"
+      ]
+    },
+    {
+      "id": "animationCenterSurroundReceptiveFields",
+      "title": "Center Surround Receptive Fields",
+      "fullscreen": false,
+      "loop": true,
+      "switch": true,
+      "switches": ["small light", "wide light"],
+      "legend": [
+        "hyperpolarization",
+        "depolarization",
+        "spike train",
+        "inhibition",
+        "excitatation"
+      ]
+    },
+    {
+      "id": "animationDirectionSelectivity",
+      "title": "Direction Selectivity",
+      "fullscreen": false,
+      "loop": true,
+      "switch": true,
+      "switches": ["prefered", "null"],
+      "legend": [
+        "hyperpolarization",
+        "depolarization",
+        "spike train",
+        "inhibition",
+        "excitatation"
+      ]
+    },
+    {
+      "id": "animationObjectMotionSensitivity",
+      "title": "Object Motion Sensitivity",
+      "fullscreen": false,
+      "loop": true,
+      "switch": true,
+      "switches": ["Symmetric Center", "Asymmetric Center"],
+      "legend": [
+        "hyperpolarization",
+        "depolarization",
+        "spike train",
+        "inhibition",
+        "excitatation",
+        "special"
+      ]
+    },
+    {
+      "id": "animationRodVsConeCircuits",
+      "title": "Rod Vs. Cone Circuits",
+      "fullscreen": false,
+      "loop": true,
+      "switch": true,
+      "swicthSymboles": true,
+      "switches": ["night", "day"],
+      "iconPraefix": "retinalCircuits",
+      "legend": [
+        "hyperpolarization",
+        "depolarization",
+        "spike train",
+        "inhibition",
+        "excitatation",
+        "gap junction"
+      ]
+    },
+    {
+      "id": "animationLightSensitiveGanglionCells",
+      "title": "Light Sensitive Ganglion Cells",
+      "fullscreen": false,
+      "loop": true,
+      "legend": ["spike train"]
+    },
+    {
+      "id": "animationNormalVision",
+      "title": "NormalVision",
+      "fullscreen": false,
+      "flip": true,
+      "video": "normal-vision",
+      "states": []
+    },
+    {
+      "id": "animationCataracts",
+      "title": "Cataracts",
+      "fullscreen": false,
+      "flip": true,
+      "video": "cataracts",
+      "states": []
+    },
+    {
+      "id": "animationGlaucoma",
+      "title": "Glaucoma",
+      "fullscreen": false,
+      "flip": true,
+      "video": "glaucoma",
+      "states": []
+    },
+    {
+      "id": "animationDiabeticRetinopathy",
+      "title": "Diabetic Retinopathy",
+      "fullscreen": false,
+      "flip": true,
+      "video": "diabetic-retinopathy",
+      "states": []
+    },
+    {
+      "id": "animationAgeRelatedMacularDegeneration",
+      "title": "Age Related Macular Degeneration",
+      "fullscreen": false,
+      "flip": true,
+      "video": "macular-degeneration",
+      "states": []
+    },
+    {
+      "id": "animationRetinitisPigmentosa",
+      "title": "Retinitis Pigmentosa",
+      "fullscreen": false,
+      "flip": true,
+      "video": "retinitis-pigmentosa",
+      "states": []
+    },
+    {
+      "id": "animationEyeMovements",
+      "title": "Eye Movements",
+      "fullscreen": true,
+      "multiple": true,
+      "states": {
+        "age": "Give the ages of the people",
+        "free": "Just look at the picture"
+      }
+    },
+    {
+      "id": "animationPlaceholder",
+      "title": "",
+      "loop": true,
+      "fullParagraph": true
+    }
+  ]
+}

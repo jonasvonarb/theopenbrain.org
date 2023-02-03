@@ -2,6 +2,30 @@
   <!-- section -->
   <section :id="section.id" class="overflow-y-visible">
     <!-- section titel -->
+    <div
+      v-if="section['paragraphs'][0]?.animation?.transition"
+      class="marker-start"
+    />
+    <div
+      v-if="section['paragraphs'][0]?.animation?.transition"
+      :id="
+        section['paragraphs'][0]?.animation &&
+        'triggerAnimation' +
+          section['paragraphs'][0]?.animation?.name +
+          'Transition'
+      "
+      :class="
+        section['paragraphs'][0]?.animation?.name + 'Transition'
+          ? 'animationTrigger animationScrollAnchor block noHighlight'
+          : ''
+      "
+      class="transition left-0 w-full h-[200vh]"
+    ></div>
+    <div
+      v-if="section['paragraphs'][0]?.animation?.transition"
+      class="marker-end"
+    />
+
     <h2
       class="TN border border-black bg-white rounded-full absolute -translate-x-[8.65rem] -translate-y-[0.8rem] w-28 h-28 flex items-center justify-center"
     >
@@ -23,7 +47,23 @@
         section?.animation?.name ? 'animationTrigger block noHighlight' : ''
       "
     >
+      <div v-if="section?.animation" class="marker-start" />
       <template v-for="paragraph in section['paragraphs']" :key="paragraph.id">
+        <!-- <div v-if="paragraph?.animation?.transition" class="marker-start" />
+        <div
+          v-if="paragraph?.animation?.transition"
+          :id="
+            paragraph?.animation &&
+            'triggerAnimation' + paragraph?.animation?.name + 'Transition'
+          "
+          :class="
+            paragraph?.animation?.name + 'Transition'
+              ? 'animationTrigger animationScrollAnchor block noHighlight'
+              : ''
+          "
+          class="transition left-0 w-full h-[200vh] bg-green-"
+        ></div>
+        <div v-if="paragraph?.animation?.transition" class="marker-end" /> -->
         <span
           :id="
             paragraph?.animation &&
@@ -38,6 +78,7 @@
             paragraph?.type != 'breakVideo' && paragraph.type != 'breakSection'
           "
         >
+          <div v-if="paragraph?.animation" class="marker-start" />
           <!-- section paragraph -->
           <InlineImages
             :paragraph="paragraph"
@@ -75,7 +116,9 @@
           v-else-if="paragraph.type === 'breakSection'"
           :content="paragraph"
         />
+        <div v-if="paragraph?.animation" class="marker-end" />
       </template>
+      <div v-if="section?.animation" class="marker-end" />
     </span>
     <FullScreenIllustration
       :key="section.id"
@@ -92,6 +135,7 @@ import SubSection from "./SubSection.vue";
 import { useGeneral } from "@/stores";
 import BreakSection from "./BreakSection.vue";
 import InlineImages from "./InlineImages.vue";
+import { ref } from "vue";
 const store = useGeneral();
 
 const props = defineProps({
@@ -100,8 +144,4 @@ const props = defineProps({
 });
 </script>
 
-<style scoped>
-.imageW {
-  width: calc(50vw - 4rem);
-}
-</style>
+<style scoped></style>

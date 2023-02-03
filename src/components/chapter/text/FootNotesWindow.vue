@@ -1,19 +1,22 @@
 <template>
   <div
     :class="store.superScriptActive ? 'translate-y-0' : 'translate-y-[100vh]'"
-    class="fixed max-h-[95vh] overflow-x-scroll z-40 bottom-0 w-full left-0 p-24 pt-6 bg-white border-t border-black duration-500 font-mono text-small"
+    class="fixed max-h-[95vh] z-40 bottom-0 w-full left-0 p-24 pb-16 pt-10 bg-white border-t border-black duration-300 font-mono text-medium"
   >
-    <button @click="toggle()" class="fixed z-50 top-4 right-4 cursor-pointer">
+    <button
+      @click="toggle()"
+      class="fixed z-50 -top-3 right-1/2 -mr-3 cursor-pointer"
+    >
       <BiDashCircleFill class="cursor-pointer" />
     </button>
-    <ol class="pt-6 pr-16 w-full bg-white">
+    <ol class="pr-16 w-full bg-white overflow-x-scroll h-full">
       <li
         v-for="(note, index) in text['footNotes'].notes"
         :key="note.number"
         v-show="activeSup.includes((index + 1).toString())"
-        class="flex gap-12 pb-2 justify-start"
+        class="flex gap-4 pb-4 justify-start"
       >
-        <p class="w-16 text-right">{{ index + 1 }}</p>
+        <p class="w-16 text-left">{{ index + 1 }}</p>
         <p class="max-w-[780px]">{{ note.text }}</p>
       </li>
     </ol>

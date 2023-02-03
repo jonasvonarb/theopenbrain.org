@@ -1,17 +1,21 @@
 <script setup>
 import { RouterView, useRoute } from "vue-router";
 import MenuChapter from "./components/Navigation/MenuChapter.vue";
-import MenuHome from "./components/Navigation/MenuHome.vue";
+import MediaQueryWarning from "./components/UI/MediaQueryWarning.vue";
+// import MenuHome from "./components/Navigation/MenuHome.vue";
 import MenuAbout from "./components/Navigation/MenuAbout.vue";
 import { onBeforeUnmount, ref, watch } from "vue";
-import { watchDebounced } from "@vueuse/core";
+import { watchDebounced, useMediaQuery } from "@vueuse/core";
 import { useGeneral } from "@/stores";
+
+const isLargeScreen = useMediaQuery("(min-width: 1300px)");
+const isPreferredDark = useMediaQuery("(prefers-color-scheme: dark)");
 
 const route = useRoute();
 const resize = ref(0);
 const store = useGeneral();
 
-const onResize = (event) => {
+const onResize = () => {
   resize.value = 1;
   let resizeTimer;
   if (document.body.classList.contains("resize-animation-stopper")) return;
@@ -46,21 +50,26 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="text-base cursor-default font-sans">
+  <div v-if="isLargeScreen" class="text-base cursor-default font-sans">
     <RouterView
       v-slot="{ Component }"
       class="z-0 duration-300"
       :class="
-        store.activeAbout ? ' blur-md grayscale-0 pointer-events-none' : ''
+        store.activeAbout || store.activeMenu
+          ? ' blur-md grayscale-0 pointer-events-none'
+          : ''
       "
     >
       <transition :name="route.meta?.transitionName || 'routeT'">
         <component :is="Component" />
       </transition>
     </RouterView>
-    <MenuHome />
+    <!-- <MenuHome /> -->
     <MenuChapter />
-    <MenuAbout />
+    <MenuAbout v-if="route.name === 'chapter'" />
+  </div>
+  <div v-else>
+    <MediaQueryWarning />
   </div>
 </template>
 

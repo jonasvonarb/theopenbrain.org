@@ -13,12 +13,27 @@ import HoverImg from "@/components/chapter/text/HoverImg.vue";
 import FurtherReading from "./text/FurtherReading.vue";
 import FootNotes from "./text/FootNotes.vue";
 
+// import noise from "@/helper/noise";
+
+import Perlin from "@/helper/perlin.ts";
+
+// Seed value is optional, default is 0.
+const seed = Math.random();
+const noise = new Perlin(seed);
+
+// Call the noise functions to get the noise value for that coordinates.
+// noise.simplex2(x, y);
+// noise.simplex3(x, y, z);
+
+// noise.perlin2(x, y);
+// noise.perlin3(x, y, z);
+
 gsap.registerPlugin(ScrollTrigger);
 
 const store = useGeneral();
 
 const textStore = useText();
-const text = textStore.text;
+const text = ref(textStore.text);
 
 const triggers = ref(null);
 
@@ -26,12 +41,14 @@ const source = computed(() => {
   let _textStore = textStore.text;
   return _textStore;
 });
-
+const posAugeX = ref(0);
+const posAugeY = ref(0);
+let intervalRandom;
 onMounted(() => {
   let wait = setInterval(() => {
-    const text = document.getElementById("text");
+    const _text = document.getElementById("text");
     const container = document.getElementById("container");
-    if (text) {
+    if (_text) {
       clearInterval(wait);
       pointAdderAnimation();
       marker(source, container);
@@ -74,23 +91,28 @@ onMounted(() => {
           end: "bottom top",
           srub: 0,
           markers: false,
-          onToggle: (self) => {
-            if (!self.isActive) {
-              store.isTop = true;
-            } else {
-              store.isTop = false;
-            }
-          },
+          onToggle: (self) => {},
           onUpdate: (self) => {
             store.activeMenu = false;
             store.superScriptActive = false;
           },
         });
-      }, 100);
+      }, 10);
     }
   }, 1);
+  let timer = 0;
+  intervalRandom = setInterval(() => {
+    timer = timer + 15;
+    let speedX = 0.00006;
+    let speedY = 0.00005;
+    let x = noise.simplex2(timer * speedX, timer * speedX);
+    let y = noise.simplex2(timer * speedY, timer * speedY);
+    posAugeX.value = x * 20;
+    posAugeY.value = y * 15;
+  }, 15);
 });
 onBeforeUnmount(() => {
+  clearInterval(intervalRandom);
   ScrollTrigger.getById("scrollTriggerText").kill();
   ScrollTrigger.getById("scrollTriggerAll").kill();
 });
@@ -103,10 +125,11 @@ onBeforeUnmount(() => {
   >
     <!-- :class="store.startIsActive ? 'fixed' : 'absolute'" -->
     <HoverImg />
+    <div class="marker-center" />
     <div id="scroller" class="pointer-events-none w-full">
       <main
         id="text"
-        class="text pointer-events-auto w-full text-left pt-[20vh] ml-[50vw] z-30 border-l bg-white border-black tracking-wide pb-[60vh] pl-20 pr-24 duration-500"
+        class="text pointer-events-auto w-full text-left pt-[20vh] ml-[50vw] z-30 border-l bg-white border-black tracking-wide pb-[60vh] pl-20 pr-24 duration-300"
       >
         <!-- intro -->
         <section
@@ -115,13 +138,44 @@ onBeforeUnmount(() => {
           :id="section.id"
           class="overflow-y-visible max-w-[780px]"
         >
+          <div
+            class="TN shadow-md border border-black bg-white rounded-full absolute -translate-x-[8.6rem] -translate-y-[0.9rem] w-28 h-28 flex items-center justify-center"
+          >
+            <div
+              :style="
+                'transform: translate(' +
+                posAugeX +
+                'px, ' +
+                posAugeY / 2 +
+                'px);' +
+                'height: ' +
+                (3.5 - Math.abs(posAugeX.toFixed(2)) / 30) +
+                'rem; width: ' +
+                (3.5 - Math.abs(posAugeX.toFixed(2)) / 30) +
+                'rem;'
+              "
+              class="bg-black h-14 w-14 rounded-full translate-x-2"
+            />
+          </div>
           <h1
             :id="'the-eye-and-retina-intro'"
             :class="store.imgActive ? 'opacity-0' : ''"
-            class="z-40 text-black opacity-100"
+            class="z-40 text-black opacity-100 capitalize"
           >
             {{ section.title }}
           </h1>
+          <span class="font-mono text-small">
+            <p class="font-semibold">Arjun Krishnaswamy</p>
+            <p class="pb-5">
+              Department of Physiology, McGill University, Montreal, Canada
+            </p>
+            <p class="font-semibold">Stuart Trenholm</p>
+            <p>
+              Montreal Neurological Institute, McGill University, Montreal,
+              Canada
+            </p>
+          </span>
+          <br />
           <span
             id="triggerAnimationDragon"
             class="animationTrigger block noHighlight"
@@ -145,8 +199,8 @@ onBeforeUnmount(() => {
         >
           <Section :section="section" :index="index" />
         </div>
-        <FurtherReading :content="text['furtherReading']" />
-        <FootNotes :content="text['footNotes']" />
+        <FurtherReading :content="source['furtherReading']" />
+        <FootNotes :content="source['footNotes']" />
       </main>
       <Points />
     </div>

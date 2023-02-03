@@ -5,9 +5,9 @@
     >
       <div
         v-show="!store.activeMenu"
-        class="fixed h-full w-full flex justify-center items-center text-bigest font-bold"
+        class="fixed h-full w-full flex justify-center items-center text-bigest font-semibold"
       >
-        <div class="color uppercase text-center duration-500">
+        <div class="color uppercase text-center duration-300">
           The <br />
           Open<br />
           Brain
@@ -20,7 +20,7 @@
       </div>
       <div
         :class="store.activeMenu ? 'w-[65vw]' : 'w-full'"
-        class="video-background w-full absolute mix-blend-overlay pointer-events-none duration-500 right-0"
+        class="video-background w-full absolute mix-blend-overlay pointer-events-none duration-300 right-0"
       >
         <iframe
           class="pointer-event-none"

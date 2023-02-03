@@ -1,30 +1,36 @@
 <template>
   <div
-    class="fixed flex flex-col gap-5 justify-center items-center top-0 left-0 h-full w-full bg-black/80 z-[60] p-6 pb-10 mt-0 ml-0 text-white"
+    class="fixed flex gap-5 justify-center items-center top-0 left-0 h-full w-full bg-black/40 backdrop-blur-md z-[61] p-6 pb-10 mt-0 ml-0 text-white"
   >
-    <div class="bg-blue w-[40vw] pt-2 p-5 bg-white text-black rounded-lg">
-      <p class="pb-2">This is the Text you marked:</p>
+    <div class="flex h-1/2 justify-center items-start ml-8 gap-8">
+      <div class="w-[40vw] text-white">
+        <p class="pb-2 font-semibold">This is the Text you marked:</p>
+        <p>
+          <mark class="text-white comment">"{{ markierung }}"</mark>
+        </p>
+      </div>
+      <div class="h-full flex flex-col w-[40vw]">
+        <p class="pb-2 font-semibold">Enter your note here:</p>
 
-      <p>
-        <mark>{{ markierung }}</mark>
-      </p>
-    </div>
-    <div class="h-1/2 flex flex-col w-[40vw] pt-2 p-5 bg-violet rounded-lg">
-      <p class="pb-2 h-12">Enter your comment here:</p>
+        <form class="w-full h-full text-black pt-2">
+          <textarea
+            ref="comment"
+            class="bg-lighter"
+            :value="commentInStore"
+            @input="(event) => storeCom.updateCom(comment.value, event)"
+          />
+        </form>
+      </div>
       <p
-        class="absolute top-6 right-12 h-16 w-16 bg-white text-black text-xl rounded-full flex justify-center items-center"
+        class="h-8 w-8 mt-4 text-white hover:blur-xs z-[49] cursor-pointer duration-300"
         @click="storeCom.closeCommentSection()"
       >
-        X
-      </p>
-      <form class="w-full h-full text-black">
-        <textarea
-          ref="comment"
-          class="bg-white"
-          :value="commentInStore"
-          @input="(event) => storeCom.updateCom(comment.value, event)"
+        <BiPlusCircleFill
+          v-if="!storeCom.comments[storeCom.activeCom]?.length"
+          class="w-full h-full rotate-45"
         />
-      </form>
+        <BiCheckCircle v-else class="w-full h-full" />
+      </p>
     </div>
   </div>
 </template>
@@ -37,6 +43,8 @@ const comment = ref(null);
 
 <script>
 import { useCom } from "@/stores/comments";
+import BiCheckCircle from "../../../icons/BiCheckCircle.vue";
+import BiPlusCircleFill from "../../../icons/BiPlusCircleFill.vue";
 const storeCom = useCom();
 
 export default {
@@ -49,6 +57,7 @@ export default {
         .innerText;
     },
   },
+  components: { BiCheckCircle, BiPlusCircleFill },
 };
 </script>
 
@@ -59,9 +68,14 @@ textarea {
   padding: 12px 20px;
   box-sizing: border-box;
   border: 0;
-  border-radius: 0.5rem;
+  border-radius: 0rem;
   font-size: 16px;
   resize: none;
   --tw-bg-opacity: 1;
+}
+
+textarea:focus {
+  border: none;
+  outline: none;
 }
 </style>

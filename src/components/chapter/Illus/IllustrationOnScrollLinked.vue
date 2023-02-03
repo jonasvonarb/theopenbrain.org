@@ -12,7 +12,7 @@
           class="hover:underline duration-300"
           :class="
             activeState.state == index
-              ? 'italic font-bold'
+              ? 'italic font-semibold'
               : 'blur-xs opacity-30'
           "
           @click="setState(index, state)"
@@ -32,7 +32,7 @@ import { useGeneral } from "@/stores";
 import { gsap } from "gsap";
 
 import lottie from "lottie-web";
-import animationJSON from "@/assets/animations.json";
+import animationJSON from "@/assets/json_backend/animations.json";
 
 
 const store = useGeneral();

@@ -3,7 +3,7 @@ import { onMounted } from "vue";
 import lottie from "lottie-web";
 import { addH, removeH } from "@/helper/general";
 
-import animationJSON from "@/assets/animations.json";
+import animationJSON from "@/assets/json_backend/animations.json";
 
 const props = defineProps({
   animation: Object,

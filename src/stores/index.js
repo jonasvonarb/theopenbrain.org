@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import jsonText from "@/assets/text/text.json";
+import jsonText from "@/assets/json_backend/text.json";
 import { saveAs } from "file-saver";
 import { useAnimation } from "./animation";
 import { useCom } from "./comments";
@@ -12,9 +12,7 @@ export const useGeneral = defineStore("main", {
     activeAbout: false,
     superScriptActive: false,
     animationActive: false,
-    isTop: true,
     startIsActive: true,
-    autoScrolling: false,
     activeMenuIndex: null,
     activeSidebar: false,
     activeImportMenu: false,
@@ -32,9 +30,6 @@ export const useGeneral = defineStore("main", {
     doubleCount: (state) => state.count * 2,
   },
   actions: {
-    increment() {
-      this.count++;
-    },
     unSetMenu() {
       this.activeMenu = false;
     },
@@ -63,7 +58,6 @@ export const useText = defineStore("text", {
       : [],
     currentId: null,
   }),
-
   getters: {},
   actions: {
     saveLocalstorage() {
@@ -99,13 +93,15 @@ export const useText = defineStore("text", {
       this.router.go();
     },
     clearTextMarking() {
-      localStorage.setItem("sections", JSON.stringify(this.source));
+      console.log(this.source);
+      localStorage.removeItem("sections");
       localStorage.removeItem("comments");
       var localSource = localStorage.getItem("sections");
-      this.updateText("sections", JSON.parse(localSource).sections);
+      // this.updateText("sections", JSON.parse(localSource).sections);
       localStorage.removeItem("selection");
       this.selectionIds = [];
       this.changedText++;
+      this.router.go();
     },
     updateText(part, textNew) {
       if (part != "*") {
@@ -153,16 +149,16 @@ export const useText = defineStore("text", {
     addSelection(selection) {
       const _selectionString = selection.toString();
       const minLength = 10;
-      const id = selection.baseNode.parentNode.id;
+      const id = selection.anchorNode.parentNode.id;
 
       if (
         _selectionString.length <= minLength ||
-        selection.anchorNode != selection.extentNode ||
+        selection.anchorNode != selection.focusNode ||
         id.includes("highlight")
       )
         return;
 
-      const sectionId = selection.baseNode.parentNode.closest("SECTION").id;
+      const sectionId = selection.anchorNode.parentNode.closest("SECTION").id;
       let newString;
       let storedSelection = {
         id: id,
@@ -204,8 +200,9 @@ export const useText = defineStore("text", {
       localStorage.setItem("selection", JSON.stringify(this.selectionIds));
     },
     updateSectionsObj(sections, newString, id, sectionId) {
-      let entries = Object.entries(sections);
+      //update so it goes to subsubsections
 
+      let entries = Object.entries(sections);
       //check sections
       for (var i = 0; i < entries.length; i++) {
         let section = entries[i][1];

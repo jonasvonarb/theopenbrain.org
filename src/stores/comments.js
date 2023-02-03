@@ -23,7 +23,12 @@ export const useCom = defineStore("comments", {
       return this.comments;
     },
     updateCom(input, event) {
-      this.comments[this.activeCom] = input;
+      if (input.length !== 0) {
+        this.comments[this.activeCom] = input;
+      } else {
+        if (!this.comments[this.activeCom]) return;
+        delete this.comments[this.activeCom];
+      }
       localStorage.setItem("comments", JSON.stringify(this.comments));
     },
   },

@@ -3,6 +3,8 @@
     :id="subParagraph.animation ? 'trigger' + subParagraph.animation?.id : ''"
     :class="subParagraph.animation ? 'animationTrigger' : ''"
   >
+    <div v-if="subParagraph?.animation" class="marker-start" />
+
     <div
       v-for="(subSubSection, index) in subParagraph.subSubSection"
       :key="subSubSection.title"
@@ -12,6 +14,8 @@
       "
       :class="subSubSection.animation ? 'animationTrigger' : ''"
     >
+      <div v-if="subSubSection?.animation" class="marker-start" />
+
       <InlineImages :paragraph="subSubSection" v-if="subSubSection.img" />
       <div
         v-if="
@@ -37,6 +41,8 @@
           v-for="subSubParagraph in subSubSection.paragraphs"
           :key="subSubParagraph.id"
         >
+          <div v-if="subSubParagraph?.animation" class="marker-start" />
+
           <p
             v-if="
               subSubParagraph.type != 'breakVideo' &&
@@ -63,12 +69,14 @@
             v-if="subSubParagraph.animationFull"
             :paragraph="subSubParagraph"
           />
+          <div v-if="subSubParagraph?.animation" class="marker-end" />
         </div>
       </template>
+      <div v-if="subSubSection?.animation" class="marker-end" />
       <BreakImages
         v-if="subSubSection.type === 'breakVideo'"
-        :title="subSubParagraph.title"
-        :text="subSubParagraph.text"
+        :title="subSubSection.title"
+        :text="subSubSection.text"
       />
       <BreakSection
         v-if="subSubSection.type === 'breakSection'"
@@ -80,6 +88,7 @@
         :paragraph="subSubSection"
       />
     </div>
+    <div v-if="subParagraph?.animation" class="marker-end" />
   </div>
 </template>
 

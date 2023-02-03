@@ -1,66 +1,84 @@
 <script setup>
 import { useGeneral } from "@/stores";
 import lottie from "lottie-web";
-import { onMounted, ref, watch } from "vue";
-import { useMouse } from "@vueuse/core";
-import BiArrowDownCircleFill from "../../../icons/BiArrowDownCircleFill.vue";
+import { onMounted, ref } from "vue";
+import { watchDebounced, useMouse } from "@vueuse/core";
+
+import BiArrowDownCircle from "../../../icons/BiArrowDownCircle.vue";
 
 const { x } = useMouse();
 
 const store = useGeneral();
-const animation = ref(null);
+const animation = ref();
 
-watch(x, (x) => {
-  if (!animation.value) return;
-  const map = (value, x1, y1, x2, y2) =>
-    ((value - x1) * (y2 - x2)) / (y1 - x1) + x2;
-  animation.value.goToAndStop(
-    map(x, 0, window.innerWidth, 0, animation.value.totalFrames),
-    true
-  );
-});
+watchDebounced(
+  x,
+  (x) => {
+    if (!animation.value) return;
+    const map = (value, x1, y1, x2, y2) =>
+      ((value - x1) * (y2 - x2)) / (y1 - x1) + x2;
+
+    // let newFrame = map(x, 0, window.innerWidth, 0, 4).toFixed(6);
+    let newFrame = map(
+      x,
+      0,
+      window.innerWidth,
+      0,
+      animation.value.totalFrames
+    ).toFixed(6);
+    animation.value.goToAndStop(newFrame, true);
+    // vid.value.currentTime = newFrame;
+  },
+  { debounce: 0 }
+);
 
 const scrollToPos = () => {
   document.getElementById("container").scrollIntoView({ behavior: "smooth" });
 };
-onMounted(() => {
-  let svgContainer = document.getElementById("animationStart");
-  setTimeout(() => {
-    animation.value = lottie.loadAnimation({
-      id: "intro",
-      speed: 3,
-      wrapper: svgContainer,
-      animType: "svg",
-      loop: true,
-      autoplay: false,
-      rendererSettings: {
-        progressiveLoad: false,
-        preserveAspectRatio: "xMidYMax slice",
-      },
-      path: "/assets/animations/animationStart.json",
-    });
-  }, 700);
-});
+// onMounted(() => {
+//   let svgContainer = document.getElementById("animationStart");
+//   setTimeout(() => {
+//     animation.value = lottie.loadAnimation({
+//       id: "intro",
+//       speed: 1,
+//       wrapper: svgContainer,
+//       animType: "svg",
+//       loop: true,
+//       autoplay: false,
+//       rendererSettings: {
+//         progressiveLoad: false,
+//         preserveAspectRatio: "xMidYMid slice",
+//       },
+//       path: "/assets/animations/Art_bg_1.json",
+//     });
+//   }, 700);
+// });
 </script>
 <template>
   <div
     id="titleAnimation"
     :class="store.activeMenu ? 'w-[65vw]' : 'w-screen'"
-    class="bgImage bg-dark absolute right-0 h-screen z-[50] duration-500 flex justify-start items-start"
+    class="bg-img bg-light absolute right-0 h-screen z-[50] duration-300 flex justify-start items-start"
   >
-    <div
+    <!-- <div
       id="animationStart"
       class="w-screen h-start flex flex-wrap justify-center items-center overflow-hidden"
-    />
+    /> -->
+    <div
+      class="absolute top-0 left-0 w-screen h-screen text-dark text-center flex justify-center items-center pb-32"
+    >
+      <div class="flex justify-center items-center flex-col w-2/3">
+        <div class="text-biggest font-text">The Open Brain</div>
+        <div>The Eye and the Retina</div>
+      </div>
+    </div>
     <div
       @click="scrollToPos()"
-      class="absolute bottom-12 left-0 w-full flex justify-center items-center text-center"
+      class="absolute bottom-8 left-0 w-full flex justify-center items-center text-center"
     >
-      <div
-        class="pointer-events-auto text-xl text-black rounded-full w-16 h-16"
-      >
-        <BiArrowDownCircleFill class="rounded-full" />
-      </div>
+      <BiArrowDownCircle
+        class="pointer-events-auto text-xl text-dark rounded-full w-10 h-10 cursor-pointer hover:text-white"
+      />
     </div>
   </div>
 </template>
@@ -72,8 +90,9 @@ onMounted(() => {
 .h-start {
   height: calc(100vh);
 }
-.bgImage {
-  background-image: url("/assets/images/placeholderEye.png");
+
+.bg-img {
+  background-image: url("/assets/images/background.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

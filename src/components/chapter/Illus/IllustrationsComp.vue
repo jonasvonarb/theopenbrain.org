@@ -6,10 +6,11 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 import { useGeneral } from "@/stores";
 
-import animationJSON from "@/assets/animations.json";
+import animationJSON from "@/assets/json_backend/animations.json";
 
 import Illustration from "@/components/chapter/Illus/IllustrationComp.vue";
 import IllustrationOnScroll from "@/components/chapter/Illus/IllustrationOnScroll.vue";
+import IllustrationTransition from "@/components/chapter/Illus/IllustrationTransition.vue";
 gsap.registerPlugin(ScrollTrigger);
 
 const activeAnimation = ref(null);
@@ -52,75 +53,96 @@ onMounted(() => {
     ScrollTrigger.create({
       id: "scrollTriggerAnimation",
       trigger: trigger,
-      start: "top " + window.innerHeight * 0.4,
-      end: "bottom " + window.innerHeight / 3,
-      srub: 0,
+      start: "top " + window.innerHeight / 2,
+      end: "bottom " + window.innerHeight / 2,
+      scrub: 1,
       markers: false,
-      onToggle: (self) => {
-        if (self.isActive) {
-          trigger.classList.add("active");
-          activeAnimation.value =
-            "animation" + self.trigger.id.replace("anchor", "").toLowerCase();
-          store.animationActive = true;
-        } else {
-          trigger.classList.remove("active");
-          activeAnimation.value = null;
-          store.animationActive = false;
-        }
-      },
+      onToggle: (self) => {},
       onUpdate: (self) => {
         progress.value = self.progress;
       },
     });
   }
+
+  let triggerFull = document.getElementById("container");
+  let bgGradient = document.getElementById("bgGradient");
+  ScrollTrigger.create({
+    id: "scrollTriggerFull",
+    trigger: triggerFull,
+    start: "top " + window.innerHeight / 2,
+    end: "bottom " + window.innerHeight / 2,
+    scrub: 2,
+    markers: false,
+    onToggle: () => {},
+    onUpdate: (self) => {
+      // if (!activeAnimation.value) {
+      // let r = Math.floor(151 + Math.sin(self.progress * 50) * 40);
+      // let g = Math.floor(71 + Math.sin(self.progress * 50) * 40);
+      // let b = Math.floor(230 + Math.sin(self.progress * 50) * 40);
+      let r = Math.floor(255 - self.progress * 70);
+      let g = Math.floor(255 - self.progress * 70);
+      let b = Math.floor(255 - self.progress * 70);
+      if (!bgGradient) return;
+      bgGradient.style.backgroundColor =
+        "rgba(" + r + "," + g + "," + b + ", 0.7)";
+      // } else {
+      //   bgGradient.style.backgroundColor = "#F4F4F4";
+      // }
+    },
+  });
 });
 
 onBeforeUnmount(() => {
   ScrollTrigger.getById("scrollTriggerAnimation").kill();
+  ScrollTrigger.getById("scrollTriggerFull").kill();
 });
 </script>
 
 <template>
   <div
+    v-if="!store.isScrolling"
     class="fixed top-0 left-0 h-screen w-1/2 z-30 pointer-events-none font-mono"
   >
-    <transition name="fade">
-      <video
-        autoplay
-        muted
-        loop
-        class="absolute top-0 left-0 h-screen w-full object-cover"
-        id="myVideo"
-        v-if="!activeAnimation"
-      >
-        <source
-          src="/assets/video/bgCell.mp4"
-          type="video/mp4"
-          playbackspeed="0.1"
-        />
-        Your browser does not support HTML5 video.
-      </video>
-    </transition>
     <template v-for="animation in animationJSON.animations" :key="animation">
-      <template v-if="!animation.fullscreen && !animation.scroll">
-        <transition name="fade">
+      <template
+        v-if="
+          !animation.fullscreen && !animation.scroll && !animation.isTransition
+        "
+      >
+        <transition name="fade" mode="out-in">
           <Illustration
             v-if="activeAnimation === animation.id.toLowerCase()"
             :animation="animation"
             :active-animation="activeAnimation"
-            class="bg-white"
+            class=""
           />
         </transition>
       </template>
-
-      <template v-if="!animation.fullscreen && animation.scroll">
-        <transition name="fade">
+      <template
+        v-if="
+          !animation.fullscreen && animation.scroll && !animation.isTransition
+        "
+      >
+        <transition name="fade" mode="out-in">
           <IllustrationOnScroll
             v-if="activeAnimation === animation.id.toLowerCase()"
             :animation="animation"
             :progress="progress"
             :active-animation="activeAnimation"
-            class="bg-white"
+          />
+        </transition>
+      </template>
+      <template
+        v-if="
+          !animation.fullscreen && !animation.scroll && animation.isTransition
+        "
+      >
+        <transition name="fade" mode="out-in">
+          <IllustrationTransition
+            v-if="activeAnimation === animation.id.toLowerCase()"
+            :animation="animation"
+            :progress="progress"
+            :active-animation="activeAnimation"
           />
         </transition>
       </template>

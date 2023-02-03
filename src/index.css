@@ -4,12 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --violet: rgb(151, 71, 255);
+}
+
 html,
 body {
   font-size: 62.5%;
   hyphens: auto;
   background: #f3f4f6;
-  /* background: #9747ff; */
+  /* background: var(--violet); */
 }
 
 /* *{background: #000;} */
@@ -80,8 +84,7 @@ h4 {
 h1 {
   font-size: 5rem;
   line-height: 5rem;
-  text-transform: uppercase;
-  padding-bottom: 2rem;
+  padding-bottom: 5rem;
 }
 
 h2 {
@@ -147,28 +150,47 @@ h4 {
 
 .animationMarkerClick.active {
   border: solid black;
-  background: #9747ff;
+  background: var(--violet);
   color: white;
   padding: 0.2rem 0.4rem;
-  stroke: #9747ff;
+  stroke: var(--violet);
+}
+.highlighterIlluFill > g > path,
+.highlighterIlluStroke > g > path,
+.highlighterIlluFill > path,
+.highlighterIlluStroke > path {
+  transition: fill 0.5s, fill-opacity 0.5s, stroke 0.5s, stroke-opacity 0.5s;
 }
 
+.highlighterIlluFill.highlightIllu > *,
+.highlightIllu > .highlighterIlluFill > *,
+.highlightIllu > .highlighterIlluFill,
 .highlighterIlluFill.highlightIllu > * > * {
-  fill: #9747ff;
-  stroke: #9747ff;
+  fill: var(--violet);
   fill-opacity: 1;
 }
-.highlighterIlluBorder.highlightIllu > * > * {
-  stroke: #9747ff;
-  stroke-width: 5;
+.highlighterIlluStroke.highlightIllu > *,
+.highlightIllu > .highlighterIlluStroke > *,
+.highlightIllu > .highlighterIlluStroke,
+.highlighterIlluStroke.highlightIllu > * > * {
+  stroke: var(--violet);
+  stroke-width: 3;
   stroke-opacity: 1;
+}
+
+.highlighterDisplay > * {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.highlighterDisplay.highlightIllu > * {
+  opacity: 100;
 }
 
 .active > .highlightText,
 .active > * > .highlightText,
 .active > * > * > .highlightText,
 .active > * > * > * > .highlightText {
-  background: #9747ff;
+  background: var(--violet);
   color: white;
 }
 
@@ -200,28 +222,39 @@ h4 {
 }
 
 .punktComment {
+  background-color: white;
   top: 0px;
-  background-color: #9747ff;
-  border: 1px solid white;
+  border: 1px solid black;
   display: none;
+  cursor: pointer;
+}
+.punktComment.hoverActive {
+  filter: blur(1px);
+  /* background: var(--violet); */
+  /* color: white; */
 }
 
 mark {
-  /* background-color: rgb(230, 230, 230); */
-  text-decoration: line-through 1.3rem #9747ff33;
-  /* text-decoration-thickness: 10px; */
-  /* padding: 0.2rem; */
+  /* text-decoration: line-through 2rem var(--violet) 0.3); */
+  background: var(--violet);
+  color: black;
   padding-left: 0;
   padding-right: 0;
-  background-color: transparent;
-  /* border-radius: 5px; */
 }
 
-.hoverActive {
-  color: #9747ff;
-  text-decoration: underline;
-  text-underline-offset: 0.4rem;
-  cursor: pointer;
+mark.hoverActive {
+  /* text-decoration: none;
+  background: var(--violet) 1);
+  color: white; */
+
+  /* filter: blur(1px); */
+  /*text-decoration: underline;
+  text-underline-offset: 0.5rem;
+  cursor: pointer; */
+}
+mark.comment {
+  text-decoration: unset;
+  background: transparent;
 }
 
 /* we will explain what these classes do next! */
@@ -242,14 +275,13 @@ mark {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 0.5s ease;
-  width: 50vw;
+  transition: opacity 0.1s ease;
 }
 
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
-  filter: blur(10px);
+  filter: blur(2px);
 }
 /* 
 .menuTo-enter-active,
@@ -289,7 +321,8 @@ mark {
 }
 
 .hoverImg {
-  color: #9747ff;
+  text-decoration: underline;
+  text-decoration-color: var(--violet);
   cursor: pointer;
 }
 
@@ -305,11 +338,37 @@ sup {
   font-family: "IBM Plex Mono";
 }
 sup:hover {
-  background: #9747ff;
+  background: var(--violet);
   color: white;
 }
 
 .resize-animation-stopper * {
   animation: none !important;
   transition: none !important;
+}
+
+.marker-start,
+.marker-end {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.5rem;
+
+  background: #000;
+  border-radius: 999999%;
+  position: absolute;
+  left: calc(100% - 0.5rem);
+}
+.marker-end {
+  margin-top: -0.5rem;
+  background-color: white;
+  border: solid black;
+}
+
+.marker-center {
+  width: 1rem;
+  height: 1.2px;
+  background: #000;
+  position: fixed;
+  left: calc(50vw - 1rem);
+  top: 50vh;
 }

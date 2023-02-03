@@ -9,19 +9,26 @@
   >
     <div
       v-if="getComments?.includes(id)"
-      class="rounded-full bg-dark z-40 w-4 h-4 absolute -right-1 -top-1"
+      class="rounded-full bg-violet z-40 w-3 h-3 absolute -right-0.5 -top-0.5"
     />
-    C
+    N
   </div>
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 import { useAnimation, useCom } from "@/stores";
 const animationStore = useAnimation();
 const commentStore = useCom();
 
 const getComments = ref(localStorage.getItem("comments"));
+watch(
+  () => commentStore.comments,
+  () => {
+    getComments.value = localStorage.getItem("comments");
+  },
+  { deep: true }
+);
 
 let point = ref(0);
 let pos = ref(0);
@@ -33,6 +40,8 @@ let hId = "highlight-" + props.id;
 onMounted(() => {
   setPosition(hId);
 });
+
+watch;
 
 const setPosition = (id) => {
   let wait = setInterval(() => {
@@ -48,4 +57,4 @@ const setPosition = (id) => {
   }, 1);
 };
 </script>
-<style lang="scss" scoped></style>
+<style scoped></style>
