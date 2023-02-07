@@ -1,6 +1,9 @@
 <template>
   <div class="w-full h-full flex justify-center items-start">
-    <div class="flip-card" :class="isFlip && 'flip'">
+    <div
+      class="flip-card max-h-[835px] max-w-[835px]"
+      :class="isFlip && 'flip'"
+    >
       <div class="flip-card-inner">
         <video
           autoplay
@@ -11,7 +14,7 @@
           class="rounded-full flip-card-front"
         >
           <source
-            :src="'/assets/video/9-1-diseases/9-1-' + video + '.mp4'"
+            :src="'/publicAssets/video/9-1-diseases/9-1-' + video + '.mp4'"
             type="video/mp4"
           />
           Your browser does not support the video tag.
@@ -21,13 +24,13 @@
             :width="widthVideo"
             :height="heightVideo"
             class="h-[100%] w-[100%]"
-            :src="'/assets/images/9-1-' + video + '.jpg'"
+            :src="'/publicAssets/images/9-1-' + video + '.jpg'"
           />
         </div>
       </div>
     </div>
     <FlipIcon
-      class="cursor-pointer hover:stroke-violet duration-200 -translate-x-20 translate-y-4"
+      class="cursor-pointer duration-200 -translate-x-24 translate-y-20"
       @click="flip"
     />
   </div>
@@ -47,8 +50,10 @@ const flip = () => {
 const props = defineProps({
   video: String,
 });
-const widthVideo = ref(window.innerWidth / 3);
-const heightVideo = ref(window.innerWidth / 3);
+const widthVideo = ref(
+  window.innerWidth / 3 <= 835 ? window.innerWidth / 3 : 835
+);
+const heightVideo = widthVideo;
 </script>
 
 <style scoped>

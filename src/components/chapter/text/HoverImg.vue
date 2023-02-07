@@ -5,7 +5,7 @@
     class="fixed w-[400px] z-[70] bg-black p-4 text-white flex flex-col gap-4"
   >
     <div class="w-full">
-      <img class="w-full" :src="'/assets/hoverImges/' + activeHover + '.jpg'" />
+      <img class="w-full" :src="'/publicAssets/hoverImges/' + activeHover + '.jpg'" />
     </div>
     <p class="w-full max-w-[400px] -mt-[3px] text-small">
       {{ infos.images.find((x) => x.title === activeHover).text }}

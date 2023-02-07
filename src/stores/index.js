@@ -10,6 +10,13 @@ export const useGeneral = defineStore("main", {
   state: () => ({
     activeMenu: false,
     activeAbout: false,
+    hasBeenVisited:
+      localStorage.hasBeenVisited &&
+      Math.abs(localStorage?.hasBeenVisited - Date.now()) /
+        (24 * 60 * 60 * 1000) <
+        1
+        ? true
+        : false,
     superScriptActive: false,
     animationActive: false,
     startIsActive: true,
@@ -93,11 +100,8 @@ export const useText = defineStore("text", {
       this.router.go();
     },
     clearTextMarking() {
-      console.log(this.source);
       localStorage.removeItem("sections");
       localStorage.removeItem("comments");
-      var localSource = localStorage.getItem("sections");
-      // this.updateText("sections", JSON.parse(localSource).sections);
       localStorage.removeItem("selection");
       this.selectionIds = [];
       this.changedText++;

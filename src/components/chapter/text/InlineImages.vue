@@ -14,13 +14,13 @@
             ? 'opacity-40 h-full object-cover grayscale'
             : 'imageH object-contain'
         "
-        :src="'/assets/images/' + paragraph.img + '.png'"
+        :src="'/publicAssets/images/' + paragraph.img + '.png'"
       />
       <div
         v-if="inlineImageActive"
         class="imgDesription break-before-all border-t border-black relative block px-4 py-2 pb-6 font-mono text-small w-full overflow-scroll"
       >
-        <span v-if="paragraph?.imgCap" class="max-w-[750px] block">
+        <span v-if="paragraph?.imgCap" class="max-w-[850px] block">
           {{ paragraph?.imgCap }}
         </span>
       </div>

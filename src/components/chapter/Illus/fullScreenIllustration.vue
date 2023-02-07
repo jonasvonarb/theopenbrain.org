@@ -7,8 +7,6 @@ import FullScreenIllustrationMultiple from "@/components/chapter/Illus/FullScree
 import animations from "@/assets/json_backend/animations.json";
 import FullScreenIllustrationLoop from "./FullScreenIllustrationLoop.vue";
 import FullScreenIllustrationSplit from "./FullScreenIllustrationSplit.vue";
-import BiCheckCircle from "../../../icons/BiCheckCircle.vue";
-import BiDashCircle from "../../../icons/BiDashCircle.vue";
 
 const props = defineProps({
   paragraph: Object,
@@ -39,7 +37,7 @@ onMounted(() => {
     animType: "svg",
     loop: false,
     autoplay: false,
-    path: "/assets/animations/" + id + ".json",
+    path: "/publicAssets/animations/" + id + ".json",
   });
   animation.value.setSubframe(true);
   animation.value.setSpeed(1);
@@ -82,11 +80,7 @@ const setState = (index, activeState) => {
     <div class="sticky w-full h-screen px-24 py-10 top-0">
       <div
         class="absolute z-50 flex flex-col justify-between"
-        v-if="
-          !thisAnimation?.loop &&
-          thisAnimation?.states &&
-          !thisAnimation?.multiple
-        "
+        v-if="!thisAnimation?.loop && thisAnimation?.states"
       >
         <h4 class="">{{ thisAnimation.title }}</h4>
         <div class="pt-20">
@@ -96,15 +90,15 @@ const setState = (index, activeState) => {
             class="grid grid-cols-2 mb-4 py-0 gap-0"
           >
             <button
-              class="flex justify-center items-center flex-col border p-6 border-black duration-100 text-center flex-1"
+              class="flex justify-center items-center flex-col border p-6 border-black duration-100 text-center flex-1 max-w-[300px]"
               :class="[
                 index !== 0 ? ' col-span-1	' : ' col-span-2	',
                 (activeState.toggle === false && activeState.state === index) ||
                 (activeState.state === index && index === 0)
                   ? 'bg-violet text-white pointer-events-none'
                   : activeState.state === index
-                  ? 'border-violet text-black hover:text-violet '
-                  : ' text-dark hover:text-violet',
+                  ? 'border-violet text-black hover:text-violet  '
+                  : ' text-dark hover:text-violet hover:border-violet',
               ]"
               @click="
                 activeState.state !== index
@@ -126,7 +120,7 @@ const setState = (index, activeState) => {
                   ? 'bg-violet text-white pointer-events-none'
                   : activeState.state === index
                   ? 'border-violet text-black  hover:text-violet '
-                  : 'bg-lighter text-dark hover:text-violet',
+                  : 'bg-lighter text-dark hover:text-violet hover:border-violet',
                 ,
               ]"
               @click="
@@ -166,7 +160,7 @@ const setState = (index, activeState) => {
       </div>
       <div
         v-else-if="thisAnimation?.multiple && thisAnimation?.states"
-        class="w-full h-screen flex flex-col justify-center items-center p-56"
+        class="absolute right-0 w-2/3 h-screen flex flex-col justify-end items-center p-56"
       >
         <template
           v-for="state in Object.keys(thisAnimation.states)"

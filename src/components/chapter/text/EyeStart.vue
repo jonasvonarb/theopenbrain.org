@@ -49,7 +49,7 @@ const scrollToPos = () => {
 //         progressiveLoad: false,
 //         preserveAspectRatio: "xMidYMid slice",
 //       },
-//       path: "/assets/animations/Art_bg_1.json",
+//       path: "/publicAssets/animations/Art_bg_1.json",
 //     });
 //   }, 700);
 // });
@@ -90,7 +90,7 @@ const scrollToPos = () => {
 }
 
 .bg-img {
-  background-image: url("/assets/images/background.png");
+  background-image: url("/publicAssets/images/background.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

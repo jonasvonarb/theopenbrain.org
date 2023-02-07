@@ -26,6 +26,6 @@
 
 <style scoped>
 .bg-img {
-  background-image: url("/assets/images/background.png");
+  background-image: url("/publicAssets/images/background.png");
 }
 </style>

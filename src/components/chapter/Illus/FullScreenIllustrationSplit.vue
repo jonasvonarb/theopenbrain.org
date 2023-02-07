@@ -47,7 +47,7 @@ onMounted(() => {
     rendererSettings: {
       progressiveLoad: true,
     },
-    path: "/assets/animations/" + props.animation.id + "Left" + ".json",
+    path: "/publicAssets/animations/" + props.animation.id + "Left" + ".json",
   });
   animationLottieLeft.setSubframe(true);
 
@@ -66,7 +66,7 @@ onMounted(() => {
       progressiveLoad: true,
       preserveAspectRatio: "xMidYMid slice",
     },
-    path: "/assets/animations/" + props.animation.id + "Right" + ".json",
+    path: "/publicAssets/animations/" + props.animation.id + "Right" + ".json",
   });
   animationLottieRight.setSubframe(true);
 

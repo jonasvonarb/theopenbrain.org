@@ -7,6 +7,8 @@ import MenuAbout from "./components/Navigation/MenuAbout.vue";
 import { onBeforeUnmount, ref, watch } from "vue";
 import { watchDebounced, useMediaQuery } from "@vueuse/core";
 import { useGeneral } from "@/stores";
+import OverlayInfo from "./components/UI/OverlayInfo.vue";
+import { storeToRefs } from "pinia";
 
 const isLargeScreen = useMediaQuery("(min-width: 1300px)");
 const isPreferredDark = useMediaQuery("(prefers-color-scheme: dark)");
@@ -51,12 +53,13 @@ onBeforeUnmount(() => {
 
 <template>
   <div v-if="isLargeScreen" class="text-base cursor-default font-sans">
+    <OverlayInfo v-if="!store.hasBeenVisited" />
     <RouterView
       v-slot="{ Component }"
       class="z-0 duration-300"
       :class="
-        store.activeAboutl || store.activeMenu
-          ? ' blur-md grayscale-0 pointer-events-none'
+        store.activeAbout || store.activeMenu || !store.hasBeenVisited
+          ? 'blur-md grayscale-0 pointer-events-none'
           : ''
       "
     >

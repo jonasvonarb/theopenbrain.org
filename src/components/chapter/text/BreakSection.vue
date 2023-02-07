@@ -40,12 +40,12 @@ const openInfo = () => {
           <div class="flex gap-6 z-50 pt-20">
             <PlusIcon
               :class="!infoIsOpen ? '' : 'rotate-45'"
-              class="icon iconInvert duration-300"
+              class="icon iconBig duration-300"
               @click="openInfo()"
             />
             <div
               :id="'info-' + toSlug(content.title)"
-              class="flex flex-col justify-start w-[40vw] max-w-[780px] h-auto max-h-[80vh] overflow-scroll gap-16 pb-2 overscroll-auto"
+              class="flex flex-col justify-start w-full max-w-[850px] h-auto max-h-[80vh] overflow-scroll gap-16 pb-2 overscroll-auto"
             >
               <p class=" " v-html="content.text"></p>
               <div v-if="content.steps" class="">
@@ -79,7 +79,7 @@ const openInfo = () => {
             >
               <img
                 class="w-full h-full object-contain"
-                src="/assets/images/eyeDots.png"
+                src="/publicAssets/images/eyeDots.png"
               />
             </div>
           </div>

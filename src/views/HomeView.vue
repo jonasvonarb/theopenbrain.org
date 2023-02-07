@@ -15,7 +15,7 @@
         <div
           class="text-white hover:text-violet text-center text-xl mt-12 fixed bottom-12 cursor-pointer"
         >
-          <BiArrowRightCircleFill @click="enter()" />
+          <!-- <BiArrowRightCircleFill @click="enter()" /> -->
         </div>
       </div>
       <div
@@ -36,7 +36,6 @@
 
 <script setup>
 import { useGeneral } from "@/stores/index";
-import BiArrowRightCircleFill from "@/icons/BiArrowRightCircleFill.vue";
 
 
 const store = useGeneral();
@@ -51,7 +50,7 @@ const enter = () => {
 .video-background {
   overflow: hidden;
   height: 100vh;
-  background-image: url("/assets/images/1287468234rqwifhucsaud.png");
+  background-image: url("/publicAssets/images/1287468234rqwifhucsaud.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

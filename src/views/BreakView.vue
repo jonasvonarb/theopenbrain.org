@@ -6,7 +6,7 @@
       <div class="w-video h-full w-full m-0 object-fill">
         <video class="lazy object-fill" autoplay muted controls loop>
           <source
-            :src="'/assets/video/' + route.params.video + '.mp4'"
+            :src="'/publicAssets/video/' + route.params.video + '.mp4'"
             type="video/mp4"
           />
           Your browser does not support the video tag.
@@ -16,18 +16,15 @@
           <p>{{ info.text }}</p>
         </div>
       </div>
-      <button
-        @click="router.go(-1)"
-        class="rotate-45 w-6 h-6 hover:blur-xs hover:opacity-70 cursor-pointer"
-      >
-        <BiPlusCircleFill />
+      <button @click="router.go(-1)">
+        <PlusIcon class="icon rotate-45" />
       </button>
     </div>
   </div>
 </template>
 
 <script setup>
-import BiPlusCircleFill from "../icons/BiPlusCircleFill.vue";
+import PlusIcon from "../icons/custom/PlusIcon.vue";
 import { useRoute, useRouter } from "vue-router";
 import infos from "@/assets/json_backend/breakVideos.json";
 const route = useRoute();

@@ -41,7 +41,7 @@ onMounted(() => {
     animType: "svg",
     loop: false,
     autoplay: false,
-    path: "/assets/animations/" + props.animation.id + ".json",
+    path: "/publicAssets/animations/" + props.animation.id + ".json",
   });
   animationLottie.setSubframe(true);
 });

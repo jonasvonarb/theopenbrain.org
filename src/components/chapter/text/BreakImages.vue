@@ -18,7 +18,7 @@ defineProps({
         <div class="h-64 bg-violet absolute w-full opacity-70"></div>
         <img
           class="bg-black h-64 mix-blend-screen grayscale"
-          src="/assets/hoverImges/alcmeon.jpg"
+          src="/publicAssets/images/placeholders/monaLisa.webp"
         />
       </div>
       <PlayIcon class="absolute -left-8 -top-8 icon iconBig" />

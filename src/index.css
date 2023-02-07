@@ -209,14 +209,14 @@ h4 {
 .punkt,
 .punktComment {
   position: absolute;
-  left: -1.1rem;
-  width: 2.2rem;
-  height: 2.2rem;
+  left: -1.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   background-color: black;
   pointer-events: all;
-  font-size: 1.3rem;
-  line-height: 1.9rem;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
   padding: 0px;
   text-align: center;
   transition: none;
@@ -229,16 +229,10 @@ h4 {
   display: none;
   cursor: pointer;
 }
-.punktComment.hoverActive {
-  filter: blur(1px);
-  /* background: var(--violet); */
-  /* color: white; */
-}
 
 mark {
-  /* text-decoration: line-through 2rem var(--violet) 0.3); */
   background: var(--violet);
-  color: black;
+  color: whitesmoke;
   padding-left: 0;
   padding-right: 0;
 }
@@ -276,12 +270,12 @@ mark.comment {
 
 .fade-enter-active,
 .fade-leave-active {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 50vw;
-  transition: opacity 0.4s ease;
+  position: absolute;
+  transition: opacity 0.3s, fill 0s, fill-opacity 0s, stroke 0s,
+    stroke-opacity 0s;
+  fill: white;
 }
+
 .fade-enter-active {
   transition-delay: 0.2s;
 }
@@ -289,7 +283,6 @@ mark.comment {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
-  filter: blur(2px);
 }
 
 .outLeft-leave-active,
@@ -380,6 +373,7 @@ sup:hover {
   border-color: var(--violet);
   background-color: var(--violet);
   fill: white;
+  color: white;
   stroke: transparent;
 }
 

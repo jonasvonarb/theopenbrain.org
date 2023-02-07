@@ -13,8 +13,10 @@ const props = defineProps({
 
 <template>
   <button class="buttonEye" @click="store.toggle('active' + target)">
-    <OpenEye class="eye" v-if="text === 'open'" />
-    <ClosedEye class="eye small" v-else />
+    <div class="eye">
+      <OpenEye v-if="text === 'open'" />
+      <ClosedEye v-else class="small" />
+    </div>
   </button>
 </template>
 
@@ -23,7 +25,7 @@ const props = defineProps({
   --violet: rgb(151, 71, 255);
 }
 .eye {
-  fill: #888;
+  fill: white;
   width: 2.5rem;
   height: 2.5rem;
 }
@@ -31,7 +33,8 @@ const props = defineProps({
   width: 2.2rem;
   height: 2.2rem;
 }
-.buttonEye:hover .eye {
+
+.buttonEye:hover * {
   fill: var(--violet);
 }
 </style>

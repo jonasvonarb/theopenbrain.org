@@ -46,7 +46,7 @@ const openAbout = () => {
       class="fixed h-screen bg-violet text-white overflow-y-scroll overflow-x-hidden scrollbar top-0 left-0 text-medium duration-300 border-r border-black snap-x"
       :class="[store.activeAbout ? 'w-[50vw] ml-0' : 'w-[0]']"
     >
-      <div class="px-24 pt-12 pb-56 w-[50vw] max-w-[780px]">
+      <div class="px-24 pt-12 pb-56 w-[50vw] max-w-[800px]">
         <div class="font-sans">
           <h2>About</h2>
           <section class="pb-56">
@@ -65,13 +65,13 @@ const openAbout = () => {
             <p>
               theopenbrain.org is licensed under a reative
               <a
-                class="hover:underline"
+                class="hover:no-underline hover:italic"
                 href="http://creativecommons.org/licenses/by/4.0/"
                 target="_blank"
               >
-                Commons Attribution 4.0 International License C
+                Commons Attribution 4.0 International License C,
               </a>
-              , which permits use, sharing, adaptation, distribution and
+              which permits use, sharing, adaptation, distribution and
               reproduction in any medium or format, as long as you give
               appropriate credit to the original author(s) and the source,
               provide a link to the Creative Commons license, and indicate if
@@ -83,21 +83,22 @@ const openAbout = () => {
             <p>
               theopenbrain.org is funded by the
               <a
-                class="hover:underline"
+                class="hover:no-underline hover:italic"
                 href="https://www.mcgill.ca/neuro/open-science/tanenbaum-open-science-institute-tosi"
                 target="_blank"
-                >Tanenbaum Open Science Institute
+              >
+                Tanenbaum Open Science Institute
               </a>
               which is based at the
               <a
-                class="hover:underline"
+                class="hover:no-underline hover:italic"
                 href="https://www.mcgill.ca/neuro/"
                 target="_blank"
                 >Montreal Neurological Institute
               </a>
               which is part of
               <a
-                class="hover:underline"
+                class="hover:no-underline hover:italic"
                 href="http://www.mcgill.ca/"
                 target="_blank"
                 >McGill University </a
@@ -118,28 +119,30 @@ const openAbout = () => {
               <p>
                 Editor:
                 <a
-                  class="hover:underline"
+                  class="hover:no-underline hover:italic"
                   href="http://www.trenholmlab.com/"
                   target="_blank"
                 >
                   Stuart Trenholm
                 </a>
               </p>
+              <p>Chapter authers: Arjun Krishnaswamy, Stuart Trenholm</p>
+              <p>Copy editor: Lea LeFort</p>
+              <br />
               <p>
                 Designed and developed by
                 <a
-                  class="hover:underline"
+                  class="hover:no-underline hover:italic"
                   href="https://malpeso.info/"
                   target="_blank"
                 >
                   Malpeso.Studio
                 </a>
               </p>
-              <br />
               <p>
                 Creative Direction & Illustration:
                 <a
-                  class="hover:underline"
+                  class="hover:no-underline hover:italic"
                   href="https://malpeso.info/"
                   target="_blank"
                 >
@@ -149,7 +152,7 @@ const openAbout = () => {
               <p>
                 Code & Web design:
                 <a
-                  class="hover:underline"
+                  class="hover:no-underline hover:italic"
                   href="http://www.jonasvonarb.ch/"
                   target="_blank"
                 >
@@ -159,7 +162,7 @@ const openAbout = () => {
               <p>
                 Animation & 3D:
                 <a
-                  class="hover:underline"
+                  class="hover:no-underline hover:italic"
                   href="https://timorick.ch/"
                   target="_blank"
                 >

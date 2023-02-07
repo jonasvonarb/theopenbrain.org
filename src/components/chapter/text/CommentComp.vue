@@ -22,14 +22,17 @@
         </form>
       </div>
       <p
-        class="h-8 w-8 mt-4 text-white hover:blur-xs z-[49] cursor-pointer duration-300"
+        class="mt-4 z-[49] cursor-pointer duration-300"
         @click="storeCom.closeCommentSection()"
       >
-        <BiPlusCircleFill
+        <PlusIcon
           v-if="!storeCom.comments[storeCom.activeCom]?.length"
-          class="w-full h-full rotate-45"
+          class="icon rotate-45"
         />
-        <BiCheckCircle v-else class="w-full h-full" />
+        <BiCheckCircle
+          v-else
+          class="icon rounded-full text-black bg-white hover:text-white hover:bg-violet border-none"
+        />
       </p>
     </div>
   </div>
@@ -44,7 +47,7 @@ const comment = ref(null);
 <script>
 import { useCom } from "@/stores/comments";
 import BiCheckCircle from "../../../icons/BiCheckCircle.vue";
-import BiPlusCircleFill from "../../../icons/BiPlusCircleFill.vue";
+import PlusIcon from "../../../icons/custom/PlusIcon.vue";
 const storeCom = useCom();
 
 export default {
@@ -57,7 +60,7 @@ export default {
         .innerText;
     },
   },
-  components: { BiCheckCircle, BiPlusCircleFill },
+  components: { BiCheckCircle, PlusIcon },
 };
 </script>
 

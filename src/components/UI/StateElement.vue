@@ -9,15 +9,25 @@
       "
       @click="$emit('onClick', { index, activeState })"
     >
+      <template v-if="iconsIndex?.[index]">
+        <img
+          class="inline h-12 pr-2 -ml-1"
+          :src="`/publicAssets/icons/${praefix}/${toSlug(state)}.svg`"
+        />
+      </template>
       {{ state }}
     </p>
   </div>
 </template>
 
 <script setup>
+import { toSlug } from "@/helper/general";
+
 const props = defineProps({
   states: Object,
   activeState: Number,
+  praefix: String,
+  iconsIndex: Object,
 });
 
 defineEmits(["onClick"]);

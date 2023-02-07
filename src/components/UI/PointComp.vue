@@ -2,7 +2,7 @@
   <div
     :id="'point-' + id"
     ref="point"
-    class="punktComment z-50 text-black"
+    class="punktComment z-50 text-black icon"
     @mouseenter="animationStore.enterHoverPoint(id)"
     @mouseleave="animationStore.leaveHoverPoint(id)"
     @click="commentStore.openCommentSection(id)"

@@ -130,6 +130,7 @@
       "clickTriggered": true,
       "blockStates": true,
       "hasTransition": true,
+      "iconPraefix": "retinalCircuits",
       "states": ["Inhibition", "Excitatation", "Gap Junction"]
     },
     {
@@ -166,6 +167,8 @@
       "fullscreen": false,
       "clickTriggered": true,
       "highlight": true,
+      "iconPraefix": "retinalCellTypes",
+      "icons": ["true", "true", "true", "true", "true"],
       "states": [
         "Photoreceptors",
         "Horizontal Cells",
@@ -304,8 +307,13 @@
       "fullscreen": true,
       "multiple": true,
       "states": {
-        "age": "Give the ages of the people",
-        "free": "Just look at the picture"
+        "free": "Free Examination",
+        "materialcircumstances": "Estimate the material circumstances of the family.",
+        "doing": "Surmise what the family had been doing before the arrival of the unexpected visitor.",
+        "age": "Give the ages of the people.",
+        "cloths": "Remember the clothes worn by the people.",
+        "howlong": "Estimate how long the visitor had been away from the family.",
+        "position": "Remember positions of people and objects in the room."
       }
     },
     {

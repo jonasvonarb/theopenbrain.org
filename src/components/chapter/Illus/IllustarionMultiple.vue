@@ -26,10 +26,10 @@ onMounted(() => {
     speed: 3,
     wrapper: svgContainer,
     animType: "svg",
-    loop: false,
+    loop: true,
     autoplay: false,
     path:
-      "/assets/animations/" +
+      "/publicAssets/animations/" +
       props.animation.id +
       props.state.toUpperCase() +
       ".json",

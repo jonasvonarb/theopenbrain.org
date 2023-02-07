@@ -48,7 +48,7 @@
         <div :id="animation.id" />
         <img
           class="w-full h-full object-contain object-right-bottom"
-          :src="'assets/images/placeholders/' + animation.id + '.png'"
+          :src="'/publicAssets/images/placeholders/' + animation.id + '.png'"
         />
       </div>
     </div>
@@ -80,7 +80,7 @@ onMounted(() => {
     animType: "svg",
     loop: true,
     autoplay: true,
-    path: "/assets/animations/" + props.animation.id + ".json",
+    path: "/publicAssets/animations/" + props.animation.id + ".json",
   });
   animationLottie.setSubframe(true);
   animationLottie.setSpeed(0.5);

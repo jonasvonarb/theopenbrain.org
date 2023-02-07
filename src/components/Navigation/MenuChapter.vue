@@ -74,7 +74,7 @@ const closeMenu = () => {
                       : ''
                   "
                 >
-                  <div class="w-full max-w-[750px]">Intro</div>
+                  <div class="w-full max-w-[850px]">Intro</div>
                 </div>
               </div>
               <template v-for="part in chapter.parts" :key="part.title">
@@ -87,7 +87,7 @@ const closeMenu = () => {
                       : ''
                   "
                 >
-                  <li class="w-full max-w-[750px] pl-8 font-medium">
+                  <li class="w-full max-w-[850px] pl-8 font-medium">
                     {{ part.title }}
                   </li>
                 </div>
@@ -98,7 +98,7 @@ const closeMenu = () => {
                     v-for="subPart in part.parts"
                     :key="subPart"
                   >
-                    <li class="sub max-w-[750px]">{{ subPart }}</li>
+                    <li class="sub max-w-[850px]">{{ subPart }}</li>
                   </div>
                 </ol>
               </template>
@@ -111,7 +111,7 @@ const closeMenu = () => {
                     : ''
                 "
               >
-                <li class="w-full max-w-[750px] pl-8 font-medium">Footnotes</li>
+                <li class="w-full max-w-[850px] pl-8 font-medium">Footnotes</li>
               </div>
             </ol>
           </li>
@@ -120,15 +120,16 @@ const closeMenu = () => {
           v-if="store.activeMenu"
           :text="'close'"
           :target="'Menu'"
-          class="fixed bg-darker pb-4 text-white pointer-events-auto z-[60] hover:opacity-90 h-full w-14 flex justify-center items-center left-0 top-0 duration-300 overflow-hidden"
+          class="fixed bg-darker pt-4 pb-4 pointer-events-auto z-[60] hover:opacity-90 h-full w-14 flex justify-center items-start left-0 top-0 duration-300 overflow-hidden"
         />
       </ul>
     </Transition>
     <!-- menu open/close chapter -->
     <OpenCloseButton
+      v-if="!store.activeMenu"
       :text="'open'"
       :target="'Menu'"
-      class="fixed bg-darker pb-4 text-white pointer-events-auto z-[60] h-full w-14 flex justify-center items-center left-0 top-0 duration-300 overflow-hidden"
+      class="fixed bg-darker pt-4 pb-4 pointer-events-auto z-[60] h-full w-14 flex justify-center items-start left-0 top-0 duration-300 overflow-hidden"
       :class="
         !store.activeMenu && route.name === 'chapter'
           ? 'left-0 opacity-100 '

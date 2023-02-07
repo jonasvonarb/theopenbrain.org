@@ -114,7 +114,7 @@ onBeforeUnmount(() => {
             v-if="activeAnimation === animation.id.toLowerCase()"
             :animation="animation"
             :active-animation="activeAnimation"
-            class=""
+            class="max-w-[1000px] m-auto"
           />
         </transition>
       </template>
@@ -129,6 +129,7 @@ onBeforeUnmount(() => {
             :animation="animation"
             :progress="progress"
             :active-animation="activeAnimation"
+            class="max-w-[1000px] m-auto"
           />
         </transition>
       </template>
@@ -143,6 +144,7 @@ onBeforeUnmount(() => {
             :animation="animation"
             :progress="progress"
             :active-animation="activeAnimation"
+            class="max-w-[1000px] m-auto"
           />
         </transition>
       </template>

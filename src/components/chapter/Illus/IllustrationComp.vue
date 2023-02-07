@@ -41,38 +41,45 @@
         </div>
       </div>
 
-      <div
-        v-if="animation.switches || (animation.states && !animation.multiple)"
-      >
+      <div v-if="animation.switches || animation.states">
         <template v-if="!info.blockStates">
           <StateElement
             :states="!info.multiple ? info.states : Object.keys(info.states)"
             :activeState="activeState.state"
+            :praefix="info.iconPraefix"
+            :iconsIndex="info.icons"
             @onClick="setState"
           />
         </template>
-        <template v-else>
+        <div class="pt-20" v-else>
           <p
             v-for="(state, index) in !animation.multiple
               ? animation.states
               : Object.keys(animation.states)"
             :key="state"
-            class="hover:opacity-50 select-none text-smaller cursor-pointer pb-2 mb-4 border-black border p-4 flex flex-col justify-center items-center"
+            class="hover:text-violet hover:bg-white hover:border-violet select-none text-smaller cursor-pointer pb-2 mb-4 border-black border p-4 flex flex-col justify-center items-center"
             :class="
               activeState[index] ? 'font-semibold bg-violet text-white' : ''
             "
             @click="setBlockState(index, activeState.state)"
           >
-            <PlayIcon class="icon" />
+            <img
+              class="w-full h-10 my-1"
+              :class="activeState[index] ? 'invert' : ''"
+              :src="
+                '/publicAssets/icons/' +
+                animation.iconPraefix +
+                '/' +
+                toSlug(state) +
+                '.svg'
+              "
+            />
             {{ state }}
           </p>
-        </template>
+        </div>
       </div>
     </div>
-    <div
-      class="flex flex-row min-w-full"
-      :class="animation.legend ? 'pb-0' : ''"
-    >
+    <div class="flex flex-row min-w-full">
       <div
         v-if="!animation.multiple && !animation.flip && !animation.switch"
         :id="animation.id"
@@ -106,7 +113,7 @@
 
 <script setup>
 import IllustarionMultiple from "@/components/chapter/Illus/IllustarionMultiple.vue";
-import { ref, onMounted, watch } from "vue";
+import { ref, onMounted } from "vue";
 import { addH, removeH, toSlug, toCamelCase } from "@/helper/general";
 
 import lottie from "lottie-web";
@@ -176,10 +183,8 @@ const setState = (event) => {
     }
   } else {
     let state = toCamelCase(info.states[index]);
-    console.log(state);
     let els = document.getElementsByClassName(state + "Highlight");
     for (let el of els) {
-      console.log(el);
       el.classList.add("highlightIllu");
       activeState.value.state = index;
     }
@@ -217,7 +222,7 @@ onMounted(() => {
     animType: "svg",
     loop: false,
     autoplay: true,
-    path: "/assets/animations/" + props.animation.id + ".json",
+    path: "/publicAssets/animations/" + props.animation.id + ".json",
   });
   animationLottie.addEventListener("DOMLoaded", () => {
     const highligters = document.getElementsByClassName("highlighterIllu");

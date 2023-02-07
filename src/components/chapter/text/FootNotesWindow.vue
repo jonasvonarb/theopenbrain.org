@@ -5,9 +5,9 @@
   >
     <button
       @click="toggle()"
-      class="fixed z-50 -top-3 right-1/2 -mr-3 cursor-pointer"
+      class="fixed z-50 -top-5 right-1/2 -mr-5 cursor-pointer rotate-45"
     >
-      <BiDashCircleFill class="cursor-pointer" />
+      <PlusIcon class="icon cursor-pointer" />
     </button>
     <ol class="pr-16 w-full bg-white overflow-x-scroll h-full">
       <li
@@ -26,7 +26,7 @@
 <script setup>
 import { useText, useGeneral } from "@/stores";
 import { onMounted, watch, ref, onBeforeUnmount } from "vue";
-import BiDashCircleFill from "@/icons/BiDashCircleFill.vue";
+import PlusIcon from "@/icons/custom/PlusIcon.vue";
 const textStore = useText();
 const text = textStore.text;
 const store = useGeneral();

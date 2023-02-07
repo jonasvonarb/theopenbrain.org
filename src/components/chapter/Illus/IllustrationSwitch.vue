@@ -11,7 +11,7 @@
         class="absolute top-64 left-24 h-12 w-12"
         @click="setState"
         :src="
-          '/assets/icons/' +
+          '/publicAssets/icons/' +
           info.iconPraefix +
           '/' +
           info.switches[activeState] +
@@ -48,7 +48,6 @@ let activeState = ref(0);
 
 let setState = (event) => {
   let max = props.info.switches.length;
-  console.log((activeState.value + 1) % max);
   animationLottie[event.index || (activeState.value + 1) % max].goToAndPlay(
     0,
     true
@@ -59,7 +58,6 @@ let setState = (event) => {
 watch(
   () => props.isPaused,
   (isPaused) => {
-    console.log(isPaused);
     if (!isPaused) {
       animationLottie[activeState.value].play();
     } else {
@@ -84,7 +82,7 @@ onMounted(() => {
       animType: "svg",
       loop: true,
       autoplay: props.info.loop ? true : false,
-      path: "/assets/animations/" + id + ".json",
+      path: "/publicAssets/animations/" + id + ".json",
     });
     animationLottie[index].setSubframe(true);
     animationLottie[index].play();

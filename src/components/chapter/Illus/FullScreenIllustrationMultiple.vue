@@ -1,9 +1,7 @@
 <script setup>
 import { onMounted } from "vue";
 import lottie from "lottie-web";
-import { addH, removeH } from "@/helper/general";
-
-import animationJSON from "@/assets/json_backend/animations.json";
+import { toSlug, addH, removeH } from "@/helper/general";
 
 const props = defineProps({
   animation: Object,
@@ -13,20 +11,21 @@ let animationLottie;
 
 onMounted(() => {
   let svgContainer = document.getElementById(
-    props.animation.id + props.state.toUpperCase()
+    props.animation.id + "-" + toSlug(props.state)
   );
   if (!svgContainer) return;
   animationLottie = lottie.loadAnimation({
-    id: props.animation.id + props.state.toUpperCase(),
+    id: props.animation.id + "-" + toSlug(props.state),
     speed: 3,
     wrapper: svgContainer,
     animType: "svg",
     loop: false,
     autoplay: false,
     path:
-      "/assets/animations/" +
+      "/publicAssets/animations/" +
       props.animation.id +
-      props.state.toUpperCase() +
+      "-" +
+      toSlug(props.state) +
       ".json",
   });
   animationLottie.addEventListener("DOMLoaded", () => {
@@ -43,10 +42,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex justify-center items-center h-full flex-wrap">
+  <div class="flex justify-end items-end h-full flex-wrap">
     <div
-      :id="animation?.id + state.toUpperCase()"
-      class="flex-grow h-full w-full object-contain"
+      :id="animation?.id + '-' + toSlug(props.state)"
+      class="flex-grow h-full w-2/3 object-contain"
     />
   </div>
 </template>
