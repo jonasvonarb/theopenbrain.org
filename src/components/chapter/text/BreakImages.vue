@@ -10,7 +10,7 @@ defineProps({
 <template>
   <div class="text-small my-24 -ml-20 font-mono max-w-[800px]">
     <RouterLink
-      to="chapter/break/file_example_MP4_1920_18MG"
+      to="chapter/break/9-1-normal-vision"
       class="relative flex h-full justify-center items-start gap-8 bg-white"
     >
       <div class="relative">

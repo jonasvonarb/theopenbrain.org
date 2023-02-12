@@ -1,12 +1,14 @@
 <template>
   <div>
     <div
-      class="w-full absolute p-56 z-50 top-0 left-0 gap-4 flex h-screen justify-center items-start duration-300"
+      class="w-full absolute p-56 z-50 top-0 left-0 gap-4 flex h-screen justify-center items-start duration-300 object-fitt"
     >
-      <div class="w-video h-full w-full m-0 object-fill">
-        <video class="lazy object-fill" autoplay muted controls loop>
+      <div class="m-0 w-video h-full object-contain">
+        <video class="lazy h-full w-full bg-black object-contain" autoplay muted controls loop>
           <source
-            :src="'/publicAssets/video/' + route.params.video + '.mp4'"
+            :src="
+              '/publicAssets/video/9-1-diseases/' + route.params.video + '.mp4'
+            "
             type="video/mp4"
           />
           Your browser does not support the video tag.
