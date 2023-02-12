@@ -1,6 +1,6 @@
 <script setup>
 import menu from "@/assets/json_backend/menu.json";
-import OpenCloseButton from "@/components/UI/OpenCloseButton.vue";
+import InteractionButton from "@/components/UI/InteractionButton.vue";
 import { useRoute } from "vue-router";
 import { useGeneral } from "@/stores";
 import { toSlug } from "@/helper/general.js";
@@ -116,7 +116,7 @@ const closeMenu = () => {
             </ol>
           </li>
         </template>
-        <OpenCloseButton
+        <InteractionButton
           v-if="store.activeMenu"
           :text="'close'"
           :target="'Menu'"
@@ -125,7 +125,7 @@ const closeMenu = () => {
       </ul>
     </Transition>
     <!-- menu open/close chapter -->
-    <OpenCloseButton
+    <InteractionButton
       v-if="!store.activeMenu"
       :text="'open'"
       :target="'Menu'"

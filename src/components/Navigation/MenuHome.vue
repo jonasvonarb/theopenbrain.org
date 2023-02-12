@@ -1,6 +1,6 @@
 <script setup>
 import menu from "@/assets/json_backend/menu.json";
-import OpenCloseButton from "@/components/UI/OpenCloseButton.vue";
+import InteractionButton from "@/components/UI/InteractionButton.vue";
 import OpenCloseButtonLink from "@/components/UI/OpenCloseButtonLink.vue";
 import { onBeforeRouteUpdate, useRoute, useRouter } from "vue-router";
 import { useGeneral } from "@/stores";
@@ -54,7 +54,7 @@ const toStart = () => {
             {{ menu[index].title }}
           </li>
         </template>
-        <OpenCloseButton
+        <InteractionButton
           v-if="store.activeMenu && route.name === 'home'"
           :text="'close'"
           :target="'Menu'"
