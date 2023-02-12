@@ -15,7 +15,8 @@
         subSections?.animation?.name ? 'animationTrigger block noHighlight' : ''
       "
     >
-      <div v-if="subSections?.animation" class="marker-start" />
+      <StartEndIcon :paragraph="subSections" art="start" />
+
       <!-- subSection title -->
       <span :id="subSections?.title ? toSlug(subSections?.title) : ''" />
       <h3
@@ -43,7 +44,7 @@
         v-for="subParagraph in subSections.paragraphs"
         :key="subParagraph.id"
       >
-        <div v-if="subParagraph?.animation" class="marker-start" />
+        <StartEndIcon :paragraph="subParagraph" art="start" />
 
         <template
           v-if="
@@ -68,7 +69,7 @@
             "
             class="transition left-0 w-full h-[50vh] bg-green-"
           />
-          <div v-if="subParagraph?.animation?.transition" class="marker-end" />
+          <StartEndIcon :paragraph="subParagraph" art="end" />
           <InlineImages
             :paragraph="subParagraph"
             :key="'images' + subParagraph.id"
@@ -99,14 +100,13 @@
             v-else-if="subParagraph.type === 'breakText'"
           /> -->
         </template>
-        <div v-if="subParagraph?.animation" class="marker-end" />
-
+        <StartEndIcon :paragraph="subParagraph" art="end" />
         <!-- subSection Break -->
         <BreakImages
-          v-else-if="subParagraph?.type === 'breakVideo'"
+          v-if="subParagraph?.type === 'breakVideo'"
           :key="subParagraph.id"
-          :title="paragraph.title"
-          :text="paragraph.text"
+          :title="subParagraph.title"
+          :text="subParagraph.text"
         />
         <BreakSection
           v-else-if="subParagraph.type === 'breakSection'"
@@ -120,7 +120,7 @@
         :paragraph="subSections"
       />
     </span>
-    <div v-if="subSections?.animation" class="marker-end" />
+    <StartEndIcon :paragraph="subSections" art="end" />
   </div>
 </template>
 
@@ -133,6 +133,7 @@ import BreakText from "./BreakText.vue";
 import { toSlug } from "@/helper/general.js";
 import InlineImages from "./InlineImages.vue";
 import FullScreenIllustration from "../Illus/FullScreenIllustration.vue";
+import StartEndIcon from "../../UI/StartEndIcon.vue";
 
 const props = defineProps({
   paragraph: Object,

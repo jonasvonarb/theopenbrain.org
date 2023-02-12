@@ -20,21 +20,21 @@
       "clickTriggered": true,
       "highlight": true,
       "states": [
-        "lens",
-        "iris",
-        "cornea",
-        "choroid",
-        "sclera",
-        "aqueuous humour",
-        "ciliary muscle",
-        "retina",
-        "vetreous humor",
-        "optic nerve"
+        "Lens",
+        "Iris",
+        "Cornea",
+        "Choroid",
+        "Sclera",
+        "Aqueous humour",
+        "Ciliary muscle",
+        "Retina",
+        "Vitreous humour",
+        "Optic nerve"
       ]
     },
     {
       "id": "animationAccommodationVergence",
-      "title": "Accommodation & Vergence",
+      "title": "Accommodation & vergence",
       "fullscreen": false,
       "loop": true,
       "loopSection": null
@@ -45,34 +45,43 @@
       "fullscreen": true,
       "loop": true,
       "states": [
-        "Light hits rhodopsin and causes retinal to  change conformation",
-        "shuttles out",
-        "interphotoreceptor binding protein (IRBP) shuttles its cargo into pigment epithelium",
-        "enters RPE",
-        "ll-trans retinol is converted to an aldehyde and then back into 11-cis-retinal",
-        "11 cis retinal is shuttled back to the photoreceptor (via IRBP) for another round"
+        "Light shines into an eye, activating the retina",
+        "Retinal ganglion cells project bilaterally to the pretectal olivary nucleus",
+        "Each pretectal nucleus projects bilaterally to the Edinger-Westphal Nucleus",
+        "The Edinger-Westphal nucleus projects ipsilaterally to the ciliary ganglion",
+        "Postganglionic parasympathetic neurons project ipsilaterally to the iris spinster muscle"
       ],
       "statesHighlight": [
-        "Prenectal nucleus",
-        "Eddinger-West..",
-        "Oculomotor nerve",
+        "Pretectal nucleus",
+        "Edinger-Westphal nucleus",
         "Ciliary ganglion",
         "Iris muscle"
       ]
     },
     {
       "id": "animationImpairedVision",
-      "title": "Impaired vision",
+      "title": "Refraction errors",
       "fullscreen": true,
-      "states": ["Normal Eye", "Myopia", "Hyperopia", "Astigmatism"],
+      "loop": false,
+      "states": [
+        "Normal eye (emmetropia)",
+        "Myopia",
+        "Hyperopia",
+        "Astigmatism"
+      ],
       "toggle": "Corrected"
     },
     {
       "id": "animationLatteralOrganization",
-      "title": "Latteral Organization",
+      "title": "Lateral organization",
       "fullscreen": true,
       "split": true,
-      "multiple": false
+      "multiple": false,
+      "sources": [
+        "Cone mosaic in the fovea. Source Wikipedia.",
+        "Red, cone terminals; Green, horizontal cell mosaic; Blue, bipolar cell mosaic. Source Webvision (Luna, Fisher and Lewis).",
+        "ON alpha ganglion cell mosaic from cat retina. Source Wässle et al., 1981, Nature."
+      ]
     },
     {
       "id": "animationPhototransduction",
@@ -80,13 +89,13 @@
       "fullscreen": true,
       "loop": true,
       "states": [
-        "Shine a light into eye.",
-        "A flash of light, and a photon activates rhodopsin.",
+        "Rod is in the dark. Rhodopsin is inactive",
+        "A flash of light, and a photon activates rhodopsin",
         "Retinal changes conformation",
         "Activated rhodopsin in turn activates transducin",
         "The alpha subunit of transducin activates phosphodiesterase (PDE)",
         "PDE degrades cGMP into GMP, leading to a decrease in intracellular [cGMP]",
-        "GMP-gated ion channels close",
+        "cGMP-gated ion channels close",
         "The rod membrane hyperpolarizes"
       ],
       "statesHighlight": [
@@ -99,7 +108,8 @@
         "α",
         "γ",
         "β",
-        "GTP"
+        "GTP",
+        "NA+"
       ]
     },
     {
@@ -108,30 +118,30 @@
       "fullscreen": true,
       "loop": true,
       "states": [
-        "Light hits rhodopsin and causes retinal to  change conformation",
-        "shuttles out",
-        "interphotoreceptor binding protein (IRBP) shuttles its cargo into pigment epithelium",
-        "enters RPE",
-        "ll-trans retinol is converted to an aldehyde and then back into 11-cis-retinal",
-        "11 cis retinal is shuttled back to the photoreceptor (via IRBP) for another round"
+        "Rhodopsin absorps a photon of light and retinal changes from 11-cis to all-trans",
+        "All-trans retinal exits the rod",
+        "All-trans retinal binds to IRBP, which transports it into the RPE",
+        "In the RPE, All-trans retinal undergoes further changes until restored to 11-cis ",
+        "11-cis retinal binds is shuttled out of the RPE",
+        "11-cis retinal re-enters the rod where it can get activated by light again"
       ],
       "statesHighlight": [
-        "Prenectal nucleus",
-        "Eddinger-West..",
-        "Oculomotor nerve",
-        "Ciliary ganglion",
-        "Iris muscle"
+        "Rhodopsin",
+        "Retinal ",
+        "Rod",
+        "RPE",
+        "IRBP"
       ]
     },
     {
       "id": "animationSynapticArchitecture",
-      "title": "Synaptic Architecture",
+      "title": "Synaptic architecture",
       "fullscreen": false,
       "clickTriggered": true,
       "blockStates": true,
       "hasTransition": true,
       "iconPraefix": "retinalCircuits",
-      "states": ["Inhibition", "Excitatation", "Gap Junction"]
+      "states": ["Inhibition", "Excitatation", "Gap junction"]
     },
     {
       "id": "animationPhotoreceptors",
@@ -140,13 +150,14 @@
       "clickTriggered": true,
       "hasTransition": true,
       "highlight": true,
+      "speed": 0.7,
       "states": [
-        "disks",
-        "opsins",
-        "outer segment",
-        "inner segment",
-        "mitocondria",
-        "nucleus"
+        "Disks",
+        "Opsins",
+        "Outer segment",
+        "Inner segment",
+        "Mitocondria",
+        "Nucleus"
       ]
     },
     {
@@ -158,23 +169,25 @@
     },
     {
       "id": "animationRetinalCellTypesTransition",
-      "title": "Retinal Cell Types",
-      "isTransition": true
+      "title": "Retinal cell types",
+      "isTransition": true,
+      "noBleed": true
     },
     {
       "id": "animationRetinalCellTypes",
-      "title": "Retinal Cell Types",
+      "title": "Retinal cell types",
       "fullscreen": false,
       "clickTriggered": true,
       "highlight": true,
       "iconPraefix": "retinalCellTypes",
       "icons": ["true", "true", "true", "true", "true"],
+      "autoplay": true,
       "states": [
         "Photoreceptors",
-        "Horizontal Cells",
-        "Bipolar Cells",
-        "Amacrine Cells",
-        "Ganglion Cells",
+        "Horizontal cells",
+        "Bipolar cells",
+        "Amacrine cells",
+        "Ganglion cells",
         "Inner nuclear layer",
         "Inner plexiform layer",
         "Outer nuclear layer",
@@ -184,78 +197,83 @@
     },
     {
       "id": "animationCenterSurroundReceptiveFields",
-      "title": "Center Surround Receptive Fields",
+      "title": "Center surround receptive fields",
       "fullscreen": false,
       "loop": true,
       "switch": true,
-      "switches": ["small light", "wide light"],
+      "switches": ["Small light", "Wide light"],
       "legend": [
-        "hyperpolarization",
-        "depolarization",
-        "spike train",
-        "inhibition",
-        "excitatation"
+        "Hyperpolarization",
+        "Depolarization",
+        "Spike train",
+        "Inhibition",
+        "Excitatation"
       ]
     },
     {
       "id": "animationDirectionSelectivity",
-      "title": "Direction Selectivity",
+      "title": "Direction selectivity",
       "fullscreen": false,
       "loop": true,
       "switch": true,
-      "switches": ["prefered", "null"],
+      "switches": ["Prefered", "Null"],
       "legend": [
-        "hyperpolarization",
-        "depolarization",
-        "spike train",
-        "inhibition",
-        "excitatation"
+        "Hyperpolarization",
+        "Depolarization",
+        "Spike train",
+        "Inhibition",
+        "Excitatation"
       ]
     },
     {
       "id": "animationObjectMotionSensitivity",
-      "title": "Object Motion Sensitivity",
+      "title": "Object motion sensitivity",
       "fullscreen": false,
       "loop": true,
       "switch": true,
-      "switches": ["Symmetric Center", "Asymmetric Center"],
+      "switches": ["Symmetric center", "Asymmetric center"],
       "legend": [
-        "hyperpolarization",
-        "depolarization",
-        "spike train",
-        "inhibition",
-        "excitatation",
+        "Hyperpolarization",
+        "Depolarization",
+        "Spike train",
+        "Inhibition",
+        "Excitatation",
         "special"
       ]
     },
     {
       "id": "animationRodVsConeCircuits",
-      "title": "Rod Vs. Cone Circuits",
+      "title": "Rod vs. cone circuits",
       "fullscreen": false,
       "loop": true,
       "switch": true,
       "swicthSymboles": true,
-      "switches": ["night", "day"],
+      "switches": ["Night", "Day"],
       "iconPraefix": "retinalCircuits",
       "legend": [
-        "hyperpolarization",
-        "depolarization",
-        "spike train",
-        "inhibition",
-        "excitatation",
-        "gap junction"
+        "Hyperpolarization",
+        "Depolarization",
+        "Spike train",
+        "Inhibition",
+        "Excitatation",
+        "Gap junction"
       ]
     },
     {
       "id": "animationLightSensitiveGanglionCells",
-      "title": "Light Sensitive Ganglion Cells",
+      "title": "Light sensitive ganglion cells",
       "fullscreen": false,
       "loop": true,
-      "legend": ["spike train"]
+      "legend": ["Spike train"]
+    },
+    {
+      "id": "animationWavesOfActivity",
+      "title": "Spontaneous waves of activity",
+      "placeholder": true
     },
     {
       "id": "animationNormalVision",
-      "title": "NormalVision",
+      "title": "Normal vision",
       "fullscreen": false,
       "flip": true,
       "video": "normal-vision",
@@ -267,7 +285,8 @@
       "fullscreen": false,
       "flip": true,
       "video": "cataracts",
-      "states": []
+      "states": [],
+      "source": "Xu et al., 2021, Biomed Eng Online"
     },
     {
       "id": "animationGlaucoma",
@@ -275,37 +294,42 @@
       "fullscreen": false,
       "flip": true,
       "video": "glaucoma",
-      "states": []
+      "states": [],
+      "source": "Viewpoint online"
     },
     {
       "id": "animationDiabeticRetinopathy",
-      "title": "Diabetic Retinopathy",
+      "title": "Diabetic retinopathy",
       "fullscreen": false,
       "flip": true,
       "video": "diabetic-retinopathy",
-      "states": []
+      "states": [],
+      "source": "Ramasy et al., 2021, PeerJ Computer Science"
     },
     {
       "id": "animationAgeRelatedMacularDegeneration",
-      "title": "Age Related Macular Degeneration",
+      "title": "Age related macular degeneration",
       "fullscreen": false,
       "flip": true,
       "video": "macular-degeneration",
-      "states": []
+      "states": [],
+      "source": "Eyerounds.org"
     },
     {
       "id": "animationRetinitisPigmentosa",
-      "title": "Retinitis Pigmentosa",
+      "title": "Retinitis pigmentosa",
       "fullscreen": false,
       "flip": true,
       "video": "retinitis-pigmentosa",
-      "states": []
+      "states": [],
+      "source": "Hamel Orphanet Journal of Rare Diseases 2006 1:40 doi:10.1186/1750-1172-1-40)"
     },
     {
       "id": "animationEyeMovements",
       "title": "Eye Movements",
       "fullscreen": true,
       "multiple": true,
+      "source": "Artistic reinterpretaton",
       "states": {
         "free": "Free Examination",
         "materialcircumstances": "Estimate the material circumstances of the family.",

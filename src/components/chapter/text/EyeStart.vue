@@ -35,24 +35,6 @@ watchDebounced(
 const scrollToPos = () => {
   document.getElementById("container").scrollIntoView({ behavior: "smooth" });
 };
-// onMounted(() => {
-//   let svgContainer = document.getElementById("animationStart");
-//   setTimeout(() => {
-//     animation.value = lottie.loadAnimation({
-//       id: "intro",
-//       speed: 1,
-//       wrapper: svgContainer,
-//       animType: "svg",
-//       loop: true,
-//       autoplay: false,
-//       rendererSettings: {
-//         progressiveLoad: false,
-//         preserveAspectRatio: "xMidYMid slice",
-//       },
-//       path: "/publicAssets/animations/Art_bg_1.json",
-//     });
-//   }, 700);
-// });
 </script>
 <template>
   <div
@@ -60,16 +42,12 @@ const scrollToPos = () => {
     :class="store.activeMenu ? 'w-[65vw]' : 'w-screen'"
     class="bg-img bg-light absolute right-0 h-screen z-[50] duration-300 flex justify-start items-start"
   >
-    <!-- <div
-      id="animationStart"
-      class="w-screen h-start flex flex-wrap justify-center items-center overflow-hidden"
-    /> -->
     <div
-      class="absolute top-0 left-0 w-screen h-screen text-dark text-center flex justify-center items-center pb-32"
+      class="absolute top-0 left-0 w-screen h-screen text-white text-center flex justify-center items-center pb-8"
     >
       <div class="flex justify-center items-center flex-col w-2/3">
         <div class="text-biggest font-text">The Open Brain</div>
-        <div>The Eye and the Retina</div>
+        <div class="text-6xl">The Retina</div>
       </div>
     </div>
     <div
@@ -90,7 +68,7 @@ const scrollToPos = () => {
 }
 
 .bg-img {
-  background-image: url("/publicAssets/images/background.png");
+  background-image: url("/publicAssets/images/background.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

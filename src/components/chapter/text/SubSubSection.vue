@@ -3,8 +3,7 @@
     :id="subParagraph.animation ? 'trigger' + subParagraph.animation?.id : ''"
     :class="subParagraph.animation ? 'animationTrigger' : ''"
   >
-    <div v-if="subParagraph?.animation" class="marker-start" />
-
+    <StartEndIcon :paragraph="subParagraph" art="start" />
     <div
       v-for="(subSubSection, index) in subParagraph.subSubSection"
       :key="subSubSection.title"
@@ -14,7 +13,7 @@
       "
       :class="subSubSection.animation ? 'animationTrigger' : ''"
     >
-      <div v-if="subSubSection?.animation" class="marker-start" />
+      <StartEndIcon :paragraph="subSubSection" art="start" />
 
       <InlineImages :paragraph="subSubSection" v-if="subSubSection.img" />
       <div
@@ -41,8 +40,7 @@
           v-for="subSubParagraph in subSubSection.paragraphs"
           :key="subSubParagraph.id"
         >
-          <div v-if="subSubParagraph?.animation" class="marker-start" />
-
+          <StartEndIcon :paragraph="subSubParagraph" art="start" />
           <p
             v-if="
               subSubParagraph.type != 'breakVideo' &&
@@ -69,10 +67,14 @@
             v-if="subSubParagraph.animationFull"
             :paragraph="subSubParagraph"
           />
-          <div v-if="subSubParagraph?.animation" class="marker-end" />
+          <InlineImages
+            :paragraph="subSubParagraph"
+            v-if="subSubParagraph.img"
+          />
+          <StartEndIcon :paragraph="subSubParagraph" art="end" />
         </div>
       </template>
-      <div v-if="subSubSection?.animation" class="marker-end" />
+      <StartEndIcon :paragraph="subSubSection" art="end" />
       <BreakImages
         v-if="subSubSection.type === 'breakVideo'"
         :title="subSubSection.title"
@@ -88,11 +90,12 @@
         :paragraph="subSubSection"
       />
     </div>
-    <div v-if="subParagraph?.animation" class="marker-end" />
+    <StartEndIcon :paragraph="subParagraph" art="end" />
   </div>
 </template>
 
 <script setup>
+import StartEndIcon from "../../UI/StartEndIcon.vue";
 import FullScreenIllustration from "../Illus/FullScreenIllustration.vue";
 import BreakImages from "./BreakImages.vue";
 import BreakSection from "./BreakSection.vue";

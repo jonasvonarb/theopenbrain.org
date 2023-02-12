@@ -30,16 +30,19 @@
       </div>
     </div>
     <FlipIcon
-      class="cursor-pointer duration-200 -translate-x-24 translate-y-20"
+      class="cursor-pointer duration-200 -translate-x-24 translate-y-20 fill-black stroke-black hover:stroke-violet hover:fill-violet hoverState"
       @click="flip"
     />
+    <SourceElement :scource="animation.source" />
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import { toSlug } from "@/helper/general";
 
 import FlipIcon from "@/icons/custom/FlipIcon.vue";
+import SourceElement from "../../UI/SourceElement.vue";
 
 const isFlip = ref(false);
 
@@ -48,8 +51,9 @@ const flip = () => {
 };
 
 const props = defineProps({
-  video: String,
+  animation: Object,
 });
+const video = toSlug(props.animation.video);
 const widthVideo = ref(
   window.innerWidth / 3 <= 835 ? window.innerWidth / 3 : 835
 );

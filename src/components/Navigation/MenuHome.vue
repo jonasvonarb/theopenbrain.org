@@ -66,7 +66,7 @@ const toStart = () => {
     <OpenCloseButtonLink
       :text="'open'"
       :target="''"
-      class="fixed border-r border-black bg-dark pt-2 text-white pointer-events-auto z-[60] hover:bg-lightDark h-full w-8 flex justify-center items-top left-0 top-0 duration-300 overflow-hidden"
+      class="fixed border-r border-black bg-dark pt-12 text-white pointer-events-auto z-[60] hover:bg-lightDark h-full w-8 flex justify-center items-top left-0 top-0 duration-300 overflow-hidden"
       :class="route.name && route.name === 'chapter' ? 'left-0' : '-left-8'"
     />
   </div>

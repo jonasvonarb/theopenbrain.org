@@ -2,7 +2,7 @@
   "intro": [
     {
       "id": "638ccd51-c31a-4f74-b3a5-ab50f9f5dd6f",
-      "title": "The Eye and Retina",
+      "title": "The Retina",
       "animation": { "name": "dragon" },
       "paragraphs": [
         {
@@ -55,16 +55,24 @@
           "id": "f76eea26-c064-41c5-9347-889a65266271",
           "type": "breakVideo",
           "title": "Maureen Neitz",
-          "text": "discussing possible causes and cures for myopia – 2 mins"
+          "text": "discussing possible causes and cures for myopia"
         }
       ]
     },
     {
       "id": "01433747-3254-490a-97c6-37403d9a1b53",
       "title": "Organization and cell types in the retina",
+
       "paragraphs": [
         {
           "id": "31b39c96-aa87-49df-b458-32ccfcb72b9d",
+          "animation": {
+            "start": true,
+            "name": "RetinalCellTypes",
+            "title": "Retinal cell types",
+            "id": "animationRetinalCellTypes",
+            "transition": true
+          },
           "text": "The retina is often described in two anatomically orthogonal manners: in cross-section (referred to as “vertically”) and across its planar surface (referred to as “laterally”). Here we outline both schemata and provide a detailed overview of the cell types and synaptic connectivity layout in the retina."
         },
         {
@@ -72,6 +80,12 @@
             {
               "id": "d901f84e-802e-4123-97c5-b96cf0f6feb3",
               "title": "Cross-sectional anatomy",
+              "animation": {
+                "middel": true,
+                "name": "RetinalCellTypes",
+                "title": "Retinal cell types",
+                "id": "animationRetinalCellTypes"
+              },
               "paragraphs": [
                 {
                   "id": "8998fdf5-42b8-4732-b84c-724e2872e146",
@@ -80,24 +94,29 @@
                 {
                   "id": "847986f1-7a1c-4a47-963e-ba427ea0109f",
                   "type": "breakSection",
-
                   "steps": [
                     "Put your monitor an arm’s length away. Close your left eye and fix your right eye’s gaze on the ‘B’. Extend your right hand and block the ‘B’ with the tip of your index fingers. Slowly move your hand directly rightwards, and when it gets about halfway across the screen your fingertip should disappear.",
                     "Close your left eye and fix your right eye’s gaze on the ‘B’. Move closer and farther away from the screen until the ‘A’ disappears. Repeat with your left eye while fixating on the ‘A’ and the ‘B’ should disappeared."
                   ],
-                  "title": "Blind Spot",
+                  "title": "Blind spot",
                   "text": "Due to the optic nerve, each retina has a small region without photoreceptors, resulting in a blind spot in each eye’s visual field. In each eye’s visual field, the blind spot is located roughly 10° temporally (away from the nose) and has a size of approximately 6°<sup data-sup='8'>8</sup>. The blind spot was first discovered in the 17th century by French physicist and priest Edme Marriott<sup data-sup='9'>9</sup>. We tend not to notice our blind spots in part because our brain in so good at ‘filling in’ missing visual information. To find your own blind spot, try one of these two methods:"
                 },
                 {
                   "id": "d12c4b7a-f896-4e03-92bb-74d30bd22135",
                   "type": "breakVideo",
                   "title": "Tom Baden",
-                  "text": "discussing ‘Is our retina really upside down?” – 2 mins"
+                  "text": "discussing 'Is our retina really upside down?'"
                 }
               ]
             },
             {
               "id": "36d8a296-06ba-4dff-9491-a077f989c3a8",
+              "animation": {
+                "middel": true,
+                "name": "RetinalCellTypes",
+                "title": "Retinal cell types",
+                "id": "animationRetinalCellTypes"
+              },
               "paragraphs": [
                 {
                   "id": "0c4a9d17-c64f-4d58-9c43-18a802766034",
@@ -115,22 +134,23 @@
             {
               "id": "9aa3d5b7-8096-4cca-91a3-7059898764e9",
               "title": "Retinal cell classes and types",
+              "animation": {
+                "end": true,
+                "name": "RetinalCellTypes",
+                "title": "Retinal cell types",
+                "id": "animationRetinalCellTypes"
+              },
               "paragraphs": [
                 {
                   "id": "8ef9f650-c325-4b70-b507-fe62b0ed5a67",
-                  "img": "RodBySchultze",
-                  "imgCap": "Rod, left, and cone, right, from a human retina. Drawing by Max Schutlze, 1873.",
-                  "text": "For the purposes of this chapter, we define ‘classes’ as a high-level category, and retinal neurons are split into 5 classes: photoreceptors, horizontal cells, bipolar cells, amacrine cells, ganglion cells. In turn, we define ‘types’ as a low-level category, as each class can be split into a number of cell types (eg. different types of photoreceptors). Within a given class of retinal neurons, different cell types serve unique functional roles. Evidence for this division of cell classes into subtypes was evident from the earliest anatomical studies on the retina: for instance, drawings of photoreceptors by the anatomist Max Schultz showed cells with two distinct morphologies, revealing rods and cones1. More recent work has shown that distinct retinal cell types can be distinguished from one another by gene expression profiles, connectivity patterns, morphology and functional response properties<sup data-sup='17 18 19 20 21 22 23 24 25 26 27'>17 – 27</sup>. Furthermore, for a given cell type there appears to be a strong correlation between each of these four metrics. Below, we briefly introduce the different retinal classes and discuss them in greater detail later in the chapter."
+                  "text": "For the purposes of this chapter, we define ‘classes’ as a high-level category, and retinal neurons are split into 5 classes: photoreceptors, horizontal cells, bipolar cells, amacrine cells, ganglion cells. In turn, we define ‘types’ as a low-level category, as each class can be split into a number of cell types (eg. different types of photoreceptors). Within a given class of retinal neurons, different cell types serve unique functional roles. Evidence for this division of cell classes into subtypes was evident from the earliest anatomical studies on the retina: for instance, drawings of photoreceptors by the anatomist Max Schultz showed cells with two distinct morphologies, revealing rods and cones <sup data-sup='1'>1</sup>. More recent work has shown that distinct retinal cell types can be distinguished from one another by gene expression profiles, connectivity patterns, morphology and functional response properties<sup data-sup='17 18 19 20 21 22 23 24 25 26 27'>17 – 27</sup>. Furthermore, for a given cell type there appears to be a strong correlation between each of these four metrics. Below, we briefly introduce the different retinal classes and discuss them in greater detail later in the chapter."
                 },
                 {
-                  "animation": {
-                    "name": "RetinalCellTypes",
-                    "title": "Retinal cell types",
-                    "id": "animationRetinalCellTypes"
-                  },
                   "subSubSection": [
                     {
                       "id": "0ccacfad-16a4-4c0c-bf01-ee5f1579b255",
+                      "img": "RodBySchultze",
+                      "imgCap": "Rod, left, and cone, right, from a human retina. Drawing by Max Schutlze, 1873.",
                       "text": "<strong>Photoreceptors:</strong> Photoreceptors are vital to retinal function, as they detect light and convert it into an electrical signal<sup data-sup='28'>28,</sup><sup data-sup='29'>29</sup>. By the late 17th century, it had become clear there were 2 types of photoreceptors, rods and cones, and that each was differentially localized in the retina and served different functions. Anatomical work from Max Schultze indicated that cones were mostly near the center of the human retina, whereas rods dominated in the periphery<sup data-sup='1'>1</sup>. Behavioral work from Hermann Aubert showed that visual acuity and color discrimination both decreased from the center to the periphery of the visual field<sup data-sup='1'>1</sup>"
                     },
                     {
@@ -143,8 +163,6 @@
                     },
                     {
                       "id": "beb4b5fe-204b-4159-83bd-88cb6134527e",
-                      "img": "GABAergic",
-                      "imgCap": "For a given starburst amacrine cell, its distal processes are predominantly activated by visual stimuli moving away from the soma. In turn, it’s processes in different quadrants specifically connect to nearby direction selective ganglion cells with a preferred direction opposite to preferred direction of the starburst processes that connect to it. Adapted from Briggman et al., Nature, 2011.",
                       "text": "<strong>Amacrine Cells:</strong> The most diverse set of cells in the retina are amacrine cells<sup data-sup='17'>17,</sup><sup data-sup='21'>21</sup>. These are, with a few exceptions, inhibitory interneurons which collect input from bipolar cells and in turn inhibit bipolar, ganglion and other amacrine cells. In some vertebrate species, amacrine cells comprise more than 50 different cell types, each exhibiting a unique anatomy, physiology, and gene expression profile <sup data-sup='5'>5</sup>. Some amacrine cells exhibit distinct both dendrites and an axon, however many have processes which act as both axon and dendrite. Attempts to generalize are difficult in the face of this diversity, however some trends have been observed: First, almost all amacrine cells are inhibitory neurons releasing either GABA or glycine onto their targets; Second, glycinergic amacrine cells tend to have narrow dendritic trees, and thus small receptive fields, whereas GABAergic cells tend to have broader dendritic trees and thus larger receptive fields<sup data-sup='30'>30</sup>; Third, many amacrine cells release an additional neurotransmitter, which can be excitatory, but is more commonly a neuromodulator such as a peptide or catecholamine<sup data-sup='5'>5,</sup><sup data-sup='6'>6</sup>."
                     },
                     {
@@ -154,8 +172,8 @@
                     {
                       "id": "d81b706a-49f2-4198-ba07-8a5d819030ac",
                       "type": "breakVideo",
-                      "title": "Retinal cell types",
-                      "text": "Video of Dowling and Werblin talking about recording a diversity of responses from all retinal cell types."
+                      "title": "Dowling and Werblin",
+                      "text": "Talking about recording a diversity of responses from all retinal cell types"
                     }
                   ]
                 }
@@ -207,11 +225,11 @@
       "paragraphs": [
         {
           "id": "7f962862-ee0c-4c95-8263-e1b1c9494989",
-          "img": "waveLength",
           "animation": {
             "name": "Photoreceptors",
             "id": "animationPhotoreceptors"
           },
+          "img": "waveLength",
           "imgCap": "The normalized absorption spectra of rod (R) and cone photoreceptors (S, short wavelength - blue; M, medium wavelength, green; L, long wavelength, red).",
           "text": "Photoreceptors are the most evolutionary ancient part of the retina, and likely evolved from ciliated sensory cells that blanketed the skin of our early submarine ancestors<sup data-sup='35 36 37 38'>35 - 38</sup>. They are long thin cells, with a soma situated in the outer nuclear layer, a nerve terminal located in the outer plexiform layer, and an elongated outer segment with opsin-filled disks extending towards the retina pigment epithelium. Each outer segments contain roughly 1000 membranous disks arranged like a stack of coins. Each disk is densely packed with molecules of photopigment-filled opsins, and their related phototransduction machinery. This disc organization is critical for photoreceptor function because it amplifies photoreceptor surface area by ~1000-fold, greatly increasing the number of light-catching opsin molecules within a single photoreceptor<sup data-sup='39'>39</sup>. A thin stalk connects the opsin-filled outer segment and with the mitochondria-rich inner segment, which helps sustain the tremendous energy costs of phototransduction<sup data-sup='10'>10,</sup><sup data-sup='29'>29</sup>. Vertebrate photoreceptors can be morphologically divided into two classes based on the shape of their outer segments. Cone photoreceptors exhibit tapered outer segments (i.e. their outer segment is shaped like a cone), are specialized to detect photons during daylight conditions, and possess various opsin variants that make them sensitive to photons of different wavelengths. Humans have 3 cone types, with maximal photon absorptions situated in the blue (peak excitation ~420 nm), green (peak excitation ~534 nm) and red (peak excitation ~564 nm) regions of the electromagnetic spectrum. In contrast to cones, rods have long (rod-shaped) outer segments, and are specialized for detecting photons in dim environments<sup data-sup='10'>10,</sup><sup data-sup='29'>29</sup>. Discs in rod outer segments contain rhodopsin molecules attuned to wavelengths at the center of the visible range (blue-green; peak excitation ~498 nm). Rhodopsin is more densely concentrated in rod outer segments than cone-opsins are in cone outer segments. Additionally, in rods, the disks in the outer segment are wholly internal to the cell’s outer membrane, whereas in cones the outer membrane invaginates multiple times in the outer segment and itself contains the opsin molecules."
         },
@@ -223,8 +241,6 @@
               "paragraphs": [
                 {
                   "id": "a0aa61a8-33f6-4ea8-a550-aff303ae81ee",
-                  "animationFull": true,
-                  "animationId": "animationPhototransduction",
                   "text": "Stars, like our sun, emit energy along various parts of the electromagnetic (EM) spectrum. In fact, most of the photons we encounter in the world are outside our visible range – the vast majority of these are in the infrared: they create a warm sensation when absorbed by our skin, but we cannot see them. Visible photons occupy a narrow band of the EM spectrum, and interestingly, are among a subset of photons that best penetrate sea water – where a large family of opsins arose over millions of years by evolution<sup data-sup='35'>35,</sup><sup data-sup='36'>36</sup>. Below, we discuss how these ‘visible’ photons are detected by photoreceptors in the retina and get converted into electrical signals."
                 },
                 {
@@ -237,11 +253,13 @@
                       "paragraphs": [
                         {
                           "id": "f04d2e7c-ba30-4d5e-9b73-4cb403939cef",
-                          "text": "<strong>Rhodopsin:</strong> In the mid-1870s, Franz Boll identified a substance in the frog retina that bleached when exposed to light – it became known as “visual purple” or rhodopsin and is the light sensing protein in rod photoreceptors<sup data-sup='40'>40,</sup><sup data-sup='41'>41</sup>. Rhodopsin contains the opsin retinal, which is synthesized from vitamin A<sup data-sup='29'>29,</sup><sup data-sup='41'>41</sup>. Even going back to ancient Egypt, the Ebers medical papyrus from 1520 BCE recommended treating night blindness with liver (which happens to be high in vitamin A, though the ancient Egyptians recommended topically applying liquid from the liver directly to the eye)1. The bleaching that Boll had observed was the result of retinal undergoing a photoisomerization from 11-cis to all-trans conformations. This isomerization causes rhodopsin to change conformation which initiates a signal transduction cascade. Subtle amino-acid variations in the structure of the opsin change the way 11-cis retinal is ‘held’ within the rhodopsin molecule, and alters the photon wavelength required for a photoisomerzation event<sup data-sup='29'>29,</sup><sup data-sup='41'>41,</sup><sup data-sup='42'>42</sup>. This is a core difference between opsins that detect blue, green, and red, green photons (such as those in cones). The conversion is remarkably efficient – approximately two-thirds of absorbed photons result in a photoisomerization<sup data-sup='41'>41</sup>. By comparison, this quantum efficiency is only 1/10 for photographic film."
+                          "text": "<strong>Rhodopsin:</strong> In the mid-1870s, Franz Boll identified a substance in the frog retina that bleached when exposed to light – it became known as “visual purple” or rhodopsin and is the light sensing protein in rod photoreceptors<sup data-sup='40'>40,</sup><sup data-sup='41'>41</sup>. Rhodopsin contains the opsin retinal, which is synthesized from vitamin A<sup data-sup='29'>29,</sup><sup data-sup='41'>41</sup>. Even going back to ancient Egypt, the Ebers medical papyrus from 1520 BCE recommended treating night blindness with liver (which happens to be high in vitamin A, though the ancient Egyptians recommended topically applying liquid from the liver directly to the eye)<sup data-sup='1'>1</sup>. The bleaching that Boll had observed was the result of retinal undergoing a photoisomerization from 11-cis to all-trans conformations. This isomerization causes rhodopsin to change conformation which initiates a signal transduction cascade. Subtle amino-acid variations in the structure of the opsin change the way 11-cis retinal is ‘held’ within the rhodopsin molecule, and alters the photon wavelength required for a photoisomerzation event<sup data-sup='29'>29,</sup><sup data-sup='41'>41,</sup><sup data-sup='42'>42</sup>. This is a core difference between opsins that detect blue, green, and red, green photons (such as those in cones). The conversion is remarkably efficient – approximately two-thirds of absorbed photons result in a photoisomerization<sup data-sup='41'>41</sup>. By comparison, this quantum efficiency is only 1/10 for photographic film."
                         },
                         {
                           "id": "d973785a-d6f8-4e4e-8d85-afb2612bef15",
-                          "text": "<strong>Phototransduction:</strong> In the dark, the photoreceptor outer segment has a high concentration of the small molecule cGMP (cyclic guanosine monophosphate). These small molecules bind to and activate cGMP-gated cationic channels, resulting in Na+ and Ca2+ inflow in the outer segment, which balance an ongoing efflux of K+ ions in the inner segment. Together, these ion flows result in a relatively depolarized resting membrane potential (Vm) of ~-30mV in darkness. Rhodopsin is a G-protein coupled receptor. It becomes enzymatically active following photon absorption and in turn activates the G-protein transducin. Transducin is composed of α, β, and γ subunits, and upon activation, releases its βγ subunit, which in turn activates a phosphodiesterase (PDE) that then hydrolyzes cGMP molecules. The resulting decrease in intracellular [cGMP] in the outer segment leads to the closure of cGMP-gated cation channels<sup data-sup='28'>28</sup>. Since the efflux of K+ ions continues in the inner segment, closing cGMP-gated channels in the outer segment results in photoreceptor membrane hyperpolarization, leading to a decrease in glutamate release. This light-evoked hyperpolarization is called a photovoltage, and its amplitude and duration depend on the luminance, size and duration of the light flash. Finally, an activated rhodopsin molecule needs to be de-activated, otherwise the phototransduction cascade would continue endlessly. Phototransduction terminates when an activated rhodopsin is phosphorylated by a membrane bound enzyme called rhodopsin kinase. The addition of a phosphate to rhodopsin leads to its binding by a protein called arrestin, which ejects the rhodopsin kinase, and quenches rhodopsin’s ability to activate transducin by breaking the bond between all-trans retinal and opsin<sup data-sup='28'>28,</sup><sup data-sup='29'>29,</sup><sup data-sup='42'>42</sup>"
+                          "animationFull": true,
+                          "animationId": "animationPhototransduction",
+                          "text": "<strong>Phototransduction:</strong> In the dark, the photoreceptor outer segment has a high concentration of the small molecule cGMP (cyclic guanosine monophosphate). These small molecules bind to and activate cGMP-gated cationic channels, resulting in Na+ and Ca2+ inflow in the outer segment, which balance an ongoing efflux of K+ ions in the inner segment. Together, these ion flows result in a relatively depolarized resting membrane potential (Vm) of ~-30mV in darkness. Rhodopsin is a G-protein coupled receptor. It becomes enzymatically active following photon absorption and in turn activates the G-protein transducin. Transducin is composed of α, β, and γ subunits, and upon activation, releases its βγ subunit, which in turn activates a phosphodiesterase (PDE) that then hydrolyzes cGMP molecules. The resulting decrease in intracellular [cGMP] in the outer segment leads to the closure of cGMP-gated cation channels<sup data-sup='28'>28</sup>. Since the efflux of K+ ions continues in the inner segment, closing cGMP-gated channels in the outer segment results in photoreceptor membrane hyperpolarization, leading to a decrease in glutamate release. This light-evoked hyperpolarization is called a photovoltage, and its amplitude and duration depend on the luminance, size and duration of the light flash. Finally, an activated rhodopsin molecule needs to be de-activated, otherwise the phototransduction cascade would continue endlessly. Phototransduction terminates when an activated rhodopsin is phosphorylated by a membrane bound enzyme called rhodopsin kinase. The addition of a phosphate to rhodopsin leads to its binding by a protein called arrestin, which ejects the rhodopsin kinase, and quenches rhodopsin’s ability to activate transducin by breaking the bond between all-trans retinal and opsin<sup data-sup='28'>28,</sup><sup data-sup='29'>29,</sup><sup data-sup='42'>42</sup>."
                         },
                         {
                           "id": "37c0b13f-d8ad-4353-8661-45c1f4cc77b8",
@@ -261,7 +279,7 @@
                           "id": "gtsw9b72-5sa00-4473-8b76-67bsfasfase4",
                           "type": "breakVideo",
                           "title": "Dennis Baylor",
-                          "text": "talking about visual threshold and single photon detection."
+                          "text": "talking about visual threshold and single photon detection"
                         },
                         {
                           "id": "4bfe20d5-2abf-437b-9596-8464784efaae",
@@ -294,6 +312,11 @@
     {
       "id": "3a8ddc6e-8f34-43bb-b850-949d155df033",
       "title": "Horizontal cells and feedback",
+      "animation": {
+        "name": "RetinalCellTypes",
+        "title": "Retinal cell types",
+        "id": "animationRetinalCellTypes"
+      },
       "paragraphs": [
         {
           "id": "84ceadf0-e6ee-420e-b25f-7279a30834ca",
@@ -308,6 +331,11 @@
     {
       "id": "22f2d2f8-655e-4de2-98ce-5748da18978c",
       "title": "Bipolar cells diversify photoreceptor signals",
+      "animation": {
+        "name": "RetinalCellTypes",
+        "title": "Retinal cell types",
+        "id": "animationRetinalCellTypes"
+      },
       "paragraphs": [
         {
           "id": "ced015b3-63e2-4686-948f-6a7dd067f4a1",
@@ -324,7 +352,8 @@
         {
           "type": "breakVideo",
           "id": "ffdbd2c2-e887-4aba-b7e0-86abdbd943a8",
-          "text": "Video of Helga Kolb discussing the discovery of ON and OFF retinal channels."
+          "title": "Helga Kolb",
+          "text": "discussing the discovery of ON and OFF retinal channels"
         },
         {
           "id": "992e5fae-e527-486b-b8d2-f9b89b3950c9",
@@ -345,15 +374,16 @@
     {
       "id": "b781bab4-63cb-415f-a681-2e470e4b4725",
       "title": "Amacrine and ganglion cells – circuits, computations and output",
+
       "paragraphs": [
         {
           "id": "53b462b8-82a0-425d-a9c3-b2b10f9658eb",
-          "text": "The parcellation of photoreceptor-generated signals into distinct visual channels culminates at the ganglion cell. The outcome is that the retina sends out many different channels of visual content to the brain – each carrying distinct information about the incoming visual scene, with some channels focused on motion, others on color, others on size, etc<sup data-sup='17'>17,</sup><sup data-sup='31'>31</sup>. It appears that roughly 15 visual channels leave the primate retina53. These channels are represented by different types of ganglion cells<sup data-sup='6'>6,</sup><sup data-sup='17'>17,</sup><sup data-sup='46'>46</sup>. While ganglion cells are the focus of this section, since they represent the retinal output channels, their response properties are intertwined with the amacrine cells they are connected to, so we discuss both cell types in combination. Furthermore, while some amacrine cells fire action potentials, and some bipolar cells can generate spike-like events, ganglion cells are generally considered the predominant spiking cell in the retina. Another important property of ganglion cells is that many of them can independently relay inputs that arise in a portion of their receptive field. In the bipolar cell section, we outlined how bipolar cells are unable distinguish between a grey background and a stimulus that half-illuminates and half-darkens their receptive field. It turns out that some ganglion cells can respond to such stimuli, encoding both ON and OFF inputs. Such processing in ganglion cells is referred to as a non-linearity<sup data-sup='54'>54,</sup><sup data-sup='55'>55</sup>. This property enhances a ganglion cell’s ability to encode patterns within its receptive field. Below, we outline several canonical circuit computations in the retina, which result in ganglion cells with distinct feature selectivities, each likely serving specific ethologically-relevant functions."
-        },
-        {
-          "id": "e896d06f-f436-4fad-96d7-c19b8a810f58",
-          "type": "breakVideo",
-          "text": "Parallel stacked channels: Video of Botond discussing how various ganglion cell types arise via parallel processing in ‘stacked’ channels. Include his ‘famous’ Mona Lisa channels thing."
+          "animation": {
+            "name": "RetinalCellTypes",
+            "title": "Retinal cell types",
+            "id": "animationRetinalCellTypes"
+          },
+          "text": "The parcellation of photoreceptor-generated signals into distinct visual channels culminates at the ganglion cell. The outcome is that the retina sends out many different channels of visual content to the brain – each carrying distinct information about the incoming visual scene, with some channels focused on motion, others on color, others on size, etc<sup data-sup='17'>17,</sup><sup data-sup='31'>31</sup>. It appears that roughly 15 visual channels leave the primate retina <sup data-sup='53'>53</sup>. These channels are represented by different types of ganglion cells<sup data-sup='6'>6,</sup><sup data-sup='17'>17,</sup><sup data-sup='46'>46</sup>. While ganglion cells are the focus of this section, since they represent the retinal output channels, their response properties are intertwined with the amacrine cells they are connected to, so we discuss both cell types in combination. Furthermore, while some amacrine cells fire action potentials, and some bipolar cells can generate spike-like events, ganglion cells are generally considered the predominant spiking cell in the retina. Another important property of ganglion cells is that many of them can independently relay inputs that arise in a portion of their receptive field. In the bipolar cell section, we outlined how bipolar cells are unable distinguish between a grey background and a stimulus that half-illuminates and half-darkens their receptive field. It turns out that some ganglion cells can respond to such stimuli, encoding both ON and OFF inputs. Such processing in ganglion cells is referred to as a non-linearity<sup data-sup='54'>54,</sup><sup data-sup='55'>55</sup>. This property enhances a ganglion cell’s ability to encode patterns within its receptive field. Below, we outline several canonical circuit computations in the retina, which result in ganglion cells with distinct feature selectivities, each likely serving specific ethologically-relevant functions."
         },
         {
           "subSection": [
@@ -394,7 +424,7 @@
                     {
                       "type": "breakSection",
                       "id": "389f482b-969d-454d-9a2a-edc31426f791",
-                      "title": "Color Blindness",
+                      "title": "Color blindness",
                       "text": "One of the first written accounts of color blindness comes from John Dalton – of atomic theory fame – at the end of the 18th century. He noted that he and his brother were color blind, and he assembled a small list of other color blind people. Most happened to be males. Dalton hypothesized that his vitreous humour was tinted blue, and thus absorbed longer wavelengths<sup data-sup='69'>69</sup>. He donated his eyes upon his death, but no pigment abnormalities were found with his vitreous humour nor his lens. It is now known that color vision starts with the three different types of cones (blue, green and red, as outlined above). It turns out that about 8% of males are red-green color blind, due to a genetic mutation leading to dysfunction of either red or green cones. Other types of color blindness exist, but are more rare. Genetic analysis in the 1990s of Dalton’s preserved eye tissue revealed that he was missing functional middle wavelength (green) cones<sup data-sup='69'>69</sup>."
                     },
                     {
@@ -405,6 +435,8 @@
                             "name": "DirectionSelectivity",
                             "id": "animationDirectionSelectivity"
                           },
+                          "img": "GABAergic",
+                          "imgCap": "For a given starburst amacrine cell, its distal processes are predominantly activated by visual stimuli moving away from the soma. In turn, it’s processes in different quadrants specifically connect to nearby direction selective ganglion cells with a preferred direction opposite to preferred direction of the starburst processes that connect to it. Adapted from Briggman et al., Nature, 2011.",
                           "text": "<strong>Direction-selectivity:</strong> In the human and non-human primate visual system, it was generally thought that direction selective responses first arise in primary visual cortex. However, recent research has described direction selectivity in the primate retina<sup data-sup='70'>70,</sup><sup data-sup='71'>71</sup>. This puts the primate retina in line with several animal models commonly studied, such as rabbits and mice (as well as flies and fish), where direction selectivity (DS) arises in retinal ganglion cells<sup data-sup='72'>72</sup>, and where the circuitry underlying the DS computation is among the most studied in neuroscience. Early ideas came out of studies in insects and proposed that visual inputs from two spatially-offset locations were relayed to a single downstream neuron with differing delays<sup data-sup='73'>73</sup>. A moving object that activated the long-delay input before the short delay input drove neurons better since the delay allowed excitation from both locations to coincide. Motion in the opposite direct led to little coincidence and so the neuron could respond selectively to motion direction. Recent work in infects confirm aspects of this model, but retinal direction selectivity in mammals arises in ganglion cells through direction-selective GABAergic inhibition from starburst amacrine cells<sup data-sup='72'>72</sup>. These amacrine cells, named by Ted Famiglietti due to their unique ‘firework’ anatomical appearance, grow dendrites radially outwards from their cell bodies<sup data-sup='74'>74</sup>. Starburst amacrine cells are preferentially activated by visual stimuli moving centripetally along their dendritic tree (i.e. moving away from the soma)<sup data-sup='75'>75</sup>. The distal tip of each starburst dendrite connects with a ganglion cell. This ganglion cell in turn has the opposite preferred direction to its presynaptic starburst partner, since the amacrine cell releases GABA when activated<sup data-sup='76'>76</sup>. In a remarkable feat of wiring, ganglion cells preferring a particular direction of motion receive inhibition exclusively from starburst amacrine cells dendrites that point the opposite direction<sup data-sup='77'>77</sup>. As such, stimuli moving in a ganglion cell’s preferred direction drive very little inhibition, whereas stimuli moving in the ganglion cell’s null direction drive strong GABAergic inhibition, which vetoes the relatively symmetrical excitatory drive from bipolar cells during both preferred and null direction motion."
                         },
                         {
@@ -425,8 +457,8 @@
                 },
                 {
                   "id": "c2f5bc17-e87f-45d3-92e6-ebdc1e4dcc0b",
-                  "type": "breakVideo",
-                  "text": "Video - Markus Meister talking about what the frog’s eye tells the frogs brain, and then telling the story about OMS cells."
+                  "type": "Markus Meister",
+                  "text": "talking about what the frog’s eye tells the frogs brain, and then telling the story about OMS cells"
                 }
               ]
             },
@@ -477,9 +509,6 @@
     {
       "id": "c625fe97-ed71-4faa-b5f8-a1b816ad8039",
       "title": "Retinal vision in the ‘real world’",
-      "animationFull": true,
-      "animationId": "animationEyeMovements",
-      "multiple": true,
       "paragraphs": [
         {
           "id": "b550aeb4-9ff4-4430-abd2-1dd726d35d93",
@@ -490,6 +519,9 @@
             {
               "id": "cd6143c0-757f-4ca3-82f3-a110ef30d80a",
               "title": "Eye movements ",
+              "animationFull": true,
+              "animationId": "animationEyeMovements",
+              "multiple": true,
               "paragraphs": [
                 {
                   "id": "e9658c13-3dae-4ee9-a839-d8fd1c308ff7",
@@ -519,8 +551,6 @@
       "paragraphs": [
         {
           "id": "5ccd6c38-711d-49a0-8fa1-6dd2259c1646",
-          "img": "eyeFieldFormation",
-          "imgCap": "",
           "text": "Darwin famously wrote that the complexity of the eye was almost enough to make one question the theory of natural selection: “To suppose that the eye with all its inimitable contrivances for adjusting the focus to different distances, for admitting different amounts of light, and for the correction of spherical and chromatic aberration, could have been formed by natural selection, seems, I freely confess, absurd”<sup data-sup='100'>100</sup>. In recent years, scientists have been able to watch the retina develop in living organisms with incredible detail, providing critical insights into how such an “inimitable” structure is formed. The retina begins as the optic vesicle, which buds off the embryonic diencephalon. A series of events take place whereby this nascent eye generates an eye-cup, lens, blood vessels, and retina. The neural retina represents a part of the CNS that is conveniently located outside the skull, making it “an approachable part of the brain” that has proven to be a powerful model for the field of developmental biology."
         },
         {
@@ -535,23 +565,22 @@
                 },
                 {
                   "id": "4ba8917b-7a0f-436e-9209-0129e3615c75",
-                  "type": "breakVideo",
-                  "text": "Get Josh to talk about these phenomena."
+                  "type": "Josh",
+                  "text": "talking about these phenomena"
                 }
               ]
             },
             {
               "id": "21b1c638-ecd4-4c69-bcea-5b3ec47822ec",
               "title": " Spontaneous waves of activity",
+              "animation": {
+                "name": "wavesOfActivity",
+                "id": "animationWavesOfActivity"
+              },
               "paragraphs": [
                 {
                   "id": "b13ace75-ceec-4cbd-970b-b60aaf77c766",
                   "text": "Both genetics and activity drive the development of the visual system. The sheet-like geometry of the retina permitted scientists to simultaneously record from many ganglion cells at once using an array of electrodes arranged on a glass plate<sup data-sup='103'>103</sup>. The initial recordings from neonatal retinae revealed a remarkable result: in the absence of visual stimulation, and even before the retina itself was fully wired together, spontaneous waves of activity spread across the retina. A host of follow up studies showed that the mechanisms driving these waves change over the course of development<sup data-sup='104 105 106'>104 – 106</sup>. Importantly, the waves are temporally local phenomena – the activity of a given ganglion cell is only closely correlated with that of its nearest neighbors, but not with distantly located ganglion cells in the same retina or ganglion cells from the other eye. These waves of retinal activity propagate to retino-recipient areas in the brain, where this patterned activity is important for the development of retinotopic maps. Pharmacologically or genetically disrupting wave activity has been shown to inhibit the development of proper retinotopic maps in higher brain areas."
-                },
-                {
-                  "id": "dd1f1f8b-6a01-47c7-9a40-ef02016038ee",
-                  "type": "breakVideo",
-                  "text": "Rachel Wong describing discovery of retinal waves."
                 }
               ]
             }
@@ -589,7 +618,7 @@
                   "id": "390e0493-9e2e-4411-a5c0-006aa8b083c6",
                   "type": "breakVideo",
                   "title": "Pawan Sinha",
-                  "text": "Video of Pawan Sinha discussing Project Prakash, its impact, of some surprising scientific findings."
+                  "text": "discussing Project Prakash, its impact, of some surprising scientific findings"
                 }
               ]
             },
@@ -656,7 +685,7 @@
                   "subSubSection": [
                     {
                       "id": "82941df1-39ea-4414-97c1-1360adcb6c6b",
-                      "text": "<strong>Treatment strategies for retinal-based vision loss:</strong> Gene therapy is a therapeutic approach in which a mutated gene is replaced with the correct copy. Diseases caused by single gene mutation, in which the mutation does not lead to cell death or other deleterious effects, are the central target of gene therapy approaches. To date, the standard protocol is to package the proper version of the gene of interest into an adeno-associated virus, and inject the virus into or nearby the affected tissue of interest. For instance, the first ever gene therapy approved for use in humans was Luxturna, targeted towards treating a form of Leber’s congenital amaurosis, by providing the correct version of the gene<em>RPE65</em>."
+                      "text": "<strong>Treatment strategies for retinal-based vision loss:</strong> Gene therapy is a therapeutic approach in which a mutated gene is replaced with the correct copy. Diseases caused by single gene mutation, in which the mutation does not lead to cell death or other deleterious effects, are the central target of gene therapy approaches. To date, the standard protocol is to package the proper version of the gene of interest into an adeno-associated virus, and inject the virus into or nearby the affected tissue of interest. For instance, the first ever gene therapy approved for use in humans was Luxturna, targeted towards treating a form of Leber’s congenital amaurosis, by providing the correct version of the gene <em>RPE65</em>."
                     },
                     {
                       "id": "d3c2edf1-a780-42c6-831e-da66c8c1f346",
@@ -671,11 +700,6 @@
                       "text": "Optogenetic retinal therapy is a form a gene therapy that relates closely to the retinal prosthetic approach. For this method, an adeno-associated virus is injected into the eye to drive expression of an optogenetic opsin into retinal neurons (eg. bipolar cells, ganglion cells) that remain following photoreceptor degeneration in diseases such as macular degeneration and retinitis pigmentosa."
                     }
                   ]
-                },
-                {
-                  "id": "86c7a49b-c96b-43d4-9556-4cce4488ec37",
-                  "type": "breakVideo",
-                  "text": "I could get Valerie Wallace to talk about cell therapy."
                 }
               ]
             }

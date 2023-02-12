@@ -39,7 +39,7 @@ module.exports = {
       fontSize: {
         smaller: [
           "1.1rem",
-          { lineHeight: "2.25rem", letterSpacing: "-0.01rem" },
+          { lineHeight: "1.4rem", letterSpacing: "-0.01rem" },
         ],
         small: ["1.35rem", { lineHeight: "1.9rem", letterSpacing: "0.02rem" }],
         medium: ["1.6rem", { lineHeight: "2.65rem" }],
@@ -47,8 +47,8 @@ module.exports = {
         base: ["2rem", "3.1rem"],
         h3: ["3.0rem", "3.8rem"],
         h2: ["4.8rem", "5.8rem"],
-        blindness: ["22rem", "22rem"],
-        biggest: ["10rem", "14rem"],
+        blindness: ["11rem", "11rem"],
+        biggest: ["8rem", "12rem"],
         big: ["8rem", "8rem"],
       },
       height: {
@@ -65,7 +65,7 @@ module.exports = {
         lightest: "#F4F4F4",
         lighter: "#DEDEDE",
         light: "#B5B5B5",
-        dark: "#353535",
+        dark: "#343434",
         darker: "#202020",
         magenta: "rgb(151, 71, 255)",
         violet: "rgb(151, 71, 255)",

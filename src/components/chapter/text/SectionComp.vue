@@ -47,23 +47,9 @@
         section?.animation?.name ? 'animationTrigger block noHighlight' : ''
       "
     >
-      <div v-if="section?.animation" class="marker-start" />
+      <StartEndIcon :paragraph="section" art="start" />
+
       <template v-for="paragraph in section['paragraphs']" :key="paragraph.id">
-        <!-- <div v-if="paragraph?.animation?.transition" class="marker-start" />
-        <div
-          v-if="paragraph?.animation?.transition"
-          :id="
-            paragraph?.animation &&
-            'triggerAnimation' + paragraph?.animation?.name + 'Transition'
-          "
-          :class="
-            paragraph?.animation?.name + 'Transition'
-              ? 'animationTrigger animationScrollAnchor block noHighlight'
-              : ''
-          "
-          class="transition left-0 w-full h-[200vh] bg-green-"
-        ></div>
-        <div v-if="paragraph?.animation?.transition" class="marker-end" /> -->
         <span
           :id="
             paragraph?.animation &&
@@ -78,7 +64,7 @@
             paragraph?.type != 'breakVideo' && paragraph.type != 'breakSection'
           "
         >
-          <div v-if="paragraph?.animation" class="marker-start" />
+          <StartEndIcon :paragraph="paragraph" art="start" />
           <!-- section paragraph -->
           <InlineImages
             :paragraph="paragraph"
@@ -116,9 +102,9 @@
           v-else-if="paragraph.type === 'breakSection'"
           :content="paragraph"
         />
-        <div v-if="paragraph?.animation" class="marker-end" />
+        <StartEndIcon :paragraph="paragraph" art="end" />
       </template>
-      <div v-if="section?.animation" class="marker-end" />
+      <StartEndIcon :paragraph="section" art="end" />
     </span>
     <FullScreenIllustration
       :key="section.id"
@@ -135,7 +121,7 @@ import SubSection from "./SubSection.vue";
 import { useGeneral } from "@/stores";
 import BreakSection from "./BreakSection.vue";
 import InlineImages from "./InlineImages.vue";
-import { ref } from "vue";
+import StartEndIcon from "../../UI/StartEndIcon.vue";
 const store = useGeneral();
 
 const props = defineProps({

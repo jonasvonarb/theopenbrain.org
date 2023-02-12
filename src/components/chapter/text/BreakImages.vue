@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="text-small my-24 -ml-20 font-mono">
+  <div class="text-small my-24 -ml-20 font-mono max-w-[800px]">
     <RouterLink
       to="chapter/break/file_example_MP4_1920_18MG"
       class="relative flex h-full justify-center items-start gap-8 bg-white"
@@ -26,10 +26,10 @@ defineProps({
       <div
         class="w-full h-full flex flex-col justify-center items-start mt-[-0.2rem] text-small"
       >
-        <span class="block max-w-[300px] text-left font-semibold">
+        <span class="block max-w-[] text-left font-semibold">
           {{ title }}
         </span>
-        <span class="block max-w-[300px] text-left">
+        <span class="block max-w-[] text-left">
           {{ text }}
         </span>
       </div>

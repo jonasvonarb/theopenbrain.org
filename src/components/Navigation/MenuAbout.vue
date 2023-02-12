@@ -25,7 +25,7 @@ const openAbout = () => {
           : 'left-6'
         : store.activeMenu
         ? 'left-1/2 ml-4'
-        : 'left-16'
+        : 'left-24'
     "
   >
     <IIcon
@@ -33,7 +33,6 @@ const openAbout = () => {
       @click="openAbout()"
       class="icon iconInvert"
     />
-
     <!-- <BiExclamationCircleFill " /> -->
     <OpenArrowIcon
       class="icon iconInvert z-[60]"
@@ -106,12 +105,8 @@ const openAbout = () => {
             </p>
           </section>
           <section>
-            <h4 class="text-medium font-medium">IMPRESSUM</h4>
-            <p>...</p>
-          </section>
-          <section>
             <h4 class="text-medium font-medium">CONTACT</h4>
-            <p>...</p>
+            <p>Coming soon!</p>
           </section>
           <section>
             <h4 class="text-medium font-medium">CREDITS</h4>
@@ -126,8 +121,8 @@ const openAbout = () => {
                   Stuart Trenholm
                 </a>
               </p>
-              <p>Chapter authers: Arjun Krishnaswamy, Stuart Trenholm</p>
-              <p>Copy editor: Lea LeFort</p>
+              <p>Chapter authors: Arjun Krishnaswamy, Stuart Trenholm</p>
+              <p>Copy editor: Leah LeFort</p>
               <br />
               <p>
                 Designed and developed by
@@ -150,7 +145,7 @@ const openAbout = () => {
                 </a>
               </p>
               <p>
-                Code & Web design:
+                Development & Web Design:
                 <a
                   class="hover:no-underline hover:italic"
                   href="http://www.jonasvonarb.ch/"
@@ -160,7 +155,7 @@ const openAbout = () => {
                 </a>
               </p>
               <p>
-                Animation & 3D:
+                Animation:
                 <a
                   class="hover:no-underline hover:italic"
                   href="https://timorick.ch/"
@@ -200,7 +195,7 @@ section {
 
 section:first-of-type {
   display: block;
-  padding-bottom: 12rem;
+  padding-bottom: 8rem;
   min-height: unset;
 }
 </style>

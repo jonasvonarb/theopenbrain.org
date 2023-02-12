@@ -1,5 +1,5 @@
 <template>
-  <div id="further-reading" class="py-12 h-[50vh]">
+  <div id="further-reading" class="py-12 max-w-[780px] border-t border-black">
     <h4 class="font-semibold">{{ content.title }}</h4>
     <p class="font">
       For additional details on retinal anatomy, physiology, connectivity and
@@ -14,7 +14,7 @@
   </div>
 </template>
 <script setup>
-const props = defineProps({
+defineProps({
   content: Object,
 });
 </script>

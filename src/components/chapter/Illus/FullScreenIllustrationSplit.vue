@@ -1,6 +1,7 @@
 <template>
-  <div ref="container" class="w-full h-full">
+  <div :id="toSlug(animation.title)" ref="container" class="w-full h-full">
     <h4 class="absolute">{{ animation.title }}</h4>
+    <SourceElement :source="animation.sources?.[activeLayer]" />
     <div
       class="absolute top-0 left-0 w-full h-full flex justify-between items-start text-small"
     >
@@ -21,6 +22,8 @@ import { onMounted, ref, watch } from "vue";
 import lottie from "lottie-web";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { toSlug } from "@/helper/general.js";
+import SourceElement from "../../UI/SourceElement.vue";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,6 +35,7 @@ const props = defineProps({
 let animationLottieRight, animationLottieLeft;
 let container = ref();
 let progress = ref();
+let activeLayer = ref(null);
 
 onMounted(() => {
   let svgContainerLeft = document.getElementById(props.animation.id + "Left");
@@ -104,6 +108,15 @@ watch(
         : totalFramesLeft - 1;
     animationLottieLeft.goToAndStop(frameLeft, true);
     animationLottieRight.goToAndStop(frameLeft, true);
+    if (60 < frameLeft && frameLeft < 100) {
+      activeLayer.value = 0;
+    } else if (110 < frameLeft && frameLeft < 180) {
+      activeLayer.value = 1;
+    } else if (190 < frameLeft && frameLeft < 250) {
+      activeLayer.value = 2;
+    } else {
+      activeLayer.value = null;
+    }
   }
 );
 </script>

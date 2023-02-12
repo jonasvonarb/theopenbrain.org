@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="w-full -ml-20 p-24 pt-6 bg-white border-black font-mono text-small"
-  >
+  <div class="w-full pt-6 bg-white border-t border-black font-mono text-small">
     <div class="marker-start" />
     <span
       id="triggerAnimationPlaceholder"

@@ -3,7 +3,7 @@
     class="pr-12 pl-32 flex flex-row justify-center items-center h-[100%] pointer-events-auto"
   >
     <div
-      class="px-20 pt-10 z-30 fixed flex flex-col w-[50vw] justify-between top-0 left-0"
+      class="px-24 pt-10 z-30 fixed flex flex-col w-[50vw] justify-between top-0 left-0"
       :class="animation.multiple ? 'items-center' : 'items-start'"
     >
       <span class="pb-0 text-baseMono">{{ animation.title }}</span>
@@ -80,25 +80,34 @@
       </div>
     </div>
     <div class="flex flex-row min-w-full">
-      <div
-        v-if="!animation.multiple && !animation.flip && !animation.switch"
-        :id="animation.id"
-        class="w-full"
-      />
-      <IllustrationFlip
-        v-else-if="!animation.multiple && animation.flip"
-        :video="toSlug(animation.video)"
-      />
-      <IllustrationSwitch
-        v-if="!animation.multiple && !animation.flip && animation.switch"
-        :info="info"
-        :isPaused="isPaused"
-      />
-      <LegendElement
-        v-if="animation.legend"
-        :legend="animation.legend"
-        iconPraefix="retinalCircuits"
-      />
+      <template v-if="animation.placeholder">
+        <img
+          class="w-full"
+          :src="`/publicAssets/images/placeholders/${animation.id}.png`"
+        />
+        <SourceElement :source="'This is a placeholder image.'" />
+      </template>
+      <template v-else>
+        <div
+          v-if="!animation.multiple && !animation.flip && !animation.switch"
+          :id="animation.id"
+          class="w-full"
+        />
+        <IllustrationFlip
+          v-else-if="!animation.multiple && animation.flip"
+          :animation="animation"
+        />
+        <IllustrationSwitch
+          v-if="!animation.multiple && !animation.flip && animation.switch"
+          :info="info"
+          :isPaused="isPaused"
+        />
+        <LegendElement
+          v-if="animation.legend"
+          :legend="animation.legend"
+          iconPraefix="retinalCircuits"
+        />
+      </template>
     </div>
     <div class="absolute top-12 right-8 z-40">
       <PauseIcon
@@ -124,6 +133,7 @@ import IllustrationFlip from "./IllustrationFlip.vue";
 import IllustrationSwitch from "./IllustrationSwitch.vue";
 import StateElement from "@/components/UI/StateElement.vue";
 import LegendElement from "@/components/UI/LegendElement.vue";
+import SourceElement from "@/components/UI/SourceElement.vue";
 
 const props = defineProps({
   animation: Object,
@@ -165,6 +175,7 @@ const playPause = () => {
 const setState = (event) => {
   let index = event.index;
   let indexBefore = event.activeState;
+
   if (!info.highlight) {
     if (!props.animation.multiple) {
       animationLottie.setSpeed(6);
@@ -217,12 +228,12 @@ onMounted(() => {
   if (!svgContainer) return;
   animationLottie = lottie.loadAnimation({
     id: props.animation.id,
-    speed: 1,
+    speed: info.speed || 1,
     wrapper: svgContainer,
     animType: "svg",
     loop: false,
-    autoplay: true,
-    path: "/publicAssets/animations/" + props.animation.id + ".json",
+    autoplay: props.animation.autoplay ? true : false,
+    path: `/publicAssets/animations/${props.animation.id}.json`,
   });
   animationLottie.addEventListener("DOMLoaded", () => {
     const highligters = document.getElementsByClassName("highlighterIllu");
@@ -232,7 +243,7 @@ onMounted(() => {
     }
   });
   animationLottie.setSubframe(true);
-  animationLottie.play();
+
   if (info.loop) {
     animationLottie.addEventListener("complete", () => {
       animationLottie.playSegments(
@@ -249,8 +260,9 @@ onMounted(() => {
     }
   } else {
     setTimeout(() => {
+      animationLottie.setSpeed(info.speed || 1);
       animationLottie.play();
-    }, 500);
+    }, 600);
   }
 });
 </script>

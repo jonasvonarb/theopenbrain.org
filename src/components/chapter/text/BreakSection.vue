@@ -33,10 +33,18 @@ const openInfo = () => {
     <div class="sticky flex top-0 h-screen w-full pl-24 py-10">
       <div class="w-full text-white">
         <div
-          class="flex flex-col justify-strat h-ful"
-          v-if="content.title === 'Blind Spot' || 'Color Blindness'"
+          class="flex flex-col justify-strat"
+          v-if="content.title === 'Blind spot' || 'Color blindness'"
         >
-          <h4 class="">{{ content.title }}</h4>
+          <h4
+            :class="
+              !infoIsOpen && content.title === 'Color blindness'
+                ? 'text-black'
+                : ''
+            "
+          >
+            {{ content.title }}
+          </h4>
           <div class="flex gap-6 z-50 pt-20">
             <PlusIcon
               :class="!infoIsOpen ? '' : 'rotate-45'"
@@ -45,20 +53,29 @@ const openInfo = () => {
             />
             <div
               :id="'info-' + toSlug(content.title)"
-              class="flex flex-col justify-start w-full max-w-[850px] h-auto max-h-[80vh] overflow-scroll gap-16 pb-2 overscroll-auto"
+              class="flex justify-between w-full h-auto max-h-[80vh] overflow-scroll pb-2 overscroll-auto pr-32"
             >
-              <p class=" " v-html="content.text"></p>
-              <div v-if="content.steps" class="">
-                <p class="font-semibold">Directions:</p>
-                <ol class="pl-12">
-                  <li
-                    v-for="step in content.steps"
-                    class="pb-6 last:pb-0 list-decimal list-outside"
-                    :key="step"
-                  >
-                    {{ step }}
-                  </li>
-                </ol>
+              <div class="flex flex-col justify-start gap-16 w-[800px]">
+                <p class=" " v-html="content.text" />
+                <div v-if="content.steps" class="">
+                  <p class="font-semibold">Directions:</p>
+                  <ol class="pl-12">
+                    <li
+                      v-for="step in content.steps"
+                      class="pb-6 last:pb-0 list-decimal list-outside"
+                      :key="step"
+                    >
+                      {{ step }}
+                    </li>
+                  </ol>
+                </div>
+              </div>
+              <div class="w-[25vw] h-[24vw] -mt-2">
+                <img
+                  class="h-full w-full object-contain object-right-top"
+                  v-if="content.title === 'Blind spot'"
+                  :src="`/publicAssets/images/${toSlug(content.title)}.png`"
+                />
               </div>
             </div>
           </div>
@@ -68,18 +85,18 @@ const openInfo = () => {
           >
             <div
               class="absolute top-0 left-0 p-32 pl-44 py-72 flex justify-around items-center w-full h-full pointer-events-none"
-              v-if="content.title === 'Blind Spot'"
+              v-if="content.title === 'Blind spot'"
             >
               <div class="text-blindness">A</div>
               <div class="text-blindness">B</div>
             </div>
             <div
-              v-if="content.title === 'Color Blindness'"
-              class="absolute top-0 left-0 p-32 pl-44 py-72 flex justify-around items-center w-full h-full"
+              v-if="content.title === 'Color blindness'"
+              class="absolute top-0 left-0 p-32 pl-44 py-72 flex justify-around items-center w-full h-full bg-lightest"
             >
               <img
                 class="w-full h-full object-contain"
-                src="/publicAssets/images/eyeDots.png"
+                src="/publicAssets/images/eyeDots.svg"
               />
             </div>
           </div>

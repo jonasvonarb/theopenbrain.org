@@ -29,7 +29,7 @@ const commentStore = useCom();
     <Illustration />
     <EyeStart />
     <Text />
-    <FootNotesWindow />
+    <FootNotesWindow  />
     <Comment v-if="commentStore.activeCom" />
 
     <div

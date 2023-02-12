@@ -129,7 +129,7 @@ onBeforeUnmount(() => {
     <div id="scroller" class="pointer-events-none w-full">
       <main
         id="text"
-        class="text pointer-events-auto w-full text-left pt-[20vh] ml-[50vw] z-30 border-l bg-white border-black tracking-wide pb-[60vh] pl-20 pr-24 duration-300"
+        class="text pointer-events-auto w-full text-left pt-[20vh] ml-[50vw] z-30 border-l bg-white border-black tracking-wide pl-20 pr-24 duration-300"
       >
         <!-- intro -->
         <section
@@ -149,9 +149,9 @@ onBeforeUnmount(() => {
                 posAugeY / 2 +
                 'px);' +
                 'height: ' +
-                (3.5 - Math.abs(posAugeX.toFixed(2)) / 30) +
+                (2.5 - Math.abs(posAugeX.toFixed(2)) / 20) +
                 'rem; width: ' +
-                (3.5 - Math.abs(posAugeX.toFixed(2)) / 30) +
+                (2.5 - Math.abs(posAugeX.toFixed(2)) / 20) +
                 'rem;'
               "
               class="bg-black h-14 w-14 rounded-full translate-x-2"

@@ -3,7 +3,7 @@
     :key="paragraph.id + 'img'"
     v-if="paragraph?.img"
     :class="!inlineImageActive ? 'w-36 h-60' : 'imageW  '"
-    class="no-select z-[60] absolute right-0 mt-24 duration-100 border -mr-[1px] border-black flex flex-col justify-center items-center bg-white"
+    class="no-select z-[60] absolute right-0 mt-12 duration-100 border -mr-[0.5px] border-black flex flex-col justify-center items-center bg-white"
   >
     <figure class="overflow-hidden flex flex-col h-full w-full">
       <img
@@ -45,7 +45,7 @@ defineProps({
   paragraph: Object,
 });
 
-const inlineImageActive = ref(false);
+const inlineImageActive = ref(true);
 
 const toggleImage = () => {
   inlineImageActive.value = !inlineImageActive.value;

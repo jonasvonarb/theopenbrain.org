@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full flex justify-center items-start capitalize">
+  <div class="w-full h-full flex justify-center items-start">
     <StateElement
       v-if="!info.iconSwitches"
       :states="info.switches"

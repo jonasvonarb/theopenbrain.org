@@ -9,9 +9,11 @@
     >
       <img
         class="w-full h-10 my-1"
-        :src="'/publicAssets/icons/' + iconPraefix + '/' + toSlug(icon) + '.svg'"
+        :src="
+          '/publicAssets/icons/' + iconPraefix + '/' + toSlug(icon) + '.svg'
+        "
       />
-      <p class="h-8">{{ icon !== "special" ? icon : "" }}</p>
+      <p class="h-8">{{ icon !== "special" ? icon : "Spike train" }}</p>
     </div>
   </div>
 </template>

@@ -170,6 +170,18 @@ h4 {
   fill: var(--violet);
   fill-opacity: 1;
 }
+
+.highlightIllu > *,
+.highlightIllu > .highlighterIlluFill > *.highlighterIlluFill,
+.highlightIllu > .highlighterIlluFill,
+.highlightIllu > * > *.highlighterIlluFill {
+  fill: var(--violet);
+  fill-opacity: 1;
+}
+.highlighterIlluBorder.highlightIllu > *,
+.highlightIllu > .highlighterIlluBorder > *,
+.highlightIllu > .highlighterIlluBorder,
+.highlighterIlluBorder.highlightIllu > * > *, 
 .highlighterIlluStroke.highlightIllu > *,
 .highlightIllu > .highlighterIlluStroke > *,
 .highlightIllu > .highlighterIlluStroke,
@@ -270,7 +282,6 @@ mark.comment {
 
 .fade-enter-active,
 .fade-leave-active {
-  position: absolute;
   transition: opacity 0.3s, fill 0s, fill-opacity 0s, stroke 0s,
     stroke-opacity 0s;
   fill: white;

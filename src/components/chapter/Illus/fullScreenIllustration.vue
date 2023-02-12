@@ -7,6 +7,7 @@ import FullScreenIllustrationMultiple from "@/components/chapter/Illus/FullScree
 import animations from "@/assets/json_backend/animations.json";
 import FullScreenIllustrationLoop from "./FullScreenIllustrationLoop.vue";
 import FullScreenIllustrationSplit from "./FullScreenIllustrationSplit.vue";
+import SourceElement from "../../UI/SourceElement.vue";
 
 const props = defineProps({
   paragraph: Object,
@@ -35,7 +36,7 @@ onMounted(() => {
     speed: 3,
     wrapper: svgContainer,
     animType: "svg",
-    loop: false,
+    loop: thisAnimation.value.loop,
     autoplay: false,
     path: "/publicAssets/animations/" + id + ".json",
   });
@@ -67,6 +68,7 @@ const setState = (index, activeState) => {
     animation.value.goToAndStop(0, true);
     activeState.toggle = 0;
     activeState.state = index;
+    console.log("clicked");
   }
 };
 </script>
@@ -74,7 +76,7 @@ const setState = (index, activeState) => {
 <template>
   <div
     ref="containerScroll"
-    class="w-screen bg-lighter border-y border-black -translate-x-1/2 -ml-20 my-[25vh] text-small font-mono"
+    class="w-screen bg-light border-y border-black -translate-x-1/2 -ml-20 my-[25vh] text-small font-mono"
     :class="!thisAnimation.split ? 'h-[150vh]' : 'h-[700vh]'"
   >
     <div class="sticky w-full h-screen px-24 py-10 top-0">
@@ -137,6 +139,7 @@ const setState = (index, activeState) => {
           </div>
         </div>
       </div>
+      <SourceElement :source="thisAnimation?.source" />
       <div
         v-if="
           !thisAnimation?.multiple &&
