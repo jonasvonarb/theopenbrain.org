@@ -85,6 +85,9 @@ const activeAnimation = ref(null);
 onMounted(() => {
   let svgContainer = document.getElementById(props.animation.id);
   animationLottie = lottie.loadAnimation({
+    rendererSettings: {
+      progressiveLoad: true,
+    },
     id: props.animation.id,
     speed: 3,
     wrapper: svgContainer,

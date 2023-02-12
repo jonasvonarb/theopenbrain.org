@@ -28,6 +28,9 @@ onMounted(() => {
     animType: "svg",
     loop: true,
     autoplay: false,
+    rendererSettings: {
+      progressiveLoad: true,
+    },
     path:
       "/publicAssets/animations/" +
       props.animation.id +

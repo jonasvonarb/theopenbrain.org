@@ -213,6 +213,9 @@ onMounted(() => {
     loop: false,
     autoplay: false,
     path: "/publicAssets/animations/" + props.animation.id + ".json",
+    rendererSettings: {
+      progressiveLoad: true,
+    },
   });
   setTimeout(() => {
     animationLottie.play();

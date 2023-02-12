@@ -39,6 +39,9 @@ onMounted(() => {
     loop: thisAnimation.value.loop,
     autoplay: false,
     path: "/publicAssets/animations/" + id + ".json",
+    rendererSettings: {
+      progressiveLoad: true,
+    },
   });
   animation.value.setSubframe(true);
   animation.value.setSpeed(1);
