@@ -3,7 +3,7 @@ name: Node CI
 on:
   push:
     branches:
-      - stagin
+      - staging
       
 jobs:
   build:
@@ -28,5 +28,5 @@ jobs:
           SOURCE: "dist/"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.TARGET_DEPLOY }}
+          TARGET: ${{ secrets.TARGET_STAGE }}
           EXCLUDE: "/dist/, /node_modules/"
