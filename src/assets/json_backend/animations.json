@@ -125,13 +125,7 @@
         "11-cis retinal binds is shuttled out of the RPE",
         "11-cis retinal re-enters the rod where it can get activated by light again"
       ],
-      "statesHighlight": [
-        "Rhodopsin",
-        "Retinal ",
-        "Rod",
-        "RPE",
-        "IRBP"
-      ]
+      "statesHighlight": ["Rhodopsin", "Retinal ", "Rod", "RPE", "IRBP"]
     },
     {
       "id": "animationSynapticArchitecture",
@@ -202,13 +196,27 @@
       "loop": true,
       "switch": true,
       "switches": ["Small light", "Wide light"],
+      "blockSwitches": true,
       "legend": [
+        "Photoreceptors",
+        "Horizontal cells",
+        "Bipolar cells",
+        "Amacrine cells",
+        "Ganglion cells",
         "Hyperpolarization",
         "Depolarization",
         "Spike train",
+        "special",
         "Inhibition",
-        "Excitatation"
+        "Excitatation",
+        "Gap junction"
       ]
+    },
+    {
+      "id": "animationColorOpponency",
+      "title": "Color Opponency",
+      "illuImage": true,
+      "fullHeight": true
     },
     {
       "id": "animationDirectionSelectivity",
@@ -217,12 +225,20 @@
       "loop": true,
       "switch": true,
       "switches": ["Prefered", "Null"],
+      "blockSwitches": true,
       "legend": [
+        "Photoreceptors",
+        "Horizontal cells",
+        "Bipolar cells",
+        "Amacrine cells",
+        "Ganglion cells",
         "Hyperpolarization",
         "Depolarization",
         "Spike train",
+        "special",
         "Inhibition",
-        "Excitatation"
+        "Excitatation",
+        "Gap junction"
       ]
     },
     {
@@ -232,13 +248,20 @@
       "loop": true,
       "switch": true,
       "switches": ["Symmetric center", "Asymmetric center"],
+      "blockSwitches": true,
       "legend": [
+        "Photoreceptors",
+        "Horizontal cells",
+        "Bipolar cells",
+        "Amacrine cells",
+        "Ganglion cells",
         "Hyperpolarization",
         "Depolarization",
         "Spike train",
+        "special",
         "Inhibition",
         "Excitatation",
-        "special"
+        "Gap junction"
       ]
     },
     {
@@ -249,11 +272,18 @@
       "switch": true,
       "swicthSymboles": true,
       "switches": ["Night", "Day"],
+      "blockSwitches": true,
       "iconPraefix": "retinalCircuits",
       "legend": [
+        "Photoreceptors",
+        "Horizontal cells",
+        "Bipolar cells",
+        "Amacrine cells",
+        "Ganglion cells",
         "Hyperpolarization",
         "Depolarization",
         "Spike train",
+        "special",
         "Inhibition",
         "Excitatation",
         "Gap junction"
@@ -264,12 +294,26 @@
       "title": "Light sensitive ganglion cells",
       "fullscreen": false,
       "loop": true,
-      "legend": ["Spike train"]
+      "legend": [
+        "Photoreceptors",
+        "Horizontal cells",
+        "Bipolar cells",
+        "Amacrine cells",
+        "Ganglion cells",
+        "Hyperpolarization",
+        "Depolarization",
+        "Spike train",
+        "special",
+        "Inhibition",
+        "Excitatation",
+        "Gap junction"
+      ]
     },
     {
       "id": "animationWavesOfActivity",
       "title": "Spontaneous waves of activity",
-      "placeholder": true
+      "illuImage": true,
+      "youtubeID": "k0_HXpcH4zI"
     },
     {
       "id": "animationNormalVision",

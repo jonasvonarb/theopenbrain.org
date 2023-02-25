@@ -107,6 +107,7 @@
           :key="subParagraph.id"
           :title="subParagraph.title"
           :text="subParagraph.text"
+          :slug="subParagraph.videoSlug || 'placeholder'"
         />
         <BreakSection
           v-else-if="subParagraph.type === 'breakSection'"

@@ -13,9 +13,9 @@ const props = defineProps({
 
 <template>
   <button class="buttonEye" @click="store.toggle('active' + target)">
-    <div class="eye">
+    <div class="eye flex justify-center w-6 h-6">
       <OpenEye v-if="text === 'open'" />
-      <ClosedEye v-else class="small" />
+      <ClosedEye v-else class="" />
     </div>
   </button>
 </template>
@@ -26,12 +26,10 @@ const props = defineProps({
 }
 .eye {
   fill: white;
-  width: 2.5rem;
-  height: 2.5rem;
 }
 .small {
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .buttonEye:hover * {

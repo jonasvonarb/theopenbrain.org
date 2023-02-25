@@ -1,12 +1,20 @@
 <template>
   <div class="w-full h-full flex justify-center items-start">
     <StateElement
-      v-if="!info.iconSwitches"
+      v-if="!info.blockSwitches"
       :states="info.switches"
       :activeState="activeState"
       @onClick="setState"
     />
-    <div v-else>
+
+    <StateElementBlock
+      v-else
+      :states="info.switches"
+      :activeState="activeState"
+      :praefix="info.iconPraefix"
+      @onClick="setState"
+    />
+    <!-- <div v-else>
       <img
         class="absolute top-64 left-24 h-12 w-12"
         @click="setState"
@@ -18,7 +26,7 @@
           '.svg'
         "
       />
-    </div>
+    </div> -->
     <template v-for="(switchWord, index) of info.switches" :key="switchWord">
       <div
         v-show="index === activeState"
@@ -37,6 +45,7 @@
 import { ref, onMounted, watch } from "vue";
 import lottie from "lottie-web";
 import StateElement from "../../UI/StateElement.vue";
+import StateElementBlock from "../../UI/StateElementBlock.vue";
 
 const props = defineProps({
   info: Object,

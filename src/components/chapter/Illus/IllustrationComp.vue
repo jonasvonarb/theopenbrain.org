@@ -44,6 +44,15 @@
       <div v-if="animation.switches || animation.states">
         <template v-if="!info.blockStates">
           <StateElement
+            v-if="!info.blockSwitches"
+            :states="!info.multiple ? info.states : Object.keys(info.states)"
+            :activeState="activeState.state"
+            :praefix="info.iconPraefix"
+            :iconsIndex="info.icons"
+            @onClick="setState"
+          />
+          <StateElementBlock
+            v-else
             :states="!info.multiple ? info.states : Object.keys(info.states)"
             :activeState="activeState.state"
             :praefix="info.iconPraefix"
@@ -80,11 +89,30 @@
       </div>
     </div>
     <div class="flex flex-row min-w-full">
-      <template v-if="animation.placeholder">
-        <img
-          class="w-full"
-          :src="`/publicAssets/images/placeholders/${animation.id}.png`"
-        />
+      <template v-if="animation.illuImage">
+        <div
+          v-if="!animation.youtubeID"
+          :class="
+            animation.fullHeight
+              ? 'bg-black h-screen w-[50vw] flex justify-center items-center absolute top-0 left-0'
+              : ''
+          "
+        >
+          <img
+            class="w-full"
+            :src="`/publicAssets/images/illuImages/${animation.id}.png`"
+          />
+        </div>
+        <div class="w-full h-[80vh]" v-else>
+          <iframe
+            class="w-full h-full"
+            :src="`https://www.youtube.com/embed/${animation.youtubeID}`"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
         <SourceElement :source="'This is a placeholder image.'" />
       </template>
       <template v-else>
@@ -132,6 +160,7 @@ import PauseIcon from "@/icons/custom/PauseIcon.vue";
 import IllustrationFlip from "./IllustrationFlip.vue";
 import IllustrationSwitch from "./IllustrationSwitch.vue";
 import StateElement from "@/components/UI/StateElement.vue";
+import StateElementBlock from "@/components/UI/StateElementBlock.vue";
 import LegendElement from "@/components/UI/LegendElement.vue";
 import SourceElement from "@/components/UI/SourceElement.vue";
 
@@ -152,9 +181,15 @@ const activeState = !info.blockStates
   : ref([]);
 
 if (info.blockStates) {
-  info.states.forEach(() => {
-    activeState.value.push(true);
-  });
+  if (info.states) {
+    info.states.forEach(() => {
+      activeState.value.push(true);
+    });
+  } else {
+    info.switches.forEach(() => {
+      activeState.value.push(true);
+    });
+  }
 }
 
 const playPause = () => {
@@ -265,7 +300,7 @@ onMounted(() => {
     setTimeout(() => {
       animationLottie.setSpeed(info.speed || 1);
       animationLottie.play();
-    }, 600);
+    }, 300);
   }
 });
 </script>

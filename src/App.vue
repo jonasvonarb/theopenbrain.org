@@ -2,7 +2,7 @@
 import { RouterView, useRoute } from "vue-router";
 import MenuChapter from "./components/Navigation/MenuChapter.vue";
 import MediaQueryWarning from "./components/UI/MediaQueryWarning.vue";
-// import MenuHome from "./components/Navigation/MenuHome.vue";
+import MenuHome from "./components/Navigation/MenuHome.vue";
 import MenuAbout from "./components/Navigation/MenuAbout.vue";
 import { onBeforeUnmount, ref, watch } from "vue";
 import { watchDebounced, useMediaQuery } from "@vueuse/core";
@@ -54,6 +54,7 @@ onBeforeUnmount(() => {
 <template>
   <div v-if="isLargeScreen" class="text-base cursor-default font-sans">
     <OverlayInfo v-if="!store.hasBeenVisited" />
+    <div class="bg-img" />
     <RouterView
       v-slot="{ Component }"
       class="z-0 duration-300"
@@ -67,8 +68,8 @@ onBeforeUnmount(() => {
         <component :is="Component" />
       </transition>
     </RouterView>
-    <!-- <MenuHome /> -->
     <MenuChapter />
+    <MenuHome />
     <MenuAbout v-if="route.name === 'chapter'" />
   </div>
   <div v-else>

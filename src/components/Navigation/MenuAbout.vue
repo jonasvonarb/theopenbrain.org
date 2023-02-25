@@ -24,7 +24,7 @@ const openAbout = () => {
           ? 'left-6'
           : 'left-6'
         : store.activeMenu
-        ? 'left-1/2 ml-4'
+        ? '-left-24 ml-4'
         : 'left-24'
     "
   >

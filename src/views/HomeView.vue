@@ -18,7 +18,7 @@
           <!-- <BiArrowRightCircleFill @click="enter()" /> -->
         </div>
       </div>
-      <div
+      <!-- <div
         :class="store.activeMenu ? 'w-[65vw]' : 'w-full'"
         class="video-background w-full absolute mix-blend-overlay pointer-events-none duration-300 right-0"
       >
@@ -29,14 +29,13 @@
           allow="autoplay; fullscreen"
           allowfullscreen
         />
-      </div>
+      </div> -->
     </div>
   </main>
 </template>
 
 <script setup>
 import { useGeneral } from "@/stores/index";
-
 
 const store = useGeneral();
 

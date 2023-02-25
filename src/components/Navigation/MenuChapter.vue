@@ -120,20 +120,19 @@ const closeMenu = () => {
           v-if="store.activeMenu"
           :text="'close'"
           :target="'Menu'"
-          class="fixed bg-darker pt-4 pb-4 pointer-events-auto z-[60] hover:opacity-90 h-full w-14 flex justify-center items-start left-0 top-0 duration-300 overflow-hidden"
+          class="fixed bg-darker pt-10 pb-4 pointer-events-auto z-[60] h-full w-10 flex justify-center items-start top-0 duration-300 overflow-hidden"
         />
       </ul>
     </Transition>
     <!-- menu open/close chapter -->
     <InteractionButton
-      v-if="!store.activeMenu"
       :text="'open'"
       :target="'Menu'"
-      class="fixed bg-darker pt-10 pb-4  pointer-events-auto z-[60] h-full w-14 flex justify-center items-start left-0 top-0 duration-300 overflow-hidden"
+      class="fixed bg-darker pt-10 pb-4 pointer-events-auto z-[60] h-full w-10 flex justify-center items-start top-0 duration-300 overflow-hidden"
       :class="
         !store.activeMenu && route.name === 'chapter'
-          ? 'left-0 opacity-100 '
-          : '-left-0 opacity-0'
+          ? 'left-10 opacity-100 '
+          : '-left-10 opacity-0'
       "
     />
   </div>

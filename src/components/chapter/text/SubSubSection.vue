@@ -56,6 +56,7 @@
             :key="subSubParagraph.text"
             :title="subSubParagraph.title"
             :text="subSubParagraph.text"
+            :slug="subSubParagraph.videoSlug || 'placeholder'"
           />
           <BreakSection
             v-else-if="subSubParagraph?.type === 'breakSection'"
@@ -79,6 +80,7 @@
         v-if="subSubSection.type === 'breakVideo'"
         :title="subSubSection.title"
         :text="subSubSection.text"
+        :slug="subSubSection.videoSlug || 'placeholder'"
       />
       <BreakSection
         v-if="subSubSection.type === 'breakSection'"

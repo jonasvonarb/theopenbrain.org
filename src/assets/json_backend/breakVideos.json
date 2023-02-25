@@ -1,9 +1,16 @@
 {
-  "videos": [
-    {
+  "videos": {
+    "placeholder": {
       "video": "9-1-normal-vision",
+      "slug": "9-1-normal-vision",
       "title": "This is a Placeholder",
       "text": "Here you will be able to see people talking about things"
+    },
+    "dowling-and-werblin": {
+      "video": "dowling-and-werblin",
+      "slug": "dowling-and-werblin",
+      "title": "Dowling and werblin",
+      "text": "Talking about recording a diversity of responses from all retinal cell types."
     }
-  ]
+  }
 }

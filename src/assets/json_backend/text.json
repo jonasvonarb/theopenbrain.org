@@ -150,6 +150,7 @@
                     {
                       "id": "0ccacfad-16a4-4c0c-bf01-ee5f1579b255",
                       "img": "RodBySchultze",
+                      "imgClosed": true,
                       "imgCap": "Rod, left, and cone, right, from a human retina. Drawing by Max Schutlze, 1873.",
                       "text": "<strong>Photoreceptors:</strong> Photoreceptors are vital to retinal function, as they detect light and convert it into an electrical signal<sup data-sup='28'>28,</sup><sup data-sup='29'>29</sup>. By the late 17th century, it had become clear there were 2 types of photoreceptors, rods and cones, and that each was differentially localized in the retina and served different functions. Anatomical work from Max Schultze indicated that cones were mostly near the center of the human retina, whereas rods dominated in the periphery<sup data-sup='1'>1</sup>. Behavioral work from Hermann Aubert showed that visual acuity and color discrimination both decreased from the center to the periphery of the visual field<sup data-sup='1'>1</sup>"
                     },
@@ -173,6 +174,7 @@
                       "id": "d81b706a-49f2-4198-ba07-8a5d819030ac",
                       "type": "breakVideo",
                       "title": "Dowling and Werblin",
+                      "videoSlug": "dowling-and-werblin",
                       "text": "Talking about recording a diversity of responses from all retinal cell types"
                     }
                   ]
@@ -231,6 +233,7 @@
           },
           "img": "waveLength",
           "imgCap": "The normalized absorption spectra of rod (R) and cone photoreceptors (S, short wavelength - blue; M, medium wavelength, green; L, long wavelength, red).",
+          "imgClosed": true,
           "text": "Photoreceptors are the most evolutionary ancient part of the retina, and likely evolved from ciliated sensory cells that blanketed the skin of our early submarine ancestors<sup data-sup='35 36 37 38'>35 - 38</sup>. They are long thin cells, with a soma situated in the outer nuclear layer, a nerve terminal located in the outer plexiform layer, and an elongated outer segment with opsin-filled disks extending towards the retina pigment epithelium. Each outer segments contain roughly 1000 membranous disks arranged like a stack of coins. Each disk is densely packed with molecules of photopigment-filled opsins, and their related phototransduction machinery. This disc organization is critical for photoreceptor function because it amplifies photoreceptor surface area by ~1000-fold, greatly increasing the number of light-catching opsin molecules within a single photoreceptor<sup data-sup='39'>39</sup>. A thin stalk connects the opsin-filled outer segment and with the mitochondria-rich inner segment, which helps sustain the tremendous energy costs of phototransduction<sup data-sup='10'>10,</sup><sup data-sup='29'>29</sup>. Vertebrate photoreceptors can be morphologically divided into two classes based on the shape of their outer segments. Cone photoreceptors exhibit tapered outer segments (i.e. their outer segment is shaped like a cone), are specialized to detect photons during daylight conditions, and possess various opsin variants that make them sensitive to photons of different wavelengths. Humans have 3 cone types, with maximal photon absorptions situated in the blue (peak excitation ~420 nm), green (peak excitation ~534 nm) and red (peak excitation ~564 nm) regions of the electromagnetic spectrum. In contrast to cones, rods have long (rod-shaped) outer segments, and are specialized for detecting photons in dim environments<sup data-sup='10'>10,</sup><sup data-sup='29'>29</sup>. Discs in rod outer segments contain rhodopsin molecules attuned to wavelengths at the center of the visible range (blue-green; peak excitation ~498 nm). Rhodopsin is more densely concentrated in rod outer segments than cone-opsins are in cone outer segments. Additionally, in rods, the disks in the outer segment are wholly internal to the cell’s outer membrane, whereas in cones the outer membrane invaginates multiple times in the outer segment and itself contains the opsin molecules."
         },
         {
@@ -362,6 +365,7 @@
         {
           "id": "f732d130-c766-4667-bc6e-7ba8be60612e",
           "img": "bipolarCellTerminal",
+          "imgClosed": true,
           "imgCap": "Example bipolar cell responses to a light stimulus that is being presented at a fixed frequency. Some bipolar cells respond in a more transient manner, while others are more sustained. Adapted from Baden et al., Nature Reviews Neuroscience, 2014.",
           "text": "Bipolar cells temporally filter the visual signal. Aside from splitting the visual world into ON and OFF components, bipolar cells also begin sorting temporal aspects of the incoming visual scene<sup data-sup='26'>26</sup>. For instance, some bipolar cell types are better than others at encoding fast changes in luminance over there receptive fields, whereas others are better able to encode when the mean luminance over their receptive field is stable for a long period of time. These different ‘interpretations’ of the incoming stimulus appear to be partly cell-intrinsic and are subsequently imposed upon downstream amacrine and ganglion cells to help establish some of the feature-detecting computations outlined in Section 6."
         },
@@ -415,7 +419,7 @@
                     },
                     {
                       "id": "014b53f8-7421-44ab-af4e-e8bb6c3323c4",
-                      "animation?": {
+                      "animation": {
                         "name": "ColorOpponency",
                         "id": "animationColorOpponency"
                       },
@@ -437,6 +441,7 @@
                           },
                           "img": "GABAergic",
                           "imgCap": "For a given starburst amacrine cell, its distal processes are predominantly activated by visual stimuli moving away from the soma. In turn, it’s processes in different quadrants specifically connect to nearby direction selective ganglion cells with a preferred direction opposite to preferred direction of the starburst processes that connect to it. Adapted from Briggman et al., Nature, 2011.",
+                          "imgClosed": true,
                           "text": "<strong>Direction-selectivity:</strong> In the human and non-human primate visual system, it was generally thought that direction selective responses first arise in primary visual cortex. However, recent research has described direction selectivity in the primate retina<sup data-sup='70'>70,</sup><sup data-sup='71'>71</sup>. This puts the primate retina in line with several animal models commonly studied, such as rabbits and mice (as well as flies and fish), where direction selectivity (DS) arises in retinal ganglion cells<sup data-sup='72'>72</sup>, and where the circuitry underlying the DS computation is among the most studied in neuroscience. Early ideas came out of studies in insects and proposed that visual inputs from two spatially-offset locations were relayed to a single downstream neuron with differing delays<sup data-sup='73'>73</sup>. A moving object that activated the long-delay input before the short delay input drove neurons better since the delay allowed excitation from both locations to coincide. Motion in the opposite direct led to little coincidence and so the neuron could respond selectively to motion direction. Recent work in infects confirm aspects of this model, but retinal direction selectivity in mammals arises in ganglion cells through direction-selective GABAergic inhibition from starburst amacrine cells<sup data-sup='72'>72</sup>. These amacrine cells, named by Ted Famiglietti due to their unique ‘firework’ anatomical appearance, grow dendrites radially outwards from their cell bodies<sup data-sup='74'>74</sup>. Starburst amacrine cells are preferentially activated by visual stimuli moving centripetally along their dendritic tree (i.e. moving away from the soma)<sup data-sup='75'>75</sup>. The distal tip of each starburst dendrite connects with a ganglion cell. This ganglion cell in turn has the opposite preferred direction to its presynaptic starburst partner, since the amacrine cell releases GABA when activated<sup data-sup='76'>76</sup>. In a remarkable feat of wiring, ganglion cells preferring a particular direction of motion receive inhibition exclusively from starburst amacrine cells dendrites that point the opposite direction<sup data-sup='77'>77</sup>. As such, stimuli moving in a ganglion cell’s preferred direction drive very little inhibition, whereas stimuli moving in the ganglion cell’s null direction drive strong GABAergic inhibition, which vetoes the relatively symmetrical excitatory drive from bipolar cells during both preferred and null direction motion."
                         },
                         {
@@ -497,6 +502,7 @@
                 {
                   "id": "1e41246d-ea88-4a18-a6ad-2566c2a2d90f",
                   "img": "retinoRecipientRegions",
+                  "imgClosed": true,
                   "imgCap": "Different retinal cell types (shown in different colors) can project to various retino-recipient regions in the brain (schematized as A, B and C). Some ganglion cells predominantly project to a single brain region, whereas others project to multiple regions. Adapted from Martersteck et al., Cell Reports. 2017.",
                   "text": "While the axons of all retinal ganglion cells get bundled into the optic nerve, which leave the eye via the optic nerve, each type of ganglion cells projects its axons to specific target regions in the brain. The most common retino-recipient targets are the LGN (which in turn projects to visual cortex which is responsible for conscious visual perception) and the superior colliculus (which is integral for controlling eye movements and integrating vision with other sensory inputs). Intrinsically photosensitive ganglion cells project to a host of other brain regions. In mouse, recent work has found approximately 45 different retino-recipient regions<sup data-sup='92'>92</sup>."
                 }
@@ -536,6 +542,7 @@
                 {
                   "id": "be5b4e2f-c7fa-4798-910f-257f6c6ee1ab",
                   "img": "testSpotLuminance",
+                  "imgClosed": true,
                   "imgCap": "At a given mean luminance intensity (eg. in a room of a given light level), the retina can only signal changes in brightness over roughy 2-3 orders of magnitude. However, when the mean luminance level of the environment changes, the retina adapts so that it can encode instantaneous changes in light levels from the new mean luminance. Adapted from Purves et al., Neuroscience, 2017.",
                   "text": "As outlined in the phototransduction section, photoreceptors encode only a limited range of luminance change about a mean in their membrane potential. At the level of ganglion cells, this means that a given ganglion cell’s firing rate is not an absolute measure of light intensity. Instead, firing rate represents a relative increase or decrease from the mean luminance. In fact, a given ganglion cell is only able to reliable signal increases in a spot’s intensity over about two orders of magnitude. However, through various mechanisms, the retina as a whole is able to adapt to the mean luminance of a given environment, meaning that the luminance response curve of a ganglion cells can shift depending on mean luminance, allowing us to see over roughly 10 orders of magnitude. However, light adaptation is not instantaneous, and can account for why it might take a minute for your retina to adjust when you pass between two environments with significantly different mean luminance levels (like walking from a dark room into a sunny environment)."
                 }

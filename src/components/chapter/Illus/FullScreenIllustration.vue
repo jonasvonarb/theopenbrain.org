@@ -79,7 +79,7 @@ const setState = (index, activeState) => {
 <template>
   <div
     ref="containerScroll"
-    class="w-screen bg-light border-y border-black -translate-x-1/2 -ml-20 my-[25vh] text-small font-mono"
+    class="w-screen bg-light border-y border-black -translate-x-1/2 -ml-20 my-[0] mb-32 text-small font-mono"
     :class="!thisAnimation.split ? 'h-[150vh]' : 'h-[700vh]'"
   >
     <div class="sticky w-full h-screen px-24 py-10 top-0">

@@ -169,6 +169,7 @@ h4 {
 .highlighterIlluFill.highlightIllu > * > * {
   fill: var(--violet);
   fill-opacity: 1;
+  stroke-width: 0;
 }
 
 .highlightIllu > *,
@@ -177,11 +178,12 @@ h4 {
 .highlightIllu > * > *.highlighterIlluFill {
   fill: var(--violet);
   fill-opacity: 1;
+  stroke-width: 0;
 }
 .highlighterIlluBorder.highlightIllu > *,
 .highlightIllu > .highlighterIlluBorder > *,
 .highlightIllu > .highlighterIlluBorder,
-.highlighterIlluBorder.highlightIllu > * > *, 
+.highlighterIlluBorder.highlightIllu > * > *,
 .highlighterIlluStroke.highlightIllu > *,
 .highlightIllu > .highlighterIlluStroke > *,
 .highlightIllu > .highlighterIlluStroke,

@@ -7,9 +7,9 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
-    redirect: () => {
-      return { path: "/chapter" };
-    },
+    // redirect: () => {
+    //   return { path: "/chapter" };
+    // },
   },
   {
     path: "/chapter/:chapter?",

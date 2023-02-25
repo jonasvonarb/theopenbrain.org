@@ -28,7 +28,7 @@ const openInfo = () => {
 <template>
   <div
     ref="trigger"
-    class="w-screen h-[180vh] -ml-20 -translate-x-1/2 border-y border-light bg-dark my-[25vh] text-medium font-mono"
+    class="w-screen h-[180vh] -ml-20 -translate-x-1/2 border-y border-light bg-dark my-[0] mb-32 text-medium font-mono"
   >
     <div class="sticky flex top-0 h-screen w-full pl-24 py-10">
       <div class="w-full text-white">

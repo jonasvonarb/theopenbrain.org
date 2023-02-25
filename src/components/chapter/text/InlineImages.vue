@@ -41,11 +41,11 @@ import { ref } from "vue";
 import CloseArrowIcon from "@/icons/custom/CloseArrowIcon.vue";
 import OpenArrowIcon from "@/icons/custom/OpenArrowIcon.vue";
 
-defineProps({
+const props = defineProps({
   paragraph: Object,
 });
 
-const inlineImageActive = ref(true);
+const inlineImageActive = ref(props.paragraph?.imgClosed ? false : true);
 
 const toggleImage = () => {
   inlineImageActive.value = !inlineImageActive.value;

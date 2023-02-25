@@ -96,6 +96,7 @@
           v-else-if="paragraph.type === 'breakVideo'"
           :title="paragraph.title"
           :text="paragraph.text"
+          :slug="paragraph.videoSlug || 'placeholder'"
         />
         <BreakSection
           :key="'breakSection' + paragraph.id"

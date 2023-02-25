@@ -5,6 +5,7 @@ import OpenCloseButtonLink from "@/components/UI/OpenCloseButtonLink.vue";
 import { onBeforeRouteUpdate, useRoute, useRouter } from "vue-router";
 import { useGeneral } from "@/stores";
 import { watch } from "vue";
+import Brain from "../../icons/custom/Brain.vue";
 const store = useGeneral();
 const route = useRoute();
 const router = useRouter();
@@ -63,12 +64,23 @@ const toStart = () => {
       </ol>
     </Transition>
     <!-- menu open/close -->
-    <OpenCloseButtonLink
-      :text="'open'"
-      :target="''"
-      class="fixed border-r border-black bg-dark pt-12 text-white pointer-events-auto z-[60] hover:bg-lightDark h-full w-8 flex justify-center items-top left-0 top-0 duration-300 overflow-hidden"
-      :class="route.name && route.name === 'chapter' ? 'left-0' : '-left-8'"
-    />
+
+    <div>
+      <RouterLink
+        class="fixed cursor-pointer stroke-white hover:stroke-violet bg-dark pt-10 pb-4 pointer-events-auto z-[60] h-full w-10 flex justify-center items-start left-0 top-0 duration-300 overflow-hidden"
+        :class="
+          route.name && route.name === 'chapter' && !store.activeMenu
+            ? 'left-0'
+            : '-left-10'
+        "
+        v-if="route.name !== 'home'"
+        :to="'/'"
+      >
+        <div class="w-6 h-6">
+          <Brain class="w-full h-ull" />
+        </div>
+      </RouterLink>
+    </div>
   </div>
 </template>
 

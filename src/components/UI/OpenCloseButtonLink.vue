@@ -1,7 +1,5 @@
 <script setup>
 import { useRoute, useRouter } from "vue-router";
-import BiDashCircleFill from "../../icons/BiDashCircleFill.vue";
-import EpCirclePlusFilled from "../../icons/EpCirclePlusFilled.vue";
 const route = useRoute();
 const router = useRouter();
 
@@ -16,17 +14,13 @@ const props = defineProps({
   <!-- menu links -->
   <div>
     <RouterLink
-      class="w-full text-center"
+      class="w-full h-full text-center"
       v-if="route.name !== target"
       :to="'/' + target"
     >
-      <EpCirclePlusFilled class="w-6 h-6" v-if="text === 'open'" />
-      <BiDashCircleFill class="w-6 h-6" v-else />
+      o1
     </RouterLink>
-    <div v-else @click="router.go(-1)">
-      <EpCirclePlusFilled class="w-6 h-6" v-if="text === 'open'" />
-      <BiDashCircleFill class="w-6 h-6" v-else />
-    </div>
+    <div v-else @click="router.go(-1)">o2</div>
   </div>
 </template>
 
