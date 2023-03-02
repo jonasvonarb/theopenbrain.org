@@ -11,6 +11,8 @@ import Section from "./text/SectionComp.vue";
 import Points from "@/components/UI/PointsComp.vue";
 import HoverImg from "@/components/chapter/text/HoverImg.vue";
 import FurtherReading from "./text/FurtherReading.vue";
+import DownloadSection from "./text/DownloadSection.vue";
+
 import FootNotes from "./text/FootNotes.vue";
 
 // import noise from "@/helper/noise";
@@ -199,6 +201,7 @@ onBeforeUnmount(() => {
         >
           <Section :section="section" :index="index" />
         </div>
+        <DownloadSection />
         <FurtherReading :content="source['furtherReading']" />
         <FootNotes :content="source['footNotes']" />
       </main>

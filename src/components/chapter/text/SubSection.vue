@@ -6,6 +6,7 @@
     :id="subSections.id"
     class="sub"
   >
+    <StartEndIcon :paragraph="subSections" art="start" />
     <span
       :id="
         subSections?.animation?.name &&
@@ -15,8 +16,6 @@
         subSections?.animation?.name ? 'animationTrigger block noHighlight' : ''
       "
     >
-      <StartEndIcon :paragraph="subSections" art="start" />
-
       <!-- subSection title -->
       <span :id="subSections?.title ? toSlug(subSections?.title) : ''" />
       <h3
@@ -31,95 +30,99 @@
         {{ subSections.title }}
       </h3>
       <!-- subSection paragraph -->
-      <span
-        :id="
-          subParagraph?.animation?.name &&
-          'triggerAnimation' + subParagraph?.animation?.name
-        "
-        :class="
-          subParagraph?.animation?.name
-            ? 'animationTrigger block noHighlight'
-            : ''
-        "
+      <template
         v-for="subParagraph in subSections.paragraphs"
         :key="subParagraph.id"
       >
         <StartEndIcon :paragraph="subParagraph" art="start" />
-
-        <template
-          v-if="
-            subParagraph?.type != 'breakVideo' &&
-            subParagraph?.type != 'breakSection'
+        <span
+          :id="
+            subParagraph?.animation?.name &&
+            'triggerAnimation' + subParagraph?.animation?.name
+          "
+          :class="
+            subParagraph?.animation?.name
+              ? 'animationTrigger block noHighlight'
+              : ''
           "
         >
-          <div
-            v-if="subParagraph?.animation?.transition"
-            class="marker-start"
-          />
-          <div
-            v-if="subParagraph?.animation?.transition"
-            :id="
-              subParagraph?.animation &&
-              'triggerAnimation' + subParagraph?.animation?.name + 'Transition'
+          <template
+            v-if="
+              subParagraph?.type != 'breakVideo' &&
+              subParagraph?.type != 'breakSection'
             "
-            :class="
-              subParagraph?.animation?.name + 'Transition'
-                ? 'animationTrigger animationScrollAnchor block noHighlight'
-                : ''
-            "
-            class="transition left-0 w-full h-[50vh] bg-green-"
-          />
-          <StartEndIcon :paragraph="subParagraph" art="end" />
-          <InlineImages
-            :paragraph="subParagraph"
-            :key="'images' + subParagraph.id"
-            v-if="subParagraph.img"
-          />
-          <p
-            v-if="!subParagraph.subSubSection && !subParagraph.type"
-            :id="subParagraph.id"
-            :key="subParagraph.id"
-            class="subP"
-            v-html="subParagraph.text"
-          />
-          <SubSubSection
-            v-else-if="subParagraph.subSubSection && !subParagraph.type"
-            :key="subParagraph.title"
-            :chapter-index="index"
-            :sub-index="subIndex"
-            :sub-paragraph="subParagraph"
-          />
-          <FullScreenIllustration
-            :key="subParagraph.animationFull"
-            v-if="subParagraph.animationFull"
-            :paragraph="subParagraph"
-          />
-          <!-- <BreakText
+          >
+            <div
+              v-if="subParagraph?.animation?.transition"
+              class="marker-start"
+            />
+            <div
+              v-if="subParagraph?.animation?.transition"
+              :id="
+                subParagraph?.animation &&
+                'triggerAnimation' +
+                  subParagraph?.animation?.name +
+                  'Transition'
+              "
+              :class="
+                subParagraph?.animation?.name + 'Transition'
+                  ? 'animationTrigger animationScrollAnchor block noHighlight'
+                  : ''
+              "
+              class="transition left-0 w-full h-[50vh] bg-green-"
+            />
+            <p
+              v-if="!subParagraph.subSubSection && !subParagraph.type"
+              :id="subParagraph.id"
+              :key="subParagraph.id"
+              class="subP"
+              v-html="subParagraph.text"
+            />
+            <SubSubSection
+              v-else-if="subParagraph.subSubSection && !subParagraph.type"
+              :key="subParagraph.title"
+              :chapter-index="index"
+              :sub-index="subIndex"
+              :sub-paragraph="subParagraph"
+            />
+            <InlineImages
+              :paragraph="subParagraph"
+              :key="'images' + subParagraph.id"
+              v-if="subParagraph.img"
+            />
+            <FullScreenIllustration
+              :key="subParagraph.animationFull"
+              v-if="subParagraph.animationFull"
+              :paragraph="subParagraph"
+            />
+            <!-- <BreakText
             :key="subParagraph"
             :paragraph="subParagraph"
             v-else-if="subParagraph.type === 'breakText'"
-          /> -->
-        </template>
+            /> -->
+          </template>
+          <StartEndIcon :paragraph="subParagraph" art="end" />
+          <!-- subSection Break -->
+          <BreakImages
+            v-if="subParagraph?.type === 'breakVideo'"
+            :key="subParagraph.id"
+            :title="subParagraph.title"
+            :text="subParagraph.text"
+            :slug="subParagraph.videoSlug || 'placeholder'"
+          />
+          <BreakSection
+            v-else-if="subParagraph.type === 'breakSection'"
+            :key="subParagraph.title"
+            :content="subParagraph"
+          />
+        </span>
         <StartEndIcon :paragraph="subParagraph" art="end" />
-        <!-- subSection Break -->
-        <BreakImages
-          v-if="subParagraph?.type === 'breakVideo'"
-          :key="subParagraph.id"
-          :title="subParagraph.title"
-          :text="subParagraph.text"
-          :slug="subParagraph.videoSlug || 'placeholder'"
+        <FullScreenIllustration
+          :key="subSections.animationFull"
+          v-if="subSections.animationFull"
+          :paragraph="subSections"
         />
-        <BreakSection
-          v-else-if="subParagraph.type === 'breakSection'"
-          :key="subParagraph.title"
-          :content="subParagraph"
-        />
-      </span>
-      <FullScreenIllustration
-        :key="subSections.animationFull"
-        v-if="subSections.animationFull"
-        :paragraph="subSections"
-      />
+      </template>
     </span>
     <StartEndIcon :paragraph="subSections" art="end" />
   </div>

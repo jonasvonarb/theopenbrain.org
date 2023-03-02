@@ -120,7 +120,7 @@ const closeMenu = () => {
           v-if="store.activeMenu"
           :text="'close'"
           :target="'Menu'"
-          class="fixed bg-darker pt-10 pb-4 pointer-events-auto z-[60] h-full w-10 flex justify-center items-start top-0 duration-300 overflow-hidden"
+          class="absolute bg-darker pt-10 pb-4 pointer-events-auto z-[60] h-full w-10 flex justify-center items-start top-0 right-0 duration-300 overflow-hidden"
         />
       </ul>
     </Transition>

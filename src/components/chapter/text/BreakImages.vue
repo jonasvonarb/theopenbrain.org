@@ -14,7 +14,7 @@ const currentVideo = jsonVideos.videos[props.slug];
 <template>
   <div class="text-small my-24 -ml-20 font-mono max-w-[800px]">
     <RouterLink
-      :to="`chapter/break/${slug ? slug : 'penis'}`"
+      :to="`chapter/break/${slug ? slug : 'placeholder'}`"
       class="relative flex h-full justify-center items-start gap-8 bg-white"
     >
       <div class="relative">

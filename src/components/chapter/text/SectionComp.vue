@@ -37,6 +37,7 @@
     >
       {{ section.title }}
     </h2>
+    <StartEndIcon :paragraph="section" art="start" />
     <span
       :id="
         section?.animation?.name
@@ -47,9 +48,8 @@
         section?.animation?.name ? 'animationTrigger block noHighlight' : ''
       "
     >
-      <StartEndIcon :paragraph="section" art="start" />
-
       <template v-for="paragraph in section['paragraphs']" :key="paragraph.id">
+        <StartEndIcon :paragraph="paragraph" art="start" />
         <span
           :id="
             paragraph?.animation &&
@@ -64,13 +64,7 @@
             paragraph?.type != 'breakVideo' && paragraph.type != 'breakSection'
           "
         >
-          <StartEndIcon :paragraph="paragraph" art="start" />
           <!-- section paragraph -->
-          <InlineImages
-            :paragraph="paragraph"
-            :key="'images' + paragraph.id"
-            v-if="paragraph.img"
-          />
           <p
             v-if="!paragraph.subSection"
             :key="paragraph.id"
@@ -83,6 +77,11 @@
             :key="paragraph"
             :paragraph="paragraph"
             :index="index + 1"
+          />
+          <InlineImages
+            :paragraph="paragraph"
+            :key="'images' + paragraph.id"
+            v-if="paragraph.img"
           />
           <FullScreenIllustration
             :key="paragraph.id"
@@ -105,8 +104,8 @@
         />
         <StartEndIcon :paragraph="paragraph" art="end" />
       </template>
-      <StartEndIcon :paragraph="section" art="end" />
     </span>
+    <StartEndIcon :paragraph="section" art="end" />
     <FullScreenIllustration
       :key="section.id"
       v-if="section.animationFull"

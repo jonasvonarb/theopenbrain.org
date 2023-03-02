@@ -25,6 +25,7 @@
         "Cornea",
         "Choroid",
         "Sclera",
+        "Fovea",
         "Aqueous humour",
         "Ciliary muscle",
         "Retina",
@@ -63,6 +64,7 @@
       "title": "Refraction errors",
       "fullscreen": true,
       "loop": false,
+      "infoText": "Despite our body’s best laid plans, a variety of developmental and age-related issues can cause our eyes to improperly focus incoming images onto the retina, resulting in impaired vision. Two common issues result from the image being focused either in front of (myopia) or behind (hyperopia) the retina. Myopia, also commonly referred to as nearsightedness, blurs images of far-away images. In contrast, hyperopia, commonly referred to as farsightedness, blurs images of nearby images. Another common refractive issue is astigmatism, which results in uneven focus of the incoming image on the retina, due to irregular curvature of the cornea, or lens abnormalities. Finally, as we age, the lens becomes less elastic and the ciliary muscles become less effective at accommodating different focal planes, leading to presbyopia, which tends to focus images behind the retina. In general, most types of refractive errors can be addressed with corrective lenses.",
       "states": [
         "Normal eye (emmetropia)",
         "Myopia",
@@ -88,6 +90,7 @@
       "title": "Phototransduction",
       "fullscreen": true,
       "loop": true,
+      "infoText": "In the dark, the photoreceptor outer segment has a high concentration of the small molecule cGMP (cyclic guanosine monophosphate). These small molecules bind to and activate cGMP-gated cationic channels, resulting in Na+ and Ca2+ inflow in the outer segment, which balance an ongoing efflux of K+ ions in the inner segment. Together, these ion flows result in a relatively depolarized resting membrane potential (Vm) of ~-30mV in darkness. Rhodopsin is a G-protein coupled receptor. It becomes enzymatically active following photon absorption and in turn activates the G-protein transducin. Transducin is composed of α, β, and γ subunits, and upon activation, releases its βγ subunit, which in turn activates a phosphodiesterase (PDE) that then hydrolyzes cGMP molecules. The resulting decrease in intracellular [cGMP] in the outer segment leads to the closure of cGMP-gated cation channels<sup data-sup='28'>28</sup>. Since the efflux of K+ ions continues in the inner segment, closing cGMP-gated channels in the outer segment results in photoreceptor membrane hyperpolarization, leading to a decrease in glutamate release. This light-evoked hyperpolarization is called a photovoltage, and its amplitude and duration depend on the luminance, size and duration of the light flash. Finally, an activated rhodopsin molecule needs to be de-activated, otherwise the phototransduction cascade would continue endlessly. Phototransduction terminates when an activated rhodopsin is phosphorylated by a membrane bound enzyme called rhodopsin kinase. The addition of a phosphate to rhodopsin leads to its binding by a protein called arrestin, which ejects the rhodopsin kinase, and quenches rhodopsin’s ability to activate transducin by breaking the bond between all-trans retinal and opsin<sup data-sup='28'>28,</sup><sup data-sup='29'>29,</sup><sup data-sup='42'>42</sup>.",
       "states": [
         "Rod is in the dark. Rhodopsin is inactive",
         "A flash of light, and a photon activates rhodopsin",
@@ -117,6 +120,7 @@
       "title": "The visual cycle",
       "fullscreen": true,
       "loop": true,
+      "infoText": "When rhodopsin absorbs a photon, its light-catching 11-cis retinal chromophore is isomerized into all-trans retinal. This latter form cannot be used for photon absorption, and the retina undertakes a complex series of steps to convert all-trans retinal back to photo-activatable 11-cis retinal. Following binding of arrestin, the bond between all-trans retinal and the opsin is broken. The released all-trans aldehyde is quickly converted to all-trans retinol by membrane bound retinal dehydrogenase, which is in turn bound by an all-trans retinol binding protein. From here, a transport protein called intraretinal binding protein takes all-trans retinol on an inter-cellular journey into the retina pigment epithelium, which intercalates with photoreceptor outer segments. The RPE contain a pair of enzymes – retinyl-ester isomerase which converts all-trans retinol to 11-cis retinol, and 11-cis retinol dehydrogenase which uses ATP to convert 11-cis retinol back into 11-cis retinal. The regenerated 11-cis retinal is highly insoluble and is quickly bound by an 11-cis retinal binding protein which encapsulates the molecule, which makes the return trip out of retina pigment epithelium and back into the photoreceptor outer segment, where it is released and binds anew with an opsin<sup data-sup='28'>28,</sup><sup data-sup='41'>41</sup>.",
       "states": [
         "Rhodopsin absorps a photon of light and retinal changes from 11-cis to all-trans",
         "All-trans retinal exits the rod",
@@ -271,7 +275,7 @@
       "loop": true,
       "switch": true,
       "swicthSymboles": true,
-      "switches": ["Night", "Day"],
+      "switches": ["Day", "Night"],
       "blockSwitches": true,
       "iconPraefix": "retinalCircuits",
       "legend": [
@@ -371,18 +375,9 @@
     {
       "id": "animationEyeMovements",
       "title": "Eye Movements",
-      "fullscreen": true,
-      "multiple": true,
       "source": "Artistic reinterpretaton",
-      "states": {
-        "free": "Free Examination",
-        "materialcircumstances": "Estimate the material circumstances of the family.",
-        "doing": "Surmise what the family had been doing before the arrival of the unexpected visitor.",
-        "age": "Give the ages of the people.",
-        "cloths": "Remember the clothes worn by the people.",
-        "howlong": "Estimate how long the visitor had been away from the family.",
-        "position": "Remember positions of people and objects in the room."
-      }
+      "fullscreen": false,
+      "loop": true
     },
     {
       "id": "animationPlaceholder",

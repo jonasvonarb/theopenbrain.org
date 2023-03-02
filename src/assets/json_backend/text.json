@@ -49,13 +49,7 @@
           "id": "a94004c6-a34a-4f26-8ca5-aee1e9f3780b",
           "animationFull": true,
           "animationId": "animationImpairedVision",
-          "text": "Despite our body’s best laid plans, a variety of developmental and age-related issues can cause our eyes to improperly focus incoming images onto the retina, resulting in impaired vision. Two common issues result from the image being focused either in front of (myopia) or behind (hyperopia) the retina. Myopia, also commonly referred to as nearsightedness, blurs images of far-away images. In contrast, hyperopia, commonly referred to as farsightedness, blurs images of nearby images. Another common refractive issue is astigmatism, which results in uneven focus of the incoming image on the retina, due to irregular curvature of the cornea, or lens abnormalities. Finally, as we age, the lens becomes less elastic and the ciliary muscles become less effective at accommodating different focal planes, leading to presbyopia, which tends to focus images behind the retina. In general, most types of refractive errors can be addressed with corrective lenses."
-        },
-        {
-          "id": "f76eea26-c064-41c5-9347-889a65266271",
-          "type": "breakVideo",
-          "title": "Maureen Neitz",
-          "text": "discussing possible causes and cures for myopia"
+          "text": ""
         }
       ]
     },
@@ -262,7 +256,7 @@
                           "id": "d973785a-d6f8-4e4e-8d85-afb2612bef15",
                           "animationFull": true,
                           "animationId": "animationPhototransduction",
-                          "text": "<strong>Phototransduction:</strong> In the dark, the photoreceptor outer segment has a high concentration of the small molecule cGMP (cyclic guanosine monophosphate). These small molecules bind to and activate cGMP-gated cationic channels, resulting in Na+ and Ca2+ inflow in the outer segment, which balance an ongoing efflux of K+ ions in the inner segment. Together, these ion flows result in a relatively depolarized resting membrane potential (Vm) of ~-30mV in darkness. Rhodopsin is a G-protein coupled receptor. It becomes enzymatically active following photon absorption and in turn activates the G-protein transducin. Transducin is composed of α, β, and γ subunits, and upon activation, releases its βγ subunit, which in turn activates a phosphodiesterase (PDE) that then hydrolyzes cGMP molecules. The resulting decrease in intracellular [cGMP] in the outer segment leads to the closure of cGMP-gated cation channels<sup data-sup='28'>28</sup>. Since the efflux of K+ ions continues in the inner segment, closing cGMP-gated channels in the outer segment results in photoreceptor membrane hyperpolarization, leading to a decrease in glutamate release. This light-evoked hyperpolarization is called a photovoltage, and its amplitude and duration depend on the luminance, size and duration of the light flash. Finally, an activated rhodopsin molecule needs to be de-activated, otherwise the phototransduction cascade would continue endlessly. Phototransduction terminates when an activated rhodopsin is phosphorylated by a membrane bound enzyme called rhodopsin kinase. The addition of a phosphate to rhodopsin leads to its binding by a protein called arrestin, which ejects the rhodopsin kinase, and quenches rhodopsin’s ability to activate transducin by breaking the bond between all-trans retinal and opsin<sup data-sup='28'>28,</sup><sup data-sup='29'>29,</sup><sup data-sup='42'>42</sup>."
+                          "text": ""
                         },
                         {
                           "id": "37c0b13f-d8ad-4353-8661-45c1f4cc77b8",
@@ -288,7 +282,7 @@
                           "id": "4bfe20d5-2abf-437b-9596-8464784efaae",
                           "animationFull": true,
                           "animationId": "animationTheVisualCycle",
-                          "text": "<strong>The Visual Cycle:</strong> When rhodopsin absorbs a photon, its light-catching 11-cis retinal chromophore is isomerized into all-trans retinal. This latter form cannot be used for photon absorption, and the retina undertakes a complex series of steps to convert all-trans retinal back to photo-activatable 11-cis retinal. Following binding of arrestin, the bond between all-trans retinal and the opsin is broken. The released all-trans aldehyde is quickly converted to all-trans retinol by membrane bound retinal dehydrogenase, which is in turn bound by an all-trans retinol binding protein. From here, a transport protein called intraretinal binding protein takes all-trans retinol on an inter-cellular journey into the retina pigment epithelium, which intercalates with photoreceptor outer segments. The RPE contain a pair of enzymes – retinyl-ester isomerase which converts all-trans retinol to 11-cis retinol, and 11-cis retinol dehydrogenase which uses ATP to convert 11-cis retinol back into 11-cis retinal. The regenerated 11-cis retinal is highly insoluble and is quickly bound by an 11-cis retinal binding protein which encapsulates the molecule, which makes the return trip out of retina pigment epithelium and back into the photoreceptor outer segment, where it is released and binds anew with an opsin<sup data-sup='28'>28,</sup><sup data-sup='41'>41</sup>."
+                          "text": ""
                         },
                         {
                           "paragraphs": [
@@ -421,7 +415,8 @@
                       "id": "014b53f8-7421-44ab-af4e-e8bb6c3323c4",
                       "animation": {
                         "name": "ColorOpponency",
-                        "id": "animationColorOpponency"
+                        "id": "animationColorOpponency",
+                        "illuImage": true
                       },
                       "text": "<strong>Color opponency:</strong> First described in horizontal cells of fish by Gunner Svaetichin<sup data-sup='62'>62</sup>, color opponency arises when a cell receives competing signals generated by visual stimuli of different wavelengths. In the primate retina, at the level of ganglion cells, it is generally believed that color opponency is split along red-green<sup data-sup='63'>63</sup> and blue-yellow<sup data-sup='64'>64</sup> axes. Red-green opponency is thought to be computed in midget ganglion cells, some of which exhibit a biased spectral sampling within their receptive field centers to either red or green cones<sup data-sup='65'>65</sup>. In contrast, blue-yellow opponency is thought to be computed by small bistratified ganglion cells<sup data-sup='64'>64</sup>, as well as type of widefield ganglion cell<sup data-sup='66'>66</sup>. While the exact role of color opponency in the retina remains an area of active research<sup data-sup='67'>67</sup>, signals from color opponent ganglion cell types appear to make their way to color-coding visual regions in the brain, which eventually lead to color perception<sup data-sup='68'>68</sup>."
                     },
@@ -524,10 +519,10 @@
           "subSection": [
             {
               "id": "cd6143c0-757f-4ca3-82f3-a110ef30d80a",
-              "title": "Eye movements ",
-              "animationFull": true,
-              "animationId": "animationEyeMovements",
-              "multiple": true,
+              "animation": {
+                "name": "eyeMovements",
+                "id": "animationEyeMovements"
+              },
               "paragraphs": [
                 {
                   "id": "e9658c13-3dae-4ee9-a839-d8fd1c308ff7",

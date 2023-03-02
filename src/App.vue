@@ -11,7 +11,6 @@ import OverlayInfo from "./components/UI/OverlayInfo.vue";
 import { storeToRefs } from "pinia";
 
 const isLargeScreen = useMediaQuery("(min-width: 1300px)");
-const isPreferredDark = useMediaQuery("(prefers-color-scheme: dark)");
 
 const route = useRoute();
 const resize = ref(0);

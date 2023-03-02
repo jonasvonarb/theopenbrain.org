@@ -2,12 +2,16 @@
 import lottie from "lottie-web";
 import { onMounted, ref } from "vue";
 
+import { toSlug } from "@/helper/general";
+import gsap from "gsap";
+
 import FullScreenIllustrationMultiple from "@/components/chapter/Illus/FullScreenIllustrationMultiple.vue";
 
 import animations from "@/assets/json_backend/animations.json";
 import FullScreenIllustrationLoop from "./FullScreenIllustrationLoop.vue";
 import FullScreenIllustrationSplit from "./FullScreenIllustrationSplit.vue";
 import SourceElement from "../../UI/SourceElement.vue";
+import TextOverlay from "./TextOverlay.vue";
 
 const props = defineProps({
   paragraph: Object,
@@ -74,21 +78,52 @@ const setState = (index, activeState) => {
     console.log("clicked");
   }
 };
+
+const infoIsOpen = ref(true);
+const openInfo = () => {
+  const el = document.getElementById(
+    "info-" + toSlug(thisAnimation.value.title)
+  );
+  console.log(el);
+  infoIsOpen.value = !infoIsOpen.value;
+  if (infoIsOpen.value) {
+    gsap.to(el, {
+      duration: 0.3,
+      height: "auto",
+    });
+  } else {
+    gsap.to(el, {
+      duration: 0.3,
+      height: 0,
+    });
+  }
+};
 </script>
 
 <template>
   <div
     ref="containerScroll"
-    class="w-screen bg-light border-y border-black -translate-x-1/2 -ml-20 my-[0] mb-32 text-small font-mono"
-    :class="!thisAnimation.split ? 'h-[150vh]' : 'h-[700vh]'"
+    class="w-screen border-y bg-light text-black border-black -translate-x-1/2 -ml-20 my-[0] mb-32 text-small font-mono duration-300"
+    :class="[!thisAnimation.split ? 'h-[150vh]' : 'h-[700vh]']"
   >
     <div class="sticky w-full h-screen px-24 py-10 top-0">
       <div
         class="absolute z-50 flex flex-col justify-between"
-        v-if="!thisAnimation?.loop && thisAnimation?.states"
+        v-if="thisAnimation?.states"
       >
         <h4 class="">{{ thisAnimation.title }}</h4>
-        <div class="pt-20">
+        <!-- Overlay -->
+        <TextOverlay
+          v-if="thisAnimation.infoText"
+          :animation="thisAnimation"
+          :infoIsOpen="infoIsOpen"
+          @onOpen="openInfo"
+        />
+        <div
+          class="absolute pt-56 duration-300"
+          :class="infoIsOpen && thisAnimation.infoText && 'opacity-10 blur-sm'"
+          v-if="!thisAnimation?.loop"
+        >
           <div
             v-for="(state, index) in thisAnimation.states"
             :key="state"
@@ -142,7 +177,11 @@ const setState = (index, activeState) => {
           </div>
         </div>
       </div>
-      <SourceElement :source="thisAnimation?.source" />
+      <SourceElement
+        :source="thisAnimation?.source"
+        class="duration-300"
+        :class="infoIsOpen && thisAnimation.infoText && 'opacity-10 blur-sm'"
+      />
       <div
         v-if="
           !thisAnimation?.multiple &&
@@ -150,22 +189,30 @@ const setState = (index, activeState) => {
           !thisAnimation?.split
         "
         :id="'container' + paragraph.animationId"
-        class="absolute right-0 w-2/3 h-full p-24 pr-36 flex flex-col justify-end items-center"
+        :class="infoIsOpen && thisAnimation.infoText && 'opacity-10 blur-sm'"
+        class="absolute right-0 w-2/3 h-full p-24 pr-36 flex flex-col justify-end items-center duration-300"
       ></div>
       <div
-        v-if="!thisAnimation?.multiple && thisAnimation?.loop"
+        v-if="
+          (!thisAnimation?.multiple && thisAnimation?.loop) ||
+          thisAnimation?.split
+        "
         class="w-full h-full"
       >
-        <FullScreenIllustrationLoop :animation="thisAnimation" />
-      </div>
-      <div v-if="thisAnimation?.split" class="w-full h-full">
+        <FullScreenIllustrationLoop
+          v-if="!thisAnimation?.multiple && thisAnimation?.loop"
+          class="duration-300"
+          :class="infoIsOpen && thisAnimation.infoText && 'opacity-10 blur-sm'"
+          :animation="thisAnimation"
+        />
         <FullScreenIllustrationSplit
+          v-if="thisAnimation?.split"
           :animation="thisAnimation"
           :container="containerScroll"
         />
       </div>
       <div
-        v-else-if="thisAnimation?.multiple && thisAnimation?.states"
+        v-if="thisAnimation?.multiple && thisAnimation?.states"
         class="absolute right-0 w-2/3 h-screen flex flex-col justify-end items-center p-56"
       >
         <template

@@ -1,23 +1,25 @@
 <template>
-  <div ref="container" class="w-full h-full noHyphens pb-24">
+  <div
+    ref="container"
+    class="absolute top-0 left-0 w-screen h-screen noHyphens pl-20"
+  >
     <template v-if="isActive">
-      <h4 class="absolute">{{ animation.title }}</h4>
-      <div
-        class="w-full h-full flex justify-between items-start pt-32 text-small gap-16"
-      >
-        <div class="w-1/3 flex flex-col gap-12">
-          <ol class="-ml-2 w-full">
+      <!-- <h4 class="absolute">{{ animation.title }}</h4> -->
+      <div class="w-full h-full flex items-start text-small">
+        <div class="w-5/8 h-full flex justify-end items-end bg-med pl-12">
+          <div class="h-[75%] w-full pb-24" :id="animation.id" />
+        </div>
+        <div
+          class="w-2/8 h-full flex flex-col gap-12 bg-light pt-32 px-12 border-l border-black"
+        >
+          <ol class="w-full">
             <li
               class="pt-10 first-of-type:pt-0 pointer-event-none flex gap-3"
               v-for="(state, index) of animation.states"
               :key="state"
             >
               <div
-                :class="
-                  currenSection === index
-                    ? 'bg-violet text-white'
-                    : 'bg-white text_black'
-                "
+                :class="currenSection === index ? 'bg-green' : 'bg-white'"
                 class="shrink-0 duration-500 -mt-[0.4rem] pt-0.5 mr-2 rounded-full border border-black h-10 w-10 text-center"
               >
                 {{ index + 1 }}
@@ -25,30 +27,25 @@
               <div>{{ state }}</div>
             </li>
           </ol>
-          <ul
-            v-if="animation.statesHighlight"
-            :class="
-              animation.statesHighlight.length > 8 ? 'columns-2 gap-12' : ''
-            "
-            class="w-full pl-12"
-          >
+        </div>
+        <div
+          class="w-1/8 h-full flex flex-col gap-12 bg-lighter pt-32 border-l border-black"
+        >
+          <ul v-if="animation.statesHighlight" class="w-full px-12">
             <li
-              class="pt-6 cursor-pointer flex gap-3"
+              class="pb-6 cursor-pointer flex gap-3"
               :class="
                 toCamelCase(state) === activeState
                   ? 'underline  text-violet hover:text-violet'
                   : ' hover:text-violet'
               "
-              v-for="(state, index) of animation.statesHighlight"
+              v-for="state of animation.statesHighlight"
               :key="state"
               @click="setState(state)"
             >
               {{ state }}
             </li>
           </ul>
-        </div>
-        <div class="w-2/3 h-full flex justify-end items-end">
-          <div class="h-full" :id="animation.id" />
         </div>
         <div class="absolute top-10 right-12 flex gap-3">
           <!-- <p v-if="!isPlay" @click="next()" class="hover:text-violet">next</p> -->
@@ -151,17 +148,8 @@ const playPause = () => {
 
   if (isPlay.value === true) {
     animationLottie.play();
-    // animationLottie.playSegments([0, animationLottie.animationData.op], true);
   } else {
     animationLottie.pause();
-
-    // animationLottie.playSegments(
-    //   [
-    //     animationLottie.currentFrame,
-    //     frames[toCamelCase(props.animation.title)][+currenSection.value + 1],
-    //   ],
-    //   true
-    // );
   }
 };
 
@@ -179,30 +167,6 @@ const container = ref();
 const isActive = ref(true);
 
 onMounted(() => {
-  // let options = {
-  //   rootMargin: "0px",
-  //   threshold: 0.001,
-  // };
-
-  // const callback = (entries, observer) => {
-  //   entries.forEach((entry) => {
-  //     // Each entry describes an intersection change for one observed
-  //     // target element:
-  //     //   entry.boundingClientRect
-  //     //   entry.intersectionRatio
-  //     //   entry.intersectionRect
-  //     //   entry.isIntersecting
-  //     //   entry.rootBounds
-  //     //   entry.target
-  //     console.log(entry.isIntersecting);
-  //     isActive.value = entry.isIntersecting;
-  //   });
-  // };
-  // let observer = new IntersectionObserver(callback, options);
-
-  // let target = container.value;
-  // observer.observe(target);
-
   let svgContainer = document.getElementById(props.animation.id);
   if (!svgContainer) return;
   animationLottie = lottie.loadAnimation({

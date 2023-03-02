@@ -8,6 +8,106 @@
   --violet: rgb(151, 71, 255);
 }
 
+/* fonts */
+
+.text-smaller {
+  font-size: 1.1rem;
+  line-height: 1.4rem;
+  letter-spacing: -0.01rem;
+}
+
+.text-small {
+  font-size: 1.35rem;
+  line-height: 1.9rem;
+  letter-spacing: -0.02rem;
+}
+
+.text-medium {
+  font-size: 1.6rem;
+  line-height: 2.65rem;
+}
+
+.text-baseMono {
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+}
+
+.text-base {
+  font-size: 2rem;
+  line-height: 3.1rem;
+}
+.text-h2 {
+  font-size: 4rem;
+  line-height: 5.8rem;
+}
+.text-h3 {
+  font-size: 3rem;
+  line-height: 3.8rem;
+}
+.text-blindness {
+  font-size: 11rem;
+  line-height: 11rem;
+}
+
+.text-biggest {
+  font-size: 8rem;
+  line-height: 12rem;
+}
+.text-big {
+  font-size: 8rem;
+  line-height: 8rem;
+}
+
+@media (max-width: 1600px) {
+  .text-smaller {
+    font-size: 1rem;
+    line-height: 1.3rem;
+    letter-spacing: -0.01rem;
+  }
+
+  .text-small {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    letter-spacing: 0.02rem;
+  }
+
+  .text-medium {
+    font-size: 1.5rem;
+    line-height: 2.65rem;
+  }
+
+  .text-baseMono {
+    font-size: 1.7rem;
+    line-height: 2.8rem;
+  }
+
+  .text-base {
+    font-size: 1.9rem;
+    line-height: 3rem;
+  }
+  .text-h2 {
+    font-size: 4rem;
+    line-height: 5.8rem;
+  }
+  .text-h3 {
+    font-size: 3rem;
+    line-height: 3.8rem;
+  }
+  .text-blindness {
+    font-size: 11rem;
+    line-height: 11rem;
+  }
+
+  .text-biggest {
+    font-size: 8rem;
+    line-height: 12rem;
+  }
+  .text-big {
+    font-size: 8rem;
+    line-height: 8rem;
+  }
+}
+
 html,
 body {
   font-size: 62.5%;
@@ -208,7 +308,9 @@ h4 {
   background: var(--violet);
   color: white;
 }
-
+#triggeranimationColorOpponency {
+  min-height: 80vh;
+}
 .animationTrigger.active,
 .animationTrigger.active {
   color: #353535;
