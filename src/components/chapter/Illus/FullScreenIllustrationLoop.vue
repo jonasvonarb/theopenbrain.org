@@ -10,7 +10,7 @@
           <div class="h-[75%] w-full pb-24" :id="animation.id" />
         </div>
         <div
-          class="w-2/8 h-full flex flex-col gap-12 bg-light pt-32 px-12 border-l border-black"
+          class="relative marker:w-2/8 h-full flex flex-col gap-12 bg-light pt-32 px-12 border-l border-black"
         >
           <ol class="w-full">
             <li
@@ -19,7 +19,7 @@
               :key="state"
             >
               <div
-                :class="currenSection === index ? 'bg-green' : 'bg-white'"
+                :class="currenSection === index ? 'bg-green ' : 'bg-white'"
                 class="shrink-0 duration-500 -mt-[0.4rem] pt-0.5 mr-2 rounded-full border border-black h-10 w-10 text-center"
               >
                 {{ index + 1 }}
@@ -27,6 +27,39 @@
               <div>{{ state }}</div>
             </li>
           </ol>
+          <!-- controlls -->
+          <div class="absolute top-10 right-12 flex gap-3">
+            <!-- <p v-if="!isPlay" @click="next()" class="hover:text-violet">next</p> -->
+            <p
+              @click="setSpeed()"
+              v-if="speed !== 0.7"
+              class="hover:text-white cursor-pointer icon flex justify-center items-center text-smaller"
+            >
+              1x
+            </p>
+            <p
+              v-else
+              @click="setSpeed()"
+              class="hover:text-white cursor-pointer icon flex justify-center items-center text-smaller"
+            >
+              2x
+            </p>
+            <PlayIcon
+              v-if="!isPlay"
+              @click="playPause()"
+              class="icon"
+              :class="isGoingNext ? 'opacity-20 pointer-events-none' : ''"
+            />
+            <PauseIcon v-else @click="playPause()" class="icon" />
+            <DownArrow
+              :class="[
+                isPlay ? 'opacity-20 pointer-events-none' : '',
+                isGoingNext && '!bg-green pointer-events-none',
+              ]"
+              @click="nextStep()"
+              class="icon -rotate-90"
+            />
+          </div>
         </div>
         <div
           class="w-1/8 h-full flex flex-col gap-12 bg-lighter pt-32 border-l border-black"
@@ -47,25 +80,6 @@
             </li>
           </ul>
         </div>
-        <div class="absolute top-10 right-12 flex gap-3">
-          <!-- <p v-if="!isPlay" @click="next()" class="hover:text-violet">next</p> -->
-          <p
-            @click="setSpeed()"
-            v-if="speed === 0.7"
-            class="hover:text-white cursor-pointer icon flex justify-center items-center text-smaller"
-          >
-            1x
-          </p>
-          <p
-            v-else
-            @click="setSpeed()"
-            class="hover:text-white cursor-pointer icon flex justify-center items-center text-smaller"
-          >
-            2x
-          </p>
-          <PlayIcon v-if="!isPlay" @click="playPause()" class="icon" />
-          <PauseIcon v-else @click="playPause()" class="icon" />
-        </div>
       </div>
     </template>
   </div>
@@ -77,6 +91,7 @@ import lottie from "lottie-web";
 import { toCamelCase } from "@/helper/general";
 import PlayIcon from "../../../icons/custom/PlayIcon.vue";
 import PauseIcon from "../../../icons/custom/PauseIcon.vue";
+import DownArrow from "../../../icons/custom/DownArrow.vue";
 
 const props = defineProps({
   animation: Object,
@@ -90,11 +105,12 @@ const frame = ref(0);
 const currenSection = ref(0);
 
 const isPlay = ref(true);
+const isGoingNext = ref(false);
 const speed = ref(0.7);
 
 const frames = {
-  pathwayForThePupillaryLightReflex: [0, 12, 36, 60, 90],
-  phototransduction: [0, 6, 25, 55, 69, 79, 159, 213],
+  pathwayForThePupillaryLightReflex: [0, 12, 36, 60, 88, 120],
+  phototransduction: [0, 6, 25, 55, 69, 79, 159, 213, 240],
   theVisualCycle: [0, 11, 36, 72, 132, 192, 240],
 };
 
@@ -137,7 +153,6 @@ const setState = (stateIncoming) => {
   let els = [
     ...document.getElementsByClassName(toCamelCase(stateChanged) + "Highlight"),
   ];
-  console.log(els);
   for (let el of els) {
     el.classList.add("highlightIllu");
   }
@@ -147,10 +162,31 @@ const playPause = () => {
   isPlay.value = !isPlay.value;
 
   if (isPlay.value === true) {
-    animationLottie.play();
+    animationLottie.playSegments(
+      [frame.value, animationLottie.animationData.op],
+      true
+    );
   } else {
-    animationLottie.pause();
+    nextStep(true);
   }
+};
+
+const nextStep = (pause = false) => {
+  isGoingNext.value = true;
+  const tF = animationLottie.animationData.op;
+  animationLottie.playSegments([0, tF], false);
+  const targetFrame =
+    frames[toCamelCase(props.animation.title)][
+      +currenSection.value + (pause ? 1 : 2)
+    ] || frames[toCamelCase(props.animation.title)][1];
+  isPlay.value = false;
+  const cF = animationLottie.projectInterface.currentFrame;
+  const lS =
+    frames[toCamelCase(props.animation.title)][
+      frames[toCamelCase(props.animation.title)].length - 2
+    ];
+  const startFrame = cF <= lS ? cF : 0;
+  animationLottie.playSegments([startFrame, targetFrame], true);
 };
 
 const setSpeed = () => {
@@ -186,14 +222,20 @@ onMounted(() => {
   }, 1000);
 
   const complete = () => {
-    if (!isPlay.value) return;
-    animationLottie.playSegments([0, animationLottie.animationData.op], true);
+    isGoingNext.value = false;
+    if (isPlay.value) {
+      animationLottie.playSegments([0, animationLottie.animationData.op], true);
+    } else {
+      const tF = animationLottie.animationData.op;
+      animationLottie.playSegments([0, tF], false);
+      animationLottie.pause();
+    }
   };
   animationLottie.addEventListener("complete", complete);
   animationLottie.setSubframe(true);
   animationLottie.setSpeed(0.7);
   setInterval(() => {
-    frame.value = animationLottie.currentFrame;
+    frame.value = animationLottie.projectInterface.currentFrame;
     for (let state in props.animation.states) {
       if (
         Math.floor(frame.value) ===
