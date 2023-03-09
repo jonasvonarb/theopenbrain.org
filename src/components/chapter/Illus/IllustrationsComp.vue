@@ -101,7 +101,7 @@ onBeforeUnmount(() => {
 <template>
   <div
     v-if="!store.isScrolling"
-    class="fixed top-0 left-0 h-screen w-1/2 z-30 pointer-events-none font-mono"
+    class="fixed top-0 left-0 h-screen w-illus z-30 pointer-events-none font-mono"
   >
     <template v-for="animation in animationJSON.animations" :key="animation">
       <template

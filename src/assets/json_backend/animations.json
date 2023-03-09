@@ -194,6 +194,51 @@
       ]
     },
     {
+      "id": "animationRetinalCellTypes2",
+      "title": "Retinal cell types",
+      "fullscreen": false,
+      "clickTriggered": true,
+      "highlight": true,
+      "iconPraefix": "retinalCellTypes",
+      "icons": ["true", "true", "true", "true", "true"],
+      "autoplay": true,
+      "set": 2,
+      "states": [
+        "Photoreceptors",
+        "Horizontal cells",
+        "Bipolar cells",
+        "Amacrine cells",
+        "Ganglion cells",
+        "Inner nuclear layer",
+        "Inner plexiform layer",
+        "Outer nuclear layer",
+        "Outer plexiform layer",
+        "Ganglion cell layer"
+      ]
+    },
+    {
+      "id": "animationRetinalCellTypes3",
+      "title": "Retinal cell types",
+      "fullscreen": false,
+      "clickTriggered": true,
+      "highlight": true,
+      "iconPraefix": "retinalCellTypes",
+      "icons": ["true", "true", "true", "true", "true"],
+      "autoplay": true,
+      "states": [
+        "Photoreceptors",
+        "Horizontal cells",
+        "Bipolar cells",
+        "Amacrine cells",
+        "Ganglion cells",
+        "Inner nuclear layer",
+        "Inner plexiform layer",
+        "Outer nuclear layer",
+        "Outer plexiform layer",
+        "Ganglion cell layer"
+      ]
+    },
+    {
       "id": "animationCenterSurroundReceptiveFields",
       "title": "Center surround receptive fields",
       "fullscreen": false,

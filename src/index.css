@@ -456,7 +456,7 @@ sup:hover {
   background: #000;
   border-radius: 999999%;
   position: absolute;
-  left: calc(100% - 0.5rem);
+  left: calc(100vw - min(50vw, calc(780px + 11rem)) - 0.5rem);
 }
 .marker-end {
   margin-top: -0.5rem;
@@ -469,7 +469,7 @@ sup:hover {
   height: 1.2px;
   background: #000;
   position: fixed;
-  left: calc(50vw - 1rem);
+  left: calc(100vw - min(50vw, calc(780px + 11rem)) - 0.5rem);
   top: 50vh;
 }
 
@@ -502,6 +502,12 @@ sup:hover {
   width: 2.5rem;
 }
 
+.icon.ohne {
+  pointer-events: none;
+  border: none;
+  background-color: transparent;
+}
+
 .iconInvert {
   background-color: #222;
   fill: white;
@@ -509,4 +515,8 @@ sup:hover {
 
 .iconInvert:hover {
   border-color: white;
+}
+
+.-translate-x-custom {
+  transform: translateX(min(-50vw, calc(-100vw + 780px + 11rem - 1px)));
 }

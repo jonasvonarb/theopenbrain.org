@@ -12,11 +12,9 @@ const props = defineProps({
 </script>
 
 <template>
-  <button class="buttonEye" @click="store.toggle('active' + target)">
-    <div class="eye flex justify-center w-6 h-6">
-      <OpenEye v-if="text === 'open'" />
-      <ClosedEye v-else class="" />
-    </div>
+  <button class="buttonEye fill-white" @click="store.toggle('active' + target)">
+    <OpenEye class="w-7 h-7 mt-1" v-if="text === 'open'" />
+    <ClosedEye class="w-7 h-7" v-else />
   </button>
 </template>
 
@@ -32,7 +30,7 @@ const props = defineProps({
   height: 2rem;
 }
 
-.buttonEye:hover * {
+.buttonEye:hover > svg {
   fill: var(--violet);
 }
 </style>

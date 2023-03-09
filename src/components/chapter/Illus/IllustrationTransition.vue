@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="px-24 w-full flex flex-col h-full pointer-events-auto"
-    :class="animation.noBleed ? 'px-0 -mr-2 pl-6' : 'px-24'"
-  >
+  <div class="px-24 w-full flex flex-col h-full pointer-events-auto">
     <div :id="animation.id" class="w-full h-full" />
   </div>
 </template>

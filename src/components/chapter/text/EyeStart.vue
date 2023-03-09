@@ -52,7 +52,7 @@ const scrollToPos = () => {
     </div>
     <div
       @click="scrollToPos()"
-      class="absolute bottom-8 left-0 w-full flex justify-center items-center text-center"
+      class="absolute bottom-8 left-1/2 -ml-5 flex justify-center items-center text-center"
     >
       <DownArrow class="pointer-events-auto icon iconMed" />
     </div>

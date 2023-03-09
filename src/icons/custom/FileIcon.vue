@@ -1,0 +1,19 @@
+<template>
+  <svg
+    id="illustrations"
+    xmlns="http://www.w3.org/2000/svg"
+    width="30.43"
+    height="30.43"
+    viewBox="0 0 30.43 30.43"
+  >
+    <path d="m3.21,3.21h24v24H3.21V3.21Z" style="fill: none" />
+    <path
+      d="m16.21,15.21h3l-4,4-4-4h3v-4h2v4Zm2-8h-10v16h14v-12h-4v-4Zm-12-1.01c0-.55.45-.99,1-.99h12l5,5v13.99c0,.55-.44,1-.99,1.01H7.21c-.55,0-.99-.45-.99-.99V6.21Z"
+    />
+  </svg>
+</template>
+<script>
+export default {
+  name: "FileIcon",
+};
+</script>

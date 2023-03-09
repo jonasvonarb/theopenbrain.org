@@ -1,32 +1,25 @@
 <template>
   <div class="w-full h-full flex justify-center items-start">
-    <StateElement
-      v-if="!info.blockSwitches"
-      :states="info.switches"
-      :activeState="activeState"
-      @onClick="setState"
-    />
-
-    <StateElementBlock
-      v-else
-      :states="info.switches"
-      :activeState="activeState"
-      :praefix="info.iconPraefix"
-      @onClick="setState"
-    />
-    <!-- <div v-else>
-      <img
-        class="absolute top-64 left-24 h-12 w-12"
-        @click="setState"
-        :src="
-          '/publicAssets/icons/' +
-          info.iconPraefix +
-          '/' +
-          info.switches[activeState] +
-          '.svg'
-        "
+    <div class="absolute top-36 left-24 z-50">
+      <StateElement
+        v-if="!info.blockSwitches"
+        :states="info.switches"
+        :activeState="activeState"
+        @onClick="setState"
       />
-    </div> -->
+      <StateElementBlock
+        v-else
+        :states="info.switches"
+        :activeState="activeState"
+        :praefix="info.iconPraefix"
+        @onClick="setState"
+      />
+      <LegendElement
+        v-if="info.legend"
+        :legend="info.legend"
+        iconPraefix="retinalCircuits"
+      />
+    </div>
     <template v-for="(switchWord, index) of info.switches" :key="switchWord">
       <div
         v-show="index === activeState"
@@ -46,6 +39,7 @@ import { ref, onMounted, watch } from "vue";
 import lottie from "lottie-web";
 import StateElement from "../../UI/StateElement.vue";
 import StateElementBlock from "../../UI/StateElementBlock.vue";
+import LegendElement from "@/components/UI/LegendElement.vue";
 
 const props = defineProps({
   info: Object,

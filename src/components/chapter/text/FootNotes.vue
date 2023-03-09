@@ -1,12 +1,15 @@
 <template>
-  <div class="w-full pt-6 bg-white border-t border-black font-mono text-small">
+  <div
+    id="footnotes"
+    class="w-full p-20 bg-white border-t border-black font-mono text-small"
+  >
     <div class="marker-start" />
     <span
       id="triggerAnimationPlaceholder"
       class="animationTrigger block noHighlight"
     >
-      <h2 id="footnotes">{{ content.title }}</h2>
-      <ol class="pt-6 pr-3 pb-32 w-full bg-white">
+      <h4 class="font-semibold">{{ content.title }}:</h4>
+      <ol class="pt-2 pr-3 pb-32 w-full bg-white">
         <li
           v-for="(note, index) in content.notes"
           :key="note.number"

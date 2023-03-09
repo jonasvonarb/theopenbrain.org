@@ -1,36 +1,58 @@
 <template>
-  <div id="downloads" class="py-12 max-w-[780px] border-t border-black">
+  <div id="downloads" class="py-12 p-20 w-full border-t border-black">
     <h4 class="font-semibold">Downloads</h4>
-    <div>
+    <div v-for="(file, index) in files" :key="index">
       <a
-        class="hover:bg-violet hover:text-white px-4 -mx-4"
+        class="px-4 -mx-4 flex gap-4 hover:text-violet"
         target="_blank"
-        href="https://www.dropbox.com/scl/fo/kmeyrslmcqfk3ko2vgo8h/h?dl=1&rlkey=38ckgbdt1kz2k8j3x717ox2ul"
+        :href="file.link"
+        :data-index="index"
+        @mouseenter="setHover"
+        @mouseleave="unSetHover"
       >
-        Download everthing as a ZIP
-      </a>
-    </div>
-    <div>
-      <a
-        class="hover:bg-violet hover:text-white px-4 -mx-4"
-        target="_blank"
-        href="https://www.dropbox.com/s/wzggtpip0tyjh0i/lamb-120739.mp4?dl=1"
-      >
-        Download all Animations as a ZIP
-      </a>
-    </div>
-    <div>
-      <a
-        class="hover:bg-violet hover:text-white px-4 -mx-4"
-        target="_blank"
-        href="https://www.dropbox.com/s/nlqeqruub90msr7/pexels-sunsetoned-7235791.mp4?dl=1"
-      >
-        Download the Text as a PDF
+        <FileIcon v-if="file.type === 'file' && +hover !== +index" />
+        <FilesIcon v-if="file.type === 'files' && +hover !== +index" />
+        <FileIconHover v-if="file.type === 'file' && +hover === +index" />
+        <FilesIconHover v-if="file.type === 'files' && +hover === +index" />
+        {{ file.text }}
       </a>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import FileIcon from "@/icons/custom/FileIcon.vue";
+import FilesIcon from "@/icons/custom/FilesIcon.vue";
+import FileIconHover from "@/icons/custom/FileIconHover.vue";
+import FilesIconHover from "@/icons/custom/FilesIconHover.vue";
+import { ref } from "vue";
+
+const hover = ref(undefined);
+
+const setHover = (event) => {
+  hover.value = event.srcElement.dataset.index;
+};
+const unSetHover = () => {
+  hover.value = undefined;
+};
+
+const files = [
+  {
+    type: "files",
+    link: "https://www.dropbox.com/scl/fo/kmeyrslmcqfk3ko2vgo8h/h?dl=1&rlkey=38ckgbdt1kz2k8j3x717ox2ul",
+    text: "Download everthing as a ZIP",
+  },
+  {
+    type: "files",
+    link: "https://www.dropbox.com/s/wzggtpip0tyjh0i/lamb-120739.mp4?dl=1",
+    text: " Download all Animations as a ZIP",
+  },
+  {
+    type: "file",
+    link: "https://www.dropbox.com/s/nlqeqruub90msr7/pexels-sunsetoned-7235791.mp4?dl=1",
+    text: " Download the Text as a PDF",
+  },
+];
+</script>
 
 <style scoped></style>

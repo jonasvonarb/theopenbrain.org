@@ -1,70 +1,105 @@
 <template>
   <div
     ref="container"
-    class="absolute top-0 left-0 w-screen h-screen noHyphens pl-20"
+    class="absolute top-0 left-0 w-screen h-screen noHyphens"
   >
     <template v-if="isActive">
-      <!-- <h4 class="absolute">{{ animation.title }}</h4> -->
-      <div class="w-full h-full flex items-start text-small">
-        <div class="w-5/8 h-full flex justify-end items-end bg-med pl-12">
-          <div class="h-[75%] w-full pb-24" :id="animation.id" />
-        </div>
+      <div class="w-full h-screen flex items-start text-small">
         <div
-          class="relative marker:w-2/8 h-full flex flex-col gap-12 bg-light pt-32 px-12 border-l border-black"
+          class="block-1 relative h-full flex justify-center items-end bg-med pl-20"
         >
-          <ol class="w-full">
-            <li
-              class="pt-10 first-of-type:pt-0 pointer-event-none flex gap-3"
-              v-for="(state, index) of animation.states"
-              :key="state"
-            >
-              <div
-                :class="currenSection === index ? 'bg-green ' : 'bg-white'"
-                class="shrink-0 duration-500 -mt-[0.4rem] pt-0.5 mr-2 rounded-full border border-black h-10 w-10 text-center"
-              >
-                {{ index + 1 }}
-              </div>
-              <div>{{ state }}</div>
-            </li>
-          </ol>
-          <!-- controlls -->
-          <div class="absolute top-10 right-12 flex gap-3">
-            <!-- <p v-if="!isPlay" @click="next()" class="hover:text-violet">next</p> -->
-            <p
-              @click="setSpeed()"
-              v-if="speed !== 0.7"
-              class="hover:text-white cursor-pointer icon flex justify-center items-center text-smaller"
-            >
-              1x
-            </p>
-            <p
-              v-else
-              @click="setSpeed()"
-              class="hover:text-white cursor-pointer icon flex justify-center items-center text-smaller"
-            >
-              2x
-            </p>
-            <PlayIcon
-              v-if="!isPlay"
+          <div
+            class="max-h-[70vh] max-w-[80%] w-full h-full pb-24"
+            :id="animation.id"
+          />
+          <div class="absolute top-10 right-12 z-[60] text-white flex gap-2">
+            <PauseIcon
+              v-if="isPlay"
+              :class="[
+                !isPlay ? 'opacity-20 pointer-events-none ' : '',
+                isGoingNext &&
+                  'pointer-events-none !bg-violet !border-violet !fill-white',
+              ]"
               @click="playPause()"
               class="icon"
-              :class="isGoingNext ? 'opacity-20 pointer-events-none' : ''"
             />
-            <PauseIcon v-else @click="playPause()" class="icon" />
-            <DownArrow
+            <ReplayIcon
+              v-else
+              @click="playPause()"
+              class="icon"
               :class="[
-                isPlay ? 'opacity-20 pointer-events-none' : '',
-                isGoingNext && '!bg-green pointer-events-none',
+                isPlay ? 'opacity-20 pointer-events-none ' : '',
+                isGoingNext ? 'opacity-20 pointer-events-none' : '',
+              ]"
+            />
+            <NextIcon
+              :class="[
+                isPlay ? 'opacity-20 pointer-events-none ' : '',
+                isGoingNext &&
+                  'pointer-events-none !bg-violet !border-violet !fill-white',
               ]"
               @click="nextStep()"
-              class="icon -rotate-90"
+              class="icon"
             />
+          </div>
+          <div class="absolute bottom-16 right-12 z-[60] text-white flex gap-2">
+            <div>Speed:</div>
+            <div
+              @click="setSpeed()"
+              class="hover:opacity-100 cursor-pointer"
+              :class="
+                speed === 0.6
+                  ? 'opacity-50'
+                  : 'opacity-100  pointer-events-none underline'
+              "
+            >
+              1X
+            </div>
+            <div>|</div>
+            <div
+              @click="setSpeed()"
+              class="hover:opacity-100 cursor-pointer"
+              :class="
+                speed === 0.2
+                  ? 'opacity-50'
+                  : 'opacity-100 pointer-events-none underline'
+              "
+            >
+              2X
+            </div>
           </div>
         </div>
         <div
-          class="w-1/8 h-full flex flex-col gap-12 bg-lighter pt-32 border-l border-black"
+          class="relative block-2 text-medium h-full flex flex-col gap-12 bg-light pt-9 px-0 pr-0 border-l border-black"
         >
-          <ul v-if="animation.statesHighlight" class="w-full px-12">
+          <ol class="w-full">
+            <li
+              class="pb-5 pt-1.5 first-of-type:mt-0 pointer-event-none flex border-b pl-8 p-24 border-black"
+              v-for="(state, index) of animation.states"
+              :key="state"
+              :class="
+                currenSection === index
+                  ? ' bg-violet text-white'
+                  : ' bg-transparent'
+              "
+            >
+              <div
+                :class="currenSection === index ? '' : ''"
+                class="shrink-0 duration-300 h-10 w-10 text-center rounded-full"
+              >
+                {{ index + 1 }}.
+              </div>
+              <span class="-my-1 py-1 pl-3 duration-300">
+                {{ state }}
+              </span>
+            </li>
+          </ol>
+          <!-- controlls -->
+        </div>
+        <div
+          class="block-3 h-full flex flex-col gap-12 bg-lighter pt-10 border-l border-black"
+        >
+          <ul v-if="animation.statesHighlight" class="w-full px-8 pr-20 pt-2">
             <li
               class="pb-6 cursor-pointer flex gap-3"
               :class="
@@ -89,9 +124,9 @@
 import { onMounted, ref } from "vue";
 import lottie from "lottie-web";
 import { toCamelCase } from "@/helper/general";
-import PlayIcon from "../../../icons/custom/PlayIcon.vue";
+import ReplayIcon from "../../../icons/custom/ReplayIcon.vue";
 import PauseIcon from "../../../icons/custom/PauseIcon.vue";
-import DownArrow from "../../../icons/custom/DownArrow.vue";
+import NextIcon from "../../../icons/custom/NextIcon.vue";
 
 const props = defineProps({
   animation: Object,
@@ -106,7 +141,7 @@ const currenSection = ref(0);
 
 const isPlay = ref(true);
 const isGoingNext = ref(false);
-const speed = ref(0.7);
+const speed = ref(0.6);
 
 const frames = {
   pathwayForThePupillaryLightReflex: [0, 12, 36, 60, 88, 120],
@@ -190,11 +225,11 @@ const nextStep = (pause = false) => {
 };
 
 const setSpeed = () => {
-  if (speed.value === 0.7) {
+  if (speed.value === 0.6) {
     speed.value = 0.2;
     animationLottie.setSpeed(speed.value);
   } else {
-    speed.value = 0.7;
+    speed.value = 0.6;
     animationLottie.setSpeed(speed.value);
   }
 };
@@ -233,7 +268,7 @@ onMounted(() => {
   };
   animationLottie.addEventListener("complete", complete);
   animationLottie.setSubframe(true);
-  animationLottie.setSpeed(0.7);
+  animationLottie.setSpeed(0.5);
   setInterval(() => {
     frame.value = animationLottie.projectInterface.currentFrame;
     for (let state in props.animation.states) {
@@ -251,5 +286,18 @@ onMounted(() => {
 <style scoped>
 .noHyphens {
   hyphens: none;
+}
+
+.block-1 {
+  width: max(50vw, calc(100vw - 780px - 11rem));
+}
+.block-2 {
+  width: min(calc(50vw / 8 * 5), calc((780px + 11rem) / 8 * 5));
+  overflow: hidden;
+}
+.block-3 {
+  /* width: calc(780px + 11rem); */
+  width: min(calc(50vw / 8 * 3), calc((780px + 11rem) / 8 * 3));
+  overflow: hidden;
 }
 </style>

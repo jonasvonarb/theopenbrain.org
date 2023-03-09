@@ -3,13 +3,13 @@
     class="pr-12 pl-32 flex flex-row justify-center items-center h-[100%] pointer-events-auto"
   >
     <div
-      class="px-24 pt-10 z-30 fixed flex flex-col w-[50vw] justify-between top-0 left-0"
+      class="px-24 pt-10 z-30 fixed flex flex-col w-illus justify-between top-0 left-0"
       :class="animation.multiple ? 'items-center' : 'items-start'"
     >
       <span class="pb-0 text-baseMono">{{ animation.title }}</span>
       <div
         v-if="animation.multiple"
-        class="fixed top-0 left-0 w-[50vw] h-screen px-24 pl-24 flex flex-col justify-center items-start"
+        class="fixed top-0 left-0 w-illus h-screen px-24 pl-24 flex flex-col justify-center items-start"
       >
         <template
           v-for="(state, index) in Object.keys(animation.states)"
@@ -94,12 +94,12 @@
           v-if="!animation.youtubeID"
           :class="
             animation.fullHeight
-              ? 'bg-black h-screen w-[50vw] flex justify-center items-center absolute top-0 left-0'
+              ? 'bg-black h-screen w-illus flex justify-center items-center absolute top-0 left-0'
               : ''
           "
         >
           <img
-            class="w-full"
+            class="p-32 max-w-full max-h-[80vh]"
             :src="`/publicAssets/images/illuImages/${animation.id}.png`"
           />
         </div>
@@ -130,11 +130,6 @@
           :info="info"
           :isPaused="isPaused"
         />
-        <LegendElement
-          v-if="animation.legend"
-          :legend="animation.legend"
-          iconPraefix="retinalCircuits"
-        />
       </template>
     </div>
     <div class="absolute top-12 right-8 z-40">
@@ -161,7 +156,6 @@ import IllustrationFlip from "./IllustrationFlip.vue";
 import IllustrationSwitch from "./IllustrationSwitch.vue";
 import StateElement from "@/components/UI/StateElement.vue";
 import StateElementBlock from "@/components/UI/StateElementBlock.vue";
-import LegendElement from "@/components/UI/LegendElement.vue";
 import SourceElement from "@/components/UI/SourceElement.vue";
 
 const props = defineProps({
@@ -170,6 +164,7 @@ const props = defineProps({
 });
 let animationLottie;
 let isPaused = ref(false);
+
 const info = animationJSON.animations.find((x) => {
   return x.id == props.animation.id;
 });
@@ -261,6 +256,7 @@ onMounted(() => {
   if (info.switch) return;
   let svgContainer = document.getElementById(props.animation.id);
   if (!svgContainer) return;
+
   animationLottie = lottie.loadAnimation({
     rendererSettings: {
       progressiveLoad: true,
@@ -281,6 +277,21 @@ onMounted(() => {
     }
   });
   animationLottie.setSubframe(true);
+
+  if (props.animation.set) {
+    console.log(props.animation.set, info.states);
+    let state = toCamelCase(info.states[2]);
+    let wait = setInterval(() => {
+      let els = document.getElementsByClassName(state + "Highlight");
+      if (els.length === 0) return;
+      clearInterval(wait);
+      for (let el of els) {
+        el.classList.add("highlightIllu");
+        activeState.value.state = props.animation.set;
+      }
+      console.log(state + "Highlight");
+    }, 10);
+  }
 
   if (info.loop) {
     animationLottie.addEventListener("complete", () => {

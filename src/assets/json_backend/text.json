@@ -167,9 +167,9 @@
                     {
                       "id": "d81b706a-49f2-4198-ba07-8a5d819030ac",
                       "type": "breakVideo",
-                      "title": "Dowling and Werblin",
+                      "title": "John Dowling",
                       "videoSlug": "dowling-and-werblin",
-                      "text": "Talking about recording a diversity of responses from all retinal cell types"
+                      "text": "Retinal cell types, connectivity and responses."
                     }
                   ]
                 }
@@ -329,9 +329,10 @@
       "id": "22f2d2f8-655e-4de2-98ce-5748da18978c",
       "title": "Bipolar cells diversify photoreceptor signals",
       "animation": {
-        "name": "RetinalCellTypes",
+        "name": "RetinalCellTypes2",
         "title": "Retinal cell types",
-        "id": "animationRetinalCellTypes"
+        "id": "animationRetinalCellTypes2",
+        "stage" : "Bipolar cells"
       },
       "paragraphs": [
         {
@@ -345,12 +346,6 @@
         {
           "id": "95febd38-9ab4-4797-86f9-26a864e122ed",
           "text": "ON bipolar cells ‘invert’ the photoreceptor signal. Unlike OFF bipolar cells, which possess ionotropic glutamate receptors in their dendrites, ON bipolar cell dendrites express a metabotropic glutamate receptor: mGluR6<sup data-sup='48'>48,</sup><sup data-sup='49'>49</sup>. When bound to glutamate, these receptors activate an intracellular G protein pathway, leading to the closure of a non-selective cation channel –  TRPM1<sup data-sup='29'>29,</sup><sup data-sup='50'>50</sup>. Thus, when photoreceptors are releasing high levels of glutamate in the dark, glutamate binds to mGluR6 and closes TRPM1 channels, which hyperpolarizes ON bipolar cells. Increments in light intensity lower glutamate levels in the synaptic cleft, which releases the inhibition of TRPM1 by mGluR6, driving an inward current and depolarization of ON bipolar cells. As such, ON bipolar cells are described as being able to ‘invert’ the photoreceptor light response (i.e. when a photoreceptor hyperpolarizes, an ON bipolar cell depolarizes). Mutations within the G protein pathway in ON bipolar cells can result in congenital stationary night blindness, because rod signals are passed through a type of ON bipolar cell called a rod bipolar cell (described in more detail in Section 6 below). ON bipolar cell axons make synapses in the half of the inner plexiform layer closest to the ganglion cell layer."
-        },
-        {
-          "type": "breakVideo",
-          "id": "ffdbd2c2-e887-4aba-b7e0-86abdbd943a8",
-          "title": "Helga Kolb",
-          "text": "discussing the discovery of ON and OFF retinal channels"
         },
         {
           "id": "992e5fae-e527-486b-b8d2-f9b89b3950c9",

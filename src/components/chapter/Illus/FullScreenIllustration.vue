@@ -103,7 +103,7 @@ const openInfo = () => {
 <template>
   <div
     ref="containerScroll"
-    class="w-screen border-y bg-light text-black border-black -translate-x-1/2 -ml-20 my-[0] mb-32 text-small font-mono duration-300"
+    class="w-screen border-y bg-light text-black border-black -translate-x-custom -ml-20 my-[0] mb-32 text-small font-mono duration-300"
     :class="[!thisAnimation.split ? 'h-[150vh]' : 'h-[700vh]']"
   >
     <div class="sticky w-full h-screen px-24 py-10 top-0">
@@ -111,7 +111,7 @@ const openInfo = () => {
         class="absolute z-50 flex flex-col justify-between"
         v-if="thisAnimation?.states"
       >
-        <h4 class="">{{ thisAnimation.title }}</h4>
+        <h4 class="inline">{{ thisAnimation.title }}</h4>
         <!-- Overlay -->
         <TextOverlay
           v-if="thisAnimation.infoText"

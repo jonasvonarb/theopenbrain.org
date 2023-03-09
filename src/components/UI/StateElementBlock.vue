@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute top-36 left-24 z-50">
+  <div class="z-50">
     <p
       v-for="(state, index) in states"
       :key="state"
@@ -14,7 +14,7 @@
       <template v-if="praefix">
         <img
           class="w-full h-10 my-1"
-          :class="activeState[index] ? 'invert' : ''"
+          :class="activeState == index ? 'invert' : ''"
           :src="'/publicAssets/icons/' + praefix + '/' + toSlug(state) + '.svg'"
         />
       </template>
@@ -26,7 +26,7 @@
 <script setup>
 import { toSlug } from "@/helper/general";
 
-const props = defineProps({
+defineProps({
   states: Object,
   activeState: Number,
   praefix: String,

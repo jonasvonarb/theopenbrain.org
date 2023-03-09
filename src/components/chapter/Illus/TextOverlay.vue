@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-6 z-50 pt-20">
+  <div class="flex gap-6 z-50 pt-10 font-sans">
     <PlusIcon
       :class="!infoIsOpen ? '' : 'rotate-45'"
       class="icon iconBig duration-300"
@@ -7,13 +7,14 @@
     />
     <div
       :id="'info-' + toSlug(animation?.title)"
-      class="flex overflow-scroll flex-col text-medium justify-between w-full h-auto max-h-[80vh] pb-2 overscroll-auto pr-32"
+      class="flex overflow-y-scroll overflow-x-visible flex-col text-base w-text h-[80vh] pb-2 overscroll-auto pr-32"
     >
-      <div class="flex flex-col justify-start gap-16 w-[800px]">
+      <div class="flex flex-col justify-start gap-16 w-full pt-2">
         <p class=" " v-html="animation?.infoText" />
       </div>
-      <div class="p-8 pt-44">
+      <div class="p-0 pt-16 pb-12 overflow-visible">
         <RouterLink
+          v-if="animation.id === 'animationImpairedVision'"
           :to="`chapter/break/${video.slug ? video.slug : 'placeholder'}`"
           class="relative flex justify-center items-start gap-8"
         >
@@ -31,7 +32,7 @@
               :src="`/publicAssets/images/breakVideos/${video.slug}.png`"
             />
           </div>
-          <PlayIcon class="absolute -left-8 -top-8 icon iconBig" />
+          <PlayIcon class="absolute left-44 top-28 icon" />
 
           <div
             class="w-full h-full flex flex-col justify-center items-start mt-[-0.2rem] text-small"
@@ -45,6 +46,10 @@
           </div>
         </RouterLink>
       </div>
+      <div
+        v-if="infoIsOpen"
+        class="w-full h-12 bg-gradient-to-b from-transparent to-light/70 absolute bottom-0"
+      />
     </div>
   </div>
 </template>
@@ -54,7 +59,6 @@ import PlusIcon from "@/icons/custom/PlusIcon.vue";
 import PlayIcon from "@/icons/custom/PlayIcon.vue";
 import { toSlug } from "@/helper/general";
 import { RouterLink } from "vue-router";
-import jsonVideos from "@/assets/json_backend/breakVideos.json";
 
 defineProps({
   animation: Object,

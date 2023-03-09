@@ -1,0 +1,8 @@
+<template>
+  <svg id="extra_illus." xmlns="http://www.w3.org/2000/svg" width="30.43" height="30.43" viewBox="0 0 30.43 30.43"><path d="m25.21,8.21h-8.59l-2-2h-7.41c-.55,0-1,.45-1,1v16c0,.55.45,1,1,1h18c.55,0,1-.45,1-1v-14c0-.55-.45-1-1-1Zm-9,12l-4-4h3v-4h2v4h3l-4,4Z" style="fill:#9745ff;"/></svg>
+</template>
+<script>
+export default {
+  name: "Speed2Icon",
+};
+</script>

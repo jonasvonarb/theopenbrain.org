@@ -66,6 +66,8 @@ module.exports = {
         body: "calc(100vh - 2.2rem)",
       },
       width: {
+        text: "min(50vw, calc(780px + 11rem))",
+        illus: "max(50vw, calc(100vw - 780px - 11rem))",
         menu: "35vw",
         "1/8": " calc(100% / 8 * 1)",
         "2/8": " calc(100% / 8 * 2)",
@@ -74,6 +76,9 @@ module.exports = {
         "5/8": " calc(100% / 8 * 5)",
         "6/8": " calc(100% / 8 * 6)",
         "7/8": " calc(100% / 8 * 7)",
+      },
+      spacing: {
+        text: "max(50vw, calc(100vw - 780px - 11rem))",
       },
       margin: {
         body: "2.2rem",

@@ -131,7 +131,7 @@ onBeforeUnmount(() => {
     <div id="scroller" class="pointer-events-none w-full">
       <main
         id="text"
-        class="text pointer-events-auto w-full text-left pt-[20vh] ml-[50vw] z-30 border-l bg-white border-black tracking-wide pl-20 pr-24 duration-300"
+        class="text pointer-events-auto w-full text-left pt-[20vh] ml-text max-w-text z-30 border-l bg-white border-black tracking-wide pl-20 pr-24 duration-300"
       >
         <!-- intro -->
         <section
@@ -201,9 +201,11 @@ onBeforeUnmount(() => {
         >
           <Section :section="section" :index="index" />
         </div>
-        <DownloadSection />
-        <FurtherReading :content="source['furtherReading']" />
-        <FootNotes :content="source['footNotes']" />
+        <div class="-ml-20 w-text">
+          <DownloadSection />
+          <FurtherReading :content="source['furtherReading']" />
+          <FootNotes :content="source['footNotes']" />
+        </div>
       </main>
       <Points />
     </div>
@@ -213,5 +215,10 @@ onBeforeUnmount(() => {
 <style scoped>
 .top-start {
   top: calc(100vh);
+}
+
+.ml-text {
+  width: min(50vw, calc(780px + 11rem));
+  margin-left: calc(100vw - min(50vw, calc(780px + 11rem)));
 }
 </style>

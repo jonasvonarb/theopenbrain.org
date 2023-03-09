@@ -5,7 +5,7 @@
   >
     <button
       @click="toggle()"
-      class="fixed z-50 -top-5 right-1/2 -mr-5 cursor-pointer rotate-45"
+      class="fixed z-50 -top-5 left-text -ml-5 cursor-pointer rotate-45"
     >
       <PlusIcon class="icon cursor-pointer" />
     </button>
@@ -17,7 +17,7 @@
         class="flex gap-4 pb-4 justify-start"
       >
         <p class="w-16 text-left">{{ index + 1 }}</p>
-        <p class="max-w-[780px]">{{ note.text }}</p>
+        <p class="max-w-[780px]" v-html="note.text" />
       </li>
     </ol>
   </div>

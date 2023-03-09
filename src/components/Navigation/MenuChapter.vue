@@ -49,10 +49,14 @@ const closeMenu = () => {
     <Transition name="menuTo">
       <ul
         v-if="route.name && store.activeMenu"
-        class="mb-52 duration-300 shrink-1 pb-24"
+        class="mb-52 duration-300 shrink-1 pb-24 h-full overflow-scroll"
       >
         <template v-for="(chapter, index) in menu">
-          <li :key="chapter" v-if="index === 'Part2'" class="w-[50vw] shrink-0">
+          <li
+            :key="chapter"
+            v-if="index === 'Part2'"
+            class="w-[50vw] shrink-0 cursor-pointer"
+          >
             <ol class="w-full list-decimal py-12 overflow-hidden duration-300">
               <div class="pb-6 pr-24">
                 <h3 class="-translate-x-0" @click="toStart()">
@@ -116,14 +120,14 @@ const closeMenu = () => {
             </ol>
           </li>
         </template>
-        <InteractionButton
-          v-if="store.activeMenu"
-          :text="'close'"
-          :target="'Menu'"
-          class="absolute bg-darker pt-10 pb-4 pointer-events-auto z-[60] h-full w-10 flex justify-center items-start top-0 right-0 duration-300 overflow-hidden"
-        />
       </ul>
     </Transition>
+    <InteractionButton
+      v-if="store.activeMenu"
+      :text="'close'"
+      :target="'Menu'"
+      class="absolute bg-darker pt-10 pb-4 pointer-events-auto z-[60] h-full w-10 flex justify-center items-start top-0 right-0 duration-300 overflow-hidden"
+    />
     <!-- menu open/close chapter -->
     <InteractionButton
       :text="'open'"
