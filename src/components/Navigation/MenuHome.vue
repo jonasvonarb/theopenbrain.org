@@ -67,7 +67,7 @@ const toStart = () => {
 
     <div>
       <RouterLink
-        class="fixed cursor-pointer stroke-white hover:stroke-violet bg-dark pt-10 pb-4 pointer-events-auto z-[60] h-full w-10 flex justify-center items-start left-0 top-0 duration-300 overflow-hidden"
+        class="fixed pointer-events-none cursor-pointer stroke-white hover:stroke-violet bg-dark pt-10 pb-4 z-[60] h-full w-10 flex justify-center items-start left-0 top-0 duration-300 overflow-hidden"
         :class="
           route.name && route.name === 'chapter' && !store.activeMenu
             ? 'left-0'

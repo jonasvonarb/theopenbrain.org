@@ -30,22 +30,22 @@ const openInfo = () => {
     ref="trigger"
     class="w-screen h-[180vh] -ml-20 -translate-x-custom border-y border-light bg-dark my-[0] mb-32 text-base"
   >
-    <div class="sticky flex top-0 h-screen w-full pl-24 py-10">
+    <div class="sticky flex top-0 h-screen w-full pl-28 py-10">
       <div class="w-full text-white">
         <div
-          class="flex flex-col justify-strat"
+          class="flex flex-col justify-strat "
           v-if="content.title === 'Blind spot' || 'Color blindness'"
         >
           <h4
             :class="
               !infoIsOpen && content.title === 'Color blindness'
-                ? 'text-black'
+                ? 'text-black z-[100]'
                 : ''
             "
           >
             {{ content.title }}
           </h4>
-          <div class="flex gap-6 z-50 pt-20">
+          <div class="flex gap-6 z-50 pt-6">
             <PlusIcon
               :class="!infoIsOpen ? '' : 'rotate-45'"
               class="icon iconBig duration-300"

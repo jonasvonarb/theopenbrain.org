@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-6 z-50 pt-10 font-sans">
+  <div class="flex gap-6 z-50 pt-6 font-sans">
     <PlusIcon
       :class="!infoIsOpen ? '' : 'rotate-45'"
       class="icon iconBig duration-300"

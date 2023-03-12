@@ -11,7 +11,7 @@
       <div
         v-for="icon in legend"
         :key="icon"
-        class="text-smaller flex pb-4 flex-row items-center justify-start opacity-60 text-center"
+        class="text-smaller flex pb-4 flex-row items-center justify-start opacity-100 text-center"
       >
         <img
           class="h-8 w-20 mr-2 my-0.5"

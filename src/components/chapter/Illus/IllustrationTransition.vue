@@ -1,5 +1,5 @@
 <template>
-  <div class="px-24 w-full flex flex-col h-full pointer-events-auto">
+  <div class="pl-32 pr-14 w-full flex flex-col h-full pointer-events-auto">
     <div :id="animation.id" class="w-full h-full" />
   </div>
 </template>

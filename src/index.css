@@ -60,8 +60,8 @@
 
 @media (max-width: 1600px) {
   .text-smaller {
-    font-size: 1rem;
-    line-height: 1.3rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
     letter-spacing: -0.01rem;
   }
 
@@ -513,9 +513,6 @@ sup:hover {
   fill: white;
 }
 
-.iconInvert:hover {
-  border-color: white;
-}
 
 .-translate-x-custom {
   transform: translateX(min(-50vw, calc(-100vw + 780px + 11rem - 1px)));

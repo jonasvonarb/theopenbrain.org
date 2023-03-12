@@ -1,15 +1,15 @@
 <template>
   <div
-    class="pr-12 pl-32 flex flex-row justify-center items-center h-[100%] pointer-events-auto"
+    class="pr-14 pl-32 flex flex-row justify-center items-center h-[100%] pointer-events-auto"
   >
     <div
-      class="px-24 pt-10 z-30 fixed flex flex-col w-illus justify-between top-0 left-0"
+      class="px-28 pt-10 z-30 fixed flex flex-col w-illus justify-between top-0 left-0"
       :class="animation.multiple ? 'items-center' : 'items-start'"
     >
       <span class="pb-0 text-baseMono">{{ animation.title }}</span>
       <div
         v-if="animation.multiple"
-        class="fixed top-0 left-0 w-illus h-screen px-24 pl-24 flex flex-col justify-center items-start"
+        class="fixed top-0 left-0 w-illus h-screen px-28 pl-28 flex flex-col justify-center items-start"
       >
         <template
           v-for="(state, index) in Object.keys(animation.states)"

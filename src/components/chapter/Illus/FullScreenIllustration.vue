@@ -106,7 +106,7 @@ const openInfo = () => {
     class="w-screen border-y bg-light text-black border-black -translate-x-custom -ml-20 my-[0] mb-32 text-small font-mono duration-300"
     :class="[!thisAnimation.split ? 'h-[150vh]' : 'h-[700vh]']"
   >
-    <div class="sticky w-full h-screen px-24 py-10 top-0">
+    <div class="sticky w-full h-screen px-28 py-10 top-0">
       <div
         class="absolute z-50 flex flex-col justify-between"
         v-if="thisAnimation?.states"
@@ -190,7 +190,7 @@ const openInfo = () => {
         "
         :id="'container' + paragraph.animationId"
         :class="infoIsOpen && thisAnimation.infoText && 'opacity-10 blur-sm'"
-        class="absolute right-0 w-2/3 h-full p-24 pr-36 flex flex-col justify-end items-center duration-300"
+        class="absolute right-0 w-2/3 h-full flex flex-col justify-end items-center duration-300"
       ></div>
       <div
         v-if="

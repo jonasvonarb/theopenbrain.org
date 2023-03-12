@@ -12,7 +12,7 @@
             class="max-h-[70vh] max-w-[80%] w-full h-full pb-24"
             :id="animation.id"
           />
-          <div class="absolute top-10 right-12 z-[60] text-white flex gap-2">
+          <div class="absolute top-10 right-8 z-[60] text-white flex gap-2">
             <PauseIcon
               v-if="isPlay"
               :class="[
