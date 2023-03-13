@@ -29,25 +29,28 @@ const commentStore = useCom();
     <Illustration />
     <EyeStart />
     <Text />
-    <FootNotesWindow  />
+    <FootNotesWindow />
     <Comment v-if="commentStore.activeCom" />
 
     <div
-      class="fixed z-40 bottom-4 right-6 flex gap-2 justify-end items-end w-full"
+      class="fixed z-40 bottom-4 right-6 flex gap-2 justify-end items-end w-full pointer-events-none"
       :class="store.imgActive ? 'opacity-0' : ''"
     >
-      <MenuTutorial />
+      <MenuTutorial class="pointer-events-auto" />
       <ActionButton
+        class="pointer-events-auto"
         :text="'Clear'"
         :help="helpClear"
         @action="storeText.clearTextMarking()"
       />
       <ActionButton
+        class="pointer-events-auto"
         :text="'Export'"
         :help="helpExport"
         @action="storeText.saveLocalstorage()"
       />
       <ActionButton
+        class="pointer-events-auto"
         :text="'Import'"
         :help="helpImport"
         @action="store.toggleImport()"

@@ -2,10 +2,11 @@
   <div
     class="flex flex-col justify-start gap-9 w-64 py-2 px-2 items-start left-20"
   >
-    <div class="flex gap-2" @click="openLegend">
+    <div class="flex justify-center items-center gap-2" @click="openLegend">
       <PlusIcon class="icon duration-300" :class="open ? '-rotate-45' : ''" />
-      <LegendIcion1 class="icon ohne" />
-      <LegendIcion2 class="icon ohne -ml-4" />
+      <p class="text-small pl-5">Legend</p>
+      <!-- <LegendIcion1 class="icon ohne" />
+      <LegendIcion2 class="icon ohne -ml-4" /> -->
     </div>
     <div class="overflow-hidden h-0 -ml-5 -mt-3" id="inhaltLegend">
       <div
@@ -30,23 +31,28 @@
 <script setup>
 import { toSlug } from "@/helper/general";
 import gsap from "gsap";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import LegendIcion1 from "../../icons/custom/LegendIcion1.vue";
 import LegendIcion2 from "../../icons/custom/LegendIcion2.vue";
 import PlusIcon from "../../icons/custom/PlusIcon.vue";
+import { useGeneral } from "../../stores";
 
 defineProps({
   legend: Object,
   iconPraefix: String,
 });
 const open = ref(false);
-// const openLegend = () => {
-//   open.value = !open.value;
-// };
+const store = useGeneral();
+
+onMounted(() => {
+  store.legendIsActive = false;
+});
 
 const openLegend = () => {
   const el = document.getElementById("inhaltLegend");
   open.value = !open.value;
+  store.legendIsActive = open.value;
+
   if (open.value) {
     gsap.to(el, {
       duration: 0.3,

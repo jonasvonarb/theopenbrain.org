@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute top-28 left-28 z-50">
+  <div class="absolute top-32 left-28 z-50">
     <p
       v-for="(state, index) in states"
       :key="state"

@@ -312,7 +312,9 @@
       "animation": {
         "name": "RetinalCellTypes",
         "title": "Retinal cell types",
-        "id": "animationRetinalCellTypes"
+        "id": "animationRetinalCellTypes3",
+        "stage": "Horizontal cells"
+
       },
       "paragraphs": [
         {
@@ -332,11 +334,12 @@
         "name": "RetinalCellTypes2",
         "title": "Retinal cell types",
         "id": "animationRetinalCellTypes2",
-        "stage" : "Bipolar cells"
+        "stage": "Bipolar cells"
       },
       "paragraphs": [
         {
           "id": "ced015b3-63e2-4686-948f-6a7dd067f4a1",
+          "img": "ONOFFLamina",
           "text": "Bipolar cells receive signals from photoreceptors and deliver them to neurons of the inner retina. While photoreceptors all respond similarly when activated by a photon of light (i.e. they hyperpolarize), bipolar cells come in a variety of different types, which allow distinct bipolar cells to respond differentially to the same signal emanating from photoreceptors. In primates, midget bipolar cells are thought to synapse with individual photoreceptors in the fovea and relay their signals onto individual retinal ganglion cells – thus maintaining a high-resolution channel through the retina<sup data-sup='7'>7</sup>. Bipolar cells outside this foveal region are thought to connect with increasing numbers of photoreceptors at greater eccentricities from the fovea<sup data-sup='7'>7</sup>. Each bipolar cell extends an axon into the inner plexiform layer<sup data-sup='6'>6</sup>. Bipolar cells can be subdivided based on their gene expression profile<sup data-sup='20'>20,</sup><sup data-sup='46'>46</sup>, whether they depolarize to increases or decreases in luminance, and how their responses vary to visual stimuli flickered at various temporal frequencies<sup data-sup='26'>26</sup>. In the primate retina, there appear to be roughly 10 types of bipolar cells<sup data-sup='47'>47</sup>."
         },
         {
@@ -610,12 +613,6 @@
                 {
                   "id": "87154e14-7551-4388-a730-a9fcb4c67de7",
                   "text": "A cataract arises when the lens becomes cloudy3. Cataracts arise relatively commonly as humans age, though they can also have genetic or lifestyle-related causes (eg. smoking, extended sun exposure, etc.). The extent of visual impairment caused by cataracts are wide ranging, from mild to completely obstructing the ability to focus images on the retina. Left untreated, it is a progressive issue. Cataracts can also arise in children, and if left untreated for extended period of time (especially if present throughout the critical period), can effect vision even once removed. The first cataract surgical procedures were documented in India around 1000 BC (in which the lens was pushed out of the way, so as not affect incoming light), and the first cataract removal procedure appeared in Egypt around 1000 AD. Currently, the standard protocol is to replace the cataract with an artificial lens, or simply remove the lens. Both approaches eliminate accommodation, but artificial lenses can be multifocal, to help correct for this."
-                },
-                {
-                  "id": "390e0493-9e2e-4411-a5c0-006aa8b083c6",
-                  "type": "breakVideo",
-                  "title": "Pawan Sinha",
-                  "text": "discussing Project Prakash, its impact, of some surprising scientific findings"
                 }
               ]
             },

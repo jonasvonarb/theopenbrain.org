@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full h-full flex justify-center items-start">
-    <div class="absolute top-28 left-[6.5rem] z-50">
+  <div class="w-full h-full flex justify-end items-start">
+    <div class="absolute top-32 left-[6.5rem] z-50">
       <StateElement
         v-if="!info.blockSwitches"
         :states="info.switches"
@@ -22,13 +22,14 @@
     </div>
     <template v-for="(switchWord, index) of info.switches" :key="switchWord">
       <div
+        :class="store.legendIsActive && 'w-2/3'"
         v-show="index === activeState"
         :id="
           info.id +
           switchWord[0].toUpperCase() +
           switchWord.substring(1).replaceAll(' ', '')
         "
-        class="w-full"
+        class="w-full duration-300"
       />
     </template>
   </div>
@@ -40,13 +41,14 @@ import lottie from "lottie-web";
 import StateElement from "../../UI/StateElement.vue";
 import StateElementBlock from "../../UI/StateElementBlock.vue";
 import LegendElement from "@/components/UI/LegendElement.vue";
+import { useGeneral } from "../../../stores";
 
 const props = defineProps({
   info: Object,
   isPaused: Boolean,
 });
 let animationLottie = [];
-
+const store = useGeneral();
 let activeState = ref(0);
 
 let setState = (event) => {

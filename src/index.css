@@ -48,10 +48,10 @@
   font-size: 11rem;
   line-height: 11rem;
 }
-
 .text-biggest {
-  font-size: 8rem;
+  font-size: 16rem;
   line-height: 12rem;
+  letter-spacing: -0.08rem;
 }
 .text-big {
   font-size: 8rem;
@@ -91,7 +91,7 @@
   }
   .text-h3 {
     font-size: 3rem;
-    line-height: 3.8rem;
+    line-height: 4rem;
   }
   .text-blindness {
     font-size: 11rem;

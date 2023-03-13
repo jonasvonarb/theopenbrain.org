@@ -99,7 +99,8 @@
           "
         >
           <img
-            class="p-32 max-w-full max-h-[80vh]"
+            class="max-w-full max-h-[80vh]"
+            :class="animation.fullHeight ? 'p-32 ' : ''"
             :src="`/publicAssets/images/illuImages/${animation.id}.png`"
           />
         </div>

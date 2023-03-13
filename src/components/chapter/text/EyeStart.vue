@@ -46,13 +46,13 @@ const scrollToPos = () => {
       class="absolute top-0 left-0 w-screen h-screen text-white text-center flex justify-center items-center pb-8"
     >
       <div class="flex justify-center items-center flex-col w-2/3">
-        <div class="text-biggest font-text">The Open Brain</div>
-        <div class="text-6xl">The Retina</div>
+        <div class="text-biggest font-text">The Retina</div>
+        <!-- <div class="text-4xl">The Open Brain</div> -->
       </div>
     </div>
     <div
       @click="scrollToPos()"
-      class="absolute bottom-8 left-1/2 -ml-5 flex justify-center items-center text-center"
+      class="absolute bottom-8 left-1/ -ml-5 flex justify-center items-center text-center"
     >
       <DownArrow class="pointer-events-auto icon iconMed" />
     </div>

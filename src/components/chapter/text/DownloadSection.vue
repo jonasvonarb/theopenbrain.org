@@ -38,19 +38,24 @@ const unSetHover = () => {
 
 const files = [
   {
+    type: "file",
+    link: "https://www.dropbox.com/s/nlqeqruub90msr7/pexels-sunsetoned-7235791.mp4?dl=1",
+    text: "Text",
+  },
+  {
     type: "files",
     link: "https://www.dropbox.com/scl/fo/kmeyrslmcqfk3ko2vgo8h/h?dl=1&rlkey=38ckgbdt1kz2k8j3x717ox2ul",
-    text: "Download everthing as a ZIP",
+    text: "Animations",
   },
   {
     type: "files",
     link: "https://www.dropbox.com/s/wzggtpip0tyjh0i/lamb-120739.mp4?dl=1",
-    text: " Download all Animations as a ZIP",
+    text: "Images",
   },
   {
-    type: "file",
+    type: "files",
     link: "https://www.dropbox.com/s/nlqeqruub90msr7/pexels-sunsetoned-7235791.mp4?dl=1",
-    text: " Download the Text as a PDF",
+    text: "Entire chapter",
   },
 ];
 </script>

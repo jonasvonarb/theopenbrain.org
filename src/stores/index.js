@@ -19,6 +19,7 @@ export const useGeneral = defineStore("main", {
         : false,
     superScriptActive: false,
     animationActive: false,
+    legendIsActive: false,
     startIsActive: true,
     activeMenuIndex: null,
     activeSidebar: false,

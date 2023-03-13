@@ -223,6 +223,7 @@
       "clickTriggered": true,
       "highlight": true,
       "iconPraefix": "retinalCellTypes",
+      "set": 1,
       "icons": ["true", "true", "true", "true", "true"],
       "autoplay": true,
       "states": [
@@ -266,6 +267,12 @@
       "title": "Color Opponency",
       "illuImage": true,
       "fullHeight": true
+    },
+    {
+      "id": "animationONOFFLamina",
+      "title": "ON and OFF lamina",
+      "illuImage": true,
+      "fullHeight": false
     },
     {
       "id": "animationDirectionSelectivity",

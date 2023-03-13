@@ -9,9 +9,15 @@
           class="block-1 relative h-full flex justify-center items-end bg-med pl-20"
         >
           <div
-            class="max-h-[70vh] max-w-[80%] w-full h-full pb-24"
+            class="max-h-[78vh] max-w-[95%] w-full h-full pb-24"
             :id="animation.id"
           />
+          <div
+            class="absolute top-48 left-28 flex gap-3 z-[60] pr-36 mr-12 text-base text-black text-left"
+          >
+            {{ currenSection + 1 }}.
+            <div>{{ animation.states[currenSection] }}.</div>
+          </div>
           <div class="absolute top-10 right-8 z-[60] text-white flex gap-2">
             <PauseIcon
               v-if="isPlay"
@@ -23,7 +29,7 @@
               @click="playPause()"
               class="icon"
             />
-            <ReplayIcon
+            <PlayIcon
               v-else
               @click="playPause()"
               class="icon"
@@ -32,28 +38,28 @@
                 isGoingNext ? 'opacity-20 pointer-events-none' : '',
               ]"
             />
-            <NextIcon
+            <DownArrow
               :class="[
                 isPlay ? 'opacity-20 pointer-events-none ' : '',
                 isGoingNext &&
                   'pointer-events-none !bg-violet !border-violet !fill-white',
               ]"
               @click="nextStep()"
-              class="icon"
+              class="icon -rotate-90"
             />
           </div>
-          <div class="absolute bottom-16 right-12 z-[60] text-white flex gap-2">
+          <div class="absolute bottom-8 right-12 z-[60] text-black flex gap-2">
             <div>Speed:</div>
             <div
               @click="setSpeed()"
               class="hover:opacity-100 cursor-pointer"
               :class="
-                speed === 0.6
+                speed === 0.4
                   ? 'opacity-50'
                   : 'opacity-100  pointer-events-none underline'
               "
             >
-              1X
+              .5X
             </div>
             <div>|</div>
             <div
@@ -65,7 +71,7 @@
                   : 'opacity-100 pointer-events-none underline'
               "
             >
-              2X
+              1X
             </div>
           </div>
         </div>
@@ -78,16 +84,14 @@
               v-for="(state, index) of animation.states"
               :key="state"
               :class="
-                currenSection === index
-                  ? ' bg-violet text-white'
-                  : ' bg-transparent'
+                currenSection === index ? ' bg-violet/30 ' : ' bg-transparent'
               "
             >
               <div
                 :class="currenSection === index ? '' : ''"
                 class="shrink-0 duration-300 h-10 w-10 text-center rounded-full"
               >
-                {{ index + 1 }}.
+                {{ index + 1 }}
               </div>
               <span class="-my-1 py-1 pl-3 duration-300">
                 {{ state }}
@@ -127,6 +131,9 @@ import { toCamelCase } from "@/helper/general";
 import ReplayIcon from "../../../icons/custom/ReplayIcon.vue";
 import PauseIcon from "../../../icons/custom/PauseIcon.vue";
 import NextIcon from "../../../icons/custom/NextIcon.vue";
+import PlayIcon from "../../../icons/custom/PlayIcon.vue";
+import OpenArrowIcon from "../../../icons/custom/OpenArrowIcon.vue";
+import DownArrow from "../../../icons/custom/DownArrow.vue";
 
 const props = defineProps({
   animation: Object,
@@ -139,9 +146,9 @@ const activeState = ref(0);
 const frame = ref(0);
 const currenSection = ref(0);
 
-const isPlay = ref(true);
+const isPlay = ref(false);
 const isGoingNext = ref(false);
-const speed = ref(0.6);
+const speed = ref(0.4);
 
 const frames = {
   pathwayForThePupillaryLightReflex: [0, 12, 36, 60, 88, 120],
@@ -225,11 +232,11 @@ const nextStep = (pause = false) => {
 };
 
 const setSpeed = () => {
-  if (speed.value === 0.6) {
+  if (speed.value === 0.4) {
     speed.value = 0.2;
     animationLottie.setSpeed(speed.value);
   } else {
-    speed.value = 0.6;
+    speed.value = 0.4;
     animationLottie.setSpeed(speed.value);
   }
 };
@@ -253,7 +260,7 @@ onMounted(() => {
     },
   });
   setTimeout(() => {
-    animationLottie.play();
+    // animationLottie.play();
   }, 1000);
 
   const complete = () => {
@@ -268,7 +275,7 @@ onMounted(() => {
   };
   animationLottie.addEventListener("complete", complete);
   animationLottie.setSubframe(true);
-  animationLottie.setSpeed(0.5);
+  animationLottie.setSpeed(0.2);
   setInterval(() => {
     frame.value = animationLottie.projectInterface.currentFrame;
     for (let state in props.animation.states) {
