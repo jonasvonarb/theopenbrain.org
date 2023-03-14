@@ -84,7 +84,7 @@
               v-for="(state, index) of animation.states"
               :key="state"
               :class="
-                currenSection === index ? ' bg-violet/30 ' : ' bg-transparent'
+                currenSection === index ? ' bg-violet/20 ' : ' bg-transparent'
               "
             >
               <div
