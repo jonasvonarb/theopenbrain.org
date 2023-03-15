@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-full flex justify-end items-start">
-    <div class="absolute top-32 left-[6.5rem] z-50">
+    <div class="absolute top-40 left-[6.5rem] z-50">
       <StateElement
         v-if="!info.blockSwitches"
         :states="info.switches"
@@ -22,7 +22,7 @@
     </div>
     <template v-for="(switchWord, index) of info.switches" :key="switchWord">
       <div
-        :class="store.legendIsActive && 'w-2/3'"
+        :class="store.legendIsActive && 'w-[80%]'"
         v-show="index === activeState"
         :id="
           info.id +

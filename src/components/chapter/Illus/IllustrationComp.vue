@@ -94,15 +94,21 @@
           v-if="!animation.youtubeID"
           :class="
             animation.fullHeight
-              ? 'bg-black h-screen w-illus flex justify-center items-center absolute top-0 left-0'
+              ? 'bg-black text-white h-screen w-illus flex justify-center items-center absolute top-0 left-0'
               : ''
           "
         >
+          <span
+            class="px-28 pt-10 z-30 fixed flex flex-col w-illus justify-between top-0 left-0 text-baseMono"
+          >
+            {{ animation.title }}
+          </span>
           <img
             class="max-w-full max-h-[80vh]"
             :class="animation.fullHeight ? 'p-32 ' : ''"
             :src="`/publicAssets/images/illuImages/${animation.id}.png`"
           />
+          <SourceElement source="This would be a instructional text!" />
         </div>
         <div class="w-full h-[80vh]" v-else>
           <iframe
@@ -114,7 +120,6 @@
             allowfullscreen
           ></iframe>
         </div>
-        <SourceElement :source="'This is a placeholder image.'" />
       </template>
       <template v-else>
         <div

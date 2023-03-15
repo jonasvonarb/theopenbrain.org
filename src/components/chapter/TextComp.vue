@@ -18,6 +18,7 @@ import FootNotes from "./text/FootNotes.vue";
 // import noise from "@/helper/noise";
 
 import Perlin from "@/helper/perlin.ts";
+import QuizSection from "./text/QuizSection.vue";
 
 // Seed value is optional, default is 0.
 const seed = Math.random();
@@ -202,6 +203,7 @@ onBeforeUnmount(() => {
           <Section :section="section" :index="index" />
         </div>
         <div class="-ml-20 w-text">
+          <QuizSection />
           <DownloadSection />
           <FurtherReading :content="source['furtherReading']" />
           <FootNotes :content="source['footNotes']" />

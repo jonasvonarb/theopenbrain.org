@@ -45,7 +45,7 @@ const openInfo = () => {
           >
             {{ content.title }}
           </h4>
-          <div class="flex gap-6 z-50 pt-6">
+          <div class="flex gap-6 z-50 pt-12">
             <PlusIcon
               :class="!infoIsOpen ? '' : 'rotate-45'"
               class="icon iconBig duration-300"

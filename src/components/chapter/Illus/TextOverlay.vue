@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-6 z-50 pt-6 font-sans">
+  <div class="flex gap-6 z-50 pt-12 font-sans">
     <PlusIcon
       :class="!infoIsOpen ? '' : 'rotate-45'"
       class="icon iconBig duration-300"
@@ -32,7 +32,7 @@
               :src="`/publicAssets/images/breakVideos/${video.slug}.png`"
             />
           </div>
-          <PlayIcon class="absolute left-44 top-32 icon" />
+          <PlayIcon class="absolute left-44 top-40 icon" />
 
           <div
             class="w-full h-full flex flex-col justify-center items-start mt-[-0.2rem] text-small"

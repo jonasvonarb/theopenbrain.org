@@ -120,7 +120,7 @@ const openInfo = () => {
           @onOpen="openInfo"
         />
         <div
-          class="absolute pt-56 duration-300"
+          class="absolute pt-52 duration-300"
           :class="infoIsOpen && thisAnimation.infoText && 'opacity-10 blur-sm'"
           v-if="!thisAnimation?.loop"
         >
