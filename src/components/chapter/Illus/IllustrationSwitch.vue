@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-full flex justify-end items-start">
-    <div class="absolute top-40 left-[6.5rem] z-50">
+    <div class="absolute top-40 left-20 z-50">
       <StateElement
         v-if="!info.blockSwitches"
         :states="info.switches"

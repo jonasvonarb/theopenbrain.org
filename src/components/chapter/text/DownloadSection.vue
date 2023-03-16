@@ -1,21 +1,23 @@
 <template>
   <div id="downloads" class="py-12 p-20 w-full border-t border-black">
-    <h4 class="font-semibold">Downloads</h4>
-    <div v-for="(file, index) in files" :key="index">
-      <a
-        class="px-4 -mx-4 flex gap-4 hover:text-violet"
-        target="_blank"
-        :href="file.link"
-        :data-index="index"
-        @mouseenter="setHover"
-        @mouseleave="unSetHover"
-      >
-        <FileIcon v-if="file.type === 'file' && +hover !== +index" />
-        <FilesIcon v-if="file.type === 'files' && +hover !== +index" />
-        <FileIconHover v-if="file.type === 'file' && +hover === +index" />
-        <FilesIconHover v-if="file.type === 'files' && +hover === +index" />
-        {{ file.text }}
-      </a>
+    <h4 class="font-semibold pb-6">Downloads</h4>
+    <div class="flex flex-col gap-4">
+      <template v-for="(file, index) in files" :key="index">
+        <a
+          class="px-4 -mx-4 flex gap-4 hover:text-violet"
+          target="_blank"
+          :href="file.link"
+          :data-index="index"
+          @mouseenter="setHover"
+          @mouseleave="unSetHover"
+        >
+          <FileIcon v-if="file.type === 'file' && +hover !== +index" />
+          <FilesIcon v-if="file.type === 'files' && +hover !== +index" />
+          <FileIconHover v-if="file.type === 'file' && +hover === +index" />
+          <FilesIconHover v-if="file.type === 'files' && +hover === +index" />
+          {{ file.text }}
+        </a>
+      </template>
     </div>
   </div>
 </template>

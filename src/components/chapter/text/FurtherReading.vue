@@ -1,6 +1,6 @@
 <template>
   <div id="further-reading" class="py-12 p-20 w-full border-t border-black">
-    <h4 class="font-semibold">{{ content.title }}</h4>
+    <h4 class="font-semibold pb-6">{{ content.title }}</h4>
     <p class="font">
       For additional details on retinal anatomy, physiology, connectivity and
       function, please visit the online vision textbook

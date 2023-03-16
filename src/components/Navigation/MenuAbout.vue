@@ -24,8 +24,8 @@ const openAbout = () => {
           ? 'left-6'
           : 'left-6'
         : store.activeMenu
-        ? '-left-24 ml-4'
-        : 'left-24'
+        ? '-left-20 ml-4'
+        : 'left-20'
     "
   >
     <IIcon
@@ -40,7 +40,15 @@ const openAbout = () => {
       @click="store.activeAbout = false"
     />
     <!-- menu open/close -->
-
+    <div
+      @click="store.activeAbout = false"
+      class="fixed left-0 top-0 backdrop-blur-md h-screen w-screen duration-300"
+      :class="[
+        store.activeAbout
+          ? 'opacity-100 pointer-events-auto'
+          : 'opacity-0 pointer-events-none',
+      ]"
+    ></div>
     <div
       class="fixed h-screen bg-violet text-white overflow-y-scroll overflow-x-hidden scrollbar top-0 left-0 text-medium duration-300 border-r border-black snap-x"
       :class="[store.activeAbout ? 'w-[50vw] ml-0' : 'w-[0]']"

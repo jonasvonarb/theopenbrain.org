@@ -3,13 +3,13 @@
     class="pr-14 pl-32 flex flex-row justify-center items-center h-[100%] pointer-events-auto"
   >
     <div
-      class="px-28 pt-10 z-30 fixed flex flex-col w-illus justify-between top-0 left-0"
+      class="px-24 pt-10 z-30 fixed flex flex-col w-illus justify-between top-0 left-0"
       :class="animation.multiple ? 'items-center' : 'items-start'"
     >
       <span class="pb-0 text-baseMono">{{ animation.title }}</span>
       <div
         v-if="animation.multiple"
-        class="fixed top-0 left-0 w-illus h-screen px-28 pl-28 flex flex-col justify-center items-start"
+        class="fixed top-0 left-0 w-illus h-screen px-24 pl-24 flex flex-col justify-center items-start"
       >
         <template
           v-for="(state, index) in Object.keys(animation.states)"
@@ -66,7 +66,7 @@
               ? animation.states
               : Object.keys(animation.states)"
             :key="state"
-            class="hover:text-violet hover:bg-white hover:border-violet select-none text-smaller cursor-pointer pb-2 mb-4 border-black border p-4 flex flex-col justify-center items-center"
+            class="hover:text-violet hover:bg-white hover:border-violet select-none text-small cursor-pointer pb-2 mb-4 border-black border p-4 flex flex-col justify-center items-center"
             :class="
               activeState[index] ? 'font-semibold bg-violet text-white' : ''
             "
@@ -99,7 +99,7 @@
           "
         >
           <span
-            class="px-28 pt-10 z-30 fixed flex flex-col w-illus justify-between top-0 left-0 text-baseMono"
+            class="px-24 pt-10 z-30 fixed flex flex-col w-illus justify-between top-0 left-0 text-baseMono"
           >
             {{ animation.title }}
           </span>
@@ -108,7 +108,9 @@
             :class="animation.fullHeight ? 'p-32 ' : ''"
             :src="`/publicAssets/images/illuImages/${animation.id}.png`"
           />
-          <SourceElement source="This would be a instructional text!" />
+          <SourceElement
+            source="Stare at the cross for 30 seconds. Then immediately look at a white wall (or close your eyes) to see after-images. Notice that each color gets 'replaced' by its opponent color in the after-image."
+          />
         </div>
         <div class="w-full h-[80vh]" v-else>
           <iframe

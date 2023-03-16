@@ -59,7 +59,7 @@ onBeforeUnmount(() => {
       class="z-0 duration-300"
       :class="
         store.activeAbout || store.activeMenu || !store.hasBeenVisited
-          ? 'blur-md grayscale-0 pointer-events-none'
+          ? ' grayscale-0 !pointer-events-none'
           : ''
       "
     >
@@ -68,7 +68,7 @@ onBeforeUnmount(() => {
       </transition>
     </RouterView>
     <MenuChapter />
-    <MenuHome />
+    <!-- <MenuHome /> -->
     <MenuAbout v-if="route.name === 'chapter'" />
   </div>
   <div v-else>

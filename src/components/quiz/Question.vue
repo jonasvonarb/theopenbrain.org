@@ -9,17 +9,21 @@
         :for="a + '-' + num"
         :key="a + '-' + num"
         :class="index === question.c && 'isTrue'"
+        ref="input"
       >
         <input
           type="radio"
           :id="a + '-' + num"
           :name="'question-' + num"
           :value="a"
+          @change="changeHandler"
+          :class="index === question.c && 'isTrue'"
         />
         <span>{{ a }}</span>
       </label>
     </fieldset>
     <div
+      :class="!active && 'opacity-20 pointer-events-none'"
       class="border border-black w-32 text-center cursor-pointer mt-12 uppercase hover:bg-violet hover:text-white"
       @click="next"
     >
@@ -35,6 +39,13 @@ const props = defineProps({
   question: Object,
   num: Number,
 });
+
+const active = ref(false);
+
+const changeHandler = (ev) => {
+  console.log();
+  active.value = ev.target.classList.contains("isTrue");
+};
 
 const emits = defineEmits(["next"]);
 const next = () => {

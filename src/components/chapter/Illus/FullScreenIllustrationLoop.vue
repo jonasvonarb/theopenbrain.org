@@ -13,10 +13,11 @@
             :id="animation.id"
           />
           <div
-            class="absolute top-48 left-28 flex gap-3 z-[60] pr-36 mr-12 text-base text-black text-left"
+            class="absolute font-sans bottom-20 left-24 flex gap-3 z-[60] pr-36 mr-12 text-base text-black text-left"
           >
-            {{ currenSection + 1 }}.
-            <div>{{ animation.states[currenSection] }}.</div>
+            <div>
+              {{ currenSection + 1 }}. {{ animation.states[currenSection] }}.
+            </div>
           </div>
           <div class="absolute top-10 right-8 z-[60] text-white flex gap-2">
             <PauseIcon
@@ -80,18 +81,28 @@
         >
           <ol class="w-full">
             <li
-              class="pb-5 pt-1.5 first-of-type:mt-0 pointer-event-none flex border-b pl-8 p-24 border-black"
+              class="pb-5 pt-1.5 first-of-type:mt-0 pointer-event-none flex border-t pl-8 p-24 border-black"
               v-for="(state, index) of animation.states"
               :key="state"
-              :class="
-                currenSection === index ? ' bg-violet/20 ' : ' bg-transparent'
-              "
             >
               <div
-                :class="currenSection === index ? '' : ''"
+                :class="
+                  currenSection === index
+                    ? ' opacity-100 text-violet '
+                    : ' opacity-10'
+                "
                 class="shrink-0 duration-300 h-10 w-10 text-center rounded-full"
               >
                 {{ index + 1 }}
+              </div>
+              <div
+                :class="
+                  currenSection === index
+                    ? 'opacity-100 text-violet'
+                    : 'opacity-0'
+                "
+              >
+                &#x2192;
               </div>
               <span class="-my-1 py-1 pl-3 duration-300">
                 {{ state }}

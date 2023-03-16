@@ -3,7 +3,7 @@
     <p
       v-for="(state, index) in states"
       :key="state"
-      class="hover:border-violet hover:text-violet select-none text-smaller cursor-pointer mb-6 border-black border p-6 py-3 flex flex-col justify-center items-center"
+      class="hover:border-violet hover:text-violet select-none text-small cursor-pointer mb-6 border-black border p-6 py-3 flex flex-col justify-center items-center"
       :class="
         activeState == index
           ? 'font-semibold bg-violet text-white pointer-events-none'

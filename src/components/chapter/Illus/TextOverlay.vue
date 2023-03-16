@@ -32,7 +32,7 @@
               :src="`/publicAssets/images/breakVideos/${video.slug}.png`"
             />
           </div>
-          <PlayIcon class="absolute left-44 top-40 icon" />
+          <PlayIcon class="absolute left-44 top-[50%] -mt-6 icon iconBig" />
 
           <div
             class="w-full h-full flex flex-col justify-center items-start mt-[-0.2rem] text-small"

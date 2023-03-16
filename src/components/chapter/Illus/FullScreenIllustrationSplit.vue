@@ -6,11 +6,14 @@
       class="absolute top-0 left-0 w-full h-full flex justify-between items-start text-small"
     >
       <div class="w-full h-full flex justify-end items-end">
-        <div class="w-1/2 h-full py-48" :id="animation.id + 'Left'" />
         <div
-          class="flex items-center w-1/2 border-2 border-violet h-full overflow-hidden"
+          class="max-w-[800px] w-1/2 h-full py-48 m-auto"
+          :id="animation.id + 'Left'"
+        />
+        <div
+          class="flex items-center w-1/2 border-black border-l-2 h-full overflow-hidden"
         >
-          <div class="fullscreen -m-5 hPlus" :id="animation.id + 'Right'" />
+          <div class="fullscreen m-12 hPlus" :id="animation.id + 'Right'" />
         </div>
       </div>
     </div>
@@ -48,9 +51,9 @@ onMounted(() => {
     loop: false,
     autoplay: false,
     renderer: "svg",
-    rendererSettings: {
-      progressiveLoad: true,
-    },
+    // rendererSettings: {
+    //   progressiveLoad: true,
+    // },
     path: "/publicAssets/animations/" + props.animation.id + "Left" + ".json",
   });
   animationLottieLeft.setSubframe(true);
@@ -58,21 +61,15 @@ onMounted(() => {
   let svgContainerRight = document.getElementById(props.animation.id + "Right");
   animationLottieRight = lottie.loadAnimation({
     id: props.animation.id + "Right",
-    speed: 3,
     wrapper: svgContainerRight,
     animType: "svg",
     loop: false,
     autoplay: false,
-    renderer: "svg",
-    scrub: true,
-    rendererSettings: {
-      scaleMode: "noScale",
-      progressiveLoad: true,
-      preserveAspectRatio: "xMidYMid slice",
-    },
+    renderer: "canvas",
+    scrub: false,
     path: "/publicAssets/animations/" + props.animation.id + "Right" + ".json",
   });
-  animationLottieRight.setSubframe(true);
+  animationLottieRight.setSubframe(false);
 
   let wait = setInterval(() => {
     if (!wait) return;
