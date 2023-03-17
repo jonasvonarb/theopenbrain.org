@@ -89,6 +89,13 @@
       </div>
     </div>
     <div class="flex flex-row min-w-full">
+      <div class="absolute top-40 left-20 z-50">
+        <LegendElement
+          v-if="animation.legend && !animation.switch"
+          :legend="animation.legend"
+          iconPraefix="retinalCircuits"
+        />
+      </div>
       <template v-if="animation.illuImage">
         <div
           v-if="!animation.youtubeID"
@@ -165,6 +172,7 @@ import IllustrationSwitch from "./IllustrationSwitch.vue";
 import StateElement from "@/components/UI/StateElement.vue";
 import StateElementBlock from "@/components/UI/StateElementBlock.vue";
 import SourceElement from "@/components/UI/SourceElement.vue";
+import LegendElement from "../../UI/LegendElement.vue";
 
 const props = defineProps({
   animation: Object,

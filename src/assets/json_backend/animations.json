@@ -240,6 +240,20 @@
       ]
     },
     {
+      "id": "animationRetinalCircuitsTransition",
+      "title": "Retinal circuits",
+      "fullscreen": false,
+      "loop": false,
+      "legend": [
+        "Photoreceptors",
+        "Horizontal cells",
+        "Bipolar cells",
+        "Amacrine cells",
+        "Ganglion cells"
+      ]
+    },
+
+    {
       "id": "animationCenterSurroundReceptiveFields",
       "title": "Center surround receptive fields",
       "fullscreen": false,

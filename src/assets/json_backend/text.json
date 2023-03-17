@@ -374,9 +374,9 @@
         {
           "id": "53b462b8-82a0-425d-a9c3-b2b10f9658eb",
           "animation": {
-            "name": "RetinalCellTypes",
-            "title": "Retinal cell types",
-            "id": "animationRetinalCellTypes"
+            "name": "retinalCircuitsTransition",
+            "title": "Retinal circuits",
+            "id": "animationRetinalCircuitsTransition"
           },
           "text": "The parcellation of photoreceptor-generated signals into distinct visual channels culminates at the ganglion cell. The outcome is that the retina sends out many different channels of visual content to the brain – each carrying distinct information about the incoming visual scene, with some channels focused on motion, others on color, others on size, etc<sup data-sup='17'>17,</sup><sup data-sup='31'>31</sup>. It appears that roughly 15 visual channels leave the primate retina <sup data-sup='53'>53</sup>. These channels are represented by different types of ganglion cells<sup data-sup='6'>6,</sup><sup data-sup='17'>17,</sup><sup data-sup='46'>46</sup>. While ganglion cells are the focus of this section, since they represent the retinal output channels, their response properties are intertwined with the amacrine cells they are connected to, so we discuss both cell types in combination. Furthermore, while some amacrine cells fire action potentials, and some bipolar cells can generate spike-like events, ganglion cells are generally considered the predominant spiking cell in the retina. Another important property of ganglion cells is that many of them can independently relay inputs that arise in a portion of their receptive field. In the bipolar cell section, we outlined how bipolar cells are unable distinguish between a grey background and a stimulus that half-illuminates and half-darkens their receptive field. It turns out that some ganglion cells can respond to such stimuli, encoding both ON and OFF inputs. Such processing in ganglion cells is referred to as a non-linearity<sup data-sup='54'>54,</sup><sup data-sup='55'>55</sup>. This property enhances a ganglion cell’s ability to encode patterns within its receptive field. Below, we outline several canonical circuit computations in the retina, which result in ganglion cells with distinct feature selectivities, each likely serving specific ethologically-relevant functions."
         },
