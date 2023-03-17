@@ -67,17 +67,13 @@ onMounted(() => {
           ScrollTrigger.create({
             id: "scrollTriggerText",
             trigger: trigger,
-            start: "top top",
-            end: "bottom top",
+            start: "top +=100",
+            end: "bottom +=100",
             srub: 0,
             markers: false,
             onToggle: (self) => {
-              if (
-                self.trigger.id == "the-eye-and-retina-1" &&
-                !self.isActive &&
-                self.direction === -1
-              ) {
-                store.currentSubChapter = null;
+              if (!self.isActive) {
+                store.currentSubChapter = "intro";
               }
               if (!self.isActive) return;
               store.currentSubChapter = self.trigger.id;

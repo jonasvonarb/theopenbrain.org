@@ -26,7 +26,7 @@ export const useGeneral = defineStore("main", {
     activeImportMenu: false,
     count: 0,
     imgActive: false,
-    currentSubChapter: null,
+    currentSubChapter: "intro",
     progress: 0,
     isScrolling: false,
     isNextBack: false,

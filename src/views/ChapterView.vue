@@ -16,15 +16,15 @@ const commentStore = useCom();
 </script>
 
 <template>
-  <div>
-    <div
+  <div :class="store.isScrolling ? ' grayscale	' : ' graysclae-0 '">
+    <!-- <div
       :class="
         store.isScrolling
           ? 'backdrop-blur-[0] grayscale	opacity-100'
           : 'backdrop-blur-[0] graysclae-0 duration-300 opacity-0'
       "
       class="pointer-events-none bg-gray-900/20 fixed w-[200vw] h-[200vh] -top-[0] -left-[0] z-[50] duration-Fix"
-    ></div>
+    ></div> -->
     <!-- text -->
     <Illustration />
     <EyeStart />

@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="source"
-    class="absolute bottom-20 left-20 pl-2 text-small max-w-[30%]"
+    class="absolute bottom-20 left-20 pl-2 text-small max-w-[360px]"
   >
     {{ source }}
   </div>

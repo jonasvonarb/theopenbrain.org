@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col justify-start gap-9 w-64 py-1 px-1 items-start left-24"
+    class="flex flex-col justify-start gap-9 w-64 py-1 px-1 items-start left-left"
   >
     <div class="flex justify-center items-center gap-2" @click="openLegend">
       <PlusIcon class="icon duration-300" :class="open ? '-rotate-45' : ''" />

@@ -34,7 +34,7 @@ const toStart = () => {
     <Transition name="menuTo" mode="out-in">
       <ol
         v-if="route.name == 'home' && store.activeMenu"
-        class="no-select pl-24 pt-24 pointer-events-auto list-decimal list-inside w-[35vw] text-xl text-black uppercase overflow-visible"
+        class="no-select pl-left pt-24 pointer-events-auto list-decimal list-inside w-[35vw] text-xl text-black uppercase overflow-visible"
       >
         <div class="shrink-0 pb-6">
           <h1 class="font-semibold">The Open Brain</h1>

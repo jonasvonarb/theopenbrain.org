@@ -1,6 +1,6 @@
 <template>
-  <div class="px-24 w-full flex flex-col h-full pointer-events-auto">
-    <div class="px-24 z-50 fixed flex w-[50vw] justify-between top-6 left-0">
+  <div class="px-left w-full flex flex-col h-full pointer-events-auto">
+    <div class="px-left z-50 fixed flex w-[50vw] justify-between top-6 left-0">
       <!-- <span>{{ animation.title }}</span> -->
       <span v-if="animation.loop" class="hover:underline" @click="replay()"
         >replay</span

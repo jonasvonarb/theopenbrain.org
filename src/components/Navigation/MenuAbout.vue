@@ -53,7 +53,7 @@ const openAbout = () => {
       class="fixed h-screen bg-violet text-white overflow-y-scroll overflow-x-hidden scrollbar top-0 left-0 text-medium duration-300 border-r border-black snap-x"
       :class="[store.activeAbout ? 'w-[50vw] ml-0' : 'w-[0]']"
     >
-      <div class="px-24 pt-12 pb-56 w-[50vw] max-w-[800px]">
+      <div class="px-left pt-12 pb-56 w-[50vw] max-w-[800px]">
         <div class="font-sans">
           <h2>About</h2>
           <section class="pb-56">

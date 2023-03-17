@@ -30,7 +30,7 @@ const openInfo = () => {
     ref="trigger"
     class="w-screen h-[180vh] -ml-20 -translate-x-custom border-y border-light bg-dark my-[0] mb-32 text-base"
   >
-    <div class="sticky flex top-0 h-screen w-full pl-24 py-10">
+    <div class="sticky flex top-0 h-screen w-full pl-left py-10">
       <div class="w-full text-white">
         <div
           class="flex flex-col justify-strat "

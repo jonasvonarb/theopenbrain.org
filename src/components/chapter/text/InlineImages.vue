@@ -13,7 +13,7 @@
         v-if="paragraph?.imgCap"
         class="imgDesription text-justify break-before-all border-t border-black px-20 pr-28 py-4 pb-6 font-mono text-small w-full overflow-scroll"
       >
-        {{ paragraph?.imgCap }}
+        <span v-html="paragraph?.imgCap" />
       </div>
     </figure>
   </div>

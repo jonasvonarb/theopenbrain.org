@@ -41,15 +41,15 @@ const closeMenu = () => {
       store.activeMenu
         ? route.name === 'chapter'
           ? 'w-[50vw]'
-          : 'w-[0]'
+          : 'w-[0vw]'
         : 'w-0 ',
     ]"
   >
     <!-- chapter structur -->
     <Transition name="menuTo">
       <ul
-        v-if="route.name && store.activeMenu"
-        class="mb-52 duration-300 shrink-1 pb-24 h-full overflow-scroll"
+        v-if="route.name"
+        class="mb-52 duration-300 shrink-1 pb-24 h-full overflow-scroll z-30 absolute"
       >
         <template v-for="(chapter, index) in menu">
           <li
@@ -58,9 +58,8 @@ const closeMenu = () => {
             class="w-[50vw] shrink-0 cursor-pointer"
           >
             <ol class="w-full list-decimal py-12 overflow-hidden duration-300">
-              <div class="pb-6 pr-24">
+              <div class="pb-6 pl-44 pr-24">
                 <h3 class="-translate-x-0" @click="toStart()">
-                  <span class="pl-20 pr-12">3</span>
                   <RouterLink to="/chapter/">
                     {{ menu[index].title }}
                   </RouterLink>
@@ -68,15 +67,15 @@ const closeMenu = () => {
               </div>
               <div
                 class="py-4 pl-36 pr-12 border-t border-light/70 font-medium"
+                :class="
+                  'intro' === store.currentSubChapter
+                    ? 'text-white pointer-events-none bg-violet'
+                    : ''
+                "
               >
                 <div
                   class="flex pl-8 border-light/70 hover:text-violet"
                   @click="scrollToMenu('the-eye-and-retina-intro'), closeMenu()"
-                  :class="
-                    'Footnotes' === store.currentSubChapter
-                      ? 'text-white pointer-events-none bg-violet'
-                      : ''
-                  "
                 >
                   <div class="w-full max-w-[850px]">Intro</div>
                 </div>
@@ -98,6 +97,11 @@ const closeMenu = () => {
                 <ol>
                   <div
                     class="block pl-44 pb-3 pt-3 hover:text-violet"
+                    :class="
+                      toSlug(part.title) === store.currentSubChapter
+                        ? 'bg-violet/50'
+                        : ''
+                    "
                     @click="scrollToMenu(toSlug(subPart)), closeMenu()"
                     v-for="subPart in part.parts"
                     :key="subPart"
@@ -122,6 +126,7 @@ const closeMenu = () => {
         </template>
       </ul>
     </Transition>
+
     <InteractionButton
       v-if="store.activeMenu"
       :text="'close'"
@@ -139,6 +144,15 @@ const closeMenu = () => {
           : '-left-10 opacity-0'
       "
     />
+    <div
+      @click="store.activeMenu = false"
+      class="fixed left-0 top-0 backdrop-blur-md h-screen w-screen duration-300"
+      :class="[
+        store.activeMenu
+          ? 'opacity-100 pointer-events-auto'
+          : 'opacity-0 pointer-events-none',
+      ]"
+    ></div>
   </div>
 </template>
 

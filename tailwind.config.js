@@ -79,15 +79,20 @@ module.exports = {
       },
       spacing: {
         text: "max(50vw, calc(100vw - 780px - 11rem))",
+        left: "5.5rem",
       },
       margin: {
         body: "2.2rem",
+        left: "5.5rem",
+      },
+      padding: {
+        left: "5.5rem",
       },
       colors: {
         lightest: "#F4F4F4",
         lighter: "#DEDEDE",
         light: "#B5B5B5",
-        med: "#898989",
+        med: "#979797",
         dark: "#343434",
         darker: "#202020",
         magenta: "rgb(151, 71, 255)",

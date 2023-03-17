@@ -6,14 +6,14 @@
     <template v-if="isActive">
       <div class="w-full h-screen flex items-start text-small">
         <div
-          class="block-1 relative h-full flex justify-center items-end bg-med pl-20"
+          class="block-1 relative h-full flex justify-center items-end bg-med pl-left"
         >
           <div
             class="max-h-[78vh] max-w-[95%] w-full h-full pb-24"
             :id="animation.id"
           />
           <div
-            class="absolute font-sans bottom-20 left-24 flex gap-3 z-[60] pr-36 mr-12 text-base text-black text-left"
+            class="absolute font-sans top-56 border-black border p-6 left-left flex gap-3 z-[60] pr-36 mr-12 text-base text-black text-left"
           >
             <div>
               {{ currenSection + 1 }}. {{ animation.states[currenSection] }}.

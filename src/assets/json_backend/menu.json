@@ -56,7 +56,6 @@
       {
         "title": "Retinal vision in the real world",
         "parts": [
-          "Eye movements",
           "Light adaptation"
         ]
       },
@@ -77,8 +76,9 @@
           "Retinitis pigmentosa"
         ]
       },
-      { "title": "Downloads" },
       { "title": "Looking forward" },
+      { "title": "Quiz" },
+      { "title": "Downloads" },
       { "title": "Further reading" }
     ]
   },

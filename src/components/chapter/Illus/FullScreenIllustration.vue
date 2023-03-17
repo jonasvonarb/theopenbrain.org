@@ -111,7 +111,7 @@ const openInfo = () => {
         : 'mb-32',
     ]"
   >
-    <div class="sticky w-full h-screen px-24 py-10 top-0">
+    <div class="sticky w-full h-screen px-left py-10 top-0">
       <div
         class="absolute z-50 flex flex-col justify-between"
         v-if="thisAnimation?.states"
