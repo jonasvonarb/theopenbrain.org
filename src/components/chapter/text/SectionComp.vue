@@ -19,7 +19,7 @@
           ? 'animationTrigger animationScrollAnchor block noHighlight'
           : ''
       "
-      class="transition left-0 w-full h-[200vh]"
+      class="transition left-0 w-full h-[200vh] -mb-28"
     ></div>
     <div
       v-if="section['paragraphs'][0]?.animation?.transition"

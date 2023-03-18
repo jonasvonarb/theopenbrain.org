@@ -49,13 +49,13 @@
               class="icon -rotate-90"
             />
           </div>
-          <div class="absolute bottom-8 right-12 z-[60] text-black flex gap-2">
+          <!-- <div class="absolute bottom-8 right-12 z-[60] text-black flex gap-2">
             <div>Speed:</div>
             <div
               @click="setSpeed()"
               class="hover:opacity-100 cursor-pointer"
               :class="
-                speed === 0.4
+                speed === 1
                   ? 'opacity-50'
                   : 'opacity-100  pointer-events-none underline'
               "
@@ -74,7 +74,7 @@
             >
               1X
             </div>
-          </div>
+          </div> -->
         </div>
         <div
           class="relative block-2 text-medium h-full flex flex-col gap-12 bg-light pt-9 px-0 pr-0 border-l border-black"
@@ -159,10 +159,10 @@ const currenSection = ref(0);
 
 const isPlay = ref(false);
 const isGoingNext = ref(false);
-const speed = ref(0.4);
+const speed = ref(1);
 
 const frames = {
-  pathwayForThePupillaryLightReflex: [0, 12, 36, 60, 88, 120],
+  pathwayForThePupillaryLightReflex: [0, 24, 36, 60, 88, 120],
   phototransduction: [0, 6, 25, 55, 69, 79, 159, 213, 240],
   theVisualCycle: [0, 11, 36, 72, 132, 192, 240],
 };
@@ -243,11 +243,11 @@ const nextStep = (pause = false) => {
 };
 
 const setSpeed = () => {
-  if (speed.value === 0.4) {
+  if (speed.value === 1) {
     speed.value = 0.2;
     animationLottie.setSpeed(speed.value);
   } else {
-    speed.value = 0.4;
+    speed.value = 1;
     animationLottie.setSpeed(speed.value);
   }
 };
@@ -286,7 +286,7 @@ onMounted(() => {
   };
   animationLottie.addEventListener("complete", complete);
   animationLottie.setSubframe(true);
-  animationLottie.setSpeed(0.2);
+  animationLottie.setSpeed(1);
   setInterval(() => {
     frame.value = animationLottie.projectInterface.currentFrame;
     for (let state in props.animation.states) {

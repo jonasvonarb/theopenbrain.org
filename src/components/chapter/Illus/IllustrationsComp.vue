@@ -109,14 +109,14 @@ onBeforeUnmount(() => {
           !animation.fullscreen && !animation.scroll && !animation.isTransition
         "
       >
-        <transition name="fade" mode="out-in">
-          <Illustration
-            v-if="activeAnimation === animation.id.toLowerCase()"
-            :animation="animation"
-            :active-animation="activeAnimation"
-            class="max-w-[1000px] m-auto"
-          />
-        </transition>
+        <!-- <transition name="fade" mode="out-in"> -->
+        <Illustration
+          v-if="activeAnimation === animation.id.toLowerCase()"
+          :animation="animation"
+          :active-animation="activeAnimation"
+          class="max-w-[1000px] m-auto"
+        />
+        <!-- </transition> -->
       </template>
       <template
         v-if="

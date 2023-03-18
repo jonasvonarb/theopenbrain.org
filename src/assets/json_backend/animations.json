@@ -19,6 +19,7 @@
       "fullscreen": false,
       "clickTriggered": true,
       "highlight": true,
+      "loop": true,
       "states": [
         "Lens",
         "Iris",
@@ -29,7 +30,7 @@
         "Aqueous humour",
         "Ciliary muscle",
         "Retina",
-        "Vitreous humour",
+        "Vitreous humorous",
         "Optic nerve"
       ]
     },
@@ -243,14 +244,7 @@
       "id": "animationRetinalCircuitsTransition",
       "title": "Retinal circuits",
       "fullscreen": false,
-      "loop": false,
-      "legend": [
-        "Photoreceptors",
-        "Horizontal cells",
-        "Bipolar cells",
-        "Amacrine cells",
-        "Ganglion cells"
-      ]
+      "loop": false
     },
 
     {
@@ -378,6 +372,12 @@
         "Excitatation",
         "Gap junction"
       ]
+    },
+    {
+      "id": "animationRetinalDevelopment",
+      "title": "Retinal Development",
+      "fullscreen": false,
+      "loop": true
     },
     {
       "id": "animationWavesOfActivity",

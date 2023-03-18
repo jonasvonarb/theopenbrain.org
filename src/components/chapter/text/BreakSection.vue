@@ -48,7 +48,7 @@ const openInfo = () => {
           <div class="flex gap-6 z-50 pt-12">
             <PlusIcon
               :class="!infoIsOpen ? '' : 'rotate-45'"
-              class="icon iconBig duration-300"
+              class="icon duration-300"
               @click="openInfo()"
             />
             <div

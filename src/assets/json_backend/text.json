@@ -557,6 +557,10 @@
             {
               "id": "acec45cb-f0f0-4348-a3cb-735867bf9f11",
               "title": "Generation and wiring of retinal neurons",
+              "animation": {
+                "name": "retinalDevelopment",
+                "id": "animationRetinalDevelopment"
+              },
               "paragraphs": [
                 {
                   "id": "3438c499-48b6-48f1-8896-4d8097872685",

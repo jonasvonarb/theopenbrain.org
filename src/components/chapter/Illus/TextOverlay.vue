@@ -2,7 +2,7 @@
   <div class="flex gap-6 z-50 pt-12 font-sans">
     <PlusIcon
       :class="!infoIsOpen ? '' : 'rotate-45'"
-      class="icon iconBig duration-300"
+      class="icon duration-300"
       @click="$emit('onOpen')"
     />
     <div
