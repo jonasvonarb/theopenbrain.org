@@ -103,11 +103,11 @@ const openInfo = () => {
 <template>
   <div
     ref="containerScroll"
-    class="w-screen border-y bg-light text-black border-black -translate-x-custom -ml-20 my-[0] text-small font-mono duration-300"
+    class="w-screen border-y bg-light text-black border-black -translate-x-custom -ml-20 my-[0] mt-64 text-small font-mono duration-300"
     :class="[
       !thisAnimation.split ? 'h-[150vh]' : 'h-[700vh]',
       thisAnimation.title === 'Pathway for the pupillary light reflex'
-        ? '-mb-9'
+        ? '-mb-[18.5rem]'
         : 'mb-32',
     ]"
   >

@@ -3,17 +3,17 @@
     <p
       v-for="(state, index) in states"
       :key="state"
-      class="hover:border-violet hover:text-violet select-none text-small cursor-pointer mb-6 border-black border p-6 py-3 flex flex-col justify-center items-center"
+      class="hover:border-violet hover:text-violet select-none text-small cursor-pointer mb-6 border-black border p-6 py-3 flex flex-row justify-center gap-4 items-center"
       :class="
         activeState == index
-          ? 'font-semibold bg-violet text-white pointer-events-none'
+          ? 'font-semibold bg-violet border-violet text-white pointer-events-none'
           : ''
       "
       @click="$emit('onClick', { index, activeState })"
     >
       <template v-if="praefix">
         <img
-          class="w-full h-10 my-1"
+          class="w-10 h-9 my-1"
           :class="activeState == index ? 'invert' : ''"
           :src="'/publicAssets/icons/' + praefix + '/' + toSlug(state) + '.svg'"
         />
