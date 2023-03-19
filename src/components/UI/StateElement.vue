@@ -11,11 +11,18 @@
     >
       <template v-if="iconsIndex?.[index]">
         <img
-          class="inline h-12 pr-2 -ml-1"
+          class="inline h-12 pr-5 -ml-1"
           :src="`/publicAssets/icons/${praefix}/${toSlug(state)}.svg`"
         />
       </template>
-      {{ state }}
+      <span
+        :class="
+          activeState == index
+            ? 'underline pointer-events-none text-violet'
+            : ''
+        "
+        >{{ state }}</span
+      >
     </p>
   </div>
 </template>

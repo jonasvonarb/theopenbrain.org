@@ -104,7 +104,6 @@
             class="px-left pt-10 z-30 fixed top-0 left-0"
             :title="animation.title"
           />
-
           <img
             class="max-w-full max-h-[80vh]"
             :class="animation.fullHeight ? 'p-32 ' : ''"
@@ -296,7 +295,7 @@ onMounted(() => {
 
   if (props.animation.set) {
     console.log(props.animation.set, info.states);
-    let state = toCamelCase(info.states[2]);
+    let state = toCamelCase(info.states[props.animation.set]);
     let wait = setInterval(() => {
       let els = document.getElementsByClassName(state + "Highlight");
       if (els.length === 0) return;
