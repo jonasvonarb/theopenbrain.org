@@ -12,6 +12,7 @@ import FullScreenIllustrationLoop from "./FullScreenIllustrationLoop.vue";
 import FullScreenIllustrationSplit from "./FullScreenIllustrationSplit.vue";
 import SourceElement from "../../UI/SourceElement.vue";
 import TextOverlay from "./TextOverlay.vue";
+import TitleIllus from "../../UI/TitleIllus.vue";
 
 const props = defineProps({
   paragraph: Object,
@@ -103,8 +104,11 @@ const openInfo = () => {
 <template>
   <div
     ref="containerScroll"
-    class="w-screen border-y bg-light text-black border-black -translate-x-custom -ml-20 my-[0] mt-64 text-small font-mono duration-300"
+    class="w-screen border-y border-black -translate-x-custom -ml-20 my-[0] mt-64 text-small font-mono duration-300"
     :class="[
+      infoIsOpen && thisAnimation.infoText
+        ? 'bg-dark text-white'
+        : 'bg-light text-black',
       !thisAnimation.split ? 'h-[150vh]' : 'h-[700vh]',
       thisAnimation.title === 'Pathway for the pupillary light reflex'
         ? '-mb-[18.5rem]'
@@ -116,7 +120,7 @@ const openInfo = () => {
         class="absolute z-50 flex flex-col justify-between"
         v-if="thisAnimation?.states"
       >
-        <h4 class="inline">{{ thisAnimation.title }}</h4>
+        <TitleIllus :title="thisAnimation.title" class="inline" />
         <!-- Overlay -->
         <TextOverlay
           v-if="thisAnimation.infoText"

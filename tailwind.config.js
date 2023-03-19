@@ -79,14 +79,14 @@ module.exports = {
       },
       spacing: {
         text: "max(50vw, calc(100vw - 780px - 11rem))",
-        left: "5.5rem",
+        left: "5.8rem",
       },
       margin: {
         body: "2.2rem",
-        left: "5.5rem",
+        left: "5.8rem",
       },
       padding: {
-        left: "5.5rem",
+        left: "5.8rem",
       },
       colors: {
         lightest: "#F4F4F4",

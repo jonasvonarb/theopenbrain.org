@@ -1,6 +1,6 @@
 <template>
   <div id="quiz" class="py-12 p-20 w-full border-t border-black">
-    <h4 class="font-semibold pb-6">Quiz</h4>
+    <TitleIllus title="Quiz" class="pb-6" />
     <p>
       Here you can test your knowledge in a
       <RouterLink class="text-violet" to="/quiz">QUIZ</RouterLink>!
@@ -9,6 +9,7 @@
 </template>
 <script setup>
 import { RouterLink } from "vue-router";
+import TitleIllus from "../../UI/TitleIllus.vue";
 </script>
 
 <style scoped>

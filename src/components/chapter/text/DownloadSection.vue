@@ -1,6 +1,6 @@
 <template>
   <div id="downloads" class="py-12 p-20 w-full border-t border-black">
-    <h4 class="font-semibold pb-6">Downloads</h4>
+    <TitleIllus title="Downloads" class="pb-6" />
     <div class="flex flex-col gap-4">
       <template v-for="(file, index) in files" :key="index">
         <a
@@ -28,6 +28,7 @@ import FilesIcon from "@/icons/custom/FilesIcon.vue";
 import FileIconHover from "@/icons/custom/FileIconHover.vue";
 import FilesIconHover from "@/icons/custom/FilesIconHover.vue";
 import { ref } from "vue";
+import TitleIllus from "../../UI/TitleIllus.vue";
 
 const hover = ref(undefined);
 

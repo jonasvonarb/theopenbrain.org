@@ -1,38 +1,55 @@
 <template>
-  <div class="flex gap-6 z-50 pt-12 font-sans">
+  <div class="flex flex-col z-50 pt-20 font-sans text-white">
     <PlusIcon
       :class="!infoIsOpen ? '' : 'rotate-45'"
-      class="icon duration-300"
+      class="icon duration-300 z-50"
       @click="$emit('onOpen')"
     />
     <div
       :id="'info-' + toSlug(animation?.title)"
-      class="flex overflow-y-scroll overflow-x-visible flex-col text-base h-[80vh] pb-2 overscroll-auto pr-32"
+      class="flex -mt-12 overflow-y-scroll overflow-x-visible flex-row text-base h-[80vh] pb-2 overscroll-auto pr-32"
     >
-      <div class="flex flex-col justify-start gap-16 w-text pt-2">
-        <p class=" " v-html="animation?.infoText" />
+      <div class="flex flex-col pt-20 justify-start gap-16 w-container">
+        <p class="w-oText" v-html="animation?.infoText || animation?.text" />
+        <div v-if="animation?.steps" class="w-oText">
+          <p class="font-semibold">Directions:</p>
+          <ol class="pl-12">
+            <li
+              v-for="step in animation?.steps"
+              class="pb-6 last:pb-0 list-decimal list-outside"
+              :key="step"
+            >
+              {{ step }}
+            </li>
+          </ol>
+        </div>
       </div>
-      <div class="p-0 pt-16 pb-12 overflow-visible">
+      <div class="p-0 pt-10 pb-12 overflow-visible w-asset">
+        <img
+          class="h-full pl-20 w-2/3 object-contain object-left-top"
+          v-if="animation.title === 'Blind spot'"
+          :src="`/publicAssets/images/${toSlug(animation.title)}.png`"
+        />
         <RouterLink
           v-if="animation.id === 'animationImpairedVision'"
           :to="`chapter/break/${video.slug ? video.slug : 'placeholder'}`"
-          class="relative flex justify-center items-start gap-8"
+          class="relative flex justify-center items-start gap-4"
         >
           <div class="relative">
-            <div class="h-64 bg-black absolute w-full opacity-20"></div>
-            <div class="h-64 bg-violet absolute w-full opacity-70"></div>
+            <div class="h-80 bg-black absolute w-full opacity-20"></div>
+            <div class="h-80 bg-violet absolute w-full opacity-70"></div>
             <img
               v-if="video.slug === 'placeholder'"
-              class="bg-black h-64 mix-blend-screen grayscale"
+              class="bg-black h-80 mix-blend-screen grayscale"
               src="/publicAssets/images/placeholders/monaLisa.webp"
             />
             <img
               v-else
-              class="bg-black h-64 mix-blend-screen grayscale"
+              class="bg-black h-80 mix-blend-screen grayscale"
               :src="`/publicAssets/images/breakVideos/${video.slug}.png`"
             />
           </div>
-          <PlayIcon class="absolute left-44 top-[50%] -mt-6 icon iconBig" />
+          <PlayIcon class="absolute -left-8 -mt-8 icon iconBig z-30" />
 
           <div
             class="w-full h-full flex flex-col justify-center items-start mt-[-0.2rem] text-small"
@@ -46,11 +63,11 @@
           </div>
         </RouterLink>
       </div>
-      <div
-        v-if="infoIsOpen"
-        class="w-full h-12 bg-gradient-to-b from-transparent to-light/70 absolute bottom-0"
-      />
     </div>
+    <div
+      :class="!infoIsOpen ? 'hidden' : ''"
+      class="fixed z-20 ml-text -left-0.5 pointer-events-none top-0 w-1 h-full border-l border-white"
+    ></div>
   </div>
 </template>
 
@@ -76,4 +93,14 @@ const video = {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.w-container {
+  width: max(calc(50vw - 5.8rem), calc(100vw - 780px - 11rem - 5.8rem));
+}
+.w-oText {
+  width: min(calc(50vw - 10rem), calc(780px));
+}
+.w-asset {
+  width: min(50vw, calc(780px));
+}
+</style>

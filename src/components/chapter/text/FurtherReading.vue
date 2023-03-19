@@ -1,6 +1,7 @@
 <template>
   <div id="further-reading" class="py-12 p-20 w-full border-t border-black">
-    <h4 class="font-semibold pb-6">{{ content.title }}</h4>
+    <TitleIllus :title="content.title" class="pb-6" />
+
     <p class="font">
       For additional details on retinal anatomy, physiology, connectivity and
       function, please visit the online vision textbook
@@ -14,6 +15,8 @@
   </div>
 </template>
 <script setup>
+import TitleIllus from "../../UI/TitleIllus.vue";
+
 defineProps({
   content: Object,
 });

@@ -6,7 +6,7 @@
       class="px-left pt-10 z-30 fixed flex flex-col w-illus justify-between top-0 left-0"
       :class="animation.multiple ? 'items-center' : 'items-start'"
     >
-      <span class="pb-0 text-baseMono">{{ animation.title }}</span>
+      <TitleIllus :title="animation.title" />
       <div
         v-if="animation.multiple"
         class="fixed top-0 left-0 w-illus h-screen px-left pl-left flex flex-col justify-center items-start"
@@ -68,7 +68,9 @@
             :key="state"
             class="hover:text-violet hover:bg-white hover:border-violet select-none text-small cursor-pointer pb-2 mb-4 border-black border p-4 flex flex-col justify-center items-center"
             :class="
-              activeState[index] ? 'font-semibold bg-violet text-white' : ''
+              activeState[index]
+                ? 'font-semibold bg-violet border-violet text-white'
+                : ''
             "
             @click="setBlockState(index, activeState.state)"
           >
@@ -105,11 +107,11 @@
               : ''
           "
         >
-          <span
-            class="px-left pt-10 z-30 fixed flex flex-col w-illus justify-between top-0 left-0 text-baseMono"
-          >
-            {{ animation.title }}
-          </span>
+          <TitleIllus
+            class="px-left pt-10 z-30 fixed top-0 left-0"
+            :title="animation.title"
+          />
+
           <img
             class="max-w-full max-h-[80vh]"
             :class="animation.fullHeight ? 'p-32 ' : ''"
@@ -173,6 +175,7 @@ import StateElement from "@/components/UI/StateElement.vue";
 import StateElementBlock from "@/components/UI/StateElementBlock.vue";
 import SourceElement from "@/components/UI/SourceElement.vue";
 import LegendElement from "../../UI/LegendElement.vue";
+import TitleIllus from "../../UI/TitleIllus.vue";
 
 const props = defineProps({
   animation: Object,
@@ -272,6 +275,7 @@ onMounted(() => {
   if (info.switch) return;
   let svgContainer = document.getElementById(props.animation.id);
   if (!svgContainer) return;
+  console.log(props.animation);
 
   animationLottie = lottie.loadAnimation({
     rendererSettings: {
@@ -311,6 +315,7 @@ onMounted(() => {
 
   if (info.loop) {
     animationLottie.addEventListener("complete", () => {
+      console.log("complete");
       animationLottie.playSegments(
         info.loopSection || [0, animationLottie.totalFrames],
         true

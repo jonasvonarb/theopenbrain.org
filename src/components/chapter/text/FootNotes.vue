@@ -8,7 +8,8 @@
       id="triggerAnimationPlaceholder"
       class="animationTrigger block noHighlight"
     >
-      <h4 class="font-semibold pb-6">{{ content.title }}:</h4>
+      <TitleIllus :title="content.title" class="pb-6" />
+
       <ol class="pt-2 pr-3 pb-32 w-full bg-white">
         <li
           v-for="(note, index) in content.notes"
@@ -25,6 +26,8 @@
 </template>
 
 <script setup>
+import TitleIllus from "../../UI/TitleIllus.vue";
+
 defineProps({
   content: Object,
 });

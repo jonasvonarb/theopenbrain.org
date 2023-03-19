@@ -3,6 +3,8 @@ import gsap from "gsap";
 import { ref } from "vue";
 import { toSlug } from "@/helper/general.js";
 import PlusIcon from "@/icons/custom/PlusIcon.vue";
+import TitleIllus from "../../UI/TitleIllus.vue";
+import TextOverlay from "../Illus/TextOverlay.vue";
 
 const props = defineProps({
   content: Object,
@@ -33,52 +35,23 @@ const openInfo = () => {
     <div class="sticky flex top-0 h-screen w-full pl-left py-10">
       <div class="w-full text-white">
         <div
-          class="flex flex-col justify-strat "
+          class="flex flex-col justify-strat"
           v-if="content.title === 'Blind spot' || 'Color blindness'"
         >
-          <h4
+          <TitleIllus
+            :title="content.title"
             :class="
               !infoIsOpen && content.title === 'Color blindness'
                 ? 'text-black z-[100]'
                 : ''
             "
-          >
-            {{ content.title }}
-          </h4>
-          <div class="flex gap-6 z-50 pt-12">
-            <PlusIcon
-              :class="!infoIsOpen ? '' : 'rotate-45'"
-              class="icon duration-300"
-              @click="openInfo()"
-            />
-            <div
-              :id="'info-' + toSlug(content.title)"
-              class="flex justify-between w-full h-auto max-h-[80vh] overflow-scroll pb-2 overscroll-auto pr-32"
-            >
-              <div class="flex flex-col justify-start gap-16 w-[800px]">
-                <p class=" " v-html="content.text" />
-                <div v-if="content.steps" class="">
-                  <p class="font-semibold">Directions:</p>
-                  <ol class="pl-12">
-                    <li
-                      v-for="step in content.steps"
-                      class="pb-6 last:pb-0 list-decimal list-outside"
-                      :key="step"
-                    >
-                      {{ step }}
-                    </li>
-                  </ol>
-                </div>
-              </div>
-              <div class="w-[25vw] h-[24vw] -mt-2">
-                <img
-                  class="h-full w-full object-contain object-right-top"
-                  v-if="content.title === 'Blind spot'"
-                  :src="`/publicAssets/images/${toSlug(content.title)}.png`"
-                />
-              </div>
-            </div>
-          </div>
+          />
+
+          <TextOverlay
+            :animation="content"
+            :infoIsOpen="infoIsOpen"
+            @onOpen="openInfo"
+          />
           <div
             class="absolute duration-300 top-0 left-0 p-32 pl-80 py-72 flex justify-around items-center w-full h-full pointer-events-none"
             :class="infoIsOpen ? 'opacity-10 blur-sm' : 'opacity-100'"

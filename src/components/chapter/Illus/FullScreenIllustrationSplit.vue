@@ -1,7 +1,7 @@
 <template>
   <div :id="toSlug(animation.title)" ref="container" class="w-full h-full">
-    <h4 class="absolute">{{ animation.title }}</h4>
-    <SourceElement :source="animation.sources?.[activeLayer]" />
+    <TitleIllus :title="animation.title" />
+    <SourceElement :source="animation.sources?.[activeLayer]" class="pb-12" />
     <div
       class="absolute top-0 left-0 w-full h-full flex justify-between items-start text-small"
     >
@@ -11,7 +11,7 @@
           :id="animation.id + 'Left'"
         />
         <div
-          class="flex items-center w-1/2 border-black border-l-2 h-full overflow-hidden"
+          class="flex items-center w-1/2 border-black border-l h-full overflow-hidden"
         >
           <div class="fullscreen m-12 hPlus" :id="animation.id + 'Right'" />
         </div>
@@ -27,6 +27,7 @@ import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { toSlug } from "@/helper/general.js";
 import SourceElement from "../../UI/SourceElement.vue";
+import TitleIllus from "../../UI/TitleIllus.vue";
 
 gsap.registerPlugin(ScrollTrigger);
 

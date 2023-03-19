@@ -20,6 +20,7 @@
       "clickTriggered": true,
       "highlight": true,
       "loop": true,
+      "autoplay": true,
       "states": [
         "Lens",
         "Iris",
@@ -272,7 +273,7 @@
     },
     {
       "id": "animationColorOpponency",
-      "title": "Color Opponency",
+      "title": "Color opponency",
       "illuImage": true,
       "fullHeight": true
     },
@@ -288,7 +289,7 @@
       "fullscreen": false,
       "loop": true,
       "switch": true,
-      "switches": ["Prefered", "Null"],
+      "switches": ["Preferred", "Null"],
       "blockSwitches": true,
       "legend": [
         "Photoreceptors",
@@ -334,10 +335,8 @@
       "fullscreen": false,
       "loop": true,
       "switch": true,
-      "swicthSymboles": true,
       "switches": ["Day", "Night"],
       "blockSwitches": true,
-      "iconPraefix": "retinalCircuits",
       "legend": [
         "Photoreceptors",
         "Horizontal cells",

@@ -1,7 +1,7 @@
 <template>
   <div
     ref="container"
-    class="absolute top-0 left-0 w-screen h-screen noHyphens"
+    class="absolute top-0 left-0 w-screen h-screen noHyphens text-black"
   >
     <template v-if="isActive">
       <div class="w-full h-screen flex items-start text-small">
@@ -9,45 +9,49 @@
           class="block-1 relative h-full flex justify-center items-end bg-med pl-left"
         >
           <div
-            class="max-h-[78vh] max-w-[95%] w-full h-full pb-24"
+            class="max-h-anim max-w-[100%] w-full h-full pb-0"
             :id="animation.id"
           />
           <div
-            class="absolute font-sans top-56 border-black border p-6 left-left flex gap-3 z-[60] pr-36 mr-12 text-base text-black text-left"
+            class="absolute flex items-end flex-col w-full left-0 font-sans top-64 z-[60] text-base text-black text-left"
           >
-            <div>
-              {{ currenSection + 1 }}. {{ animation.states[currenSection] }}.
+            <div
+              class="flex justify-between w-full pl-left bg-violet text-white p-6 py-4 pr-30"
+            >
+              <span class="w-oText">
+                {{ currenSection + 1 }}. {{ animation.states[currenSection] }}
+              </span>
+              <DownArrow
+                :class="[
+                  isPlay ? 'opacity-20 pointer-events-none ' : '',
+                  isGoingNext &&
+                    'pointer-events-none !bg-violet !border-violet !fill-white',
+                ]"
+                @click="nextStep()"
+                class="icon iconBig -rotate-90 hover:border-white"
+              />
             </div>
-          </div>
-          <div class="absolute top-10 right-8 z-[60] text-white flex gap-2">
-            <PauseIcon
-              v-if="isPlay"
-              :class="[
-                !isPlay ? 'opacity-20 pointer-events-none ' : '',
-                isGoingNext &&
-                  'pointer-events-none !bg-violet !border-violet !fill-white',
-              ]"
-              @click="playPause()"
-              class="icon"
-            />
-            <PlayIcon
-              v-else
-              @click="playPause()"
-              class="icon"
-              :class="[
-                isPlay ? 'opacity-20 pointer-events-none ' : '',
-                isGoingNext ? 'opacity-20 pointer-events-none' : '',
-              ]"
-            />
-            <DownArrow
-              :class="[
-                isPlay ? 'opacity-20 pointer-events-none ' : '',
-                isGoingNext &&
-                  'pointer-events-none !bg-violet !border-violet !fill-white',
-              ]"
-              @click="nextStep()"
-              class="icon -rotate-90"
-            />
+            <div class="z-[60] text-white flex gap-2 pr-6 pt-6">
+              <PauseIcon
+                v-if="isPlay"
+                :class="[
+                  !isPlay ? 'opacity-20 pointer-events-none ' : '',
+                  isGoingNext &&
+                    'pointer-events-none !bg-violet !border-violet !fill-white',
+                ]"
+                @click="playPause()"
+                class="icon"
+              />
+              <PlayIcon
+                v-else
+                @click="playPause()"
+                class="icon"
+                :class="[
+                  isPlay ? 'opacity-20 pointer-events-none ' : '',
+                  isGoingNext ? 'opacity-20 pointer-events-none' : '',
+                ]"
+              />
+            </div>
           </div>
           <!-- <div class="absolute bottom-8 right-12 z-[60] text-black flex gap-2">
             <div>Speed:</div>
@@ -77,34 +81,21 @@
           </div> -->
         </div>
         <div
-          class="relative block-2 text-medium h-full flex flex-col gap-12 bg-light pt-9 px-0 pr-0 border-l border-black"
+          class="relative block-2 text-medium h-full flex flex-col gap-12 bg-light px-0 pr-0 pt-44 border-l border-black"
         >
           <ol class="w-full">
             <li
-              class="pb-5 pt-1.5 first-of-type:mt-0 pointer-event-none flex border-t pl-8 p-24 border-black"
+              class="pb-5 pt-1.5 first-of-type:mt-0 pointer-event-none flex pl-8 p-24"
               v-for="(state, index) of animation.states"
               :key="state"
             >
               <div
-                :class="
-                  currenSection === index
-                    ? ' opacity-100 text-violet '
-                    : ' opacity-10'
-                "
                 class="shrink-0 duration-300 h-10 w-10 text-center rounded-full"
               >
                 {{ index + 1 }}
               </div>
-              <div
-                :class="
-                  currenSection === index
-                    ? 'opacity-100 text-violet'
-                    : 'opacity-0'
-                "
-              >
-                &#x2192;
-              </div>
-              <span class="-my-1 py-1 pl-3 duration-300">
+
+              <span class="-my-1 py-1 pl-6 duration-300">
                 {{ state }}
               </span>
             </li>
@@ -112,7 +103,7 @@
           <!-- controlls -->
         </div>
         <div
-          class="block-3 h-full flex flex-col gap-12 bg-lighter pt-10 border-l border-black"
+          class="block-3 font-bold h-full flex flex-col gap-12 bg-lighter pt-44 border-l border-black"
         >
           <ul v-if="animation.statesHighlight" class="w-full px-8 pr-20 pt-2">
             <li
@@ -139,11 +130,8 @@
 import { onMounted, ref } from "vue";
 import lottie from "lottie-web";
 import { toCamelCase } from "@/helper/general";
-import ReplayIcon from "../../../icons/custom/ReplayIcon.vue";
 import PauseIcon from "../../../icons/custom/PauseIcon.vue";
-import NextIcon from "../../../icons/custom/NextIcon.vue";
 import PlayIcon from "../../../icons/custom/PlayIcon.vue";
-import OpenArrowIcon from "../../../icons/custom/OpenArrowIcon.vue";
 import DownArrow from "../../../icons/custom/DownArrow.vue";
 
 const props = defineProps({
@@ -162,11 +150,14 @@ const isGoingNext = ref(false);
 const speed = ref(1);
 
 const frames = {
-  pathwayForThePupillaryLightReflex: [0, 24, 36, 60, 88, 120],
-  phototransduction: [0, 6, 25, 55, 69, 79, 159, 213, 240],
-  theVisualCycle: [0, 11, 36, 72, 132, 192, 240],
+  pathwayForThePupillaryLightReflex: [0, 24, 60, 96, 136, 168],
+  phototransduction: [0, 24, 48, 72, 120, 147, 168, 240, 312],
+  theVisualCycle: [0, 36, 50, 156, 204, 252, 300, 336],
 };
 
+// 168
+//  312
+//  336
 const setState = (stateIncoming) => {
   let state = toCamelCase(stateIncoming);
 
@@ -317,5 +308,12 @@ onMounted(() => {
   /* width: calc(780px + 11rem); */
   width: min(calc(50vw / 8 * 3), calc((780px + 11rem) / 8 * 3));
   overflow: hidden;
+}
+
+.w-oText {
+  width: min(calc(50vw - 10rem), calc(780px));
+}
+.max-h-anim{
+  max-height: calc(100vh - 220px);
 }
 </style>
