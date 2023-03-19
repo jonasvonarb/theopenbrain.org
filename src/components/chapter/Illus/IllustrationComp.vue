@@ -143,7 +143,7 @@
         />
       </template>
     </div>
-    <SourceElement :source="animation.source" />
+    <SourceElement v-if="!animation.flip" :source="animation.source" />
 
     <div class="absolute top-12 right-8 z-40">
       <PauseIcon
