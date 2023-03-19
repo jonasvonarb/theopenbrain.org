@@ -33,7 +33,7 @@
       class="cursor-pointer duration-200 -translate-x-24 translate-y-20 fill-black stroke-black hover:stroke-violet hover:fill-violet hoverState"
       @click="flip"
     />
-    <SourceElement :scource="animation.source" />
+    <SourceElement v-if="isFlip" :source="animation.source" />
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div
     id="footnotes"
-    class="w-full p-20 bg-white border-t border-black font-mono text-small"
+    class="w-full p-20 py-12 bg-white border-t border-black font-mono text-small"
   >
     <div class="marker-start" />
     <span

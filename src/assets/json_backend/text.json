@@ -228,7 +228,7 @@
           "img": "waveLength",
           "imgCap": "The normalized absorption spectra of rod (R) and cone photoreceptors (S, short wavelength - blue; M, medium wavelength, green; L, long wavelength, red).",
           "imgClosed": true,
-          "text": "Photoreceptors are the most evolutionary ancient part of the retina, and likely evolved from ciliated sensory cells that blanketed the skin of our early submarine ancestors<sup data-sup='35 36 37 38'>35 - 38</sup>. They are long thin cells, with a soma situated in the outer nuclear layer, a nerve terminal located in the outer plexiform layer, and an elongated outer segment with opsin-filled disks extending towards the retina pigment epithelium. Each outer segments contain roughly 1000 membranous disks arranged like a stack of coins. Each disk is densely packed with molecules of photopigment-filled opsins, and their related phototransduction machinery. This disc organization is critical for photoreceptor function because it amplifies photoreceptor surface area by ~1000-fold, greatly increasing the number of light-catching opsin molecules within a single photoreceptor<sup data-sup='39'>39</sup>. A thin stalk connects the opsin-filled outer segment and with the mitochondria-rich inner segment, which helps sustain the tremendous energy costs of phototransduction<sup data-sup='10'>10,</sup><sup data-sup='29'>29</sup>. Vertebrate photoreceptors can be morphologically divided into two classes based on the shape of their outer segments. Cone photoreceptors exhibit tapered outer segments (i.e. their outer segment is shaped like a cone), are specialized to detect photons during daylight conditions, and possess various opsin variants that make them sensitive to photons of different wavelengths. Humans have 3 cone types, with maximal photon absorptions situated in the blue (peak excitation ~420 nm), green (peak excitation ~534 nm) and red (peak excitation ~564 nm) regions of the electromagnetic spectrum. In contrast to cones, rods have long (rod-shaped) outer segments, and are specialized for detecting photons in dim environments<sup data-sup='10'>10,</sup><sup data-sup='29'>29</sup>. Discs in rod outer segments contain rhodopsin molecules attuned to wavelengths at the center of the visible range (blue-green; peak excitation ~498 nm). Rhodopsin is more densely concentrated in rod outer segments than cone-opsins are in cone outer segments. Additionally, in rods, the disks in the outer segment are wholly internal to the cell’s outer membrane, whereas in cones the outer membrane invaginates multiple times in the outer segment and itself contains the opsin molecules."
+          "text": "Photoreceptors are the most evolutionary ancient part of the retina, and likely evolved from ciliated sensory cells that blanketed the skin of our early submarine ancestors<sup data-sup='35 36 37 38'>35 – 38</sup>. They are long thin cells, with a soma situated in the outer nuclear layer, a nerve terminal located in the outer plexiform layer, and an elongated outer segment with opsin-filled disks extending towards the retina pigment epithelium. Each outer segments contain roughly 1000 membranous disks arranged like a stack of coins. Each disk is densely packed with molecules of photopigment-filled opsins, and their related phototransduction machinery. This disc organization is critical for photoreceptor function because it amplifies photoreceptor surface area by ~1000-fold, greatly increasing the number of light-catching opsin molecules within a single photoreceptor<sup data-sup='39'>39</sup>. A thin stalk connects the opsin-filled outer segment and with the mitochondria-rich inner segment, which helps sustain the tremendous energy costs of phototransduction<sup data-sup='10'>10,</sup><sup data-sup='29'>29</sup>. Vertebrate photoreceptors can be morphologically divided into two classes based on the shape of their outer segments. Cone photoreceptors exhibit tapered outer segments (i.e. their outer segment is shaped like a cone), are specialized to detect photons during daylight conditions, and possess various opsin variants that make them sensitive to photons of different wavelengths. Humans have 3 cone types, with maximal photon absorptions situated in the blue (peak excitation ~420 nm), green (peak excitation ~534 nm) and red (peak excitation ~564 nm) regions of the electromagnetic spectrum. In contrast to cones, rods have long (rod-shaped) outer segments, and are specialized for detecting photons in dim environments<sup data-sup='10'>10,</sup><sup data-sup='29'>29</sup>. Discs in rod outer segments contain rhodopsin molecules attuned to wavelengths at the center of the visible range (blue-green; peak excitation ~498 nm). Rhodopsin is more densely concentrated in rod outer segments than cone-opsins are in cone outer segments. Additionally, in rods, the disks in the outer segment are wholly internal to the cell’s outer membrane, whereas in cones the outer membrane invaginates multiple times in the outer segment and itself contains the opsin molecules."
         },
         {
           "subSection": [
@@ -329,24 +329,35 @@
     {
       "id": "22f2d2f8-655e-4de2-98ce-5748da18978c",
       "title": "Bipolar cells diversify photoreceptor signals",
-      "animation": {
-        "name": "RetinalCellTypes2",
-        "title": "Retinal cell types",
-        "id": "animationRetinalCellTypes2",
-        "stage": "Bipolar cells"
-      },
+
       "paragraphs": [
         {
           "id": "ced015b3-63e2-4686-948f-6a7dd067f4a1",
           "img": "ONOFFLamina",
+          "imgCap": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+          "animation": {
+            "name": "RetinalCellTypes2",
+            "title": "Retinal cell types",
+            "id": "animationRetinalCellTypes2",
+            "stage": "Bipolar cells"
+          },
           "text": "Bipolar cells receive signals from photoreceptors and deliver them to neurons of the inner retina. While photoreceptors all respond similarly when activated by a photon of light (i.e. they hyperpolarize), bipolar cells come in a variety of different types, which allow distinct bipolar cells to respond differentially to the same signal emanating from photoreceptors. In primates, midget bipolar cells are thought to synapse with individual photoreceptors in the fovea and relay their signals onto individual retinal ganglion cells – thus maintaining a high-resolution channel through the retina<sup data-sup='7'>7</sup>. Bipolar cells outside this foveal region are thought to connect with increasing numbers of photoreceptors at greater eccentricities from the fovea<sup data-sup='7'>7</sup>. Each bipolar cell extends an axon into the inner plexiform layer<sup data-sup='6'>6</sup>. Bipolar cells can be subdivided based on their gene expression profile<sup data-sup='20'>20,</sup><sup data-sup='46'>46</sup>, whether they depolarize to increases or decreases in luminance, and how their responses vary to visual stimuli flickered at various temporal frequencies<sup data-sup='26'>26</sup>. In the primate retina, there appear to be roughly 10 types of bipolar cells<sup data-sup='47'>47</sup>."
         },
         {
           "id": "58be77f5-7f60-41a9-99a9-7c616c447da8",
+
+          "animation": {
+            "name": "OnOff",
+            "id": "animationOnOff"
+          },
           "text": "OFF bipolar cells ‘copy’ photoreceptors. Photoreceptor axon terminals release glutamate onto their targets with the help of synaptic ribbon machinery. In an environment of stable luminance, this machinery permits photoreceptors to tonically release glutamate into the synaptic cleft, and enables the photoreceptor to encode both increases in luminance (resulting in membrane hyperpolarization and a decrease in glutamate release), as well as decreases in luminance (resulting in membrane depolarization and an increase in glutamate release). OFF bipolar cell dendrites respond to photoreceptor-released glutamate with ionotropic glutamate receptors. These non-selective cation channels pass inward current upon binding glutamate, which means that OFF bipolar cells hyperpolarize to a flash of light and depolarize following a decrease in luminance. OFF bipolar cell axons make synapses in the half of the inner plexiform layer closest to the inner nuclear layer."
         },
         {
           "id": "95febd38-9ab4-4797-86f9-26a864e122ed",
+          "animation": {
+            "name": "OnOff",
+            "id": "animationOnOff"
+          },
           "text": "ON bipolar cells ‘invert’ the photoreceptor signal. Unlike OFF bipolar cells, which possess ionotropic glutamate receptors in their dendrites, ON bipolar cell dendrites express a metabotropic glutamate receptor: mGluR6<sup data-sup='48'>48,</sup><sup data-sup='49'>49</sup>. When bound to glutamate, these receptors activate an intracellular G protein pathway, leading to the closure of a non-selective cation channel –  TRPM1<sup data-sup='29'>29,</sup><sup data-sup='50'>50</sup>. Thus, when photoreceptors are releasing high levels of glutamate in the dark, glutamate binds to mGluR6 and closes TRPM1 channels, which hyperpolarizes ON bipolar cells. Increments in light intensity lower glutamate levels in the synaptic cleft, which releases the inhibition of TRPM1 by mGluR6, driving an inward current and depolarization of ON bipolar cells. As such, ON bipolar cells are described as being able to ‘invert’ the photoreceptor light response (i.e. when a photoreceptor hyperpolarizes, an ON bipolar cell depolarizes). Mutations within the G protein pathway in ON bipolar cells can result in congenital stationary night blindness, because rod signals are passed through a type of ON bipolar cell called a rod bipolar cell (described in more detail in Section 6 below). ON bipolar cell axons make synapses in the half of the inner plexiform layer closest to the ganglion cell layer."
         },
         {
@@ -449,6 +460,11 @@
                         "id": "animationObjectMotionSensitivity"
                       },
                       "text": "<strong>Object motion sensitivity:</strong> An important task of the visual system is to separate object from background. An early correlate of this computation is thought to arise in the retina, with some ganglion cells preferentially responding when a small stimulus located in the receptive field center (i.e. the ‘object’) moves asynchronously from the stimulus impinging in its surround (i.e. the ‘background’)<sup data-sup='81'>81</sup>. These cells have been described as “bug perceivers”<sup data-sup='82'>82</sup>, “local edge detectors<sup data-sup='83'>83</sup>” and “object motion sensitive” cells<sup data-sup='84'>84</sup>. Their properties arise because center excitation gets cancelled out by surround inhibition during synchronous center-surround motion<sup data-sup='81'>81,</sup><sup data-sup='84 85 86'>84 – 86</sup>. Ensuring that surround inhibition is able to cancel out center excitation during such synchronous motion requires special circuitry, since signals in the center have to only travel through a bipolar cell to reach the ganglion cell, whereas surround motion signals must travel through a bipolar cell and an amacrine cell. Center bipolar excitation is slowed down by several mechanisms including interactions with glutamatergic amacrine cells and intrinsic properties. Surround inhibition is sped up by using an amacrine cell that can fire action potentials. The effect is that this ganglion cell preferentially responds when the stimulus in its center moves asynchronously from the stimulus in its surround, which has been suggested to be a method of computing object motion"
+                    },
+                    {
+                      "type": "breakVideo",
+                      "title": "Botond Roska",
+                      "text": "Talking parallel processing in retina"
                     }
                   ]
                 },
@@ -568,8 +584,9 @@
                 },
                 {
                   "id": "4ba8917b-7a0f-436e-9209-0129e3615c75",
-                  "type": "Josh",
-                  "text": "talking about these phenomena"
+                  "type": "breakVideo",
+                  "title": "Joshua Sanes",
+                  "text": "Talking about retinal circuit development"
                 }
               ]
             },

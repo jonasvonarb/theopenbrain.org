@@ -4,7 +4,7 @@
   >
     <div class="flex justify-center items-center gap-2" @click="openLegend">
       <PlusIcon class="icon duration-300" :class="open ? '-rotate-45' : ''" />
-      <p class="text-small pl-5">Legend</p>
+      <p class="text-small pl-2">Legend</p>
     </div>
     <div class="overflow-hidden h-0 -ml-5 -mt-3" id="inhaltLegend">
       <div

@@ -278,10 +278,20 @@
       "fullHeight": true
     },
     {
-      "id": "animationONOFFLamina",
-      "title": "ON and OFF lamina",
-      "illuImage": true,
-      "fullHeight": false
+      "id": "animationOnOff",
+      "title": "ON & OFF bipolar cells",
+      "loop": true,
+      "switch": true,
+      "switches": ["Dark", "Light"],
+      "blockSwitches": true,
+      "states": [
+        "Glutamate",
+        "G Protein",
+        "Alpha",
+        "Na+",
+        "Ionotropic",
+        "Metabotropic"
+      ]
     },
     {
       "id": "animationDirectionSelectivity",
@@ -440,7 +450,7 @@
     {
       "id": "animationEyeMovements",
       "title": "Eye Movements",
-      "source": "Artistic reinterpretaton",
+      "source": "Artistic recreation of an experiment from Yarbus, 1965 (Eye Movements and Vision), tracking gaze while a research participant was asked to give the age of the people while looking at the painting \"The Unexpected Visitor\" by Ilya Repin (1888).",
       "fullscreen": false,
       "loop": true
     },

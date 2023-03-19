@@ -44,15 +44,8 @@
       <div v-if="animation.switches || animation.states">
         <template v-if="!info.blockStates">
           <StateElement
-            v-if="!info.blockSwitches"
-            :states="!info.multiple ? info.states : Object.keys(info.states)"
-            :activeState="activeState.state"
-            :praefix="info.iconPraefix"
-            :iconsIndex="info.icons"
-            @onClick="setState"
-          />
-          <StateElementBlock
-            v-else
+            :class="info.blockSwitches && '!top-80'"
+            v-if="info.states"
             :states="!info.multiple ? info.states : Object.keys(info.states)"
             :activeState="activeState.state"
             :praefix="info.iconPraefix"
@@ -118,6 +111,7 @@
             :src="`/publicAssets/images/illuImages/${animation.id}.png`"
           />
           <SourceElement
+            class="top-40"
             source="Stare at the cross for 30 seconds. Then immediately look at a white wall (or close your eyes) to see after-images. Notice that each color gets 'replaced' by its opponent color in the after-image."
           />
         </div>
@@ -149,6 +143,8 @@
         />
       </template>
     </div>
+    <SourceElement :source="animation.source" />
+
     <div class="absolute top-12 right-8 z-40">
       <PauseIcon
         class="icon"

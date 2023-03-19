@@ -17,7 +17,7 @@
         class="flex gap-4 pb-4 justify-start"
       >
         <p class="w-16 text-left">{{ index + 1 }}</p>
-        <p class="max-w-[780px]" v-html="note.text" />
+        <p class="max-w-[900px]" v-html="note.text" />
       </li>
     </ol>
   </div>
