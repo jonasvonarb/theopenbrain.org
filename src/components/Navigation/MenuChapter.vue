@@ -36,7 +36,7 @@ const closeMenu = () => {
 <template>
   <div
     v-if="route.name"
-    class="fixed h-screen font-light overflow-y-scroll overflow-x-hidden border-violet/90 bg-dark text-white scrollbar top-0 left-0 z-50 text-baseMono font-mono duration-300 border-r-2 snap-x"
+    class="fixed h-screen font-light overflow-hidden border-violet/90 bg-dark text-white scrollbar top-0 left-0 z-50 text-baseMono font-mono duration-300 snap-x"
     :class="[
       store.activeMenu
         ? route.name === 'chapter'
@@ -49,7 +49,8 @@ const closeMenu = () => {
     <Transition name="menuTo">
       <ul
         v-if="route.name"
-        class="mb-52 duration-300 shrink-1 pb-24 h-full overflow-scroll z-30 absolute"
+        class="mb-52 duration-300 shrink-1 pb-24 h-full z-30 absolute"
+        :class="[store.activeMenu ? 'overflow-scroll' : 'overflow-hidden']"
       >
         <template v-for="(chapter, index) in menu">
           <li
