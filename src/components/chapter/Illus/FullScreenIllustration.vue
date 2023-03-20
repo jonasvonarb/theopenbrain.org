@@ -76,7 +76,6 @@ const setState = (index, activeState) => {
     animation.value.goToAndStop(0, true);
     activeState.toggle = 0;
     activeState.state = index;
-    console.log("clicked");
   }
 };
 
@@ -85,7 +84,6 @@ const openInfo = () => {
   const el = document.getElementById(
     "info-" + toSlug(thisAnimation.value.title)
   );
-  console.log(el);
   infoIsOpen.value = !infoIsOpen.value;
   if (infoIsOpen.value) {
     gsap.to(el, {

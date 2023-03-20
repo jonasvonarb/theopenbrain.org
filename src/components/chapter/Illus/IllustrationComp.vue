@@ -270,7 +270,6 @@ onMounted(() => {
   if (info.switch) return;
   let svgContainer = document.getElementById(props.animation.id);
   if (!svgContainer) return;
-  console.log(props.animation);
 
   animationLottie = lottie.loadAnimation({
     rendererSettings: {
@@ -294,7 +293,6 @@ onMounted(() => {
   animationLottie.setSubframe(true);
 
   if (props.animation.set) {
-    console.log(props.animation.set, info.states);
     let state = toCamelCase(info.states[props.animation.set]);
     let wait = setInterval(() => {
       let els = document.getElementsByClassName(state + "Highlight");
@@ -304,13 +302,11 @@ onMounted(() => {
         el.classList.add("highlightIllu");
         activeState.value.state = props.animation.set;
       }
-      console.log(state + "Highlight");
     }, 10);
   }
 
   if (info.loop) {
     animationLottie.addEventListener("complete", () => {
-      console.log("complete");
       animationLottie.playSegments(
         info.loopSection || [0, animationLottie.totalFrames],
         true

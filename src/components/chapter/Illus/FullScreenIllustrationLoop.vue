@@ -19,7 +19,7 @@
               class="flex justify-between w-full pl-left bg-violet text-white p-6 py-4 pr-30"
             >
               <span class="w-oText">
-                {{ currenSection + 1 }}. {{ animation.states[currenSection] }}
+                {{ currenSection + 1 }}. {{ animation.states?.[currenSection] }}
               </span>
               <DownArrow
                 :class="[

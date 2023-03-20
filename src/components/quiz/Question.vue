@@ -43,7 +43,6 @@ const props = defineProps({
 const active = ref(false);
 
 const changeHandler = (ev) => {
-  console.log();
   active.value = ev.target.classList.contains("isTrue");
 };
 
