@@ -36,7 +36,7 @@ const closeMenu = () => {
 <template>
   <div
     v-if="route.name"
-    class="fixed h-screen font-light overflow-hidden border-violet/90 bg-dark text-white scrollbar top-0 left-0 z-50 text-baseMono font-mono duration-300 snap-x"
+    class="fixed h-screen font-light overflow-hidden border-primaryMed/90 bg-bgDa text-white scrollbar top-0 left-0 z-50 text-baseMono font-mono duration-300 snap-x"
     :class="[
       store.activeMenu
         ? route.name === 'chapter'
@@ -70,12 +70,12 @@ const closeMenu = () => {
                 class="py-4 pl-36 pr-12 border-t border-light/70 font-medium"
                 :class="
                   'intro' === store.currentSubChapter
-                    ? 'text-white pointer-events-none bg-violet'
+                    ? 'text-white pointer-events-none bg-primaryMed'
                     : ''
                 "
               >
                 <div
-                  class="flex pl-8 border-light/70 hover:text-violet"
+                  class="flex pl-8 border-light/70 hover:text-primaryMed"
                   @click="scrollToMenu('the-eye-and-retina-intro'), closeMenu()"
                 >
                   <div class="w-full max-w-[850px]">Intro</div>
@@ -83,11 +83,11 @@ const closeMenu = () => {
               </div>
               <template v-for="part in chapter.parts" :key="part.title">
                 <div
-                  class="flex py-4 pl-36 pr-12 border-t border-light/70 hover:text-violet"
+                  class="flex py-4 pl-36 pr-12 border-t border-light/70 hover:text-primaryMed"
                   @click="scrollToMenu(toSlug(part.title)), closeMenu()"
                   :class="
                     toSlug(part.title) === store.currentSubChapter
-                      ? 'text-white pointer-events-none bg-violet'
+                      ? 'text-white pointer-events-none bg-primaryMed'
                       : ''
                   "
                 >
@@ -97,10 +97,10 @@ const closeMenu = () => {
                 </div>
                 <ol>
                   <div
-                    class="block pl-44 pb-3 pt-3 hover:text-violet"
+                    class="block pl-44 pb-3 pt-3 hover:text-primaryMed"
                     :class="
                       toSlug(part.title) === store.currentSubChapter
-                        ? 'bg-violet/50'
+                        ? 'bg-primaryMed/50'
                         : ''
                     "
                     @click="scrollToMenu(toSlug(subPart)), closeMenu()"
@@ -112,11 +112,11 @@ const closeMenu = () => {
                 </ol>
               </template>
               <div
-                class="flex py-4 pl-36 pr-12 border-t border-light/70 hover:text-violet"
+                class="flex py-4 pl-36 pr-12 border-t border-light/70 hover:text-primaryMed"
                 @click="scrollToMenu('footnotes'), closeMenu()"
                 :class="
                   'Footnotes' === store.currentSubChapter
-                    ? 'text-white pointer-events-none bg-violet'
+                    ? 'text-white pointer-events-none bg-primaryMed'
                     : ''
                 "
               >
@@ -132,13 +132,13 @@ const closeMenu = () => {
       v-if="store.activeMenu"
       :text="'close'"
       :target="'Menu'"
-      class="absolute bg-darker pt-10 pb-4 pointer-events-auto z-[60] h-full w-12 flex justify-center items-start top-0 right-0 duration-300 overflow-hidden"
+      class="absolute bg-bgDa pt-11 pb-4 pointer-events-auto z-[60] h-full w-12 flex justify-center items-start top-0 right-0 duration-300 overflow-hidden"
     />
     <!-- menu open/close chapter -->
     <InteractionButton
       :text="'open'"
       :target="'Menu'"
-      class="fixed bg-darker pt-10 pb-4 pointer-events-auto z-[60] h-full w-12 flex justify-center items-start top-0 duration-300 overflow-hidden"
+      class="fixed bg-bgDa pt-11 pb-4 pointer-events-auto z-[60] h-full w-12 flex justify-center items-start top-0 duration-300 overflow-hidden"
       :class="
         !store.activeMenu && route.name === 'chapter'
           ? 'left-0 opacity-100 '

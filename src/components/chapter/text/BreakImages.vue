@@ -19,7 +19,7 @@ const currentVideo = jsonVideos.videos[props.slug];
     >
       <div class="relative">
         <div class="h-80' bg-black absolute w-full opacity-20"></div>
-        <div class="h-80 bg-violet absolute w-full opacity-70"></div>
+        <div class="h-80 bg-primaryMed absolute w-full opacity-70"></div>
         <img
           v-if="slug === 'placeholder'"
           class="bg-black h-80 mix-blend-screen grayscale"

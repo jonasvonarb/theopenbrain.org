@@ -4,7 +4,7 @@
     <div class="flex flex-col gap-4">
       <template v-for="(file, index) in files" :key="index">
         <a
-          class="px-4 -mx-6 flex gap-4 hover:text-violet"
+          class="px-4 -mx-6 flex gap-4 hover:text-primaryMed"
           target="_blank"
           :href="file.link"
           :data-index="index"

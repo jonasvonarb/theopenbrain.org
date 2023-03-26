@@ -13,7 +13,7 @@
           Brain
         </div>
         <div
-          class="text-white hover:text-violet text-center text-xl mt-12 fixed bottom-12 cursor-pointer"
+          class="text-white hover:text-primaryMed text-center text-xl mt-12 fixed bottom-12 cursor-pointer"
         >
           <!-- <BiArrowRightCircleFill @click="enter()" /> -->
         </div>

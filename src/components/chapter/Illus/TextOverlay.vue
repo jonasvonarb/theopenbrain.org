@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col z-50 pt-20 font-sans text-white">
+  <div class="flex flex-col z-50 pt-20 font-sans text-white w-wrapper">
     <PlusIcon
       :class="!infoIsOpen ? '' : 'rotate-45'"
       class="icon duration-300 z-50"
@@ -7,22 +7,32 @@
     />
     <div
       :id="'info-' + toSlug(animation?.title)"
-      class="flex -mt-12 overflow-y-scroll overflow-x-visible flex-row text-base h-[80vh] pb-2 overscroll-auto pr-32"
+      class="flex -mt-12 flex-row text-base h-[80vh] pb-2 overscroll-auto"
     >
-      <div class="flex flex-col pt-20 justify-start gap-16 w-container">
-        <p class="w-oText" v-html="animation?.infoText || animation?.text" />
-        <div v-if="animation?.steps" class="w-oText">
-          <p class="font-semibold">Directions:</p>
-          <ol class="pl-12">
-            <li
-              v-for="step in animation?.steps"
-              class="pb-6 last:pb-0 list-decimal list-outside"
-              :key="step"
-            >
-              {{ step }}
-            </li>
-          </ol>
+      <div
+        class="flex flex-col pt-20 justify-start gap-16 w-container overflow-y-scroll overflow-x-visible"
+      >
+        <div class="pb-20">
+          <p class="w-oText" v-html="animation?.infoText || animation?.text" />
+          <div v-if="animation?.steps" class="w-oText">
+            <p class="font-semibold">Directions:</p>
+            <ol class="pl-12">
+              <li
+                v-for="step in animation?.steps"
+                class="pb-6 last:pb-0 list-decimal list-outside"
+                :key="step"
+              >
+                {{ step }}
+              </li>
+            </ol>
+          </div>
         </div>
+        <div
+          class="absolute bottom-0 w-container h-20 bg-gradient-to-t from-bgDa"
+        />
+        <div
+          class="absolute top-28 w-container h-20 bg-gradient-to-b from-bgDa"
+        />
       </div>
       <div class="p-0 pt-10 pb-12 overflow-visible w-asset">
         <img
@@ -37,7 +47,7 @@
         >
           <div class="relative">
             <div class="h-80 bg-black absolute w-full opacity-20"></div>
-            <div class="h-80 bg-violet absolute w-full opacity-70"></div>
+            <div class="h-80 bg-primaryMed absolute w-full opacity-70"></div>
             <img
               v-if="video.slug === 'placeholder'"
               class="bg-black h-80 mix-blend-screen grayscale"
@@ -94,6 +104,9 @@ const video = {
 </script>
 
 <style scoped>
+.w-wrapper {
+  width: calc(100vw - 5.8rem);
+}
 .w-container {
   width: max(calc(50vw - 5.8rem), calc(100vw - 780px - 11rem - 5.8rem));
 }

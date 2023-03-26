@@ -102,11 +102,11 @@ const openInfo = () => {
 <template>
   <div
     ref="containerScroll"
-    class="w-screen border-y border-black -translate-x-custom -ml-20 my-[0] mt-64 text-small font-mono duration-300"
+    class="w-screen border-y border-bgMed -translate-x-custom -ml-20 my-[0] mt-64 text-small font-mono duration-300"
     :class="[
       infoIsOpen && thisAnimation.infoText
-        ? 'bg-dark text-white'
-        : 'bg-light text-black',
+        ? 'bg-bgDa text-white'
+        : 'bg-bgLi text-black',
       !thisAnimation.split ? 'h-[150vh]' : 'h-[700vh]',
       thisAnimation.title === 'Pathway for the pupillary light reflex'
         ? '-mb-[18.5rem]'
@@ -118,7 +118,7 @@ const openInfo = () => {
         class="absolute z-50 flex flex-col justify-between"
         v-if="thisAnimation?.states"
       >
-        <TitleIllus :title="thisAnimation.title" class="inline" />
+        <TitleIllus :title="thisAnimation.title" class="inline" color="white" />
         <!-- Overlay -->
         <TextOverlay
           v-if="thisAnimation.infoText"
@@ -142,10 +142,10 @@ const openInfo = () => {
                 index !== 0 ? ' col-span-1	' : ' col-span-2	',
                 (activeState.toggle === false && activeState.state === index) ||
                 (activeState.state === index && index === 0)
-                  ? 'bg-violet text-white pointer-events-none'
+                  ? 'bg-primaryMed text-white pointer-events-none'
                   : activeState.state === index
-                  ? 'border-violet text-black hover:text-violet  '
-                  : ' text-dark hover:text-violet hover:border-violet',
+                  ? 'border-primaryMed text-black hover:text-primaryMed  '
+                  : ' text-bgDa hover:text-primaryMed hover:border-primaryMed',
               ]"
               @click="
                 activeState.state !== index
@@ -164,10 +164,10 @@ const openInfo = () => {
               class="flex justify-center items-center flex-col border border-l-0 col-span-1 p-6 border-black duration-100 flex-1"
               :class="[
                 activeState.toggle === true && activeState.state === index
-                  ? 'bg-violet text-white pointer-events-none'
+                  ? 'bg-primaryMed text-white pointer-events-none'
                   : activeState.state === index
-                  ? 'border-violet text-black  hover:text-violet '
-                  : 'bg-lighter text-dark hover:text-violet hover:border-violet',
+                  ? 'border-primaryMed text-black  hover:text-primaryMed '
+                  : 'bg-bgLi text-bgDa hover:text-primaryMed hover:border-primaryMed',
                 ,
               ]"
               @click="

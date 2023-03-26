@@ -50,7 +50,7 @@ const openAbout = () => {
       ]"
     ></div>
     <div
-      class="fixed h-screen bg-violet text-white overflow-y-scroll overflow-x-hidden scrollbar top-0 left-0 text-medium duration-300 border-r border-black"
+      class="fixed h-screen bg-primaryMed text-white overflow-y-scroll overflow-x-hidden scrollbar top-0 left-0 text-medium duration-300 border-r border-black"
       :class="[store.activeAbout ? 'w-[50vw] ml-0' : 'w-[0]']"
     >
       <div class="px-left pt-12 pb-56 w-[50vw] max-w-[800px]">

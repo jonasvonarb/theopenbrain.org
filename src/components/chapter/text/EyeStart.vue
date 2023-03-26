@@ -39,14 +39,13 @@ const scrollToPos = () => {
 <template>
   <div
     id="titleAnimation"
-    class="bg-img bg-light absolute right-0 h-screen w-screen z-[50] duration-300 flex justify-start items-start"
+    class="bg-img bg-bgLi absolute right-0 h-screen w-screen z-[50] duration-300 flex justify-start items-start"
   >
     <div
       class="absolute top-0 left-0 w-screen h-screen text-white text-center flex justify-center items-center pb-8"
     >
       <div class="flex justify-center items-center flex-col w-2/3">
         <div class="text-biggest font-text">The Retina</div>
-        <!-- <div class="text-4xl">The Open Brain</div> -->
       </div>
     </div>
     <div

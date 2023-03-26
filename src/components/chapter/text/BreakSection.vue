@@ -30,7 +30,7 @@ const openInfo = () => {
 <template>
   <div
     ref="trigger"
-    class="w-screen h-[180vh] -ml-20 -translate-x-custom border-y border-light bg-dark my-[0] mt-64 mb-32 text-base"
+    class="w-screen h-[180vh] -ml-20 -translate-x-custom border-y border-light bg-bgDa my-[0] mt-64 mb-32 text-base"
   >
     <div class="sticky flex top-0 h-screen w-full pl-left py-10">
       <div class="w-full text-white">
@@ -65,7 +65,7 @@ const openInfo = () => {
             </div>
             <div
               v-if="content.title === 'Color blindness'"
-              class="absolute top-0 left-0 p-32 pl-44 py-72 flex justify-around items-center w-full h-full bg-lightest"
+              class="absolute top-0 left-0 p-32 pl-44 py-72 flex justify-around items-center w-full h-full bg-bgLi"
             >
               <img
                 class="w-full h-full object-contain"

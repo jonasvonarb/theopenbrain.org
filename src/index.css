@@ -5,7 +5,8 @@
 @tailwind utilities;
 
 :root {
-  --violet: rgb(151, 71, 255);
+  --primaryMed: #00d9b8;
+  --fullHDark: #cc01be;
 }
 
 /* fonts */
@@ -13,13 +14,13 @@
 .text-smaller {
   font-size: 1.1rem;
   line-height: 1.4rem;
-  letter-spacing: -0.01rem;
+  letter-spacing: 0.02rem;
 }
 
 .text-small {
   font-size: 1.35rem;
   line-height: 1.9rem;
-  letter-spacing: -0.02rem;
+  letter-spacing: 0.06rem;
 }
 
 .text-medium {
@@ -50,9 +51,8 @@
   line-height: 11rem;
 }
 .text-biggest {
-  font-size: 16rem;
+  font-size: 12rem;
   line-height: 12rem;
-  letter-spacing: -0.08rem;
 }
 .text-big {
   font-size: 8rem;
@@ -63,13 +63,13 @@
   .text-smaller {
     font-size: 1.2rem;
     line-height: 1.6rem;
-    letter-spacing: -0.01rem;
+    letter-spacing: 0.02rem;
   }
 
   .text-small {
     font-size: 1.2rem;
     line-height: 1.6rem;
-    letter-spacing: 0.02rem;
+    letter-spacing: 0.06rem;
   }
 
   .text-medium {
@@ -100,7 +100,7 @@
   }
 
   .text-biggest {
-    font-size: 8rem;
+    font-size: 12rem;
     line-height: 12rem;
   }
   .text-big {
@@ -113,8 +113,9 @@ html,
 body {
   font-size: 62.5%;
   hyphens: auto;
+  hyphenate-limit-chars: 10 4 4;
   background: #f3f4f6;
-  /* background: var(--violet); */
+  /* background: var(--primaryMed); */
 }
 
 /* *{background: #000;} */
@@ -165,8 +166,8 @@ section p.breakSectionTitle {
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 * {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  /* -ms-overflow-style: none;
+  scrollbar-width: none; */
   overscroll-behavior: none;
   box-sizing: border-box;
 }
@@ -251,10 +252,10 @@ h4 {
 
 .animationMarkerClick.active {
   border: solid black;
-  background: var(--violet);
+  background: var(--primaryMed);
   color: white;
   padding: 0.2rem 0.4rem;
-  stroke: var(--violet);
+  stroke: var(--primaryMed);
 }
 
 .highlighterIlluFill > g > path,
@@ -268,7 +269,7 @@ h4 {
 .highlightIllu > .highlighterIlluFill > *,
 .highlightIllu > .highlighterIlluFill,
 .highlighterIlluFill.highlightIllu > * > * {
-  fill: var(--violet);
+  fill: var(--primaryMed);
   fill-opacity: 1;
   stroke-width: 0;
 }
@@ -277,7 +278,7 @@ h4 {
 .highlightIllu > .highlighterIlluFill > *.highlighterIlluFill,
 .highlightIllu > .highlighterIlluFill,
 .highlightIllu > * > *.highlighterIlluFill {
-  fill: var(--violet);
+  fill: var(--primaryMed);
   fill-opacity: 1;
   stroke-width: 0;
 }
@@ -289,7 +290,7 @@ h4 {
 .highlightIllu > .highlighterIlluStroke > *,
 .highlightIllu > .highlighterIlluStroke,
 .highlighterIlluStroke.highlightIllu > * > * {
-  stroke: var(--violet);
+  stroke: var(--primaryMed);
   stroke-width: 3;
   stroke-opacity: 1;
 }
@@ -306,7 +307,7 @@ h4 {
 .active > * > .highlightText,
 .active > * > * > .highlightText,
 .active > * > * > * > .highlightText {
-  background: var(--violet);
+  background: var(--primaryMed);
   color: white;
 }
 #triggeranimationColorOpponency {
@@ -349,7 +350,7 @@ h4 {
 }
 
 mark {
-  background: var(--violet);
+  background: var(--primaryMed);
   color: whitesmoke;
   padding-left: 0;
   padding-right: 0;
@@ -357,7 +358,7 @@ mark {
 
 mark.hoverActive {
   /* text-decoration: none;
-  background: var(--violet) 1);
+  background: var(--primaryMed) 1);
   color: white; */
 
   /* filter: blur(1px); */
@@ -424,7 +425,7 @@ mark.comment {
 
 .hoverImg {
   text-decoration: underline;
-  text-decoration-color: var(--violet);
+  text-decoration-color: var(--primaryMed);
   cursor: pointer;
 }
 
@@ -440,7 +441,7 @@ sup {
   font-family: "IBM Plex Mono";
 }
 sup:hover {
-  background: var(--violet);
+  background: var(--primaryMed);
   color: white;
 }
 
@@ -487,11 +488,16 @@ sup:hover {
 
 .icon:hover,
 .icon:hover * {
-  border-color: var(--violet);
-  background-color: var(--violet);
+  border-color: var(--primaryMed);
+  background-color: var(--primaryMed);
   fill: white;
   color: white;
   stroke: transparent;
+}
+
+.icon.iconFull:hover,
+.icon.iconFull:hover * {
+  background-color: var(--fullHDark);
 }
 
 .iconBig {
@@ -514,7 +520,6 @@ sup:hover {
   background-color: #222;
   fill: white;
 }
-
 
 .-translate-x-custom {
   transform: translateX(min(-50vw, calc(-100vw + 780px + 11rem - 1px)));

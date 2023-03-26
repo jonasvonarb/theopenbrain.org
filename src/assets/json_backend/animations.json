@@ -31,7 +31,7 @@
         "Aqueous humour",
         "Ciliary muscle",
         "Retina",
-        "Vitreous humorous",
+        "Vitreous humour",
         "Optic nerve"
       ]
     },
@@ -81,10 +81,15 @@
       "fullscreen": true,
       "split": true,
       "multiple": false,
+      "infos": [
+        "Cone mosaic in the fovea.",
+        "Red, cone terminals; Green, horizontal cell mosaic; Blue, bipolar cell mosaic.",
+        "ON alpha ganglion cell mosaic from cat retina."
+      ],
       "sources": [
-        "Cone mosaic in the fovea. Source Wikipedia.",
-        "Red, cone terminals; Green, horizontal cell mosaic; Blue, bipolar cell mosaic. Source Webvision (Luna, Fisher and Lewis).",
-        "ON alpha ganglion cell mosaic from cat retina. Source Wässle et al., 1981, Nature."
+        "Source Wikipedia.",
+        "Source Webvision (Luna, Fisher and Lewis).",
+        "Source Wässle et al., 1981, Nature."
       ]
     },
     {
@@ -111,10 +116,7 @@
         "cGMP",
         "GMP",
         "α",
-        "γ",
-        "β",
-        "GTP",
-        "NA+"
+        "Na+"
       ]
     },
     {
@@ -254,7 +256,7 @@
       "fullscreen": false,
       "loop": true,
       "switch": true,
-      "switches": ["Small light", "Wide light"],
+      "switches": ["Center", "Center + surround"],
       "blockSwitches": true,
       "legend": [
         "Photoreceptors",
@@ -322,7 +324,7 @@
       "fullscreen": false,
       "loop": true,
       "switch": true,
-      "switches": ["Symmetric center", "Asymmetric center"],
+      "switches": ["Symmetric", "Asymmetric"],
       "blockSwitches": true,
       "legend": [
         "Photoreceptors",
@@ -452,7 +454,8 @@
       "title": "Eye Movements",
       "source": "Artistic recreation of an experiment from Yarbus, 1965 (Eye Movements and Vision), tracking gaze while a research participant was asked to give the age of the people while looking at the painting \"The Unexpected Visitor\" by Ilya Repin (1888).",
       "fullscreen": false,
-      "loop": true
+      "loop": true,
+      "small": true
     },
     {
       "id": "animationPlaceholder",

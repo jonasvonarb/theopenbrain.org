@@ -6,7 +6,7 @@
       For additional details on retinal anatomy, physiology, connectivity and
       function, please visit the online vision textbook
       <a
-        class="underline hover:text-violet"
+        class="underline hover:text-primaryMed"
         href="https://webvision.med.utah.edu/"
         target="_blank"
         >Webvision</a

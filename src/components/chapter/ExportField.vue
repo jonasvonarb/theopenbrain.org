@@ -10,7 +10,7 @@
         <label for="file-upload" class="custom-file-upload inline hover:blur-xs"
           ><span class="pr-2 inline-block">Choose a file to upload </span>
           <BiUpload
-            :class="!isFilled ? 'text-black' : 'bg-violet'"
+            :class="!isFilled ? 'text-black' : 'bg-primaryMed'"
             class="inline bg-white p-2 rounded-full"
           />
         </label>

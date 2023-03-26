@@ -1,13 +1,16 @@
 <template>
   <div :id="toSlug(animation.title)" ref="container" class="w-full h-full">
     <TitleIllus :title="animation.title" />
-    <SourceElement :source="animation.sources?.[activeLayer]" class="pb-12" />
+    <SourceElement
+      :source="animation.sources?.[activeLayer]"
+      :info="animation.infos?.[activeLayer]"
+    />
     <div
       class="absolute top-0 left-0 w-full h-full flex justify-between items-start text-small"
     >
-      <div class="w-full h-full flex justify-end items-end">
+      <div class="w-full h-full flex justify-end items-end bg-light">
         <div
-          class="max-w-[800px] w-1/2 h-full py-48 m-auto"
+          class="max-w-[800px] w-1/2 h-full py-48 m-auto "
           :id="animation.id + 'Left'"
         />
         <div

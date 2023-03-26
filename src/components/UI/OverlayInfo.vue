@@ -14,7 +14,7 @@
       </p>
       <button
         @click="visited"
-        class="uppercase bg-white text-black border border-black font-mono z-50 px-3 rounded-full hover:bg-violet hover:text-white hover:border-violet"
+        class="uppercase bg-white text-black border border-black font-mono z-50 px-3 rounded-full hover:bg-primaryMed hover:text-white hover:border-primaryMed"
       >
         Enter
       </button>

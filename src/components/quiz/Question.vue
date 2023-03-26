@@ -24,7 +24,7 @@
     </fieldset>
     <div
       :class="!active && 'opacity-20 pointer-events-none'"
-      class="border border-black w-32 text-center cursor-pointer mt-12 uppercase hover:bg-violet hover:text-white"
+      class="border border-black w-32 text-center cursor-pointer mt-12 uppercase hover:bg-primaryMed hover:text-white"
       @click="next"
     >
       next
@@ -35,7 +35,7 @@
 <script setup>
 import { computed, ref, onMounted, watch } from "vue";
 
-const props = defineProps({
+defineProps({
   question: Object,
   num: Number,
 });

@@ -1,43 +1,38 @@
 <template>
   <div
     ref="container"
-    class="absolute top-0 left-0 w-screen h-screen noHyphens text-black"
+    class="absolute top-0 left-0 w-screen h-screen noHyphens text-white"
   >
     <template v-if="isActive">
       <div class="w-full h-screen flex items-start text-small">
         <div
-          class="block-1 relative h-full flex justify-center items-end bg-med pl-left"
+          class="block-1 relative h-full flex justify-center items-end bg-fullDa border-r border-white pl-left"
         >
           <div
             class="max-h-anim max-w-[100%] w-full h-full pb-0"
             :id="animation.id"
           />
           <div
-            class="absolute flex items-end flex-col w-full left-0 font-sans top-64 z-[60] text-base text-black text-left"
+            class="absolute flex items-end flex-col w-full left-0 font-sans top-64 z-[60] text-base text-left"
           >
             <div
-              class="flex justify-between w-full pl-left bg-violet text-white p-6 py-4 pr-30"
+              class="flex justify-between w-full pl-left bg-fullHDa p-6 py-4 pr-30"
             >
-              <span class="w-oText">
+              <span class="w-oText flex items-center">
                 {{ currenSection + 1 }}. {{ animation.states?.[currenSection] }}
               </span>
               <DownArrow
-                :class="[
-                  isPlay ? 'opacity-20 pointer-events-none ' : '',
-                  isGoingNext &&
-                    'pointer-events-none !bg-violet !border-violet !fill-white',
-                ]"
                 @click="nextStep()"
-                class="icon iconBig -rotate-90 hover:border-white"
+                class="icon iconBig iconFull -rotate-90 hover:border-white"
               />
             </div>
-            <div class="z-[60] text-white flex gap-2 pr-6 pt-6">
+            <!-- <div class="z-[60] text-white flex gap-2 pr-6 pt-6">
               <PauseIcon
                 v-if="isPlay"
                 :class="[
-                  !isPlay ? 'opacity-20 pointer-events-none ' : '',
+                  !isPlay ? 'opacity-20 pointer-events ' : '',
                   isGoingNext &&
-                    'pointer-events-none !bg-violet !border-violet !fill-white',
+                    'pointer-events-none !bg-fullHDa !border-fullHDa !fill-white',
                 ]"
                 @click="playPause()"
                 class="icon"
@@ -51,50 +46,24 @@
                   isGoingNext ? 'opacity-20 pointer-events-none' : '',
                 ]"
               />
-            </div>
+            </div> -->
           </div>
-          <!-- <div class="absolute bottom-8 right-12 z-[60] text-black flex gap-2">
-            <div>Speed:</div>
-            <div
-              @click="setSpeed()"
-              class="hover:opacity-100 cursor-pointer"
-              :class="
-                speed === 1
-                  ? 'opacity-50'
-                  : 'opacity-100  pointer-events-none underline'
-              "
-            >
-              .5X
-            </div>
-            <div>|</div>
-            <div
-              @click="setSpeed()"
-              class="hover:opacity-100 cursor-pointer"
-              :class="
-                speed === 0.2
-                  ? 'opacity-50'
-                  : 'opacity-100 pointer-events-none underline'
-              "
-            >
-              1X
-            </div>
-          </div> -->
         </div>
         <div
-          class="relative block-2 text-medium h-full flex flex-col gap-12 bg-light px-0 pr-0 pt-44 border-l border-black"
+          class="relative block-2 text-medium h-full flex flex-col gap-12 bg-fullMed px-0 pr-0 pt-44 border-l border-black"
         >
           <ol class="w-full">
             <li
-              class="pb-5 pt-1.5 first-of-type:mt-0 pointer-event-none flex pl-8 p-24"
+              class="pb-5 pt-1.5 first-of-type:mt-0 pointer-event-none flex pl-8 p-24 hover:text-fullHDa cursor-pointer"
               v-for="(state, index) of animation.states"
               :key="state"
+              @click="goToStep(index)"
             >
               <div
                 class="shrink-0 duration-300 h-10 w-10 text-center rounded-full"
               >
                 {{ index + 1 }}
               </div>
-
               <span class="-my-1 py-1 pl-6 duration-300">
                 {{ state }}
               </span>
@@ -103,15 +72,15 @@
           <!-- controlls -->
         </div>
         <div
-          class="block-3 font-bold h-full flex flex-col gap-12 bg-lighter pt-44 border-l border-black"
+          class="block-3 font-bold h-full flex flex-col gap-12 bg-fullLi pt-44 border-l border-black"
         >
           <ul v-if="animation.statesHighlight" class="w-full px-8 pr-20 pt-2">
             <li
               class="pb-6 cursor-pointer flex gap-3"
               :class="
                 toCamelCase(state) === activeState
-                  ? 'underline  text-violet hover:text-violet'
-                  : ' hover:text-violet'
+                  ? 'underline  text-fullHDa hover:text-fullHDa'
+                  : ' hover:text-fullHDa'
               "
               v-for="state of animation.statesHighlight"
               :key="state"
@@ -155,9 +124,6 @@ const frames = {
   theVisualCycle: [0, 36, 50, 156, 204, 252, 300, 336],
 };
 
-// 168
-//  312
-//  336
 const setState = (stateIncoming) => {
   let state = toCamelCase(stateIncoming);
 
@@ -215,22 +181,43 @@ const playPause = () => {
   }
 };
 
+const goToStep = (index) => {
+  const targetFrame =
+    frames[toCamelCase(props.animation.title)][+index + 1] ||
+    frames[toCamelCase(props.animation.title)][1];
+  const _frames = frames[toCamelCase(props.animation.title)];
+  const lastState = _frames[_frames.length - 1];
+  const startFrame = frames[toCamelCase(props.animation.title)][+index];
+  const sf = startFrame !== lastState ? startFrame : 0;
+
+  animationLottie.playSegments([sf, targetFrame], true);
+};
+
 const nextStep = (pause = false) => {
   isGoingNext.value = true;
   const tF = animationLottie.animationData.op;
-  animationLottie.playSegments([0, tF], false);
+  animationLottie.playSegments([1, tF], false);
+  animationLottie.loop = true;
   const targetFrame =
     frames[toCamelCase(props.animation.title)][
       +currenSection.value + (pause ? 1 : 2)
     ] || frames[toCamelCase(props.animation.title)][1];
   isPlay.value = false;
-  const cF = animationLottie.projectInterface.currentFrame;
-  const lS =
+  // const cF = animationLottie.projectInterface.currentFrame;
+  // const lS =
+  //   frames[toCamelCase(props.animation.title)][
+  //     frames[toCamelCase(props.animation.title)].length - 2
+  //   ];
+  // const startFrame = cF <= lS ? cF : 0;
+  const _frames = frames[toCamelCase(props.animation.title)];
+  const lastState = _frames[_frames.length - 1];
+  const startFrame =
     frames[toCamelCase(props.animation.title)][
-      frames[toCamelCase(props.animation.title)].length - 2
+      +currenSection.value + (pause ? 1 : 2) - 1
     ];
-  const startFrame = cF <= lS ? cF : 0;
-  animationLottie.playSegments([startFrame, targetFrame], true);
+  const sf = startFrame !== lastState ? startFrame : 0;
+
+  animationLottie.playSegments([sf, targetFrame], true);
 };
 
 const setSpeed = () => {
@@ -251,10 +238,10 @@ onMounted(() => {
   if (!svgContainer) return;
   animationLottie = lottie.loadAnimation({
     id: props.animation.id,
-    speed: 3,
+    speed: 0.2,
     wrapper: svgContainer,
     animType: "svg",
-    loop: false,
+    loop: true,
     autoplay: false,
     path: "/publicAssets/animations/" + props.animation.id + ".json",
     rendererSettings: {
@@ -262,10 +249,15 @@ onMounted(() => {
     },
   });
   setTimeout(() => {
-    // animationLottie.play();
+    animationLottie.setSpeed(0.6);
+    animationLottie.playSegments(
+      [0, frames[toCamelCase(props.animation.title)][1]],
+      true
+    );
   }, 1000);
 
   const complete = () => {
+    console.log("complete");
     isGoingNext.value = false;
     if (isPlay.value) {
       animationLottie.playSegments([0, animationLottie.animationData.op], true);
@@ -298,7 +290,7 @@ onMounted(() => {
 }
 
 .block-1 {
-  width: max(50vw, calc(100vw - 780px - 11rem));
+  width: max(50vw, calc(100vw - 780px - 11rem + 2px));
 }
 .block-2 {
   width: min(calc(50vw / 8 * 5), calc((780px + 11rem) / 8 * 5));
@@ -313,7 +305,7 @@ onMounted(() => {
 .w-oText {
   width: min(calc(50vw - 10rem), calc(780px));
 }
-.max-h-anim{
+.max-h-anim {
   max-height: calc(100vh - 220px);
 }
 </style>

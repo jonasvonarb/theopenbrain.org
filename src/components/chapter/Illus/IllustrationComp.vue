@@ -1,6 +1,6 @@
 <template>
   <div
-    class="pr-14 pl-32 flex flex-row justify-center items-center h-[100%] pointer-events-auto"
+    class="pr-12 pl-40 flex flex-row justify-center items-center h-[100%] pointer-events-auto"
   >
     <div
       class="px-left pt-10 z-30 fixed flex flex-col w-illus justify-between top-0 left-0"
@@ -59,10 +59,10 @@
               ? animation.states
               : Object.keys(animation.states)"
             :key="state"
-            class="hover:text-violet hover:bg-white hover:border-violet select-none text-small cursor-pointer pb-2 mb-4 border-black border p-4 flex flex-col justify-center items-center"
+            class="hover:text-primaryMed hover:bg-white hover:border-primaryMed select-none text-small cursor-pointer pb-2 mb-4 border-black border p-4 flex flex-col justify-center items-center"
             :class="
               activeState[index]
-                ? 'font-semibold bg-violet border-violet text-white'
+                ? 'font-semibold bg-primaryMed border-primaryMed text-white'
                 : ''
             "
             @click="setBlockState(index, activeState.state)"
@@ -105,12 +105,12 @@
             :title="animation.title"
           />
           <img
-            class="max-w-full max-h-[80vh]"
+            class="max-w-full max-h-[70vh]"
             :class="animation.fullHeight ? 'p-32 ' : ''"
             :src="`/publicAssets/images/illuImages/${animation.id}.png`"
           />
           <SourceElement
-            class="top-40"
+            class="top-40 text-base max-w-[750px]"
             source="Stare at the cross for 30 seconds. Then immediately look at a white wall (or close your eyes) to see after-images. Notice that each color gets 'replaced' by its opponent color in the after-image."
           />
         </div>
@@ -130,6 +130,7 @@
           v-if="!animation.multiple && !animation.flip && !animation.switch"
           :id="animation.id"
           class="w-full"
+          :class="animation.small && 'px-32'"
         />
         <IllustrationFlip
           v-else-if="!animation.multiple && animation.flip"
@@ -167,7 +168,6 @@ import PauseIcon from "@/icons/custom/PauseIcon.vue";
 import IllustrationFlip from "./IllustrationFlip.vue";
 import IllustrationSwitch from "./IllustrationSwitch.vue";
 import StateElement from "@/components/UI/StateElement.vue";
-import StateElementBlock from "@/components/UI/StateElementBlock.vue";
 import SourceElement from "@/components/UI/SourceElement.vue";
 import LegendElement from "../../UI/LegendElement.vue";
 import TitleIllus from "../../UI/TitleIllus.vue";

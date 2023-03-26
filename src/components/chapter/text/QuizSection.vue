@@ -3,7 +3,7 @@
     <TitleIllus title="Quiz" class="pb-6" />
     <p>
       Here you can test your knowledge in a
-      <RouterLink class="text-violet" to="/quiz">QUIZ</RouterLink>!
+      <RouterLink class="text-primaryMed" to="/quiz">QUIZ</RouterLink>!
     </p>
   </div>
 </template>

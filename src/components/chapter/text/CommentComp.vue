@@ -15,7 +15,7 @@
         <form class="w-full h-full text-black pt-2">
           <textarea
             ref="comment"
-            class="bg-lighter"
+            class="bg-bgLi"
             :value="commentInStore"
             @input="(event) => storeCom.updateCom(comment.value, event)"
           />
@@ -31,7 +31,7 @@
         />
         <BiCheckCircle
           v-else
-          class="icon rounded-full text-black bg-white hover:text-white hover:bg-violet border-none"
+          class="icon rounded-full text-black bg-white hover:text-white hover:bg-primaryMed border-none"
         />
       </p>
     </div>
