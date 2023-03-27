@@ -7,7 +7,7 @@
     />
     <div
       :id="'info-' + toSlug(animation?.title)"
-      class="flex -mt-12 flex-row text-base h-[80vh] pb-2 overscroll-auto"
+      class="flex -mt-12 flex-row text-base h-text pb-2 overscroll-auto"
     >
       <div
         class="flex flex-col pt-20 justify-start gap-16 w-container overflow-y-scroll overflow-x-visible"
@@ -27,12 +27,14 @@
             </ol>
           </div>
         </div>
-        <div
-          class="absolute bottom-0 w-container h-20 bg-gradient-to-t from-bgDa"
-        />
-        <div
-          class="absolute top-28 w-container h-20 bg-gradient-to-b from-bgDa"
-        />
+          <div
+          :class="isOpen ? 'opacity-100' : 'opacity-0'"
+          class="absolute bottom-0 w-container h-24 bg-gradient-to-t from-bgDa duration-300"
+          />
+          <div
+          :class="isOpen ? 'opacity-100' : 'opacity-0'"
+          class="absolute top-36 w-container h-20 bg-gradient-to-b from-bgDa duration-300"
+          />
       </div>
       <div v-if="infoIsOpen" class="p-0 pt-10 pb-12 overflow-visible w-asset">
         <img
@@ -115,5 +117,9 @@ const video = {
 }
 .w-asset {
   width: min(50vw, calc(780px));
+}
+
+.h-text{
+  height: calc(100vh - 5rem - 52px);
 }
 </style>

@@ -104,9 +104,9 @@ const openInfo = () => {
     ref="containerScroll"
     class="w-screen border-y border-bgMed -translate-x-custom -ml-20 my-[0] mt-64 text-small font-mono duration-300"
     :class="[
-      infoIsOpen && thisAnimation.infoText
-        ? 'bg-bgDa text-white'
-        : 'bg-bgLi text-black',
+      !thisAnimation.infoText || (thisAnimation.title === 'Refraction errors' && !infoIsOpen)
+        ? 'bg-bgLi text-black'
+        : 'bg-bgDa text-white',
       !thisAnimation.split ? 'h-[150vh]' : 'h-[700vh]',
       thisAnimation.title === 'Pathway for the pupillary light reflex'
         ? '-mb-[18.5rem]'
@@ -118,7 +118,7 @@ const openInfo = () => {
         class="absolute z-50 flex flex-col justify-between"
         v-if="thisAnimation?.states"
       >
-        <TitleIllus :title="thisAnimation.title" class="inline" color="white" />
+        <TitleIllus :title="thisAnimation.title" class="inline" :color="thisAnimation.loop && 'white'" />
         <!-- Overlay -->
         <TextOverlay
           v-if="thisAnimation.infoText"
@@ -167,7 +167,7 @@ const openInfo = () => {
                   ? 'bg-primaryMed text-white pointer-events-none'
                   : activeState.state === index
                   ? 'border-primaryMed text-black  hover:text-primaryMed '
-                  : 'bg-bgLi text-bgDa hover:text-primaryMed hover:border-primaryMed',
+                  : 'bg-white text-bgDa hover:text-primaryMed hover:border-primaryMed',
                 ,
               ]"
               @click="

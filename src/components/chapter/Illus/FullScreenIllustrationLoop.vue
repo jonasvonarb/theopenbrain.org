@@ -50,11 +50,11 @@
           </div>
         </div>
         <div
-          class="relative block-2 text-medium h-full flex flex-col gap-12 bg-fullMed px-0 pr-0 pt-44 border-l border-black"
+          class="relative block-2 text-medium h-full flex flex-col gap-12 bg-fullMed px-0 pr-0 pt-40 border-l border-black"
         >
           <ol class="w-full">
             <li
-              class="pb-5 pt-1.5 first-of-type:mt-0 pointer-event-none flex flex-col pl-8 p-24 hover:text-fullHDa cursor-pointer"
+              class="pb-10 pt-1.5 first-of-type:mt-0 pointer-event-none flex flex-col pl-8 p-24 hover:text-fullHDa cursor-pointer"
               v-for="(state, index) of animation.states"
               :key="state"
               @click="goToStep(index)"
@@ -70,7 +70,7 @@
           <!-- controlls -->
         </div>
         <div
-          class="block-3 font-bold h-full flex flex-col gap-12 bg-fullLi pt-44 border-l border-black"
+          class="block-3 font-bold h-full flex flex-col gap-12 bg-fullLi pt-40 border-l border-black"
         >
           <ul v-if="animation.statesHighlight" class="w-full px-8 pr-20 pt-2">
             <li
