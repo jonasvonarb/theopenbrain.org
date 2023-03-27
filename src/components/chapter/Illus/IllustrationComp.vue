@@ -59,7 +59,7 @@
               ? animation.states
               : Object.keys(animation.states)"
             :key="state"
-            class="hover:text-primaryMed hover:bg-white hover:border-primaryMed select-none text-small cursor-pointer pb-2 mb-4 border-black border p-4 flex flex-col justify-center items-center"
+            class="hover:text-primaryMed hover:bg-white hover:border-primaryMed select-none text-small cursor-pointer pb-2 mb-4 border-black border p-4 flex flex-col justify-center items-center stroke-white fill-white hover:fill-primaryMed hover:stroke-primaryMed"
             :class="
               activeState[index]
                 ? 'font-semibold bg-primaryMed border-primaryMed text-white'
@@ -67,17 +67,9 @@
             "
             @click="setBlockState(index, activeState.state)"
           >
-            <img
-              class="w-full h-10 my-1"
-              :class="activeState[index] ? 'invert' : ''"
-              :src="
-                '/publicAssets/icons/' +
-                animation.iconPraefix +
-                '/' +
-                toSlug(state) +
-                '.svg'
-              "
-            />
+            <GapjunctionIcon v-if="toSlug(state) === 'gap-junction'" />
+            <ExcitatationIcon v-if="toSlug(state) === 'excitatation'" />
+            <InhibitionIcon v-if="toSlug(state) === 'inhibition'" />
             {{ state }}
           </p>
         </div>
@@ -171,6 +163,9 @@ import StateElement from "@/components/UI/StateElement.vue";
 import SourceElement from "@/components/UI/SourceElement.vue";
 import LegendElement from "../../UI/LegendElement.vue";
 import TitleIllus from "../../UI/TitleIllus.vue";
+import GapjunctionIcon from "../../../icons/custom/GapjunctionIcon.vue";
+import ExcitatationIcon from "../../../icons/custom/ExcitatationIcon.vue";
+import InhibitionIcon from "../../../icons/custom/InhibitionIcon.vue";
 
 const props = defineProps({
   animation: Object,

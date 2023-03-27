@@ -34,7 +34,7 @@
           class="absolute top-28 w-container h-20 bg-gradient-to-b from-bgDa"
         />
       </div>
-      <div class="p-0 pt-10 pb-12 overflow-visible w-asset">
+      <div v-if="infoIsOpen" class="p-0 pt-10 pb-12 overflow-visible w-asset">
         <img
           class="h-full pl-20 w-2/3 object-contain object-left-top"
           v-if="animation.title === 'Blind spot'"

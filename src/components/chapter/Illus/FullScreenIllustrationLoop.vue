@@ -54,17 +54,15 @@
         >
           <ol class="w-full">
             <li
-              class="pb-5 pt-1.5 first-of-type:mt-0 pointer-event-none flex pl-8 p-24 hover:text-fullHDa cursor-pointer"
+              class="pb-5 pt-1.5 first-of-type:mt-0 pointer-event-none flex flex-col pl-8 p-24 hover:text-fullHDa cursor-pointer"
               v-for="(state, index) of animation.states"
               :key="state"
               @click="goToStep(index)"
             >
-              <div
-                class="shrink-0 duration-300 h-10 w-10 text-center rounded-full"
-              >
+              <div class="shrink-0 duration-300 text-left">
                 {{ index + 1 }}
               </div>
-              <span class="-my-1 py-1 pl-6 duration-300">
+              <span class="duration-300">
                 {{ state }}
               </span>
             </li>
