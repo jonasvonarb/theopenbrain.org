@@ -17,7 +17,7 @@
       <LegendElement
         v-if="info.legend"
         :legend="info.legend"
-        iconPraefix="retinalCircuits"
+        :iconPraefix="info.iconPraefix"
       />
     </div>
     <template v-for="(switchWord, index) of info.switches" :key="switchWord">

@@ -1,7 +1,7 @@
 <template>
   <div
     ref="container"
-    class="absolute top-0 left-0 w-screen h-screen noHyphens text-white"
+    class="absolute top-0 left-0 w-screen h-screen noHyphens text-white text-select-off"
   >
     <template v-if="isActive">
       <div class="w-full h-screen flex items-start text-small">
@@ -74,17 +74,23 @@
         >
           <ul v-if="animation.statesHighlight" class="w-full px-8 pr-20 pt-2">
             <li
-              class="pb-6 cursor-pointer flex gap-3"
+              class="pb-10 cursor-pointer flex items-center gap-5"
               :class="
                 toCamelCase(state) === activeState
-                  ? 'underline  text-fullHDa hover:text-fullHDa'
-                  : ' hover:text-fullHDa'
+                  ? 'underline  text-primaryMed hover:text-primaryMed'
+                  : ' hover:text-primaryMed'
               "
               v-for="state of animation.statesHighlight"
               :key="state"
               @click="setState(state)"
             >
-              {{ state }}
+              <img
+                class="invert"
+                :src="`/publicAssets/icons/fullScreenAnimations/${toCamelCase(
+                  state
+                )}.svg`"
+              />
+              <span v-html="state" />
             </li>
           </ul>
         </div>
@@ -97,8 +103,6 @@
 import { onMounted, ref } from "vue";
 import lottie from "lottie-web";
 import { toCamelCase } from "@/helper/general";
-import PauseIcon from "../../../icons/custom/PauseIcon.vue";
-import PlayIcon from "../../../icons/custom/PlayIcon.vue";
 import DownArrow from "../../../icons/custom/DownArrow.vue";
 
 const props = defineProps({
@@ -117,9 +121,9 @@ const isGoingNext = ref(false);
 const speed = ref(1);
 
 const frames = {
-  pathwayForThePupillaryLightReflex: [0, 24, 60, 96, 136, 168],
-  phototransduction: [0, 24, 48, 72, 120, 147, 168, 240, 312],
-  theVisualCycle: [0, 36, 50, 156, 204, 252, 300, 336],
+  pathwayForThePupillaryLightReflex: [0, 48, 96, 144, 192, 264],
+  phototransduction: [0, 48, 96, 144, 192, 240, 336, 432, 528],
+  theVisualCycle: [0, 72, 120, 120, 240, 312, 432, 480],
 };
 
 const setState = (stateIncoming) => {
@@ -201,12 +205,6 @@ const nextStep = (pause = false) => {
       +currenSection.value + (pause ? 1 : 2)
     ] || frames[toCamelCase(props.animation.title)][1];
   isPlay.value = false;
-  // const cF = animationLottie.projectInterface.currentFrame;
-  // const lS =
-  //   frames[toCamelCase(props.animation.title)][
-  //     frames[toCamelCase(props.animation.title)].length - 2
-  //   ];
-  // const startFrame = cF <= lS ? cF : 0;
   const _frames = frames[toCamelCase(props.animation.title)];
   const lastState = _frames[_frames.length - 1];
   const startFrame =

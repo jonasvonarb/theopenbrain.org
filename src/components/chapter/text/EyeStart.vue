@@ -42,17 +42,20 @@ const scrollToPos = () => {
     class="bg-img bg-bgLi absolute right-0 h-screen w-screen z-[50] duration-300 flex justify-start items-start"
   >
     <div
-      class="absolute top-0 left-0 w-screen h-screen text-white text-center flex justify-center items-center pb-8"
+      class="sticky top-6 left-20 text-white text-biggest flex items-center gap-4"
     >
-      <div class="flex justify-center items-center flex-col w-2/3">
-        <div class="text-biggest font-text">The Retina</div>
-      </div>
+      <img
+        src="/favicon_io/android-chrome-512x512.png"
+        class="h-20 invert"
+      />The Open Brain
     </div>
     <div
       @click="scrollToPos()"
-      class="absolute bottom-8 left-1/ -ml-5 flex justify-center items-center text-center"
+      class="absolute bottom-8 left-1/2 -ml-5 flex justify-center items-center text-center"
     >
-      <DownArrow class="pointer-events-auto icon iconMed" />
+      <DownArrow
+        class="pointer-events-auto hover:bg-primaryLi iconBig cursor-pointer rounded-full"
+      />
     </div>
   </div>
 </template>

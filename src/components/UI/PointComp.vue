@@ -9,7 +9,7 @@
   >
     <div
       v-if="getComments?.includes(id)"
-      class="rounded-full bg-primaryMed z-40 w-3 h-3 absolute -right-0.5 -top-0.5"
+      class="rounded-full bg-primaryMed z-40 w-3 h-3 absolute"
     />
     N
   </div>

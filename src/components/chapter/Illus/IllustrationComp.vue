@@ -80,7 +80,7 @@
         <LegendElement
           v-if="animation.legend && !animation.switch"
           :legend="animation.legend"
-          iconPraefix="retinalCircuits"
+          :iconPraefix="animation.iconPraefix"
         />
       </div>
       <template v-if="animation.illuImage">

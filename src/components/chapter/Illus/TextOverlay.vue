@@ -27,14 +27,14 @@
             </ol>
           </div>
         </div>
-          <div
-          :class="isOpen ? 'opacity-100' : 'opacity-0'"
+        <!-- <div
+          :class="infoIsOpen ? 'opacity-100' : 'opacity-0'"
           class="absolute bottom-0 w-container h-24 bg-gradient-to-t from-bgDa duration-300"
-          />
-          <div
-          :class="isOpen ? 'opacity-100' : 'opacity-0'"
+        />
+        <div
+          :class="infoIsOpen ? 'opacity-100' : 'opacity-0'"
           class="absolute top-36 w-container h-20 bg-gradient-to-b from-bgDa duration-300"
-          />
+        /> -->
       </div>
       <div v-if="infoIsOpen" class="p-0 pt-10 pb-12 overflow-visible w-asset">
         <img
@@ -64,7 +64,7 @@
           <PlayIcon class="absolute -left-8 -mt-8 icon iconBig z-30" />
 
           <div
-            class="w-full h-full flex flex-col justify-center items-start mt-[-0.2rem] text-small"
+            class="w-full h-full opacity-70 flex flex-col justify-center items-start mt-[-0.2rem] text-small"
           >
             <span class="block text-left font-semibold">
               {{ video.title }}
@@ -119,7 +119,7 @@ const video = {
   width: min(50vw, calc(780px));
 }
 
-.h-text{
+.h-text {
   height: calc(100vh - 5rem - 52px);
 }
 </style>

@@ -12,31 +12,30 @@
 /* fonts */
 
 .text-smaller {
-  font-size: 1.1rem;
-  line-height: 1.4rem;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
   letter-spacing: 0.02rem;
 }
 
 .text-small {
-  font-size: 1.35rem;
-  line-height: 1.9rem;
-  letter-spacing: 0.06rem;
+  font-size: 1.4rem;
+  line-height: 1.85rem;
+  letter-spacing: 0.04rem;
 }
 
 .text-medium {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   line-height: 2.2rem;
 }
 
 .text-baseMono {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   line-height: 2.8rem;
 }
 
 .text-base {
-  font-size: 2rem;
-  line-height: 3.1rem;
-  letter-spacing: 0.5px;
+  font-size: 1.9rem;
+  line-height: 3rem;
 }
 .text-h2 {
   font-size: 4rem;
@@ -44,69 +43,20 @@
 }
 .text-h3 {
   font-size: 3rem;
-  line-height: 3.8rem;
+  line-height: 4rem;
 }
 .text-blindness {
   font-size: 11rem;
   line-height: 11rem;
 }
+
 .text-biggest {
-  font-size: 12rem;
-  line-height: 12rem;
+  font-size: 6rem;
+  line-height: 6rem;
 }
 .text-big {
   font-size: 8rem;
   line-height: 8rem;
-}
-
-@media (max-width: 1600px) {
-  .text-smaller {
-    font-size: 1.2rem;
-    line-height: 1.6rem;
-    letter-spacing: 0.02rem;
-  }
-
-  .text-small {
-    font-size: 1.2rem;
-    line-height: 1.6rem;
-    letter-spacing: 0.06rem;
-  }
-
-  .text-medium {
-    font-size: 1.5rem;
-    line-height: 2.2rem;
-  }
-
-  .text-baseMono {
-    font-size: 1.7rem;
-    line-height: 2.8rem;
-  }
-
-  .text-base {
-    font-size: 1.9rem;
-    line-height: 3rem;
-  }
-  .text-h2 {
-    font-size: 4rem;
-    line-height: 5.8rem;
-  }
-  .text-h3 {
-    font-size: 3rem;
-    line-height: 4rem;
-  }
-  .text-blindness {
-    font-size: 11rem;
-    line-height: 11rem;
-  }
-
-  .text-biggest {
-    font-size: 12rem;
-    line-height: 12rem;
-  }
-  .text-big {
-    font-size: 8rem;
-    line-height: 8rem;
-  }
 }
 
 html,
@@ -116,6 +66,16 @@ body {
   hyphenate-limit-chars: 10 4 4;
   background: #f3f4f6;
   /* background: var(--primaryMed); */
+}
+.text-select-off {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+.text-select-on {
+  -webkit-user-select: text !important; /* Safari */
+  -ms-user-select: text !important; /* IE 10 and IE 11 */
+  user-select: text !important; /* Standard syntax */
 }
 
 /* *{background: #000;} */
@@ -328,14 +288,14 @@ h4 {
 .punktComment {
   position: absolute;
   left: -1.25rem;
-  left: calc(50vw - min(calc(50vw + 0.75rem), calc(780px + 11rem)) - 1.25rem);
+  left: calc(50vw - min(calc(50vw + 0.75rem), calc(780px + 11rem)) - 0.5rem);
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
   background-color: black;
   pointer-events: all;
   font-size: 1.5rem;
-  line-height: 2.2rem;
+  line-height: 2.35rem;
   padding: 0px;
   text-align: center;
   transition: none;

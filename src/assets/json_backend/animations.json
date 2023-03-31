@@ -5,7 +5,7 @@
       "title": "",
       "fullscreen": false,
       "loop": true,
-      "loopSection": [82, 287]
+      "loopSection": [82, 216]
     },
     {
       "id": "animationEyeStructurTransition",
@@ -112,11 +112,12 @@
         "Rhodopsin",
         "Retinal",
         "Transducin",
+        "α subunit",
         "Phosphodiesterase (PDE)",
         "cGMP",
         "GMP",
-        "α",
-        "Na+"
+        "Na+",
+        "Ion channel"
       ]
     },
     {
@@ -258,6 +259,7 @@
       "switch": true,
       "switches": ["Center", "Center + surround"],
       "blockSwitches": true,
+      "iconPraefix": "retinalCircuits",
       "legend": [
         "Photoreceptors",
         "Horizontal cells",
@@ -286,13 +288,13 @@
       "switch": true,
       "switches": ["Dark", "Light"],
       "blockSwitches": true,
-      "states": [
+      "iconPraefix": "onOff",
+      "legend": [
         "Glutamate",
         "G Protein",
-        "Alpha",
+        "α subunit",
         "Na+",
-        "Ionotropic",
-        "Metabotropic"
+        "Glutamate receptor"
       ]
     },
     {
@@ -303,6 +305,7 @@
       "switch": true,
       "switches": ["Preferred", "Null"],
       "blockSwitches": true,
+      "iconPraefix": "retinalCircuits",
       "legend": [
         "Photoreceptors",
         "Horizontal cells",
@@ -326,6 +329,7 @@
       "switch": true,
       "switches": ["Symmetric", "Asymmetric"],
       "blockSwitches": true,
+      "iconPraefix": "retinalCircuits",
       "legend": [
         "Photoreceptors",
         "Horizontal cells",
@@ -349,6 +353,7 @@
       "switch": true,
       "switches": ["Day", "Night"],
       "blockSwitches": true,
+      "iconPraefix": "retinalCircuits",
       "legend": [
         "Photoreceptors",
         "Horizontal cells",
@@ -369,6 +374,7 @@
       "title": "Light sensitive ganglion cells",
       "fullscreen": false,
       "loop": true,
+      "iconPraefix": "retinalCircuits",
       "legend": [
         "Photoreceptors",
         "Horizontal cells",

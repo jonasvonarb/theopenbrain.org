@@ -120,7 +120,7 @@ onBeforeUnmount(() => {
 <template>
   <div
     id="container"
-    class="absolute top-start z-40 w-[50vw] pointer-events-none font-sans"
+    class="absolute top-start z-40 w-[50vw] pointer-events-none font-sans text-select-on"
   >
     <!-- :class="store.startIsActive ? 'fixed' : 'absolute'" -->
     <HoverImg />
@@ -219,4 +219,6 @@ onBeforeUnmount(() => {
   width: min(50vw, calc(780px + 11rem));
   margin-left: calc(100vw - min(50vw, calc(780px + 11rem)));
 }
+
+
 </style>

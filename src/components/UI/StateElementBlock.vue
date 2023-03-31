@@ -11,21 +11,12 @@
       "
       @click="$emit('onClick', { index, activeState })"
     >
-      <template v-if="praefix">
-        <img
-          class="w-10 h-9 my-1"
-          :class="activeState == index ? 'invert' : ''"
-          :src="'/publicAssets/icons/' + praefix + '/' + toSlug(state) + '.svg'"
-        />
-      </template>
       {{ state }}
     </p>
   </div>
 </template>
 
 <script setup>
-import { toSlug } from "@/helper/general";
-
 defineProps({
   states: Object,
   activeState: Number,

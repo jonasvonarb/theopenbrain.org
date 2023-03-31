@@ -104,7 +104,8 @@ const openInfo = () => {
     ref="containerScroll"
     class="w-screen border-y border-bgMed -translate-x-custom -ml-20 my-[0] mt-64 text-small font-mono duration-300"
     :class="[
-      !thisAnimation.infoText || (thisAnimation.title === 'Refraction errors' && !infoIsOpen)
+      !thisAnimation.infoText ||
+      (thisAnimation.title === 'Refraction errors' && !infoIsOpen)
         ? 'bg-bgLi text-black'
         : 'bg-bgDa text-white',
       !thisAnimation.split ? 'h-[150vh]' : 'h-[700vh]',
@@ -118,7 +119,11 @@ const openInfo = () => {
         class="absolute z-50 flex flex-col justify-between"
         v-if="thisAnimation?.states"
       >
-        <TitleIllus :title="thisAnimation.title" class="inline" :color="thisAnimation.loop && 'white'" />
+        <TitleIllus
+          :title="thisAnimation.title"
+          class="inline"
+          :color="thisAnimation.loop && true"
+        />
         <!-- Overlay -->
         <TextOverlay
           v-if="thisAnimation.infoText"

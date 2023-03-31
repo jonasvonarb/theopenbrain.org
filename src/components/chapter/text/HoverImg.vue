@@ -10,9 +10,10 @@
         :src="'/publicAssets/hoverImges/' + activeHover + '.jpg'"
       />
     </div>
-    <p class="w-full max-w-[400px] -mt-[3px] text-small">
-      {{ infos.images.find((x) => x.title === activeHover).text }}
-    </p>
+    <p
+      class="w-full max-w-[400px] -mt-[3px] text-small"
+      v-html="infos.images.find((x) => x.title === activeHover).text"
+    />
   </div>
 </template>
 
