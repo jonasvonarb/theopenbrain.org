@@ -27,14 +27,6 @@
             </ol>
           </div>
         </div>
-        <!-- <div
-          :class="infoIsOpen ? 'opacity-100' : 'opacity-0'"
-          class="absolute bottom-0 w-container h-24 bg-gradient-to-t from-bgDa duration-300"
-        />
-        <div
-          :class="infoIsOpen ? 'opacity-100' : 'opacity-0'"
-          class="absolute top-36 w-container h-20 bg-gradient-to-b from-bgDa duration-300"
-        /> -->
       </div>
       <div v-if="infoIsOpen" class="p-0 pt-10 pb-12 overflow-visible w-asset">
         <img

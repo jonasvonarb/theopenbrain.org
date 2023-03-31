@@ -8,8 +8,25 @@ import DownArrow from "@/icons/custom/DownArrow.vue";
 
 const { x } = useMouse();
 
-const store = useGeneral();
 const animation = ref();
+const newFrame = ref(0);
+
+onMounted(() => {
+  let svgContainer = document.getElementById("introAnimation");
+  animation.value = lottie.loadAnimation({
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid meet",
+    },
+    id: "introAnimation",
+    speed: 3,
+    wrapper: svgContainer,
+    animType: "svg",
+    loop: false,
+    autoplay: false,
+    path: "/publicAssets/animations/introAnimation.json",
+  });
+  animation.value.setSubframe(true);
+});
 
 watchDebounced(
   x,
@@ -17,17 +34,14 @@ watchDebounced(
     if (!animation.value) return;
     const map = (value, x1, y1, x2, y2) =>
       ((value - x1) * (y2 - x2)) / (y1 - x1) + x2;
-
-    // let newFrame = map(x, 0, window.innerWidth, 0, 4).toFixed(6);
-    let newFrame = map(
+    newFrame.value = map(
       x,
       0,
       window.innerWidth,
       0,
-      animation.value.totalFrames
-    ).toFixed(6);
-    animation.value.goToAndStop(newFrame, true);
-    // vid.value.currentTime = newFrame;
+      animation.value.animationData.op
+    ).toFixed(3);
+    animation.value.goToAndStop(newFrame.value, true);
   },
   { debounce: 0 }
 );
@@ -42,13 +56,12 @@ const scrollToPos = () => {
     class="bg-img bg-bgLi absolute right-0 h-screen w-screen z-[50] duration-300 flex justify-start items-start"
   >
     <div
-      class="sticky top-6 left-20 text-white text-biggest flex items-center gap-4"
+      class="sticky top-6 left-20 text-white text-biggest flex items-center gap-4 z-50"
     >
-      <img
-        src="/favicon_io/android-chrome-512x512.png"
-        class="h-20 invert"
-      />The Open Brain
+      <img src="/favicon_io/android-chrome-512x512.png" class="h-20 invert" />
+      The Open Brain
     </div>
+    <div class="absolute right-0 h-screen w-screen" id="introAnimation" />
     <div
       @click="scrollToPos()"
       class="absolute bottom-8 left-1/2 -ml-5 flex justify-center items-center text-center"
@@ -69,9 +82,10 @@ const scrollToPos = () => {
 }
 
 .bg-img {
-  background-image: url("/publicAssets/images/background.jpg");
-  background-repeat: no-repeat;
+  background: black;
+  /* background-image: url("/publicAssets/images/background.jpg"); */
+  /* background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: cover; */
 }
 </style>

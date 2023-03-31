@@ -54,7 +54,7 @@ const openInfo = () => {
           />
           <div
             class="absolute duration-300 top-0 left-0 p-32 pl-80 py-72 flex justify-around items-center w-full h-full pointer-events-none"
-            :class="infoIsOpen ? 'opacity-10 blur-sm' : 'opacity-100'"
+            :class="infoIsOpen ? 'opacity-20 blur-sm' : 'opacity-100'"
           >
             <div
               class="absolute top-0 left-0 p-32 pl-44 py-72 flex justify-around items-center w-full h-full pointer-events-none"

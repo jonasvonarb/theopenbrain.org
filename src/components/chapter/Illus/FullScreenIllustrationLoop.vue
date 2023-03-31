@@ -123,7 +123,7 @@ const speed = ref(1);
 const frames = {
   pathwayForThePupillaryLightReflex: [0, 48, 96, 144, 192, 264],
   phototransduction: [0, 48, 96, 144, 192, 240, 336, 432, 528],
-  theVisualCycle: [0, 72, 120, 120, 240, 312, 432, 480],
+  theVisualCycle: [0, 72, 120, 240, 312, 432, 480],
 };
 
 const setState = (stateIncoming) => {

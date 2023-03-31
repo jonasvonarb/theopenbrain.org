@@ -192,7 +192,9 @@ const openInfo = () => {
       <SourceElement
         :source="thisAnimation?.source"
         class="duration-300"
-        :class="infoIsOpen && thisAnimation.infoText && 'opacity-10 blur-sm'"
+        :class="
+          infoIsOpen && thisAnimation.infoText && 'opacity-[0.15] blur-sm'
+        "
       />
       <div
         v-if="
@@ -201,7 +203,9 @@ const openInfo = () => {
           !thisAnimation?.split
         "
         :id="'container' + paragraph.animationId"
-        :class="infoIsOpen && thisAnimation.infoText && 'opacity-10 blur-sm'"
+        :class="
+          infoIsOpen && thisAnimation.infoText && 'opacity-[0.15] blur-sm'
+        "
         class="absolute right-0 w-2/3 h-full flex flex-col justify-end items-center duration-300"
       ></div>
       <div
@@ -214,7 +218,9 @@ const openInfo = () => {
         <FullScreenIllustrationLoop
           v-if="!thisAnimation?.multiple && thisAnimation?.loop"
           class="duration-300"
-          :class="infoIsOpen && thisAnimation.infoText && 'opacity-10 blur-sm'"
+          :class="
+            infoIsOpen && thisAnimation.infoText && 'opacity-[0.15] blur-sm'
+          "
           :animation="thisAnimation"
         />
         <FullScreenIllustrationSplit
