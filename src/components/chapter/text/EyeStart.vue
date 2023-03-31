@@ -15,7 +15,9 @@ onMounted(() => {
   let svgContainer = document.getElementById("introAnimation");
   animation.value = lottie.loadAnimation({
     rendererSettings: {
-      preserveAspectRatio: "xMidYMid meet",
+      scaleMode: "noScale",
+      progressiveLoad: true,
+      preserveAspectRatio: "xMidYMid slice",
     },
     id: "introAnimation",
     speed: 3,
