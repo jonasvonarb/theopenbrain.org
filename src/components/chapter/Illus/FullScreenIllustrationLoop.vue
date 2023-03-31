@@ -158,7 +158,7 @@ const setState = (stateIncoming) => {
       ? "rpe"
       : stateIncoming === "IRBP"
       ? "irbp"
-      : stateIncoming === "NA+"
+      : stateIncoming === "Na+"
       ? "na"
       : stateIncoming;
 
