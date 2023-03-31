@@ -85,9 +85,9 @@ const scrollToPos = () => {
 
 .bg-img {
   background: black;
-  /* background-image: url("/publicAssets/images/background.jpg"); */
-  /* background-repeat: no-repeat;
+  background-image: url("/publicAssets/images/bg_intro.png");
+  background-repeat: no-repeat;
   background-position: center;
-  background-size: cover; */
+  background-size: cover;
 }
 </style>
