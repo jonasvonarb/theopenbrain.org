@@ -1,0 +1,326 @@
+[
+  {
+    "q": "When viewing a nearby image, the two eyes  _____, and the _____ becomes _____, in order to focus the image on the retina of both eyes.",
+    "a": {
+      "a": "Diverge, cornea, thinner",
+      "b": "Converge, lens, thicker?",
+      "c": "Converge, lens, thicker",
+      "d": "Diverge, iris, thinner",
+      "e": "Converge, lens, thinner"
+    },
+    "c": "c",
+    "s": 1
+  },
+  {
+    "q": "Upon entering your eye, a photon of light passes through things in which order before reaching the retina:",
+    "a": {
+      "a": "Cornea, aqueous humour, pupil, lens, vitreous humour",
+      "b": "Pupil, cornea, aqueous humour, lens, vitreous humour",
+      "c": "Cornea, vitreous humour, pupil, lens, aqueous humour",
+      "d": "Lens, pupil, vitreous humour, cornea, aqueous humour",
+      "e": "Cornea, lens, aqueous humour, pupil, vitreous humour"
+    },
+    "c": "a",
+    "s": 1
+  },
+  {
+    "q": "The PLR will constrict both pupils if bright light is shone into a single eye.",
+    "a": {
+      "a": "true",
+      "b": "false"
+    },
+    "c": "a",
+    "s": 1
+  },
+  {
+    "q": "In myopia, far-away things appear blurry because they are focused behind the retina. (F – in myopia, far-away images are focused in front of the retina).",
+    "a": {
+      "a": "true",
+      "b": "false"
+    },
+    "c": "b",
+    "s": 1
+  },
+  {
+    "q": "The retina’s blind spot results from",
+    "a": {
+      "a": "Damage to the retina during development",
+      "b": "A patch of ganglion cells that do not receive photoreceptor input",
+      "c": "The optic nerve, which leads to a patch of retina without photoreceptors",
+      "d": "The fact that the fovea contains exclusively cones",
+      "e": "An unknown cause"
+    },
+    "c": "c",
+    "s": 2
+  },
+  {
+    "q": "Which of these best describes the concept of a retinal mosaic",
+    "a": {
+      "a": "The finding that a single cell type tiles the retina such that the visual scene is sampled at all points by a given cell type",
+      "b": "The connectivity pattern of photoreceptors making synapses with bipolar cells and ganglion cells making synapses with ganglion cells",
+      "c": "The fact that retinal neurons are connected with both electrical and chemical synapses",
+      "d": "The computation of center-surround receptive fields",
+      "e": "The finding that the retina becomes thinner in the foveal region"
+    },
+    "c": "a",
+    "s": 2
+  },
+  {
+    "q": "Which of these statements is false",
+    "a": {
+      "a": "Photoreceptor provide input to horizontal cells and bipolar cells",
+      "b": "Horizontal cells directly modulate responses in photoreceptors and bipolar cells",
+      "c": "Bipolar cells provide input to amacrine and ganglion cells",
+      "d": "Amacrine cells only provide input to other amacrine cells",
+      "e": "Ganglion cells are the only retinal neurons to send axons out of the eye to the brain"
+    },
+    "c": "d",
+    "s": 2
+  },
+
+  {
+    "q": "Which of the following statements is false",
+    "a": {
+      "a": "Photoreceptors are neurons specialized for detecting photons due to their opsin-rich outer segments",
+      "b": "Rods are adapted for detecting light in dim environments whereas cones are important for detecting light in brighter environments",
+      "c": "Photoreceptors have a hyperpolarized membrane potential in the dark",
+      "d": "Photoreceptors have very high energy requirements and have a mitochondria-rich inner segment",
+      "e": "Photoreceptors release glutamate from the axon terminal at ribbon synapses"
+    },
+    "c": "c",
+    "s": 3
+  },
+
+  {
+    "q": "During the phototransduction cascade, a photon of light activates _______, which in turn activates ________, which leads to activation of _______, which ______ into ______, and leads to the closure of _______.",
+    "a": {
+      "a": "Rhodopsin, transducin, phosphodiesterase, cGMP, GMP, cGMP-gated channels",
+      "b": "Rhodopsin, phosphodiesterase, transducin, GMP, cGMP, GMP-gated channels",
+      "c": "Transducin, phosphodiesterase, rhodopsin, cGMP, GMP, cGMP-gated channels",
+      "d": "Phosphodiesterase, rhodopsin, transducin, GMP, cGMP, GTP-gated channels",
+      "e": "Phosphodiesterase, transducin, rhodopsin, cGMP, GMP, GMP-gated channels"
+    },
+    "c": "a",
+    "s": 3
+  },
+
+  {
+    "q": "Which statement properly describes the visual cycle – the changes that retinal goes through from the time it absorbs a photon until it is ready to absorb another photon of light?",
+    "a": {
+      "a": "11-cis retinal 11-cis retinol  all-trans retinol  all-trans retinal  11-cis retinal",
+      "b": "11-cis retinal all-trans retinal  all-trans retinol  11-cis retinol  11-cis retinal",
+      "c": "all-trans retinal  all-trans retinol  11-cis retinol  11-cis retinal  all-trans retinal",
+      "d": "all-trans retinal  11-cis retinal  11-cis retinol  all-trans retinol  all-trans retinal",
+      "e": "11-cis retinol all-trans retinol  all-trans retinal  11-cis retinal  11-cis retinol"
+    },
+    "c": "b",
+    "s": 3
+  },
+
+  {
+    "q": "What is a key role of horizontal cells?",
+    "a": {
+      "a": "They directly convert photons of light into electrical signals",
+      "b": "They serve the basis of color vision",
+      "c": "They provide surround inhibition to photoreceptors",
+      "d": "They are critical for the computation of direction selectivity",
+      "e": "They have no known roles in retinal computations"
+    },
+    "c": "c",
+    "s": 4
+  },
+
+  {
+    "q": "Bipolar cells come in both ON and OFF types. Which of the following is true?",
+    "a": {
+      "a": "ON bipolar cells express mGluR6 receptors and depolarize when photoreceptors increase release of glutamate",
+      "b": "OFF bipolar cells express ionotropic glutamate receptors and hyperpolarize when photoreceptors increase release of glutamate",
+      "c": "ON bipolar cells express ionotropic glutamate receptors and hyperpolarize when photoreceptors increase release of glutamate",
+      "d": "ON bipolar cells express mGluR6 receptors and hyperpolarize when photoreceptors increase glutamate release",
+      "e": "OFF bipolar cells express mGluR6 receptors and depolarize when photoreceptors increase glutamate release"
+    },
+    "c": "d",
+    "s": 5
+  },
+
+  {
+    "q": "Bipolar cells come in both ON and OFF types. Which of the following is true?",
+    "a": {
+      "a": "ON bipolar cells have longer axons that terminate closer to the ganglion cell layer",
+      "b": "OFF bipolar cells have longer axons that terminate closer to the ganglion cell layer",
+      "c": "OFF bipolar cells have shorted axons that terminate close to the inner nuclear layer",
+      "d": "a and b are both correct",
+      "e": "a and c are both correct"
+    },
+    "c": "e",
+    "s": 5
+  },
+
+  {
+    "q": "The graph below plots light intensity versus membrane potential for a bipolar cell. What kind of bipolar cell is this?",
+    "img": "graph1",
+    "a": {
+      "a": "ON bipolar cell",
+      "b": "OFF bipolar cell",
+      "c": "Neither. This is a horizontal cell."
+    },
+    "c": "b",
+    "s": 5
+  },
+
+  {
+    "q": "Why is the response in the following graph happening?",
+    "img": "graph1",
+    "a": {
+      "a": "Because light activates photoreceptors, which increase its glutamate release onto the ON bipolar cell, which inhibits metabotropic glutamate   receptors, and hyperpolarizes the cell",
+      "b": "Because light hyperpolarizes the photoreceptor, which reduces its glutamate release onto the OFF bipolar cell, which activates fewer kainate  receptors, and leads to hyperpolarization",
+      "c": "Because horizontal cells are activated by photons and inhibit bipolar cells",
+      "d": "Because light intensity is dropping",
+      "e": "Because amacrine cells provide lateral feedback as light levels increase"
+    },
+    "c": "b",
+    "s": 5
+  },
+
+  {
+    "q": "Which of the following statements about center-surround receptive field organization is incorrect?",
+    "a": {
+      "a": "Center-surround receptive fields were first described in retinal ganglion cells by Steven Kuffler and Horace Barlow.",
+      "b": "Center-surround receptive fields arise from lateral inhibition, from horizontal cells and amacrine cells.",
+      "c": "Center-surround receptive fields are the basis of direction selectivity.",
+      "d": "Center-surround receptive fields are present only in photoreceptors.",
+      "e": "Center-surround receptive fields help retinal ganglion cells encode local changes in luminance contrast."
+    },
+    "c": "d",
+    "s": 6
+  },
+
+  {
+    "q": "A critical part of the direction selective retinal circuit is:",
+    "a": {
+      "a": "Asymmetric connectivity between horizontal cells and bipolar cells",
+      "b": "Inhibition from starburst amacrine cells on bipolar cells",
+      "c": "Null direction inhibition from starburst amacrine cells to ganglion cells",
+      "d": "Null direction excitation from starburst amacrine cells to ganglion cells",
+      "e": "Electrical coupling between directionally selective ganglion cells"
+    },
+    "c": "c",
+    "s": 6
+  },
+
+  {
+    "q": "Which of the following statements regarding rod and cones pathways is true?",
+    "a": {
+      "a": "Rod and cone signals take the same pathway through the retina in order to leave the eye",
+      "b": "Rods synapse with a specialized ON bipolar cells that allows rod signals to pass into the cone signalling pathway",
+      "c": "Cones synapse with a specialized OFF bipolar cell that allows cone signals to pass into the rod signalling pathway",
+      "d": "Cones signals pass from bipolar cells to ganglion cells, whereas rods directly synapse with ganglion cells",
+      "e": "In many people, rod photoreceptors are non-functional"
+    },
+    "c": "b",
+    "s": 6
+  },
+
+  {
+    "q": "The following diagram shows a receptive field of two retinal ganglion cell receptive fields (A & B) and their spiking responses when a dark spot is placed in the indicated positions. <br/> <br/> Which neuron is an OFF ganglion cell?",
+    "img": "diagram1",
+    "a": {
+      "a": "A",
+      "b": "B"
+    },
+    "c": "a",
+    "s": 6
+  },
+
+  {
+    "q": "The following diagram shows a receptive field of two retinal ganglion cell receptive fields (A & B) and their spiking responses when a dark spot is placed in the indicated positions. <br/> <br/> When the spot is placed in the surround of neuron B, why does it generate responses?",
+    "img": "diagram1",
+    "a": {
+      "a": "Because this neuron has a center that is as big as its surround",
+      "b": "Because the surround in this neuron is excitatory but its center is inhibitory",
+      "c": "Because this neuron is an OFF ganglion cell and a dark spot activates its surround.",
+      "d": "Because this neuron is an ON ganglion cell and a dark spot inhibits its surround, which in turn excites the cell",
+      "e": "Because it is sensitive to red but not to green"
+    },
+    "c": "d",
+    "s": 6
+  },
+
+  {
+    "q": "What kind of stimulus would drive a center-surround receptive field ganglion cell the best?",
+    "a": {
+      "a": "A flash that homogeneously activates the center and surround",
+      "b": "An edge that activates the entire center, but only a small part of the surround",
+      "c": "An annulus that drives the surround, but not the center",
+      "d": "A bar pattern that half-darkens and half-illuminates center and surround",
+      "e": "No stimulus at all"
+    },
+    "c": "b",
+    "s": 6
+  },
+
+  {
+    "q": "In a given environment, retinal ganglion cells can encode changes in luminance over a range of roughly ____ orders of magnitude, by changing their firing rate. However, via a process called light adaptation, the retina can function across environments with differences in mean luminance that span approximately , ____ orders of magnitude.",
+    "a": {
+      "a": "2, 10",
+      "b": "4, 5",
+      "c": "10, 2",
+      "d": "5, 4",
+      "e": "3, 6"
+    },
+    "c": "a",
+    "s": 7
+  },
+
+  {
+    "q": "Which of the following statements regarding saccades are true",
+    "a": {
+      "a": "Saccades are used to move objects of interest into our peripheral visual field",
+      "b": "Saccades ensure that the image projected onto our retina is constantly updated",
+      "c": "Our visual perception is partly suppressed during saccades",
+      "d": "Saccades improve visual acuity",
+      "e": "There are no known roles for saccades"
+    },
+    "c": "c",
+    "s": 7
+  },
+
+  {
+    "q": "Which of the following statements regarding retinal development are true",
+    "a": {
+      "a": "Retinal neurons are generated by stem cells in the brain and then migrate into the developing eye",
+      "b": "The different retinal neuron classes are generated simultaneously",
+      "c": "Bipolar cells are born first, then amacrine cells, ganglion cells, and photoreceptors",
+      "d": "All the above",
+      "e": "None of the above"
+    },
+    "c": "e",
+    "s": 8
+  },
+
+  {
+    "q": "In the developing retina, waves of activaty are",
+    "a": {
+      "a": "Driven exclusively by visual stimuli",
+      "b": "Used to form retinotopic maps in higher visual areas",
+      "c": "Result in correlated firing between anatomically distant ganglion cells",
+      "d": "Occur in a genetically preprogrammed pattern",
+      "e": "Only arise in immature photoreceptors"
+    },
+    "c": "b",
+    "s": 8
+  },
+
+  {
+    "q": "A patient presents to the hospital with impaired night and peripheral vision. Which of these is likely the cause?",
+    "a": {
+      "a": "Macular degeneration",
+      "b": "Diabetic retinopathy",
+      "c": "Damage to visual cortex",
+      "d": "Retinitis pigmentosa",
+      "e": "Cataracts"
+    },
+    "c": "d",
+    "s": 9
+  }
+]
