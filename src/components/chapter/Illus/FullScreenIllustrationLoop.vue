@@ -76,18 +76,30 @@
             <li
               class="pb-10 cursor-pointer flex items-center gap-5"
               :class="
-                toCamelCase(state) === activeState
+                toCamelCase(
+                  state
+                    ?.replaceAll('<span class=\'superscirpt\'>', '')
+                    ?.replaceAll('</span>', '')
+                ) === activeState
                   ? 'underline  text-primaryMed hover:text-primaryMed'
                   : ' hover:text-primaryMed'
               "
               v-for="state of animation.statesHighlight"
               :key="state"
-              @click="setState(state)"
+              @click="
+                setState(
+                  state
+                    ?.replaceAll('<span class=\'superscirpt\'>', '')
+                    ?.replaceAll('</span>', '')
+                )
+              "
             >
               <img
                 class="invert"
                 :src="`/publicAssets/icons/fullScreenAnimations/${toCamelCase(
                   state
+                    ?.replaceAll('<span class=\'superscirpt\'>', '')
+                    ?.replaceAll('</span>', '')
                 )}.svg`"
               />
               <span v-html="state" />
@@ -129,6 +141,8 @@ const frames = {
 const setState = (stateIncoming) => {
   let state = toCamelCase(stateIncoming);
 
+  console.log(state)
+
   if (activeState.value === state) {
     activeState.value = 0;
   } else {
@@ -167,19 +181,6 @@ const setState = (stateIncoming) => {
   ];
   for (let el of els) {
     el.classList.add("highlightIllu");
-  }
-};
-
-const playPause = () => {
-  isPlay.value = !isPlay.value;
-
-  if (isPlay.value === true) {
-    animationLottie.playSegments(
-      [frame.value, animationLottie.animationData.op],
-      true
-    );
-  } else {
-    nextStep(true);
   }
 };
 

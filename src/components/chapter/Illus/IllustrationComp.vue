@@ -59,11 +59,11 @@
               ? animation.states
               : Object.keys(animation.states)"
             :key="state"
-            class="hover:text-primaryMed hover:bg-white hover:border-primaryMed select-none text-small cursor-pointer pb-2 mb-4 border-black border p-4 flex flex-col justify-center items-center stroke-white fill-white hover:fill-primaryMed hover:stroke-primaryMed"
+            class="hover:text-primaryMed hover:bg-white hover:border-primaryMed select-none text-small cursor-pointer pb-2 mb-4 border-black border p-4 flex flex-col justify-center items-center stroke-white fill-white "
             :class="
               activeState[index]
-                ? 'font-semibold bg-primaryMed border-primaryMed text-white'
-                : ''
+                ? 'font-semibold bg-primaryMed border-primaryMed text-white hover:fill-primaryMed hover:stroke-primaryMed'
+                : 'stroke-black fill-black'
             "
             @click="setBlockState(index, activeState.state)"
           >

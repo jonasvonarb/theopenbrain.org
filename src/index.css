@@ -29,8 +29,8 @@
 }
 
 .text-baseMono {
-  font-size: 1.7rem;
-  line-height: 2.8rem;
+  font-size: 1.75rem;
+  line-height: 2.5rem;
 }
 
 .text-base {
@@ -88,6 +88,7 @@ html:focus-within {
   position: relative;
   top: -0.5em;
   font-size: 80%;
+  pointer-events: none;
 }
 
 img {

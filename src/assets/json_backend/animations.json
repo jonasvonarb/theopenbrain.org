@@ -97,7 +97,7 @@
       "title": "Phototransduction",
       "fullscreen": true,
       "loop": true,
-      "infoText": "In the dark, the photoreceptor outer segment has a high concentration of the small molecule cGMP (cyclic guanosine monophosphate). These small molecules bind to and activate cGMP-gated cationic channels, resulting in Na<span class='superscirpt'>+</span> and Ca2+ inflow in the outer segment, which balance an ongoing efflux of K+ ions in the inner segment. Together, these ion flows result in a relatively depolarized resting membrane potential (Vm) of ~-30mV in darkness. Rhodopsin is a G-protein coupled receptor. It becomes enzymatically active following photon absorption and in turn activates the G-protein transducin. Transducin is composed of α, β, and γ subunits, and upon activation, releases its βγ subunit, which in turn activates a phosphodiesterase (PDE) that then hydrolyzes cGMP molecules. The resulting decrease in intracellular [cGMP] in the outer segment leads to the closure of cGMP-gated cation channels<sup data-sup='28'>28</sup>. Since the efflux of K+ ions continues in the inner segment, closing cGMP-gated channels in the outer segment results in photoreceptor membrane hyperpolarization, leading to a decrease in glutamate release. This light-evoked hyperpolarization is called a photovoltage, and its amplitude and duration depend on the luminance, size and duration of the light flash. Finally, an activated rhodopsin molecule needs to be de-activated, otherwise the phototransduction cascade would continue endlessly. Phototransduction terminates when an activated rhodopsin is phosphorylated by a membrane bound enzyme called rhodopsin kinase. The addition of a phosphate to rhodopsin leads to its binding by a protein called arrestin, which ejects the rhodopsin kinase, and quenches rhodopsin’s ability to activate transducin by breaking the bond between all-trans retinal and opsin<sup data-sup='28'>28,</sup><sup data-sup='29'>29,</sup><sup data-sup='42'>42</sup>.",
+      "infoText": "In the dark, the photoreceptor outer segment has a high concentration of the small molecule cGMP (cyclic guanosine monophosphate). These small molecules bind to and activate cGMP-gated cationic channels, resulting in Na<span class='superscirpt'><span class='superscirpt'>+</span></span> and Ca2<span class='superscirpt'>+</span> inflow in the outer segment, which balance an ongoing efflux of K<span class='superscirpt'>+</span> ions in the inner segment. Together, these ion flows result in a relatively depolarized resting membrane potential (Vm) of ~-30mV in darkness. Rhodopsin is a G-protein coupled receptor. It becomes enzymatically active following photon absorption and in turn activates the G-protein transducin. Transducin is composed of α, β, and γ subunits, and upon activation, releases its βγ subunit, which in turn activates a phosphodiesterase (PDE) that then hydrolyzes cGMP molecules. The resulting decrease in intracellular [cGMP] in the outer segment leads to the closure of cGMP-gated cation channels<sup data-sup='28'>28</sup>. Since the efflux of K<span class='superscirpt'>+</span> ions continues in the inner segment, closing cGMP-gated channels in the outer segment results in photoreceptor membrane hyperpolarization, leading to a decrease in glutamate release. This light-evoked hyperpolarization is called a photovoltage, and its amplitude and duration depend on the luminance, size and duration of the light flash. Finally, an activated rhodopsin molecule needs to be de-activated, otherwise the phototransduction cascade would continue endlessly. Phototransduction terminates when an activated rhodopsin is phosphorylated by a membrane bound enzyme called rhodopsin kinase. The addition of a phosphate to rhodopsin leads to its binding by a protein called arrestin, which ejects the rhodopsin kinase, and quenches rhodopsin’s ability to activate transducin by breaking the bond between all-trans retinal and opsin<sup data-sup='28'>28,</sup><sup data-sup='29'>29,</sup><sup data-sup='42'>42</sup>.",
       "states": [
         "Rod is in the dark. Rhodopsin is inactive",
         "A flash of light, and a photon activates rhodopsin",
@@ -116,7 +116,7 @@
         "Phosphodiesterase (PDE)",
         "cGMP",
         "GMP",
-        "Na+",
+        "Na<span class='superscirpt'>+</span>",
         "Ion channel"
       ]
     },
@@ -293,7 +293,7 @@
         "Glutamate",
         "G Protein",
         "α subunit",
-        "Na+",
+        "Na<span class='superscirpt'>+</span>",
         "Glutamate receptor"
       ]
     },
