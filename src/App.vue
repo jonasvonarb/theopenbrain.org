@@ -56,7 +56,7 @@ onBeforeUnmount(() => {
     <div class="bg-img" />
     <RouterView
       v-slot="{ Component }"
-      class="z-0 duration-300"
+      class="z-0 duration-300 scrollbar"
       :class="
         store.activeAbout || store.activeMenu || !store.hasBeenVisited
           ? ' grayscale-0 !pointer-events-none'
