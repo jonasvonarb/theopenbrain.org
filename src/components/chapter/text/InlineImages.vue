@@ -6,6 +6,7 @@
   >
     <figure class="overflow-hidden flex flex-col h-full w-full">
       <img
+        loading="lazy"
         class="imageH object-contain"
         :src="'/publicAssets/images/' + paragraph.img + '.png'"
       />

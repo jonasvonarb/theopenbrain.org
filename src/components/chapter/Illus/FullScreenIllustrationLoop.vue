@@ -95,6 +95,7 @@
               "
             >
               <img
+                loading="lazy"
                 class="invert"
                 :src="`/publicAssets/icons/fullScreenAnimations/${toCamelCase(
                   state
@@ -141,7 +142,7 @@ const frames = {
 const setState = (stateIncoming) => {
   let state = toCamelCase(stateIncoming);
 
-  console.log(state)
+  console.log(state);
 
   if (activeState.value === state) {
     activeState.value = 0;

@@ -6,6 +6,7 @@
   >
     <div class="w-full">
       <img
+        loading="lazy"
         class="w-full"
         :src="'/publicAssets/hoverImges/' + activeHover + '.jpg'"
       />

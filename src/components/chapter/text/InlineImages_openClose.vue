@@ -7,6 +7,7 @@
   >
     <figure class="overflow-hidden flex flex-col h-full w-full">
       <img
+        loading="lazy"
         @click="!inlineImageActive ? openImage() : ''"
         class=""
         :class="

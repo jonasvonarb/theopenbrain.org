@@ -13,14 +13,22 @@
         class="text-small flex pb-4 flex-row items-center justify-start opacity-100 text-center"
       >
         <img
+          loading="lazy"
           class="h-8 w-20 mr-2 my-0.5"
           :src="
-            '/publicAssets/icons/' + iconPraefix + '/' + toSlug(icon) + '.svg'
+            '/publicAssets/icons/' +
+            iconPraefix +
+            '/' +
+            toSlug(icon).replace('span-classsuperscirpt-span', '') +
+            '.svg'
           "
         />
-        <p class="h-6 whitespace-nowrap">
-          {{ icon !== "special" ? icon : "Spike train" }}
-        </p>
+        <p
+          class="h-6 whitespace-nowrap"
+          v-if="icon !== 'special'"
+          v-html="icon"
+        />
+        <p class="h-6 whitespace-nowrap" v-else>Spike train</p>
       </div>
     </div>
   </div>

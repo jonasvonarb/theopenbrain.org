@@ -21,6 +21,7 @@
         </video>
         <div class="flip-card-back rounded-full overflow-hidden">
           <img
+            loading="lazy"
             :width="widthVideo"
             :height="heightVideo"
             class="h-[100%] w-[100%]"

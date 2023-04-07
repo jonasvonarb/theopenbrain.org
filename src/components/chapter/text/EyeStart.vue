@@ -10,6 +10,7 @@ const { x } = useMouse();
 
 const animation = ref();
 const newFrame = ref(0);
+const isActive = ref(true);
 
 onMounted(() => {
   let svgContainer = document.getElementById("introAnimation");
@@ -33,7 +34,8 @@ onMounted(() => {
 watchDebounced(
   x,
   (x) => {
-    if (!animation.value) return;
+    isActive.value = window.scrollY <= window.innerHeight * 2;
+    if (!animation.value || !isActive.value) return;
     const map = (value, x1, y1, x2, y2) =>
       ((value - x1) * (y2 - x2)) / (y1 - x1) + x2;
     newFrame.value = map(
@@ -60,7 +62,11 @@ const scrollToPos = () => {
     <div
       class="sticky top-6 left-20 text-white text-biggest flex items-center gap-4 z-50"
     >
-      <img src="/favicon_io/android-chrome-512x512.png" class="h-20 invert" />
+      <img
+        loading="lazy"
+        src="/favicon_io/android-chrome-512x512.png"
+        class="h-20 invert"
+      />
       The Open Brain
     </div>
     <div class="absolute right-0 h-screen w-screen" id="introAnimation" />

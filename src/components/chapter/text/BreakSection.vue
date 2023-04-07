@@ -68,6 +68,7 @@ const openInfo = () => {
               class="absolute top-0 left-0 p-32 pl-44 py-72 flex justify-around items-center w-full h-full bg-bgLi"
             >
               <img
+                loading="lazy"
                 class="w-full h-full object-contain"
                 src="/publicAssets/images/eyeDots.svg"
               />

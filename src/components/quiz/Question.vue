@@ -7,6 +7,7 @@
         <label class="pb-12 w-1/2 tex-left font-bold" v-html="question.q" />
         <div v-if="question.img">
           <img
+            loading="lazy"
             class="w-full max-h-[400px] max-w-[700px] pt-12 object-contain object-left"
             :src="`/publicAssets/images/quiz/${question.img}.png`"
           />

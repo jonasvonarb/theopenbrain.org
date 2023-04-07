@@ -21,11 +21,13 @@ const currentVideo = jsonVideos.videos[props.slug];
         <div class="h-80' bg-black absolute w-full opacity-20"></div>
         <div class="h-80 bg-primaryMed absolute w-full opacity-70"></div>
         <img
+          loading="lazy"
           v-if="slug === 'placeholder'"
           class="bg-black h-80 mix-blend-screen grayscale"
           src="/publicAssets/images/placeholders/monaLisa.webp"
         />
         <img
+          loading="lazy"
           v-else
           class="bg-black h-80 mix-blend-screen grayscale"
           :src="`/publicAssets/images/breakVideos/${slug}.png`"

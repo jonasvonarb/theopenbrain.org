@@ -30,6 +30,7 @@
       </div>
       <div v-if="infoIsOpen" class="p-0 pt-10 pb-12 overflow-visible w-asset">
         <img
+          loading="lazy"
           class="h-full pl-20 w-2/3 object-contain object-left-top"
           v-if="animation.title === 'Blind spot'"
           :src="`/publicAssets/images/${toSlug(animation.title)}.png`"
@@ -43,11 +44,13 @@
             <div class="h-80 bg-black absolute w-full opacity-20"></div>
             <div class="h-80 bg-primaryMed absolute w-full opacity-70"></div>
             <img
+              loading="lazy"
               v-if="video.slug === 'placeholder'"
               class="bg-black h-80 mix-blend-screen grayscale"
               src="/publicAssets/images/placeholders/monaLisa.webp"
             />
             <img
+              loading="lazy"
               v-else
               class="bg-black h-80 mix-blend-screen grayscale"
               :src="`/publicAssets/images/breakVideos/${video.slug}.png`"
