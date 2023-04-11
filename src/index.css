@@ -453,7 +453,6 @@ sup:hover {
   position: fixed;
   left: calc(100vw - min(50vw, calc(780px + 11rem)) - .75rem);
   top: 50vh;
-  z-index: 10;
 }
 
 .icon {
