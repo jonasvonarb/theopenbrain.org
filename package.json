@@ -1,6 +1,6 @@
 {
   "name": "theopenbrain.org",
-  "version": "0.1.30-14",
+  "version": "0.1.30-15",
   "scripts": {
     "postversion": "npm run deploy",
     "clean": "npm cache clean --force && rm -rf node_modules package-lock.json && npm i --legacy-peer-deps",
