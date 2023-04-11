@@ -362,12 +362,20 @@
         },
         {
           "id": "992e5fae-e527-486b-b8d2-f9b89b3950c9",
+          "animation": {
+            "name": "OnOff",
+            "id": "animationOnOff"
+          },
           "text": "Bipolar cells encode luminance, not patterns. The synaptic ribbons employed at photoreceptor-to-bipolar cell synapses lead to a relatively linear relationship between stimulus intensity and bipolar cell response<sup data-sup='51'>51</sup>. If we imagine that each bipolar cell (either ON or OFF) sums the input from 10 photoreceptors, then a light pattern that darkens 5 of these photoreceptors from a baseline level and illuminates the other 5, will not lead to a change in bipolar cell membrane potential. Linear responses at this level of the retinal circuit mean that bipolar cells signal the mean luminance over all their connected photoreceptors, rather than encoding the spatial organization of the incoming stimulus."
         },
         {
           "id": "f732d130-c766-4667-bc6e-7ba8be60612e",
           "img": "bipolarCellTerminal",
           "imgClosed": true,
+          "animation": {
+            "name": "OnOff",
+            "id": "animationOnOff"
+          },
           "imgCap": "Example bipolar cell responses to a light stimulus that is being presented at a fixed frequency. Some bipolar cells respond in a more transient manner, while others are more sustained. Adapted from Baden et al., Nature Reviews Neuroscience, 2014.",
           "text": "Bipolar cells temporally filter the visual signal. Aside from splitting the visual world into ON and OFF components, bipolar cells also begin sorting temporal aspects of the incoming visual scene<sup data-sup='26'>26</sup>. For instance, some bipolar cell types are better than others at encoding fast changes in luminance over there receptive fields, whereas others are better able to encode when the mean luminance over their receptive field is stable for a long period of time. These different ‘interpretations’ of the incoming stimulus appear to be partly cell-intrinsic and are subsequently imposed upon downstream amacrine and ganglion cells to help establish some of the feature-detecting computations outlined in Section 6."
         },

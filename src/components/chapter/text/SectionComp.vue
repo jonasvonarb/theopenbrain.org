@@ -6,6 +6,7 @@
       v-if="section['paragraphs'][0]?.animation?.transition"
       class="marker-start"
     />
+
     <div
       v-if="section['paragraphs'][0]?.animation?.transition"
       :id="
@@ -49,7 +50,15 @@
       "
     >
       <template v-for="paragraph in section['paragraphs']" :key="paragraph.id">
-        <StartEndIcon :paragraph="paragraph" art="start" />
+        <StartEndIcon
+          v-if="
+            paragraph?.id !== '95febd38-9ab4-4797-86f9-26a864e122ed' &&
+            paragraph?.id !== '992e5fae-e527-486b-b8d2-f9b89b3950c9' &&
+            paragraph?.id !== 'f732d130-c766-4667-bc6e-7ba8be60612e'
+          "
+          :paragraph="paragraph"
+          art="start"
+        />
         <span
           :id="
             paragraph?.animation &&
@@ -102,7 +111,15 @@
           v-else-if="paragraph.type === 'breakSection'"
           :content="paragraph"
         />
-        <StartEndIcon :paragraph="paragraph" art="end" />
+        <StartEndIcon
+          v-if="
+            paragraph?.id !== '58be77f5-7f60-41a9-99a9-7c616c447da8' &&
+            paragraph?.id !== '95febd38-9ab4-4797-86f9-26a864e122ed' &&
+            paragraph?.id !== '992e5fae-e527-486b-b8d2-f9b89b3950c9'
+          "
+          :paragraph="paragraph"
+          art="end"
+        />
       </template>
     </span>
     <StartEndIcon :paragraph="section" art="end" />

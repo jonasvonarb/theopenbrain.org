@@ -121,9 +121,9 @@ section p.breakSectionTitle {
   padding-top: 0px;
 }
 
-*::-webkit-scrollbar {
+/* *::-webkit-scrollbar {
   display: none;
-}
+} */
 .no-select {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -419,28 +419,41 @@ sup:hover {
 
 .marker-start,
 .marker-end {
-  width: 1rem;
-  height: 1rem;
-  margin-top: 0.5rem;
-
+  width: 1.5rem;
+  height: 2px;
   background: #000;
-  border-radius: 999999%;
   position: absolute;
-  left: calc(100vw - min(50vw, calc(780px + 11rem)) - 0.5rem);
+  left: calc(100vw - min(50vw, calc(780px + 11rem)) - 0rem);
 }
-.marker-end {
-  margin-top: -0.5rem;
-  background-color: white;
-  border: solid black;
+.marker-end::before {
+  content: " ";
+  position: absolute;
+  height: 0.7rem;
+  width: 2px;
+  bottom: 0;
+  right: 0;
+  background: #202020;
+}
+
+.marker-start::before {
+  content: " ";
+  position: absolute;
+  height: 0.7rem;
+  width: 2px;
+  right: 0;
+  background: #202020;
 }
 
 .marker-center {
-  width: 1rem;
-  height: 1.2px;
-  background: #000;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 9999%;
+  border: solid #000 1.5px;
+  background-color: white;
   position: fixed;
-  left: calc(100vw - min(50vw, calc(780px + 11rem)) - 0.5rem);
+  left: calc(100vw - min(50vw, calc(780px + 11rem)) - .75rem);
   top: 50vh;
+  z-index: 10;
 }
 
 .icon {
