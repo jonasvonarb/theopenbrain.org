@@ -10,7 +10,7 @@
     >
       <StartEndIcon :paragraph="subSubSection" art="start" />
       <div
-        class="subSub test"
+        class="subSub"
         :id="
           subSubSection.animation ? 'trigger' + subSubSection.animation?.id : ''
         "

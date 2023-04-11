@@ -74,7 +74,6 @@ router.afterEach((to) => {
       }, 2000);
     }, 10);
   }
-  console.log("test", to.query.s);
 });
 
 export default router;
