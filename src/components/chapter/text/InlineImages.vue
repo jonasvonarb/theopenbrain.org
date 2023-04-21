@@ -2,7 +2,7 @@
   <div
     :key="paragraph.id + 'img'"
     v-if="paragraph?.img"
-    class="no-select  w-text z-[60] -ml-20 mb-20 right-0 duration-100 border-y border-black flex flex-col justify-center items-center bg-white"
+    class="no-select w-text z-[60] -ml-20 mb-20 right-0 duration-100 border-y border-black flex flex-col justify-center items-center bg-white"
   >
     <figure class="overflow-hidden flex flex-col h-full w-full">
       <img
