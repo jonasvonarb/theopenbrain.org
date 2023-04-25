@@ -4,10 +4,11 @@ import MenuChapter from "./components/Navigation/MenuChapter.vue";
 import MediaQueryWarning from "./components/UI/MediaQueryWarning.vue";
 import MenuHome from "./components/Navigation/MenuHome.vue";
 import MenuAbout from "./components/Navigation/MenuAbout.vue";
-import { onBeforeUnmount, ref, watch } from "vue";
+import { onBeforeUnmount, onMounted, ref, watch } from "vue";
 import { watchDebounced, useMediaQuery } from "@vueuse/core";
 import { useGeneral } from "@/stores";
 import OverlayInfo from "./components/UI/OverlayInfo.vue";
+import Loader from "./components/UI/Loader.vue";
 import { storeToRefs } from "pinia";
 
 const isLargeScreen = useMediaQuery("(min-width: 1300px)");
@@ -15,6 +16,7 @@ const isLargeScreen = useMediaQuery("(min-width: 1300px)");
 const route = useRoute();
 const resize = ref(0);
 const store = useGeneral();
+const isLoaded = ref(false);
 
 const onResize = () => {
   resize.value = 1;
@@ -44,7 +46,12 @@ watch(route, (to, from) => {
 });
 
 window.addEventListener("resize", onResize);
-
+onMounted(() => {
+  setTimeout(() => {
+    isLoaded.value = true;
+    document.body.classList.remove("overflow-hidden");
+  }, 3000);
+});
 onBeforeUnmount(() => {
   window.removeEventListener("resize", onResize);
 });
@@ -52,6 +59,9 @@ onBeforeUnmount(() => {
 
 <template>
   <div v-if="isLargeScreen" class="text-base cursor-default font-sans">
+    <transition>
+      <Loader v-if="!isLoaded" />
+    </transition>
     <OverlayInfo v-if="!store.hasBeenVisited" />
     <div class="bg-img" />
     <RouterView
@@ -143,6 +153,16 @@ onBeforeUnmount(() => {
 .aboutTo-leave-to {
   transform: translateX(0%);
   filter: blur(10px) grayscale(1);
+  opacity: 0;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 1s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
   opacity: 0;
 }
 </style>
