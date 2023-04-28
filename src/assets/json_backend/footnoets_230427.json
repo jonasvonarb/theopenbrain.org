@@ -1,0 +1,325 @@
+{
+  "id": "6b8bbb4a-88d9-44fd-9c5d-1ff35ea91c0c",
+  "title": "Footnotes",
+  "animation": { "name": "Placeholder" },
+  "notes": [
+    {
+      "text": "Finger, S. <em>Origins of neuroscience: a history of explorations into brain function*. (Oxford Univ. Press, 2001)."
+    },
+    {
+      "text": "Gross, C. G. <em>Brain, vision, memory: tales in the history of neuroscience*. (MIT Press, 2011)"
+    },
+    {
+      "text": "*Adler's physiology of the eye: clinical application*. (Saunders/Elsevier, 2011)"
+    },
+    {
+      "text": "Land, M. F. <em>The Eye: A Very Short Introduction*. (Oxford University Press, 2014)"
+    },
+    {
+      "text": "Masland, R. H. Neuronal diversity in the retina. <em>Curr. Opin. Neurobiol.</em> <strong>11</strong>, 431--436 (2001)"
+    },
+    {
+      "text": "Masland, R. H. The neuronal organization of the retina. <em>Neuron</em> <strong>76</strong>, 266--80 (2012)"
+    },
+    {
+      "text": "Webvision -- The Organization of the Retina and Visual System. https://webvision.med.utah.edu/"
+    },
+    {
+      "text": "Gregory, R. & Cavanagh, P. The Blind Spot. <em>Scholarpedia</em> <strong>6</strong>, 9618 (2011)"
+    },
+    {
+      "text": "Grzybowski, A. & Aydin, P. Edme Mariotte (1620--1684): Pioneer of Neurophysiology. <em>Survey of Ophthalmology</em> <strong>52</strong>, 443--451 (2007)."
+    },
+    {
+      "text": "Rodieck, R. W. The density recovery profile: a method for the analysis of points in the plane applicable to retinal studies. <em>Vis Neurosci</em> <strong>6</strong>, 95--111 (1991)."
+    },
+    {
+      "text": "Reese, B. E. & Galli-Resta, L. The role of tangential dispersion in retinal mosaic formation. <em>Prog Retin Eye Res</em> <strong>21</strong>, 153--168 (2002)."
+    },
+    {
+      "text": "Kay, J. N., Chu, M. W. & Sanes, J. R. MEGF10 and MEGF11 mediate homotypic interactions required for mosaic spacing of retinal neurons. <em>Nature</em> <strong>483</strong>, 465--469 (2012)."
+    },
+    {
+      "text": "Galli-Resta, L. Local, possibly contact-mediated signalling restricted to homotypic neurons controls the regular spacing of cells within the cholinergic arrays in the developing rodent retina. <em>Development</em> <strong>127</strong>, 1509--1516 (2000)."
+    },
+    {
+      "text": "Galli-Resta, L., Resta, G., Tan, S. S. & Reese, B. E. Mosaics of islet-1-expressing amacrine cells assembled by short-range cellular interactions. <em>J Neurosci</em> <strong>17</strong>, 7831--7838 (1997)."
+    },
+    {
+      "text": "Lefebvre, J. L., Sanes, J. R. & Kay, J. N. Development of dendritic form and function. <em>Annu Rev Cell Dev Biol</em> <strong>31</strong>, 741--777 (2015)."
+    },
+    {
+      "text": "Croner, L. J. & Kaplan, E. Receptive fields of P and M ganglion cells across the primate retina. <em>Vision Research</em> <strong>35</strong>, 7--24 (1995)."
+    },
+    {
+      "text": "Sanes, J. R. & Masland, R. H. The types of retinal ganglion cells: current status and implications for neuronal classification. <em>Annu Rev Neurosci</em> <strong>38</strong>, 221--46 (2015)."
+    },
+    {
+      "text": "Sümbül, U. <em>et al.</em> A genetic and computational approach to structurally classify neuronal types. <em>Nat Commun</em> <strong>5</strong>, 3512 (2014)."
+    },
+    {
+      "text": "Macosko, E. Z. <em>et al.</em> Highly Parallel Genome-wide Expression Profiling of Individual Cells Using Nanoliter Droplets. <em>Cell</em> <strong>161</strong>, 1202--14 (2015)."
+    },
+    {
+      "text": "Shekhar, K. <em>et al.</em> Comprehensive Classification of Retinal Bipolar Neurons by Single-Cell Transcriptomics. <em>Cell</em> <strong>166</strong>, 1308-1323 e30 (2016)."
+    },
+    {
+      "text": "Yan, W. <em>et al.</em> Mouse Retinal Cell Atlas: Molecular Identification of over Sixty Amacrine Cell Types. <em>J Neurosci</em> <strong>40</strong>, 5177--5195 (2020)."
+    },
+    {
+      "text": "Badea, T. C. & Nathans, J. Quantitative analysis of neuronal morphologies in the mouse retina visualized by using a genetically directed reporter. <em>J Comp Neurol</em> <strong>480</strong>, 331--351 (2004)."
+    },
+    {
+      "text": "Kong, J.-H., Fish, D. R., Rockhill, R. L. & Masland, R. H. Diversity of ganglion cells in the mouse retina: unsupervised morphological classification and its limits. <em>J Comp Neurol</em> <strong>489</strong>, 293--310 (2005)."
+    },
+    {
+      "text": "Coombs, J. L., Van Der List, D. & Chalupa, L. M. Morphological properties of mouse retinal ganglion cells during postnatal development. <em>J Comp Neurol</em> <strong>503</strong>, 803--814 (2007)."
+    },
+    {
+      "text": "Baden, T. <em>et al.</em> The functional diversity of retinal ganglion cells in the mouse. <em>Nature</em> <strong>529</strong>, 345--50 (2016)."
+    },
+    {
+      "text": "Baden, T., Berens, P., Bethge, M. & Euler, T. Spikes in mammalian bipolar cells support temporal layering of the inner retina. <em>Current biology : CB</em> <strong>23</strong>, 48--52 (2013)."
+    },
+    {
+      "text": "Franke, K. <em>et al.</em> Inhibition decorrelates visual feature representations in the inner retina. <em>Nature</em> <strong>542</strong>, 439--444 (2017)."
+    },
+    {
+      "text": "Rodieck, R. W. <em>The first steps in seeing*. (Sinauer Associates, 1998)."
+    },
+    {
+      "text": "*Principles of neural science*. (McGraw-Hill, Health Professions Division, 2000)."
+    },
+    {
+      "text": "Werblin, F. S. The retinal hypercircuit: a repeating synaptic interactive motif underlying visual function. <em>J Physiol</em> <strong>589</strong>, 3691--3702 (2011)."
+    },
+    {
+      "text": "Seabrook, T. A., Burbridge, T. J., Crair, M. C. & Huberman, A. D. Architecture, Function, and Assembly of the Mouse Visual System. <em>Annu Rev Neurosci</em> <strong>40</strong>, 499--538 (2017)."
+    },
+    {
+      "text": "Lagnado, L. & Schmitz, F. Ribbon Synapses and Visual Processing in the Retina. <em>Annu Rev Vis Sci</em> <strong>1</strong>, 235--262 (2015)."
+    },
+    {
+      "text": "Sterling, P. & Matthews, G. Structure and function of ribbon synapses. <em>Trends in Neurosciences</em> <strong>28</strong>, 20--29 (2005)."
+    },
+    {
+      "text": "Trenholm, S. & Awatramani, G. B. Myriad roles for gap junctions in retinal circuits. in <em>Webvision: The Organization of the Retina and Visual System</em> (eds. Kolb, H., Fernandez, E. & Nelson, R.) (University of Utah Health Sciences Center, 1995)."
+    },
+    {
+      "text": "Fernald, R. D. The evolution of eyes. <em>Brain Behav Evol</em> <strong>50</strong>, 253--259 (1997)."
+    },
+    {
+      "text": "Fernald, R. D. Evolution of eyes. <em>Curr Opin Neurobiol</em> <strong>10</strong>, 444--450 (2000)."
+    },
+    {
+      "text": "Baden, T. & Osorio, D. The Retinal Basis of Vertebrate Color Vision. <em>Annu Rev Vis Sci</em> <strong>5</strong>, 177--200 (2019)."
+    },
+    {
+      "text": "Lacalli, T. Evolutionary biology: light on ancient photoreceptors. <em>Nature</em> <strong>432</strong>, 454--455 (2004)."
+    },
+    {
+      "text": "Mayhew, T. M. & Astle, D. Photoreceptor number and outer segment disk membrane surface area in the retina of the rat: stereological data for whole organ and average photoreceptor cell. <em>J Neurocytol</em> <strong>26</strong>, 53--61 (1997)."
+    },
+    {
+      "text": "Trenholm, S. & Krishnaswamy, A. An Annotated Journey through Modern Visual Neuroscience. <em>J Neurosci</em> <strong>40</strong>, 44--53 (2020)."
+    },
+    {
+      "text": "Hubbard, R. 100 years of rhodopsin. <em>Trends in Biochemical Sciences</em> <strong>1</strong>, 154--158 (1976)."
+    },
+    {
+      "text": "Marmor, M. F. & Martin, L. J. 100 years of the visual cycle. <em>Surv Ophthalmol</em> <strong>22</strong>, 279--285 (1978)."
+    },
+    {
+      "text": "Ingram, N. T., Sampath, A. P. & Fain, G. L. Why are rods more sensitive than cones? <em>J Physiol</em> <strong>594</strong>, 5415--5426 (2016)."
+    },
+    {
+      "text": "Phototransduction in Rods and Cones by Yingbin Fu -- Webvision. https://webvision.med.utah.edu/book/part-v-phototransduction-in-rods-and-cones/phototransduction-in-rods-and-cones/."
+    },
+    {
+      "text": "Baylor, D. A., Fuortes, M. G. & O'Bryan, P. M. Receptive fields of cones in the retina of the turtle. <em>J. Physiol. (Lond.)</em> <strong>214</strong>, 265--294 (1971)."
+    },
+    {
+      "text": "Y-R, P. <em>et al.</em> MOLECULAR CLASSIFICATION AND COMPARATIVE TAXONOMICS OF FOVEAL AND PERIPHERAL CELLS IN PRIMATE RETINA. <em>Biorxiv</em> (2018) doi:10.1101/428110."
+    },
+    {
+      "text": "Outer Plexiform Layer by Helga Kolb -- Webvision. https://webvision.med.utah.edu/book/part-ii-anatomy-and-physiology-of-the-retina/oute-plexiform/."
+    },
+    {
+      "text": "Slaughter, M. M. & Miller, R. F. 2-amino-4-phosphonobutyric acid: a new pharmacological tool for retina research. <em>Science</em> <strong>211</strong>, 182--185 (1981)."
+    },
+    {
+      "text": "Nakajima, Y. <em>et al.</em> Molecular characterization of a novel retinal metabotropic glutamate receptor mGluR6 with a high agonist selectivity for L-2-amino-4-phosphonobutyrate. <em>J Biol Chem</em> <strong>268</strong>, 11868--11873 (1993)."
+    },
+    {
+      "text": "Koike, C., Numata, T., Ueda, H., Mori, Y. & Furukawa, T. TRPM1: a vertebrate TRP channel responsible for retinal ON bipolar function. <em>Cell Calcium</em> <strong>48</strong>, 95--101 (2010)."
+    },
+    {
+      "text": "Schwartz, G. W. Chapter 7 - Texture sensitivity. in <em>Retinal Computation</em> (ed. Schwartz, G. W.) 126--142 (Academic Press, 2021). doi:10.1016/B978-0-12-819896-4.00008-1."
+    },
+    {
+      "text": "Demb, J. B., Zaghloul, K., Haarsma, L. & Sterling, P. Bipolar cells contribute to nonlinear spatial summation in the brisk-transient (Y) ganglion cell in mammalian retina. <em>J Neurosci</em> <strong>21</strong>, 7447--7454 (2001)."
+    },
+    {
+      "text": "Peng, Y.-R. <em>et al.</em> Molecular Classification and Comparative Taxonomics of Foveal and Peripheral Cells in Primate Retina. <em>Cell</em> <strong>176</strong>, 1222-1237.e22 (2019)."
+    },
+    {
+      "text": "Enroth-Cugell, C. & Robson, J. G. The contrast sensitivity of retinal ganglion cells of the cat. <em>J. Physiol. (Lond.)</em> <strong>187</strong>, 517--552 (1966)."
+    },
+    {
+      "text": "Shapley, R. M. & Victor, J. D. Nonlinear spatial summation and the contrast gain control of cat retinal ganglion cells. <em>J Physiol</em> <strong>290</strong>, 141--161 (1979)."
+    },
+    {
+      "text": "Hartline, H. K. THE RESPONSE OF SINGLE OPTIC NERVE FIBERS OF THE VERTEBRATE EYE TO ILLUMINATION OF THE RETINA. <em>American Journal of Physiology-Legacy Content</em> <strong>121</strong>, 400--415 (1938)."
+    },
+    {
+      "text": "Kuffler, S. W. Discharge patterns and functional organization of mammalian retina. <em>J. Neurophysiol.</em> <strong>16</strong>, 37--68 (1953)."
+    },
+    {
+      "text": "Barlow, H. B. Summation and inhibition in the frog's retina. <em>J. Physiol. (Lond.)</em> <strong>119</strong>, 69--88 (1953)."
+    },
+    {
+      "text": "Rodieck, R. W. Quantitative analysis of cat retinal ganglion cell response to visual stimuli. <em>Vision Research</em> <strong>5</strong>, 583--601 (1965)."
+    },
+    {
+      "text": "Rodieck, R. W. & Stone, J. Analysis of receptive fields of cat retinal ganglion cells. <em>J. Neurophysiol.</em> <strong>28</strong>, 833--849 (1965)."
+    },
+    {
+      "text": "Gauthier, J. L. <em>et al.</em> Receptive Fields in Primate Retina Are Coordinated to Sample Visual Space More Uniformly. <em>PLOS Biology</em> <strong>7</strong>, e1000063 (2009)."
+    },
+    {
+      "text": "S-Potentials and Horizontal Cells by Ido Perlman, Helga Kolb and Ralph Nelson -- Webvision. https://webvision.med.utah.edu/book/part-v-phototransduction-in-rods-and-cones/horizontal-cells/."
+    },
+    {
+      "text": "Midget pathways of the primate retina underlie resolution and red green color opponency by Helga Kolb -- Webvision. https://webvision.med.utah.edu/book/part-iii-retinal-circuits/midget-pathways-of-the-primate-retina-underly-resolution/."
+    },
+    {
+      "text": "S-Cone Pathways by Helga Kolb -- Webvision. https://webvision.med.utah.edu/book/part-iii-retinal-circuits/s-cone-pathways/."
+    },
+    {
+      "text": "Field, G. D. <em>et al.</em> Functional connectivity in the retina at the resolution of photoreceptors. <em>Nature</em> <strong>467</strong>, 673--677 (2010)."
+    },
+    {
+      "text": "Patterson, S. S. <em>et al.</em> Another Blue-ON ganglion cell in the primate retina. <em>Current Biology</em> <strong>30</strong>, R1409--R1410 (2020)."
+    },
+    {
+      "text": "Patterson, S. S., Neitz, M. & Neitz, J. Reconciling Color Vision Models With Midget Ganglion Cell Receptive Fields. <em>Frontiers in Neuroscience</em> <strong>13</strong>, (2019)."
+    },
+    {
+      "text": "Color Vision by Peter Gouras -- Webvision. https://webvision.med.utah.edu/book/part-vii-color-vision/color-vision/."
+    },
+    {
+      "text": "Hunt, D. M., Dulai, K. S., Bowmaker, J. K. & Mollon, J. D. The Chemistry of John Dalton's Color Blindness. <em>Science</em> <strong>267</strong>, 984--988 (1995)."
+    },
+    {
+      "text": "Kim, Y. J. <em>et al.</em> Origins of direction selectivity in the primate retina. <em>Nat Commun</em> <strong>13</strong>, 2862 (2022)."
+    },
+    {
+      "text": "Patterson, S. S. <em>et al.</em> Conserved circuits for direction selectivity in the primate retina. <em>Current Biology</em> <strong>32</strong>, 2529-2538.e4 (2022)."
+    },
+    {
+      "text": "Vaney, D. I., Sivyer, B. & Taylor, W. R. Direction selectivity in the retina: symmetry and asymmetry in structure and function. <em>Nat Rev Neurosci</em> <strong>13</strong>, 194--208 (2012)."
+    },
+    {
+      "text": "Hassenstein, B. & Reichardt, W. Systemtheoretische Analyse der Zeit-, Reihenfolgen- und Vorzeichenauswertung bei der Bewegungsperzeption des Rüsselkäfers Chlorophanus. <em>Zeitschrift für Naturforschung B</em> <strong>11</strong>, 513--524 (1956)."
+    },
+    {
+      "text": "Famiglietti, E. V. 'Starburst' amacrine cells and cholinergic neurons: mirror-symmetric ON and OFF amacrine cells of rabbit retina. <em>Brain Research</em> <strong>261</strong>, 138--144 (1983)."
+    },
+    {
+      "text": "Euler, T., Detwiler, P. B. & Denk, W. Directionally selective calcium signals in dendrites of starburst amacrine cells. <em>Nature</em> <strong>418</strong>, 845--852 (2002)."
+    },
+    {
+      "text": "Fried, S. I., Münch, T. A. & Werblin, F. S. Mechanisms and circuitry underlying directional selectivity in the retina. <em>Nature</em> <strong>420</strong>, 411--414 (2002)."
+    },
+    {
+      "text": "Briggman, K. L., Helmstaedter, M. & Denk, W. Wiring specificity in the direction-selectivity circuit of the retina. <em>Nature</em> <strong>471</strong>, 183--188 (2011)."
+    },
+    {
+      "text": "Oyster, C. W. & Barlow, H. B. Direction-selective units in rabbit retina: distribution of preferred directions. <em>Science</em> <strong>155</strong>, 841--842 (1967)."
+    },
+    {
+      "text": "Oyster, C. W., Takahashi, E. & Collewijn, H. Direction-selective retinal ganglion cells and control of optokinetic nystagmus in the rabbit. <em>Vision Res</em> <strong>12</strong>, 183--193 (1972)."
+    },
+    {
+      "text": "Cruz-Martín, A. <em>et al.</em> A dedicated circuit links direction-selective retinal ganglion cells to the primary visual cortex. <em>Nature</em> <strong>507</strong>, 358--361 (2014)."
+    },
+    {
+      "text": "Gollisch, T. & Meister, M. Eye smarter than scientists believed: neural computations in circuits of the retina. <em>Neuron</em> <strong>65</strong>, 150--64 (2010)."
+    },
+    {
+      "text": "Lettvin, J., Y., Maturana, H., R., McCulloch, W., S. & Pitts, W., H. What the Frog's Eye Tells the Frog's Brain. <em>Proceedings of the IRE</em> 1940--1959."
+    },
+    {
+      "text": "van Wyk, M., Taylor, W. R. & Vaney, D. I. Local edge detectors: a substrate for fine spatial vision at low temporal frequencies in rabbit retina. <em>The Journal of neuroscience : the official journal of the Society for Neuroscience</em> <strong>26</strong>, 13250--63 (2006)."
+    },
+    {
+      "text": "Olveczky, B. P., Baccus, S. A. & Meister, M. Segregation of object and background motion in the retina. <em>Nature</em> <strong>423</strong>, 401--8 (2003)."
+    },
+    {
+      "text": "Baccus, S. A., Olveczky, B. P., Manu, M. & Meister, M. A retinal circuit that computes object motion. <em>The Journal of neuroscience : the official journal of the Society for Neuroscience</em> <strong>28</strong>, 6807--17 (2008)."
+    },
+    {
+      "text": "Zhang, Y., Kim, I. J., Sanes, J. R. & Meister, M. The most numerous ganglion cell type of the mouse retina is a selective feature detector. <em>Proceedings of the National Academy of Sciences of the United States of America</em> <strong>109</strong>, E2391-8 (2012)."
+    },
+    {
+      "text": "Kolb, H. The inner plexiform layer in the retina of the cat: electron microscopic observations. <em>J Neurocytol</em> <strong>8</strong>, 295--329 (1979)."
+    },
+    {
+      "text": "Kolb, H. & Famiglietti, E. V. Rod and cone pathways in the inner plexiform layer of cat retina. <em>Science</em> <strong>186</strong>, 47--49 (1974)."
+    },
+    {
+      "text": "Kolb, H. & Nelson, R. Rod pathways in the retina of the cat. <em>Vision Res</em> <strong>23</strong>, 301--312 (1983)."
+    },
+    {
+      "text": "Hattar, S. <em>et al.</em> Melanopsin and rod-cone photoreceptive systems account for all major accessory visual functions in mice. <em>Nature</em> <strong>424</strong>, 76--81 (2003)."
+    },
+    {
+      "text": "Schmidt, T. M., Chen, S.-K. & Hattar, S. Intrinsically photosensitive retinal ganglion cells: many subtypes, diverse functions. <em>Trends Neurosci</em> <strong>34</strong>, 572--580 (2011)."
+    },
+    {
+      "text": "Martersteck, E. M. <em>et al.</em> Diverse Central Projection Patterns of Retinal Ganglion Cells. <em>Cell Rep</em> <strong>18</strong>, 2058--2072 (2017)."
+    },
+    {
+      "text": "Binda, P. & Morrone, M. C. Vision During Saccadic Eye Movements. <em>Annu Rev Vis Sci</em> <strong>4</strong>, 193--213 (2018)."
+    },
+    {
+      "text": "Castet, E., Jeanjean, S. & Masson, G. S. 'Saccadic suppression'- no need for an active extra-retinal mechanism. <em>Trends Neurosci</em> <strong>24</strong>, 316--318 (2001)."
+    },
+    {
+      "text": "Ross, J., Morrone, M. C., Goldberg, M. E. & Burr, D. C. Changes in visual perception at the time of saccades. <em>Trends Neurosci</em> <strong>24</strong>, 113--121 (2001)."
+    },
+    {
+      "text": "Dodge, R. Visual perception during eye movement. <em>Psychological Review</em> <strong>7</strong>, 454--465 (1900)."
+    },
+    {
+      "text": "Rucci, M. & Poletti, M. Control and Functions of Fixational Eye Movements. <em>Annu. Rev. Vis. Sci.</em> <strong>1</strong>, 499--518 (2015)."
+    },
+    {
+      "text": "Coppola, D. & Purves, D. The extraordinarily rapid disappearance of entopic images. <em>Proceedings of the National Academy of Sciences</em> <strong>93</strong>, 8001--8004 (1996)."
+    },
+    {
+      "text": "Rucci, M., Iovin, R., Poletti, M. & Santini, F. Miniature eye movements enhance fine spatial detail. <em>Nature</em> <strong>447</strong>, 852--855 (2007)."
+    },
+    {
+      "text": "Darwin, C. <em>The origin of species*. (New York : P.F. Collier, c1909)."
+    },
+    {
+      "text": "Petridou, E. & Godinho, L. Cellular and Molecular Determinants of Retinal Cell Fate. <em>Annu. Rev. Vis. Sci.</em> <strong>8</strong>, 79--99 (2022)."
+    },
+    {
+      "text": "Sanes, J. R. & Zipursky, S. L. Synaptic Specificity, Recognition Molecules, and Assembly of Neural Circuits. <em>Cell</em> <strong>181</strong>, 536--556 (2020)."
+    },
+    {
+      "text": "Meister, M., Wong, R. O., Baylor, D. A. & Shatz, C. J. Synchronous bursts of action potentials in ganglion cells of the developing mammalian retina. <em>Science</em> <strong>252</strong>, 939--943 (1991)."
+    },
+    {
+      "text": "Wong, R. O. L. RETINAL WAVES AND VISUAL SYSTEM DEVELOPMENT. <em>Annu. Rev. Neurosci.</em> <strong>22</strong>, 29--47 (1999)."
+    },
+    {
+      "text": "Ackman, J. B. & Crair, M. C. Role of emergent neural activity in visual map development. <em>Curr. Opin. Neurobiol.</em> <strong>24</strong>, 166--175 (2014)."
+    },
+    {
+      "text": "Tiriac, A. & Feller, M. B. Roles of visually evoked and spontaneous activity in the development of retinal direction selectivity maps. <em>Trends Neurosci</em> <strong>45</strong>, 529--538 (2022)."
+    }
+  ]
+}

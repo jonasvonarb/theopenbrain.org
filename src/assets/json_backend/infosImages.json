@@ -2,7 +2,7 @@
   "images": [
     {
       "title": "alcmeon",
-      "text": "Alcmaeon of Croton (/ælkˈmiːɒn/; Greek: Ἀλκμαίων ὁ Κροτωνιάτης, Alkmaiōn, gen.: Ἀλκμαίωνος; fl. 5th century BC) was an early Greek medical writer and philosopher-scientist. He has been described as one of the most eminent natural philosophers and medical theorists of antiquity and he has also been referred to as \"a thinker of considerable originality and one of the greatest philosophers, naturalists, and neuroscientists of all time.\"His work in biology has been described as remarkable, and his originality made him likely a pioneer. Because of difficulties dating Alcmaeon's birth, his importance has been neglected. – Wikipedia (https://en.wikipedia.org/wiki/Alcmaeon_of_Croton)"
+      "text": "Alcmaeon of Croton (/ælkˈmiːɒn/; Greek: Ἀλκμαίων ὁ Κροτωνιάτης, Alkmaiōn, gen.: Ἀλκμαίωνος; fl. 5th century BC) was an early Greek medical writer and philosopher-scientist. He has been described as one of the most eminent natural philosophers and medical theorists of antiquity and he has also been referred to as \"a thinker of considerable originality and one of the greatest philosophers, naturalists, and neuroscientists of all time.\"His work in biology has been described as remarkable, and his originality made him likely a pioneer. Because of difficulties dating Alcmaeon's birth, his importance has been neglected. – Wikipedia (https://en.wikipedia.org/wiki/Alcmaeon_of_Croton)"
     },
     {
       "title": "plato",
@@ -10,23 +10,32 @@
     },
     {
       "title": "ibn-sina",
-      "text": "Ibn Sina (Persian: ابن سینا; 980 – June 1037 CE), commonly known in the West as Avicenna (/ˌævɪˈsɛnə, ˌɑːvɪ-/), was a Persian polymath who is regarded as one of the most significant physicians, astronomers, philosophers, and writers of the Islamic Golden Age, and the father of early modern medicine. Sajjad H. Rizvi has called Avicenna \"arguably the most influential philosopher of the pre-modern era\". He was a Muslim Peripatetic philosopher influenced by Greek Aristotelian philosophy. Of the 450 works he is believed to have written, around 240 have survived, including 150 on philosophy and 40 on medicine. <br/> His most famous works are The Book of Healing, a philosophical and scientific encyclopedia, and The Canon of Medicine, a medical encyclopedia which became a standard medical text at many medieval universities and remained in use as late as 1650. Besides philosophy and medicine, Avicenna's corpus includes writings on astronomy, alchemy, geography and geology, psychology, Islamic theology, logic, mathematics, physics, and works of poetry. -Wikipedia (https://en.wikipedia.org/wiki/Avicenna)"
+      "text": "Ibn Sina (Persian: ابن سینا; 980 – June 1037 CE), commonly known in the West as Avicenna (/ˌævɪˈsɛnə, ˌɑːvɪ-/), was a Persian polymath who is regarded as one of the most significant physicians, astronomers, philosophers, and writers of the Islamic Golden Age, and the father of early modern medicine. Sajjad H. Rizvi has called Avicenna \"arguably the most influential philosopher of the pre-modern era\". He was a Muslim Peripatetic philosopher influenced by Greek Aristotelian philosophy. Of the 450 works he is believed to have written, around 240 have survived, including 150 on philosophy and 40 on medicine. <br/> His most famous works are The Book of Healing, a philosophical and scientific encyclopedia, and The Canon of Medicine, a medical encyclopedia which became a standard medical text at many medieval universities and remained in use as late as 1650. Besides philosophy and medicine, Avicenna's corpus includes writings on astronomy, alchemy, geography and geology, psychology, Islamic theology, logic, mathematics, physics, and works of poetry. -Wikipedia (https://en.wikipedia.org/wiki/Avicenna)"
+    },
+    
+    {
+      "title": "al-haytham",
+      "text": "Ḥasan Ibn al-Haytham, Latinized as Alhazen (/ælˈhæzən/; full name Abū ʿAlī al-Ḥasan ibn al-Ḥasan ibn al-Haytham أبو علي، الحسن بن الحسن بن الهيثم; c.965 – c.1040), was a medieval mathematician, astronomer, and physicist of the Islamic Golden Age from present-day Iraq. Referred to as \"the father of modern optics\", he made significant contributions to the principles of optics and visual perception in particular. His most influential work is titled Kitāb al-Manāẓir (Arabic: كتاب المناظر, \"Book of Optics\"), written during 1011–1021, which survived in a Latin edition. The works of Alhazen were frequently cited during the scientific revolution by Isaac Newton, Johannes Kepler, Christiaan Huygens, and Galileo Galilei. – Wikipedia (https://en.wikipedia.org/wiki/Ibn_al-Haytham)"
     },
     {
       "title": "al-razi",
-      "text": "Abū Bakr al-Rāzī (full name: أبو بکر محمد بن زکریاء الرازي, Abū Bakr Muḥammad ibn Zakariyyāʾ al-Rāzī), c. 864 or 865–925 or 935 CE, often known as (al-)Razi or by his Latin name Rhazes, also rendered Rhasis, was a Persian physician, philosopher and alchemist who lived during the Islamic Golden Age. He is widely regarded as one of the most important figures in the history of medicine, and also wrote on logic, astronomy and grammar. He is also known for his criticism of religion, especially with regard to the concepts of prophethood and revelation. However, the religio-philosophical aspects of his thought, which also included a belief in five \"eternal principles\", are only recorded by authors who were often hostile to him. Wikipedia (https://en.wikipedia.org/wiki/Abu_Bakr_al-Razi)."
+      "text": "Abū Bakr al-Rāzī (full name: أبو بکر محمد بن زکریاء الرازي, Abū Bakr Muḥammad ibn Zakariyyāʾ al-Rāzī), c. 864 or 865–925 or 935 CE, often known as (al-)Razi or by his Latin name Rhazes, also rendered Rhasis, was a Persian physician, philosopher and alchemist who lived during the Islamic Golden Age. He is widely regarded as one of the most important figures in the history of medicine, and also wrote on logic, astronomy and grammar. He is also known for his criticism of religion, especially with regard to the concepts of prophethood and revelation. However, the religio-philosophical aspects of his thought, which also included a belief in five \"eternal principles\", are only recorded by authors who were often hostile to him. Wikipedia (https://en.wikipedia.org/wiki/Abu_Bakr_al-Razi)."
     },
     {
       "title": "marriott",
-      "text": "Edme Mariotte (/ˌmɑːriˈɒt/; French: [ɛdmə maʁj; c. 1620 – 12 May 1684) was a French physicist and priest (abbé). He is particularly well known for formulating Boyle's law independently of Robert Boyle. Mariotte is also credited with designing the first Newton's cradle. Wikipedia (https://en.wikipedia.org/wiki/Edme_Mariotte)"
+      "text": "Edme Mariotte (/ˌmɑːriˈɒt/; French: [ɛdmə maʁj; c. 1620 – 12 May 1684) was a French physicist and priest (abbé). He is particularly well known for formulating Boyle's law independently of Robert Boyle. Mariotte is also credited with designing the first Newton's cradle. Wikipedia (https://en.wikipedia.org/wiki/Edme_Mariotte)"
     },
     {
       "title": "rodieck",
       "text": "Robert (Bob) William Rodieck (1937-2003). Bob was a visual neuroscientist who spent much of his career working at the University of Washington Medical Center. He published many papers on visual processing, with a focus on the retina, and also published the highly influential textbook The First Steps of Seeing. – source (http://www.psy.vanderbilt.edu/faculty/calkinslab/pdfs/RememberingBobRodieck.pdf)"
     },
     {
-      "title": "schultz",
+      "title": "schultze",
       "text": "Max Johann Sigismund Schultze (25 March 1825 – 16 January 1874) was a German microscopic anatomist noted for his work on cell theory. – Wikipedia (https://en.wikipedia.org/wiki/Max_Schultze)"
+    },
+    {
+      "title": "aubert",
+      "text": "Hermann Rudolph Aubert (November 23, 1826 – February 2, 1892) was a German physiologist born in Frankfurt. \n \n In 1850 he obtained his medical doctorate, afterwards serving as privat-docent of physiology at Breslau (1854). In 1862 he became an associate professor, later being appointed professor of physiology at the University of Rostock (1865). \n \n Aubert is known for his research involving psychophysics, including the way an observer perceives pattern, movement and orientation. He conducted several experiments involving the phenomenon of dark adaptation; namely the eye's ability to regain its sensitivity in the dark after it had been exposed to bright lights. – Wikipedia (https://en.wikipedia.org/wiki/Hermann_Rudolph_Aubert)"
     },
     {
       "title": "svaetichin",
@@ -35,6 +44,21 @@
     {
       "title": "boll",
       "text": "Franz Boll (26 February 1849, Neubrandenburg – 19 December 1879, Rome) was a German physiologist and histologist. He was the son of Lutheran theologian Franz Boll (1805–1875). <br/>Boll studied medicine in Bonn, Heidelberg and Berlin, and in 1870 worked at the physiological institute of Emil du Bois-Reymond (1818–1896) in Berlin. Later he became a professor at the University of Genoa, and from 1873 to 1879 was a professor of physiology in Rome. He died in Rome on 19 December 1879 at the age of 30. <br/>Boll is remembered for the discovery of rhodopsin, when he noticed that the light-sensitive pigment in the rods of the retina had a tendency to fade in the presence of illumination. He also published his findings in a pamphlet titled Sull'anatomia e fisiologia della retina (1877). – Wikipedia (https://en.wikipedia.org/wiki/Franz_Christian_Boll)"
+    }, {
+      "title": "kolb",
+      "text": "Dr. Helga Kolb was born and educated in England receiving B.Sc., M.Sc. and Ph.D. degrees from the University of Bristol. Her first position in eye research was at the Institute of Ophthalmology, Judd Street, London. In 1966, Dr. Kolb emigrated to the USA. She took up positions in eye research in the Wilmer Institute, Johns Hopkins University, The National Eye Institute, Bethesda and the National Institute of Neurological Diseases and Stroke, Bethesda. Eventually Helga settled with her husband Richard Normann in the beautiful mountain west at the University of Utah, Salt Lake City, Utah. She is presently Professor Emeritus of Ophthalmology and Visual Science at the John Moran Eye Center, University of Utah. Her research interests include light and electron microscopy and immunostaining of the retina with emphasis on retinal neurocircuitry. Many of her important contributions to retinal research have been with her long time collaborators, Dr. Ralph Nelson and Dr. Nicolas Cuenca. In 1993 she was honored with the Proctor Medal award by the Association for Research in Vision and Ophthalmology (ARVO), in 2000 with the Von Sallmann award and in 2002 with the \"Margaret Pittman Lectureship award\" from the National Institutes of Health. In recognition of her contribution to vision research over the years, in 2011, she and her husband, Dick Normann, were awarded the Doctor Honoris Causa degrees from Miguel Hernandez Universidad de Elche, Spain. – source (https://www.ncbi.nlm.nih.gov/books/NBK11528/)"
+    },{
+      "title": "matthews",
+      "text": "Rachel Matthews (née Eckhard) was a researcher at Cambridge who worked with Edgar Adrian to develop new electrophysiological methods that allowed them record the first light-evoked spiking responses from the optic nerve. (source - https://royalsocietypublishing.org/doi/pdf/10.1098/rsbm.1979.0002)."
+    },{
+      "title": "adrian",
+      "text": "Edgar Douglas Adrian, 1st Baron Adrian OM FRS (30 November 1889 – 4 August 1977) was an English electrophysiologist and recipient of the 1932 Nobel Prize for Physiology, won jointly with Sir Charles Sherrington for work on the function of neurons. He provided experimental evidence for the all-or-none law of nerves. – Wikipedia (https://en.wikipedia.org/wiki/Edgar_Adrian)"
+    },{
+      "title": "enroth",
+      "text": "Christina Alma Elisabeth Enroth-Cugell (1919 – June 15, 2016), was a vision scientist who was a professor at Northwestern University for 31 years, was a founding faculty member and one of the first women to teach at the McCormick School of Engineering and chaired the Department of Neurobiology at the Weinberg College of Arts and Sciences from 1984 to 1986. Her husband David Cugell was a professor at the Feinberg School of Medicine for 58 years, the longest tenure in the school’s history. \n\n Enroth-Cugell was born in Helsinki, Finland. She earned a joint M.D./Ph.D. from the Karolinska Institute in Sweden and did post-doctorate work at Harvard University. Enroth-Cugell was one of the first female interns at Passavant Memorial Hospital. \n\n Her research focused on visual adaptation and the spatial and temporal aspects of receptive fields and the physiology of the mammalian retina. One of her journal articles, based on a study with collaborator John G. Robson, has been cited approximately 2,000 times and 'was one of the first to use systems analysis methods in vision, and it launched a field of study on parallel pathways in the visual system.' – Wikipedia (https://en.wikipedia.org/wiki/Christina_Enroth-Cugell)"
+    },{
+      "title": "robson",
+      "text": "John G Robson received OSA’s Edgar D. Tillyer Award in 1996 “for research in visual psychophysics, physiology, and optics, which has shown us how to apply linear systems theory and sinusoidal grating to characterize how visual contrast is transmitted through the optics, retina, and cortex, to perception, elucidating the relation between the visual scene in front of the eye and the neural image in the brain.” He is a Fellow of OSA and of the Royal Society. Source (https://www.optica.org/en-us/history/biographies/bios/john_g_robson/)"
     },
     {
       "title": "hartline",
@@ -51,6 +75,21 @@
     {
       "title": "dalton",
       "text": "John Dalton FRS (/ˈdɔːltən/; 5 or 6 September 1766 – 27 July 1844) was an English chemist, physicist and meteorologist. He is best known for introducing the atomic theory into chemistry, and for his research into colour blindness, which he had. Colour blindness is known as Daltonism in several languages, being named after him. -Wikipedia (https://en.wikipedia.org/wiki/John_Dalton)"
+    },{
+      "title": "wong",
+      "text": "Rachel Wong is an American neuroscientist who is a Professor of Biological Structure at the University of Washington. She studies the developmental mechanisms that determine synaptic connectivity in the central nervous system. She was elected to the National Vision Research Institute of Australia in 2018 and the National Academy of Sciences in 2021. – Wikipedia (https://en.wikipedia.org/wiki/Rachel_Wong)"
+    },{
+      "title": "baylor",
+      "text": "Denis Aristide Baylor (January 30, 1940 – March 16, 2022) was an American neurobiologist. He was professor emeritus of neurobiology at Stanford University. He is known for his research on nerve cells in the retina of the eye. He developed a widely-used method for observing the electrical activity of single rod and cone photoreceptor cells and described how they encode light stimuli. Baylor’s work has been recognized by his election to the American Academy of Arts and Sciences, the National Academy of Sciences, and the Royal Society of London. – Wikipedia (https://en.wikipedia.org/wiki/Denis_Baylor)"
+    },{
+      "title": "shatz",
+      "text": "Carla J. Shatz (born 1947) is an American neurobiologist and an elected member of the American Academy of Arts and Sciences, the American Philosophical Society, the National Academy of Sciences, and the National Academy of Medicine. \n\n She was the first woman to receive a PhD in neurobiology from Harvard. Shatz received a tenured position in the basic sciences at Stanford Medical School and later returned to Harvard to head the university's Department of Neurobiology. In both cases, Shatz was the first woman hired for the position."
+    },{
+      "title": "sushruta",
+      "text": "Sushruta, or Suśruta (Sanskrit: सुश्रुत, IAST: Suśruta, lit. 'well heard') was an ancient Indian physician. The Sushruta Samhita (Sushruta's Compendium), a treatise ascribed to him, is one of the most important surviving ancient treatises on medicine and is considered a foundational text of Ayurveda. The treatise addresses all aspects of general medicine, but the impressive chapters on surgery have led to the false impression that this is its main topic. The translator G. D. Singhal dubbed Suśruta \"the father of surgery\" on account of these detailed accounts of surgery."
+    },{
+      "title": "meister",
+      "text": "Markus Meister is the Anne P. and Benjamin F. Biaggini Professor of Biological Sciences at the California Institute of Technology. He studied physics first at the Technical University of Munich, Germany, then at the California Institute of Technology, where he received a Ph.D. for research with Howard Berg. He went on to postdoctoral training with Denis Baylor at Stanford University. In 1991, Dr. Meister took a professorship at Harvard University, where he worked until his return to the California Institute of Technology in 2012. Dr. Meister studies the function of large neuronal circuits, with a focus on the visual and olfactory sensory systems. Early in his career, he pioneered the use of multielectrode arrays for parallel recording from many of the retina’s output neurons. Together with new approaches to visual stimulation, this helped reveal how much visual processing is accomplished in the retina. Then, his work extended to both smaller and larger scales of organization: on the one hand, the circuit mechanisms of visual computations; on the other, the role of retinal computation for visually guided behavior. In recent years, Meister’s group has been exploring population coding in the mammalian superior colliculus to understand the next stage of visual processing. Meister was named a Pew Scholar in 1993, won the 2009 Lawrence C. Katz Prize for Innovative Research in Neuroscience and the Golden Brain award for vision and brain research from the Minerva Foundation. He serves on the advisory boards of many research organizations including the Allen Institute for Brain Science, the Howard Hughes Medical Institute and the Max Planck Institute of Neurobiology. – source (https://www.simonsfoundation.org/people/markus-meister/)"
     },
     {
       "title": "famiglietti",
@@ -58,11 +97,27 @@
     },
     {
       "title": "darwin",
-      "text": "Charles Robert Darwin FRS FRGS FLS FZS JP (/ˈdɑːrwɪn/ DAR-win; 12 February 1809 – 19 April 1882) was an English naturalist, geologist, and biologist, widely known for his contributions to evolutionary biology. His proposition that all species of life have descended from a common ancestor is now generally accepted and considered a fundamental concept in science. In a joint publication with Alfred Russel Wallace, he introduced his scientific theory that this branching pattern of evolution resulted from a process he called natural selection, in which the struggle for existence has a similar effect to the artificial selection involved in selective breeding. Darwin has been described as one of the most influential figures in human history and was honoured by burial in Westminster Abbey. – Wikipedia (https://en.wikipedia.org/wiki/Charles_Darwin)"
+      "text": "Charles Robert Darwin (/ˈdɑːrwɪn/ DAR-win; 12 February 1809 – 19 April 1882) was an English naturalist, geologist, and biologist, widely known for his contributions to evolutionary biology. His proposition that all species of life have descended from a common ancestor is now generally accepted and considered a fundamental concept in science. In a joint publication with Alfred Russel Wallace, he introduced his scientific theory that this branching pattern of evolution resulted from a process he called natural selection, in which the struggle for existence has a similar effect to the artificial selection involved in selective breeding. Darwin has been described as one of the most influential figures in human history and was honoured by burial in Westminster Abbey. – Wikipedia (https://en.wikipedia.org/wiki/Charles_Darwin)"
     },
     {
       "title": "cajal",
-      "text": "Santiago Ramón y Cajal (Spanish: [sanˈtjaɣo raˈmon i kaˈxal]; 1 May 1852 – 17 October 1934) was a Spanish neuroscientist, pathologist, and histologist specializing in neuroanatomy and the central nervous system. He and Camillo Golgi received the Nobel Prize in Physiology or Medicine in 1906. Ramón y Cajal was the first person of Spanish origin to win a scientific Nobel Prize. His original investigations of the microscopic structure of the brain made him a pioneer of modern neuroscience. – Wikipedia (https://en.wikipedia.org/wiki/Santiago_Ram%C3%B3n_y_Cajal)"
+      "text": "Santiago Ramón y Cajal (Spanish: [sanˈtjaɣo raˈmon i kaˈxal]; 1 May 1852 – 17 October 1934) was a Spanish neuroscientist, pathologist, and histologist specializing in neuroanatomy and the central nervous system. He and Camillo Golgi received the Nobel Prize in Physiology or Medicine in 1906. Ramón y Cajal was the first person of Spanish origin to win a scientific Nobel Prize. His original investigations of the microscopic structure of the brain made him a pioneer of modern neuroscience. – Wikipedia (https://en.wikipedia.org/wiki/Santiago_Ram%C3%B3n_y_Cajal)"
+    },
+    {
+      "title": "baden",
+      "text": "Tom Baden is a Professor at the School of Life Sciences at the University of Sussex. His research work focuses on retinal processing in a variety of animal species with a particular focus on how ethological demands shape visual computations. – source (https://badenlab.org/)"
+    },
+    {
+      "title": "neitz",
+      "text": "Maureen E. Neitz is an American vision scientist whose research includes work on color vision and color blindness and the prevention of nearsightedness. She holds the Ray H. Hill Endowed Chair in Ophthalmology at the University of Washington.- Wikipedia (https://en.wikipedia.org/wiki/Maureen_Neitz)"
+    },
+    {
+      "title": "jneitz",
+      "text": "Jay Neitz (born 1953) is an American professor of ophthalmology and a color vision researcher at the University of Washington in Seattle, Washington. – Wikipedia (https://en.wikipedia.org/wiki/Jay_Neitz)"
+    },
+    {
+      "title": "dowling",
+      "text": "John E. Dowling is an American neuroscientist and Gordon and Llura Gund Research Professor of Neurosciences at Harvard University. He is best known for his seminal work in vision science, having elucidated the biochemistry of rhodopsin and development of the vertebrate retina, as well as diseases that affect vision such as vitamin A deficiency and retinitis pigmentosa. He was elected to the American Academy of Arts and Sciences in 1972, the National Academy of Sciences in 1976, and the American Philosophical Society in 1992. – Wikipedia (https://en.wikipedia.org/wiki/John_E._Dowling)"
     }
   ]
 }

@@ -39,25 +39,22 @@
         "parts": ["Phototransduction"]
       },
       {
-        "title": "Horizontal cells and feedback"
+        "title": "Horizontal cells modulate signaling between photoreceptors and bipolar cells"
       },
       {
         "title": "Bipolar cells diversify photoreceptor signals"
       },
       {
-        "title": "Amacrine and ganglion cells – circuits, computations and output",
+        "title": "Amacrine and Ganglion Cells: retinal circuits, computations and output",
         "parts": [
           "Circuit computations",
-          "Rod and cone pathways",
+          "Rod vs. cone signals take different paths to get to ganglion cells",
           "Intrinsically photosensitive retinal ganglion cells",
           "Retinal output"
         ]
       },
       {
-        "title": "Retinal vision in the real world",
-        "parts": [
-          "Light adaptation"
-        ]
+        "title": "Retinal vision in the real world"
       },
       {
         "title": "Retinal development",
@@ -73,13 +70,15 @@
           "Glaucoma",
           "Diabetic retinopathy",
           "Age-related macular degeneration",
-          "Retinitis pigmentosa"
+          "Retinitis pigmentosa",
+          "Treatment strategies for retinal-based vision loss"
         ]
       },
       { "title": "Looking forward" },
       { "title": "Quiz" },
       { "title": "Downloads" },
-      { "title": "Further reading" }
+      { "title": "Acknowledgements" },
+      { "title": "Further reading" }      
     ]
   },
   "Part3": {

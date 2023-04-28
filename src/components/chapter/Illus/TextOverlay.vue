@@ -15,14 +15,14 @@
         <div class="pb-20">
           <p class="w-oText" v-html="animation?.infoText || animation?.text" />
           <div v-if="animation?.steps" class="w-oText">
-            <p class="font-semibold">Directions:</p>
+            <p class="font-semibold pt-6">Directions:</p>
             <ol class="pl-12">
               <li
                 v-for="step in animation?.steps"
                 class="pb-6 last:pb-0 list-decimal list-outside"
                 :key="step"
               >
-                {{ step }}
+                <span v-html="step" />
               </li>
             </ol>
           </div>
@@ -94,7 +94,7 @@ defineEmits(["onOpen"]);
 const video = {
   id: "f76eea26-c064-41c5-9347-889a65266271",
   type: "breakVideo",
-  title: "Maureen Neitz",
+  title: "Maureen and Jay Neitz",
   text: "discussing possible causes and cures for myopia",
   slug: "placeholder",
 };

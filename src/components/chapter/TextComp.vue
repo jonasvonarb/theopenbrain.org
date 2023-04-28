@@ -11,6 +11,7 @@ import Section from "./text/SectionComp.vue";
 import Points from "@/components/UI/PointsComp.vue";
 import HoverImg from "@/components/chapter/text/HoverImg.vue";
 import FurtherReading from "./text/FurtherReading.vue";
+import Acknowledgements from "./text/Acknowledgements.vue";
 import DownloadSection from "./text/DownloadSection.vue";
 
 import FootNotes from "./text/FootNotes.vue";
@@ -201,7 +202,8 @@ onBeforeUnmount(() => {
         <div class="-ml-20 w-text">
           <QuizSection />
           <DownloadSection />
-          <FurtherReading :content="source['furtherReading']" />
+          <Acknowledgements />
+          <FurtherReading />
           <FootNotes :content="source['footNotes']" />
         </div>
       </main>
@@ -219,6 +221,4 @@ onBeforeUnmount(() => {
   width: min(50vw, calc(780px + 11rem));
   margin-left: calc(100vw - min(50vw, calc(780px + 11rem)));
 }
-
-
 </style>

@@ -113,14 +113,16 @@ const closeMenu = () => {
               </template>
               <div
                 class="flex py-4 pl-36 pr-12 border-t border-light/70 hover:text-primaryMed"
-                @click="scrollToMenu('footnotes'), closeMenu()"
+                @click="scrollToMenu('references'), closeMenu()"
                 :class="
-                  'Footnotes' === store.currentSubChapter
+                  'References' === store.currentSubChapter
                     ? 'text-white pointer-events-none bg-primaryMed'
                     : ''
                 "
               >
-                <li class="w-full max-w-[850px] pl-8 font-medium">Footnotes</li>
+                <li class="w-full max-w-[850px] pl-8 font-medium">
+                  References
+                </li>
               </div>
             </ol>
           </li>
