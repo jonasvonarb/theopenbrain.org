@@ -269,7 +269,7 @@ onMounted(() => {
 
   animationLottie = lottie.loadAnimation({
     rendererSettings: {
-      progressiveLoad: true,
+      progressiveLoad: false,
     },
     id: props.animation.id,
     speed: info.speed || 1,

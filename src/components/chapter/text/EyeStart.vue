@@ -17,7 +17,7 @@ onMounted(() => {
   animation.value = lottie.loadAnimation({
     rendererSettings: {
       scaleMode: "noScale",
-      progressiveLoad: true,
+      progressiveLoad: false,
       preserveAspectRatio: "xMidYMid slice",
     },
     id: "introAnimation",

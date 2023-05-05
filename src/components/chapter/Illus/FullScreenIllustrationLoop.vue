@@ -243,7 +243,7 @@ onMounted(() => {
     autoplay: false,
     path: "/publicAssets/animations/" + props.animation.id + ".json",
     rendererSettings: {
-      progressiveLoad: true,
+      progressiveLoad: false,
     },
   });
   setTimeout(() => {

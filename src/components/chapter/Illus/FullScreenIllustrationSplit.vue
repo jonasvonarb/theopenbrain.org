@@ -56,7 +56,7 @@ onMounted(() => {
     autoplay: false,
     renderer: "svg",
     // rendererSettings: {
-    //   progressiveLoad: true,
+    //   progressiveLoad: false,
     // },
     path: "/publicAssets/animations/" + props.animation.id + "Left" + ".json",
   });

@@ -45,7 +45,7 @@ onMounted(() => {
     autoplay: false,
     path: "/publicAssets/animations/" + id + ".json",
     rendererSettings: {
-      progressiveLoad: true,
+      progressiveLoad: false,
     },
   });
   animation.value.setSubframe(true);

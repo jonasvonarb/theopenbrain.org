@@ -22,7 +22,7 @@ onMounted(() => {
     loop: false,
     autoplay: false,
     rendererSettings: {
-      progressiveLoad: true,
+      progressiveLoad: false,
     },
     path:
       "/publicAssets/animations/" +

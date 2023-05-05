@@ -82,7 +82,7 @@ onMounted(() => {
     if (!svgContainer) return;
     animationLottie[index] = lottie.loadAnimation({
       rendererSettings: {
-        progressiveLoad: true,
+        progressiveLoad: false,
       },
       id: id,
       speed: 1,
