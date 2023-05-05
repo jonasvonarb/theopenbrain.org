@@ -121,9 +121,9 @@ section p.breakSectionTitle {
   padding-top: 0px;
 }
 
-/* *::-webkit-scrollbar {
+*::-webkit-scrollbar {
   display: none;
-} */
+}
 .no-select {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -133,8 +133,8 @@ section p.breakSectionTitle {
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 * {
-  /* -ms-overflow-style: none;
-  scrollbar-width: none; */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   overscroll-behavior: none;
   box-sizing: border-box;
 }
@@ -451,7 +451,7 @@ sup:hover {
   border: solid #000 1.5px;
   background-color: white;
   position: fixed;
-  left: calc(100vw - min(50vw, calc(780px + 11rem)) - .75rem);
+  left: calc(100vw - min(50vw, calc(780px + 11rem)) - 0.75rem);
   top: 50vh;
 }
 
