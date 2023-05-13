@@ -85,7 +85,6 @@ onMounted(() => {
         progressiveLoad: false,
       },
       id: id,
-      speed: 1,
       wrapper: svgContainer,
       animType: "svg",
       loop: true,
@@ -94,6 +93,10 @@ onMounted(() => {
     });
     animationLottie[index].setSubframe(true);
     animationLottie[index].play();
+    console.log(props.info.id);
+    if (props.info.id === "animationOnOff") {
+      animationLottie[index].setSpeed(0.5);
+    }
   }
 });
 </script>

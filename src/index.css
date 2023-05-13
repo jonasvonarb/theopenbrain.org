@@ -238,7 +238,7 @@ h4 {
 .highlighterIlluFill.highlightIllu > * > * {
   fill: var(--primaryMed);
   fill-opacity: 1;
-  stroke-width: 0;
+  /* stroke-width: 0; */
 }
 
 .highlightIllu > *,
@@ -247,7 +247,7 @@ h4 {
 .highlightIllu > * > *.highlighterIlluFill {
   fill: var(--primaryMed);
   fill-opacity: 1;
-  stroke-width: 0;
+  /* stroke-width: 0; */
 }
 .highlighterIlluBorder.highlightIllu > *,
 .highlightIllu > .highlighterIlluBorder > *,
