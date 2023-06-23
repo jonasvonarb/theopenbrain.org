@@ -71,7 +71,7 @@ textarea {
   padding: 12px 20px;
   box-sizing: border-box;
   border: 0;
-  border-radius: 0rem;
+  border-radius: 1rem;
   font-size: 16px;
   resize: none;
   --tw-bg-opacity: 1;
