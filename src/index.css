@@ -294,7 +294,7 @@ h4 {
 .punkt,
 .punktComment {
   position: absolute;
-  left: calc(50vw - min(calc(50vw + 1.25rem), calc(780px + 11.7rem)) - 0.5rem);
+  left: calc(50vw - min(calc(50vw + 1.25rem), calc(780px + 12.25rem)));
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
