@@ -25,7 +25,7 @@
     </div>
     <FIcon
       @click="openAbout()"
-      class="-m-0.5 z-[49] icon iconInvert duration-300"
+      class="-m-0.5 z-[49] icon duration-300"
       :class="store.activeAbout ? 'left-1/2 ml-4' : 'left-left'"
       @mouseenter="helpIsActive = true"
       @mouseleave="helpIsActive = false"

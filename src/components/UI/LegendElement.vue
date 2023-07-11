@@ -14,7 +14,7 @@
       >
         <img
           loading="lazy"
-          class="h-8 w-20 mr-2 my-0.5"
+          class="h-12 w-20 mr-2 my-0.5"
           :src="
             '/publicAssets/icons/' +
             iconPraefix +

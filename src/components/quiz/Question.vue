@@ -36,14 +36,14 @@
         <div class="flex gap-4">
           <div
             v-if="props.num !== 1"
-            class="border border-black w-32 text-center cursor-pointer mt-12 uppercase hover:bg-primaryMed hover:text-white"
+            class="border border-black w-32 text-center cursor-pointer mt-12 uppercase hover:bg-primaryMed hover:text-black"
             @click="prev"
           >
             back
           </div>
           <div
             :class="!active && 'opacity-20 pointer-events-none'"
-            class="border border-black w-32 text-center cursor-pointer mt-12 uppercase hover:bg-primaryMed hover:text-white"
+            class="border border-black w-32 text-center cursor-pointer mt-12 uppercase hover:bg-primaryMed hover:text-black"
             @click="next"
           >
             next

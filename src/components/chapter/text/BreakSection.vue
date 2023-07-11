@@ -16,7 +16,7 @@ const openInfo = () => {
   if (infoIsOpen.value) {
     gsap.to(el, {
       duration: 0.3,
-      height: "auto",
+      height: window.innerHeight - 50 - 52,
     });
   } else {
     gsap.to(el, {

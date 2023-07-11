@@ -134,13 +134,13 @@ const closeMenu = () => {
       v-if="store.activeMenu"
       :text="'close'"
       :target="'Menu'"
-      class="absolute bg-bgDa pt-11 pb-4 pointer-events-auto z-[60] h-full w-12 flex justify-center items-start top-0 right-0 duration-300 overflow-hidden"
+      class="absolute bg-bgDa pt-11 pb-4 pointer-events-auto z-[60] h-full w-[3.15rem] flex justify-center items-start top-0 right-0 duration-300 overflow-hidden"
     />
     <!-- menu open/close chapter -->
     <InteractionButton
       :text="'open'"
       :target="'Menu'"
-      class="fixed bg-bgDa pt-11 pb-4 pointer-events-auto z-[60] h-full w-12 flex justify-center items-start top-0 duration-300 overflow-hidden"
+      class="fixed bg-bgDa pt-11 pb-4 pointer-events-auto z-[60] h-full w-[3.15rem] flex justify-center items-start top-0 duration-300 overflow-hidden"
       :class="
         !store.activeMenu && route.name === 'chapter'
           ? 'left-0 opacity-100 '

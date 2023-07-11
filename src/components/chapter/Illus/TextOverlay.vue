@@ -2,7 +2,7 @@
   <div class="flex flex-col z-50 pt-20 font-sans text-white w-wrapper">
     <PlusIcon
       :class="!infoIsOpen ? '' : 'rotate-45'"
-      class="icon duration-300 z-50"
+      class="icon duration-300 z-50 !h-[3.25rem] !w-[3.25rem]"
       @click="$emit('onOpen')"
     />
     <div
@@ -10,9 +10,9 @@
       class="flex -mt-12 flex-row text-base h-text pb-2 overscroll-auto"
     >
       <div
-        class="flex flex-col pt-20 justify-start gap-16 w-container overflow-y-scroll overflow-x-visible"
+        class="flex flex-col pt-20 justify-start gap-16 w-container overflow-y-hidden overflow-x-visible"
       >
-        <div class="pb-20">
+        <div class="pb-20 overflow-y-scroll">
           <p class="w-oText" v-html="animation?.infoText || animation?.text" />
           <div v-if="animation?.steps" class="w-oText">
             <p class="font-semibold pt-6">Directions:</p>
@@ -28,7 +28,7 @@
           </div>
         </div>
       </div>
-      <div v-if="infoIsOpen" class="p-0 pt-10 pb-12 overflow-visible w-asset">
+      <div v-if="infoIsOpen" class="p-0 pt-8 pb-12 overflow-visible w-asset">
         <img
           loading="lazy"
           class="h-full pl-20 w-2/3 object-contain object-left-top"

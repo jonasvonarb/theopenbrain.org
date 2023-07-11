@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="fixed bg-white text-black w-screen h-screen z-[10000] bg-img invert"
-  >
+  <div class="fixed text-white w-screen h-screen z-[10000] bg-img">
     <div
       class="absolute flex flex-col justify-start items-start p-12 uppercase"
     >
@@ -11,7 +9,7 @@
         <img
           loading="lazy"
           src="/favicon_io/android-chrome-512x512.png"
-          class="h-20"
+          class="h-20 invert"
         />
         The Open Brain
       </div>
@@ -48,10 +46,10 @@ onMounted(() => {
 
 <style scoped>
 .bg-img {
-  background-color: white;
+  background-color: black;
   background-image: url("/publicAssets/images/animationEye.gif");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: auto 13%;
+  background-size: auto 16%;
 }
 </style>

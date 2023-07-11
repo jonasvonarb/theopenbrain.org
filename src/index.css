@@ -317,7 +317,7 @@ h4 {
 
 mark {
   background: var(--primaryMed);
-  color: whitesmoke;
+  color: black;
   padding-left: 0;
   padding-right: 0;
 }
@@ -433,6 +433,9 @@ sup:hover {
   right: 0;
   background: #202020;
 }
+.marker-end{
+  /* padding-top: 10px; */
+}
 
 .marker-start::before {
   content: " ";
@@ -468,8 +471,8 @@ sup:hover {
 .icon:hover * {
   border-color: var(--primaryMed);
   background-color: var(--primaryMed);
-  fill: white;
-  color: white;
+  fill: black;
+  color: black;
   stroke: transparent;
 }
 

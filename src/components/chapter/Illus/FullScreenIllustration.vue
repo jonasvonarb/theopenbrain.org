@@ -88,7 +88,7 @@ const openInfo = () => {
   if (infoIsOpen.value) {
     gsap.to(el, {
       duration: 0.3,
-      height: "auto",
+      height: window.innerHeight - 50 - 52,
     });
   } else {
     gsap.to(el, {
@@ -147,7 +147,7 @@ const openInfo = () => {
                 index !== 0 ? ' col-span-1	' : ' col-span-2	',
                 (activeState.toggle === false && activeState.state === index) ||
                 (activeState.state === index && index === 0)
-                  ? 'bg-primaryMed text-white pointer-events-none'
+                  ? 'bg-primaryMed text-black pointer-events-none'
                   : activeState.state === index
                   ? 'border-primaryMed text-black hover:text-primaryMed  '
                   : ' text-bgDa hover:text-primaryMed hover:border-primaryMed',
@@ -169,10 +169,10 @@ const openInfo = () => {
               class="flex justify-center items-center flex-col border border-l-0 col-span-1 p-6 border-black duration-100 flex-1"
               :class="[
                 activeState.toggle === true && activeState.state === index
-                  ? 'bg-primaryMed text-white pointer-events-none'
+                  ? 'bg-primaryMed text-black pointer-events-none'
                   : activeState.state === index
                   ? 'border-primaryMed text-black  hover:text-primaryMed '
-                  : 'bg-white text-bgDa hover:text-primaryMed hover:border-primaryMed',
+                  : 'bg-white text-bgDa  hover:text-primaryMed hover:border-primaryMed',
                 ,
               ]"
               @click="

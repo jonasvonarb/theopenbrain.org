@@ -111,9 +111,9 @@ watch(
     animationLottieRight.goToAndStop(frameLeft, true);
     if (60 < frameLeft && frameLeft < 100) {
       activeLayer.value = 0;
-    } else if (110 < frameLeft && frameLeft < 180) {
+    } else if (110 < frameLeft && frameLeft < 138) {
       activeLayer.value = 1;
-    } else if (190 < frameLeft && frameLeft < 250) {
+    } else if (156 < frameLeft && frameLeft < 178) {
       activeLayer.value = 2;
     } else {
       activeLayer.value = null;

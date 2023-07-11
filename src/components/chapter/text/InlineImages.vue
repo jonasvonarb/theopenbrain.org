@@ -28,6 +28,6 @@ defineProps({
 
 <style scoped>
 .h-image {
-  min-height: calc(50vw * 775 / 1141);
+  min-height: calc(50vw * 510 / 787);
 }
 </style>

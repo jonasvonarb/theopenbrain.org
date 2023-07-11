@@ -18,8 +18,9 @@
             <div
               class="flex justify-between w-full pl-left bg-fullHDa p-6 py-4 pr-30"
             >
-              <span class="w-oText flex items-center pr-16">
-                {{ currenSection + 1 }}. {{ animation.states?.[currenSection] }}
+              <span class="w-oText flex items-start pr-16">
+                <span class="pr-3 text-start shrink-1"> {{ currenSection + 1 }}. </span>
+                {{ animation.states?.[currenSection] }}
               </span>
               <DownArrow
                 @click="nextStep()"

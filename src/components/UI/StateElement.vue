@@ -4,11 +4,7 @@
       v-for="(state, index) in states"
       :key="state"
       class="hover:text-primaryMed text-small cursor-pointer pb-6"
-      :class="
-        activeState == index
-          ? 'underline pointer-events-none text-primaryMed'
-          : ''
-      "
+      :class="activeState == index ? ' ' : ''"
       @click="$emit('onClick', { index, activeState })"
     >
       <template v-if="iconsIndex?.[index]">
@@ -21,7 +17,7 @@
       <span
         :class="
           activeState == index
-            ? 'underline pointer-events-none text-primaryMed'
+            ? 'underline decoration-4	 decoration-primaryMed border-primaryMed pointer-events-none text-black'
             : ''
         "
         >{{ state }}</span

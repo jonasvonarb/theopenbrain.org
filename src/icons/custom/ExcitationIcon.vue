@@ -21,6 +21,6 @@
 </template>
 <script>
 export default {
-  name: "ExcitatationIcon",
+  name: "ExcitationIcon",
 };
 </script>

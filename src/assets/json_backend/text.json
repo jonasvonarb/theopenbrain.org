@@ -572,12 +572,6 @@
                 {
                   "id": "3438c499-48b6-48f1-8896-4d8097872685",
                   "text": "Each retinal class is born at specific times and wiring is   genetically defined. In rodents, a group of neuroblasts compose a sheet at the back surface of the growing eye cup. These cells have an I-beam shape when viewed in cross section, with anchors at the outer and inner margins of the developing retina. The nuclei within these cells undergo interkinetic migration, shuttling between the inner and outer margins of the retina, during which time they also generate daughter cells that will go on to become the various retinal classes. Retinal ganglion cells and amacrine cells are born first, bipolar cells next, and photoreceptors last. Current evidence indicates that within a neuron class, each subtype is generated randomly – for instance, neuroblasts generating only direction selective ganglion cells have not been found<sup data-sup='104'>104</sup>. The generation of different neuronal classes happens over a range of days, and newly generated neurons must migrate to their final positions. The temporal delay in generation of different neuronal classes complicates the retinal wiring process, as the dendrites and axons of synaptic partners arrive asynchronously in the plexiform layers. To solve this problem, the retina relies on a stereotyped set of genetically defined adhesive cues that guide retinal circuit assembly<sup data-sup='105'>105</sup>."
-                },
-                {
-                  "id": "4ba8917b-7a0f-436e-9209-0129e3615c75",
-                  "type": "breakVideo",
-                  "title": "Joshua Sanes",
-                  "text": "Blueprints for building a retina"
                 }
               ]
             },

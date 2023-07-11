@@ -18,7 +18,7 @@ const openAbout = () => {
     class="fixed flex bottom-4 z-[60] text-base duration-300"
     :class="
       route.name === 'about' || store.activeAbout
-        ? 'left-4'
+        ? 'left-1/2 -ml-14'
         : route.name === 'home'
         ? store.activeMenu
           ? 'left-6'
@@ -35,7 +35,7 @@ const openAbout = () => {
     />
     <!-- <BiExclamationCircleFill " /> -->
     <OpenArrowIcon
-      class="icon iconInvert z-[60]"
+      class="icon iconInvert z-[60] rotate-45"
       v-else
       @click="store.activeAbout = false"
     />
@@ -50,7 +50,7 @@ const openAbout = () => {
       ]"
     ></div>
     <div
-      class="fixed h-screen bg-primaryMed text-white overflow-y-scroll overflow-x-hidden scrollbar top-0 left-0 text-medium duration-300 border-r border-black"
+      class="fixed h-screen bg-primaryMed text-black overflow-y-scroll overflow-x-hidden scrollbar top-0 left-0 text-medium duration-300 border-r border-black"
       :class="[store.activeAbout ? 'w-[50vw] ml-0' : 'w-[0]']"
     >
       <div class="px-left pt-12 pb-56 w-[50vw] max-w-[800px]">

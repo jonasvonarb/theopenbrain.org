@@ -31,7 +31,7 @@
         />
         <BiCheckCircle
           v-else
-          class="icon rounded-full text-black bg-white hover:text-white hover:bg-primaryMed border-none"
+          class="icon rounded-full text-black bg-white hover:text-black hover:bg-primaryMed border-none"
         />
       </p>
     </div>

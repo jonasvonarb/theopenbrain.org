@@ -1,8 +1,9 @@
 <template>
   <div class="w-screen h-screen text-center bg-img bg-cover bg-opacity-50">
     <div
-      class="fixed top-0 left-0 pt-6 text-white text-base bg-black h-full w-full flex justify-center items-start overflow-scroll"
+      class="fixed flex flex-col top-0 left-0 pt-0 text-white text-base bg-black h-full w-full justify-center items-center overflow-scroll"
     >
+    <div class="bg-img h-12 w-full"></div>
       <div class="w-[400px] max-w-full px-6">
         <h3>
           <em>The Open Brain</em> is an Open Access neuroscience textbook.
@@ -27,6 +28,10 @@
 
 <style scoped>
 .bg-img {
-  /* background-image: url("/publicAssets/images/background.png"); */
+  background-color: black;
+  background-image: url("/publicAssets/images/animationEye.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 300%;
 }
 </style>

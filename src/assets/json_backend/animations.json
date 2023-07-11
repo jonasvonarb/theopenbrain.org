@@ -25,6 +25,7 @@
       "states": [
         "Cornea",
         "Aqueous humour",
+        "Iris",
         "Pupil",
         "Lens",
         "Ciliary muscle",
@@ -33,8 +34,7 @@
         "Fovea",
         "Choroid",
         "Sclera",
-        "Optic nerve",
-        "Iris"
+        "Optic nerve"
       ]
     },
     {
@@ -51,7 +51,7 @@
       "loop": true,
       "states": [
         "Light shines into an eye, activating the retina",
-        "Retinal ganglion cells project bilaterally to the pretectal olivary nucleus",
+        "Retinal ganglion cell axons project bilaterally to the pretectal olivary nucleus",
         "Each pretectal nucleus projects bilaterally to the Edinger-Westphal Nucleus",
         "The Edinger-Westphal nucleus projects ipsilaterally to the ciliary ganglion",
         "Postganglionic parasympathetic neurons project ipsilaterally to the iris spinster muscle, resulting in pupil constriction"
@@ -60,7 +60,7 @@
         "Pretectal nucleus",
         "Edinger-Westphal nucleus",
         "Ciliary ganglion",
-        "Iris muscle"
+        "Pupil"
       ]
     },
     {
@@ -85,7 +85,7 @@
       "multiple": false,
       "infos": [
         "Cone mosaic in the fovea.",
-        "Red, cone terminals; Green, horizontal cell mosaic; Blue, bipolar cell mosaic.",
+        "Retinal half mosaic: Red, cone terminals; Green, horizontal cell mosaic; Blue, bipolar cell mosaic.",
         "ON alpha ganglion cell mosaic from cat retina."
       ],
       "sources": [
@@ -152,7 +152,7 @@
       "blockStates": true,
       "hasTransition": true,
       "iconPraefix": "retinalCircuits",
-      "states": ["Inhibition", "Excitatation", "Gap junction"]
+      "states": ["Inhibition", "Excitation", "Gap junction"]
     },
     {
       "id": "animationPhotoreceptors",
@@ -279,7 +279,7 @@
         "Spike train",
         "special",
         "Inhibition",
-        "Excitatation",
+        "Excitation",
         "Gap junction"
       ]
     },
@@ -325,7 +325,7 @@
         "Spike train",
         "special",
         "Inhibition",
-        "Excitatation",
+        "Excitation",
         "Gap junction"
       ]
     },
@@ -349,7 +349,7 @@
         "Spike train",
         "special",
         "Inhibition",
-        "Excitatation",
+        "Excitation",
         "Gap junction"
       ]
     },
@@ -373,7 +373,7 @@
         "Spike train",
         "special",
         "Inhibition",
-        "Excitatation",
+        "Excitation",
         "Gap junction"
       ]
     },
@@ -394,7 +394,7 @@
         "Spike train",
         "special",
         "Inhibition",
-        "Excitatation",
+        "Excitation",
         "Gap junction"
       ]
     },
