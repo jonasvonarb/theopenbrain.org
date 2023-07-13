@@ -133,7 +133,7 @@ const openAbout = () => {
               <p>Copy editor: Leah LeFort</p>
               <br />
               <p>
-                Designed and developed by
+                Designed & developed by
                 <a
                   class="hover:no-underline hover:italic"
                   href="https://malpeso.info/"

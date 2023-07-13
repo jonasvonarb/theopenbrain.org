@@ -8,11 +8,11 @@
         <h3>
           <em>The Open Brain</em> is an Open Access neuroscience textbook.
         </h3>
-        <p class="pb-6 text-base">
+        <p class="pb-6 text-base noHyphens">
           Our first chapter is now online! Our long-term goal is to produce an
           entire ‘textbook’ worth of material, and we are currently fundraising.
         </p>
-        <p class="pb-6 text-base">
+        <p class="pb-6 text-base !noHyphens">
           This current chapter, while completely functional, is only a prototype
           and not yet accessible on mobile screens. For the best user experience
           at this stage, we invite you to visit our site using a desktop Chrome
@@ -27,6 +27,9 @@
 <script setup></script>
 
 <style scoped>
+.noHyphens {
+  hyphens: none;
+}
 .bg-img {
   background-color: black;
   background-image: url("/publicAssets/images/animationEye.gif");
