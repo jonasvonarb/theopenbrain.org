@@ -3,6 +3,7 @@
     class="fixed top-0 left-0 flex justify-center items-center h-screen w-screen"
   >
     <div class="border-l border-black h-screen fixed left-1/2" />
+    <div class="bg-[#8f9e9d] h-screen fixed left-0 w-1/2" />
     <template v-for="(question, index) in quiz" :key="index + '-question'">
       <Question
         class="duration-500"
