@@ -1,1 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><svg id="extra_illus." xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"><rect x=".76" y=".76" width="19.48" height="19.48" transform="translate(21 0) rotate(90)" style="fill:none; stroke:#000; stroke-miterlimit:10;"/><circle cx="5.87" cy="15.13" r="4.63"/><circle cx="15.13" cy="15.13" r="4.63" style="fill:none; stroke:#000; stroke-miterlimit:10;"/><circle cx="5.87" cy="5.87" r="4.63"/><circle cx="15.13" cy="5.87" r="4.63"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.6.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="extra_illus." xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 21 21" style="enable-background:new 0 0 21 21;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-miterlimit:10;}
+</style>
+<rect x="10.5" y="0.6" class="st0" width="9.9" height="9.9"/>
+<rect x="0.6" y="0.6" class="st0" width="9.9" height="9.9"/>
+<rect x="10.5" y="10.5" class="st0" width="9.9" height="9.9"/>
+<ellipse cx="15.5" cy="5.5" rx="4.5" ry="4.5"/>
+<ellipse class="st0" cx="5.6" cy="5.5" rx="4" ry="4"/>
+<ellipse cx="15.4" cy="15.4" rx="4.5" ry="4.5"/>
+</svg>
