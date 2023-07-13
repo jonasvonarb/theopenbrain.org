@@ -64,10 +64,9 @@ const scrollToPos = () => {
     >
       <img
         loading="lazy"
-        src="/favicon_io/android-chrome-512x512.png"
-        class="h-20 invert"
+        src="/publicAssets/images/logo.svg"
+        class="h-36 invert"
       />
-      The Open Brain
     </div>
     <div class="absolute right-0 h-screen w-screen" id="introAnimation" />
     <div

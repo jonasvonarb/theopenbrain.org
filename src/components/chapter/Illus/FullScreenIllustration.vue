@@ -106,7 +106,7 @@ const openInfo = () => {
     :class="[
       !thisAnimation.infoText ||
       (thisAnimation.title === 'Refraction errors' && !infoIsOpen)
-        ? 'bg-bgLi text-black'
+        ? 'bg-[#8f9e9d] text-black'
         : 'bg-bgDa text-white',
       !thisAnimation.split ? 'h-[150vh]' : 'h-[700vh]',
       thisAnimation.title === 'Pathway for the pupillary light reflex'

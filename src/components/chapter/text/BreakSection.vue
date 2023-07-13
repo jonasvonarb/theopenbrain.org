@@ -60,8 +60,20 @@ const openInfo = () => {
               class="absolute top-0 left-0 p-32 pl-44 py-72 flex justify-around items-center w-full h-full pointer-events-none"
               v-if="content.title === 'Blind spot'"
             >
-              <div class="text-blindness">A</div>
-              <div class="text-blindness">B</div>
+              <div class="image-blindness h-full flex justify-center items-center">
+                <img
+                  class="h-[40%]  min-h-[150px]"
+                  src="/publicAssets/images/blindSpot/Man_A.png"
+                />
+              </div>
+              <div class="image-blindness h-full flex justify-center items-center">
+                <img
+                  class="h-[25%] min-h-[100px]"
+                  src="/publicAssets/images/blindSpot/Dragon_B.png"
+                />
+              </div>
+              <!-- <div class="text-blindness">A</div>
+              <div class="text-blindness">B</div> -->
             </div>
             <div
               v-if="content.title === 'Color blindness'"

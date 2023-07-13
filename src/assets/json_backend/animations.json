@@ -298,10 +298,10 @@
       "blockSwitches": true,
       "iconPraefix": "onOff",
       "legend": [
-        "Glutamate",
         "G Protein",
         "α subunit",
         "Na<span class='superscirpt'>+</span>",
+        "Glutamate",
         "Glutamate receptor"
       ]
     },

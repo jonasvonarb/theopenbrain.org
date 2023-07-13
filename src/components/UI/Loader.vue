@@ -1,20 +1,15 @@
 <template>
   <div class="fixed text-white w-screen h-screen z-[10000] bg-img">
     <div
-      class="absolute flex flex-col justify-start items-start p-12 uppercase"
+      class="absolute flex flex-col justify-start items-start p-6 pl-20 uppercase"
     >
       <div
-        class="sticky top-6 left-20 text-biggest flex items-center gap-4 z-50 pb-4"
+        class="sticky text-biggest flex items-center gap-4 z-50 pb-4"
       >
-        <img
-          loading="lazy"
-          src="/favicon_io/android-chrome-512x512.png"
-          class="h-20 invert"
-        />
-        The Open Brain
+        <img loading="lazy" src="/publicAssets/images/logo.svg" class="h-36 invert" />
       </div>
       <template v-for="amount in loading" :key="amount">
-        <div class="pl-24">{{ loadingSteps[amount - 1] }}</div>
+        <div class="pl-3">{{ loadingSteps[amount - 1] }}</div>
       </template>
     </div>
     <div
@@ -27,13 +22,7 @@
 import { onBeforeUnmount, onMounted, ref, watch } from "vue";
 const loading = ref(0);
 
-const loadingSteps = [
-  "Loading Data, ",
-  "Text, ",
-  "Animations, ",
-  "",
-  "Images! ",
-];
+const loadingSteps = ["Loading Data", "Text", "Animations", "", "Images..."];
 
 onMounted(() => {
   const load = setInterval(() => {

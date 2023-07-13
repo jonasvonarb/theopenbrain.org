@@ -97,7 +97,7 @@
             >
               <img
                 loading="lazy"
-                class="invert"
+                class="invert h-10"
                 :src="`/publicAssets/icons/fullScreenAnimations/${toCamelCase(
                   state
                     ?.replaceAll('<span class=\'superscirpt\'>', '')
