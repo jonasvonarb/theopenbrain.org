@@ -480,6 +480,7 @@ sup:hover {
 .icon.iconFull:hover,
 .icon.iconFull:hover * {
   background-color: var(--fullHDark);
+  fill: white;
 }
 
 .iconBig {

@@ -2,8 +2,8 @@
   <div class="relative flex justify-end items-end pb-1">
     <div
       v-if="helpIsActive"
-      class="fixed w-[33vw] bottom-14 z-30 right-5 ml-5 mb-5 p-6 text-black border border-bgLi text-medium bg-white cursor-pointer duration-300 pointer-events-none"
-      :class="store.activeAbout ? 'right-1/2 ml-4' : 'right-24'"
+      class="fixed w-[33vw] bottom-14 z-30 ml-5 mb-5 p-6 pt-4 text-black border border-black text-medium bg-white cursor-pointer duration-300  pointer-events-none"
+      :class="store.activeAbout ? 'right-1/2 ml-0' : 'right-6'"
     >
       This current chapter, while completely functional, is only a prototype,
       and many things may change over time. As a prototype, the site is also not

@@ -3,10 +3,12 @@
     <div
       class="absolute flex flex-col justify-start items-start p-6 pl-20 uppercase"
     >
-      <div
-        class="sticky text-biggest flex items-center gap-4 z-50 pb-4"
-      >
-        <img loading="lazy" src="/publicAssets/images/logo.svg" class="h-36 invert" />
+      <div class="sticky text-biggest flex items-center gap-4 z-50 pb-4">
+        <img
+          loading="lazy"
+          src="/publicAssets/images/logo.svg"
+          class="h-36 invert"
+        />
       </div>
       <template v-for="amount in loading" :key="amount">
         <div class="pl-3">{{ loadingSteps[amount - 1] }}</div>
@@ -19,15 +21,25 @@
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, ref, watch } from "vue";
+import { onMounted, ref } from "vue";
 const loading = ref(0);
 
-const loadingSteps = ["Loading Data", "Text", "Animations", "", "Images..."];
+const loadingSteps = [
+  "Loading:",
+  "Data",
+  "",
+  "Text",
+  "Animations",
+  "",
+  "",
+  "Images...",
+];
 
 onMounted(() => {
   const load = setInterval(() => {
     loading.value = loading.value + 1;
-    if (loading.value <= 4) return;
+    console.log(loading.value)
+    if (loading.value <= 7) return;
     clearInterval(load);
   }, 500);
 });

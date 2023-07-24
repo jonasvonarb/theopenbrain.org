@@ -42,22 +42,22 @@ const unSetHover = () => {
 const files = [
   {
     type: "file",
-    link: "https://www.dropbox.com/s/nlqeqruub90msr7/pexels-sunsetoned-7235791.mp4?dl=1",
+    link: "https://mcgill-my.sharepoint.com/:f:/g/personal/stuart_trenholm_mcgill_ca/EnG2B8tGLGFPiMO-HAO3NrUBIumc8gYjobEvJZn805l3Hw?e=WvmhBY",
     text: "Text",
   },
   {
     type: "files",
-    link: "https://www.dropbox.com/scl/fo/kmeyrslmcqfk3ko2vgo8h/h?dl=1&rlkey=38ckgbdt1kz2k8j3x717ox2ul",
+    link: "https://mcgill-my.sharepoint.com/:f:/g/personal/stuart_trenholm_mcgill_ca/EnG2B8tGLGFPiMO-HAO3NrUBIumc8gYjobEvJZn805l3Hw?e=WvmhBY",
     text: "Animations",
   },
   {
     type: "files",
-    link: "https://www.dropbox.com/s/wzggtpip0tyjh0i/lamb-120739.mp4?dl=1",
+    link: "https://mcgill-my.sharepoint.com/:f:/g/personal/stuart_trenholm_mcgill_ca/EnG2B8tGLGFPiMO-HAO3NrUBIumc8gYjobEvJZn805l3Hw?e=WvmhBY",
     text: "Images",
   },
   {
     type: "files",
-    link: "https://www.dropbox.com/s/nlqeqruub90msr7/pexels-sunsetoned-7235791.mp4?dl=1",
+    link: "https://mcgill-my.sharepoint.com/:f:/g/personal/stuart_trenholm_mcgill_ca/EnG2B8tGLGFPiMO-HAO3NrUBIumc8gYjobEvJZn805l3Hw?e=WvmhBY",
     text: "Entire chapter",
   },
 ];

@@ -19,12 +19,12 @@
               class="flex justify-between w-full pl-left bg-fullHDa p-6 py-4 pr-30"
             >
               <span class="w-oText flex items-start pr-16">
-                <span class="pr-3 text-start shrink-1"> {{ currenSection + 1 }}. </span>
+                <span class="pr-3 text-start shrink-1 pl-1"> {{ currenSection + 1 }}. </span>
                 {{ animation.states?.[currenSection] }}
               </span>
               <DownArrow
                 @click="nextStep()"
-                class="icon iconBig iconFull -rotate-90 hover:border-white"
+                class="icon iconBig iconFull -rotate-90 hover:border-white hover:fill-white"
               />
             </div>
             <!-- <div class="z-[60] text-white flex gap-2 pr-6 pt-6">

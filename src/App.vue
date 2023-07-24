@@ -50,7 +50,7 @@ onMounted(() => {
   setTimeout(() => {
     isLoaded.value = true;
     document.body.classList.remove("overflow-hidden");
-  }, 3000);
+  }, 5000);
 });
 onBeforeUnmount(() => {
   window.removeEventListener("resize", onResize);
