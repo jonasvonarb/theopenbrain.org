@@ -62,13 +62,13 @@ const openInfo = () => {
             >
               <div class="image-blindness h-full flex justify-center items-center">
                 <img
-                  class="h-[40%]  min-h-[150px]"
+                  class="h-[20%]  min-h-[150px]"
                   src="/publicAssets/images/blindSpot/Man_A.png"
                 />
               </div>
               <div class="image-blindness h-full flex justify-center items-center">
                 <img
-                  class="h-[25%] min-h-[100px]"
+                  class="h-[13%] min-h-[100px]"
                   src="/publicAssets/images/blindSpot/Dragon_B.png"
                 />
               </div>

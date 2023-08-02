@@ -58,13 +58,13 @@ const openAbout = () => {
           <h2>About</h2>
           <section class="pb-56">
             <h3>
-              <em>The Open Brain</em> is an Open Access neuroscience textbook.
+              <em>The Open Brain</em>
+              is an interactive, open access neuroscience learning tool (i.e.
+              it’s the natural evolution of a textbook).
             </h3>
             <p class="pb-42 text-base">
-              While we currently only have one chapter online, we are actively
-              seeking funding in order to expand the book with many more
-              chapters covering the breadth of neuroscience topics. Stay tuned
-              for more!
+              Our first chapter is officially online! We are now fundraising in
+              order to produce an entire ‘textbook’ worth of materal.
             </p>
           </section>
           <section>
