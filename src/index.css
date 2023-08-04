@@ -424,6 +424,7 @@ sup:hover {
   background: #000;
   position: absolute;
   left: calc(100vw - min(50vw, calc(780px + 11rem)) - 0rem);
+  transform: translate(0, 0.5rem);
 }
 .marker-end::before {
   content: " ";

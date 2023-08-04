@@ -106,7 +106,7 @@
         "Retinal changes conformation",
         "Activated rhodopsin in turn activates transducin",
         "The alpha subunit of transducin activates phosphodiesterase (PDE)",
-        "PDE degrades cGMP into GMP, leading to a decrease in intracellular [cGMP]",
+        "PDE converts cGMP into GMP, leading to a decrease in intracellular [cGMP]",
         "cGMP-gated ion channels close",
         "The rod membrane hyperpolarizes"
       ],
@@ -133,7 +133,7 @@
         "All-trans retinal exits the rod",
         "All-trans retinal binds to IRBP, which transports it into the RPE",
         "In the RPE, All-trans retinal undergoes further changes until restored to 11-cis ",
-        "11-cis retinal binds and is shuttled out of the RPE",
+        "11-cis retinal binds to IRBP and is shuttled out of the RPE",
         "11-cis retinal re-enters the rod where it can get activated by light again"
       ],
       "statesHighlight": [

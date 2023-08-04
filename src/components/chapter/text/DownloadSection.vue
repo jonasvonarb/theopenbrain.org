@@ -41,24 +41,9 @@ const unSetHover = () => {
 
 const files = [
   {
-    type: "file",
-    link: "https://mcgill-my.sharepoint.com/:f:/g/personal/stuart_trenholm_mcgill_ca/EnG2B8tGLGFPiMO-HAO3NrUBIumc8gYjobEvJZn805l3Hw?e=WvmhBY",
-    text: "Text",
-  },
-  {
     type: "files",
     link: "https://mcgill-my.sharepoint.com/:f:/g/personal/stuart_trenholm_mcgill_ca/EnG2B8tGLGFPiMO-HAO3NrUBIumc8gYjobEvJZn805l3Hw?e=WvmhBY",
-    text: "Animations",
-  },
-  {
-    type: "files",
-    link: "https://mcgill-my.sharepoint.com/:f:/g/personal/stuart_trenholm_mcgill_ca/EnG2B8tGLGFPiMO-HAO3NrUBIumc8gYjobEvJZn805l3Hw?e=WvmhBY",
-    text: "Images",
-  },
-  {
-    type: "files",
-    link: "https://mcgill-my.sharepoint.com/:f:/g/personal/stuart_trenholm_mcgill_ca/EnG2B8tGLGFPiMO-HAO3NrUBIumc8gYjobEvJZn805l3Hw?e=WvmhBY",
-    text: "Entire chapter",
+    text: "Download text, images, animations and more here!",
   },
 ];
 </script>
