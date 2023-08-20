@@ -62,12 +62,10 @@ router.afterEach((to) => {
   if (to.query.s) {
     let wait = setInterval(() => {
       if (document.getElementsByTagName("SECTION").length === 0) return;
-      console.log(document.getElementsByTagName("SECTION").length);
       clearInterval(wait);
       const section = document.getElementsByTagName("SECTION")[to.query.s];
       setTimeout(() => {
         section.scrollIntoView();
-        console.log(section);
       }, 500);
       setTimeout(() => {
         router.replace({ path: to.path });

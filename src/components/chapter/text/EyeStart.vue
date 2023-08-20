@@ -71,7 +71,7 @@ const scrollToPos = () => {
     <div class="absolute right-0 h-screen w-screen" id="introAnimation" />
     <div
       @click="scrollToPos()"
-      class="absolute bottom-8 left-1/2 -ml-5 flex justify-center items-center text-center"
+      class="absolute bottom-8 left-1/2 -translate-x-1/2 flex justify-center items-center text-center"
     >
       <DownArrow
         class="pointer-events-auto hover:bg-primaryLi iconBig cursor-pointer rounded-full"

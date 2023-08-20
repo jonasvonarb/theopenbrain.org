@@ -38,7 +38,6 @@ const loadingSteps = [
 onMounted(() => {
   const load = setInterval(() => {
     loading.value = loading.value + 1;
-    console.log(loading.value)
     if (loading.value <= 7) return;
     clearInterval(load);
   }, 500);

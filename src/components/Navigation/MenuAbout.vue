@@ -133,17 +133,17 @@ const openAbout = () => {
               <p>Copy editor: Leah LeFort</p>
               <br />
               <p>
-                Designed & developed by
+                Designed and developed by
                 <a
                   class="hover:no-underline hover:italic"
                   href="https://malpeso.info/"
                   target="_blank"
                 >
-                  Malpeso.Studio
+                  Studio Malpeso
                 </a>
               </p>
               <p>
-                Creative Direction & Illustration:
+                Art direction & illustration:
                 <a
                   class="hover:no-underline hover:italic"
                   href="https://malpeso.info/"
@@ -153,7 +153,7 @@ const openAbout = () => {
                 </a>
               </p>
               <p>
-                Development & Web Design:
+                Development & web design:
                 <a
                   class="hover:no-underline hover:italic"
                   href="http://www.jonasvonarb.ch/"

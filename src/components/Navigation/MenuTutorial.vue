@@ -2,7 +2,7 @@
   <div class="relative flex justify-end items-end pb-1">
     <div
       v-if="helpIsActive"
-      class="fixed w-[33vw] bottom-14 z-30 ml-5 mb-5 p-6 pt-4 text-black border border-black text-medium bg-white cursor-pointer duration-300  pointer-events-none"
+      class="fixed w-[33vw] bottom-14 z-30 ml-5 mb-5 p-6 pt-4 border text-medium bg-bgDa text-white border-primaryMed/90 cursor-pointer duration-300  pointer-events-none"
       :class="store.activeAbout ? 'right-1/2 ml-0' : 'right-6'"
     >
       This current chapter, while completely functional, is only a prototype,

@@ -1,14 +1,11 @@
 <script setup>
 import menu from "@/assets/json_backend/menu.json";
 import InteractionButton from "@/components/UI/InteractionButton.vue";
-import OpenCloseButtonLink from "@/components/UI/OpenCloseButtonLink.vue";
-import { onBeforeRouteUpdate, useRoute, useRouter } from "vue-router";
+import {  useRoute } from "vue-router";
 import { useGeneral } from "@/stores";
-import { watch } from "vue";
 import Brain from "../../icons/custom/Brain.vue";
 const store = useGeneral();
 const route = useRoute();
-const router = useRouter();
 
 const toStart = () => {
   store.startIsActive = true;

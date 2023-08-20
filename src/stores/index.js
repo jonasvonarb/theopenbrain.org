@@ -176,9 +176,7 @@ export const useText = defineStore("text", {
         positionMark = _target.indexOf(_selection),
         lengthMark = _selection.length;
 
-      newString = add(_target, _selection, positionMark, lengthMark);
-
-      function add(init, str, index, length) {
+      const add = (init, str, index, length) => {
         var result =
           init.slice(0, index) +
           "<mark id=highlight-" +
@@ -190,7 +188,9 @@ export const useText = defineStore("text", {
           "</mark>" +
           init.slice(index + length, init.length);
         return result;
-      }
+      };
+
+      newString = add(_target, _selection, positionMark, lengthMark);
 
       let entries = this.updateSectionsObj(
         this.text.sections,
@@ -198,7 +198,6 @@ export const useText = defineStore("text", {
         id,
         sectionId
       );
-
       var _baseId = id.replace("highlight-", "");
       this.updateText("text", entries);
       this.selectionIds.push(_baseId + "-" + positionMark);
@@ -206,45 +205,34 @@ export const useText = defineStore("text", {
     },
     updateSectionsObj(sections, newString, id, sectionId) {
       //update so it goes to subsubsections
-
       let entries = Object.entries(sections);
       //check sections
-      for (var i = 0; i < entries.length; i++) {
-        let section = entries[i][1];
-        let _sectionId = section.id;
-        if (sectionId === _sectionId) {
-          //check paragraphs
-          let subEntries = Object.entries(section.paragraphs);
-          for (let subEntrie of subEntries) {
-            let paragraph = subEntrie[1];
-            let _paragraphId = paragraph.id;
-
-            if (id === _paragraphId) {
-              paragraph.text = newString;
-            } else {
-              if (subEntrie[1].subSection) {
-                let subSection = subEntrie[1].subSection;
-                for (let i in Object.values(subSection)) {
-                  let subSetcion = subSection[i];
-                  if (id === subSetcion.id) {
-                    paragraph.text = newString;
+      let section = entries.find((x) => x[1].id === sectionId)[1];
+      //check paragraphs
+      let subEntries = Object.entries(section.paragraphs);
+      for (let subEntrie of subEntries) {
+        let paragraph = subEntrie[1];
+        let _paragraphId = paragraph.id;
+        if (id === _paragraphId) {
+          paragraph.text = newString;
+        } else {
+          if (subEntrie[1].subSection) {
+            let subSection = subEntrie[1].subSection;
+            for (let i in Object.values(subSection)) {
+              let subSetcion = subSection[i];
+              if (id === subSetcion.id) {
+                paragraph.text = newString;
+              } else {
+                let subSectionParagraphs = subSetcion.paragraphs;
+                for (let j in Object.values(subSectionParagraphs)) {
+                  let subParagraph = subSectionParagraphs[j];
+                  if (id === subParagraph.id) {
+                    subParagraph.text = newString;
                   } else {
-                    let subSectionParagraphs = subSetcion.paragraphs;
-                    for (let i in Object.values(subSectionParagraphs)) {
-                      let subParagraph = subSectionParagraphs[i];
-                      if (id === subParagraph.id) {
-                        subParagraph.text = newString;
-                      } else {
-                        if (subParagraph.subSubSection) {
-                          for (let i in Object.values(
-                            subParagraph.subSubSection
-                          )) {
-                            if (id === subParagraph.subSubSection[i].id) {
-                              subParagraph.subSubSection[i].text = newString;
-                            }
-                          }
-                        }
-                      }
+                    if (subParagraph.subSubSection) {
+                      subParagraph.subSubSection[0].paragraphs.find(
+                        (x) => x.id === id
+                      ).text = newString;
                     }
                   }
                 }

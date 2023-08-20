@@ -101,6 +101,7 @@ module.exports = {
         fullMed: "#424242",
         white: "#FFF",
         bgLi: "#F1F6F8",
+        bgMedLi: "#B3C4C2",
         bgMed: "#8F9E9D",
         bgDa: "#333333",
       },

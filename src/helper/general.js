@@ -23,7 +23,9 @@ const toCamelCase = (str) => {
       return index === 0 ? word.toLowerCase() : word.toUpperCase();
     })
     .replace(/\s+/g, "")
-    .replaceAll("-", "");
+    .replaceAll("-", "")
+    .replaceAll(")", "")
+    .replaceAll("(", "");
 };
 
 const addH = (event) => {

@@ -8,7 +8,7 @@
       <img
         loading="lazy"
         class="imageH object-contain h-image"
-        :src="'/publicAssets/images/' + paragraph.img + '.png'"
+        :src="'/publicAssets/images/' + paragraph.img + '.webp'"
       />
       <div
         v-if="paragraph?.imgCap"

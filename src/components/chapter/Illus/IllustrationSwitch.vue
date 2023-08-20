@@ -93,7 +93,6 @@ onMounted(() => {
     });
     animationLottie[index].setSubframe(true);
     animationLottie[index].play();
-    console.log(props.info.id);
     if (props.info.id === "animationOnOff") {
       animationLottie[index].setSpeed(0.5);
     }

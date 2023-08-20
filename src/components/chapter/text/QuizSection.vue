@@ -1,9 +1,9 @@
 <template>
-  <div id="quiz" class="py-12 p-20 w-full border-t border-black">
+  <div id="quiz" class="py-12 p-20 w-full border-t border-black bg-bgMedLi">
     <TitleIllus title="Quiz" class="pb-6" />
     <p>
       Here you can test your knowledge in a
-      <RouterLink class="text-primaryMed" to="quiz">QUIZ</RouterLink>!
+      <RouterLink class="text-primaryLi" to="quiz">QUIZ</RouterLink>!
     </p>
   </div>
 </template>

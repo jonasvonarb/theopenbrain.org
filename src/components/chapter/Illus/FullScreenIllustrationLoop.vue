@@ -145,8 +145,6 @@ const frames = {
 const setState = (stateIncoming) => {
   let state = toCamelCase(stateIncoming);
 
-  console.log(state);
-
   if (activeState.value === state) {
     activeState.value = 0;
   } else {
@@ -258,7 +256,6 @@ onMounted(() => {
   }, 1000);
 
   const complete = () => {
-    console.log("complete");
     isGoingNext.value = false;
     if (isPlay.value) {
       animationLottie.playSegments([0, animationLottie.animationData.op], true);

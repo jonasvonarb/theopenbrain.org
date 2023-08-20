@@ -166,7 +166,7 @@ const openInfo = () => {
 
             <button
               v-if="index !== 0 && !thisAnimation?.multiple"
-              class="flex justify-center items-center flex-col border col-span-1 p-6 border-black duration-100 flex-1"
+              class="flex justify-center items-center flex-col border col-span-1 p-6 border-black border-l-0 duration-100 flex-1"
               :class="[
                 activeState.toggle === true && activeState.state === index
                   ? 'bg-primaryMed text-black pointer-events-none'

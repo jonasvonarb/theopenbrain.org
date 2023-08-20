@@ -36,7 +36,7 @@ const closeMenu = () => {
 <template>
   <div
     v-if="route.name"
-    class="fixed h-screen font-light overflow-hidden border-primaryMed/90 bg-bgDa text-white scrollbar top-0 left-0 z-50 text-baseMono font-mono duration-300 snap-x"
+    class="fixed h-screen font-light overflow-hidden border-primaryMed/90 bg-bgDa text-white scrollbar top-0 left-0 z-50 text-baseMono font-mono duration-300 snap-x overscroll-none"
     :class="[
       store.activeMenu
         ? route.name === 'chapter'
@@ -49,7 +49,7 @@ const closeMenu = () => {
     <Transition name="menuTo">
       <ul
         v-if="route.name"
-        class="mb-52 duration-300 shrink-1 pb-24 h-full z-30 absolute"
+        class="mb-52 duration-300 shrink-1 pb-24 h-full z-30 absolute overscroll-none"
         :class="[store.activeMenu ? 'overflow-scroll' : 'overflow-hidden']"
       >
         <template v-for="(chapter, index) in menu">
@@ -91,23 +91,25 @@ const closeMenu = () => {
                       : ''
                   "
                 >
-                  <li class="w-full max-w-[850px] pl-8 font-medium">
+                  <li class="w-full max-w-[850px] pl-8 pr-8 font-medium uppercase tracking-wider">
                     {{ part.title }}
                   </li>
                 </div>
                 <ol>
                   <div
-                    class="block pl-44 pb-3 pt-3 hover:text-primaryMed"
+                    class="block pl-44 pb-3 pt-3 pr-12 hover:text-primaryMed"
                     :class="
                       toSlug(part.title) === store.currentSubChapter
                         ? 'bg-primaryMed/50'
                         : ''
                     "
                     @click="scrollToMenu(toSlug(subPart)), closeMenu()"
-                    v-for="subPart in part.parts"
+                    v-for="(subPart, i) in part.parts"
                     :key="subPart"
                   >
-                    <li class="sub max-w-[850px]">{{ subPart }}</li>
+                    <li class="sub max-w-[850px] pl-12">
+                      {{ `- ${subPart}` }}
+                    </li>
                   </div>
                 </ol>
               </template>
@@ -120,7 +122,7 @@ const closeMenu = () => {
                     : ''
                 "
               >
-                <li class="w-full max-w-[850px] pl-8 font-medium">
+                <li class="w-full max-w-[850px] pl-8 font-medium uppercase">
                   References
                 </li>
               </div>
