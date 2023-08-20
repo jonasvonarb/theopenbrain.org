@@ -2,14 +2,22 @@
   <div id="acknowledgements" class="py-12 p-20 w-full border-t border-black">
     <TitleIllus :title="'Acknowledgements'" class="pb-6" />
     <p class="font">
-      AK and ST acknowledge personal support from the
+      AK and ST acknowledge support from the Canada Research Chairs program
       <a
         class="underline hover:text-primaryMed"
         href="www.chairs-chaires.gc.ca"
         target="_blank"
         >Canada Research Chairs</a
       >
-      program. We thank the
+      program and
+      <a
+        class="underline hover:text-primaryMed"
+        href=" https://sloan.org/fellowships"
+        target="_blank"
+      >
+        the Sloan Research Fellowships program.
+      </a>
+      We thank the
       <a
         class="underline hover:text-primaryMed"
         href="https://www.mcgill.ca/neuro/open-science/tanenbaum-open-science-institute-tosi"
@@ -33,6 +41,4 @@
 import TitleIllus from "../../UI/TitleIllus.vue";
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

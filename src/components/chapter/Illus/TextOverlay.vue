@@ -95,8 +95,8 @@ const video = {
   id: "f76eea26-c064-41c5-9347-889a65266271",
   type: "breakVideo",
   title: "Maureen and Jay Neitz",
-  text: "discussing possible causes and cures for myopia",
-  slug: "placeholder",
+  text: "Possible causes and cures for myopia",
+  slug: "neitz-myopia",
 };
 </script>
 
