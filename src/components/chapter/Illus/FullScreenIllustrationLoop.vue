@@ -19,7 +19,9 @@
               class="flex justify-between w-full pl-left bg-fullHDa p-6 py-4 pr-30"
             >
               <span class="w-oText flex items-start pr-16">
-                <span class="pr-3 text-start shrink-1 pl-1"> {{ currenSection + 1 }}. </span>
+                <span class="pr-3 text-start shrink-1 pl-1">
+                  {{ currenSection + 1 }}.
+                </span>
                 {{ animation.states?.[currenSection] }}
               </span>
               <DownArrow
@@ -53,7 +55,7 @@
         <div
           class="relative block-2 text-medium h-full flex flex-col gap-12 bg-fullMed px-0 pr-0 pt-40 border-l border-black"
         >
-          <ol class="w-full">
+          <ol class="w-full h-full overflow-scroll">
             <li
               class="pb-10 pt-1.5 first-of-type:mt-0 pointer-event-none flex flex-col pl-8 p-24 hover:text-fullHDa cursor-pointer"
               v-for="(state, index) of animation.states"
