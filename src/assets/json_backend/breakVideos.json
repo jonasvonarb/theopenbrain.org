@@ -12,6 +12,12 @@
       "title": "John Dowling",
       "text": "Retinal cell types, connectivity and responses."
     },
+    "baden": {
+      "video": "baden",
+      "slug": "baden",
+      "title": "Tom Baden",
+      "text": "Is our retina really upside down?'"
+    },
     "neitz-myopia": {
       "video": "neitz-myopia",
       "slug": "neitz-myopia",
@@ -20,6 +26,3 @@
     }
   }
 }
-
-
-
