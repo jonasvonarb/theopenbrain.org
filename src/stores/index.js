@@ -230,9 +230,23 @@ export const useText = defineStore("text", {
                     subParagraph.text = newString;
                   } else {
                     if (subParagraph.subSubSection) {
-                      subParagraph.subSubSection[0].paragraphs.find(
-                        (x) => x.id === id
-                      ).text = newString;
+                      if (subParagraph.subSubSection.find((x) => x.id === id)) {
+                        subParagraph.subSubSection.find(
+                          (x) => x.id === id
+                        ).text = newString;
+                      } else {
+                        for (let subSubSection of subParagraph.subSubSection) {
+                          if (subSubSection.paragraphs) {
+                            if (
+                              subSubSection.paragraphs.find((x) => x.id === id)
+                            ) {
+                              subSubSection.paragraphs.find(
+                                (x) => x.id === id
+                              ).text = newString;
+                            }
+                          }
+                        }
+                      }
                     }
                   }
                 }

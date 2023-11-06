@@ -48,6 +48,11 @@ const files = [
     link: "https://mcgill-my.sharepoint.com/:f:/g/personal/stuart_trenholm_mcgill_ca/EnG2B8tGLGFPiMO-HAO3NrUBIumc8gYjobEvJZn805l3Hw?e=WvmhBY",
     text: "Download text, images, animations and more here!",
   },
+  {
+    type: "files",
+    link: "https://github.com/jonasvonarb/theopenbrain.org",
+    text: "Repository on github with the code-base for this textbook!",
+  },
 ];
 </script>
 
