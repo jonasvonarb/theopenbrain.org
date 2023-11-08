@@ -72,7 +72,7 @@ const openAbout = () => {
             <p>
               theopenbrain.org is licensed under a reative
               <a
-                class="hover:no-underline hover:italic"
+                class="hover:no-underline hover:opacity-50"
                 href="http://creativecommons.org/licenses/by/4.0/"
                 target="_blank"
               >
@@ -87,10 +87,17 @@ const openAbout = () => {
           </section>
           <section>
             <h4 class="text-medium font-medium">FUNDING</h4>
+
+            theopenbrain.org is funded by the Tanenbaum Open Science Institute
+            which is based at the Montreal Neurological Institute and is part of
+            McGill University. Additional support from the McConnell Foundation
+            and the Vision Health Research Network has made this project
+            possible.
+
             <p>
               theopenbrain.org is funded by the
               <a
-                class="hover:no-underline hover:italic"
+                class="hover:no-underline hover:opacity-50"
                 href="https://www.mcgill.ca/neuro/open-science/tanenbaum-open-science-institute-tosi"
                 target="_blank"
               >
@@ -98,18 +105,25 @@ const openAbout = () => {
               </a>
               which is based at the
               <a
-                class="hover:no-underline hover:italic"
+                class="hover:no-underline hover:opacity-50"
                 href="https://www.mcgill.ca/neuro/"
                 target="_blank"
                 >Montreal Neurological Institute
               </a>
               which is part of
               <a
-                class="hover:no-underline hover:italic"
+                class="hover:no-underline hover:opacity-50"
                 href="http://www.mcgill.ca/"
                 target="_blank"
                 >McGill University </a
-              >.
+              >. Additional support from the McConnell Foundation and the
+              <a
+                class="hover:no-underline hover:opacity-50"
+                href="https://visionnetwork.ca/"
+                target="_blank"
+                >Vision Health Research Network</a
+              >
+              has made this project possible.
             </p>
           </section>
           <section>
@@ -122,7 +136,7 @@ const openAbout = () => {
               <p>
                 Editor:
                 <a
-                  class="hover:no-underline hover:italic"
+                  class="hover:no-underline hover:opacity-50"
                   href="http://www.trenholmlab.com/"
                   target="_blank"
                 >
@@ -135,7 +149,7 @@ const openAbout = () => {
               <p>
                 Designed and developed by
                 <a
-                  class="hover:no-underline hover:italic"
+                  class="hover:no-underline hover:opacity-50"
                   href="https://malpeso.info/"
                   target="_blank"
                 >
@@ -145,7 +159,7 @@ const openAbout = () => {
               <p>
                 Art direction & illustration:
                 <a
-                  class="hover:no-underline hover:italic"
+                  class="hover:no-underline hover:opacity-50"
                   href="https://malpeso.info/"
                   target="_blank"
                 >
@@ -155,7 +169,7 @@ const openAbout = () => {
               <p>
                 Development & web design:
                 <a
-                  class="hover:no-underline hover:italic"
+                  class="hover:no-underline hover:opacity-50"
                   href="http://www.jonasvonarb.ch/"
                   target="_blank"
                 >
@@ -165,7 +179,7 @@ const openAbout = () => {
               <p>
                 Animation:
                 <a
-                  class="hover:no-underline hover:italic"
+                  class="hover:no-underline hover:opacity-50"
                   href="https://timorick.ch/"
                   target="_blank"
                 >
