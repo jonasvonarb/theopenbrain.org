@@ -116,7 +116,14 @@ const openAbout = () => {
                 href="http://www.mcgill.ca/"
                 target="_blank"
                 >McGill University </a
-              >. Additional support from the McConnell Foundation and the
+              >. Additional support from the
+              <a
+                class="hover:no-underline hover:opacity-50"
+                href="https://www.mcconnellfoundation.ca/"
+                target="_blank"
+                >McConnell Foundation</a
+              >
+              and the
               <a
                 class="hover:no-underline hover:opacity-50"
                 href="https://visionnetwork.ca/"
