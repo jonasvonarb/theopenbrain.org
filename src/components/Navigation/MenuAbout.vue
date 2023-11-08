@@ -55,6 +55,7 @@ const openAbout = () => {
     >
       <div class="px-left pt-12 pb-56 w-[50vw] max-w-[800px]">
         <div class="font-sans">
+          <h5 class="inline">V0.2.0</h5>
           <h2>About</h2>
           <section class="pb-56">
             <h3>
