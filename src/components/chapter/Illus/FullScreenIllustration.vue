@@ -149,7 +149,7 @@ const openInfo = () => {
                 (activeState.state === index && index === 0)
                   ? 'bg-primaryMed text-black pointer-events-none'
                   : activeState.state === index
-                  ? 'border-primaryMed text-black hover:text-primaryMed  '
+                  ? 'border-primaryMed border-r-black text-black hover:text-primaryMed  '
                   : ' text-bgDa hover:text-primaryMed hover:border-primaryMed',
               ]"
               @click="
@@ -171,7 +171,7 @@ const openInfo = () => {
                 activeState.toggle === true && activeState.state === index
                   ? 'bg-primaryMed text-black pointer-events-none'
                   : activeState.state === index
-                  ? 'border-primaryMed text-black  hover:text-primaryMed '
+                  ? 'border-primaryMed text-black hover:text-primaryMed '
                   : 'bg-white text-bgDa  hover:text-primaryMed hover:border-primaryMed',
                 ,
               ]"

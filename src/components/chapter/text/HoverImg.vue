@@ -4,15 +4,19 @@
     ref="img"
     class="fixed w-[400px] z-[70] bg-black p-4 text-white flex flex-col gap-4"
   >
-    <div class="w-full">
-      <img
-        loading="lazy"
-        class="w-full"
-        :src="'/publicAssets/hoverImges/' + activeHover + '.jpg'"
-      />
-    </div>
+    <template
+      v-if="infos.images.find((x) => x.title === activeHover).noImage !== true"
+    >
+      <div class="w-full">
+        <img
+          loading="lazy"
+          class="w-full"
+          :src="'/publicAssets/hoverImges/' + activeHover + '.jpg'"
+        />
+      </div>
+    </template>
     <p
-      class="w-full max-w-[400px] -mt-[3px] text-small"
+      class="w-full max-w-[400px] -mt-[3px] text-small break-words	"
       v-html="infos.images.find((x) => x.title === activeHover).text"
     />
   </div>

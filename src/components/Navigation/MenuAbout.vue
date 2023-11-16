@@ -55,7 +55,7 @@ const openAbout = () => {
     >
       <div class="px-left pt-12 pb-56 w-[50vw] max-w-[800px]">
         <div class="font-sans">
-          <h5 class="inline">V0.2.0</h5>
+          <h5 class="inline">V0.2.1</h5>
           <h2>About</h2>
           <section class="pb-56">
             <h3>
@@ -154,7 +154,7 @@ const openAbout = () => {
               <p>Chapter authors: Arjun Krishnaswamy, Stuart Trenholm</p>
               <p>Copy editor: Leah LeFort</p>
               <br />
-              <p>
+              <p class="font-medium">
                 Designed and developed by
                 <a
                   class="hover:no-underline hover:opacity-50"
