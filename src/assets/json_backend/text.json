@@ -111,6 +111,7 @@
                 "middel": true,
                 "name": "RetinalCellTypes",
                 "title": "Retinal cell types",
+                "test": true,
                 "id": "animationRetinalCellTypes"
               },
               "paragraphs": [
