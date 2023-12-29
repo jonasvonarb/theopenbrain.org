@@ -262,6 +262,9 @@
                         },
                         {
                           "id": "37c0b13f-d8ad-4353-8661-45c1f4cc77b8",
+                          "img": "photoreceptors_illu",
+                          "imgClosed": true,
+                          "imgCap": "Current-voltage relationship from the outer segment of an isolated salamander rod. Voltage was held at the dark level and current was measured 20 ms after switching to the new light level. Curve 1 – dark. Curve 2 – half-saturating light. Curve 3 – Saturating light. Adapted from Baylor and Nunn (1986).",
                           "text": "<strong>Counting photons:</strong> The photoreceptor is given a difficult task. In a world of ever-changing light levels, the photoreceptor needs to detect photons, and convert them into an electrical signal that regulates its release of glutamate. Complicating this task, the driving force through the cGMP-gated channels changes as the photoreceptors membrane potential dynamically depolarizes and hyperpolarizes. This might be expected to lead to different photoresponses to an equivalent visual stimulus depending on the history of what the photoreceptor just saw. Fortunately, the photoreceptor can effectively ‘count photons’, without strongly being impacted by previous photons. How? Plotting the current that flows through a rod cGMP-gated channel across different membrane voltages reveals a strong rectification: photocurrents are relatively fixed across negative membrane potentials (where the photoreceptor generally operates)<sup data-sup='28'>28</sup>. This rectification helps make the photovoltage proportional to the flash intensity that evoked it, rather than also being dependent on the history of prior flashes."
                         },
                         {
